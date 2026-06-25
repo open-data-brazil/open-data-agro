@@ -1,0 +1,43 @@
+# IBGE — Localidades (Phase 15)
+# API: https://servicodados.ibge.gov.br/api/docs/localidades
+
+entries:
+  - dataset_id: ibge.localidades-municipios
+    source_url: https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome
+    source_portal_url: https://servicodados.ibge.gov.br/api/docs/localidades
+    format: json
+    schedule: monthly
+    portal_label: Municípios
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: ibge.localidades-ufs
+    source_url: https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome
+    source_portal_url: https://servicodados.ibge.gov.br/api/docs/localidades
+    format: json
+    schedule: monthly
+    portal_label: Unidades da Federação
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: ibge.localidades-regioes
+    source_url: https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome
+    source_portal_url: https://servicodados.ibge.gov.br/api/docs/localidades
+    format: json
+    schedule: monthly
+    portal_label: Regiões
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: ibge.localidades-mesorregioes
+    source_url: https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome
+    source_portal_url: https://servicodados.ibge.gov.br/api/docs/localidades
+    format: json
+    schedule: monthly
+    portal_label: Mesorregiões
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: ibge.localidades-microrregioes
+    source_url: https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome
+    source_portal_url: https://servicodados.ibge.gov.br/api/docs/localidades
+    format: json
+    schedule: monthly
+    portal_label: Microrregiões
+    discovered_at: 2026-06-25T00:00:00Z

@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 5, "max_value": 6 },
+      "meta": { "notes": "Brazil has five macro-regions." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "codigo_regiao" },
+      "meta": { "notes": "Region numeric code." }
+    },
+    {
+      "type": "expect_column_values_to_be_unique",
+      "kwargs": { "column": "codigo_regiao" },
+      "meta": { "notes": "Each region appears once per snapshot." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ibge.localidades-regioes",
+    "fonte_oficial": "https://servicodados.ibge.gov.br/api/docs/localidades",
+    "agencia": "IBGE"
+  },
+  "name": "bronze.ibge.localidades_regioes",
+  "id": "bronze-ibge-localidades-regioes-suite"
+}

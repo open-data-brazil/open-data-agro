@@ -11,10 +11,19 @@ func TestSourcePortalURLCONAB(t *testing.T) {
 	}
 }
 
-func TestSourcePortalURLNonCONAB(t *testing.T) {
+func TestSourcePortalURLIBGE(t *testing.T) {
 	t.Parallel()
 
-	id := MustParseDatasetID("ibge.foo-bar")
+	id := MustParseDatasetID("ibge.localidades-municipios")
+	if got := SourcePortalURL(id); got != IBGELocalidadesDocsURL {
+		t.Fatalf("got %q want %q", got, IBGELocalidadesDocsURL)
+	}
+}
+
+func TestSourcePortalURLUnknownAgency(t *testing.T) {
+	t.Parallel()
+
+	id := MustParseDatasetID("foo.bar-baz")
 	if got := SourcePortalURL(id); got != "" {
 		t.Fatalf("got %q want empty", got)
 	}

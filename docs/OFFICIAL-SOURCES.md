@@ -76,6 +76,18 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 | `conab.alimenta-brasil-entregas` | Programa Alimenta Brasil - Entregas | **P1 — implemented** |
 | `conab.alimenta-brasil-propostas` | Programa Alimenta Brasil - Propostas | **P1 — implemented** |
 
+### IBGE — Localidades (Phase 15)
+
+| Dataset ID | API resource | Status |
+|------------|--------------|--------|
+| `ibge.localidades-municipios` | `/api/v1/localidades/municipios` | **P0 — implemented** |
+| `ibge.localidades-ufs` | `/api/v1/localidades/estados` | **P0 — implemented** |
+| `ibge.localidades-regioes` | `/api/v1/localidades/regioes` | **P1 — implemented** |
+| `ibge.localidades-mesorregioes` | `/api/v1/localidades/mesorregioes` | Catalog + ingest |
+| `ibge.localidades-microrregioes` | `/api/v1/localidades/microrregioes` | Catalog + ingest |
+
+**Fonte oficial:** [IBGE API de Localidades](https://servicodados.ibge.gov.br/api/docs/localidades)
+
 ---
 
 ## Rules

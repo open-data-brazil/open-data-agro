@@ -145,6 +145,16 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_conab_alimenta_brasil_entregas", true
 	case "conab.alimenta-brasil-propostas":
 		return "bronze_conab_alimenta_brasil_propostas", true
+	case "ibge.localidades-municipios":
+		return "bronze_ibge_localidades_municipios", true
+	case "ibge.localidades-ufs":
+		return "bronze_ibge_localidades_ufs", true
+	case "ibge.localidades-regioes":
+		return "bronze_ibge_localidades_regioes", true
+	case "ibge.localidades-mesorregioes":
+		return "bronze_ibge_localidades_mesorregioes", true
+	case "ibge.localidades-microrregioes":
+		return "bronze_ibge_localidades_microrregioes", true
 	default:
 		return "", false
 	}

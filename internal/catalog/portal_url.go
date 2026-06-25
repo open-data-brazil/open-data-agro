@@ -16,5 +16,11 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "anp.") {
 		return ANPCombustiveisPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "ibge.") {
+		return IBGELocalidadesDocsURL
+	}
 	return ""
 }
+
+// IBGELocalidadesDocsURL is the IBGE Localidades API documentation URL.
+const IBGELocalidadesDocsURL = "https://servicodados.ibge.gov.br/api/docs/localidades"

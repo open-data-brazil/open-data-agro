@@ -8,6 +8,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/anp"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/conab"
+	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 )
 
 // SourceDownload holds a fetched source file and the resolved download URL.
@@ -31,13 +32,15 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		return conab.ResolveURL(entry)
 	case "anp":
 		return anp.ResolveURL(entry)
+	case "ibge":
+		return ibge.ResolveURL(entry)
 	default:
 		return "", fmt.Errorf("unsupported agency %q for dataset %s", agency, entry.DatasetID)
 	}
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client) (*SourceDownload, error) {
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, ibgeClient *ibge.Client) (*SourceDownload, error) {
 	sourceURL, err := ResolveSourceURL(entry)
 	if err != nil {
 		return nil, err
@@ -63,6 +66,18 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 		}, nil
 	case "anp":
 		result, err := anpClient.Download(ctx, sourceURL)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          result.Body,
+			ContentType:   result.ContentType,
+			LastModified:  result.LastModified,
+			ContentLength: result.ContentLength,
+			SourceURL:     sourceURL,
+		}, nil
+	case "ibge":
+		result, err := ibgeClient.Download(ctx, sourceURL)
 		if err != nil {
 			return nil, err
 		}

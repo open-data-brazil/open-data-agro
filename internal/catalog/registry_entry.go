@@ -10,6 +10,7 @@ type DatasetFormat string
 
 const (
 	FormatCSV  DatasetFormat = "csv"
+	FormatJSON DatasetFormat = "json"
 	FormatXLS  DatasetFormat = "xls"
 	FormatXLSX DatasetFormat = "xlsx"
 	FormatTXT  DatasetFormat = "txt"

@@ -11,6 +11,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/conab"
 	"github.com/open-data-brazil/open-data-agro/internal/db"
+	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 	"github.com/open-data-brazil/open-data-agro/internal/storage"
 )
 
@@ -38,6 +39,7 @@ type Runner struct {
 	store    storage.BronzeStore
 	conab    *conab.Client
 	anp      *anp.Client
+	ibge     *ibge.Client
 	alerts   *alerts.Notifier
 }
 
@@ -49,6 +51,7 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		store:    store,
 		conab:    conab.NewClient(),
 		anp:      anp.NewClient(),
+		ibge:     ibge.NewClient(),
 		alerts:   notifier,
 	}
 }
@@ -86,7 +89,7 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp)
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.ibge)
 	if err != nil {
 		msg := err.Error()
 		_, _ = finish(db.JobFailed, &msg, nil, err)

@@ -112,6 +112,9 @@ def main() -> int:
             "bronze_conab_serie_historica_capacidade_estatica": "expectations/suites/bronze/conab/serie_historica_capacidade_estatica.json",
             "bronze_conab_alimenta_brasil_entregas": "expectations/suites/bronze/conab/alimenta_brasil_entregas.json",
             "bronze_conab_alimenta_brasil_propostas": "expectations/suites/bronze/conab/alimenta_brasil_propostas.json",
+            "bronze_ibge_localidades_municipios": "expectations/suites/bronze/ibge/localidades_municipios.json",
+            "bronze_ibge_localidades_ufs": "expectations/suites/bronze/ibge/localidades_ufs.json",
+            "bronze_ibge_localidades_regioes": "expectations/suites/bronze/ibge/localidades_regioes.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:
