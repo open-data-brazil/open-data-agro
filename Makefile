@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-abastecimento dbt-build-armazenamento dbt-build-agricultura-familiar dbt-build-ibge-pam dbt-build-bcb-sgs ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-abastecimento dbt-build-armazenamento dbt-build-agricultura-familiar dbt-build-ibge-pam dbt-build-bcb-sgs ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -41,6 +41,22 @@ ci-dbt: duckdb-install python-install
 		$(MAKE) analytics-init analytics-smoke
 	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
 	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
+
+benchmark-ingestor:
+	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
+	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --json .local/benchmark/ingestor-latest.json
+
+benchmark-ingestor-clean:
+	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
+	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --clean --all
+
+benchmark-ingestor-fast10: build
+	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
+	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --profile .local/benchmark/profiles/fast10.json
+
+benchmark-ingestor-fast10-clean: build
+	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
+	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --profile .local/benchmark/profiles/fast10.json --clean
 
 lint:
 	golangci-lint run ./...

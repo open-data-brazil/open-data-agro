@@ -54,12 +54,20 @@ func (c *Client) FetchBDMEPMonthlySnapshot(ctx context.Context, entry catalog.Re
 	if err != nil {
 		return nil, "", err
 	}
-	records, err := readLatinCSV(daily)
+	payload, err := aggregateDailyLongCSVToMonthly(daily, entry.DatasetID.String())
 	if err != nil {
 		return nil, "", err
 	}
+	return payload, sourceURL, nil
+}
+
+func aggregateDailyLongCSVToMonthly(daily []byte, datasetID string) ([]byte, error) {
+	records, err := readLatinCSV(daily)
+	if err != nil {
+		return nil, err
+	}
 	if len(records) <= 1 {
-		return nil, "", fmt.Errorf("no daily rows to aggregate for %s", entry.DatasetID)
+		return nil, fmt.Errorf("no daily rows to aggregate for %s", datasetID)
 	}
 
 	type monthKey struct {
@@ -111,19 +119,16 @@ func (c *Client) FetchBDMEPMonthlySnapshot(ctx context.Context, entry catalog.Re
 		rows = append(rows, []string{key.station, key.month, key.variable, value, key.uf, key.year})
 	}
 	if len(rows) == 0 {
-		return nil, "", fmt.Errorf("no monthly rows aggregated for %s", entry.DatasetID)
+		return nil, fmt.Errorf("no monthly rows aggregated for %s", datasetID)
 	}
 
-	payload, err := writeMonthlyCSV(rows)
-	if err != nil {
-		return nil, "", err
-	}
-	return payload, sourceURL, nil
+	return writeMonthlyCSV(rows)
 }
 
 func writeMonthlyCSV(rows [][]string) ([]byte, error) {
 	var buf bytes.Buffer
 	writer := csv.NewWriter(&buf)
+	writer.Comma = ';'
 	if err := writer.Write([]string{"cd_estacao", "mes", "variavel", "valor", "uf", "ano"}); err != nil {
 		return nil, err
 	}

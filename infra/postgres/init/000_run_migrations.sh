@@ -16,9 +16,15 @@ if [[ ! -x "${MIGRATE_BIN}" ]]; then
       exit 1
       ;;
   esac
-  curl -fsSL \
-    "https://github.com/golang-migrate/migrate/releases/download/${MIGRATE_VERSION}/migrate.linux-${migrate_arch}.tar.gz" \
-    | tar xz -C /tmp migrate
+  url="https://github.com/golang-migrate/migrate/releases/download/${MIGRATE_VERSION}/migrate.linux-${migrate_arch}.tar.gz"
+  if command -v curl >/dev/null 2>&1; then
+    curl -fsSL "${url}" | tar xz -C /tmp migrate
+  elif command -v wget >/dev/null 2>&1; then
+    wget -qO- "${url}" | tar xz -C /tmp migrate
+  else
+    echo "curl or wget required to bootstrap golang-migrate" >&2
+    exit 1
+  fi
   chmod +x "${MIGRATE_BIN}"
 fi
 

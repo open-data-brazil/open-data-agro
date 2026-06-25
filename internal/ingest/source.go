@@ -168,19 +168,14 @@ func downloadINMETSource(ctx context.Context, entry catalog.RegistryEntry, clien
 
 	switch datasetID {
 	case "inmet.estacoes-automaticas", "inmet.estacoes-convencionais":
-		sourceURL, err := inmet.ResolveURL(entry)
-		if err != nil {
-			return nil, err
-		}
-		result, err := client.Download(ctx, sourceURL)
+		body, sourceURL, err := client.FetchStationCatalog(ctx, datasetID)
 		if err != nil {
 			return nil, err
 		}
 		return &SourceDownload{
-			Body:          result.Body,
-			ContentType:   result.ContentType,
-			LastModified:  result.LastModified,
-			ContentLength: result.ContentLength,
+			Body:          body,
+			ContentType:   "text/csv",
+			ContentLength: int64(len(body)),
 			SourceURL:     sourceURL,
 		}, nil
 	case "inmet.bdmep-diario", "inmet.pacote-anual-automaticas":

@@ -290,6 +290,7 @@ func parseStationDailyLong(meta stationMeta, dataRaw []byte, year int, allowedVa
 func writeLongCSV(rows [][]string) ([]byte, error) {
 	var buf bytes.Buffer
 	writer := csv.NewWriter(&buf)
+	writer.Comma = ';'
 	if err := writer.Write([]string{"cd_estacao", "data", "variavel", "valor", "uf", "ano"}); err != nil {
 		return nil, err
 	}

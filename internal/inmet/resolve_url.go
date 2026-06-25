@@ -30,8 +30,8 @@ func ResolveURL(entry catalog.RegistryEntry) (string, error) {
 		return "", fmt.Errorf("source_url for %s must use https", entry.DatasetID)
 	}
 	host := strings.ToLower(parsed.Host)
-	if host != "portal.inmet.gov.br" && host != "bdmep.inmet.gov.br" {
-		return "", fmt.Errorf("source_url for %s must be on portal.inmet.gov.br or bdmep.inmet.gov.br", entry.DatasetID)
+	if host != "portal.inmet.gov.br" && host != "bdmep.inmet.gov.br" && host != "apitempo.inmet.gov.br" {
+		return "", fmt.Errorf("source_url for %s must be on portal.inmet.gov.br, bdmep.inmet.gov.br, or apitempo.inmet.gov.br", entry.DatasetID)
 	}
 	return parsed.String(), nil
 }
