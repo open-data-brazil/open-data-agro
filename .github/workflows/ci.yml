@@ -32,9 +32,10 @@ jobs:
         run: go test ./...
 
       - name: DuckDB integration
-        env:
-          PATH: ${{ github.workspace }}/.local/bin:${{ env.HOME }}/.duckdb/cli/latest:${{ env.PATH }}
-        run: DUCKDB_INTEGRATION=1 go test ./internal/processor -run 'SmokeLocal|PreviewPromote' -count=1
+        run: |
+          export PATH="${{ github.workspace }}/.local/bin:${PATH}"
+          export DUCKDB_BIN="${{ github.workspace }}/.local/bin/duckdb"
+          DUCKDB_INTEGRATION=1 go test ./internal/processor -run 'SmokeLocal|PreviewPromote' -count=1
 
       - name: Great Expectations integration
         run: GE_INTEGRATION=1 go test ./internal/processor -run 'Quality' -count=1
@@ -74,9 +75,10 @@ jobs:
         env:
           LAKE_LOCAL_ROOT: /tmp/open-data-agro-lake
           DUCKDB_PATH: /tmp/open-data-agro-ci.duckdb
-          PATH: ${{ github.workspace }}/.local/bin:${{ env.HOME }}/.duckdb/cli/latest:${{ env.PATH }}
         working-directory: dbt
         run: |
+          export PATH="${{ github.workspace }}/.local/bin:${PATH}"
+          export DUCKDB_BIN="${{ github.workspace }}/.local/bin/duckdb"
           dbt deps --profiles-dir .
           dbt build --profiles-dir . --select 'stg_conab__serie_historica_graos stg_conab__estimativa_graos+'
 
@@ -84,9 +86,11 @@ jobs:
         env:
           LAKE_LOCAL_ROOT: /tmp/open-data-agro-lake
           DUCKDB_PATH: /tmp/open-data-agro-ci.duckdb
-          PATH: ${{ github.workspace }}/.local/bin:${{ env.HOME }}/.duckdb/cli/latest:${{ env.PATH }}
         working-directory: dbt
-        run: dbt docs generate --profiles-dir .
+        run: |
+          export PATH="${{ github.workspace }}/.local/bin:${PATH}"
+          export DUCKDB_BIN="${{ github.workspace }}/.local/bin/duckdb"
+          dbt docs generate --profiles-dir .
 
       - name: Upload dbt docs
         uses: actions/upload-artifact@v4
@@ -99,11 +103,12 @@ jobs:
         env:
           LAKE_LOCAL_ROOT: /tmp/open-data-agro-lake
           DUCKDB_PATH: /tmp/open-data-agro-analytics.duckdb
-          PATH: ${{ github.workspace }}/.local/bin:${{ env.HOME }}/.duckdb/cli/latest:${{ env.PATH }}
         run: |
+          export PATH="${{ github.workspace }}/.local/bin:${PATH}"
+          export DUCKDB_BIN="${{ github.workspace }}/.local/bin/duckdb"
           python3 scripts/ci/seed_mercado_silver.py
           cd dbt && dbt build --profiles-dir . --select 'stg_conab__oferta_demanda+'
-          make analytics-init LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb
+          make analytics-init LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb DUCKDB_BIN="$DUCKDB_BIN"
           duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
           make analytics-smoke DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb
           duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"

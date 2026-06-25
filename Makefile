@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-abastecimento dbt-build-armazenamento dbt-build-agricultura-familiar dbt-build-ibge-pam dbt-build-bcb-sgs ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-abastecimento dbt-build-armazenamento dbt-build-agricultura-familiar dbt-build-ibge-pam dbt-build-bcb-sgs ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -11,6 +11,35 @@ MIGRATE ?= migrate
 
 test:
 	go test ./...
+
+# Mirror GitHub Actions CI jobs locally (see .github/workflows/ci.yml).
+ci-go: duckdb-install
+	go work sync
+	go test ./...
+	PATH="$(PWD)/.local/bin:$$PATH" DUCKDB_BIN="$(PWD)/.local/bin/duckdb" DUCKDB_INTEGRATION=1 go test ./internal/processor -run 'SmokeLocal|PreviewPromote' -count=1
+
+ci-dbt: duckdb-install python-install
+	rm -rf /tmp/open-data-agro-lake /tmp/open-data-agro-ci.duckdb /tmp/open-data-agro-analytics.duckdb
+	LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake python3 scripts/ci/seed_dbt_silver.py
+	cp -f dbt/profiles.yml.example dbt/profiles.yml
+	cd dbt && PATH="$(CURDIR)/.local/bin:$$PATH" DUCKDB_BIN="$(CURDIR)/.local/bin/duckdb" \
+		LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-ci.duckdb \
+		dbt deps --profiles-dir . && \
+		LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-ci.duckdb \
+		dbt build --profiles-dir . --select 'stg_conab__serie_historica_graos stg_conab__estimativa_graos+'
+	cd dbt && PATH="$(CURDIR)/.local/bin:$$PATH" DUCKDB_BIN="$(CURDIR)/.local/bin/duckdb" \
+		LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-ci.duckdb \
+		dbt docs generate --profiles-dir .
+	PATH="$(PWD)/.local/bin:$$PATH" DUCKDB_BIN="$(PWD)/.local/bin/duckdb" \
+		LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake python3 scripts/ci/seed_mercado_silver.py
+	cd dbt && PATH="$(CURDIR)/.local/bin:$$PATH" DUCKDB_BIN="$(CURDIR)/.local/bin/duckdb" \
+		LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb \
+		dbt build --profiles-dir . --select 'stg_conab__oferta_demanda+'
+	PATH="$(PWD)/.local/bin:$$PATH" DUCKDB_BIN="$(PWD)/.local/bin/duckdb" \
+		LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb \
+		$(MAKE) analytics-init analytics-smoke
+	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
+	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
 
 lint:
 	golangci-lint run ./...
@@ -28,6 +57,8 @@ python-install:
 
 duckdb-install:
 	curl -fsSL https://install.duckdb.org | DUCKDB_VERSION=$(DUCKDB_VERSION) sh
+	@mkdir -p .local/bin
+	@ln -sf "$(HOME)/.duckdb/cli/latest/duckdb" .local/bin/duckdb
 
 dbt-deps:
 	cd dbt && dbt deps --profiles-dir .
@@ -52,7 +83,7 @@ seed-mvp:
 
 analytics-init:
 	@chmod +x duckdb/scripts/analytics-init.sh duckdb/export-mart.sh
-	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH) ./duckdb/scripts/analytics-init.sh
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH) DUCKDB_BIN=$(DUCKDB_BIN) ./duckdb/scripts/analytics-init.sh
 
 analytics-smoke:
 	@command -v duckdb >/dev/null 2>&1 || (echo "run: make duckdb-install" && exit 1)
