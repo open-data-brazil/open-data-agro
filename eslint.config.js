@@ -21,6 +21,7 @@ export default defineConfig(
       '**/coverage/**',
       'lake/**',
       'dbt/target/**',
+      '**/*.d.ts',
     ],
   },
 );

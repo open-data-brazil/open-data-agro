@@ -13,7 +13,10 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@open-data-agro/catalog": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.15.21",
