@@ -1,0 +1,39 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Soja Paranaguá series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "praca", "value_set": ["Paranaguá"] },
+      "meta": { "notes": "Port reference location." }
+    },
+    {
+      "type": "expect_column_values_to_match_regex",
+      "kwargs": { "column": "data", "regex": "^\\d{4}-\\d{2}-\\d{2}$" },
+      "meta": { "notes": "Canonical ISO date." }
+    },
+    {
+      "type": "expect_column_values_to_be_between",
+      "kwargs": { "column": "preco_rs_sc", "min_value": 0, "mostly": 1.0 },
+      "meta": { "notes": "Positive BRL price per 60 kg bag." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["produto", "praca", "data"] },
+      "meta": { "notes": "No duplicate observations per location/date." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "cepea.soja-paranagua",
+    "fonte_oficial": "https://www.cepea.org.br/",
+    "agencia": "CEPEA",
+    "licenca": "CC BY-NC 4.0",
+    "fonte_tipo": "referencia_mercado"
+  },
+  "name": "bronze.cepea.soja_paranagua",
+  "id": "bronze-cepea-soja-paranagua-suite"
+}

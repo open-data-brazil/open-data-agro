@@ -39,8 +39,12 @@ type RegistryEntry struct {
 	ClimateVariables []string  `json:"climateVariables,omitempty" yaml:"climate_variables,omitempty"`
 	RetentionNote string       `json:"retentionNote,omitempty" yaml:"retention_note,omitempty"`
 	SGSCode      int           `json:"sgsCode,omitempty" yaml:"sgs_code,omitempty"`
+	CepeaProductSlug string    `json:"cepeaProductSlug,omitempty" yaml:"cepea_product_slug,omitempty"`
+	CepeaPraca   string        `json:"cepeaPraca,omitempty" yaml:"cepea_praca,omitempty"`
 	StartDate    string        `json:"startDate,omitempty" yaml:"start_date,omitempty"`
 	Frequency    string        `json:"frequency,omitempty" yaml:"frequency,omitempty"`
+	License      string        `json:"license,omitempty" yaml:"license,omitempty"`
+	FonteTipo    string        `json:"fonteTipo,omitempty" yaml:"fonte_tipo,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

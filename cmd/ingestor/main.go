@@ -80,7 +80,7 @@ func newCatalogCmd() *cobra.Command {
 func newRunCmd() *cobra.Command {
 	var dryRun bool
 	var crop string
-	var fromYear int
+	var fromRaw string
 	var toYear int
 	var year int
 	var ufList string
@@ -90,6 +90,11 @@ func newRunCmd() *cobra.Command {
 		Short: "Download, convert, and land a dataset to bronze",
 		Args:  cobra.ExactArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) error {
+			fromYear, fromDate, err := parseFromFlag(fromRaw)
+			if err != nil {
+				return err
+			}
+
 			ctx := cmd.Context()
 			cfg, err := config.LoadFromEnv()
 			if err != nil {
@@ -130,6 +135,7 @@ func newRunCmd() *cobra.Command {
 				FromYear:  fromYear,
 				ToYear:    toYear,
 				Year:      year,
+				FromDate:  fromDate,
 				UFs:       ufs,
 			})
 			if err != nil {
@@ -150,7 +156,7 @@ func newRunCmd() *cobra.Command {
 
 	cmd.Flags().BoolVar(&dryRun, "dry-run", false, "Resolve and download without landing parquet")
 	cmd.Flags().StringVar(&crop, "crop", "", "PAM crop filter (soja, milho, trigo, or all)")
-	cmd.Flags().IntVar(&fromYear, "from", 0, "PAM start year (inclusive)")
+	cmd.Flags().StringVar(&fromRaw, "from", "", "Start year (2010) or ISO date (2010-01-01) for PAM/CEPEA")
 	cmd.Flags().IntVar(&toYear, "to", 0, "PAM end year (inclusive)")
 	cmd.Flags().IntVar(&year, "year", 0, "INMET BDMEP year for annual ZIP pulls")
 	cmd.Flags().StringVar(&ufList, "uf", "", "Filter by UF (comma-separated; numeric codes for IBGE PAM, state abbreviations for INMET)")

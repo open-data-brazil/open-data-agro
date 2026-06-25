@@ -127,6 +127,9 @@ def main() -> int:
             "bronze_bcb_sgs_ipca_12m": "expectations/suites/bronze/bcb/sgs_ipca_12m.json",
             "bronze_bcb_sgs_igpm": "expectations/suites/bronze/bcb/sgs_igpm.json",
             "bronze_bcb_sgs_ptax_usd_compra": "expectations/suites/bronze/bcb/sgs_ptax_usd_compra.json",
+            "bronze_cepea_soja_paranagua": "expectations/suites/bronze/cepea/soja_paranagua.json",
+            "bronze_cepea_soja_parana": "expectations/suites/bronze/cepea/soja_parana.json",
+            "bronze_cepea_milho": "expectations/suites/bronze/cepea/milho.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:

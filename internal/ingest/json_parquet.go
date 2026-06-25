@@ -6,6 +6,7 @@ import (
 
 	"github.com/open-data-brazil/open-data-agro/internal/bcb"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
+	"github.com/open-data-brazil/open-data-agro/internal/cepea"
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 )
 
@@ -32,6 +33,12 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		return writeStringTable(headers, rows)
 	case "bcb":
 		headers, rows, err := bcb.FlattenSGS(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "cepea":
+		headers, rows, err := cepea.FlattenIndicador(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}

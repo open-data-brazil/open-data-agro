@@ -8,6 +8,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/anp"
 	"github.com/open-data-brazil/open-data-agro/internal/bcb"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
+	"github.com/open-data-brazil/open-data-agro/internal/cepea"
 	"github.com/open-data-brazil/open-data-agro/internal/conab"
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 	"github.com/open-data-brazil/open-data-agro/internal/inmet"
@@ -19,6 +20,7 @@ type SourceOptions struct {
 	FromYear int
 	ToYear   int
 	Year     int
+	FromDate string
 	UFs      []string
 }
 
@@ -52,13 +54,15 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		return inmet.ResolveURL(entry)
 	case "bcb":
 		return bcb.ResolveURL(entry)
+	case "cepea":
+		return cepea.ResolveURL(entry)
 	default:
 		return "", fmt.Errorf("unsupported agency %q for dataset %s", agency, entry.DatasetID)
 	}
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, opts SourceOptions) (*SourceDownload, error) {
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, opts SourceOptions) (*SourceDownload, error) {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
 		return nil, err
@@ -88,6 +92,19 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 
 	if agency == "bcb" {
 		body, sourceURL, err := bcbClient.FetchSGSSnapshot(ctx, entry)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	}
+
+	if agency == "cepea" {
+		body, sourceURL, err := cepeaClient.FetchIndicadorSnapshot(ctx, entry, opts.FromDate)
 		if err != nil {
 			return nil, err
 		}

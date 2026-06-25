@@ -1,0 +1,28 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Soja Paraná regional series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "praca", "value_set": ["Paraná"] },
+      "meta": { "notes": "Regional reference location." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["produto", "praca", "data"] },
+      "meta": { "notes": "No duplicate observations per location/date." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "cepea.soja-parana",
+    "fonte_oficial": "https://www.cepea.org.br/",
+    "agencia": "CEPEA",
+    "licenca": "CC BY-NC 4.0"
+  },
+  "name": "bronze.cepea.soja_parana",
+  "id": "bronze-cepea-soja-parana-suite"
+}

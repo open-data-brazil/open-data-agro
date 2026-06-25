@@ -128,6 +128,21 @@ Timestamps in source files are **UTC**; missing values use sentinels `9999`, `Nu
 
 Historical backfill paginates `dataInicial`/`dataFinal` in ≤10-year chunks per BCB API limits.
 
+### CEPEA — Preços Agro (Phase 19)
+
+| Dataset ID | Indicator | Status |
+|------------|-----------|--------|
+| `cepea.soja-paranagua` | Soja — Paranaguá port (R$/sc 60 kg) | **P0 — implemented** |
+| `cepea.soja-parana` | Soja — Paraná regional | **P1 — implemented** |
+| `cepea.milho` | Milho — Campinas | **P1 — implemented** |
+| `cepea.boi-gordo` | Boi gordo — São Paulo | **P2 — implemented** |
+
+**Fonte oficial:** [CEPEA/ESALQ-USP](https://www.cepea.org.br/) · **License:** [CC BY-NC 4.0](https://www.cepea.org.br/br/licenca-de-uso-de-dados.aspx) — market reference (`fonte_tipo=referencia_mercado`), not `.gov.br`.
+
+Programmatic ingest tries the CEPEA portal first; when Cloudflare blocks access, it falls back to the Notícias Agrícolas mirror (same CEPEA indicators). Full historical backfill from 2010 uses CEPEA “Consulta ao Banco de Dados” export; live ingest captures the latest published window.
+
+Crossing with CONAB local prices (Phase 11) and BCB PTAX (Phase 18) is planned in analytics — see `.local/phases/DATA-CROSSING-VISION.md`.
+
 ---
 
 ## Rules

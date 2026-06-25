@@ -3,6 +3,7 @@ package ingest
 import (
 	"encoding/json"
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
@@ -17,6 +18,11 @@ type BronzeMetadata struct {
 	RowCount       int    `json:"row_count"`
 	OriginalFormat string `json:"original_format"`
 	StorageMode    string `json:"storage_mode"`
+	Agencia        string `json:"agencia,omitempty"`
+	FonteOficial   string `json:"fonte_oficial,omitempty"`
+	FonteTipo      string `json:"fonte_tipo,omitempty"`
+	Licenca        string `json:"licenca,omitempty"`
+	PortalLabel    string `json:"portal_label,omitempty"`
 }
 
 // PartitionMetadataKey builds the _metadata.json key for a bronze partition.
@@ -31,7 +37,7 @@ func PartitionMetadataKey(datasetID string, ingestDate time.Time) (string, error
 
 // NewBronzeMetadata builds the partition sidecar payload.
 func NewBronzeMetadata(entry catalog.RegistryEntry, fp Fingerprint, sourceURL, storageMode string) BronzeMetadata {
-	return BronzeMetadata{
+	meta := BronzeMetadata{
 		DatasetID:      entry.DatasetID.String(),
 		SHA256:         fp.SHA256,
 		SourceURL:      sourceURL,
@@ -39,7 +45,21 @@ func NewBronzeMetadata(entry catalog.RegistryEntry, fp Fingerprint, sourceURL, s
 		RowCount:       fp.RowCount,
 		OriginalFormat: string(entry.Format),
 		StorageMode:    storageMode,
+		PortalLabel:    entry.PortalLabel,
 	}
+	if strings.HasPrefix(entry.DatasetID.String(), "cepea.") {
+		meta.Agencia = "CEPEA"
+		meta.FonteOficial = entry.PortalURL()
+		meta.FonteTipo = entry.FonteTipo
+		meta.Licenca = entry.License
+		if meta.FonteTipo == "" {
+			meta.FonteTipo = "referencia_mercado"
+		}
+		if meta.Licenca == "" {
+			meta.Licenca = "CC BY-NC 4.0"
+		}
+	}
+	return meta
 }
 
 // MarshalBronzeMetadata serializes the sidecar JSON.

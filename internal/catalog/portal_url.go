@@ -28,8 +28,14 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "bcb.") {
 		return BCBDadosAbertosURL
 	}
+	if strings.HasPrefix(datasetID.String(), "cepea.") {
+		return CEPEAPortalURL
+	}
 	return ""
 }
+
+// CEPEAPortalURL is the CEPEA/ESALQ-USP indicators portal URL.
+const CEPEAPortalURL = "https://www.cepea.org.br/"
 
 // BCBDadosAbertosURL is the BCB open data portal URL.
 const BCBDadosAbertosURL = "https://dadosabertos.bcb.gov.br/"

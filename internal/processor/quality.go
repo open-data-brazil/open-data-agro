@@ -179,6 +179,14 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_bcb_sgs_igpm", true
 	case "bcb.sgs-ptax-usd-compra":
 		return "bronze_bcb_sgs_ptax_usd_compra", true
+	case "cepea.soja-paranagua":
+		return "bronze_cepea_soja_paranagua", true
+	case "cepea.soja-parana":
+		return "bronze_cepea_soja_parana", true
+	case "cepea.milho":
+		return "bronze_cepea_milho", true
+	case "cepea.boi-gordo":
+		return "bronze_cepea_boi_gordo", true
 	default:
 		return "", false
 	}
