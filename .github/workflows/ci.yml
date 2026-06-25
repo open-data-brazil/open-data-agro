@@ -10,28 +10,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  quality:
+  go:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - name: Setup Go
+        uses: actions/setup-go@v5
         with:
-          version: 10
+          go-version: '1.22'
+          cache-dependency-path: go.sum
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: pnpm
+      - name: Sync workspace
+        run: go work sync
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Test
+        run: go test ./...
 
       - name: Lint
-        run: pnpm lint
-
-      - name: Typecheck
-        run: pnpm typecheck
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.64
+          args: ./...

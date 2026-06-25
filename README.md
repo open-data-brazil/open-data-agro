@@ -4,7 +4,7 @@
 
 **100% open-source** (MIT) toolkit for Brazilian **agricultural open data** — curated datasets, fetch pipelines, and developer-friendly APIs aligned to official primary sources (MAPA, IBGE, CONAB, INMET, Embrapa, and related `.gov.br` agencies).
 
-> **Status:** documentation and agent harness scaffold — implementation starting.
+> **Status:** Phase 0 Go platform scaffold — ingestor CLI, catalog registry, local Postgres.
 
 ---
 
@@ -21,7 +21,7 @@ Make Brazilian agricultural public data **easy to discover, embed offline, and i
 | **Embed** | Offline snapshots of official agricultural datasets with metadata |
 | **Fetch** | Maintainer scripts to refresh data from `.gov.br` APIs and portals |
 | **Normalize** | Canonical types, codes, and geospatial joins (IBGE municipalities, CAR, crops) |
-| **Expose** | TypeScript library and CLI (planned) for apps, research, and civic tech |
+| **Expose** | Go CLI and libraries for apps, research, and civic tech |
 
 ---
 

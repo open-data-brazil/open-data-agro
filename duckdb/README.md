@@ -12,7 +12,7 @@ DuckDB is used for ad-hoc processing (Phase 4) and analytics views (Phase 8).
 
 ## Environment
 
-Set `DUCKDB_PATH` in `.env` (copy from `.env.example`). The root package lists `duckdb` as a dev dependency for Node bindings in later phases.
+Set `DUCKDB_PATH` in `.env` (copy from `.env.example`). Phase 4 wires DuckDB via `cmd/processor`.
 
 ## Related lake paths
 

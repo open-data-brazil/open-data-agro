@@ -56,15 +56,14 @@ Branch naming: `feat/`, `fix/`, `docs/`, `test/`, `chore/`
 - Update [docs/OFFICIAL-SOURCES.md](docs/OFFICIAL-SOURCES.md) if adding a dataset
 - Follow [docs/API-CONTRACT.md](docs/API-CONTRACT.md) for public exports
 
-### 4. Verify (when toolchain exists)
+### 4. Verify
 
 ```bash
-pnpm test
-pnpm lint
-pnpm typecheck
+make test
+make lint
+make build
+./bin/ingestor --help
 ```
-
-Until scaffold exists, document manual verification in PR.
 
 ### 5. Pull request
 
