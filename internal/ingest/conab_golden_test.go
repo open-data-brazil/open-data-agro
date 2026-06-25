@@ -46,6 +46,25 @@ func TestSerieHistoricaGraosGoldenVector(t *testing.T) {
 	}
 }
 
+func TestOfertaDemandaGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readCONABTestdata(t, "OfertaDemanda.sample.txt")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("conab.oferta-demanda"),
+		Format:    catalog.FormatTXT,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount < 4 {
+		t.Fatalf("rowCount: got %d want >= 4", rowCount)
+	}
+}
+
 func readCONABTestdata(t *testing.T, name string) []byte {
 	t.Helper()
 	path := filepath.Join("..", "conab", "testdata", name)

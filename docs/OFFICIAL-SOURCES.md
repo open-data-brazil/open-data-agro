@@ -37,14 +37,14 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 
 | Dataset ID | Portal label | Status |
 |------------|--------------|--------|
-| `conab.oferta-demanda` | Oferta e Demanda | Planned |
-| `conab.precos-minimos` | Preços Mínimos | Planned |
-| `conab.precos-agropecuarios-mensal-uf` | Preços agropecuários Mensal UF | Planned |
-| `conab.precos-agropecuarios-mensal-municipio` | Preços agropecuários Mensal Município | Planned |
-| `conab.precos-agropecuarios-semanal-uf` | Preços agropecuários Semanal UF | Planned |
-| `conab.precos-agropecuarios-semanal-municipio` | Preços agropecuários Semanal Municipio | Planned |
-| `conab.prohort-diario` | Prohort Diário | Planned |
-| `conab.prohort-mensal` | Prohort Mensal | Planned |
+| `conab.oferta-demanda` | Oferta e Demanda | **P1 — implemented** |
+| `conab.precos-minimos` | Preços Mínimos | Catalog registered |
+| `conab.precos-agropecuarios-mensal-uf` | Preços agropecuários Mensal UF | Catalog registered |
+| `conab.precos-agropecuarios-mensal-municipio` | Preços agropecuários Mensal Município | Catalog registered |
+| `conab.precos-agropecuarios-semanal-uf` | Preços agropecuários Semanal UF | Catalog registered (P1 next) |
+| `conab.precos-agropecuarios-semanal-municipio` | Preços agropecuários Semanal Municipio | Catalog registered |
+| `conab.prohort-diario` | Prohort Diário | Catalog registered |
+| `conab.prohort-mensal` | Prohort Mensal | Catalog registered |
 
 ### Abastecimento (Phase 12)
 

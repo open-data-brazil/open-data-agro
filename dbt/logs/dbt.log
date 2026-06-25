@@ -9273,3 +9273,1568 @@ where uf is null
 [0m12:01:00.319039 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefc1596630>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefb45c87a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefc09109e0>]}
 [0m12:01:00.319325 [debug] [MainThread]: Flushing usage events
 [0m12:01:01.100012 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:06:19.310401 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e384f8500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e372d3c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e372d3b60>]}
+
+
+============================== 12:06:19.313380 | 6e56ec8f-505f-4d4d-a8a1-8e26624ba1dd ==============================
+[0m12:06:19.313380 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:06:19.313781 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'no_print': 'None', 'profiles_dir': '.', 'log_format': 'default', 'use_colors': 'True', 'invocation_command': 'dbt deps --profiles-dir .', 'version_check': 'True', 'cache_selected_only': 'False', 'target_path': 'None', 'partial_parse': 'True', 'write_json': 'True', 'introspect': 'True', 'fail_fast': 'False', 'debug': 'False', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'static_parser': 'True', 'empty': 'None', 'indirect_selection': 'eager', 'printer_width': '80', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False'}
+[0m12:06:19.402142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6e56ec8f-505f-4d4d-a8a1-8e26624ba1dd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e37af5bb0>]}
+[0m12:06:19.414713 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-gwe3oo3_'
+[0m12:06:19.415030 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:06:19.554576 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:06:19.555556 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:06:19.644111 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:06:19.647617 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:06:19.990889 [info ] [MainThread]: Installed from version 1.3.0
+[0m12:06:19.991243 [info ] [MainThread]: Updated version available: 1.4.0
+[0m12:06:19.991548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '6e56ec8f-505f-4d4d-a8a1-8e26624ba1dd', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e3700fb60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e3711c1a0>]}
+[0m12:06:19.991839 [info ] [MainThread]: 
+[0m12:06:19.992083 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:06:19.992786 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.724229, "process_in_blocks": "0", "process_kernel_time": 0.072964, "process_mem_max_rss": "121616", "process_out_blocks": "2296", "process_user_time": 1.091464}
+[0m12:06:19.993134 [debug] [MainThread]: Command `dbt deps` succeeded at 12:06:19.993074 after 0.72 seconds
+[0m12:06:19.993408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e379678c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e379647d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765e37516930>]}
+[0m12:06:19.993692 [debug] [MainThread]: Flushing usage events
+[0m12:06:20.649219 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:06:21.812417 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd27583020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd27c4fda0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd29f00bc0>]}
+
+
+============================== 12:06:21.814509 | 1260d171-b384-4774-b963-fd52ffaab4d5 ==============================
+[0m12:06:21.814509 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:06:21.814907 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'empty': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'warn_error': 'None', 'partial_parse': 'True', 'printer_width': '80', 'version_check': 'True', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'write_json': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'quiet': 'False', 'debug': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'use_experimental_parser': 'False', 'profiles_dir': '.', 'target_path': 'None', 'invocation_command': 'dbt build --profiles-dir . --select stg_conab__oferta_demanda+'}
+[0m12:06:21.970768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1260d171-b384-4774-b963-fd52ffaab4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd273308f0>]}
+[0m12:06:22.017519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1260d171-b384-4774-b963-fd52ffaab4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd2822ff80>]}
+[0m12:06:22.018593 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:06:22.081395 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m12:06:22.153199 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:06:22.153596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1260d171-b384-4774-b963-fd52ffaab4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd27cb40b0>]}
+[0m12:06:23.291037 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1260d171-b384-4774-b963-fd52ffaab4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd12dd9820>]}
+[0m12:06:23.353677 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:06:23.355291 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:06:23.407102 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1260d171-b384-4774-b963-fd52ffaab4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd12c32a20>]}
+[0m12:06:23.407504 [info ] [MainThread]: Found 7 models, 34 data tests, 3 sources, 607 macros
+[0m12:06:23.409542 [info ] [MainThread]: 
+[0m12:06:23.409860 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m12:06:23.410093 [info ] [MainThread]: 
+[0m12:06:23.410430 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:06:23.413726 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_mercado-mvp'
+[0m12:06:23.440882 [debug] [ThreadPool]: Using duckdb connection "list_mercado-mvp"
+[0m12:06:23.441185 [debug] [ThreadPool]: On list_mercado-mvp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_mercado-mvp"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"mercado-mvp"'
+    
+  
+  
+[0m12:06:23.441425 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:06:23.469122 [debug] [ThreadPool]: SQL status: OK in 0.028 seconds
+[0m12:06:23.470221 [debug] [ThreadPool]: On list_mercado-mvp: Close
+[0m12:06:23.470766 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_mercado-mvp, now create_mercado-mvp_main)
+[0m12:06:23.471136 [debug] [ThreadPool]: Creating schema "database: "mercado-mvp"
+schema: "main"
+"
+[0m12:06:23.476680 [debug] [ThreadPool]: Using duckdb connection "create_mercado-mvp_main"
+[0m12:06:23.476964 [debug] [ThreadPool]: On create_mercado-mvp_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_mercado-mvp_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='mercado-mvp'
+        and type='sqlite'
+    
+  
+[0m12:06:23.477201 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:06:23.477877 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:06:23.478898 [debug] [ThreadPool]: Using duckdb connection "create_mercado-mvp_main"
+[0m12:06:23.479165 [debug] [ThreadPool]: On create_mercado-mvp_main: BEGIN
+[0m12:06:23.479532 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:06:23.479777 [debug] [ThreadPool]: Using duckdb connection "create_mercado-mvp_main"
+[0m12:06:23.479991 [debug] [ThreadPool]: On create_mercado-mvp_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_mercado-mvp_main"} */
+
+    
+    
+        create schema if not exists "mercado-mvp"."main"
+    
+[0m12:06:23.480354 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:06:23.480994 [debug] [ThreadPool]: On create_mercado-mvp_main: COMMIT
+[0m12:06:23.481254 [debug] [ThreadPool]: Using duckdb connection "create_mercado-mvp_main"
+[0m12:06:23.481486 [debug] [ThreadPool]: On create_mercado-mvp_main: COMMIT
+[0m12:06:23.481818 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:06:23.482087 [debug] [ThreadPool]: On create_mercado-mvp_main: Close
+[0m12:06:23.483239 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_mercado-mvp_main, now list_mercado-mvp_main)
+[0m12:06:23.487169 [debug] [ThreadPool]: Using duckdb connection "list_mercado-mvp_main"
+[0m12:06:23.487526 [debug] [ThreadPool]: On list_mercado-mvp_main: BEGIN
+[0m12:06:23.487756 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:06:23.488254 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:06:23.488497 [debug] [ThreadPool]: Using duckdb connection "list_mercado-mvp_main"
+[0m12:06:23.488720 [debug] [ThreadPool]: On list_mercado-mvp_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_mercado-mvp_main"} */
+select
+      'mercado-mvp' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'mercado-mvp'
+  
+[0m12:06:23.490630 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m12:06:23.491581 [debug] [ThreadPool]: On list_mercado-mvp_main: ROLLBACK
+[0m12:06:23.492415 [debug] [ThreadPool]: Failed to rollback 'list_mercado-mvp_main'
+[0m12:06:23.492691 [debug] [ThreadPool]: On list_mercado-mvp_main: Close
+[0m12:06:23.493091 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1260d171-b384-4774-b963-fd52ffaab4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd12de1460>]}
+[0m12:06:23.493480 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:06:23.493728 [debug] [MainThread]: On master: BEGIN
+[0m12:06:23.493946 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:06:23.494340 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:06:23.494614 [debug] [MainThread]: On master: COMMIT
+[0m12:06:23.494846 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:06:23.495065 [debug] [MainThread]: On master: COMMIT
+[0m12:06:23.495412 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:06:23.495648 [debug] [MainThread]: On master: Close
+[0m12:06:23.497063 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_conab__oferta_demanda
+[0m12:06:23.497674 [info ] [Thread-1 (]: 1 of 12 START sql view model main.stg_conab__oferta_demanda .................... [RUN]
+[0m12:06:23.498039 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_mercado-mvp_main, now model.open_data_agro.stg_conab__oferta_demanda)
+[0m12:06:23.498431 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_conab__oferta_demanda
+[0m12:06:23.503662 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:23.504062 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_conab__oferta_demanda
+[0m12:06:23.524083 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:23.524532 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:23.524820 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: BEGIN
+[0m12:06:23.525064 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:06:23.525576 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:06:23.525839 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:23.526114 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__oferta_demanda"} */
+
+  
+  create view "mercado-mvp"."main"."stg_conab__oferta_demanda__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/mercado-mvp/silver/conab/oferta_demanda/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim(produto) as produto,
+  trim(dsc_safra) as safra,
+  cast(id_produto as varchar) as id_produto,
+  cast(estoque_inicial_1000t as varchar) as estoque_inicial_1000t,
+  cast(producao_1000t as varchar) as producao_1000t,
+  cast(importacao_1000t as varchar) as importacao_1000t,
+  cast(consumo_1000t as varchar) as consumo_1000t,
+  cast(exportacao_1000t as varchar) as exportacao_1000t,
+  cast(estoque_final_1000t as varchar) as estoque_final_1000t
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by produto, safra
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:06:23.527113 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.531120 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:23.531406 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__oferta_demanda"} */
+alter view "mercado-mvp"."main"."stg_conab__oferta_demanda__dbt_tmp" rename to "stg_conab__oferta_demanda"
+[0m12:06:23.531867 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:06:23.539762 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: COMMIT
+[0m12:06:23.540051 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:23.540298 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: COMMIT
+[0m12:06:23.541765 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.545318 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:23.545620 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__oferta_demanda"} */
+
+      drop view if exists "mercado-mvp"."main"."stg_conab__oferta_demanda__dbt_backup" cascade
+    
+[0m12:06:23.546057 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:06:23.547622 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: Close
+[0m12:06:23.548708 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1260d171-b384-4774-b963-fd52ffaab4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd2a0d7470>]}
+[0m12:06:23.549183 [info ] [Thread-1 (]: 1 of 12 OK created sql view model main.stg_conab__oferta_demanda ............... [[32mOK[0m in 0.05s]
+[0m12:06:23.549596 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_conab__oferta_demanda
+[0m12:06:23.550429 [debug] [Thread-3 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a
+[0m12:06:23.551022 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78
+[0m12:06:23.551551 [info ] [Thread-3 (]: 2 of 12 START test dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra  [RUN]
+[0m12:06:23.552127 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52
+[0m12:06:23.552622 [info ] [Thread-4 (]: 3 of 12 START test not_null_stg_conab__oferta_demanda_capturado_em ............. [RUN]
+[0m12:06:23.553014 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c
+[0m12:06:23.553573 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a'
+[0m12:06:23.554064 [info ] [Thread-2 (]: 4 of 12 START test not_null_stg_conab__oferta_demanda_fonte_oficial ............ [RUN]
+[0m12:06:23.554642 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78'
+[0m12:06:23.555112 [info ] [Thread-1 (]: 5 of 12 START test not_null_stg_conab__oferta_demanda_produto .................. [RUN]
+[0m12:06:23.555478 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a
+[0m12:06:23.556033 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52'
+[0m12:06:23.556501 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78
+[0m12:06:23.556881 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_conab__oferta_demanda, now test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c)
+[0m12:06:23.560829 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a"
+[0m12:06:23.561294 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52
+[0m12:06:23.567138 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78"
+[0m12:06:23.567583 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c
+[0m12:06:23.570568 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52"
+[0m12:06:23.570951 [debug] [Thread-3 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a
+[0m12:06:23.573634 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c"
+[0m12:06:23.574174 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78
+[0m12:06:23.574650 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52
+[0m12:06:23.587164 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a"
+[0m12:06:23.588833 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78"
+[0m12:06:23.589212 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c
+[0m12:06:23.591207 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52"
+[0m12:06:23.592882 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c"
+[0m12:06:23.593243 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78"
+[0m12:06:23.593698 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a"
+[0m12:06:23.594141 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52"
+[0m12:06:23.594478 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c"
+[0m12:06:23.594923 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78: BEGIN
+[0m12:06:23.595438 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a: BEGIN
+[0m12:06:23.595720 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52: BEGIN
+[0m12:06:23.596045 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c: BEGIN
+[0m12:06:23.596407 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:06:23.596843 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:06:23.597097 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:06:23.597483 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:06:23.598520 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.598840 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.599176 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:06:23.599485 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.599755 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a"
+[0m12:06:23.600049 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52"
+[0m12:06:23.600321 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78"
+[0m12:06:23.600646 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c"
+[0m12:06:23.600972 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        produto, safra
+    from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+    group by produto, safra
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:23.601271 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:23.601558 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:23.601854 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto
+from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+where produto is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:23.603179 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.603706 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.604199 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.606662 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78: ROLLBACK
+[0m12:06:23.607049 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m12:06:23.608677 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52: ROLLBACK
+[0m12:06:23.610017 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c: ROLLBACK
+[0m12:06:23.611163 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a: ROLLBACK
+[0m12:06:23.611988 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78'
+[0m12:06:23.613068 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52'
+[0m12:06:23.613986 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c'
+[0m12:06:23.614746 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a'
+[0m12:06:23.615066 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78: Close
+[0m12:06:23.615462 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52: Close
+[0m12:06:23.615929 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c: Close
+[0m12:06:23.616239 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a: Close
+[0m12:06:23.616772 [info ] [Thread-4 (]: 3 of 12 PASS not_null_stg_conab__oferta_demanda_capturado_em ................... [[32mPASS[0m in 0.06s]
+[0m12:06:23.617409 [info ] [Thread-2 (]: 4 of 12 PASS not_null_stg_conab__oferta_demanda_fonte_oficial .................. [[32mPASS[0m in 0.06s]
+[0m12:06:23.617864 [info ] [Thread-1 (]: 5 of 12 PASS not_null_stg_conab__oferta_demanda_produto ........................ [[32mPASS[0m in 0.06s]
+[0m12:06:23.618337 [info ] [Thread-3 (]: 2 of 12 PASS dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra  [[32mPASS[0m in 0.06s]
+[0m12:06:23.619021 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78
+[0m12:06:23.619617 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52
+[0m12:06:23.620051 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c
+[0m12:06:23.620469 [debug] [Thread-3 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a
+[0m12:06:23.620889 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f
+[0m12:06:23.621702 [info ] [Thread-4 (]: 6 of 12 START test not_null_stg_conab__oferta_demanda_safra .................... [RUN]
+[0m12:06:23.622265 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78, now test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f)
+[0m12:06:23.622767 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f
+[0m12:06:23.625887 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f"
+[0m12:06:23.626287 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f
+[0m12:06:23.628698 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f"
+[0m12:06:23.629080 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f"
+[0m12:06:23.629340 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f: BEGIN
+[0m12:06:23.629583 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:06:23.630075 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:06:23.630347 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f"
+[0m12:06:23.630609 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select safra
+from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+where safra is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:23.632061 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.633141 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f: ROLLBACK
+[0m12:06:23.633819 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f'
+[0m12:06:23.634085 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f: Close
+[0m12:06:23.634464 [info ] [Thread-4 (]: 6 of 12 PASS not_null_stg_conab__oferta_demanda_safra .......................... [[32mPASS[0m in 0.01s]
+[0m12:06:23.634831 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f
+[0m12:06:23.635544 [debug] [Thread-2 (]: Began running node model.open_data_agro.mart_conab__oferta_demanda
+[0m12:06:23.635931 [info ] [Thread-2 (]: 7 of 12 START sql external model main.mart_conab__oferta_demanda ............... [RUN]
+[0m12:06:23.636267 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52, now model.open_data_agro.mart_conab__oferta_demanda)
+[0m12:06:23.636545 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.mart_conab__oferta_demanda
+[0m12:06:23.639187 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.639608 [debug] [Thread-2 (]: Began executing node model.open_data_agro.mart_conab__oferta_demanda
+[0m12:06:23.669722 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.670061 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: BEGIN
+[0m12:06:23.670328 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:06:23.670848 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:06:23.671127 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.671389 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+  
+    
+    
+
+    create  table
+      "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_tmp"
+  
+    as (
+      
+
+select
+    produto,
+    safra,
+    id_produto,
+    estoque_inicial_1000t,
+    producao_1000t,
+    importacao_1000t,
+    consumo_1000t,
+    exportacao_1000t,
+    estoque_final_1000t,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+    );
+  
+  
+[0m12:06:23.673862 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.674715 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.675003 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+    select count(*) as row_count from "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_tmp"
+  
+[0m12:06:23.675548 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:06:23.676514 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.676907 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.677178 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+[0m12:06:23.677465 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:06:23.679136 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.679433 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+copy "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_tmp" to '/tmp/mercado-mvp/gold/mart_conab__oferta_demanda/mart.parquet' (format parquet)
+[0m12:06:23.680352 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.681158 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.681579 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.681877 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+      create or replace view "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_int" as (
+        select * from read_parquet('/tmp/mercado-mvp/gold/mart_conab__oferta_demanda/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:06:23.682514 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:06:23.684602 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.684889 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+alter view "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_int" rename to "mart_conab__oferta_demanda"
+[0m12:06:23.685318 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:06:23.686137 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: COMMIT
+[0m12:06:23.686413 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.686679 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: COMMIT
+[0m12:06:23.696994 [debug] [Thread-2 (]: SQL status: OK in 0.010 seconds
+[0m12:06:23.698589 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.698883 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+      drop table if exists "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_backup" cascade
+    
+[0m12:06:23.699318 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:06:23.701194 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:23.701494 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+      drop table if exists "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_tmp" cascade
+    
+[0m12:06:23.703022 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.703951 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__oferta_demanda: Close
+[0m12:06:23.704350 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1260d171-b384-4774-b963-fd52ffaab4d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd08700a70>]}
+[0m12:06:23.704807 [info ] [Thread-2 (]: 7 of 12 OK created sql external model main.mart_conab__oferta_demanda .......... [[32mOK[0m in 0.07s]
+[0m12:06:23.705202 [debug] [Thread-2 (]: Finished running node model.open_data_agro.mart_conab__oferta_demanda
+[0m12:06:23.705972 [debug] [Thread-3 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5
+[0m12:06:23.706516 [info ] [Thread-3 (]: 8 of 12 START test dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra  [RUN]
+[0m12:06:23.706957 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94
+[0m12:06:23.707262 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6
+[0m12:06:23.707596 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d
+[0m12:06:23.707898 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a, now test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5)
+[0m12:06:23.708267 [info ] [Thread-4 (]: 9 of 12 START test not_null_mart_conab__oferta_demanda_capturado_em ............ [RUN]
+[0m12:06:23.708695 [info ] [Thread-1 (]: 10 of 12 START test not_null_mart_conab__oferta_demanda_fonte_oficial .......... [RUN]
+[0m12:06:23.709171 [info ] [Thread-2 (]: 11 of 12 START test not_null_mart_conab__oferta_demanda_produto ................ [RUN]
+[0m12:06:23.709481 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5
+[0m12:06:23.709844 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f, now test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94)
+[0m12:06:23.710237 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c, now test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6)
+[0m12:06:23.710724 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_conab__oferta_demanda, now test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d)
+[0m12:06:23.713638 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5"
+[0m12:06:23.713997 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94
+[0m12:06:23.714460 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6
+[0m12:06:23.714941 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d
+[0m12:06:23.719126 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94"
+[0m12:06:23.723049 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6"
+[0m12:06:23.723565 [debug] [Thread-3 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5
+[0m12:06:23.726088 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d"
+[0m12:06:23.726606 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94
+[0m12:06:23.728310 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5"
+[0m12:06:23.728881 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6
+[0m12:06:23.730567 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94"
+[0m12:06:23.730991 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d
+[0m12:06:23.732992 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6"
+[0m12:06:23.733408 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5"
+[0m12:06:23.735101 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d"
+[0m12:06:23.735473 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94"
+[0m12:06:23.735910 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5: BEGIN
+[0m12:06:23.736362 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d"
+[0m12:06:23.736674 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94: BEGIN
+[0m12:06:23.737224 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6"
+[0m12:06:23.737669 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:06:23.737958 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d: BEGIN
+[0m12:06:23.738230 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:06:23.738613 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6: BEGIN
+[0m12:06:23.739219 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:06:23.739583 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.739960 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:06:23.740394 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.740767 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5"
+[0m12:06:23.741068 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.741497 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94"
+[0m12:06:23.741895 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.742368 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        produto, safra
+    from "mercado-mvp"."main"."mart_conab__oferta_demanda"
+    group by produto, safra
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:23.742662 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d"
+[0m12:06:23.743002 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "mercado-mvp"."main"."mart_conab__oferta_demanda"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:23.743381 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6"
+[0m12:06:23.743902 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto
+from "mercado-mvp"."main"."mart_conab__oferta_demanda"
+where produto is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:23.744379 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "mercado-mvp"."main"."mart_conab__oferta_demanda"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:23.744973 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.745348 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.745712 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.746924 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94: ROLLBACK
+[0m12:06:23.747332 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:06:23.748389 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5: ROLLBACK
+[0m12:06:23.749379 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d: ROLLBACK
+[0m12:06:23.750120 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94'
+[0m12:06:23.751156 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6: ROLLBACK
+[0m12:06:23.751911 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5'
+[0m12:06:23.752602 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d'
+[0m12:06:23.752957 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94: Close
+[0m12:06:23.753681 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6'
+[0m12:06:23.753977 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5: Close
+[0m12:06:23.754269 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d: Close
+[0m12:06:23.754729 [info ] [Thread-4 (]: 9 of 12 PASS not_null_mart_conab__oferta_demanda_capturado_em .................. [[32mPASS[0m in 0.04s]
+[0m12:06:23.755033 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6: Close
+[0m12:06:23.755439 [info ] [Thread-3 (]: 8 of 12 PASS dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra  [[32mPASS[0m in 0.05s]
+[0m12:06:23.756176 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94
+[0m12:06:23.755875 [info ] [Thread-2 (]: 11 of 12 PASS not_null_mart_conab__oferta_demanda_produto ...................... [[32mPASS[0m in 0.05s]
+[0m12:06:23.756725 [info ] [Thread-1 (]: 10 of 12 PASS not_null_mart_conab__oferta_demanda_fonte_oficial ................ [[32mPASS[0m in 0.05s]
+[0m12:06:23.757107 [debug] [Thread-3 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5
+[0m12:06:23.757484 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3
+[0m12:06:23.757876 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d
+[0m12:06:23.758457 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6
+[0m12:06:23.758793 [info ] [Thread-4 (]: 12 of 12 START test not_null_mart_conab__oferta_demanda_safra .................. [RUN]
+[0m12:06:23.759266 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94, now test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3)
+[0m12:06:23.759550 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3
+[0m12:06:23.762336 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3"
+[0m12:06:23.762727 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3
+[0m12:06:23.764293 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3"
+[0m12:06:23.764757 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3"
+[0m12:06:23.765046 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3: BEGIN
+[0m12:06:23.765296 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:06:23.765865 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.766140 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3"
+[0m12:06:23.766401 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select safra
+from "mercado-mvp"."main"."mart_conab__oferta_demanda"
+where safra is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:23.767336 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:06:23.768430 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3: ROLLBACK
+[0m12:06:23.769141 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3'
+[0m12:06:23.769410 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3: Close
+[0m12:06:23.769919 [info ] [Thread-4 (]: 12 of 12 PASS not_null_mart_conab__oferta_demanda_safra ........................ [[32mPASS[0m in 0.01s]
+[0m12:06:23.770335 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3
+[0m12:06:23.771339 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:06:23.771633 [debug] [MainThread]: On master: BEGIN
+[0m12:06:23.771868 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:06:23.772256 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:06:23.772514 [debug] [MainThread]: On master: COMMIT
+[0m12:06:23.772758 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:06:23.772980 [debug] [MainThread]: On master: COMMIT
+[0m12:06:23.773327 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:06:23.773575 [debug] [MainThread]: On master: Close
+[0m12:06:23.773860 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:06:23.774101 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6' was properly closed.
+[0m12:06:23.774312 [debug] [MainThread]: Connection 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5' was properly closed.
+[0m12:06:23.774521 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3' was properly closed.
+[0m12:06:23.774720 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d' was properly closed.
+[0m12:06:23.774962 [info ] [MainThread]: 
+[0m12:06:23.775221 [info ] [MainThread]: Finished running 1 external model, 10 data tests, 1 view model in 0 hours 0 minutes and 0.36 seconds (0.36s).
+[0m12:06:23.776295 [debug] [MainThread]: Command end result
+[0m12:06:23.799281 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:06:23.800525 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:06:23.804518 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m12:06:23.804788 [info ] [MainThread]: 
+[0m12:06:23.805063 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:06:23.805304 [info ] [MainThread]: 
+[0m12:06:23.805573 [info ] [MainThread]: Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=12
+[0m12:06:23.806184 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.0369854, "process_in_blocks": "0", "process_kernel_time": 0.094331, "process_mem_max_rss": "209652", "process_out_blocks": "5144", "process_user_time": 2.991519}
+[0m12:06:23.806532 [debug] [MainThread]: Command `dbt build` succeeded at 12:06:23.806468 after 2.04 seconds
+[0m12:06:23.806803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd2763f6b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd27c4fda0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74dd2848fc20>]}
+[0m12:06:23.807076 [debug] [MainThread]: Flushing usage events
+[0m12:06:24.432708 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:06:36.393585 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7119ef41c5f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7119ee7dfbc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7119f11e4ce0>]}
+
+
+============================== 12:06:36.395588 | 8f52479e-a886-49d4-af59-b8790ef79fa6 ==============================
+[0m12:06:36.395588 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:06:36.395977 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'invocation_command': 'dbt deps --profiles-dir .', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'indirect_selection': 'eager', 'version_check': 'True', 'fail_fast': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'printer_width': '80', 'target_path': 'None', 'cache_selected_only': 'False', 'debug': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'introspect': 'True', 'profiles_dir': '.', 'partial_parse': 'True', 'empty': 'None', 'use_colors': 'True', 'no_print': 'None', 'static_parser': 'True'}
+[0m12:06:36.483479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8f52479e-a886-49d4-af59-b8790ef79fa6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7119f0ee8530>]}
+[0m12:06:36.495083 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-xozanhlj'
+[0m12:06:36.495390 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:06:36.587354 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:06:36.588239 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:06:36.679564 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:06:36.683085 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:06:37.026299 [info ] [MainThread]: Installed from version 1.3.0
+[0m12:06:37.026660 [info ] [MainThread]: Updated version available: 1.4.0
+[0m12:06:37.026945 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '8f52479e-a886-49d4-af59-b8790ef79fa6', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7119ee014740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7119ee015100>]}
+[0m12:06:37.027227 [info ] [MainThread]: 
+[0m12:06:37.027483 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:06:37.028163 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.6767827, "process_in_blocks": "0", "process_kernel_time": 0.071944, "process_mem_max_rss": "121580", "process_out_blocks": "2296", "process_user_time": 1.109141}
+[0m12:06:37.028523 [debug] [MainThread]: Command `dbt deps` succeeded at 12:06:37.028456 after 0.68 seconds
+[0m12:06:37.028798 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7119efdd7590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7119ee083350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7119ef003c80>]}
+[0m12:06:37.029061 [debug] [MainThread]: Flushing usage events
+[0m12:06:37.654863 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:06:38.810812 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b26622f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b250526c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b24a1d280>]}
+
+
+============================== 12:06:38.812953 | d133f01c-6990-45c9-82af-293a11a06561 ==============================
+[0m12:06:38.812953 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:06:38.813365 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'target_path': 'None', 'warn_error': 'None', 'log_cache_events': 'False', 'fail_fast': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'indirect_selection': 'eager', 'version_check': 'True', 'printer_width': '80', 'partial_parse': 'True', 'quiet': 'False', 'cache_selected_only': 'False', 'use_colors': 'True', 'write_json': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '.', 'empty': 'False', 'invocation_command': 'dbt build --profiles-dir . --select stg_conab__oferta_demanda+'}
+[0m12:06:38.975267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd133f01c-6990-45c9-82af-293a11a06561', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b2357b530>]}
+[0m12:06:39.022552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd133f01c-6990-45c9-82af-293a11a06561', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b17787d10>]}
+[0m12:06:39.023751 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:06:39.086726 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m12:06:39.166380 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:06:39.166717 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m12:06:39.166943 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:06:39.199572 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd133f01c-6990-45c9-82af-293a11a06561', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b17655f10>]}
+[0m12:06:39.299725 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:06:39.300991 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:06:39.314063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd133f01c-6990-45c9-82af-293a11a06561', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b23522900>]}
+[0m12:06:39.314436 [info ] [MainThread]: Found 7 models, 34 data tests, 3 sources, 607 macros
+[0m12:06:39.316697 [info ] [MainThread]: 
+[0m12:06:39.316999 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m12:06:39.317240 [info ] [MainThread]: 
+[0m12:06:39.317601 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:06:39.320835 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_mercado-mvp'
+[0m12:06:39.344755 [debug] [ThreadPool]: Using duckdb connection "list_mercado-mvp"
+[0m12:06:39.345082 [debug] [ThreadPool]: On list_mercado-mvp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_mercado-mvp"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"mercado-mvp"'
+    
+  
+  
+[0m12:06:39.345335 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:06:39.365369 [debug] [ThreadPool]: SQL status: OK in 0.020 seconds
+[0m12:06:39.366456 [debug] [ThreadPool]: On list_mercado-mvp: Close
+[0m12:06:39.367036 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_mercado-mvp, now create_mercado-mvp_main)
+[0m12:06:39.367397 [debug] [ThreadPool]: Creating schema "database: "mercado-mvp"
+schema: "main"
+"
+[0m12:06:39.371971 [debug] [ThreadPool]: Using duckdb connection "create_mercado-mvp_main"
+[0m12:06:39.372241 [debug] [ThreadPool]: On create_mercado-mvp_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_mercado-mvp_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='mercado-mvp'
+        and type='sqlite'
+    
+  
+[0m12:06:39.372573 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:06:39.373329 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:06:39.374290 [debug] [ThreadPool]: Using duckdb connection "create_mercado-mvp_main"
+[0m12:06:39.374572 [debug] [ThreadPool]: On create_mercado-mvp_main: BEGIN
+[0m12:06:39.374907 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:06:39.375142 [debug] [ThreadPool]: Using duckdb connection "create_mercado-mvp_main"
+[0m12:06:39.375346 [debug] [ThreadPool]: On create_mercado-mvp_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_mercado-mvp_main"} */
+
+    
+    
+        create schema if not exists "mercado-mvp"."main"
+    
+[0m12:06:39.375706 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:06:39.376341 [debug] [ThreadPool]: On create_mercado-mvp_main: COMMIT
+[0m12:06:39.376597 [debug] [ThreadPool]: Using duckdb connection "create_mercado-mvp_main"
+[0m12:06:39.376822 [debug] [ThreadPool]: On create_mercado-mvp_main: COMMIT
+[0m12:06:39.377143 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:06:39.377391 [debug] [ThreadPool]: On create_mercado-mvp_main: Close
+[0m12:06:39.378582 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_mercado-mvp_main, now list_mercado-mvp_main)
+[0m12:06:39.382697 [debug] [ThreadPool]: Using duckdb connection "list_mercado-mvp_main"
+[0m12:06:39.382989 [debug] [ThreadPool]: On list_mercado-mvp_main: BEGIN
+[0m12:06:39.383209 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:06:39.383622 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:06:39.383857 [debug] [ThreadPool]: Using duckdb connection "list_mercado-mvp_main"
+[0m12:06:39.384079 [debug] [ThreadPool]: On list_mercado-mvp_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_mercado-mvp_main"} */
+select
+      'mercado-mvp' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'mercado-mvp'
+  
+[0m12:06:39.385954 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m12:06:39.386947 [debug] [ThreadPool]: On list_mercado-mvp_main: ROLLBACK
+[0m12:06:39.387762 [debug] [ThreadPool]: Failed to rollback 'list_mercado-mvp_main'
+[0m12:06:39.388025 [debug] [ThreadPool]: On list_mercado-mvp_main: Close
+[0m12:06:39.388714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd133f01c-6990-45c9-82af-293a11a06561', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b26350890>]}
+[0m12:06:39.389063 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:06:39.389316 [debug] [MainThread]: On master: BEGIN
+[0m12:06:39.389542 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:06:39.389924 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:06:39.390169 [debug] [MainThread]: On master: COMMIT
+[0m12:06:39.390392 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:06:39.390622 [debug] [MainThread]: On master: COMMIT
+[0m12:06:39.390958 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:06:39.391205 [debug] [MainThread]: On master: Close
+[0m12:06:39.392695 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_conab__oferta_demanda
+[0m12:06:39.393368 [info ] [Thread-1 (]: 1 of 12 START sql view model main.stg_conab__oferta_demanda .................... [RUN]
+[0m12:06:39.394142 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_mercado-mvp_main, now model.open_data_agro.stg_conab__oferta_demanda)
+[0m12:06:39.394702 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_conab__oferta_demanda
+[0m12:06:39.402177 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:39.402617 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_conab__oferta_demanda
+[0m12:06:39.423362 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:39.423839 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:39.424118 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: BEGIN
+[0m12:06:39.424376 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:06:39.424974 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.425249 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:39.425535 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__oferta_demanda"} */
+
+  
+  create view "mercado-mvp"."main"."stg_conab__oferta_demanda__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/mercado-mvp/silver/conab/oferta_demanda/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim(produto) as produto,
+  trim(dsc_safra) as safra,
+  cast(id_produto as varchar) as id_produto,
+  cast(estoque_inicial_1000t as varchar) as estoque_inicial_1000t,
+  cast(producao_1000t as varchar) as producao_1000t,
+  cast(importacao_1000t as varchar) as importacao_1000t,
+  cast(consumo_1000t as varchar) as consumo_1000t,
+  cast(exportacao_1000t as varchar) as exportacao_1000t,
+  cast(estoque_final_1000t as varchar) as estoque_final_1000t
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by produto, safra
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:06:39.426573 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.430717 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:39.431082 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__oferta_demanda"} */
+alter view "mercado-mvp"."main"."stg_conab__oferta_demanda" rename to "stg_conab__oferta_demanda__dbt_backup"
+[0m12:06:39.431553 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:06:39.433448 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:39.433752 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__oferta_demanda"} */
+alter view "mercado-mvp"."main"."stg_conab__oferta_demanda__dbt_tmp" rename to "stg_conab__oferta_demanda"
+[0m12:06:39.434193 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:06:39.443224 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: COMMIT
+[0m12:06:39.443536 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:39.443804 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: COMMIT
+[0m12:06:39.454312 [debug] [Thread-1 (]: SQL status: OK in 0.010 seconds
+[0m12:06:39.458152 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__oferta_demanda"
+[0m12:06:39.458473 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__oferta_demanda"} */
+
+      drop view if exists "mercado-mvp"."main"."stg_conab__oferta_demanda__dbt_backup" cascade
+    
+[0m12:06:39.459780 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.461454 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__oferta_demanda: Close
+[0m12:06:39.462562 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd133f01c-6990-45c9-82af-293a11a06561', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b147c0860>]}
+[0m12:06:39.463026 [info ] [Thread-1 (]: 1 of 12 OK created sql view model main.stg_conab__oferta_demanda ............... [[32mOK[0m in 0.07s]
+[0m12:06:39.463433 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_conab__oferta_demanda
+[0m12:06:39.464244 [debug] [Thread-3 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a
+[0m12:06:39.464807 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78
+[0m12:06:39.465440 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52
+[0m12:06:39.466021 [info ] [Thread-3 (]: 2 of 12 START test dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra  [RUN]
+[0m12:06:39.466375 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c
+[0m12:06:39.466817 [info ] [Thread-4 (]: 3 of 12 START test not_null_stg_conab__oferta_demanda_capturado_em ............. [RUN]
+[0m12:06:39.467409 [info ] [Thread-2 (]: 4 of 12 START test not_null_stg_conab__oferta_demanda_fonte_oficial ............ [RUN]
+[0m12:06:39.467967 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a'
+[0m12:06:39.468275 [info ] [Thread-1 (]: 5 of 12 START test not_null_stg_conab__oferta_demanda_produto .................. [RUN]
+[0m12:06:39.468793 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78'
+[0m12:06:39.469420 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52'
+[0m12:06:39.469904 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a
+[0m12:06:39.470210 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_conab__oferta_demanda, now test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c)
+[0m12:06:39.470626 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78
+[0m12:06:39.471143 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52
+[0m12:06:39.480158 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a"
+[0m12:06:39.480516 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c
+[0m12:06:39.486619 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78"
+[0m12:06:39.490735 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52"
+[0m12:06:39.493472 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c"
+[0m12:06:39.493782 [debug] [Thread-3 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a
+[0m12:06:39.494239 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78
+[0m12:06:39.499939 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52
+[0m12:06:39.505653 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c
+[0m12:06:39.510065 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78"
+[0m12:06:39.510580 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a"
+[0m12:06:39.512869 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52"
+[0m12:06:39.514977 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c"
+[0m12:06:39.515556 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78"
+[0m12:06:39.516005 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a"
+[0m12:06:39.516452 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52"
+[0m12:06:39.516796 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78: BEGIN
+[0m12:06:39.517169 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c"
+[0m12:06:39.517528 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a: BEGIN
+[0m12:06:39.517836 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52: BEGIN
+[0m12:06:39.518107 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:06:39.518388 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c: BEGIN
+[0m12:06:39.518679 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:06:39.518995 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:06:39.519406 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:06:39.519810 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:06:39.520310 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:06:39.520608 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:06:39.520963 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:06:39.521260 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78"
+[0m12:06:39.521596 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a"
+[0m12:06:39.521871 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52"
+[0m12:06:39.522135 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c"
+[0m12:06:39.522415 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:39.522717 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        produto, safra
+    from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+    group by produto, safra
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:39.523001 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:39.523272 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto
+from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+where produto is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:39.524683 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.527485 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52: ROLLBACK
+[0m12:06:39.527826 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m12:06:39.528262 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m12:06:39.528711 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m12:06:39.529598 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52'
+[0m12:06:39.530758 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c: ROLLBACK
+[0m12:06:39.531896 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78: ROLLBACK
+[0m12:06:39.532310 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52: Close
+[0m12:06:39.533802 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a: ROLLBACK
+[0m12:06:39.534693 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c'
+[0m12:06:39.535402 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78'
+[0m12:06:39.535899 [info ] [Thread-2 (]: 4 of 12 PASS not_null_stg_conab__oferta_demanda_fonte_oficial .................. [[32mPASS[0m in 0.07s]
+[0m12:06:39.536868 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a'
+[0m12:06:39.537347 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c: Close
+[0m12:06:39.537637 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78: Close
+[0m12:06:39.538017 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52
+[0m12:06:39.538411 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a: Close
+[0m12:06:39.539083 [info ] [Thread-1 (]: 5 of 12 PASS not_null_stg_conab__oferta_demanda_produto ........................ [[32mPASS[0m in 0.07s]
+[0m12:06:39.539487 [info ] [Thread-4 (]: 3 of 12 PASS not_null_stg_conab__oferta_demanda_capturado_em ................... [[32mPASS[0m in 0.07s]
+[0m12:06:39.539917 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f
+[0m12:06:39.540654 [info ] [Thread-3 (]: 2 of 12 PASS dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra  [[32mPASS[0m in 0.07s]
+[0m12:06:39.541257 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c
+[0m12:06:39.541656 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78
+[0m12:06:39.541995 [info ] [Thread-2 (]: 6 of 12 START test not_null_stg_conab__oferta_demanda_safra .................... [RUN]
+[0m12:06:39.542610 [debug] [Thread-3 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a
+[0m12:06:39.543243 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__oferta_demanda_fonte_oficial.787b7f8c52, now test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f)
+[0m12:06:39.543663 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f
+[0m12:06:39.546360 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f"
+[0m12:06:39.546775 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f
+[0m12:06:39.548338 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f"
+[0m12:06:39.548746 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f"
+[0m12:06:39.549031 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f: BEGIN
+[0m12:06:39.549277 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:06:39.549807 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.550096 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f"
+[0m12:06:39.550358 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select safra
+from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+where safra is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:39.551951 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.553070 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f: ROLLBACK
+[0m12:06:39.553779 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f'
+[0m12:06:39.554049 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f: Close
+[0m12:06:39.554475 [info ] [Thread-2 (]: 6 of 12 PASS not_null_stg_conab__oferta_demanda_safra .......................... [[32mPASS[0m in 0.01s]
+[0m12:06:39.554880 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f
+[0m12:06:39.555559 [debug] [Thread-1 (]: Began running node model.open_data_agro.mart_conab__oferta_demanda
+[0m12:06:39.555991 [info ] [Thread-1 (]: 7 of 12 START sql external model main.mart_conab__oferta_demanda ............... [RUN]
+[0m12:06:39.556335 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__oferta_demanda_produto.3a02b0361c, now model.open_data_agro.mart_conab__oferta_demanda)
+[0m12:06:39.556621 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.mart_conab__oferta_demanda
+[0m12:06:39.559334 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.559751 [debug] [Thread-1 (]: Began executing node model.open_data_agro.mart_conab__oferta_demanda
+[0m12:06:39.599994 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.600405 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: BEGIN
+[0m12:06:39.600740 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:06:39.601605 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.602072 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.602526 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+  
+    
+    
+
+    create  table
+      "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_tmp"
+  
+    as (
+      
+
+select
+    produto,
+    safra,
+    id_produto,
+    estoque_inicial_1000t,
+    producao_1000t,
+    importacao_1000t,
+    consumo_1000t,
+    exportacao_1000t,
+    estoque_final_1000t,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "mercado-mvp"."main"."stg_conab__oferta_demanda"
+    );
+  
+  
+[0m12:06:39.606986 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m12:06:39.608091 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.608461 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+    select count(*) as row_count from "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_tmp"
+  
+[0m12:06:39.609252 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:06:39.610393 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.610847 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.611145 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+[0m12:06:39.611470 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:06:39.613241 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.613547 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+copy "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_tmp" to '/tmp/mercado-mvp/gold/mart_conab__oferta_demanda/mart.parquet' (format parquet)
+[0m12:06:39.614855 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.615685 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.616104 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.616388 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+      create or replace view "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_int" as (
+        select * from read_parquet('/tmp/mercado-mvp/gold/mart_conab__oferta_demanda/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:06:39.617127 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:06:39.619229 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.619531 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+alter view "mercado-mvp"."main"."mart_conab__oferta_demanda" rename to "mart_conab__oferta_demanda__dbt_backup"
+[0m12:06:39.620044 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:06:39.622156 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.622458 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+alter view "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_int" rename to "mart_conab__oferta_demanda"
+[0m12:06:39.622994 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:06:39.624047 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: COMMIT
+[0m12:06:39.624361 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.624635 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: COMMIT
+[0m12:06:39.626648 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:06:39.628521 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.628859 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+      drop view if exists "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_backup" cascade
+    
+[0m12:06:39.630989 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:06:39.633243 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__oferta_demanda"
+[0m12:06:39.633584 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__oferta_demanda"} */
+
+      drop table if exists "mercado-mvp"."main"."mart_conab__oferta_demanda__dbt_tmp" cascade
+    
+[0m12:06:39.635488 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:06:39.636545 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__oferta_demanda: Close
+[0m12:06:39.636992 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd133f01c-6990-45c9-82af-293a11a06561', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b14725850>]}
+[0m12:06:39.637450 [info ] [Thread-1 (]: 7 of 12 OK created sql external model main.mart_conab__oferta_demanda .......... [[32mOK[0m in 0.08s]
+[0m12:06:39.637855 [debug] [Thread-1 (]: Finished running node model.open_data_agro.mart_conab__oferta_demanda
+[0m12:06:39.638673 [debug] [Thread-3 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5
+[0m12:06:39.639321 [info ] [Thread-3 (]: 8 of 12 START test dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra  [RUN]
+[0m12:06:39.639963 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__oferta_demanda_produto__safra.7e41d55d1a, now test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5)
+[0m12:06:39.640286 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5
+[0m12:06:39.643192 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5"
+[0m12:06:39.643611 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94
+[0m12:06:39.643945 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6
+[0m12:06:39.644428 [info ] [Thread-2 (]: 9 of 12 START test not_null_mart_conab__oferta_demanda_capturado_em ............ [RUN]
+[0m12:06:39.644751 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d
+[0m12:06:39.645093 [debug] [Thread-3 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5
+[0m12:06:39.645453 [info ] [Thread-4 (]: 10 of 12 START test not_null_mart_conab__oferta_demanda_fonte_oficial .......... [RUN]
+[0m12:06:39.645776 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__oferta_demanda_safra.8ef9e6127f, now test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94)
+[0m12:06:39.646107 [info ] [Thread-1 (]: 11 of 12 START test not_null_mart_conab__oferta_demanda_produto ................ [RUN]
+[0m12:06:39.647766 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5"
+[0m12:06:39.648162 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__oferta_demanda_capturado_em.3493416a78, now test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6)
+[0m12:06:39.648441 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94
+[0m12:06:39.648753 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_conab__oferta_demanda, now test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d)
+[0m12:06:39.649099 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6
+[0m12:06:39.651586 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94"
+[0m12:06:39.651963 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5"
+[0m12:06:39.652309 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d
+[0m12:06:39.655631 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6"
+[0m12:06:39.656064 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5: BEGIN
+[0m12:06:39.658596 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d"
+[0m12:06:39.658906 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94
+[0m12:06:39.659281 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:06:39.659689 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6
+[0m12:06:39.661347 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94"
+[0m12:06:39.661833 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d
+[0m12:06:39.662200 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:06:39.663716 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6"
+[0m12:06:39.665388 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d"
+[0m12:06:39.665754 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94"
+[0m12:06:39.666080 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5"
+[0m12:06:39.666564 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6"
+[0m12:06:39.666898 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94: BEGIN
+[0m12:06:39.667286 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d"
+[0m12:06:39.667600 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        produto, safra
+    from "mercado-mvp"."main"."mart_conab__oferta_demanda"
+    group by produto, safra
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:39.667904 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6: BEGIN
+[0m12:06:39.668180 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:06:39.668470 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d: BEGIN
+[0m12:06:39.668844 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:06:39.669183 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:06:39.669500 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.669979 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.670371 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:06:39.670727 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94"
+[0m12:06:39.671025 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:06:39.671412 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6"
+[0m12:06:39.672525 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5: ROLLBACK
+[0m12:06:39.672820 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "mercado-mvp"."main"."mart_conab__oferta_demanda"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:39.673179 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d"
+[0m12:06:39.673589 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "mercado-mvp"."main"."mart_conab__oferta_demanda"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:39.674420 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5'
+[0m12:06:39.674816 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto
+from "mercado-mvp"."main"."mart_conab__oferta_demanda"
+where produto is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:39.675286 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5: Close
+[0m12:06:39.675676 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.676160 [info ] [Thread-3 (]: 8 of 12 PASS dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra  [[32mPASS[0m in 0.04s]
+[0m12:06:39.676496 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.676999 [debug] [Thread-3 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5
+[0m12:06:39.677344 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:06:39.678367 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94: ROLLBACK
+[0m12:06:39.679413 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6: ROLLBACK
+[0m12:06:39.679734 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3
+[0m12:06:39.680912 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d: ROLLBACK
+[0m12:06:39.681664 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94'
+[0m12:06:39.682405 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6'
+[0m12:06:39.682746 [info ] [Thread-3 (]: 12 of 12 START test not_null_mart_conab__oferta_demanda_safra .................. [RUN]
+[0m12:06:39.683494 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d'
+[0m12:06:39.683766 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94: Close
+[0m12:06:39.684066 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6: Close
+[0m12:06:39.684429 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__oferta_demanda_produto__safra.04baf13ee5, now test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3)
+[0m12:06:39.684720 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d: Close
+[0m12:06:39.685156 [info ] [Thread-2 (]: 9 of 12 PASS not_null_mart_conab__oferta_demanda_capturado_em .................. [[32mPASS[0m in 0.04s]
+[0m12:06:39.685613 [info ] [Thread-4 (]: 10 of 12 PASS not_null_mart_conab__oferta_demanda_fonte_oficial ................ [[32mPASS[0m in 0.04s]
+[0m12:06:39.685981 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3
+[0m12:06:39.686730 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94
+[0m12:06:39.686427 [info ] [Thread-1 (]: 11 of 12 PASS not_null_mart_conab__oferta_demanda_produto ...................... [[32mPASS[0m in 0.04s]
+[0m12:06:39.687211 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6
+[0m12:06:39.689975 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3"
+[0m12:06:39.690519 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d
+[0m12:06:39.691079 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3
+[0m12:06:39.692601 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3"
+[0m12:06:39.693011 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3"
+[0m12:06:39.693299 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3: BEGIN
+[0m12:06:39.693559 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:06:39.694084 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.694355 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3"
+[0m12:06:39.694619 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select safra
+from "mercado-mvp"."main"."mart_conab__oferta_demanda"
+where safra is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:06:39.695494 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:06:39.696534 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3: ROLLBACK
+[0m12:06:39.697240 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3'
+[0m12:06:39.697520 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3: Close
+[0m12:06:39.697919 [info ] [Thread-3 (]: 12 of 12 PASS not_null_mart_conab__oferta_demanda_safra ........................ [[32mPASS[0m in 0.01s]
+[0m12:06:39.698289 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3
+[0m12:06:39.699296 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:06:39.699561 [debug] [MainThread]: On master: BEGIN
+[0m12:06:39.699787 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:06:39.700197 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:06:39.700464 [debug] [MainThread]: On master: COMMIT
+[0m12:06:39.700698 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:06:39.700911 [debug] [MainThread]: On master: COMMIT
+[0m12:06:39.701212 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:06:39.701479 [debug] [MainThread]: On master: Close
+[0m12:06:39.701772 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:06:39.701989 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__oferta_demanda_produto.efc707015d' was properly closed.
+[0m12:06:39.702182 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__oferta_demanda_safra.308302edf3' was properly closed.
+[0m12:06:39.702376 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__oferta_demanda_fonte_oficial.5a35e11fc6' was properly closed.
+[0m12:06:39.702588 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__oferta_demanda_capturado_em.4cca36dd94' was properly closed.
+[0m12:06:39.702834 [info ] [MainThread]: 
+[0m12:06:39.703071 [info ] [MainThread]: Finished running 1 external model, 10 data tests, 1 view model in 0 hours 0 minutes and 0.39 seconds (0.39s).
+[0m12:06:39.704182 [debug] [MainThread]: Command end result
+[0m12:06:39.727709 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:06:39.729069 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:06:39.733261 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m12:06:39.733545 [info ] [MainThread]: 
+[0m12:06:39.733822 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:06:39.734058 [info ] [MainThread]: 
+[0m12:06:39.734310 [info ] [MainThread]: Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=12
+[0m12:06:39.734926 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 0.96693987, "process_in_blocks": "0", "process_kernel_time": 0.124129, "process_mem_max_rss": "206428", "process_out_blocks": "3680", "process_user_time": 1.905991}
+[0m12:06:39.735271 [debug] [MainThread]: Command `dbt build` succeeded at 12:06:39.735213 after 0.97 seconds
+[0m12:06:39.735557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b23d65b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b235115b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b23513d70>]}
+[0m12:06:39.735832 [debug] [MainThread]: Flushing usage events
+[0m12:06:40.363129 [debug] [MainThread]: An error was encountered while trying to flush usage events

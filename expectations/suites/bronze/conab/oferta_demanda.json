@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "CONAB product column." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "dsc_safra" },
+      "meta": { "notes": "Season label (maps to safra in staging)." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "Grain key — product must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "dsc_safra" },
+      "meta": { "notes": "Grain key — season must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.oferta-demanda",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Oferta e Demanda"
+  },
+  "name": "bronze.conab.oferta_demanda",
+  "id": "bronze-conab-oferta-demanda-suite"
+}

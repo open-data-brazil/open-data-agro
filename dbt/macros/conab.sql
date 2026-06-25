@@ -21,3 +21,15 @@
   cast(area_plantada_mil_ha as varchar) as area_plantada_mil_ha,
   cast(producao_mil_t as varchar) as producao_mil_t
 {% endmacro %}
+
+{% macro conab_oferta_demanda_columns() %}
+  trim(produto) as produto,
+  trim(dsc_safra) as safra,
+  cast(id_produto as varchar) as id_produto,
+  cast(estoque_inicial_1000t as varchar) as estoque_inicial_1000t,
+  cast(producao_1000t as varchar) as producao_1000t,
+  cast(importacao_1000t as varchar) as importacao_1000t,
+  cast(consumo_1000t as varchar) as consumo_1000t,
+  cast(exportacao_1000t as varchar) as exportacao_1000t,
+  cast(estoque_final_1000t as varchar) as estoque_final_1000t
+{% endmacro %}

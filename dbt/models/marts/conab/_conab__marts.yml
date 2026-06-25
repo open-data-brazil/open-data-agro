@@ -66,3 +66,32 @@ models:
               - produto
               - uf
               - ano
+
+  - name: mart_conab__oferta_demanda
+    description: |
+      Business mart — supply/demand balance grain is produto + safra.
+      Materialized to lake/gold/mart_conab__oferta_demanda/ as Parquet (local-first).
+    config:
+      meta:
+        dataset_id: conab.oferta-demanda
+        grain: produto, safra
+        conab_section: Mercado
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: safra
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - safra

@@ -17,12 +17,18 @@ fi
 mkdir -p "$(dirname "$DUCKDB_PATH")" "$ROOT/duckdb/exports"
 mkdir -p "$LAKE_ABS/gold/mart_conab__estimativa_graos"
 mkdir -p "$LAKE_ABS/gold/mart_conab__serie_historica_graos"
+mkdir -p "$LAKE_ABS/gold/mart_conab__oferta_demanda"
 
 "$DUCKDB_BIN" "$DUCKDB_PATH" -c "CREATE SCHEMA IF NOT EXISTS analytics;"
 
 for view_file in "$VIEWS_DIR"/*.sql; do
   [[ -f "$view_file" ]] || continue
   sql="$(sed "s|__LAKE_ROOT__|${LAKE_ABS}|g" "$view_file")"
+  parquet_path="$(printf '%s\n' "$sql" | sed -n "s/.*read_parquet('\([^']*\)').*/\1/p" | head -1)"
+  if [[ -n "$parquet_path" && ! -f "$parquet_path" ]]; then
+    echo "skip $(basename "$view_file") — missing $parquet_path"
+    continue
+  fi
   printf '%s\n' "$sql" | "$DUCKDB_BIN" "$DUCKDB_PATH"
 done
 

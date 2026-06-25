@@ -101,8 +101,11 @@ jobs:
           DUCKDB_PATH: /tmp/open-data-agro-analytics.duckdb
           PATH: ${{ github.workspace }}/.local/bin:${{ env.HOME }}/.duckdb/cli/latest:${{ env.PATH }}
         run: |
-          make analytics-init
-          make analytics-smoke
+          python3 scripts/ci/seed_mercado_silver.py
+          cd dbt && dbt build --profiles-dir . --select 'stg_conab__oferta_demanda+'
+          make analytics-init LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb
+          duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
+          make analytics-smoke DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb
           duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
 
   quality:

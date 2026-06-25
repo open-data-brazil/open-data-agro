@@ -22,3 +22,12 @@ sources:
           fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
           agencia: CONAB
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_graos"
+
+      - name: oferta_demanda
+        description: Oferta e demanda — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/oferta_demanda
+        meta:
+          dataset_id: conab.oferta-demanda
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Mercado
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/oferta_demanda"
