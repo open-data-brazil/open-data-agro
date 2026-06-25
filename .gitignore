@@ -29,3 +29,14 @@ playwright-report/
 test-results/
 *.tsbuildinfo
 .tmp/
+
+# Local lake and analytics artifacts
+lake/bronze/**
+!lake/bronze/.gitkeep
+lake/silver/**
+!lake/silver/.gitkeep
+lake/gold/**
+!lake/gold/.gitkeep
+duckdb/*.duckdb
+dbt/target/
+expectations/uncommitted/
