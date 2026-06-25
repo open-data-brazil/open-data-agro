@@ -25,6 +25,14 @@ jobs:
       - name: Install DuckDB CLI
         run: make duckdb-install
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python toolchain (GE tests)
+        run: pip install -r toolchain/python-requirements.txt
+
       - name: Sync workspace
         run: go work sync
 
@@ -107,7 +115,7 @@ jobs:
           export PATH="${{ github.workspace }}/.local/bin:${PATH}"
           export DUCKDB_BIN="${{ github.workspace }}/.local/bin/duckdb"
           python3 scripts/ci/seed_mercado_silver.py
-          cd dbt && dbt build --profiles-dir . --select 'stg_conab__oferta_demanda+'
+          ( cd dbt && dbt build --profiles-dir . --select 'stg_conab__oferta_demanda+' )
           make analytics-init LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb DUCKDB_BIN="$DUCKDB_BIN"
           duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
           make analytics-smoke DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb

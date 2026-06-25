@@ -13,10 +13,11 @@ test:
 	go test ./...
 
 # Mirror GitHub Actions CI jobs locally (see .github/workflows/ci.yml).
-ci-go: duckdb-install
+ci-go: duckdb-install python-install
 	go work sync
 	go test ./...
 	PATH="$(PWD)/.local/bin:$$PATH" DUCKDB_BIN="$(PWD)/.local/bin/duckdb" DUCKDB_INTEGRATION=1 go test ./internal/processor -run 'SmokeLocal|PreviewPromote' -count=1
+	GE_INTEGRATION=1 go test ./internal/processor -run 'Quality' -count=1
 
 ci-dbt: duckdb-install python-install
 	rm -rf /tmp/open-data-agro-lake /tmp/open-data-agro-ci.duckdb /tmp/open-data-agro-analytics.duckdb
@@ -35,7 +36,7 @@ ci-dbt: duckdb-install python-install
 	cd dbt && PATH="$(CURDIR)/.local/bin:$$PATH" DUCKDB_BIN="$(CURDIR)/.local/bin/duckdb" \
 		LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb \
 		dbt build --profiles-dir . --select 'stg_conab__oferta_demanda+'
-	PATH="$(PWD)/.local/bin:$$PATH" DUCKDB_BIN="$(PWD)/.local/bin/duckdb" \
+	cd "$(CURDIR)" && PATH="$(CURDIR)/.local/bin:$$PATH" DUCKDB_BIN="$(CURDIR)/.local/bin/duckdb" \
 		LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb \
 		$(MAKE) analytics-init analytics-smoke
 	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
