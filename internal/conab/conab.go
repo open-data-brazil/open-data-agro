@@ -1,4 +1,4 @@
-// Package conab is a placeholder for CONAB portal HTTP client and parsers (Phase 1).
+// Package conab provides the CONAB portal HTTP client and URL validation.
 package conab
 
 // PortalBase is the CONAB Portal de Informações Agropecuárias root URL.
