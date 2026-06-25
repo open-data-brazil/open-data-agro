@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: mart_conab__estimativa_graos
+    description: |
+      Business mart — grain is produto + uf + safra (one row per crop, state, and season).
+      Materialized to lake/gold/mart_conab__estimativa_graos/ as Parquet (local-first).
+    config:
+      meta:
+        dataset_id: conab.estimativa-graos
+        grain: produto, uf, safra
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: safra
+        tests:
+          - not_null
+      - name: capturado_em
+        description: Capture timestamp (_ingested_at from silver).
+        tests:
+          - not_null
+      - name: fonte_oficial
+        description: CONAB portal URL (required citation).
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - uf
+              - safra

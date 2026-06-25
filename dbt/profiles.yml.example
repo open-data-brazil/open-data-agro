@@ -1,0 +1,29 @@
+# Copy to ~/.dbt/profiles.yml or dbt/profiles.yml (gitignored locally).
+# Local-first default: dev_local reads silver Delta under LAKE_LOCAL_ROOT.
+
+open_data_agro:
+  target: dev_local
+  outputs:
+    dev_local:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_PATH', '../duckdb/analytics.duckdb') }}"
+      threads: 4
+      extensions:
+        - httpfs
+      external_root: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/gold"
+
+    # Production variant — same SQL, R2-backed paths (enable httpfs + secrets)
+    prod_r2:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_PATH', '../duckdb/analytics.duckdb') }}"
+      threads: 4
+      extensions:
+        - httpfs
+      external_root: "s3://{{ env_var('R2_BUCKET', 'open-data-agro') }}/gold"
+      secrets:
+        - type: s3
+          provider: r2
+          key_id: "{{ env_var('R2_ACCESS_KEY_ID') }}"
+          secret: "{{ env_var('R2_SECRET_ACCESS_KEY') }}"
+          region: auto
+          endpoint: "{{ env_var('R2_ENDPOINT') }}"

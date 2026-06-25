@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: stg_conab__estimativa_graos
+    description: Staging — CONAB estimativa de grãos from silver Delta (column names per glossary).
+    columns:
+      - name: produto
+        description: Crop / product (CONAB classification).
+        tests:
+          - not_null
+      - name: uf
+        description: Federative unit code.
+        tests:
+          - not_null
+      - name: safra
+        description: Harvest season label.
+        tests:
+          - not_null
+      - name: capturado_em
+        description: Ingest timestamp from silver metadata.
+        tests:
+          - not_null
+      - name: fonte_oficial
+        description: CONAB portal citation URL.
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - uf
+              - safra
+
+  - name: stg_conab__serie_historica_graos
+    description: Staging — CONAB série histórica de grãos from silver Delta.
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: ano
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - uf
+              - ano

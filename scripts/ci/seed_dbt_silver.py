@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+"""Seed minimal silver Delta tables for dbt CI (local-first, no R2)."""
+
+from __future__ import annotations
+
+import os
+import sys
+from pathlib import Path
+
+import pyarrow as pa
+from deltalake import write_deltalake
+
+
+def write_table(root: Path, table: str, data: pa.Table) -> None:
+    path = root / "silver" / "conab" / table
+    path.parent.mkdir(parents=True, exist_ok=True)
+    write_deltalake(str(path), data, mode="overwrite")
+
+
+def main() -> int:
+    lake_root = Path(os.environ.get("LAKE_LOCAL_ROOT", "/tmp/open-data-agro-lake"))
+    lake_root.mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__estimativa_graos").mkdir(parents=True, exist_ok=True)
+
+    meta = {
+        "_dataset_id": ["conab.estimativa-graos"],
+        "_ingested_at": ["2026-06-25T12:00:00Z"],
+        "_source_file": [str(lake_root / "bronze/seed.parquet")],
+    }
+
+    estimativa = pa.table(
+        {
+            "Produto": ["Soja", "Milho"],
+            "UF": ["PR", "MT"],
+            "Safra": ["2025/26", "2025/26"],
+            "Região": ["Sul", "Centro-Oeste"],
+            "Produção (mil t)": ["100", "120"],
+            "_dataset_id": ["conab.estimativa-graos", "conab.estimativa-graos"],
+            "_ingested_at": ["2026-06-25T12:00:00Z", "2026-06-25T12:00:00Z"],
+            "_source_file": [meta["_source_file"][0], meta["_source_file"][0]],
+        }
+    )
+    write_table(lake_root, "estimativa_graos", estimativa)
+
+    serie = pa.table(
+        {
+            "Produto": ["Soja", "Soja"],
+            "UF": ["PR", "RS"],
+            "Ano": ["2020", "2021"],
+            "Produção (mil t)": ["50", "55"],
+            "_dataset_id": ["conab.serie-historica-graos", "conab.serie-historica-graos"],
+            "_ingested_at": ["2026-06-25T12:00:00Z", "2026-06-25T12:00:00Z"],
+            "_source_file": [meta["_source_file"][0], meta["_source_file"][0]],
+        }
+    )
+    write_table(lake_root, "serie_historica_graos", serie)
+
+    print(f"seeded silver tables under {lake_root / 'silver' / 'conab'}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

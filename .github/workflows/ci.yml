@@ -41,3 +41,53 @@ jobs:
         with:
           version: v2.12.2
           args: ./...
+
+  dbt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python toolchain
+        run: pip install -r toolchain/python-requirements.txt
+
+      - name: Install DuckDB CLI
+        run: make duckdb-install
+
+      - name: Seed silver lake for dbt
+        env:
+          LAKE_LOCAL_ROOT: /tmp/open-data-agro-lake
+        run: python3 scripts/ci/seed_dbt_silver.py
+
+      - name: Configure dbt profile
+        run: cp dbt/profiles.yml.example dbt/profiles.yml
+
+      - name: dbt build
+        env:
+          LAKE_LOCAL_ROOT: /tmp/open-data-agro-lake
+          DUCKDB_PATH: /tmp/open-data-agro-ci.duckdb
+          PATH: ${{ github.workspace }}/.local/bin:${{ env.HOME }}/.duckdb/cli/latest:${{ env.PATH }}
+        working-directory: dbt
+        run: |
+          dbt deps --profiles-dir .
+          dbt build --profiles-dir . --select 'stg_conab__serie_historica_graos stg_conab__estimativa_graos+'
+
+      - name: dbt docs generate
+        env:
+          LAKE_LOCAL_ROOT: /tmp/open-data-agro-lake
+          DUCKDB_PATH: /tmp/open-data-agro-ci.duckdb
+          PATH: ${{ github.workspace }}/.local/bin:${{ env.HOME }}/.duckdb/cli/latest:${{ env.PATH }}
+        working-directory: dbt
+        run: dbt docs generate --profiles-dir .
+
+      - name: Upload dbt docs
+        uses: actions/upload-artifact@v4
+        with:
+          name: dbt-docs
+          path: dbt/target/
+          retention-days: 7

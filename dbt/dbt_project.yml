@@ -16,6 +16,19 @@ clean-targets:
   - target
   - dbt_packages
 
+vars:
+  lake_root: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}"
+  gold_root: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/gold"
+  conab_fonte_oficial: 'https://portaldeinformacoes.conab.gov.br/download-arquivos.html'
+
 models:
   open_data_agro:
-    +materialized: view
+    staging:
+      conab:
+        +materialized: view
+    intermediate:
+      conab:
+        +materialized: view
+    marts:
+      conab:
+        +materialized: external

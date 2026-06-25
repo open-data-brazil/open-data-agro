@@ -5,12 +5,20 @@ sources:
     description: CONAB silver Delta tables promoted from bronze Parquet (local-first).
     meta:
       fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+      agencia: CONAB
     tables:
       - name: estimativa_graos
-        description: Estimativa de grãos — silver Delta table
+        description: Estimativa de grãos — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/estimativa_graos
         meta:
           dataset_id: conab.estimativa-graos
-        external:
-          location: "{{ env_var('LAKE_LOCAL_ROOT', './lake') }}/silver/conab/estimativa_graos"
-          options:
-            format: delta
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/estimativa_graos"
+
+      - name: serie_historica_graos
+        description: Série histórica de grãos — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_graos
+        meta:
+          dataset_id: conab.serie-historica-graos
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_graos"
