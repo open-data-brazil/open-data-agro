@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "municipio" },
+      "meta": { "notes": "Delivery municipality." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "State code." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "ano_entrega" },
+      "meta": { "notes": "Delivery year must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.alimenta-brasil-entregas",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Agricultura Familiar > Programa Alimenta Brasil - Entregas"
+  },
+  "name": "bronze.conab.alimenta_brasil_entregas",
+  "id": "bronze-conab-alimenta-brasil-entregas-suite"
+}

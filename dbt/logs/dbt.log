@@ -13901,3 +13901,489 @@ alter view "dbt_workspace"."main"."mart_conab__armazenagem__dbt_int" rename to "
 [0m12:23:54.262423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75e3623afa70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75e361ce1ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75e34ccda690>]}
 [0m12:23:54.262794 [debug] [MainThread]: Flushing usage events
 [0m12:23:54.901986 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:26:17.891925 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be237310440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be235019f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be235150bf0>]}
+
+
+============================== 12:26:17.894097 | be13ecd8-3222-4ac1-8232-5973419f7e43 ==============================
+[0m12:26:17.894097 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:26:17.894507 [debug] [MainThread]: running dbt with arguments {'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'debug': 'False', 'write_json': 'True', 'quiet': 'False', 'log_format': 'default', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'target_path': 'None', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '.', 'invocation_command': 'dbt deps --profiles-dir .', 'use_colors': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'log_cache_events': 'False', 'version_check': 'True'}
+[0m12:26:17.986722 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'be13ecd8-3222-4ac1-8232-5973419f7e43', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be23488e5a0>]}
+[0m12:26:17.999398 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-ayjojhqe'
+[0m12:26:17.999737 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:26:18.231355 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:26:18.232373 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:26:18.322237 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:26:18.325804 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:26:18.720667 [info ] [MainThread]: Installed from version 1.3.0
+[0m12:26:18.721021 [info ] [MainThread]: Updated version available: 1.4.0
+[0m12:26:18.721314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'be13ecd8-3222-4ac1-8232-5973419f7e43', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be234698e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be234699400>]}
+[0m12:26:18.721616 [info ] [MainThread]: 
+[0m12:26:18.721865 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:26:18.722558 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.8760696, "process_in_blocks": "0", "process_kernel_time": 0.06715, "process_mem_max_rss": "121584", "process_out_blocks": "2304", "process_user_time": 1.180653}
+[0m12:26:18.722933 [debug] [MainThread]: Command `dbt deps` succeeded at 12:26:18.722871 after 0.88 seconds
+[0m12:26:18.723213 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be2351b4cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be2355e5b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7be2355e7170>]}
+[0m12:26:18.723494 [debug] [MainThread]: Flushing usage events
+[0m12:26:19.506859 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:26:20.772050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fafab030200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fafaa7802c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fafa9f57b00>]}
+
+
+============================== 12:26:20.774706 | 1a881b0c-979a-4bbb-b10c-cb3802ba1960 ==============================
+[0m12:26:20.774706 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:26:20.775119 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'version_check': 'True', 'static_parser': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '.', 'debug': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'no_print': 'None', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'fail_fast': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'log_format': 'default', 'invocation_command': 'dbt build --profiles-dir . --select stg_conab__alimenta_brasil_entregas+ stg_conab__alimenta_brasil_propostas+', 'warn_error': 'None', 'write_json': 'True', 'use_colors': 'True'}
+[0m12:26:20.935544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1a881b0c-979a-4bbb-b10c-cb3802ba1960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf9df7b410>]}
+[0m12:26:20.985023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1a881b0c-979a-4bbb-b10c-cb3802ba1960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fafacb8fc50>]}
+[0m12:26:20.986213 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:26:21.051971 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m12:26:21.127979 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:26:21.128370 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1a881b0c-979a-4bbb-b10c-cb3802ba1960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fafaa6942c0>]}
+[0m12:26:22.351801 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1a881b0c-979a-4bbb-b10c-cb3802ba1960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf9dbbe090>]}
+[0m12:26:22.456845 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:26:22.458334 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:26:22.473573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1a881b0c-979a-4bbb-b10c-cb3802ba1960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf95715cd0>]}
+[0m12:26:22.473987 [info ] [MainThread]: Found 19 models, 34 data tests, 9 sources, 615 macros
+[0m12:26:22.476385 [info ] [MainThread]: 
+[0m12:26:22.476710 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m12:26:22.476955 [info ] [MainThread]: 
+[0m12:26:22.477310 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:26:22.480646 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m12:26:22.501738 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m12:26:22.502101 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m12:26:22.502356 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:26:22.524916 [debug] [ThreadPool]: SQL status: OK in 0.022 seconds
+[0m12:26:22.526319 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m12:26:22.526976 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m12:26:22.527378 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m12:26:22.532342 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:26:22.532653 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m12:26:22.532988 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:26:22.533816 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:26:22.534819 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:26:22.535083 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m12:26:22.535589 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:26:22.535853 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:26:22.536085 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m12:26:22.536548 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:26:22.537210 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:26:22.537485 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:26:22.537719 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:26:22.538049 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:26:22.538318 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m12:26:22.539918 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m12:26:22.546358 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:26:22.546834 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m12:26:22.547255 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:26:22.548003 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:26:22.548454 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:26:22.548889 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m12:26:22.552063 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m12:26:22.553207 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m12:26:22.554077 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m12:26:22.554353 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m12:26:22.555436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1a881b0c-979a-4bbb-b10c-cb3802ba1960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf95664a70>]}
+[0m12:26:22.555821 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:26:22.556090 [debug] [MainThread]: On master: BEGIN
+[0m12:26:22.556325 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:26:22.556841 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:26:22.557113 [debug] [MainThread]: On master: COMMIT
+[0m12:26:22.557354 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:26:22.557589 [debug] [MainThread]: On master: COMMIT
+[0m12:26:22.557996 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:26:22.558268 [debug] [MainThread]: On master: Close
+[0m12:26:22.560090 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_conab__alimenta_brasil_entregas
+[0m12:26:22.560630 [debug] [Thread-2 (]: Began running node model.open_data_agro.stg_conab__alimenta_brasil_propostas
+[0m12:26:22.561220 [info ] [Thread-1 (]: 1 of 4 START sql view model main.stg_conab__alimenta_brasil_entregas ........... [RUN]
+[0m12:26:22.561819 [info ] [Thread-2 (]: 2 of 4 START sql view model main.stg_conab__alimenta_brasil_propostas .......... [RUN]
+[0m12:26:22.562276 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_conab__alimenta_brasil_entregas)
+[0m12:26:22.562809 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_conab__alimenta_brasil_propostas'
+[0m12:26:22.563220 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_conab__alimenta_brasil_entregas
+[0m12:26:22.563661 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.stg_conab__alimenta_brasil_propostas
+[0m12:26:22.569760 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__alimenta_brasil_entregas"
+[0m12:26:22.572498 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__alimenta_brasil_propostas"
+[0m12:26:22.572985 [debug] [Thread-2 (]: Began executing node model.open_data_agro.stg_conab__alimenta_brasil_propostas
+[0m12:26:22.573298 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_conab__alimenta_brasil_entregas
+[0m12:26:22.594538 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__alimenta_brasil_propostas"
+[0m12:26:22.596599 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__alimenta_brasil_entregas"
+[0m12:26:22.597148 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_conab__alimenta_brasil_propostas"
+[0m12:26:22.597484 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__alimenta_brasil_entregas"
+[0m12:26:22.597792 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__alimenta_brasil_propostas: BEGIN
+[0m12:26:22.598073 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__alimenta_brasil_entregas: BEGIN
+[0m12:26:22.598345 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:26:22.598632 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:26:22.599332 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:26:22.599665 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__alimenta_brasil_entregas"
+[0m12:26:22.599942 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:26:22.600250 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__alimenta_brasil_entregas"} */
+
+  
+  create view "dbt_workspace"."main"."stg_conab__alimenta_brasil_entregas__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/agricultura-familiar-mvp/silver/conab/alimenta_brasil_entregas/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  cast(ano_entrega as varchar) as ano_entrega,
+  cast(mes_entrega as varchar) as mes_entrega,
+  trim(municipio) as municipio,
+  trim(uf) as uf,
+  trim(regiao) as regiao,
+  trim(sexo) as sexo,
+  trim(ds_unidade_medida) as unidade_medida,
+  cast(qtd_entregue as varchar) as qtd_entregue,
+  cast(valor_entregue as varchar) as valor_entregue
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by ano_entrega, mes_entrega, municipio, uf, sexo
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:26:22.600574 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_conab__alimenta_brasil_propostas"
+[0m12:26:22.601068 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__alimenta_brasil_propostas"} */
+
+  
+  create view "dbt_workspace"."main"."stg_conab__alimenta_brasil_propostas__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/agricultura-familiar-mvp/silver/conab/alimenta_brasil_propostas/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  cast(ano as varchar) as ano,
+  cast(mes as varchar) as mes,
+  trim(municipio) as municipio,
+  cast(cod_ibge as varchar) as cod_ibge,
+  trim(uf) as uf,
+  trim(regiao) as regiao,
+  cast(valor_formalizado as varchar) as valor_formalizado,
+  cast(valor_executado as varchar) as valor_executado,
+  cast(valor_devolvido as varchar) as valor_devolvido
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by ano, mes, municipio, cod_ibge
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:26:22.602086 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:26:22.606290 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__alimenta_brasil_entregas"
+[0m12:26:22.606611 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m12:26:22.606920 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__alimenta_brasil_entregas"} */
+alter view "dbt_workspace"."main"."stg_conab__alimenta_brasil_entregas__dbt_tmp" rename to "stg_conab__alimenta_brasil_entregas"
+[0m12:26:22.608841 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_conab__alimenta_brasil_propostas"
+[0m12:26:22.609250 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__alimenta_brasil_propostas"} */
+alter view "dbt_workspace"."main"."stg_conab__alimenta_brasil_propostas__dbt_tmp" rename to "stg_conab__alimenta_brasil_propostas"
+[0m12:26:22.609586 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:26:22.617596 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__alimenta_brasil_entregas: COMMIT
+[0m12:26:22.617922 [debug] [Thread-2 (]: SQL status: OK in 0.008 seconds
+[0m12:26:22.618233 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__alimenta_brasil_entregas"
+[0m12:26:22.619095 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__alimenta_brasil_propostas: COMMIT
+[0m12:26:22.619407 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__alimenta_brasil_entregas: COMMIT
+[0m12:26:22.619724 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_conab__alimenta_brasil_propostas"
+[0m12:26:22.620101 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__alimenta_brasil_propostas: COMMIT
+[0m12:26:22.621339 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:26:22.625225 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__alimenta_brasil_entregas"
+[0m12:26:22.625581 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__alimenta_brasil_entregas"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_conab__alimenta_brasil_entregas__dbt_backup" cascade
+    
+[0m12:26:22.625879 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m12:26:22.627532 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_conab__alimenta_brasil_propostas"
+[0m12:26:22.627856 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__alimenta_brasil_propostas"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_conab__alimenta_brasil_propostas__dbt_backup" cascade
+    
+[0m12:26:22.628145 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:26:22.629880 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__alimenta_brasil_entregas: Close
+[0m12:26:22.630225 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:26:22.632029 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__alimenta_brasil_propostas: Close
+[0m12:26:22.632380 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1a881b0c-979a-4bbb-b10c-cb3802ba1960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf94cb7bf0>]}
+[0m12:26:22.632788 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1a881b0c-979a-4bbb-b10c-cb3802ba1960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf95714920>]}
+[0m12:26:22.633232 [info ] [Thread-1 (]: 1 of 4 OK created sql view model main.stg_conab__alimenta_brasil_entregas ...... [[32mOK[0m in 0.07s]
+[0m12:26:22.633712 [info ] [Thread-2 (]: 2 of 4 OK created sql view model main.stg_conab__alimenta_brasil_propostas ..... [[32mOK[0m in 0.07s]
+[0m12:26:22.634137 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_conab__alimenta_brasil_entregas
+[0m12:26:22.634521 [debug] [Thread-2 (]: Finished running node model.open_data_agro.stg_conab__alimenta_brasil_propostas
+[0m12:26:22.635368 [debug] [Thread-4 (]: Began running node model.open_data_agro.mart_conab__alimenta_brasil_entregas
+[0m12:26:22.635933 [debug] [Thread-3 (]: Began running node model.open_data_agro.mart_conab__alimenta_brasil_propostas
+[0m12:26:22.636640 [info ] [Thread-4 (]: 3 of 4 START sql external model main.mart_conab__alimenta_brasil_entregas ...... [RUN]
+[0m12:26:22.637997 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_conab__alimenta_brasil_entregas'
+[0m12:26:22.638306 [debug] [Thread-4 (]: Began compiling node model.open_data_agro.mart_conab__alimenta_brasil_entregas
+[0m12:26:22.637325 [info ] [Thread-3 (]: 4 of 4 START sql external model main.mart_conab__alimenta_brasil_propostas ..... [RUN]
+[0m12:26:22.641146 [debug] [Thread-4 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.641745 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_conab__alimenta_brasil_propostas'
+[0m12:26:22.642397 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.mart_conab__alimenta_brasil_propostas
+[0m12:26:22.642835 [debug] [Thread-4 (]: Began executing node model.open_data_agro.mart_conab__alimenta_brasil_entregas
+[0m12:26:22.646684 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.678335 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.678731 [debug] [Thread-3 (]: Began executing node model.open_data_agro.mart_conab__alimenta_brasil_propostas
+[0m12:26:22.679028 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: BEGIN
+[0m12:26:22.681399 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.681737 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:26:22.682172 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: BEGIN
+[0m12:26:22.682605 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:26:22.682966 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:26:22.683275 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.683572 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:26:22.683873 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_entregas"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_conab__alimenta_brasil_entregas__dbt_tmp"
+  
+    as (
+      
+
+select
+    ano_entrega,
+    mes_entrega,
+    municipio,
+    uf,
+    regiao,
+    sexo,
+    unidade_medida,
+    qtd_entregue,
+    valor_entregue,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_conab__alimenta_brasil_entregas"
+    );
+  
+  
+[0m12:26:22.684215 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.684642 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_propostas"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_conab__alimenta_brasil_propostas__dbt_tmp"
+  
+    as (
+      
+
+select
+    ano,
+    mes,
+    municipio,
+    cod_ibge,
+    uf,
+    regiao,
+    valor_formalizado,
+    valor_executado,
+    valor_devolvido,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_conab__alimenta_brasil_propostas"
+    );
+  
+  
+[0m12:26:22.687132 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:26:22.688038 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.688402 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:26:22.688711 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_entregas"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_conab__alimenta_brasil_entregas__dbt_tmp"
+  
+[0m12:26:22.689536 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.689940 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_propostas"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_conab__alimenta_brasil_propostas__dbt_tmp"
+  
+[0m12:26:22.690290 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:26:22.690636 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:26:22.691632 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.692642 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.693070 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.693358 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_entregas"} */
+
+[0m12:26:22.693645 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.693962 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:26:22.694268 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_propostas"} */
+
+[0m12:26:22.696015 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.696384 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:26:22.696690 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_entregas"} */
+copy "dbt_workspace"."main"."mart_conab__alimenta_brasil_entregas__dbt_tmp" to '/tmp/agricultura-familiar-mvp/gold/mart_conab__alimenta_brasil_entregas/mart.parquet' (format parquet)
+[0m12:26:22.697476 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.697844 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_propostas"} */
+copy "dbt_workspace"."main"."mart_conab__alimenta_brasil_propostas__dbt_tmp" to '/tmp/agricultura-familiar-mvp/gold/mart_conab__alimenta_brasil_propostas/mart.parquet' (format parquet)
+[0m12:26:22.698979 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:26:22.699770 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.700135 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:26:22.700908 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.701302 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.701638 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.701968 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_entregas"} */
+
+      create or replace view "dbt_workspace"."main"."mart_conab__alimenta_brasil_entregas__dbt_int" as (
+        select * from read_parquet('/tmp/agricultura-familiar-mvp/gold/mart_conab__alimenta_brasil_entregas/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:26:22.702262 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_propostas"} */
+
+      create or replace view "dbt_workspace"."main"."mart_conab__alimenta_brasil_propostas__dbt_int" as (
+        select * from read_parquet('/tmp/agricultura-familiar-mvp/gold/mart_conab__alimenta_brasil_propostas/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:26:22.702950 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:26:22.703274 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:26:22.705366 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.707399 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.707718 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_entregas"} */
+alter view "dbt_workspace"."main"."mart_conab__alimenta_brasil_entregas__dbt_int" rename to "mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.708054 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_propostas"} */
+alter view "dbt_workspace"."main"."mart_conab__alimenta_brasil_propostas__dbt_int" rename to "mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.708515 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:26:22.709388 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: COMMIT
+[0m12:26:22.709689 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:26:22.710030 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.710875 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: COMMIT
+[0m12:26:22.711219 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: COMMIT
+[0m12:26:22.711536 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.711870 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: COMMIT
+[0m12:26:22.712885 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:26:22.714493 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.714807 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:26:22.715129 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_entregas"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__alimenta_brasil_entregas__dbt_backup" cascade
+    
+[0m12:26:22.716792 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.717281 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_propostas"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__alimenta_brasil_propostas__dbt_backup" cascade
+    
+[0m12:26:22.717679 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:26:22.719956 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_entregas"
+[0m12:26:22.720352 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:26:22.720742 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_entregas"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__alimenta_brasil_entregas__dbt_tmp" cascade
+    
+[0m12:26:22.722817 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__alimenta_brasil_propostas"
+[0m12:26:22.723313 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__alimenta_brasil_propostas"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__alimenta_brasil_propostas__dbt_tmp" cascade
+    
+[0m12:26:22.724340 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:26:22.725330 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__alimenta_brasil_entregas: Close
+[0m12:26:22.725635 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:26:22.726116 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1a881b0c-979a-4bbb-b10c-cb3802ba1960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf940aaf00>]}
+[0m12:26:22.727127 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__alimenta_brasil_propostas: Close
+[0m12:26:22.727639 [info ] [Thread-4 (]: 3 of 4 OK created sql external model main.mart_conab__alimenta_brasil_entregas . [[32mOK[0m in 0.09s]
+[0m12:26:22.728099 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1a881b0c-979a-4bbb-b10c-cb3802ba1960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf94ca8290>]}
+[0m12:26:22.728704 [debug] [Thread-4 (]: Finished running node model.open_data_agro.mart_conab__alimenta_brasil_entregas
+[0m12:26:22.729152 [info ] [Thread-3 (]: 4 of 4 OK created sql external model main.mart_conab__alimenta_brasil_propostas  [[32mOK[0m in 0.09s]
+[0m12:26:22.729710 [debug] [Thread-3 (]: Finished running node model.open_data_agro.mart_conab__alimenta_brasil_propostas
+[0m12:26:22.730767 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:26:22.731049 [debug] [MainThread]: On master: BEGIN
+[0m12:26:22.731285 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:26:22.731802 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:26:22.732090 [debug] [MainThread]: On master: COMMIT
+[0m12:26:22.732344 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:26:22.732589 [debug] [MainThread]: On master: COMMIT
+[0m12:26:22.732938 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:26:22.733201 [debug] [MainThread]: On master: Close
+[0m12:26:22.733530 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:26:22.733764 [debug] [MainThread]: Connection 'model.open_data_agro.stg_conab__alimenta_brasil_entregas' was properly closed.
+[0m12:26:22.733976 [debug] [MainThread]: Connection 'model.open_data_agro.stg_conab__alimenta_brasil_propostas' was properly closed.
+[0m12:26:22.734178 [debug] [MainThread]: Connection 'model.open_data_agro.mart_conab__alimenta_brasil_entregas' was properly closed.
+[0m12:26:22.734390 [debug] [MainThread]: Connection 'model.open_data_agro.mart_conab__alimenta_brasil_propostas' was properly closed.
+[0m12:26:22.734702 [info ] [MainThread]: 
+[0m12:26:22.734981 [info ] [MainThread]: Finished running 2 external models, 2 view models in 0 hours 0 minutes and 0.26 seconds (0.26s).
+[0m12:26:22.735649 [debug] [MainThread]: Command end result
+[0m12:26:22.761088 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:26:22.762546 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:26:22.766332 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m12:26:22.766605 [info ] [MainThread]: 
+[0m12:26:22.766888 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:26:22.767127 [info ] [MainThread]: 
+[0m12:26:22.767372 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m12:26:22.767963 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.0413616, "process_in_blocks": "8", "process_kernel_time": 0.092, "process_mem_max_rss": "207204", "process_out_blocks": "5384", "process_user_time": 3.094013}
+[0m12:26:22.768313 [debug] [MainThread]: Command `dbt build` succeeded at 12:26:22.768246 after 2.04 seconds
+[0m12:26:22.768604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fafaad22ba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fafa9d21220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf94db7a40>]}
+[0m12:26:22.768889 [debug] [MainThread]: Flushing usage events
+[0m12:26:23.544849 [debug] [MainThread]: An error was encountered while trying to flush usage events

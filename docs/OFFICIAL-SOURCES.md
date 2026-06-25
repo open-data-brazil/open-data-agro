@@ -73,8 +73,8 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 
 | Dataset ID | Portal label | Status |
 |------------|--------------|--------|
-| `conab.alimenta-brasil-entregas` | Programa Alimenta Brasil - Entregas | Planned |
-| `conab.alimenta-brasil-propostas` | Programa Alimenta Brasil - Propostas | Planned |
+| `conab.alimenta-brasil-entregas` | Programa Alimenta Brasil - Entregas | **P1 — implemented** |
+| `conab.alimenta-brasil-propostas` | Programa Alimenta Brasil - Propostas | **P1 — implemented** |
 
 ---
 

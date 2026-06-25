@@ -1,20 +1,3 @@
-# CONAB datasets — sections other than Produção Agrícola (producao-agricola.yaml)
-# and Mercado (mercado.yaml).
-entries:
-  - dataset_id: conab.alimenta-brasil-entregas
-    source_url: https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_Entregas.txt
-    format: txt
-    schedule: manual
-    conab_section: Agricultura Familiar
-    portal_label: Programa Alimenta Brasil - Entregas
-    delimiter: ";"
-    discovered_at: 2026-06-25T00:00:00Z
-
-  - dataset_id: conab.alimenta-brasil-propostas
-    source_url: https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_PropostaFormalizadasExecutada.txt
-    format: txt
-    schedule: manual
-    conab_section: Agricultura Familiar
-    portal_label: Programa Alimenta Brasil - Propostas
-    delimiter: ";"
-    discovered_at: 2026-06-25T00:00:00Z
+# CONAB datasets — remaining sections not yet split into dedicated catalog YAML files.
+# (All section catalogs are now in dedicated YAML files under configs/catalog/conab/.)
+entries: []

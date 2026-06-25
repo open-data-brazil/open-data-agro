@@ -110,6 +110,8 @@ def main() -> int:
             "bronze_conab_armazenagem": "expectations/suites/bronze/conab/armazenagem.json",
             "bronze_conab_frete": "expectations/suites/bronze/conab/frete.json",
             "bronze_conab_serie_historica_capacidade_estatica": "expectations/suites/bronze/conab/serie_historica_capacidade_estatica.json",
+            "bronze_conab_alimenta_brasil_entregas": "expectations/suites/bronze/conab/alimenta_brasil_entregas.json",
+            "bronze_conab_alimenta_brasil_propostas": "expectations/suites/bronze/conab/alimenta_brasil_propostas.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:

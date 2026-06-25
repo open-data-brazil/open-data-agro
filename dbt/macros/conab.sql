@@ -64,3 +64,27 @@
   trim(endereco) as endereco,
   trim(email) as email
 {% endmacro %}
+
+{% macro conab_alimenta_brasil_entregas_columns() %}
+  cast(ano_entrega as varchar) as ano_entrega,
+  cast(mes_entrega as varchar) as mes_entrega,
+  trim(municipio) as municipio,
+  trim(uf) as uf,
+  trim(regiao) as regiao,
+  trim(sexo) as sexo,
+  trim(ds_unidade_medida) as unidade_medida,
+  cast(qtd_entregue as varchar) as qtd_entregue,
+  cast(valor_entregue as varchar) as valor_entregue
+{% endmacro %}
+
+{% macro conab_alimenta_brasil_propostas_columns() %}
+  cast(ano as varchar) as ano,
+  cast(mes as varchar) as mes,
+  trim(municipio) as municipio,
+  cast(cod_ibge as varchar) as cod_ibge,
+  trim(uf) as uf,
+  trim(regiao) as regiao,
+  cast(valor_formalizado as varchar) as valor_formalizado,
+  cast(valor_executado as varchar) as valor_executado,
+  cast(valor_devolvido as varchar) as valor_devolvido
+{% endmacro %}

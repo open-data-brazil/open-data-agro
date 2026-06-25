@@ -141,6 +141,10 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_conab_frete", true
 	case "conab.serie-historica-capacidade-estatica":
 		return "bronze_conab_serie_historica_capacidade_estatica", true
+	case "conab.alimenta-brasil-entregas":
+		return "bronze_conab_alimenta_brasil_entregas", true
+	case "conab.alimenta-brasil-propostas":
+		return "bronze_conab_alimenta_brasil_propostas", true
 	default:
 		return "", false
 	}

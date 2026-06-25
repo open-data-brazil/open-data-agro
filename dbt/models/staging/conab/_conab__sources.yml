@@ -49,3 +49,21 @@ sources:
           agencia: CONAB
           conab_section: Armazenamento e Logística
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/armazenagem"
+
+      - name: alimenta_brasil_entregas
+        description: Programa Alimenta Brasil — entregas
+        meta:
+          dataset_id: conab.alimenta-brasil-entregas
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Agricultura Familiar
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/alimenta_brasil_entregas"
+
+      - name: alimenta_brasil_propostas
+        description: Programa Alimenta Brasil — propostas formalizadas e executadas
+        meta:
+          dataset_id: conab.alimenta-brasil-propostas
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Agricultura Familiar
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/alimenta_brasil_propostas"
