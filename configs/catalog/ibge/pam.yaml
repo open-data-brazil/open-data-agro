@@ -1,0 +1,55 @@
+# IBGE — PAM Produção Agrícola Municipal (Phase 16)
+# SIDRA API: https://apisidra.ibge.gov.br/
+# Survey: https://sidra.ibge.gov.br/pesquisa/pam
+
+entries:
+  - dataset_id: ibge.pam-area-quantidade
+    source_url: https://apisidra.ibge.gov.br/values/t/1612
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/pam
+    format: json
+    schedule: yearly
+    portal_label: PAM — Área plantada, colhida e quantidade produzida
+    sidra_table: "1612"
+    sidra_classification: "81"
+    sidra_variables: [109, 216, 214]
+    sidra_crops:
+      soja: 2713
+      milho: 2711
+      trigo: 2716
+    period_start: 2010
+    period_end: 2024
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: ibge.pam-rendimento-valor
+    source_url: https://apisidra.ibge.gov.br/values/t/1613
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/pam
+    format: json
+    schedule: yearly
+    portal_label: PAM — Rendimento médio e valor da produção
+    sidra_table: "1613"
+    sidra_classification: "82"
+    sidra_variables: [112, 215]
+    sidra_crops:
+      soja: 2713
+      milho: 2711
+      trigo: 2716
+    period_start: 2010
+    period_end: 2024
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: ibge.pam-estabelecimentos
+    source_url: https://apisidra.ibge.gov.br/values/t/5457
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/pam
+    format: json
+    schedule: yearly
+    portal_label: PAM — Número de estabelecimentos
+    sidra_table: "5457"
+    sidra_classification: "782"
+    sidra_variables: [8331]
+    sidra_crops:
+      soja: 2713
+      milho: 2711
+      trigo: 2716
+    period_start: 2010
+    period_end: 2024
+    discovered_at: 2026-06-25T00:00:00Z

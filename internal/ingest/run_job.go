@@ -19,6 +19,10 @@ import (
 type RunOptions struct {
 	DatasetID string
 	DryRun    bool
+	Crop      string
+	FromYear  int
+	ToYear    int
+	UFs       []string
 }
 
 // RunResult summarizes an ingest attempt.
@@ -89,7 +93,12 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.ibge)
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.ibge, SourceOptions{
+		Crop:     opts.Crop,
+		FromYear: opts.FromYear,
+		ToYear:   opts.ToYear,
+		UFs:      opts.UFs,
+	})
 	if err != nil {
 		msg := err.Error()
 		_, _ = finish(db.JobFailed, &msg, nil, err)
@@ -170,7 +179,11 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		_, _ = finish(db.JobFailed, &msg, nil, err)
 		return nil, err
 	}
-	meta := NewBronzeMetadata(entry, fp, sourceURL, r.store.Backend())
+	metaSourceURL := sourceURL
+	if download.SourceURL != "" {
+		metaSourceURL = download.SourceURL
+	}
+	meta := NewBronzeMetadata(entry, fp, metaSourceURL, r.store.Backend())
 	metaBytes, err := MarshalBronzeMetadata(meta)
 	if err != nil {
 		_ = r.store.Delete(ctx, bronzeKey)

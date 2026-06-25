@@ -88,6 +88,18 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 
 **Fonte oficial:** [IBGE API de Localidades](https://servicodados.ibge.gov.br/api/docs/localidades)
 
+### IBGE — PAM Produção Agrícola Municipal (Phase 16)
+
+| Dataset ID | SIDRA table | Status |
+|------------|-------------|--------|
+| `ibge.pam-area-quantidade` | 1612 — área plantada, colhida, quantidade | **P0 — implemented** |
+| `ibge.pam-rendimento-valor` | 1613 — rendimento médio, valor da produção | **P1 — implemented** |
+| `ibge.pam-estabelecimentos` | 5457 — número de estabelecimentos | **P2 — implemented** |
+
+**Fonte oficial:** [IBGE SIDRA — PAM](https://sidra.ibge.gov.br/pesquisa/pam) · API: [apisidra.ibge.gov.br](https://apisidra.ibge.gov.br/)
+
+MVP crops (soja, milho, trigo) use SIDRA classification `c81` (1612), `c82` (1613), `c782` (5457) with product codes `2713`, `2711`, `2716`.
+
 ---
 
 ## Rules

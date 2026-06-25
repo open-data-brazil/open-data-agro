@@ -1,0 +1,47 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one PAM row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "codigo_ibge" },
+      "meta": { "notes": "Seven-digit IBGE municipality code." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "codigo_ibge" },
+      "meta": { "notes": "Municipality code must be present." }
+    },
+    {
+      "type": "expect_column_value_lengths_to_equal",
+      "kwargs": { "column": "codigo_ibge", "value": 7 },
+      "meta": { "notes": "IBGE municipality codes are seven digits." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "sidra_tabela" },
+      "meta": { "notes": "SIDRA table code for traceability." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "sidra_tabela", "value_set": ["1612"] },
+      "meta": { "notes": "Area-quantidade dataset uses SIDRA table 1612." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "valor" },
+      "meta": { "notes": "Production metric value from SIDRA V field." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ibge.pam-area-quantidade",
+    "fonte_oficial": "https://sidra.ibge.gov.br/pesquisa/pam",
+    "agencia": "IBGE"
+  },
+  "name": "bronze.ibge.pam_area_quantidade",
+  "id": "bronze-ibge-pam-area-quantidade-suite"
+}

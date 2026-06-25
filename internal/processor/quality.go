@@ -155,6 +155,12 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_ibge_localidades_mesorregioes", true
 	case "ibge.localidades-microrregioes":
 		return "bronze_ibge_localidades_microrregioes", true
+	case "ibge.pam-area-quantidade":
+		return "bronze_ibge_pam_area_quantidade", true
+	case "ibge.pam-rendimento-valor":
+		return "bronze_ibge_pam_rendimento_valor", true
+	case "ibge.pam-estabelecimentos":
+		return "bronze_ibge_pam_estabelecimentos", true
 	default:
 		return "", false
 	}

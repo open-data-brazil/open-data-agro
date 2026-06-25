@@ -86,6 +86,14 @@
 **Invariant:** Must map to a row in [OFFICIAL-SOURCES.md](OFFICIAL-SOURCES.md).
 **Code name:** `CropCode`
 
+### PAM ↔ CONAB crop mapping (MVP)
+
+| Crop (name) | IBGE PAM SIDRA code (`c81`/`c82`/`c782`) | CONAB grãos label |
+|-------------|---------------------------------------------|-------------------|
+| Soja | `2713` | SOJA |
+| Milho | `2711` | MILHO |
+| Trigo | `2716` | TRIGO |
+
 ---
 
 ## Golden vector

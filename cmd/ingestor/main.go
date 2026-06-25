@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/open-data-brazil/open-data-agro/internal/alerts"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
@@ -78,6 +79,10 @@ func newCatalogCmd() *cobra.Command {
 
 func newRunCmd() *cobra.Command {
 	var dryRun bool
+	var crop string
+	var fromYear int
+	var toYear int
+	var ufList string
 
 	cmd := &cobra.Command{
 		Use:   "run <dataset_id>",
@@ -107,9 +112,23 @@ func newRunCmd() *cobra.Command {
 			}
 
 			runner := ingest.NewRunner(reg, repo, store, alerts.New(cfg.AlertWebhookURL))
+			var ufs []string
+			if strings.TrimSpace(ufList) != "" {
+				for _, part := range strings.Split(ufList, ",") {
+					code := strings.TrimSpace(part)
+					if code != "" {
+						ufs = append(ufs, code)
+					}
+				}
+			}
+
 			result, err := runner.Run(ctx, ingest.RunOptions{
 				DatasetID: args[0],
 				DryRun:    dryRun,
+				Crop:      crop,
+				FromYear:  fromYear,
+				ToYear:    toYear,
+				UFs:       ufs,
 			})
 			if err != nil {
 				return err
@@ -128,6 +147,10 @@ func newRunCmd() *cobra.Command {
 	}
 
 	cmd.Flags().BoolVar(&dryRun, "dry-run", false, "Resolve and download without landing parquet")
+	cmd.Flags().StringVar(&crop, "crop", "", "PAM crop filter (soja, milho, trigo, or all)")
+	cmd.Flags().IntVar(&fromYear, "from", 0, "PAM start year (inclusive)")
+	cmd.Flags().IntVar(&toYear, "to", 0, "PAM end year (inclusive)")
+	cmd.Flags().StringVar(&ufList, "uf", "", "PAM UF codes (comma-separated, e.g. 51,43 for MT+RS smoke test)")
 	return cmd
 }
 

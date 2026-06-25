@@ -11,6 +11,14 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 )
 
+// SourceOptions carries optional ingest parameters (PAM crop/year/UF filters).
+type SourceOptions struct {
+	Crop     string
+	FromYear int
+	ToYear   int
+	UFs      []string
+}
+
 // SourceDownload holds a fetched source file and the resolved download URL.
 type SourceDownload struct {
 	Body          []byte
@@ -33,6 +41,9 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 	case "anp":
 		return anp.ResolveURL(entry)
 	case "ibge":
+		if strings.HasPrefix(entry.DatasetID.String(), "ibge.pam-") {
+			return ibge.ResolvePAMURL(entry)
+		}
 		return ibge.ResolveURL(entry)
 	default:
 		return "", fmt.Errorf("unsupported agency %q for dataset %s", agency, entry.DatasetID)
@@ -40,13 +51,31 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, ibgeClient *ibge.Client) (*SourceDownload, error) {
-	sourceURL, err := ResolveSourceURL(entry)
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, ibgeClient *ibge.Client, opts SourceOptions) (*SourceDownload, error) {
+	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
 		return nil, err
 	}
 
-	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
+	if agency == "ibge" && strings.HasPrefix(entry.DatasetID.String(), "ibge.pam-") {
+		body, sourceURL, err := ibgeClient.FetchPAMSnapshot(ctx, entry, ibge.PAMFetchOptions{
+			Crop:     opts.Crop,
+			FromYear: opts.FromYear,
+			ToYear:   opts.ToYear,
+			UFs:      opts.UFs,
+		})
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	}
+
+	sourceURL, err := ResolveSourceURL(entry)
 	if err != nil {
 		return nil, err
 	}

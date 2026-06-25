@@ -16,6 +16,9 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "anp.") {
 		return ANPCombustiveisPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "ibge.pam-") {
+		return IBGESIDRAPAMURL
+	}
 	if strings.HasPrefix(datasetID.String(), "ibge.") {
 		return IBGELocalidadesDocsURL
 	}
@@ -24,3 +27,6 @@ func SourcePortalURL(datasetID DatasetID) string {
 
 // IBGELocalidadesDocsURL is the IBGE Localidades API documentation URL.
 const IBGELocalidadesDocsURL = "https://servicodados.ibge.gov.br/api/docs/localidades"
+
+// IBGESIDRAPAMURL is the IBGE SIDRA PAM survey portal URL.
+const IBGESIDRAPAMURL = "https://sidra.ibge.gov.br/pesquisa/pam"

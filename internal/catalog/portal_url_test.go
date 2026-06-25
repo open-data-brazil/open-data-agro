@@ -11,6 +11,15 @@ func TestSourcePortalURLCONAB(t *testing.T) {
 	}
 }
 
+func TestSourcePortalURLIBGEPAM(t *testing.T) {
+	t.Parallel()
+
+	id := MustParseDatasetID("ibge.pam-area-quantidade")
+	if got := SourcePortalURL(id); got != IBGESIDRAPAMURL {
+		t.Fatalf("got %q want %q", got, IBGESIDRAPAMURL)
+	}
+}
+
 func TestSourcePortalURLIBGE(t *testing.T) {
 	t.Parallel()
 

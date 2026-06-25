@@ -14387,3 +14387,209 @@ alter view "dbt_workspace"."main"."mart_conab__alimenta_brasil_propostas__dbt_in
 [0m12:26:22.768604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fafaad22ba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fafa9d21220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf94db7a40>]}
 [0m12:26:22.768889 [debug] [MainThread]: Flushing usage events
 [0m12:26:23.544849 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:39:10.649473 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bb970de20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bbcdb3200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bb9fef710>]}
+
+
+============================== 12:39:10.652853 | c53bcf6c-a787-4704-bd98-1bdd612d6566 ==============================
+[0m12:39:10.652853 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:39:10.653678 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'introspect': 'True', 'static_parser': 'True', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'write_json': 'True', 'debug': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'empty': 'False', 'printer_width': '80', 'target_path': 'None', 'profiles_dir': '.', 'log_format': 'default', 'log_cache_events': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt build --profiles-dir . --select stg_ibge__pam_area_quantidade+', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m12:39:10.846944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c53bcf6c-a787-4704-bd98-1bdd612d6566', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bba352630>]}
+[0m12:39:10.899497 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c53bcf6c-a787-4704-bd98-1bdd612d6566', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bad17f200>]}
+[0m12:39:10.900757 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:39:10.968642 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m12:39:11.050806 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:39:11.051185 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m12:39:11.051469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c53bcf6c-a787-4704-bd98-1bdd612d6566', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bb98d42c0>]}
+[0m12:39:12.320123 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c53bcf6c-a787-4704-bd98-1bdd612d6566', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bacbcdac0>]}
+[0m12:39:12.425743 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:39:12.427133 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:39:12.442644 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c53bcf6c-a787-4704-bd98-1bdd612d6566', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bacbe7f80>]}
+[0m12:39:12.443035 [info ] [MainThread]: Found 20 models, 34 data tests, 10 sources, 617 macros
+[0m12:39:12.444963 [info ] [MainThread]: 
+[0m12:39:12.445306 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m12:39:12.445601 [info ] [MainThread]: 
+[0m12:39:12.445976 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:39:12.446801 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m12:39:12.469581 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m12:39:12.469923 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m12:39:12.470187 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:39:12.491948 [debug] [ThreadPool]: SQL status: OK in 0.022 seconds
+[0m12:39:12.493148 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m12:39:12.493748 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m12:39:12.494141 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m12:39:12.498962 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:39:12.499330 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m12:39:12.499574 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:39:12.500314 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:39:12.501306 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:39:12.501573 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m12:39:12.502013 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:39:12.502253 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:39:12.502481 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m12:39:12.502854 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:39:12.503491 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:39:12.503744 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:39:12.503965 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:39:12.504289 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:39:12.504560 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m12:39:12.509242 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m12:39:12.513212 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:39:12.513493 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m12:39:12.513728 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:39:12.514311 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:39:12.514563 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:39:12.514786 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m12:39:12.516749 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m12:39:12.517873 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m12:39:12.518692 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m12:39:12.518964 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m12:39:12.520271 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c53bcf6c-a787-4704-bd98-1bdd612d6566', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bacb8ea20>]}
+[0m12:39:12.520630 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:39:12.520893 [debug] [MainThread]: On master: BEGIN
+[0m12:39:12.521122 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:39:12.521526 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:39:12.521795 [debug] [MainThread]: On master: COMMIT
+[0m12:39:12.522028 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:39:12.522240 [debug] [MainThread]: On master: COMMIT
+[0m12:39:12.522547 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:39:12.522792 [debug] [MainThread]: On master: Close
+[0m12:39:12.524526 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_ibge__pam_area_quantidade
+[0m12:39:12.525235 [info ] [Thread-1 (]: 1 of 1 START sql view model main.stg_ibge__pam_area_quantidade ................. [RUN]
+[0m12:39:12.525762 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_ibge__pam_area_quantidade)
+[0m12:39:12.526066 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_ibge__pam_area_quantidade
+[0m12:39:12.532336 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m12:39:12.532809 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_ibge__pam_area_quantidade
+[0m12:39:12.552690 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m12:39:12.553165 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m12:39:12.553467 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: BEGIN
+[0m12:39:12.553730 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:39:12.554381 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:39:12.554664 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m12:39:12.554944 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_area_quantidade"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ibge__pam_area_quantidade__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/open-data-agro-lake/silver/ibge/pam_area_quantidade/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    sidra_tabela,
+    codigo_ibge,
+    municipio,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://sidra.ibge.gov.br/pesquisa/pam
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by codigo_ibge, ano, variavel_codigo, produto_codigo
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:39:12.555953 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:39:12.560039 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m12:39:12.560344 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_area_quantidade"} */
+alter view "dbt_workspace"."main"."stg_ibge__pam_area_quantidade__dbt_tmp" rename to "stg_ibge__pam_area_quantidade"
+[0m12:39:12.560902 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:39:12.568790 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: COMMIT
+[0m12:39:12.569105 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m12:39:12.569370 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: COMMIT
+[0m12:39:12.571133 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:39:12.574673 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m12:39:12.574972 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_area_quantidade"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ibge__pam_area_quantidade__dbt_backup" cascade
+    
+[0m12:39:12.575461 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:39:12.577053 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: Close
+[0m12:39:12.578215 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c53bcf6c-a787-4704-bd98-1bdd612d6566', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bacbe6b70>]}
+[0m12:39:12.578708 [info ] [Thread-1 (]: 1 of 1 OK created sql view model main.stg_ibge__pam_area_quantidade ............ [[32mOK[0m in 0.05s]
+[0m12:39:12.579113 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_ibge__pam_area_quantidade
+[0m12:39:12.580114 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:39:12.580383 [debug] [MainThread]: On master: BEGIN
+[0m12:39:12.580627 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:39:12.581144 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:39:12.581411 [debug] [MainThread]: On master: COMMIT
+[0m12:39:12.581650 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:39:12.581864 [debug] [MainThread]: On master: COMMIT
+[0m12:39:12.582210 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:39:12.582493 [debug] [MainThread]: On master: Close
+[0m12:39:12.582802 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:39:12.583051 [debug] [MainThread]: Connection 'model.open_data_agro.stg_ibge__pam_area_quantidade' was properly closed.
+[0m12:39:12.583290 [info ] [MainThread]: 
+[0m12:39:12.583548 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.14 seconds (0.14s).
+[0m12:39:12.583990 [debug] [MainThread]: Command end result
+[0m12:39:12.610945 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:39:12.612488 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:39:12.616867 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m12:39:12.617178 [info ] [MainThread]: 
+[0m12:39:12.617491 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:39:12.617738 [info ] [MainThread]: 
+[0m12:39:12.617999 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m12:39:12.618641 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.0193098, "process_in_blocks": "2592", "process_kernel_time": 0.121209, "process_mem_max_rss": "196588", "process_out_blocks": "5256", "process_user_time": 3.1194}
+[0m12:39:12.619007 [debug] [MainThread]: Command `dbt build` succeeded at 12:39:12.618945 after 2.02 seconds
+[0m12:39:12.619303 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bb9047e60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bb991edb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705bb98d5d60>]}
+[0m12:39:12.619616 [debug] [MainThread]: Flushing usage events
+[0m12:39:13.369846 [debug] [MainThread]: An error was encountered while trying to flush usage events

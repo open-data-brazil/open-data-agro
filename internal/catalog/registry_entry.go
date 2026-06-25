@@ -29,6 +29,12 @@ type RegistryEntry struct {
 	XLSXSheet    string        `json:"xlsxSheet,omitempty" yaml:"xlsx_sheet,omitempty"`
 	XLSXHeaderRow int          `json:"xlsxHeaderRow,omitempty" yaml:"xlsx_header_row,omitempty"`
 	ANPLPCFile   string        `json:"anpLpcFile,omitempty" yaml:"anp_lpc_file,omitempty"`
+	SidraTable   string        `json:"sidraTable,omitempty" yaml:"sidra_table,omitempty"`
+	SidraClassification string `json:"sidraClassification,omitempty" yaml:"sidra_classification,omitempty"`
+	SidraVariables []int       `json:"sidraVariables,omitempty" yaml:"sidra_variables,omitempty"`
+	SidraCrops   map[string]int `json:"sidraCrops,omitempty" yaml:"sidra_crops,omitempty"`
+	PeriodStart  int           `json:"periodStart,omitempty" yaml:"period_start,omitempty"`
+	PeriodEnd    int           `json:"periodEnd,omitempty" yaml:"period_end,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

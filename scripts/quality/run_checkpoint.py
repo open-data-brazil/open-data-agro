@@ -115,6 +115,9 @@ def main() -> int:
             "bronze_ibge_localidades_municipios": "expectations/suites/bronze/ibge/localidades_municipios.json",
             "bronze_ibge_localidades_ufs": "expectations/suites/bronze/ibge/localidades_ufs.json",
             "bronze_ibge_localidades_regioes": "expectations/suites/bronze/ibge/localidades_regioes.json",
+            "bronze_ibge_pam_area_quantidade": "expectations/suites/bronze/ibge/pam_area_quantidade.json",
+            "bronze_ibge_pam_rendimento_valor": "expectations/suites/bronze/ibge/pam_rendimento_valor.json",
+            "bronze_ibge_pam_estabelecimentos": "expectations/suites/bronze/ibge/pam_estabelecimentos.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:
