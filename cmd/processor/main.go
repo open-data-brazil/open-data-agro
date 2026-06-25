@@ -201,7 +201,7 @@ func runPromote(cmd *cobra.Command, datasetID string) error {
 		jobID, err = repo.CreatePromotionJob(ctx, datasetID)
 		if err != nil {
 			if db.ErrPromotionSchemaMissing(err) {
-				return fmt.Errorf("promotion audit table missing: apply infra/postgres/init/003_promotion_schema.sql")
+				return fmt.Errorf("promotion audit table missing: run make migrate-up")
 			}
 			return err
 		}

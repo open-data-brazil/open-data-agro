@@ -133,6 +133,8 @@ func newRunCmd() *cobra.Command {
 
 func newStatusCmd() *cobra.Command {
 	var limit int
+	var failed bool
+	var latest bool
 
 	cmd := &cobra.Command{
 		Use:   "status",
@@ -150,37 +152,76 @@ func newStatusCmd() *cobra.Command {
 			}
 			defer repo.Close()
 
+			if failed {
+				jobs, listErr := repo.ListFailedJobsLast7d(ctx)
+				if listErr != nil {
+					return listErr
+				}
+				return printJobs(cmd, jobs)
+			}
+
+			if latest {
+				records, listErr := repo.ListLatestSuccessfulIngest(ctx)
+				if listErr != nil {
+					return listErr
+				}
+				for _, rec := range records {
+					finished := "-"
+					if rec.FinishedAt != nil {
+						finished = rec.FinishedAt.UTC().Format("2006-01-02T15:04:05Z")
+					}
+					line := fmt.Sprintf(
+						"%s\t%s\t%s\t%s\t%t\t%s",
+						rec.StartedAt.UTC().Format("2006-01-02T15:04:05Z"),
+						finished,
+						rec.DatasetID,
+						rec.Status,
+						rec.DryRun,
+						rec.JobID,
+					)
+					if _, err := fmt.Fprintln(cmd.OutOrStdout(), line); err != nil {
+						return err
+					}
+				}
+				return nil
+			}
+
 			jobs, err := repo.ListRecentJobs(ctx, limit)
 			if err != nil {
 				return err
 			}
-
-			for _, job := range jobs {
-				finished := "-"
-				if job.FinishedAt != nil {
-					finished = job.FinishedAt.UTC().Format("2006-01-02T15:04:05Z")
-				}
-				errMsg := ""
-				if job.ErrorMessage != nil {
-					errMsg = *job.ErrorMessage
-				}
-				line := fmt.Sprintf(
-					"%s\t%s\t%s\t%s\t%t\t%s",
-					job.StartedAt.UTC().Format("2006-01-02T15:04:05Z"),
-					finished,
-					job.DatasetID,
-					job.Status,
-					job.DryRun,
-					errMsg,
-				)
-				if _, err := fmt.Fprintln(cmd.OutOrStdout(), line); err != nil {
-					return err
-				}
-			}
-			return nil
+			return printJobs(cmd, jobs)
 		},
 	}
 
 	cmd.Flags().IntVar(&limit, "last", 10, "Number of recent jobs to show")
+	cmd.Flags().BoolVar(&failed, "failed", false, "Show failed jobs from the last 7 days (uses v_failed_jobs_last_7d)")
+	cmd.Flags().BoolVar(&latest, "latest", false, "Show latest successful ingest per dataset (uses v_latest_successful_ingest)")
 	return cmd
+}
+
+func printJobs(cmd *cobra.Command, jobs []db.JobRecord) error {
+	for _, job := range jobs {
+		finished := "-"
+		if job.FinishedAt != nil {
+			finished = job.FinishedAt.UTC().Format("2006-01-02T15:04:05Z")
+		}
+		errMsg := ""
+		if job.ErrorMessage != nil {
+			errMsg = *job.ErrorMessage
+		}
+		line := fmt.Sprintf(
+			"%s\t%s\t%s\t%s\t%t\t%s",
+			job.StartedAt.UTC().Format("2006-01-02T15:04:05Z"),
+			finished,
+			job.DatasetID,
+			job.Status,
+			job.DryRun,
+			errMsg,
+		)
+		if _, err := fmt.Fprintln(cmd.OutOrStdout(), line); err != nil {
+			return err
+		}
+	}
+	return nil
 }

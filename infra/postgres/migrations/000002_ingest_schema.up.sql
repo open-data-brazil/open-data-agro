@@ -1,8 +1,9 @@
--- Phase 1 — ingestor operational schema
+-- ingestor operational tables
 
 CREATE TABLE IF NOT EXISTS catalog.dataset_registry (
   dataset_id TEXT PRIMARY KEY,
   source_url TEXT NOT NULL,
+  source_portal_url TEXT NOT NULL DEFAULT 'https://portaldeinformacoes.conab.gov.br/download-arquivos.html',
   format TEXT NOT NULL,
   schedule TEXT NOT NULL,
   conab_section TEXT,

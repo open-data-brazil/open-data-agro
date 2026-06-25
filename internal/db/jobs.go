@@ -73,10 +73,11 @@ func (r *Repository) Close() {
 func (r *Repository) UpsertDatasetRegistry(ctx context.Context, entry catalog.RegistryEntry) error {
 	_, err := r.pool.Exec(ctx, `
 		INSERT INTO catalog.dataset_registry (
-			dataset_id, source_url, format, schedule, conab_section, portal_label, discovered_at, updated_at
-		) VALUES ($1, $2, $3, $4, $5, $6, $7, NOW())
+			dataset_id, source_url, source_portal_url, format, schedule, conab_section, portal_label, discovered_at, updated_at
+		) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, NOW())
 		ON CONFLICT (dataset_id) DO UPDATE SET
 			source_url = EXCLUDED.source_url,
+			source_portal_url = EXCLUDED.source_portal_url,
 			format = EXCLUDED.format,
 			schedule = EXCLUDED.schedule,
 			conab_section = EXCLUDED.conab_section,
@@ -86,6 +87,7 @@ func (r *Repository) UpsertDatasetRegistry(ctx context.Context, entry catalog.Re
 	`,
 		entry.DatasetID.String(),
 		entry.SourceURL,
+		catalog.SourcePortalURL(entry.DatasetID),
 		string(entry.Format),
 		entry.Schedule,
 		entry.ConabSection,

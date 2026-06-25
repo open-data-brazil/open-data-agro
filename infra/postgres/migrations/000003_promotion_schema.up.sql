@@ -1,11 +1,11 @@
--- Phase 4 — processor promotion audit schema
+-- processor promotion audit
 
 CREATE TABLE IF NOT EXISTS catalog.promotion_jobs (
   id UUID PRIMARY KEY DEFAULT uuidv7(),
   dataset_id TEXT NOT NULL,
   started_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   finished_at TIMESTAMPTZ,
-  status TEXT NOT NULL CHECK (status IN ('running', 'success', 'failed', 'skipped')),
+  status TEXT NOT NULL CHECK (status IN ('running', 'success', 'failed', 'skipped', 'quality_failed')),
   row_count INTEGER,
   silver_path TEXT,
   storage_mode TEXT,

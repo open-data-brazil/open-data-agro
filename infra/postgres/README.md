@@ -2,55 +2,66 @@
 
 **Image:** `postgres:18.4-bookworm` (see [docker-compose.yml](../../docker-compose.yml))
 
-Operational metadata lives in schema `catalog` — ingest jobs, file lineage, promotion audit.
+Operational metadata lives in schema `catalog` — dataset registry, ingest jobs, file lineage, promotion audit.
+
+## Local connection
+
+```bash
+docker compose up -d postgres
+export DATABASE_URL=postgresql://open_data_agro:open_data_agro@localhost:${POSTGRES_HOST_PORT:-5432}/open_data_agro?sslmode=disable
+```
+
+Override host port when 5432 is taken: `POSTGRES_HOST_PORT=5433` in `.env` (see [.env.example](../../.env.example)).
+
+No managed/cloud Postgres is required for MVP.
+
+## Migrations (golang-migrate)
+
+Versioned SQL lives in [migrations/](migrations/). Fresh Docker volumes apply them automatically via [init/000_run_migrations.sh](init/000_run_migrations.sh).
+
+```bash
+make migrate-install   # once: install golang-migrate CLI
+make migrate-up        # apply pending migrations
+make migrate-down      # roll back last migration
+```
+
+| Version | Migration | Purpose |
+|---------|-----------|---------|
+| 000001 | `catalog_schema` | `catalog` schema |
+| 000002 | `ingest_schema` | registry, jobs, files (`uuidv7()`, `source_portal_url`) |
+| 000003 | `promotion_schema` | promotion audit (`quality_failed` status) |
+| 000004 | `monitoring_views` | `v_latest_successful_ingest`, `v_failed_jobs_last_7d` |
+
+## Seed registry
+
+Idempotent upsert from [configs/catalog/conab/registry.yaml](../../configs/catalog/conab/registry.yaml):
+
+```bash
+make seed        # all CONAB datasets
+make seed-mvp    # MVP only: estimativa-graos, serie-historica-graos
+```
+
+`source_portal_url` is set to https://portaldeinformacoes.conab.gov.br/download-arquivos.html for all `conab.*` datasets.
 
 ## UUID policy — native UUIDv7
 
-All primary keys and application-generated identifiers use **UUID version 7** (time-ordered).
+All primary keys use **PostgreSQL 18.4** `uuidv7()` (time-ordered). See [internal/ingest/fingerprint.go](../../internal/ingest/fingerprint.go) for bronze part filenames.
 
-| Layer | Mechanism |
-|-------|-----------|
-| **PostgreSQL 18.4** | `uuidv7()` — built-in default on `id` columns (`002_ingest_schema.sql`, `003_promotion_schema.sql`) |
-| **Go ingestor** | `github.com/google/uuid` `NewV7()` — bronze Parquet part filenames (`part-{uuid}.parquet`) |
+## Monitoring views
 
-Do **not** use `gen_random_uuid()` (v4) or `uuid.New()` / `uuid.NewString()` (v4) for new IDs.
-
-### Why UUIDv7
-
-- Time-sortable keys improve index locality on `started_at` / `created_at` query patterns
-- Native in PostgreSQL 18.4 — no extension required
-- Same version in Go keeps lake object keys consistent with DB row IDs
-
-### Fresh database
-
-Init scripts under `init/` run automatically on first `docker compose up postgres`.
-
-### Existing volume (upgraded from v4 defaults)
-
-Apply migration `005_uuidv7_defaults.sql` (or recreate the volume):
+| View | Use |
+|------|-----|
+| `catalog.v_latest_successful_ingest` | Latest successful job per dataset |
+| `catalog.v_failed_jobs_last_7d` | Failed jobs in the last 7 days |
 
 ```bash
-docker compose exec -T postgres psql -U open_data_agro -d open_data_agro \
-  < infra/postgres/init/005_uuidv7_defaults.sql
+./bin/ingestor status --latest
+./bin/ingestor status --failed
 ```
 
-Existing rows keep their v4 IDs; only **new** inserts get `uuidv7()`.
-
-### Verify
+## Verify
 
 ```sql
-INSERT INTO catalog.promotion_jobs (dataset_id, status)
-VALUES ('conab.estimativa-graos', 'running')
-RETURNING id;
--- third group starts with 7, e.g. xxxxxxxx-xxxx-7xxx-xxxx-xxxxxxxxxxxx
+SELECT * FROM catalog.ingest_jobs ORDER BY started_at DESC LIMIT 5;
+SELECT * FROM catalog.v_latest_successful_ingest;
 ```
-
-## Init script order
-
-| File | Purpose |
-|------|---------|
-| `001_placeholder.sql` | `catalog` schema |
-| `002_ingest_schema.sql` | ingest jobs + files |
-| `003_promotion_schema.sql` | promotion audit |
-| `004_quality_failed_status.sql` | `quality_failed` status |
-| `005_uuidv7_defaults.sql` | upgrade v4 → v7 defaults |
