@@ -209,19 +209,6 @@ func normalizeUFs(requested, defaults []string) map[string]struct{} {
 	return out
 }
 
-func isBDMEPDataset(datasetID string) bool {
-	switch datasetID {
-	case "inmet.bdmep-diario", "inmet.bdmep-mensal", "inmet.pacote-anual-automaticas":
-		return true
-	default:
-		return false
-	}
-}
-
-func isStationCatalogDataset(datasetID string) bool {
-	return datasetID == "inmet.estacoes-automaticas" || datasetID == "inmet.estacoes-convencionais"
-}
-
 // FlattenINMETCSV routes INMET CSV payloads to the correct flattener.
 func FlattenINMETCSV(datasetID string, raw []byte) ([]string, [][]string, error) {
 	switch datasetID {
