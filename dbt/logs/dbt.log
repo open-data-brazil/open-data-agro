@@ -10838,3 +10838,2039 @@ where safra is null
 [0m12:06:39.735557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b23d65b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b235115b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4b23513d70>]}
 [0m12:06:39.735832 [debug] [MainThread]: Flushing usage events
 [0m12:06:40.363129 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:17:02.177026 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77053bb352b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77053dbe31d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77053b85b080>]}
+
+
+============================== 12:17:02.179065 | e225f9a2-daa2-4c79-a9aa-20a330f7aa98 ==============================
+[0m12:17:02.179065 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:17:02.179461 [debug] [MainThread]: running dbt with arguments {'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'empty': 'None', 'invocation_command': 'dbt deps --profiles-dir .', 'use_colors': 'True', 'target_path': 'None', 'introspect': 'True', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': '.', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'fail_fast': 'False', 'quiet': 'False', 'debug': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'write_json': 'True', 'printer_width': '80', 'log_format': 'default', 'no_print': 'None'}
+[0m12:17:02.269056 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e225f9a2-daa2-4c79-a9aa-20a330f7aa98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77053af66450>]}
+[0m12:17:02.281498 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-74pqrby1'
+[0m12:17:02.281824 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:17:02.408026 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:17:02.409033 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:17:02.500992 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:17:02.504461 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:17:02.850017 [info ] [MainThread]: Installed from version 1.3.0
+[0m12:17:02.850370 [info ] [MainThread]: Updated version available: 1.4.0
+[0m12:17:02.850669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'e225f9a2-daa2-4c79-a9aa-20a330f7aa98', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77053b92e7b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77053af42960>]}
+[0m12:17:02.850967 [info ] [MainThread]: 
+[0m12:17:02.851207 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:17:02.851908 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.7173298, "process_in_blocks": "0", "process_kernel_time": 0.065061, "process_mem_max_rss": "121564", "process_out_blocks": "2304", "process_user_time": 1.12106}
+[0m12:17:02.852285 [debug] [MainThread]: Command `dbt deps` succeeded at 12:17:02.852225 after 0.72 seconds
+[0m12:17:02.852567 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77053b85b080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77053b99a5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77053b92e7b0>]}
+[0m12:17:02.852844 [debug] [MainThread]: Flushing usage events
+[0m12:17:03.612803 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:17:04.804998 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff29bc7590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff294a8860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff29bc65a0>]}
+
+
+============================== 12:17:04.807184 | 2a5cc060-4a63-4c02-95fd-41c1278b1750 ==============================
+[0m12:17:04.807184 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:17:04.807598 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'warn_error': 'None', 'invocation_command': 'dbt build --profiles-dir . --select stg_conab__estoques_publicos+ stg_anp__combustiveis_precos_medios_municipios+ stg_anp__combustiveis_precos_postos+', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'printer_width': '80', 'partial_parse': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'profiles_dir': '.', 'debug': 'False', 'log_format': 'default', 'fail_fast': 'False', 'static_parser': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'cache_selected_only': 'False', 'write_json': 'True'}
+[0m12:17:04.971386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff28ff5790>]}
+[0m12:17:05.022822 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff28ff43e0>]}
+[0m12:17:05.024008 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:17:05.090644 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m12:17:05.166497 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:17:05.166913 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m12:17:05.167232 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff1cf0ecc0>]}
+[0m12:17:06.365068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff1cedc6b0>]}
+[0m12:17:06.475875 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:17:06.477413 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:17:06.492622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff1c025010>]}
+[0m12:17:06.493027 [info ] [MainThread]: Found 13 models, 34 data tests, 6 sources, 612 macros
+[0m12:17:06.495878 [info ] [MainThread]: 
+[0m12:17:06.496214 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m12:17:06.496478 [info ] [MainThread]: 
+[0m12:17:06.496854 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:17:06.500567 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m12:17:06.523856 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m12:17:06.524186 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m12:17:06.524440 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:17:06.549216 [debug] [ThreadPool]: SQL status: OK in 0.025 seconds
+[0m12:17:06.550612 [debug] [ThreadPool]: On list_analytics: Close
+[0m12:17:06.551258 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main)
+[0m12:17:06.551677 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main"
+"
+[0m12:17:06.556580 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m12:17:06.556885 [debug] [ThreadPool]: On create_analytics_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_analytics_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m12:17:06.557216 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:17:06.558056 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:17:06.559071 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m12:17:06.559333 [debug] [ThreadPool]: On create_analytics_main: BEGIN
+[0m12:17:06.559810 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:17:06.560061 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m12:17:06.560286 [debug] [ThreadPool]: On create_analytics_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_analytics_main"} */
+
+    
+    
+        create schema if not exists "analytics"."main"
+    
+[0m12:17:06.560769 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:17:06.561488 [debug] [ThreadPool]: On create_analytics_main: COMMIT
+[0m12:17:06.561763 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m12:17:06.562006 [debug] [ThreadPool]: On create_analytics_main: COMMIT
+[0m12:17:06.562343 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:17:06.562612 [debug] [ThreadPool]: On create_analytics_main: Close
+[0m12:17:06.564035 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_analytics_main, now list_analytics_main)
+[0m12:17:06.570611 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m12:17:06.571102 [debug] [ThreadPool]: On list_analytics_main: BEGIN
+[0m12:17:06.571548 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:17:06.572275 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:17:06.572743 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m12:17:06.573193 [debug] [ThreadPool]: On list_analytics_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_analytics_main"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'analytics'
+  
+[0m12:17:06.575764 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m12:17:06.576762 [debug] [ThreadPool]: On list_analytics_main: ROLLBACK
+[0m12:17:06.577641 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main'
+[0m12:17:06.577920 [debug] [ThreadPool]: On list_analytics_main: Close
+[0m12:17:06.578390 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff1cee8200>]}
+[0m12:17:06.578798 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:06.579065 [debug] [MainThread]: On master: BEGIN
+[0m12:17:06.579300 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:17:06.579708 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:06.579968 [debug] [MainThread]: On master: COMMIT
+[0m12:17:06.580203 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:06.580449 [debug] [MainThread]: On master: COMMIT
+[0m12:17:06.580815 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:06.581070 [debug] [MainThread]: On master: Close
+[0m12:17:06.582656 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:17:06.583256 [debug] [Thread-2 (]: Began running node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:17:06.584008 [debug] [Thread-3 (]: Began running node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:17:06.584684 [info ] [Thread-1 (]: 1 of 6 START sql view model main.stg_anp__combustiveis_precos_medios_municipios  [RUN]
+[0m12:17:06.585386 [info ] [Thread-2 (]: 2 of 6 START sql view model main.stg_anp__combustiveis_precos_postos ........... [RUN]
+[0m12:17:06.586071 [info ] [Thread-3 (]: 3 of 6 START sql view model main.stg_conab__estoques_publicos .................. [RUN]
+[0m12:17:06.586707 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_analytics_main, now model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios)
+[0m12:17:06.587348 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_anp__combustiveis_precos_postos'
+[0m12:17:06.588008 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_conab__estoques_publicos'
+[0m12:17:06.588572 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:17:06.589129 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:17:06.589682 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:17:06.595885 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.600352 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:06.604594 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:06.605341 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:17:06.605781 [debug] [Thread-2 (]: Began executing node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:17:06.621944 [debug] [Thread-3 (]: Began executing node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:17:06.631008 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.631985 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:06.634094 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:06.634907 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:06.635280 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: BEGIN
+[0m12:17:06.635603 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.635883 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:17:06.636252 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:06.636577 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: BEGIN
+[0m12:17:06.637004 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: BEGIN
+[0m12:17:06.637274 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:17:06.637556 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.637882 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:17:06.638243 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:06.638600 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.638932 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_postos"} */
+
+  
+  create view "analytics"."main"."stg_anp__combustiveis_precos_postos__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/abastecimento-mvp/silver/anp/combustiveis_precos_postos/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim("CNPJ") as cnpj,
+  trim("RAZÃO") as razao,
+  trim("FANTASIA") as fantasia,
+  trim("ENDEREÇO") as endereco,
+  trim("NÚMERO") as numero,
+  trim("COMPLEMENTO") as complemento,
+  trim("BAIRRO") as bairro,
+  trim("CEP") as cep,
+  trim("MUNICÍPIO") as municipio,
+  trim("ESTADO") as estado,
+  trim("BANDEIRA") as bandeira,
+  trim("PRODUTO") as produto,
+  trim("UNIDADE DE MEDIDA") as unidade_medida,
+  cast("PREÇO DE REVENDA" as varchar) as preco_revenda,
+  trim("DATA DA COLETA") as data_coleta
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by cnpj, produto, data_coleta
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:17:06.639307 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.639612 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.640018 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:06.640327 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"} */
+
+  
+  create view "analytics"."main"."stg_anp__combustiveis_precos_medios_municipios__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/abastecimento-mvp/silver/anp/combustiveis_precos_medios_municipios/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim("DATA INICIAL") as data_inicial,
+  trim("DATA FINAL") as data_final,
+  trim("ESTADO") as estado,
+  trim("MUNICÍPIO") as municipio,
+  trim("PRODUTO") as produto,
+  cast("NÚMERO DE POSTOS PESQUISADOS" as varchar) as numero_postos_pesquisados,
+  trim("UNIDADE DE MEDIDA") as unidade_medida,
+  cast("PREÇO MÉDIO REVENDA" as varchar) as preco_medio_revenda,
+  cast("DESVIO PADRÃO REVENDA" as varchar) as desvio_padrao_revenda,
+  cast("PREÇO MÍNIMO REVENDA" as varchar) as preco_minimo_revenda,
+  cast("PREÇO MÁXIMO REVENDA" as varchar) as preco_maximo_revenda,
+  cast("COEF DE VARIAÇÃO REVENDA" as varchar) as coef_variacao_revenda
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by data_inicial, data_final, estado, municipio, produto
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:17:06.640667 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estoques_publicos"} */
+
+  
+  create view "analytics"."main"."stg_conab__estoques_publicos__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/abastecimento-mvp/silver/conab/estoques_publicos/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim(produto) as produto,
+  cast(id_produto as varchar) as id_produto,
+  trim(nom_municipio) as municipio,
+  cast(cod_ibge as varchar) as cod_ibge,
+  trim(uf) as uf,
+  cast(num_ano as varchar) as ano,
+  cast(num_mes as varchar) as mes,
+  trim(conta_operacional) as conta_operacional,
+  cast(qtd_estoque_kg as varchar) as qtd_estoque_kg
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by produto, municipio, cod_ibge, ano, mes, conta_operacional
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:17:06.641151 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.645661 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:06.646095 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_postos"} */
+alter view "analytics"."main"."stg_anp__combustiveis_precos_postos__dbt_tmp" rename to "stg_anp__combustiveis_precos_postos"
+[0m12:17:06.646462 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m12:17:06.648453 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:06.648887 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.649169 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m12:17:06.649484 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estoques_publicos"} */
+alter view "analytics"."main"."stg_conab__estoques_publicos__dbt_tmp" rename to "stg_conab__estoques_publicos"
+[0m12:17:06.657583 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: COMMIT
+[0m12:17:06.659619 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.659991 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:06.660287 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"} */
+alter view "analytics"."main"."stg_anp__combustiveis_precos_medios_municipios__dbt_tmp" rename to "stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.660583 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.660847 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: COMMIT
+[0m12:17:06.661784 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: COMMIT
+[0m12:17:06.662149 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:06.662429 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: COMMIT
+[0m12:17:06.662723 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.663674 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:17:06.663972 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.664246 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.664519 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:17:06.664781 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.668465 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:06.670119 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:06.670460 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.670736 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_postos"} */
+
+      drop view if exists "analytics"."main"."stg_anp__combustiveis_precos_postos__dbt_backup" cascade
+    
+[0m12:17:06.671046 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estoques_publicos"} */
+
+      drop view if exists "analytics"."main"."stg_conab__estoques_publicos__dbt_backup" cascade
+    
+[0m12:17:06.673277 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.673797 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"} */
+
+      drop view if exists "analytics"."main"."stg_anp__combustiveis_precos_medios_municipios__dbt_backup" cascade
+    
+[0m12:17:06.674154 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:17:06.675908 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: Close
+[0m12:17:06.676333 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:17:06.676829 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:17:06.679302 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: Close
+[0m12:17:06.679736 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff1ce751c0>]}
+[0m12:17:06.680731 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: Close
+[0m12:17:06.681327 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff141ce0f0>]}
+[0m12:17:06.681944 [info ] [Thread-3 (]: 3 of 6 OK created sql view model main.stg_conab__estoques_publicos ............. [[32mOK[0m in 0.09s]
+[0m12:17:06.682374 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff141a80e0>]}
+[0m12:17:06.682845 [info ] [Thread-2 (]: 2 of 6 OK created sql view model main.stg_anp__combustiveis_precos_postos ...... [[32mOK[0m in 0.09s]
+[0m12:17:06.683286 [debug] [Thread-3 (]: Finished running node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:17:06.683713 [info ] [Thread-1 (]: 1 of 6 OK created sql view model main.stg_anp__combustiveis_precos_medios_municipios  [[32mOK[0m in 0.10s]
+[0m12:17:06.684130 [debug] [Thread-2 (]: Finished running node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:17:06.684608 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:17:06.685167 [debug] [Thread-2 (]: Began running node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:17:06.685753 [info ] [Thread-2 (]: 4 of 6 START sql external model main.mart_conab__estoques_publicos ............. [RUN]
+[0m12:17:06.686190 [debug] [Thread-3 (]: Began running node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:17:06.686679 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_anp__combustiveis_precos_postos, now model.open_data_agro.mart_conab__estoques_publicos)
+[0m12:17:06.687070 [debug] [Thread-4 (]: Began running node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:17:06.687736 [info ] [Thread-3 (]: 5 of 6 START sql external model main.mart_anp__combustiveis_precos_medios_municipios  [RUN]
+[0m12:17:06.688207 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:17:06.688749 [info ] [Thread-4 (]: 6 of 6 START sql external model main.mart_anp__combustiveis_precos_postos ...... [RUN]
+[0m12:17:06.689339 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_conab__estoques_publicos, now model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios)
+[0m12:17:06.692393 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.692973 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_anp__combustiveis_precos_postos'
+[0m12:17:06.693553 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:17:06.694141 [debug] [Thread-4 (]: Began compiling node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:17:06.694563 [debug] [Thread-2 (]: Began executing node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:17:06.698482 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.702810 [debug] [Thread-4 (]: Writing injected SQL for node "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.733454 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.733967 [debug] [Thread-3 (]: Began executing node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:17:06.734385 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: BEGIN
+[0m12:17:06.734733 [debug] [Thread-4 (]: Began executing node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:17:06.737122 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.737576 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:17:06.739828 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.740184 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: BEGIN
+[0m12:17:06.740657 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: BEGIN
+[0m12:17:06.740938 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:17:06.741212 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:17:06.741733 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m12:17:06.742185 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.742504 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.742799 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.743139 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.743432 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."mart_conab__estoques_publicos__dbt_tmp"
+  
+    as (
+      
+
+select
+    produto,
+    id_produto,
+    municipio,
+    cod_ibge,
+    uf,
+    ano,
+    mes,
+    conta_operacional,
+    qtd_estoque_kg,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "analytics"."main"."stg_conab__estoques_publicos"
+    );
+  
+  
+[0m12:17:06.743725 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.744064 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp"
+  
+    as (
+      
+
+select
+    data_inicial,
+    data_final,
+    estado,
+    municipio,
+    produto,
+    numero_postos_pesquisados,
+    unidade_medida,
+    preco_medio_revenda,
+    desvio_padrao_revenda,
+    preco_minimo_revenda,
+    preco_maximo_revenda,
+    coef_variacao_revenda,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "analytics"."main"."stg_anp__combustiveis_precos_medios_municipios"
+    );
+  
+  
+[0m12:17:06.744443 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp"
+  
+    as (
+      
+
+select
+    cnpj,
+    razao,
+    fantasia,
+    endereco,
+    numero,
+    complemento,
+    bairro,
+    cep,
+    municipio,
+    estado,
+    bandeira,
+    produto,
+    unidade_medida,
+    preco_revenda,
+    data_coleta,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "analytics"."main"."stg_anp__combustiveis_precos_postos"
+    );
+  
+  
+[0m12:17:06.747730 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:17:06.748605 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.748917 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+    select count(*) as row_count from "analytics"."main"."mart_conab__estoques_publicos__dbt_tmp"
+  
+[0m12:17:06.749297 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m12:17:06.749632 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m12:17:06.749990 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.750816 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.752484 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.753498 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.753852 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+    select count(*) as row_count from "analytics"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp"
+  
+[0m12:17:06.754204 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+    select count(*) as row_count from "analytics"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp"
+  
+[0m12:17:06.754690 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.755017 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:17:06.755420 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+[0m12:17:06.755770 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:17:06.756798 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.757156 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:17:06.758128 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.759980 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.760403 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.760785 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.761096 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+copy "analytics"."main"."mart_conab__estoques_publicos__dbt_tmp" to '/tmp/abastecimento-mvp/gold/mart_conab__estoques_publicos/mart.parquet' (format parquet)
+[0m12:17:06.761422 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+[0m12:17:06.761707 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+[0m12:17:06.762098 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:17:06.762563 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:17:06.763496 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.764712 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.765205 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:17:06.765588 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+copy "analytics"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp" to '/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_postos/mart.parquet' (format parquet)
+[0m12:17:06.765989 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+copy "analytics"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp" to '/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_medios_municipios/mart.parquet' (format parquet)
+[0m12:17:06.766922 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.767575 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.767884 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+      create or replace view "analytics"."main"."mart_conab__estoques_publicos__dbt_int" as (
+        select * from read_parquet('/tmp/abastecimento-mvp/gold/mart_conab__estoques_publicos/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:17:06.768255 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.769019 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.769363 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.771528 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.771952 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m12:17:06.772497 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.772770 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+alter view "analytics"."main"."mart_conab__estoques_publicos__dbt_int" rename to "mart_conab__estoques_publicos"
+[0m12:17:06.773907 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.774417 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+      create or replace view "analytics"."main"."mart_anp__combustiveis_precos_postos__dbt_int" as (
+        select * from read_parquet('/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_postos/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:17:06.774986 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:17:06.775395 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.776378 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: COMMIT
+[0m12:17:06.776690 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.777148 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+      create or replace view "analytics"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_int" as (
+        select * from read_parquet('/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_medios_municipios/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:17:06.777617 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.779664 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.780130 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: COMMIT
+[0m12:17:06.780409 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+alter view "analytics"."main"."mart_anp__combustiveis_precos_postos__dbt_int" rename to "mart_anp__combustiveis_precos_postos"
+[0m12:17:06.780835 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.783084 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.783482 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+alter view "analytics"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_int" rename to "mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.783773 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:17:06.784083 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:17:06.785684 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.786036 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.786918 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: COMMIT
+[0m12:17:06.787274 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+      drop table if exists "analytics"."main"."mart_conab__estoques_publicos__dbt_backup" cascade
+    
+[0m12:17:06.788232 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:17:06.788558 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.788934 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.789226 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: COMMIT
+[0m12:17:06.789501 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.789795 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:17:06.791840 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:06.792200 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.792601 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+      drop table if exists "analytics"."main"."mart_conab__estoques_publicos__dbt_tmp" cascade
+    
+[0m12:17:06.794184 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.794573 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.794932 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+      drop table if exists "analytics"."main"."mart_anp__combustiveis_precos_postos__dbt_backup" cascade
+    
+[0m12:17:06.796568 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.796942 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.797325 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+      drop table if exists "analytics"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_backup" cascade
+    
+[0m12:17:06.797636 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:17:06.798648 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: Close
+[0m12:17:06.800739 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:06.801102 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.801512 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff0c72bd70>]}
+[0m12:17:06.801872 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+      drop table if exists "analytics"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp" cascade
+    
+[0m12:17:06.804635 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:06.805150 [info ] [Thread-2 (]: 4 of 6 OK created sql external model main.mart_conab__estoques_publicos ........ [[32mOK[0m in 0.11s]
+[0m12:17:06.805561 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+      drop table if exists "analytics"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp" cascade
+    
+[0m12:17:06.805963 [debug] [Thread-2 (]: Finished running node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:17:06.806585 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:17:06.807565 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: Close
+[0m12:17:06.807847 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:17:06.808262 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff0c77b470>]}
+[0m12:17:06.809234 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: Close
+[0m12:17:06.809676 [info ] [Thread-4 (]: 6 of 6 OK created sql external model main.mart_anp__combustiveis_precos_postos . [[32mOK[0m in 0.12s]
+[0m12:17:06.810078 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2a5cc060-4a63-4c02-95fd-41c1278b1750', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff0c77a510>]}
+[0m12:17:06.810473 [debug] [Thread-4 (]: Finished running node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:17:06.810867 [info ] [Thread-3 (]: 5 of 6 OK created sql external model main.mart_anp__combustiveis_precos_medios_municipios  [[32mOK[0m in 0.12s]
+[0m12:17:06.811323 [debug] [Thread-3 (]: Finished running node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:17:06.812284 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:06.812568 [debug] [MainThread]: On master: BEGIN
+[0m12:17:06.812811 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:17:06.813197 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:06.813443 [debug] [MainThread]: On master: COMMIT
+[0m12:17:06.813677 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:06.813888 [debug] [MainThread]: On master: COMMIT
+[0m12:17:06.814190 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:06.814443 [debug] [MainThread]: On master: Close
+[0m12:17:06.814743 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:17:06.814956 [debug] [MainThread]: Connection 'model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios' was properly closed.
+[0m12:17:06.815149 [debug] [MainThread]: Connection 'model.open_data_agro.mart_conab__estoques_publicos' was properly closed.
+[0m12:17:06.815338 [debug] [MainThread]: Connection 'model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios' was properly closed.
+[0m12:17:06.815535 [debug] [MainThread]: Connection 'model.open_data_agro.mart_anp__combustiveis_precos_postos' was properly closed.
+[0m12:17:06.815798 [info ] [MainThread]: 
+[0m12:17:06.816044 [info ] [MainThread]: Finished running 3 external models, 3 view models in 0 hours 0 minutes and 0.32 seconds (0.32s).
+[0m12:17:06.816757 [debug] [MainThread]: Command end result
+[0m12:17:06.839527 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:17:06.840847 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:17:06.844659 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m12:17:06.844920 [info ] [MainThread]: 
+[0m12:17:06.845185 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:17:06.845412 [info ] [MainThread]: 
+[0m12:17:06.845667 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m12:17:06.846253 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.0840068, "process_in_blocks": "8", "process_kernel_time": 0.118577, "process_mem_max_rss": "211520", "process_out_blocks": "5328", "process_user_time": 3.083021}
+[0m12:17:06.846603 [debug] [MainThread]: Command `dbt build` succeeded at 12:17:06.846540 after 2.08 seconds
+[0m12:17:06.846875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff29241070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff29e95e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bff292a64e0>]}
+[0m12:17:06.847141 [debug] [MainThread]: Flushing usage events
+[0m12:17:07.817830 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:17:46.644862 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76412d480da0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76412e23fc20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76412d480e30>]}
+
+
+============================== 12:17:46.648484 | 8ad28cb2-00a2-4fd1-8458-2dd87fcde2a6 ==============================
+[0m12:17:46.648484 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:17:46.649203 [debug] [MainThread]: running dbt with arguments {'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'profiles_dir': '.', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'debug': 'False', 'quiet': 'False', 'printer_width': '80', 'no_print': 'None', 'write_json': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'invocation_command': 'dbt deps --profiles-dir .', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'static_parser': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None'}
+[0m12:17:46.740461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8ad28cb2-00a2-4fd1-8458-2dd87fcde2a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76412d322570>]}
+[0m12:17:46.753686 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-q7zo2tot'
+[0m12:17:46.754029 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:17:46.845741 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:17:46.846799 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:17:46.939653 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:17:46.943390 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:17:47.280396 [info ] [MainThread]: Installed from version 1.3.0
+[0m12:17:47.280760 [info ] [MainThread]: Updated version available: 1.4.0
+[0m12:17:47.281057 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '8ad28cb2-00a2-4fd1-8458-2dd87fcde2a6', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76412d1528d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76412d153590>]}
+[0m12:17:47.281351 [info ] [MainThread]: 
+[0m12:17:47.281608 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:17:47.282309 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.6811451, "process_in_blocks": "0", "process_kernel_time": 0.071225, "process_mem_max_rss": "121512", "process_out_blocks": "2304", "process_user_time": 1.163687}
+[0m12:17:47.282672 [debug] [MainThread]: Command `dbt deps` succeeded at 12:17:47.282609 after 0.68 seconds
+[0m12:17:47.282937 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76412d22c230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76412ff695e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76412d153590>]}
+[0m12:17:47.283214 [debug] [MainThread]: Flushing usage events
+[0m12:17:48.060925 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:17:49.259413 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55dd027140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55dde27d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55dde27ec0>]}
+
+
+============================== 12:17:49.262816 | 7bf549a9-c044-4391-8026-6277b914dea1 ==============================
+[0m12:17:49.262816 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:17:49.263229 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'quiet': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'partial_parse': 'True', 'write_json': 'True', 'target_path': 'None', 'profiles_dir': '.', 'debug': 'False', 'no_print': 'None', 'log_format': 'default', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'invocation_command': 'dbt build --profiles-dir . --select stg_conab__estoques_publicos+ stg_anp__combustiveis_precos_medios_municipios+ stg_anp__combustiveis_precos_postos+', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'fail_fast': 'False', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'empty': 'False', 'version_check': 'True', 'warn_error': 'None', 'log_cache_events': 'False'}
+[0m12:17:49.429059 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55d11cb680>]}
+[0m12:17:49.480693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55ddb18530>]}
+[0m12:17:49.481921 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:17:49.550695 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m12:17:49.628958 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:17:49.629344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55d0c38560>]}
+[0m12:17:50.900542 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55d0bdc6b0>]}
+[0m12:17:51.005874 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:17:51.007306 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:17:51.021303 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55d0b91a60>]}
+[0m12:17:51.021664 [info ] [MainThread]: Found 13 models, 34 data tests, 6 sources, 612 macros
+[0m12:17:51.024351 [info ] [MainThread]: 
+[0m12:17:51.024655 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m12:17:51.024894 [info ] [MainThread]: 
+[0m12:17:51.025234 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:17:51.028905 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m12:17:51.049996 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m12:17:51.050319 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m12:17:51.050588 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:17:51.075947 [debug] [ThreadPool]: SQL status: OK in 0.025 seconds
+[0m12:17:51.077063 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m12:17:51.077767 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m12:17:51.078173 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m12:17:51.082926 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:17:51.083214 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m12:17:51.083561 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:17:51.084408 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:17:51.085366 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:17:51.085635 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m12:17:51.085977 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:17:51.086222 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:17:51.086466 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m12:17:51.087057 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:17:51.087728 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:17:51.088001 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:17:51.088242 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:17:51.088643 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:17:51.088913 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m12:17:51.090423 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m12:17:51.096078 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:17:51.096395 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m12:17:51.096640 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:17:51.097159 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:17:51.097413 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:17:51.097687 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m12:17:51.099890 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m12:17:51.100907 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m12:17:51.101781 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m12:17:51.102052 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m12:17:51.102520 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55d0b91b20>]}
+[0m12:17:51.102910 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:51.103164 [debug] [MainThread]: On master: BEGIN
+[0m12:17:51.103403 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:17:51.103975 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:17:51.104253 [debug] [MainThread]: On master: COMMIT
+[0m12:17:51.104506 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:51.104773 [debug] [MainThread]: On master: COMMIT
+[0m12:17:51.105124 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:51.105385 [debug] [MainThread]: On master: Close
+[0m12:17:51.106984 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:17:51.107585 [debug] [Thread-2 (]: Began running node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:17:51.108266 [debug] [Thread-3 (]: Began running node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:17:51.108866 [info ] [Thread-1 (]: 1 of 6 START sql view model main.stg_anp__combustiveis_precos_medios_municipios  [RUN]
+[0m12:17:51.109609 [info ] [Thread-2 (]: 2 of 6 START sql view model main.stg_anp__combustiveis_precos_postos ........... [RUN]
+[0m12:17:51.110195 [info ] [Thread-3 (]: 3 of 6 START sql view model main.stg_conab__estoques_publicos .................. [RUN]
+[0m12:17:51.110608 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios)
+[0m12:17:51.111190 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_anp__combustiveis_precos_postos'
+[0m12:17:51.111723 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_conab__estoques_publicos'
+[0m12:17:51.112055 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:17:51.112529 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:17:51.113009 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:17:51.118597 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.122047 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:51.124557 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:51.125180 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:17:51.125523 [debug] [Thread-2 (]: Began executing node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:17:51.125889 [debug] [Thread-3 (]: Began executing node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:17:51.150176 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:51.151358 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.153473 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:51.154027 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:51.154519 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.154841 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: BEGIN
+[0m12:17:51.155198 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: BEGIN
+[0m12:17:51.155572 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:17:51.155914 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:51.156257 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:17:51.156782 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: BEGIN
+[0m12:17:51.157107 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:17:51.157512 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:17:51.157798 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:51.158156 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:17:51.158587 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_postos"} */
+
+  
+  create view "dbt_workspace"."main"."stg_anp__combustiveis_precos_postos__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/abastecimento-mvp/silver/anp/combustiveis_precos_postos/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim("CNPJ") as cnpj,
+  trim("RAZÃO") as razao,
+  trim("FANTASIA") as fantasia,
+  trim("ENDEREÇO") as endereco,
+  trim("NÚMERO") as numero,
+  trim("COMPLEMENTO") as complemento,
+  trim("BAIRRO") as bairro,
+  trim("CEP") as cep,
+  trim("MUNICÍPIO") as municipio,
+  trim("ESTADO") as estado,
+  trim("BANDEIRA") as bandeira,
+  trim("PRODUTO") as produto,
+  trim("UNIDADE DE MEDIDA") as unidade_medida,
+  cast("PREÇO DE REVENDA" as varchar) as preco_revenda,
+  trim("DATA DA COLETA") as data_coleta
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by cnpj, produto, data_coleta
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:17:51.158918 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.159223 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:17:51.159726 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"} */
+
+  
+  create view "dbt_workspace"."main"."stg_anp__combustiveis_precos_medios_municipios__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/abastecimento-mvp/silver/anp/combustiveis_precos_medios_municipios/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim("DATA INICIAL") as data_inicial,
+  trim("DATA FINAL") as data_final,
+  trim("ESTADO") as estado,
+  trim("MUNICÍPIO") as municipio,
+  trim("PRODUTO") as produto,
+  cast("NÚMERO DE POSTOS PESQUISADOS" as varchar) as numero_postos_pesquisados,
+  trim("UNIDADE DE MEDIDA") as unidade_medida,
+  cast("PREÇO MÉDIO REVENDA" as varchar) as preco_medio_revenda,
+  cast("DESVIO PADRÃO REVENDA" as varchar) as desvio_padrao_revenda,
+  cast("PREÇO MÍNIMO REVENDA" as varchar) as preco_minimo_revenda,
+  cast("PREÇO MÁXIMO REVENDA" as varchar) as preco_maximo_revenda,
+  cast("COEF DE VARIAÇÃO REVENDA" as varchar) as coef_variacao_revenda
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by data_inicial, data_final, estado, municipio, produto
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:17:51.160074 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:51.160566 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estoques_publicos"} */
+
+  
+  create view "dbt_workspace"."main"."stg_conab__estoques_publicos__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/abastecimento-mvp/silver/conab/estoques_publicos/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim(produto) as produto,
+  cast(id_produto as varchar) as id_produto,
+  trim(nom_municipio) as municipio,
+  cast(cod_ibge as varchar) as cod_ibge,
+  trim(uf) as uf,
+  cast(num_ano as varchar) as ano,
+  cast(num_mes as varchar) as mes,
+  trim(conta_operacional) as conta_operacional,
+  cast(qtd_estoque_kg as varchar) as qtd_estoque_kg
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by produto, municipio, cod_ibge, ano, mes, conta_operacional
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:17:51.160938 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.161438 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.166091 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:51.168341 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.168683 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m12:17:51.169069 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_postos"} */
+alter view "dbt_workspace"."main"."stg_anp__combustiveis_precos_postos__dbt_tmp" rename to "stg_anp__combustiveis_precos_postos"
+[0m12:17:51.169393 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"} */
+alter view "dbt_workspace"."main"."stg_anp__combustiveis_precos_medios_municipios__dbt_tmp" rename to "stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.171391 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:51.171983 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estoques_publicos"} */
+alter view "dbt_workspace"."main"."stg_conab__estoques_publicos__dbt_tmp" rename to "stg_conab__estoques_publicos"
+[0m12:17:51.172399 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.172715 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.173075 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.181625 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:17:51.182701 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: COMMIT
+[0m12:17:51.183699 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: COMMIT
+[0m12:17:51.184122 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.184458 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:51.184758 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:51.185054 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:17:51.185369 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: COMMIT
+[0m12:17:51.185660 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: COMMIT
+[0m12:17:51.187329 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.191551 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.191954 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m12:17:51.192259 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_anp__combustiveis_precos_medios_municipios__dbt_backup" cascade
+    
+[0m12:17:51.192569 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m12:17:51.195171 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:17:51.196976 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:17:51.197303 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estoques_publicos"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_conab__estoques_publicos__dbt_backup" cascade
+    
+[0m12:17:51.197618 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:17:51.197943 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_postos"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_anp__combustiveis_precos_postos__dbt_backup" cascade
+    
+[0m12:17:51.199716 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: Close
+[0m12:17:51.200148 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:17:51.200569 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.202364 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: Close
+[0m12:17:51.203355 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: Close
+[0m12:17:51.203889 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55d0105610>]}
+[0m12:17:51.204259 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55d0b969f0>]}
+[0m12:17:51.204658 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a866fcb0>]}
+[0m12:17:51.205151 [info ] [Thread-1 (]: 1 of 6 OK created sql view model main.stg_anp__combustiveis_precos_medios_municipios  [[32mOK[0m in 0.09s]
+[0m12:17:51.205676 [info ] [Thread-3 (]: 3 of 6 OK created sql view model main.stg_conab__estoques_publicos ............. [[32mOK[0m in 0.09s]
+[0m12:17:51.206165 [info ] [Thread-2 (]: 2 of 6 OK created sql view model main.stg_anp__combustiveis_precos_postos ...... [[32mOK[0m in 0.09s]
+[0m12:17:51.206628 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:17:51.207080 [debug] [Thread-3 (]: Finished running node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:17:51.207523 [debug] [Thread-2 (]: Finished running node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:17:51.208284 [debug] [Thread-4 (]: Began running node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:17:51.208781 [debug] [Thread-2 (]: Began running node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:17:51.209376 [info ] [Thread-4 (]: 4 of 6 START sql external model main.mart_anp__combustiveis_precos_medios_municipios  [RUN]
+[0m12:17:51.209838 [debug] [Thread-3 (]: Began running node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:17:51.210290 [info ] [Thread-2 (]: 5 of 6 START sql external model main.mart_conab__estoques_publicos ............. [RUN]
+[0m12:17:51.210718 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios'
+[0m12:17:51.211140 [info ] [Thread-3 (]: 6 of 6 START sql external model main.mart_anp__combustiveis_precos_postos ...... [RUN]
+[0m12:17:51.211506 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_anp__combustiveis_precos_postos, now model.open_data_agro.mart_conab__estoques_publicos)
+[0m12:17:51.211797 [debug] [Thread-4 (]: Began compiling node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:17:51.212164 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_conab__estoques_publicos, now model.open_data_agro.mart_anp__combustiveis_precos_postos)
+[0m12:17:51.212474 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:17:51.215396 [debug] [Thread-4 (]: Writing injected SQL for node "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.215852 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:17:51.218660 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.221541 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.222085 [debug] [Thread-4 (]: Began executing node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:17:51.232705 [debug] [Thread-3 (]: Began executing node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:17:51.238248 [debug] [Thread-2 (]: Began executing node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:17:51.271537 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.278972 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.281613 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.281991 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: BEGIN
+[0m12:17:51.282384 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: BEGIN
+[0m12:17:51.282688 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: BEGIN
+[0m12:17:51.283049 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:17:51.283324 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:17:51.283602 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:17:51.284253 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.284574 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:17:51.284856 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.285126 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:17:51.285453 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.285769 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp"
+  
+    as (
+      
+
+select
+    cnpj,
+    razao,
+    fantasia,
+    endereco,
+    numero,
+    complemento,
+    bairro,
+    cep,
+    municipio,
+    estado,
+    bandeira,
+    produto,
+    unidade_medida,
+    preco_revenda,
+    data_coleta,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_anp__combustiveis_precos_postos"
+    );
+  
+  
+[0m12:17:51.286237 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.286718 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp"
+  
+    as (
+      
+
+select
+    data_inicial,
+    data_final,
+    estado,
+    municipio,
+    produto,
+    numero_postos_pesquisados,
+    unidade_medida,
+    preco_medio_revenda,
+    desvio_padrao_revenda,
+    preco_minimo_revenda,
+    preco_maximo_revenda,
+    coef_variacao_revenda,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_anp__combustiveis_precos_medios_municipios"
+    );
+  
+  
+[0m12:17:51.287244 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_tmp"
+  
+    as (
+      
+
+select
+    produto,
+    id_produto,
+    municipio,
+    cod_ibge,
+    uf,
+    ano,
+    mes,
+    conta_operacional,
+    qtd_estoque_kg,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_conab__estoques_publicos"
+    );
+  
+  
+[0m12:17:51.290809 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m12:17:51.292220 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.292712 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m12:17:51.293127 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp"
+  
+[0m12:17:51.293645 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m12:17:51.294563 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.295551 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.295873 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp"
+  
+[0m12:17:51.296210 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.296553 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_tmp"
+  
+[0m12:17:51.297679 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.298153 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.298537 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.298908 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.299946 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.300958 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.301330 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+[0m12:17:51.301858 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.302203 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:17:51.302554 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+[0m12:17:51.302889 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.304681 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.305105 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:17:51.305414 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+[0m12:17:51.305736 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+copy "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp" to '/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_postos/mart.parquet' (format parquet)
+[0m12:17:51.306589 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.306950 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:17:51.307372 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+copy "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp" to '/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_medios_municipios/mart.parquet' (format parquet)
+[0m12:17:51.308133 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.308524 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.308850 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+copy "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_tmp" to '/tmp/abastecimento-mvp/gold/mart_conab__estoques_publicos/mart.parquet' (format parquet)
+[0m12:17:51.309661 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.310186 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:17:51.310788 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.312110 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.313105 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.313594 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.314170 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+      create or replace view "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_int" as (
+        select * from read_parquet('/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_postos/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:17:51.314662 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.315095 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.315609 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+      create or replace view "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_int" as (
+        select * from read_parquet('/tmp/abastecimento-mvp/gold/mart_conab__estoques_publicos/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:17:51.315986 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.316482 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+      create or replace view "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_int" as (
+        select * from read_parquet('/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_medios_municipios/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:17:51.318976 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.319535 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:17:51.319898 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+alter view "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_int" rename to "mart_anp__combustiveis_precos_postos"
+[0m12:17:51.320332 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.322627 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.325906 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.326297 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+alter view "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_int" rename to "mart_conab__estoques_publicos"
+[0m12:17:51.326611 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m12:17:51.326973 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+alter view "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_int" rename to "mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.327932 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: COMMIT
+[0m12:17:51.328313 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.328643 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:17:51.328950 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.329812 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: COMMIT
+[0m12:17:51.330864 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:17:51.331204 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: COMMIT
+[0m12:17:51.331510 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.331819 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.332175 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: COMMIT
+[0m12:17:51.332490 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:17:51.333383 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.335045 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.335366 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_backup" cascade
+    
+[0m12:17:51.335686 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:17:51.336101 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:17:51.336485 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:17:51.338111 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.339737 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.342452 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:17:51.342779 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_backup" cascade
+    
+[0m12:17:51.343112 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_backup" cascade
+    
+[0m12:17:51.343419 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp" cascade
+    
+[0m12:17:51.343934 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:17:51.344241 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:17:51.346182 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:17:51.348135 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:17:51.348460 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp" cascade
+    
+[0m12:17:51.348773 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_tmp" cascade
+    
+[0m12:17:51.349321 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m12:17:51.351017 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: Close
+[0m12:17:51.351555 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:17:51.352150 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55d0bc8c20>]}
+[0m12:17:51.353222 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: Close
+[0m12:17:51.353517 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m12:17:51.354198 [info ] [Thread-3 (]: 6 of 6 OK created sql external model main.mart_anp__combustiveis_precos_postos . [[32mOK[0m in 0.14s]
+[0m12:17:51.354876 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55a850be60>]}
+[0m12:17:51.355840 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: Close
+[0m12:17:51.356251 [debug] [Thread-3 (]: Finished running node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:17:51.356708 [info ] [Thread-4 (]: 4 of 6 OK created sql external model main.mart_anp__combustiveis_precos_medios_municipios  [[32mOK[0m in 0.14s]
+[0m12:17:51.357155 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7bf549a9-c044-4391-8026-6277b914dea1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55d0bde840>]}
+[0m12:17:51.357620 [debug] [Thread-4 (]: Finished running node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:17:51.358134 [info ] [Thread-2 (]: 5 of 6 OK created sql external model main.mart_conab__estoques_publicos ........ [[32mOK[0m in 0.15s]
+[0m12:17:51.358671 [debug] [Thread-2 (]: Finished running node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:17:51.360028 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:51.360646 [debug] [MainThread]: On master: BEGIN
+[0m12:17:51.360954 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:17:51.361356 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:51.361613 [debug] [MainThread]: On master: COMMIT
+[0m12:17:51.361840 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:17:51.362054 [debug] [MainThread]: On master: COMMIT
+[0m12:17:51.362362 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:17:51.362629 [debug] [MainThread]: On master: Close
+[0m12:17:51.362924 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:17:51.363146 [debug] [MainThread]: Connection 'model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios' was properly closed.
+[0m12:17:51.363351 [debug] [MainThread]: Connection 'model.open_data_agro.mart_conab__estoques_publicos' was properly closed.
+[0m12:17:51.363560 [debug] [MainThread]: Connection 'model.open_data_agro.mart_anp__combustiveis_precos_postos' was properly closed.
+[0m12:17:51.363762 [debug] [MainThread]: Connection 'model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios' was properly closed.
+[0m12:17:51.364032 [info ] [MainThread]: 
+[0m12:17:51.364272 [info ] [MainThread]: Finished running 3 external models, 3 view models in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[0m12:17:51.365007 [debug] [MainThread]: Command end result
+[0m12:17:51.388670 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:17:51.390086 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:17:51.393890 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m12:17:51.394167 [info ] [MainThread]: 
+[0m12:17:51.394463 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:17:51.394714 [info ] [MainThread]: 
+[0m12:17:51.394958 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m12:17:51.395552 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.1785276, "process_in_blocks": "0", "process_kernel_time": 0.137515, "process_mem_max_rss": "214212", "process_out_blocks": "5344", "process_user_time": 3.152818}
+[0m12:17:51.395917 [debug] [MainThread]: Command `dbt build` succeeded at 12:17:51.395857 after 2.18 seconds
+[0m12:17:51.396196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55ddf36690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55e29bbb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f55dd2e85f0>]}
+[0m12:17:51.396468 [debug] [MainThread]: Flushing usage events
+[0m12:17:52.261911 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:19:02.714307 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c036fa8140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c03685d0a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c035f99bb0>]}
+
+
+============================== 12:19:02.716626 | 10cc2372-cff1-4453-81b9-b274f5c45a8b ==============================
+[0m12:19:02.716626 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:19:02.717036 [debug] [MainThread]: running dbt with arguments {'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'target_path': 'None', 'static_parser': 'True', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'version_check': 'True', 'printer_width': '80', 'empty': 'None', 'use_experimental_parser': 'False', 'warn_error': 'None', 'cache_selected_only': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'indirect_selection': 'eager', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'quiet': 'False', 'write_json': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '.', 'invocation_command': 'dbt deps --profiles-dir .'}
+[0m12:19:02.809897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '10cc2372-cff1-4453-81b9-b274f5c45a8b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c035c98440>]}
+[0m12:19:02.823278 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-yc7rghj7'
+[0m12:19:02.823700 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:19:02.951108 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:19:02.952202 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:19:03.047213 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:19:03.050991 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:19:03.396633 [info ] [MainThread]: Installed from version 1.3.0
+[0m12:19:03.397063 [info ] [MainThread]: Updated version available: 1.4.0
+[0m12:19:03.397440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '10cc2372-cff1-4453-81b9-b274f5c45a8b', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c036b54260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c035ad38f0>]}
+[0m12:19:03.397759 [info ] [MainThread]: 
+[0m12:19:03.398052 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:19:03.398813 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.72959197, "process_in_blocks": "0", "process_kernel_time": 0.069887, "process_mem_max_rss": "121620", "process_out_blocks": "2304", "process_user_time": 1.18109}
+[0m12:19:03.399186 [debug] [MainThread]: Command `dbt deps` succeeded at 12:19:03.399124 after 0.73 seconds
+[0m12:19:03.399473 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c036cef4a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c03685d0a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71c035d8a300>]}
+[0m12:19:03.399764 [debug] [MainThread]: Flushing usage events
+[0m12:19:04.087092 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:19:05.350118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74771e27bf80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74771b48f920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74771a922300>]}
+
+
+============================== 12:19:05.353784 | 9aa4db95-a514-485e-a561-90badbe96df2 ==============================
+[0m12:19:05.353784 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:19:05.354515 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'invocation_command': 'dbt build --profiles-dir . --select stg_conab__estoques_publicos+ stg_anp__combustiveis_precos_medios_municipios+ stg_anp__combustiveis_precos_postos+', 'write_json': 'True', 'static_parser': 'True', 'quiet': 'False', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'log_format': 'default', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'profiles_dir': '.', 'use_experimental_parser': 'False', 'no_print': 'None', 'partial_parse': 'True', 'target_path': 'None', 'empty': 'False', 'introspect': 'True', 'use_colors': 'True', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'version_check': 'True'}
+[0m12:19:05.518332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x747719f53470>]}
+[0m12:19:05.567798 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74771af41460>]}
+[0m12:19:05.569008 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:19:05.635199 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m12:19:05.722871 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:19:05.723221 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m12:19:05.723465 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:19:05.759398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74770e076570>]}
+[0m12:19:05.869962 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:19:05.872033 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:19:05.887685 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74770de73200>]}
+[0m12:19:05.888108 [info ] [MainThread]: Found 13 models, 34 data tests, 6 sources, 612 macros
+[0m12:19:05.890979 [info ] [MainThread]: 
+[0m12:19:05.891327 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m12:19:05.891585 [info ] [MainThread]: 
+[0m12:19:05.891945 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:19:05.895546 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m12:19:05.917795 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m12:19:05.918170 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m12:19:05.918432 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:19:05.940524 [debug] [ThreadPool]: SQL status: OK in 0.022 seconds
+[0m12:19:05.941676 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m12:19:05.942219 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m12:19:05.942597 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m12:19:05.947387 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:19:05.947721 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m12:19:05.948049 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:19:05.948853 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:19:05.949841 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:19:05.950119 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m12:19:05.950603 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:19:05.950886 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:19:05.951110 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m12:19:05.951655 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:19:05.952355 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:19:05.952627 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:19:05.952865 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:19:05.953200 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:19:05.953460 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m12:19:05.954847 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m12:19:05.959333 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:19:05.959648 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m12:19:05.959880 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:19:05.960374 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:19:05.960650 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:19:05.960888 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m12:19:05.962826 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m12:19:05.963966 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m12:19:05.964827 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m12:19:05.965091 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m12:19:05.966199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x747719e60e90>]}
+[0m12:19:05.966554 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:19:05.966854 [debug] [MainThread]: On master: BEGIN
+[0m12:19:05.967089 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:19:05.967544 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:19:05.967854 [debug] [MainThread]: On master: COMMIT
+[0m12:19:05.968103 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:19:05.968359 [debug] [MainThread]: On master: COMMIT
+[0m12:19:05.968851 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:19:05.969159 [debug] [MainThread]: On master: Close
+[0m12:19:05.971843 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:19:05.972425 [debug] [Thread-2 (]: Began running node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:19:05.972983 [debug] [Thread-3 (]: Began running node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:19:05.973671 [info ] [Thread-1 (]: 1 of 6 START sql view model main.stg_anp__combustiveis_precos_medios_municipios  [RUN]
+[0m12:19:05.974157 [info ] [Thread-2 (]: 2 of 6 START sql view model main.stg_anp__combustiveis_precos_postos ........... [RUN]
+[0m12:19:05.974723 [info ] [Thread-3 (]: 3 of 6 START sql view model main.stg_conab__estoques_publicos .................. [RUN]
+[0m12:19:05.975427 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios)
+[0m12:19:05.976019 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_anp__combustiveis_precos_postos'
+[0m12:19:05.976604 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_conab__estoques_publicos'
+[0m12:19:05.977153 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:19:05.977607 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:19:05.978013 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:19:05.990849 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:19:05.996390 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:19:06.003571 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:19:06.004768 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:19:06.005404 [debug] [Thread-2 (]: Began executing node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:19:06.005976 [debug] [Thread-3 (]: Began executing node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:19:06.043180 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.043855 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:19:06.046186 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:19:06.046877 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.047299 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:19:06.047647 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: BEGIN
+[0m12:19:06.048034 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: BEGIN
+[0m12:19:06.048386 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:19:06.048673 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:19:06.048947 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:19:06.049272 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: BEGIN
+[0m12:19:06.049795 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:19:06.050159 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.050493 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:19:06.050762 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.051074 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.051374 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:19:06.051698 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"} */
+
+  
+  create view "dbt_workspace"."main"."stg_anp__combustiveis_precos_medios_municipios__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/abastecimento-mvp/silver/anp/combustiveis_precos_medios_municipios/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim("DATA INICIAL") as data_inicial,
+  trim("DATA FINAL") as data_final,
+  trim("ESTADO") as estado,
+  trim("MUNICÍPIO") as municipio,
+  trim("PRODUTO") as produto,
+  cast("NÚMERO DE POSTOS PESQUISADOS" as varchar) as numero_postos_pesquisados,
+  trim("UNIDADE DE MEDIDA") as unidade_medida,
+  cast("PREÇO MÉDIO REVENDA" as varchar) as preco_medio_revenda,
+  cast("DESVIO PADRÃO REVENDA" as varchar) as desvio_padrao_revenda,
+  cast("PREÇO MÍNIMO REVENDA" as varchar) as preco_minimo_revenda,
+  cast("PREÇO MÁXIMO REVENDA" as varchar) as preco_maximo_revenda,
+  cast("COEF DE VARIAÇÃO REVENDA" as varchar) as coef_variacao_revenda
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by data_inicial, data_final, estado, municipio, produto
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:19:06.052059 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:19:06.052369 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_postos"} */
+
+  
+  create view "dbt_workspace"."main"."stg_anp__combustiveis_precos_postos__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/abastecimento-mvp/silver/anp/combustiveis_precos_postos/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim("CNPJ") as cnpj,
+  trim("RAZÃO") as razao,
+  trim("FANTASIA") as fantasia,
+  trim("ENDEREÇO") as endereco,
+  trim("NÚMERO") as numero,
+  trim("COMPLEMENTO") as complemento,
+  trim("BAIRRO") as bairro,
+  trim("CEP") as cep,
+  trim("MUNICÍPIO") as municipio,
+  trim("ESTADO") as estado,
+  trim("BANDEIRA") as bandeira,
+  trim("PRODUTO") as produto,
+  trim("UNIDADE DE MEDIDA") as unidade_medida,
+  cast("PREÇO DE REVENDA" as varchar) as preco_revenda,
+  trim("DATA DA COLETA") as data_coleta
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by cnpj, produto, data_coleta
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:19:06.052849 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estoques_publicos"} */
+
+  
+  create view "dbt_workspace"."main"."stg_conab__estoques_publicos__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/abastecimento-mvp/silver/conab/estoques_publicos/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim(produto) as produto,
+  cast(id_produto as varchar) as id_produto,
+  trim(nom_municipio) as municipio,
+  cast(cod_ibge as varchar) as cod_ibge,
+  trim(uf) as uf,
+  cast(num_ano as varchar) as ano,
+  cast(num_mes as varchar) as mes,
+  trim(conta_operacional) as conta_operacional,
+  cast(qtd_estoque_kg as varchar) as qtd_estoque_kg
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by produto, municipio, cod_ibge, ano, mes, conta_operacional
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:19:06.053602 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.059004 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.059354 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m12:19:06.059705 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m12:19:06.060073 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"} */
+alter view "dbt_workspace"."main"."stg_anp__combustiveis_precos_medios_municipios" rename to "stg_anp__combustiveis_precos_medios_municipios__dbt_backup"
+[0m12:19:06.062277 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:19:06.064416 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:19:06.064825 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estoques_publicos"} */
+alter view "dbt_workspace"."main"."stg_conab__estoques_publicos" rename to "stg_conab__estoques_publicos__dbt_backup"
+[0m12:19:06.065172 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_postos"} */
+alter view "dbt_workspace"."main"."stg_anp__combustiveis_precos_postos" rename to "stg_anp__combustiveis_precos_postos__dbt_backup"
+[0m12:19:06.065504 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.067878 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.068234 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"} */
+alter view "dbt_workspace"."main"."stg_anp__combustiveis_precos_medios_municipios__dbt_tmp" rename to "stg_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.068702 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.069260 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.071935 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:19:06.072265 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.074383 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:19:06.074738 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_postos"} */
+alter view "dbt_workspace"."main"."stg_anp__combustiveis_precos_postos__dbt_tmp" rename to "stg_anp__combustiveis_precos_postos"
+[0m12:19:06.084982 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:19:06.085385 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estoques_publicos"} */
+alter view "dbt_workspace"."main"."stg_conab__estoques_publicos__dbt_tmp" rename to "stg_conab__estoques_publicos"
+[0m12:19:06.085870 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.086275 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:19:06.086647 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:19:06.086951 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:19:06.088018 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: COMMIT
+[0m12:19:06.088995 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: COMMIT
+[0m12:19:06.089459 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:19:06.089887 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:19:06.090223 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: COMMIT
+[0m12:19:06.090546 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: COMMIT
+[0m12:19:06.090892 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.095775 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.096219 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_anp__combustiveis_precos_medios_municipios__dbt_backup" cascade
+    
+[0m12:19:06.096729 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m12:19:06.097221 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m12:19:06.099474 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_anp__combustiveis_precos_postos"
+[0m12:19:06.099903 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.103145 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_conab__estoques_publicos"
+[0m12:19:06.103613 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_anp__combustiveis_precos_postos"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_anp__combustiveis_precos_postos__dbt_backup" cascade
+    
+[0m12:19:06.105568 [debug] [Thread-1 (]: On model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios: Close
+[0m12:19:06.105979 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estoques_publicos"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_conab__estoques_publicos__dbt_backup" cascade
+    
+[0m12:19:06.107485 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74770c0fd160>]}
+[0m12:19:06.108068 [info ] [Thread-1 (]: 1 of 6 OK created sql view model main.stg_anp__combustiveis_precos_medios_municipios  [[32mOK[0m in 0.13s]
+[0m12:19:06.108550 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios
+[0m12:19:06.109132 [debug] [Thread-4 (]: Began running node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:19:06.109567 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.109951 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.110407 [info ] [Thread-4 (]: 4 of 6 START sql external model main.mart_anp__combustiveis_precos_medios_municipios  [RUN]
+[0m12:19:06.111584 [debug] [Thread-2 (]: On model.open_data_agro.stg_anp__combustiveis_precos_postos: Close
+[0m12:19:06.112606 [debug] [Thread-3 (]: On model.open_data_agro.stg_conab__estoques_publicos: Close
+[0m12:19:06.113076 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios'
+[0m12:19:06.113723 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74770c0f1070>]}
+[0m12:19:06.114251 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74770c0f0d40>]}
+[0m12:19:06.114735 [debug] [Thread-4 (]: Began compiling node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:19:06.115441 [info ] [Thread-2 (]: 2 of 6 OK created sql view model main.stg_anp__combustiveis_precos_postos ...... [[32mOK[0m in 0.14s]
+[0m12:19:06.116070 [info ] [Thread-3 (]: 3 of 6 OK created sql view model main.stg_conab__estoques_publicos ............. [[32mOK[0m in 0.14s]
+[0m12:19:06.119660 [debug] [Thread-4 (]: Writing injected SQL for node "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.120438 [debug] [Thread-2 (]: Finished running node model.open_data_agro.stg_anp__combustiveis_precos_postos
+[0m12:19:06.121022 [debug] [Thread-3 (]: Finished running node model.open_data_agro.stg_conab__estoques_publicos
+[0m12:19:06.121928 [debug] [Thread-3 (]: Began running node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:19:06.122407 [debug] [Thread-4 (]: Began executing node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:19:06.123065 [info ] [Thread-3 (]: 5 of 6 START sql external model main.mart_anp__combustiveis_precos_postos ...... [RUN]
+[0m12:19:06.139092 [debug] [Thread-2 (]: Began running node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:19:06.139754 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_conab__estoques_publicos, now model.open_data_agro.mart_anp__combustiveis_precos_postos)
+[0m12:19:06.160735 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.160335 [info ] [Thread-2 (]: 6 of 6 START sql external model main.mart_conab__estoques_publicos ............. [RUN]
+[0m12:19:06.161469 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:19:06.161822 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: BEGIN
+[0m12:19:06.162246 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_anp__combustiveis_precos_postos, now model.open_data_agro.mart_conab__estoques_publicos)
+[0m12:19:06.165315 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.165782 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:19:06.166202 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:19:06.169193 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.169616 [debug] [Thread-3 (]: Began executing node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:19:06.169984 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m12:19:06.172527 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.172887 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.173270 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: BEGIN
+[0m12:19:06.173593 [debug] [Thread-2 (]: Began executing node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:19:06.173929 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp"
+  
+    as (
+      
+
+select
+    data_inicial,
+    data_final,
+    estado,
+    municipio,
+    produto,
+    numero_postos_pesquisados,
+    unidade_medida,
+    preco_medio_revenda,
+    desvio_padrao_revenda,
+    preco_minimo_revenda,
+    preco_maximo_revenda,
+    coef_variacao_revenda,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_anp__combustiveis_precos_medios_municipios"
+    );
+  
+  
+[0m12:19:06.174274 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:19:06.176682 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.177300 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: BEGIN
+[0m12:19:06.177604 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:19:06.177893 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m12:19:06.178296 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.178695 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.179033 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp"
+  
+    as (
+      
+
+select
+    cnpj,
+    razao,
+    fantasia,
+    endereco,
+    numero,
+    complemento,
+    bairro,
+    cep,
+    municipio,
+    estado,
+    bandeira,
+    produto,
+    unidade_medida,
+    preco_revenda,
+    data_coleta,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_anp__combustiveis_precos_postos"
+    );
+  
+  
+[0m12:19:06.179421 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.179817 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_tmp"
+  
+    as (
+      
+
+select
+    produto,
+    id_produto,
+    municipio,
+    cod_ibge,
+    uf,
+    ano,
+    mes,
+    conta_operacional,
+    qtd_estoque_kg,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_conab__estoques_publicos"
+    );
+  
+  
+[0m12:19:06.180264 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.181415 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.182000 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp"
+  
+[0m12:19:06.182773 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:19:06.183881 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.184330 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m12:19:06.184676 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m12:19:06.185055 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.185934 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.186800 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.187162 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+[0m12:19:06.187519 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_tmp"
+  
+[0m12:19:06.187895 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp"
+  
+[0m12:19:06.188253 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:19:06.190536 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.190962 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:19:06.191395 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.191872 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+copy "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp" to '/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_medios_municipios/mart.parquet' (format parquet)
+[0m12:19:06.193061 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.194690 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.195472 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.195902 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+[0m12:19:06.196396 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.196900 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:19:06.197287 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:19:06.197721 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+[0m12:19:06.198753 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.199653 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.200183 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:19:06.202070 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+copy "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_tmp" to '/tmp/abastecimento-mvp/gold/mart_conab__estoques_publicos/mart.parquet' (format parquet)
+[0m12:19:06.203425 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.203936 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.204506 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+copy "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp" to '/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_postos/mart.parquet' (format parquet)
+[0m12:19:06.204985 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+      create or replace view "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_int" as (
+        select * from read_parquet('/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_medios_municipios/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:19:06.205476 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.206600 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.207082 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.207516 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:19:06.209779 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.210853 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.211379 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.211860 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+alter view "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios" rename to "mart_anp__combustiveis_precos_medios_municipios__dbt_backup"
+[0m12:19:06.212358 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+      create or replace view "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_int" as (
+        select * from read_parquet('/tmp/abastecimento-mvp/gold/mart_conab__estoques_publicos/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:19:06.213037 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.213363 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+      create or replace view "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_int" as (
+        select * from read_parquet('/tmp/abastecimento-mvp/gold/mart_anp__combustiveis_precos_postos/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:19:06.213728 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.214113 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.216503 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.219168 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.219589 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+alter view "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_int" rename to "mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.219985 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m12:19:06.220361 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+alter view "dbt_workspace"."main"."mart_conab__estoques_publicos" rename to "mart_conab__estoques_publicos__dbt_backup"
+[0m12:19:06.222493 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.222908 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:19:06.223325 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:19:06.223810 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+alter view "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos" rename to "mart_anp__combustiveis_precos_postos__dbt_backup"
+[0m12:19:06.224914 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:19:06.227064 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.227540 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.227888 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:19:06.228236 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+alter view "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_int" rename to "mart_conab__estoques_publicos"
+[0m12:19:06.228542 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: COMMIT
+[0m12:19:06.230608 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.231181 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+alter view "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_int" rename to "mart_anp__combustiveis_precos_postos"
+[0m12:19:06.231580 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.232591 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: COMMIT
+[0m12:19:06.232951 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:19:06.233294 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.233604 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:19:06.235457 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.235815 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: COMMIT
+[0m12:19:06.236823 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: COMMIT
+[0m12:19:06.237200 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_backup" cascade
+    
+[0m12:19:06.237679 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.238061 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: COMMIT
+[0m12:19:06.238791 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:19:06.240604 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.240996 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.241391 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_backup" cascade
+    
+[0m12:19:06.241723 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.244096 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"
+[0m12:19:06.246985 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.247330 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_anp__combustiveis_precos_medios_municipios__dbt_tmp" cascade
+    
+[0m12:19:06.247736 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_backup" cascade
+    
+[0m12:19:06.248100 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m12:19:06.250394 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_conab__estoques_publicos"
+[0m12:19:06.250723 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estoques_publicos"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__estoques_publicos__dbt_tmp" cascade
+    
+[0m12:19:06.251466 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.253499 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_anp__combustiveis_precos_postos"
+[0m12:19:06.253825 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m12:19:06.254180 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:19:06.254564 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_anp__combustiveis_precos_postos"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_anp__combustiveis_precos_postos__dbt_tmp" cascade
+    
+[0m12:19:06.255664 [debug] [Thread-4 (]: On model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios: Close
+[0m12:19:06.256750 [debug] [Thread-2 (]: On model.open_data_agro.mart_conab__estoques_publicos: Close
+[0m12:19:06.257328 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74771a8b5280>]}
+[0m12:19:06.257780 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74770c0e9580>]}
+[0m12:19:06.258293 [info ] [Thread-4 (]: 4 of 6 OK created sql external model main.mart_anp__combustiveis_precos_medios_municipios  [[32mOK[0m in 0.14s]
+[0m12:19:06.258641 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:19:06.259127 [info ] [Thread-2 (]: 6 of 6 OK created sql external model main.mart_conab__estoques_publicos ........ [[32mOK[0m in 0.10s]
+[0m12:19:06.259564 [debug] [Thread-4 (]: Finished running node model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios
+[0m12:19:06.260578 [debug] [Thread-3 (]: On model.open_data_agro.mart_anp__combustiveis_precos_postos: Close
+[0m12:19:06.261020 [debug] [Thread-2 (]: Finished running node model.open_data_agro.mart_conab__estoques_publicos
+[0m12:19:06.261602 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9aa4db95-a514-485e-a561-90badbe96df2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x747719f73800>]}
+[0m12:19:06.262113 [info ] [Thread-3 (]: 5 of 6 OK created sql external model main.mart_anp__combustiveis_precos_postos . [[32mOK[0m in 0.12s]
+[0m12:19:06.262557 [debug] [Thread-3 (]: Finished running node model.open_data_agro.mart_anp__combustiveis_precos_postos
+[0m12:19:06.263692 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:19:06.263977 [debug] [MainThread]: On master: BEGIN
+[0m12:19:06.264223 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:19:06.264732 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:19:06.265010 [debug] [MainThread]: On master: COMMIT
+[0m12:19:06.265260 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:19:06.265497 [debug] [MainThread]: On master: COMMIT
+[0m12:19:06.265883 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:19:06.266171 [debug] [MainThread]: On master: Close
+[0m12:19:06.266500 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:19:06.266736 [debug] [MainThread]: Connection 'model.open_data_agro.stg_anp__combustiveis_precos_medios_municipios' was properly closed.
+[0m12:19:06.266955 [debug] [MainThread]: Connection 'model.open_data_agro.mart_conab__estoques_publicos' was properly closed.
+[0m12:19:06.267179 [debug] [MainThread]: Connection 'model.open_data_agro.mart_anp__combustiveis_precos_postos' was properly closed.
+[0m12:19:06.267407 [debug] [MainThread]: Connection 'model.open_data_agro.mart_anp__combustiveis_precos_medios_municipios' was properly closed.
+[0m12:19:06.267713 [info ] [MainThread]: 
+[0m12:19:06.267975 [info ] [MainThread]: Finished running 3 external models, 3 view models in 0 hours 0 minutes and 0.38 seconds (0.38s).
+[0m12:19:06.268757 [debug] [MainThread]: Command end result
+[0m12:19:06.294711 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:19:06.296376 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:19:06.300725 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m12:19:06.301036 [info ] [MainThread]: 
+[0m12:19:06.301340 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:19:06.301626 [info ] [MainThread]: 
+[0m12:19:06.301903 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m12:19:06.302551 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 0.99670386, "process_in_blocks": "0", "process_kernel_time": 0.13681, "process_mem_max_rss": "210364", "process_out_blocks": "3864", "process_user_time": 2.019205}
+[0m12:19:06.302927 [debug] [MainThread]: Command `dbt build` succeeded at 12:19:06.302863 after 1.00 seconds
+[0m12:19:06.303218 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74771bbad640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74771e452330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74771af97050>]}
+[0m12:19:06.303521 [debug] [MainThread]: Flushing usage events
+[0m12:19:07.078977 [debug] [MainThread]: An error was encountered while trying to flush usage events

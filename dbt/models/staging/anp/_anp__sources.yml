@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: anp_silver
+    description: ANP silver Delta tables promoted from bronze Parquet (local-first).
+    meta:
+      fonte_oficial: https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
+      agencia: ANP
+    tables:
+      - name: combustiveis_precos_medios_municipios
+        description: LPC weekly average fuel prices by municipality
+        meta:
+          dataset_id: anp.combustiveis-precos-medios-municipios
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/anp/combustiveis_precos_medios_municipios"
+
+      - name: combustiveis_precos_postos
+        description: LPC weekly fuel prices per retail station
+        meta:
+          dataset_id: anp.combustiveis-precos-postos
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/anp/combustiveis_precos_postos"

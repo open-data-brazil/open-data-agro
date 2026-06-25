@@ -50,9 +50,16 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 
 | Dataset ID | Portal label | Status |
 |------------|--------------|--------|
-| `conab.estoques-publicos` | Estoques Públicos | Planned |
-| `conab.operacoes-comercializacao` | Operações de Comercialização | Planned |
-| `conab.vendas-balcao` | Vendas em Balcão | Planned |
+| `conab.estoques-publicos` | Estoques Públicos | **P1 — implemented** |
+| `conab.operacoes-comercializacao` | Operações de Comercialização | Catalog + GE + ingest |
+| `conab.vendas-balcao` | Vendas em Balcão | Catalog + GE + ingest |
+
+### ANP — Combustíveis (Phase 12 extension)
+
+| Dataset ID | Portal label | Status |
+|------------|--------------|--------|
+| `anp.combustiveis-precos-medios-municipios` | LPC — preços médios por município | **P1 — implemented** |
+| `anp.combustiveis-precos-postos` | LPC — preços por posto revendedor | **P1 — implemented** |
 
 ### Armazenamento e Logística (Phase 13)
 

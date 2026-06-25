@@ -6,7 +6,7 @@ open_data_agro:
   outputs:
     dev_local:
       type: duckdb
-      path: "{{ env_var('DUCKDB_PATH', '../duckdb/analytics.duckdb') }}"
+      path: "{{ env_var('DBT_DUCKDB_PATH', '../duckdb/dbt_workspace.duckdb') }}"
       threads: 4
       extensions:
         - httpfs
@@ -15,7 +15,7 @@ open_data_agro:
     # Production variant — same SQL, R2-backed paths (enable httpfs + secrets)
     prod_r2:
       type: duckdb
-      path: "{{ env_var('DUCKDB_PATH', '../duckdb/analytics.duckdb') }}"
+      path: "{{ env_var('DBT_DUCKDB_PATH', '../duckdb/dbt_workspace.duckdb') }}"
       threads: 4
       extensions:
         - httpfs

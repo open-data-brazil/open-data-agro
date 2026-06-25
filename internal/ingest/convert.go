@@ -32,9 +32,9 @@ func convertToParquet(entry catalog.RegistryEntry, raw []byte, path string) ([]b
 		return convertDelimitedToParquet(raw, delimiterFor(entry))
 	case catalog.FormatXLSX:
 		if path != "" {
-			return convertXLSXFileToParquet(path)
+			return convertXLSXFileToParquet(entry, path)
 		}
-		return convertXLSXToParquet(raw)
+		return convertXLSXToParquet(entry, raw)
 	default:
 		return nil, 0, fmt.Errorf("unsupported format %q for %s", entry.Format, entry.DatasetID)
 	}

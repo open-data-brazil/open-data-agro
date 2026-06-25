@@ -1,0 +1,28 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "munipio_armazem_venda" },
+      "meta": { "notes": "Sale warehouse municipality." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "State code." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.vendas-balcao",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Abastecimento > Vendas em Balcão"
+  },
+  "name": "bronze.conab.vendas_balcao",
+  "id": "bronze-conab-vendas-balcao-suite"
+}

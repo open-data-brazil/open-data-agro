@@ -33,3 +33,15 @@
   cast(exportacao_1000t as varchar) as exportacao_1000t,
   cast(estoque_final_1000t as varchar) as estoque_final_1000t
 {% endmacro %}
+
+{% macro conab_estoques_publicos_columns() %}
+  trim(produto) as produto,
+  cast(id_produto as varchar) as id_produto,
+  trim(nom_municipio) as municipio,
+  cast(cod_ibge as varchar) as cod_ibge,
+  trim(uf) as uf,
+  cast(num_ano as varchar) as ano,
+  cast(num_mes as varchar) as mes,
+  trim(conta_operacional) as conta_operacional,
+  cast(qtd_estoque_kg as varchar) as qtd_estoque_kg
+{% endmacro %}

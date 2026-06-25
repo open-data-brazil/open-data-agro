@@ -54,7 +54,7 @@ func LoadLakeFromEnv() (LakeConfig, error) {
 		cfg.DeltaStoragePath = "./lake/silver/"
 	}
 	if cfg.DuckDBPath == "" {
-		cfg.DuckDBPath = "./duckdb/analytics.duckdb"
+		cfg.DuckDBPath = "./duckdb/open_data_agro.duckdb"
 	}
 
 	cfg.DeltaMinVersions = 30

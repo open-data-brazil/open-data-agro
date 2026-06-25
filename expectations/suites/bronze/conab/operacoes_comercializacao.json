@@ -1,0 +1,28 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "CONAB product column." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "uf_armazem_origem" },
+      "meta": { "notes": "Origin warehouse state." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.operacoes-comercializacao",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Abastecimento > Operações de Comercialização"
+  },
+  "name": "bronze.conab.operacoes_comercializacao",
+  "id": "bronze-conab-operacoes-comercializacao-suite"
+}

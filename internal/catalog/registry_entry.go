@@ -24,6 +24,9 @@ type RegistryEntry struct {
 	ConabSection string        `json:"conabSection" yaml:"conab_section"`
 	PortalLabel  string        `json:"portalLabel" yaml:"portal_label"`
 	Delimiter    string        `json:"delimiter,omitempty" yaml:"delimiter,omitempty"`
+	XLSXSheet    string        `json:"xlsxSheet,omitempty" yaml:"xlsx_sheet,omitempty"`
+	XLSXHeaderRow int          `json:"xlsxHeaderRow,omitempty" yaml:"xlsx_header_row,omitempty"`
+	ANPLPCFile   string        `json:"anpLpcFile,omitempty" yaml:"anp_lpc_file,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

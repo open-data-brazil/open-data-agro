@@ -1,0 +1,25 @@
+# ANP — Levantamento de Preços de Combustíveis (LPC)
+# Portal: https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
+
+entries:
+  - dataset_id: anp.combustiveis-precos-medios-municipios
+    source_url: https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
+    source_portal_url: https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
+    format: xlsx
+    schedule: weekly
+    portal_label: LPC — Preços médios por município
+    xlsx_sheet: MUNICIPIOS
+    xlsx_header_row: 9
+    anp_lpc_file: resumo_semanal_lpc
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: anp.combustiveis-precos-postos
+    source_url: https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
+    source_portal_url: https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
+    format: xlsx
+    schedule: weekly
+    portal_label: LPC — Preços por posto revendedor
+    xlsx_sheet: POSTOS REVENDEDORES
+    xlsx_header_row: 9
+    anp_lpc_file: revendas_lpc
+    discovered_at: 2026-06-25T00:00:00Z

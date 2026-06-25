@@ -102,6 +102,11 @@ def main() -> int:
             "bronze_conab_estimativa_graos": "expectations/suites/bronze/conab/estimativa_graos.json",
             "bronze_conab_serie_historica_graos": "expectations/suites/bronze/conab/serie_historica_graos.json",
             "bronze_conab_oferta_demanda": "expectations/suites/bronze/conab/oferta_demanda.json",
+            "bronze_conab_estoques_publicos": "expectations/suites/bronze/conab/estoques_publicos.json",
+            "bronze_conab_operacoes_comercializacao": "expectations/suites/bronze/conab/operacoes_comercializacao.json",
+            "bronze_conab_vendas_balcao": "expectations/suites/bronze/conab/vendas_balcao.json",
+            "bronze_anp_combustiveis_precos_medios_municipios": "expectations/suites/bronze/anp/combustiveis_precos_medios_municipios.json",
+            "bronze_anp_combustiveis_precos_postos": "expectations/suites/bronze/anp/combustiveis_precos_postos.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:

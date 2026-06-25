@@ -86,7 +86,7 @@ func (s *Smoker) bronzeURI(opts SmokeOptions) (string, error) {
 
 	switch s.cfg.StorageMode {
 	case config.StorageModeMinIO, config.StorageModeR2:
-		slug, err := lake.DatasetSlug(opts.DatasetID)
+		agency, slug, err := catalog.SplitDatasetID(opts.DatasetID)
 		if err != nil {
 			return "", err
 		}
@@ -94,17 +94,17 @@ func (s *Smoker) bronzeURI(opts SmokeOptions) (string, error) {
 		if s.cfg.StorageMode == config.StorageModeR2 {
 			bucket = s.cfg.R2Bucket
 		}
-		prefix := fmt.Sprintf("s3://%s/bronze/conab/%s", bucket, slug)
+		prefix := fmt.Sprintf("s3://%s/bronze/%s/%s", bucket, agency, slug)
 		if opts.IngestDate != "" {
 			return prefix + "/ingest_date=" + opts.IngestDate + "/*.parquet", nil
 		}
 		return prefix + "/**/*.parquet", nil
 	default:
-		slug, err := lake.DatasetSlug(opts.DatasetID)
+		agency, slug, err := catalog.SplitDatasetID(opts.DatasetID)
 		if err != nil {
 			return "", err
 		}
-		base := filepath.Join(lakeRoot, "bronze", "conab", slug)
+		base := filepath.Join(lakeRoot, "bronze", agency, slug)
 		if opts.IngestDate != "" {
 			return filepath.Join(base, "ingest_date="+opts.IngestDate, "*.parquet"), nil
 		}

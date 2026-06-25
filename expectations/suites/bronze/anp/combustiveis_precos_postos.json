@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "CNPJ" },
+      "meta": { "notes": "Retail station tax id." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "PRODUTO" },
+      "meta": { "notes": "Fuel product name." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "PREÇO DE REVENDA" },
+      "meta": { "notes": "Station retail price." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "CNPJ" },
+      "meta": { "notes": "Station identifier must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "anp.combustiveis-precos-postos",
+    "fonte_oficial": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas",
+    "agencia": "ANP",
+    "anp_section": "LPC > Preços por posto revendedor"
+  },
+  "name": "bronze.anp.combustiveis_precos_postos",
+  "id": "bronze-anp-combustiveis-precos-postos-suite"
+}

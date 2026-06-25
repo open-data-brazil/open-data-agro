@@ -20,15 +20,20 @@ vars:
   lake_root: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}"
   gold_root: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/gold"
   conab_fonte_oficial: 'https://portaldeinformacoes.conab.gov.br/download-arquivos.html'
+  anp_fonte_oficial: 'https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas'
 
 models:
   open_data_agro:
     staging:
       conab:
         +materialized: view
+      anp:
+        +materialized: view
     intermediate:
       conab:
         +materialized: view
     marts:
       conab:
+        +materialized: external
+      anp:
         +materialized: external

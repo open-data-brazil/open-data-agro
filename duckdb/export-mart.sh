@@ -5,7 +5,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 VIEW_NAME="${1:-conab_estimativa_graos}"
 LAKE_LOCAL_ROOT="${LAKE_LOCAL_ROOT:-$ROOT/../lake}"
-DUCKDB_PATH="${DUCKDB_PATH:-$ROOT/analytics.duckdb}"
+DUCKDB_PATH="${DUCKDB_PATH:-$ROOT/duckdb/open_data_agro.duckdb}"
 DUCKDB_BIN="${DUCKDB_BIN:-duckdb}"
 EXPORT_DIR="$ROOT/exports"
 DATE_UTC="$(date -u +%Y-%m-%d)"

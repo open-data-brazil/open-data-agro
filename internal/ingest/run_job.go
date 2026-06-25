@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/open-data-brazil/open-data-agro/internal/alerts"
+	"github.com/open-data-brazil/open-data-agro/internal/anp"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/conab"
 	"github.com/open-data-brazil/open-data-agro/internal/db"
@@ -36,6 +37,7 @@ type Runner struct {
 	repo     *db.Repository
 	store    storage.BronzeStore
 	conab    *conab.Client
+	anp      *anp.Client
 	alerts   *alerts.Notifier
 }
 
@@ -46,6 +48,7 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		repo:     repo,
 		store:    store,
 		conab:    conab.NewClient(),
+		anp:      anp.NewClient(),
 		alerts:   notifier,
 	}
 }
@@ -76,14 +79,14 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return result, runErr
 	}
 
-	sourceURL, err := conab.ResolveURL(entry)
+	sourceURL, err := ResolveSourceURL(entry)
 	if err != nil {
 		msg := err.Error()
 		_, _ = finish(db.JobFailed, &msg, nil, err)
 		return nil, err
 	}
 
-	download, err := r.conab.Download(ctx, sourceURL)
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp)
 	if err != nil {
 		msg := err.Error()
 		_, _ = finish(db.JobFailed, &msg, nil, err)

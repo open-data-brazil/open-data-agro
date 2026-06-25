@@ -65,6 +65,65 @@ func TestOfertaDemandaGoldenVector(t *testing.T) {
 	}
 }
 
+func TestEstoquesPublicosGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readCONABTestdata(t, "Estoques.sample.txt")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("conab.estoques-publicos"),
+		Format:    catalog.FormatTXT,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount < 4 {
+		t.Fatalf("rowCount: got %d want >= 4", rowCount)
+	}
+}
+
+func TestANPCombustiveisMediosGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	path := filepath.Join("..", "anp", "testdata", "combustiveis_precos_medios.sample.xlsx")
+	entry := catalog.RegistryEntry{
+		DatasetID:     catalog.MustParseDatasetID("anp.combustiveis-precos-medios-municipios"),
+		Format:        catalog.FormatXLSX,
+		XLSXSheet:     "MUNICIPIOS",
+		XLSXHeaderRow: 9,
+	}
+
+	_, rowCount, err := ConvertToParquetFromFile(entry, path)
+	if err != nil {
+		t.Fatalf("ConvertToParquetFromFile: %v", err)
+	}
+	if rowCount < 100 {
+		t.Fatalf("rowCount: got %d want >= 100", rowCount)
+	}
+}
+
+func TestANPCombustiveisPostosGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	path := filepath.Join("..", "anp", "testdata", "combustiveis_precos_postos.sample.xlsx")
+	entry := catalog.RegistryEntry{
+		DatasetID:     catalog.MustParseDatasetID("anp.combustiveis-precos-postos"),
+		Format:        catalog.FormatXLSX,
+		XLSXSheet:     "POSTOS REVENDEDORES",
+		XLSXHeaderRow: 9,
+	}
+
+	_, rowCount, err := ConvertToParquetFromFile(entry, path)
+	if err != nil {
+		t.Fatalf("ConvertToParquetFromFile: %v", err)
+	}
+	if rowCount < 100 {
+		t.Fatalf("rowCount: got %d want >= 100", rowCount)
+	}
+}
+
 func readCONABTestdata(t *testing.T, name string) []byte {
 	t.Helper()
 	path := filepath.Join("..", "conab", "testdata", name)

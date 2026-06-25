@@ -8,7 +8,7 @@ DuckDB is the **offline analytic layer** over local gold marts and silver Parque
 
 | Context | Path |
 |---------|------|
-| Analytic catalog | `./duckdb/analytics.duckdb` (`DUCKDB_PATH` in `.env.example`) |
+| Analytic catalog | `./duckdb/open_data_agro.duckdb` (`DUCKDB_PATH` in `.env.example`) |
 | In-memory | `DUCKDB_PATH=:memory:` |
 | Published views | `duckdb/views/*.sql` → schema `analytics` |
 | Portable exports | `duckdb/exports/{view}-{YYYY-MM-DD}.parquet` |
@@ -24,9 +24,9 @@ make seed-mvp
 ./bin/ingestor run conab.estimativa-graos    # network: CONAB download
 ./bin/processor promote --dataset conab.estimativa-graos
 make dbt-build                              # writes gold mart
-make analytics-init                         # creates analytics.duckdb + views
+make analytics-init                         # creates open_data_agro.duckdb + views
 
-duckdb duckdb/analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
+duckdb duckdb/open_data_agro.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
 ```
 
 CI shortcut (no CONAB download):
@@ -41,7 +41,7 @@ make analytics-init LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/an
 
 | Target | Purpose |
 |--------|---------|
-| `make analytics-init` | Create `analytics.duckdb` and apply views |
+| `make analytics-init` | Create `open_data_agro.duckdb` and apply views |
 | `make analytics-smoke` | `SELECT COUNT(*)` on `analytics.conab_estimativa_graos` |
 | `make duckdb-install` | Install DuckDB CLI 1.5.4 |
 
@@ -52,6 +52,9 @@ make analytics-init LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/an
 | `analytics.conab_estimativa_graos` | `lake/gold/mart_conab__estimativa_graos/mart.parquet` |
 | `analytics.conab_serie_historica_graos` | `lake/gold/mart_conab__serie_historica_graos/mart.parquet` |
 | `analytics.conab_oferta_demanda` | `lake/gold/mart_conab__oferta_demanda/mart.parquet` |
+| `analytics.conab_estoques_publicos` | `lake/gold/mart_conab__estoques_publicos/mart.parquet` |
+| `analytics.anp_combustiveis_precos_medios_municipios` | `lake/gold/mart_anp__combustiveis_precos_medios_municipios/mart.parquet` |
+| `analytics.anp_combustiveis_precos_postos` | `lake/gold/mart_anp__combustiveis_precos_postos/mart.parquet` |
 
 SQL definitions: [views/](views/).
 
@@ -60,13 +63,13 @@ SQL definitions: [views/](views/).
 **Total estimated production by crop and UF (latest season):**
 
 ```bash
-duckdb duckdb/analytics.duckdb < duckdb/analyses/production_by_crop_uf.sql
+duckdb duckdb/open_data_agro.duckdb < duckdb/analyses/production_by_crop_uf.sql
 ```
 
 **YoY change from historical series:**
 
 ```bash
-duckdb duckdb/analytics.duckdb < duckdb/analyses/serie_historica_yoy.sql
+duckdb duckdb/open_data_agro.duckdb < duckdb/analyses/serie_historica_yoy.sql
 ```
 
 Filter `produto` / `uf` / `safra` in `WHERE` to prune scans — gold mart is a single file; serie historica uses folder glob.

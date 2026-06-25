@@ -21,12 +21,12 @@ type BronzeMetadata struct {
 
 // PartitionMetadataKey builds the _metadata.json key for a bronze partition.
 func PartitionMetadataKey(datasetID string, ingestDate time.Time) (string, error) {
-	slug, err := DatasetSlug(datasetID)
+	agency, slug, err := catalog.SplitDatasetID(datasetID)
 	if err != nil {
 		return "", err
 	}
 	date := ingestDate.UTC().Format("2006-01-02")
-	return fmt.Sprintf("bronze/conab/%s/ingest_date=%s/_metadata.json", slug, date), nil
+	return fmt.Sprintf("bronze/%s/%s/ingest_date=%s/_metadata.json", agency, slug, date), nil
 }
 
 // NewBronzeMetadata builds the partition sidecar payload.

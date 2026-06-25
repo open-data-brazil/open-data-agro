@@ -1,14 +1,13 @@
 package ingest
 
 import (
-	"bytes"
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
-	"strings"
 	"time"
 
 	"github.com/google/uuid"
+	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 )
 
 // Fingerprint captures immutable file identity from raw bytes and HTTP metadata.
@@ -41,27 +40,20 @@ func NewFingerprint(body []byte, contentType, lastModified string, rowCount int,
 	}
 }
 
-// DatasetSlug returns the path segment after the source prefix (e.g. estimativa-graos).
+// DatasetSlug returns the path segment after the agency prefix (e.g. estimativa-graos).
 func DatasetSlug(datasetID string) (string, error) {
-	const prefix = "conab."
-	if !strings.HasPrefix(datasetID, prefix) {
-		return "", fmt.Errorf("unsupported dataset prefix in %s", datasetID)
-	}
-	slug := strings.TrimPrefix(datasetID, prefix)
-	if slug == "" {
-		return "", fmt.Errorf("empty dataset slug for %s", datasetID)
-	}
-	return slug, nil
+	_, slug, err := catalog.SplitDatasetID(datasetID)
+	return slug, err
 }
 
 // BronzeKey builds the bronze object key for a parquet partition.
 func BronzeKey(datasetID string, ingestDate time.Time, partID string) (string, error) {
-	slug, err := DatasetSlug(datasetID)
+	agency, slug, err := catalog.SplitDatasetID(datasetID)
 	if err != nil {
 		return "", err
 	}
 	date := ingestDate.UTC().Format("2006-01-02")
-	return fmt.Sprintf("bronze/conab/%s/ingest_date=%s/part-%s.parquet", slug, date, partID), nil
+	return fmt.Sprintf("bronze/%s/%s/ingest_date=%s/part-%s.parquet", agency, slug, date, partID), nil
 }
 
 func newUUIDv7String() (string, error) {
@@ -70,16 +62,4 @@ func newUUIDv7String() (string, error) {
 		return "", err
 	}
 	return id.String(), nil
-}
-
-// CountParquetRows estimates data rows from parquet bytes (best-effort for tests).
-func CountParquetRows(parquetBytes []byte) (int, error) {
-	if len(parquetBytes) == 0 {
-		return 0, fmt.Errorf("empty parquet payload")
-	}
-	// Row count is tracked during conversion; this helper validates non-empty output.
-	if bytes.Equal(parquetBytes[:4], []byte("PAR1")) {
-		return 0, nil
-	}
-	return 0, fmt.Errorf("invalid parquet magic")
 }

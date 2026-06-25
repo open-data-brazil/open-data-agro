@@ -5,7 +5,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 LAKE_LOCAL_ROOT="${LAKE_LOCAL_ROOT:-$ROOT/lake}"
 LAKE_ABS="$(cd "$LAKE_LOCAL_ROOT" && pwd)"
-DUCKDB_PATH="${DUCKDB_PATH:-$ROOT/duckdb/analytics.duckdb}"
+DUCKDB_PATH="${DUCKDB_PATH:-$ROOT/duckdb/open_data_agro.duckdb}"
 DUCKDB_BIN="${DUCKDB_BIN:-duckdb}"
 VIEWS_DIR="$ROOT/duckdb/views"
 
@@ -18,6 +18,9 @@ mkdir -p "$(dirname "$DUCKDB_PATH")" "$ROOT/duckdb/exports"
 mkdir -p "$LAKE_ABS/gold/mart_conab__estimativa_graos"
 mkdir -p "$LAKE_ABS/gold/mart_conab__serie_historica_graos"
 mkdir -p "$LAKE_ABS/gold/mart_conab__oferta_demanda"
+mkdir -p "$LAKE_ABS/gold/mart_conab__estoques_publicos"
+mkdir -p "$LAKE_ABS/gold/mart_anp__combustiveis_precos_medios_municipios"
+mkdir -p "$LAKE_ABS/gold/mart_anp__combustiveis_precos_postos"
 
 "$DUCKDB_BIN" "$DUCKDB_PATH" -c "CREATE SCHEMA IF NOT EXISTS analytics;"
 
