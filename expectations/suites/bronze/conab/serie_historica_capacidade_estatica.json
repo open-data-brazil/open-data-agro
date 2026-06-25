@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "Ano" },
+      "meta": { "notes": "Reference year." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "UF" },
+      "meta": { "notes": "State code." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "UF" },
+      "meta": { "notes": "State must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.serie-historica-capacidade-estatica",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Armazenamento e Logística > Série Histórica da Capacidade Estática"
+  },
+  "name": "bronze.conab.serie_historica_capacidade_estatica",
+  "id": "bronze-conab-serie-historica-capacidade-estatica-suite"
+}

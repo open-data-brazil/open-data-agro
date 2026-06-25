@@ -6,6 +6,8 @@ Committed samples are the first 5 data rows plus header from:
 - `SerieHistoricaGraos.txt` → `conab.serie-historica-graos`
 - `OfertaDemanda.txt` → `conab.oferta-demanda`
 - `Estoques.txt` → `conab.estoques-publicos`
+- `ArmazensCadastrados.txt` → `conab.armazenagem`
+- `exportacao_capacidade_estatica.xls` → `conab.serie-historica-capacidade-estatica`
 
 Refresh full files locally (gitignored):
 

@@ -45,3 +45,22 @@
   trim(conta_operacional) as conta_operacional,
   cast(qtd_estoque_kg as varchar) as qtd_estoque_kg
 {% endmacro %}
+
+{% macro conab_armazenagem_columns() %}
+  trim(identificacao_armazem) as identificacao_armazem,
+  trim(dsc_especie_armazem) as especie_armazem,
+  trim(dsc_tipo_armazem) as tipo_armazem,
+  trim(dsc_tipo_entidade) as tipo_entidade,
+  trim(dsc_tipo_pessoa) as tipo_pessoa,
+  trim(nom_municipio) as municipio,
+  cast(cod_ibge as varchar) as cod_ibge,
+  trim(uf) as uf,
+  cast("qtd_capacidade_estatica(t)" as varchar) as qtd_capacidade_estatica_t,
+  cast("qtd_capacidade_expedicao(t)" as varchar) as qtd_capacidade_expedicao_t,
+  cast("qtd_capacidade_recepcao(t)" as varchar) as qtd_capacidade_recepcao_t,
+  cast(latitude as varchar) as latitude,
+  cast(longitude as varchar) as longitude,
+  trim(nome_armazenador) as nome_armazenador,
+  trim(endereco) as endereco,
+  trim(email) as email
+{% endmacro %}

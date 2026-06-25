@@ -135,6 +135,12 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_anp_combustiveis_precos_medios_municipios", true
 	case "anp.combustiveis-precos-postos":
 		return "bronze_anp_combustiveis_precos_postos", true
+	case "conab.armazenagem":
+		return "bronze_conab_armazenagem", true
+	case "conab.frete":
+		return "bronze_conab_frete", true
+	case "conab.serie-historica-capacidade-estatica":
+		return "bronze_conab_serie_historica_capacidade_estatica", true
 	default:
 		return "", false
 	}

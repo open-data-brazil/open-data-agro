@@ -55,6 +55,7 @@ make analytics-init LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/an
 | `analytics.conab_estoques_publicos` | `lake/gold/mart_conab__estoques_publicos/mart.parquet` |
 | `analytics.anp_combustiveis_precos_medios_municipios` | `lake/gold/mart_anp__combustiveis_precos_medios_municipios/mart.parquet` |
 | `analytics.anp_combustiveis_precos_postos` | `lake/gold/mart_anp__combustiveis_precos_postos/mart.parquet` |
+| `analytics.conab_armazenagem` | `lake/gold/mart_conab__armazenagem/mart.parquet` |
 
 SQL definitions: [views/](views/).
 

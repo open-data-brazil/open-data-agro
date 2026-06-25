@@ -21,6 +21,7 @@ mkdir -p "$LAKE_ABS/gold/mart_conab__oferta_demanda"
 mkdir -p "$LAKE_ABS/gold/mart_conab__estoques_publicos"
 mkdir -p "$LAKE_ABS/gold/mart_anp__combustiveis_precos_medios_municipios"
 mkdir -p "$LAKE_ABS/gold/mart_anp__combustiveis_precos_postos"
+mkdir -p "$LAKE_ABS/gold/mart_conab__armazenagem"
 
 "$DUCKDB_BIN" "$DUCKDB_PATH" -c "CREATE SCHEMA IF NOT EXISTS analytics;"
 

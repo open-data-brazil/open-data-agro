@@ -40,3 +40,12 @@ sources:
           agencia: CONAB
           conab_section: Abastecimento
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/estoques_publicos"
+
+      - name: armazenagem
+        description: Armazenagem — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/armazenagem
+        meta:
+          dataset_id: conab.armazenagem
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Armazenamento e Logística
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/armazenagem"

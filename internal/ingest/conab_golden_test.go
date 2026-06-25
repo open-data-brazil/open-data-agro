@@ -124,6 +124,43 @@ func TestANPCombustiveisPostosGoldenVector(t *testing.T) {
 	}
 }
 
+func TestArmazenagemGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readCONABTestdata(t, "ArmazensCadastrados.sample.txt")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("conab.armazenagem"),
+		Format:    catalog.FormatTXT,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount < 4 {
+		t.Fatalf("rowCount: got %d want >= 4", rowCount)
+	}
+}
+
+func TestCapacidadeEstaticaGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	path := filepath.Join("..", "conab", "testdata", "capacidade_estatica.sample.xls")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("conab.serie-historica-capacidade-estatica"),
+		Format:    catalog.FormatXLS,
+	}
+
+	_, rowCount, err := ConvertToParquetFromFile(entry, path)
+	if err != nil {
+		t.Fatalf("ConvertToParquetFromFile: %v", err)
+	}
+	if rowCount < 100 {
+		t.Fatalf("rowCount: got %d want >= 100", rowCount)
+	}
+}
+
 func readCONABTestdata(t *testing.T, name string) []byte {
 	t.Helper()
 	path := filepath.Join("..", "conab", "testdata", name)
