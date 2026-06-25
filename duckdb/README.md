@@ -16,7 +16,16 @@ DuckDB is used for ad-hoc processing (Phase 4) and analytics views (Phase 8).
 
 ## Environment
 
-Set `DUCKDB_PATH` and `LAKE_LOCAL_ROOT` in `.env` (copy from `.env.example`). Phase 4 wires DuckDB via `cmd/processor`.
+Set `DUCKDB_PATH`, `LAKE_LOCAL_ROOT`, and `STORAGE_MODE` in `.env` (copy from `.env.example`).
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/smoke_read_parquet.sql` | Bronze row count (`processor smoke`) |
+| `scripts/promote_bronze_to_silver.sql` | Promotion preview with metadata columns |
+| `scripts/promote_conab_estimativa_graos.sql` | Dataset-specific promotion preview |
+| `scripts/setup_delta.sql` | Optional `delta` extension for silver reads |
+
+Local mode uses built-in Parquet reads. `httpfs` loads only when `STORAGE_MODE=minio|r2`.
 
 ## Related lake paths
 
@@ -29,7 +38,10 @@ Set `DUCKDB_PATH` and `LAKE_LOCAL_ROOT` in `.env` (copy from `.env.example`). Ph
 ## Quick start (local)
 
 ```bash
+make duckdb-install
 docker compose up -d postgres
 ./bin/ingestor run conab.estimativa-graos
+./bin/processor smoke --dataset conab.estimativa-graos
+./bin/processor promote --dataset conab.estimativa-graos
 duckdb -c "SELECT count(*) FROM read_parquet('lake/bronze/conab/estimativa-graos/**/*.parquet')"
 ```

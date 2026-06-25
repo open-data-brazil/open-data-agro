@@ -7,6 +7,7 @@ import (
 
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/config"
+	"github.com/open-data-brazil/open-data-agro/internal/db"
 	"github.com/open-data-brazil/open-data-agro/internal/processor"
 	"github.com/spf13/cobra"
 )
@@ -23,13 +24,14 @@ func main() {
 func newRootCmd() *cobra.Command {
 	root := &cobra.Command{
 		Use:     "processor",
-		Short:   "Promote bronze Parquet to Delta silver and run lake jobs",
-		Long:    "Open Data Agro processor — local-first Delta Lake promotions via delta-rs (Python).",
+		Short:   "Promote bronze Parquet to Delta silver and run DuckDB jobs",
+		Long:    "Open Data Agro processor — local-first DuckDB reads and Delta silver promotions.",
 		Version: version,
 	}
 
 	root.AddCommand(newVersionCmd())
 	root.AddCommand(newPromoteCmd())
+	root.AddCommand(newSmokeCmd())
 	return root
 }
 
@@ -42,6 +44,28 @@ func newVersionCmd() *cobra.Command {
 			return err
 		},
 	}
+}
+
+func newSmokeCmd() *cobra.Command {
+	var dataset string
+	var ingestDate string
+
+	cmd := &cobra.Command{
+		Use:   "smoke",
+		Short: "Count bronze Parquet rows via DuckDB",
+		Long:  "Runs duckdb/scripts/smoke_read_parquet.sql against local or S3 bronze paths.",
+		RunE: func(cmd *cobra.Command, _ []string) error {
+			if dataset == "" {
+				return fmt.Errorf("--dataset is required")
+			}
+			return runSmoke(cmd, dataset, ingestDate)
+		},
+	}
+
+	cmd.Flags().StringVar(&dataset, "dataset", "", "Catalog dataset ID (e.g. conab.estimativa-graos)")
+	cmd.Flags().StringVar(&ingestDate, "ingest-date", "", "Optional ingest_date partition (YYYY-MM-DD)")
+	_ = cmd.MarkFlagRequired("dataset")
+	return cmd
 }
 
 func newPromoteCmd() *cobra.Command {
@@ -64,7 +88,7 @@ func newPromoteCmd() *cobra.Command {
 	return cmd
 }
 
-func runPromote(cmd *cobra.Command, datasetID string) error {
+func runSmoke(cmd *cobra.Command, datasetID, ingestDate string) error {
 	cfg, err := config.LoadLakeFromEnv()
 	if err != nil {
 		return err
@@ -75,9 +99,98 @@ func runPromote(cmd *cobra.Command, datasetID string) error {
 		return err
 	}
 
-	promoter := processor.NewPromoter(cfg, reg)
-	result, err := promoter.Promote(cmd.Context(), processor.PromoteOptions{DatasetID: datasetID})
+	smoker, err := processor.NewSmoker(cfg, reg)
 	if err != nil {
+		return err
+	}
+
+	result, err := smoker.Smoke(cmd.Context(), processor.SmokeOptions{
+		DatasetID:  datasetID,
+		IngestDate: ingestDate,
+	})
+	if err != nil {
+		return err
+	}
+
+	_, err = fmt.Fprintf(
+		cmd.OutOrStdout(),
+		"smoke %s rows=%d bronze=%s mode=%s\n",
+		result.DatasetID,
+		result.RowCount,
+		result.BronzeURI,
+		cfg.StorageMode,
+	)
+	return err
+}
+
+func runPromote(cmd *cobra.Command, datasetID string) error {
+	ctx := cmd.Context()
+	cfg, err := config.LoadLakeFromEnv()
+	if err != nil {
+		return err
+	}
+
+	reg, err := catalog.LoadDefaultRegistry()
+	if err != nil {
+		return err
+	}
+
+	var repo *db.Repository
+	var jobID string
+	if cfg.DatabaseURL != "" {
+		repo, err = db.NewRepository(ctx, cfg.DatabaseURL)
+		if err != nil {
+			return err
+		}
+		defer repo.Close()
+		jobID, err = repo.CreatePromotionJob(ctx, datasetID)
+		if err != nil {
+			if db.ErrPromotionSchemaMissing(err) {
+				return fmt.Errorf("promotion audit table missing: apply infra/postgres/init/003_promotion_schema.sql")
+			}
+			return err
+		}
+	}
+
+	finish := func(status db.PromotionStatus, result *processor.PromoteResult, promoteErr error) error {
+		if repo == nil || jobID == "" {
+			return promoteErr
+		}
+		var rowCount *int
+		var silverPath string
+		if result != nil {
+			rowCount = &result.RowCount
+			silverPath = result.SilverDir
+		}
+		var errMsg *string
+		if promoteErr != nil {
+			msg := promoteErr.Error()
+			errMsg = &msg
+		}
+		if finishErr := repo.FinishPromotionJob(ctx, jobID, status, rowCount, silverPath, cfg.StorageMode, errMsg); finishErr != nil {
+			if promoteErr != nil {
+				return fmt.Errorf("finish promotion job: %v (original: %v)", finishErr, promoteErr)
+			}
+			return finishErr
+		}
+		return promoteErr
+	}
+
+	promoter := processor.NewPromoter(cfg, reg)
+	result, err := promoter.Promote(ctx, processor.PromoteOptions{DatasetID: datasetID})
+	if err != nil {
+		status := db.PromotionFailed
+		if finishErr := finish(status, nil, err); finishErr != nil {
+			return finishErr
+		}
+		return err
+	}
+
+	status := db.PromotionSuccess
+	if result.RowCount == 0 {
+		status = db.PromotionSkipped
+	}
+	if err := finish(status, result, nil); err != nil {
 		return err
 	}
 

@@ -8,7 +8,8 @@ import (
 
 // LakeConfig holds lake path settings for the processor (no database required).
 type LakeConfig struct {
-	StorageMode       string
+	DatabaseURL      string
+	StorageMode      string
 	LakeLocalRoot     string
 	DeltaStoragePath  string
 	DuckDBPath        string
@@ -26,7 +27,8 @@ type LakeConfig struct {
 // LoadLakeFromEnv reads lake and storage settings for cmd/processor.
 func LoadLakeFromEnv() (LakeConfig, error) {
 	cfg := LakeConfig{
-		StorageMode:       strings.TrimSpace(os.Getenv("STORAGE_MODE")),
+		DatabaseURL:      strings.TrimSpace(os.Getenv("DATABASE_URL")),
+		StorageMode:      strings.TrimSpace(os.Getenv("STORAGE_MODE")),
 		LakeLocalRoot:     strings.TrimSpace(os.Getenv("LAKE_LOCAL_ROOT")),
 		DeltaStoragePath:  strings.TrimSpace(os.Getenv("DELTA_STORAGE_PATH")),
 		DuckDBPath:        strings.TrimSpace(os.Getenv("DUCKDB_PATH")),
