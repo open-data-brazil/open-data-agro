@@ -1,0 +1,47 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "IPCA series must contain observations." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "sgs_codigo" },
+      "meta": { "notes": "SGS series code for traceability." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "sgs_codigo", "value_set": ["433"] },
+      "meta": { "notes": "IPCA monthly variation series code." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "data" },
+      "meta": { "notes": "Observation date required." }
+    },
+    {
+      "type": "expect_column_values_to_match_regex",
+      "kwargs": { "column": "data", "regex": "^\\d{4}-\\d{2}-\\d{2}$" },
+      "meta": { "notes": "Canonical ISO date." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "valor" },
+      "meta": { "notes": "Numeric observation value." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["sgs_codigo", "data"] },
+      "meta": { "notes": "No duplicate observations per series/date." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "bcb.sgs-ipca",
+    "fonte_oficial": "https://dadosabertos.bcb.gov.br/",
+    "agencia": "BCB"
+  },
+  "name": "bronze.bcb.sgs_ipca",
+  "id": "bronze-bcb-sgs-ipca-suite"
+}

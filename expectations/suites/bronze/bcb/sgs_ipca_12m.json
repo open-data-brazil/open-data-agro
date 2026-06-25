@@ -1,0 +1,22 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "IPCA 12m series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "sgs_codigo", "value_set": ["13522"] },
+      "meta": { "notes": "IPCA 12-month accumulated series code." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "bcb.sgs-ipca-12m",
+    "fonte_oficial": "https://dadosabertos.bcb.gov.br/",
+    "agencia": "BCB"
+  },
+  "name": "bronze.bcb.sgs_ipca_12m",
+  "id": "bronze-bcb-sgs-ipca-12m-suite"
+}

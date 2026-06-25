@@ -169,6 +169,16 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_inmet_bdmep_diario", true
 	case "inmet.bdmep-mensal":
 		return "bronze_inmet_bdmep_mensal", true
+	case "bcb.sgs-ipca":
+		return "bronze_bcb_sgs_ipca", true
+	case "bcb.sgs-ptax-usd-venda":
+		return "bronze_bcb_sgs_ptax_usd_venda", true
+	case "bcb.sgs-ipca-12m":
+		return "bronze_bcb_sgs_ipca_12m", true
+	case "bcb.sgs-igpm":
+		return "bronze_bcb_sgs_igpm", true
+	case "bcb.sgs-ptax-usd-compra":
+		return "bronze_bcb_sgs_ptax_usd_compra", true
 	default:
 		return "", false
 	}

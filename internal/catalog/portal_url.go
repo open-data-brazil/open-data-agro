@@ -25,8 +25,14 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "inmet.") {
 		return INMETBDMEPPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "bcb.") {
+		return BCBDadosAbertosURL
+	}
 	return ""
 }
+
+// BCBDadosAbertosURL is the BCB open data portal URL.
+const BCBDadosAbertosURL = "https://dadosabertos.bcb.gov.br/"
 
 // IBGELocalidadesDocsURL is the IBGE Localidades API documentation URL.
 const IBGELocalidadesDocsURL = "https://servicodados.ibge.gov.br/api/docs/localidades"

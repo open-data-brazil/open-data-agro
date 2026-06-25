@@ -11,6 +11,15 @@ func TestSourcePortalURLCONAB(t *testing.T) {
 	}
 }
 
+func TestSourcePortalURLBCB(t *testing.T) {
+	t.Parallel()
+
+	id := MustParseDatasetID("bcb.sgs-ipca")
+	if got := SourcePortalURL(id); got != BCBDadosAbertosURL {
+		t.Fatalf("got %q want %q", got, BCBDadosAbertosURL)
+	}
+}
+
 func TestSourcePortalURLIBGEPAM(t *testing.T) {
 	t.Parallel()
 

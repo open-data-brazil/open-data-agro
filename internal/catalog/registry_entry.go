@@ -38,6 +38,9 @@ type RegistryEntry struct {
 	PriorityUFs  []string      `json:"priorityUfs,omitempty" yaml:"priority_ufs,omitempty"`
 	ClimateVariables []string  `json:"climateVariables,omitempty" yaml:"climate_variables,omitempty"`
 	RetentionNote string       `json:"retentionNote,omitempty" yaml:"retention_note,omitempty"`
+	SGSCode      int           `json:"sgsCode,omitempty" yaml:"sgs_code,omitempty"`
+	StartDate    string        `json:"startDate,omitempty" yaml:"start_date,omitempty"`
+	Frequency    string        `json:"frequency,omitempty" yaml:"frequency,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

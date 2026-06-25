@@ -114,6 +114,20 @@ MVP crops (soja, milho, trigo) use SIDRA classification `c81` (1612), `c82` (161
 
 Timestamps in source files are **UTC**; missing values use sentinels `9999`, `Null`, or blank per INMET documentation.
 
+### BCB — Séries Macroeconômicas SGS (Phase 18)
+
+| Dataset ID | SGS code | Status |
+|------------|----------|--------|
+| `bcb.sgs-ipca` | 433 — IPCA variação mensual (%) | **P0 — implemented** |
+| `bcb.sgs-ptax-usd-venda` | 1 — Dólar PTAX venda | **P0 — implemented** |
+| `bcb.sgs-ipca-12m` | 13522 — IPCA acumulado 12 meses | **P1 — implemented** |
+| `bcb.sgs-igpm` | 189 — IGP-M variação mensual | **P2 — implemented** |
+| `bcb.sgs-ptax-usd-compra` | 10813 — Dólar PTAX compra | **P2 — implemented** |
+
+**Fonte oficial:** [BCB Dados Abertos](https://dadosabertos.bcb.gov.br/) · API: [api.bcb.gov.br](https://api.bcb.gov.br/)
+
+Historical backfill paginates `dataInicial`/`dataFinal` in ≤10-year chunks per BCB API limits.
+
 ---
 
 ## Rules

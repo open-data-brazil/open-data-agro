@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/open-data-brazil/open-data-agro/internal/bcb"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 )
@@ -21,13 +22,21 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 	if err != nil {
 		return nil, 0, err
 	}
-	if agency != "ibge" {
+
+	switch agency {
+	case "ibge":
+		headers, rows, err := ibge.FlattenIBGEJSON(entry.DatasetID.String(), raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "bcb":
+		headers, rows, err := bcb.FlattenSGS(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	default:
 		return nil, 0, fmt.Errorf("json ingest not implemented for agency %q", agency)
 	}
-
-	headers, rows, err := ibge.FlattenIBGEJSON(entry.DatasetID.String(), raw)
-	if err != nil {
-		return nil, 0, err
-	}
-	return writeStringTable(headers, rows)
 }

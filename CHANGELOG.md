@@ -24,3 +24,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **IBGE Localidades (Phase 15 ingest):** `ibge/localidades.yaml` (5 datasets), JSON API client, bronze Parquet for municipalities/UFs/regions, `make ibge-localidades-mvp`
 - **IBGE PAM (Phase 16 ingest):** `ibge/pam.yaml` (3 datasets), SIDRA API client with chunked UF/year/crop pulls, bronze Parquet, GE suites, dbt staging for area-quantidade, `make ibge-pam-mvp`
 - **INMET Clima Histórico (Phase 17 ingest):** `inmet/clima.yaml` (5 datasets), station catalog + BDMEP annual ZIP client, daily/monthly long-format bronze, GE suites, `make inmet-clima-mvp`
+- **BCB Séries Macro (Phase 18 ingest):** `bcb/sgs.yaml` (5 datasets), SGS API client with 10-year pagination, bronze Parquet, GE suites, dbt staging for IPCA/PTAX, `make bcb-sgs-mvp`

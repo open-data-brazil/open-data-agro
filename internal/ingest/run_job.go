@@ -8,6 +8,7 @@ import (
 
 	"github.com/open-data-brazil/open-data-agro/internal/alerts"
 	"github.com/open-data-brazil/open-data-agro/internal/anp"
+	"github.com/open-data-brazil/open-data-agro/internal/bcb"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/conab"
 	"github.com/open-data-brazil/open-data-agro/internal/db"
@@ -47,6 +48,7 @@ type Runner struct {
 	anp      *anp.Client
 	ibge     *ibge.Client
 	inmet    *inmet.Client
+	bcb      *bcb.Client
 	alerts   *alerts.Notifier
 }
 
@@ -60,6 +62,7 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		anp:      anp.NewClient(),
 		ibge:     ibge.NewClient(),
 		inmet:    inmet.NewClient(),
+		bcb:      bcb.NewClient(),
 		alerts:   notifier,
 	}
 }
@@ -97,7 +100,7 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.ibge, r.inmet, SourceOptions{
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.ibge, r.inmet, r.bcb, SourceOptions{
 		Crop:     opts.Crop,
 		FromYear: opts.FromYear,
 		ToYear:   opts.ToYear,

@@ -1,0 +1,64 @@
+# BCB — Séries Macroeconômicas SGS (Phase 18)
+# Portal: https://dadosabertos.bcb.gov.br/
+# API: https://api.bcb.gov.br/dados/serie/bcdata.sgs.{codigo}/dados
+
+entries:
+  - dataset_id: bcb.sgs-ipca
+    source_url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados
+    source_portal_url: https://dadosabertos.bcb.gov.br/
+    format: json
+    schedule: monthly
+    portal_label: IPCA — variação mensal (%)
+    sgs_code: 433
+    start_date: "01/01/1995"
+    period_start: 1995
+    frequency: monthly
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: bcb.sgs-ipca-12m
+    source_url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados
+    source_portal_url: https://dadosabertos.bcb.gov.br/
+    format: json
+    schedule: monthly
+    portal_label: IPCA acumulado 12 meses (%)
+    sgs_code: 13522
+    start_date: "01/01/1995"
+    period_start: 1995
+    frequency: monthly
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: bcb.sgs-ptax-usd-venda
+    source_url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados
+    source_portal_url: https://dadosabertos.bcb.gov.br/
+    format: json
+    schedule: daily
+    portal_label: Dólar PTAX — venda
+    sgs_code: 1
+    start_date: "01/01/1999"
+    period_start: 1999
+    frequency: daily
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: bcb.sgs-ptax-usd-compra
+    source_url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados
+    source_portal_url: https://dadosabertos.bcb.gov.br/
+    format: json
+    schedule: daily
+    portal_label: Dólar PTAX — compra
+    sgs_code: 10813
+    start_date: "01/01/1999"
+    period_start: 1999
+    frequency: daily
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: bcb.sgs-igpm
+    source_url: https://api.bcb.gov.br/dados/serie/bcdata.sgs.189/dados
+    source_portal_url: https://dadosabertos.bcb.gov.br/
+    format: json
+    schedule: monthly
+    portal_label: IGP-M — variação mensal (%)
+    sgs_code: 189
+    start_date: "01/01/1995"
+    period_start: 1995
+    frequency: monthly
+    discovered_at: 2026-06-25T00:00:00Z
