@@ -1,0 +1,22 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Monthly long-format rows." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "mes" },
+      "meta": { "notes": "YYYY-MM month bucket." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "inmet.bdmep-mensal",
+    "fonte_oficial": "https://bdmep.inmet.gov.br/",
+    "agencia": "INMET"
+  },
+  "name": "bronze.inmet.bdmep_mensal",
+  "id": "bronze-inmet-bdmep-mensal-suite"
+}

@@ -1,0 +1,58 @@
+# INMET — Clima Histórico (Phase 17)
+# Portal: https://portal.inmet.gov.br/
+# BDMEP: https://bdmep.inmet.gov.br/
+
+entries:
+  - dataset_id: inmet.estacoes-automaticas
+    source_url: https://portal.inmet.gov.br/uploads/catalogoaut/Estacoes_Automaticas.csv
+    source_portal_url: https://portal.inmet.gov.br/paginas/catalogoaut
+    format: csv
+    delimiter: ";"
+    schedule: monthly
+    portal_label: Catálogo de Estações Automáticas
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: inmet.estacoes-convencionais
+    source_url: https://portal.inmet.gov.br/uploads/catalogoman/Estacoes_Convencionais.csv
+    source_portal_url: https://portal.inmet.gov.br/paginas/catalogoman
+    format: csv
+    delimiter: ";"
+    schedule: monthly
+    portal_label: Catálogo de Estações Convencionais
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: inmet.bdmep-diario
+    source_url: https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip
+    source_portal_url: https://bdmep.inmet.gov.br/
+    format: csv
+    schedule: monthly
+    portal_label: BDMEP — série diária (agregada a partir do pacote anual automático)
+    priority_ufs: [MT, MS, GO, PR, RS, BA, MA, TO]
+    climate_variables: [precipitacao, temperatura_ar, temperatura_maxima, temperatura_minima, umidade_relativa, vento_velocidade]
+    period_start: 2000
+    retention_note: "Annual ZIP backfill can exceed 100 GB nationally; use --uf and --year for incremental loads."
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: inmet.bdmep-mensal
+    source_url: https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip
+    source_portal_url: https://bdmep.inmet.gov.br/
+    format: csv
+    schedule: monthly
+    portal_label: BDMEP — agregados mensais derivados do pacote anual automático
+    priority_ufs: [MT, MS, GO, PR, RS, BA, MA, TO]
+    climate_variables: [precipitacao, temperatura_ar, temperatura_maxima, temperatura_minima, umidade_relativa, vento_velocidade]
+    period_start: 2000
+    retention_note: "Monthly rollups derived from daily aggregation; same ZIP source as bdmep-diario."
+    discovered_at: 2026-06-25T00:00:00Z
+
+  - dataset_id: inmet.pacote-anual-automaticas
+    source_url: https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip
+    source_portal_url: https://portal.inmet.gov.br/dadoshistoricos
+    format: csv
+    schedule: yearly
+    portal_label: BDMEP — pacote anual todas estações automáticas
+    priority_ufs: [MT, MS, GO, PR, RS, BA, MA, TO]
+    climate_variables: [precipitacao, temperatura_ar, temperatura_maxima, temperatura_minima, umidade_relativa, vento_velocidade, radiacao, pressao_atmosferica]
+    period_start: 2000
+    retention_note: "Full national annual ZIP; prefer UF/year filters for local-first backfill."
+    discovered_at: 2026-06-25T00:00:00Z

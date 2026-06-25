@@ -118,6 +118,10 @@ def main() -> int:
             "bronze_ibge_pam_area_quantidade": "expectations/suites/bronze/ibge/pam_area_quantidade.json",
             "bronze_ibge_pam_rendimento_valor": "expectations/suites/bronze/ibge/pam_rendimento_valor.json",
             "bronze_ibge_pam_estabelecimentos": "expectations/suites/bronze/ibge/pam_estabelecimentos.json",
+            "bronze_inmet_estacoes_automaticas": "expectations/suites/bronze/inmet/estacoes_automaticas.json",
+            "bronze_inmet_estacoes_convencionais": "expectations/suites/bronze/inmet/estacoes_convencionais.json",
+            "bronze_inmet_bdmep_diario": "expectations/suites/bronze/inmet/bdmep_diario.json",
+            "bronze_inmet_bdmep_mensal": "expectations/suites/bronze/inmet/bdmep_mensal.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:

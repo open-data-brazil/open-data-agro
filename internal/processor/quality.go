@@ -161,6 +161,14 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_ibge_pam_rendimento_valor", true
 	case "ibge.pam-estabelecimentos":
 		return "bronze_ibge_pam_estabelecimentos", true
+	case "inmet.estacoes-automaticas":
+		return "bronze_inmet_estacoes_automaticas", true
+	case "inmet.estacoes-convencionais":
+		return "bronze_inmet_estacoes_convencionais", true
+	case "inmet.bdmep-diario":
+		return "bronze_inmet_bdmep_diario", true
+	case "inmet.bdmep-mensal":
+		return "bronze_inmet_bdmep_mensal", true
 	default:
 		return "", false
 	}

@@ -20,6 +20,15 @@ func TestSourcePortalURLIBGEPAM(t *testing.T) {
 	}
 }
 
+func TestSourcePortalURLINMET(t *testing.T) {
+	t.Parallel()
+
+	id := MustParseDatasetID("inmet.bdmep-diario")
+	if got := SourcePortalURL(id); got != INMETBDMEPPortalURL {
+		t.Fatalf("got %q want %q", got, INMETBDMEPPortalURL)
+	}
+}
+
 func TestSourcePortalURLIBGE(t *testing.T) {
 	t.Parallel()
 

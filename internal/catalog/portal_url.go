@@ -22,6 +22,9 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "ibge.") {
 		return IBGELocalidadesDocsURL
 	}
+	if strings.HasPrefix(datasetID.String(), "inmet.") {
+		return INMETBDMEPPortalURL
+	}
 	return ""
 }
 
@@ -30,3 +33,6 @@ const IBGELocalidadesDocsURL = "https://servicodados.ibge.gov.br/api/docs/locali
 
 // IBGESIDRAPAMURL is the IBGE SIDRA PAM survey portal URL.
 const IBGESIDRAPAMURL = "https://sidra.ibge.gov.br/pesquisa/pam"
+
+// INMETBDMEPPortalURL is the INMET BDMEP historical data portal URL.
+const INMETBDMEPPortalURL = "https://bdmep.inmet.gov.br/"

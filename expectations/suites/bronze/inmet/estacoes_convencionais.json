@@ -1,0 +1,22 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Conventional station catalog rows." }
+    },
+    {
+      "type": "expect_column_values_to_be_unique",
+      "kwargs": { "column": "cd_estacao" },
+      "meta": { "notes": "Unique station codes." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "inmet.estacoes-convencionais",
+    "fonte_oficial": "https://portal.inmet.gov.br/paginas/catalogoman",
+    "agencia": "INMET"
+  },
+  "name": "bronze.inmet.estacoes_convencionais",
+  "id": "bronze-inmet-estacoes-convencionais-suite"
+}

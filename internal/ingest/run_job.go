@@ -12,6 +12,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/conab"
 	"github.com/open-data-brazil/open-data-agro/internal/db"
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
+	"github.com/open-data-brazil/open-data-agro/internal/inmet"
 	"github.com/open-data-brazil/open-data-agro/internal/storage"
 )
 
@@ -22,6 +23,7 @@ type RunOptions struct {
 	Crop      string
 	FromYear  int
 	ToYear    int
+	Year      int
 	UFs       []string
 }
 
@@ -44,6 +46,7 @@ type Runner struct {
 	conab    *conab.Client
 	anp      *anp.Client
 	ibge     *ibge.Client
+	inmet    *inmet.Client
 	alerts   *alerts.Notifier
 }
 
@@ -56,6 +59,7 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		conab:    conab.NewClient(),
 		anp:      anp.NewClient(),
 		ibge:     ibge.NewClient(),
+		inmet:    inmet.NewClient(),
 		alerts:   notifier,
 	}
 }
@@ -93,10 +97,11 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.ibge, SourceOptions{
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.ibge, r.inmet, SourceOptions{
 		Crop:     opts.Crop,
 		FromYear: opts.FromYear,
 		ToYear:   opts.ToYear,
+		Year:     opts.Year,
 		UFs:      opts.UFs,
 	})
 	if err != nil {

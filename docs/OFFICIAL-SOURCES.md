@@ -100,6 +100,20 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 
 MVP crops (soja, milho, trigo) use SIDRA classification `c81` (1612), `c82` (1613), `c782` (5457) with product codes `2713`, `2711`, `2716`.
 
+### INMET — Clima Histórico (Phase 17)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `inmet.estacoes-automaticas` | Portal catálogo CSV | **P0 — implemented** |
+| `inmet.bdmep-diario` | BDMEP annual ZIP (`/uploads/dadoshistoricos/{year}.zip`) | **P0 — implemented** |
+| `inmet.estacoes-convencionais` | Portal catálogo CSV | **P1 — implemented** |
+| `inmet.bdmep-mensal` | Monthly rollups from annual ZIP | **P2 — implemented** |
+| `inmet.pacote-anual-automaticas` | BDMEP bulk annual ZIP | **P1 — implemented** |
+
+**Fonte oficial:** [BDMEP — INMET](https://bdmep.inmet.gov.br/) · Portal: [portal.inmet.gov.br/dadoshistoricos](https://portal.inmet.gov.br/dadoshistoricos)
+
+Timestamps in source files are **UTC**; missing values use sentinels `9999`, `Null`, or blank per INMET documentation.
+
 ---
 
 ## Rules

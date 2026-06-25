@@ -1,0 +1,42 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Station catalog must contain at least one row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "cd_estacao" },
+      "meta": { "notes": "INMET station code." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "cd_estacao" },
+      "meta": { "notes": "Station code must be present." }
+    },
+    {
+      "type": "expect_column_values_to_be_unique",
+      "kwargs": { "column": "cd_estacao" },
+      "meta": { "notes": "Each station appears once per snapshot." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "latitude" },
+      "meta": { "notes": "Latitude required for geospatial joins." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "longitude" },
+      "meta": { "notes": "Longitude required for geospatial joins." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "inmet.estacoes-automaticas",
+    "fonte_oficial": "https://portal.inmet.gov.br/paginas/catalogoaut",
+    "agencia": "INMET"
+  },
+  "name": "bronze.inmet.estacoes_automaticas",
+  "id": "bronze-inmet-estacoes-automaticas-suite"
+}

@@ -82,6 +82,7 @@ func newRunCmd() *cobra.Command {
 	var crop string
 	var fromYear int
 	var toYear int
+	var year int
 	var ufList string
 
 	cmd := &cobra.Command{
@@ -128,6 +129,7 @@ func newRunCmd() *cobra.Command {
 				Crop:      crop,
 				FromYear:  fromYear,
 				ToYear:    toYear,
+				Year:      year,
 				UFs:       ufs,
 			})
 			if err != nil {
@@ -150,7 +152,8 @@ func newRunCmd() *cobra.Command {
 	cmd.Flags().StringVar(&crop, "crop", "", "PAM crop filter (soja, milho, trigo, or all)")
 	cmd.Flags().IntVar(&fromYear, "from", 0, "PAM start year (inclusive)")
 	cmd.Flags().IntVar(&toYear, "to", 0, "PAM end year (inclusive)")
-	cmd.Flags().StringVar(&ufList, "uf", "", "PAM UF codes (comma-separated, e.g. 51,43 for MT+RS smoke test)")
+	cmd.Flags().IntVar(&year, "year", 0, "INMET BDMEP year for annual ZIP pulls")
+	cmd.Flags().StringVar(&ufList, "uf", "", "Filter by UF (comma-separated; numeric codes for IBGE PAM, state abbreviations for INMET)")
 	return cmd
 }
 

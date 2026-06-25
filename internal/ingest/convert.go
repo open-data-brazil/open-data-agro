@@ -26,6 +26,12 @@ func ConvertToParquetFromFile(entry catalog.RegistryEntry, path string) ([]byte,
 func convertToParquet(entry catalog.RegistryEntry, raw []byte, path string) ([]byte, int, error) {
 	switch entry.Format {
 	case catalog.FormatCSV, catalog.FormatTXT:
+		if isINMETDataset(entry.DatasetID.String()) {
+			if path != "" {
+				return convertINMETCSVFileToParquet(entry, path)
+			}
+			return convertINMETCSVToParquet(entry, raw)
+		}
 		if path != "" {
 			return convertDelimitedFileToParquet(path, entry)
 		}

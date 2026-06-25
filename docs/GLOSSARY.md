@@ -94,6 +94,13 @@
 | Milho | `2711` | MILHO |
 | Trigo | `2716` | TRIGO |
 
+### INMET missing values and timezone
+
+| Policy | Value |
+|--------|-------|
+| Source timezone | UTC (store as-is in bronze; document BRT offset in analytics) |
+| Missing sentinels | `9999`, `-9999`, `Null`, blank, `//` — normalized to empty in long-format `valor` |
+
 ---
 
 ## Golden vector

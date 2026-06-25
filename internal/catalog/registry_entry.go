@@ -35,6 +35,9 @@ type RegistryEntry struct {
 	SidraCrops   map[string]int `json:"sidraCrops,omitempty" yaml:"sidra_crops,omitempty"`
 	PeriodStart  int           `json:"periodStart,omitempty" yaml:"period_start,omitempty"`
 	PeriodEnd    int           `json:"periodEnd,omitempty" yaml:"period_end,omitempty"`
+	PriorityUFs  []string      `json:"priorityUfs,omitempty" yaml:"priority_ufs,omitempty"`
+	ClimateVariables []string  `json:"climateVariables,omitempty" yaml:"climate_variables,omitempty"`
+	RetentionNote string       `json:"retentionNote,omitempty" yaml:"retention_note,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

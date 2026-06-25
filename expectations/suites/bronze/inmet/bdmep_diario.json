@@ -1,0 +1,42 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Daily long-format rows required." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "cd_estacao" },
+      "meta": { "notes": "Station code." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "data" },
+      "meta": { "notes": "Observation date (UTC source)." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "data" },
+      "meta": { "notes": "Date must be parseable and present." }
+    },
+    {
+      "type": "expect_column_values_to_match_regex",
+      "kwargs": { "column": "data", "regex": "^\\d{4}-\\d{2}-\\d{2}$" },
+      "meta": { "notes": "Canonical YYYY-MM-DD date." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "valor" },
+      "meta": { "notes": "Measurement value; 9999 sentinels normalized to null upstream." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "inmet.bdmep-diario",
+    "fonte_oficial": "https://bdmep.inmet.gov.br/",
+    "agencia": "INMET"
+  },
+  "name": "bronze.inmet.bdmep_diario",
+  "id": "bronze-inmet-bdmep-diario-suite"
+}
