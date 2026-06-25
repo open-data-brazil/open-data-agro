@@ -1,8 +1,9 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build migrate-install migrate-up migrate-down seed
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build migrate-install migrate-up migrate-down seed analytics-init analytics-smoke
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
 LAKE_LOCAL_ROOT ?= ./lake
+DUCKDB_PATH ?= ./duckdb/analytics.duckdb
 POSTGRES_HOST_PORT ?= 5432
 DATABASE_URL ?= postgresql://open_data_agro:open_data_agro@localhost:$(POSTGRES_HOST_PORT)/open_data_agro?sslmode=disable
 MIGRATIONS_PATH := infra/postgres/migrations
@@ -48,6 +49,14 @@ seed:
 
 seed-mvp:
 	go run ./cmd/seed --mvp
+
+analytics-init:
+	@chmod +x duckdb/scripts/analytics-init.sh duckdb/export-mart.sh
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH) ./duckdb/scripts/analytics-init.sh
+
+analytics-smoke:
+	@command -v duckdb >/dev/null 2>&1 || (echo "run: make duckdb-install" && exit 1)
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS rows FROM analytics.conab_estimativa_graos"
 
 clean:
 	rm -rf $(BIN_DIR)
