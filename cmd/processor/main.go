@@ -32,6 +32,7 @@ func newRootCmd() *cobra.Command {
 	root.AddCommand(newVersionCmd())
 	root.AddCommand(newPromoteCmd())
 	root.AddCommand(newSmokeCmd())
+	root.AddCommand(newQualityCmd())
 	return root
 }
 
@@ -86,6 +87,60 @@ func newPromoteCmd() *cobra.Command {
 	cmd.Flags().StringVar(&dataset, "dataset", "", "Catalog dataset ID (e.g. conab.estimativa-graos)")
 	_ = cmd.MarkFlagRequired("dataset")
 	return cmd
+}
+
+func newQualityCmd() *cobra.Command {
+	var dataset string
+	var checkpoint string
+
+	cmd := &cobra.Command{
+		Use:   "quality",
+		Short: "Run Great Expectations bronze checkpoint",
+		Long:  "Validates lake/bronze Parquet against the dataset expectation suite (local files only).",
+		RunE: func(cmd *cobra.Command, _ []string) error {
+			if dataset == "" {
+				return fmt.Errorf("--dataset is required")
+			}
+			return runQuality(cmd, dataset, checkpoint)
+		},
+	}
+
+	cmd.Flags().StringVar(&dataset, "dataset", "", "Catalog dataset ID (e.g. conab.estimativa-graos)")
+	cmd.Flags().StringVar(&checkpoint, "checkpoint", "", "Checkpoint name (default: mapped from dataset)")
+	_ = cmd.MarkFlagRequired("dataset")
+	return cmd
+}
+
+func runQuality(cmd *cobra.Command, datasetID, checkpoint string) error {
+	cfg, err := config.LoadLakeFromEnv()
+	if err != nil {
+		return err
+	}
+
+	reg, err := catalog.LoadDefaultRegistry()
+	if err != nil {
+		return err
+	}
+
+	gate := processor.NewQualityGate(cfg, reg)
+	result, err := gate.RunBronzeCheckpoint(cmd.Context(), processor.QualityOptions{
+		DatasetID:  datasetID,
+		Checkpoint: checkpoint,
+	})
+	if err != nil {
+		return err
+	}
+
+	_, err = fmt.Fprintf(
+		cmd.OutOrStdout(),
+		"quality %s checkpoint=%s passed=%d/%d bronze=%s\n",
+		result.DatasetID,
+		result.Checkpoint,
+		result.SuccessfulExpectations,
+		result.EvaluatedExpectations,
+		result.BronzeDir,
+	)
+	return err
 }
 
 func runSmoke(cmd *cobra.Command, datasetID, ingestDate string) error {
@@ -177,6 +232,15 @@ func runPromote(cmd *cobra.Command, datasetID string) error {
 	}
 
 	promoter := processor.NewPromoter(cfg, reg)
+
+	quality := processor.NewQualityGate(cfg, reg)
+	if _, err := quality.RunBronzeCheckpoint(ctx, processor.QualityOptions{DatasetID: datasetID}); err != nil {
+		if finishErr := finish(db.PromotionQualityFailed, nil, err); finishErr != nil {
+			return finishErr
+		}
+		return err
+	}
+
 	result, err := promoter.Promote(ctx, processor.PromoteOptions{DatasetID: datasetID})
 	if err != nil {
 		status := db.PromotionFailed

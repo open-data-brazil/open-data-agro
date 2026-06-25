@@ -1,0 +1,76 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "Produto"
+      },
+      "meta": {
+        "notes": "CONAB crop column (glossary: produto)."
+      }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "UF"
+      },
+      "meta": {
+        "notes": "Federative unit code."
+      }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "Safra"
+      },
+      "meta": {
+        "notes": "Harvest season label (grain key)."
+      }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Produto"
+      },
+      "meta": {
+        "notes": "Grain key — product must be present."
+      }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "UF"
+      },
+      "meta": {
+        "notes": "Grain key — UF must be present."
+      }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "Safra"
+      },
+      "meta": {
+        "notes": "Grain key — season must be present."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.estimativa-graos",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Produção Agrícola > Estimativa Grãos"
+  },
+  "name": "bronze.conab.estimativa_graos",
+  "id": "bronze-conab-estimativa-graos-suite"
+}

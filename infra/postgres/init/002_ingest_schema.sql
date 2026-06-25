@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS catalog.dataset_registry (
 );
 
 CREATE TABLE IF NOT EXISTS catalog.ingest_jobs (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  id UUID PRIMARY KEY DEFAULT uuidv7(),
   dataset_id TEXT NOT NULL REFERENCES catalog.dataset_registry (dataset_id),
   started_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   finished_at TIMESTAMPTZ,
@@ -25,7 +25,7 @@ CREATE INDEX IF NOT EXISTS ingest_jobs_dataset_started_idx
   ON catalog.ingest_jobs (dataset_id, started_at DESC);
 
 CREATE TABLE IF NOT EXISTS catalog.ingest_files (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  id UUID PRIMARY KEY DEFAULT uuidv7(),
   job_id UUID NOT NULL REFERENCES catalog.ingest_jobs (id),
   dataset_id TEXT NOT NULL,
   sha256 TEXT NOT NULL,

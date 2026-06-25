@@ -13,7 +13,8 @@ const (
 	PromotionRunning PromotionStatus = "running"
 	PromotionSuccess PromotionStatus = "success"
 	PromotionFailed  PromotionStatus = "failed"
-	PromotionSkipped PromotionStatus = "skipped"
+	PromotionSkipped       PromotionStatus = "skipped"
+	PromotionQualityFailed PromotionStatus = "quality_failed"
 )
 
 // PromotionRecord is a row from catalog.promotion_jobs.

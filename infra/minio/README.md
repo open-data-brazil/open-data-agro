@@ -32,6 +32,6 @@ MINIO_INTEGRATION=1 go test ./internal/storage -run TestMinIOListPrefixIntegrati
 Object keys match local filesystem layout under `LAKE_LOCAL_ROOT`:
 
 ```text
-bronze/conab/{dataset_slug}/ingest_date={YYYY-MM-DD}/part-{uuid}.parquet
+bronze/conab/{dataset_slug}/ingest_date={YYYY-MM-DD}/part-{uuidv7}.parquet
 bronze/conab/{dataset_slug}/ingest_date={YYYY-MM-DD}/_metadata.json
 ```

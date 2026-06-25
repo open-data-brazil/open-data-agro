@@ -25,7 +25,10 @@ type Fingerprint struct {
 // NewFingerprint hashes raw bytes and assigns ingest partition metadata.
 func NewFingerprint(body []byte, contentType, lastModified string, rowCount int, ingestDate time.Time) Fingerprint {
 	sum := sha256.Sum256(body)
-	partID := uuid.NewString()
+	partID, err := newUUIDv7String()
+	if err != nil {
+		panic(fmt.Sprintf("uuid v7: %v", err))
+	}
 
 	return Fingerprint{
 		SHA256:        hex.EncodeToString(sum[:]),
@@ -59,6 +62,14 @@ func BronzeKey(datasetID string, ingestDate time.Time, partID string) (string, e
 	}
 	date := ingestDate.UTC().Format("2006-01-02")
 	return fmt.Sprintf("bronze/conab/%s/ingest_date=%s/part-%s.parquet", slug, date, partID), nil
+}
+
+func newUUIDv7String() (string, error) {
+	id, err := uuid.NewV7()
+	if err != nil {
+		return "", err
+	}
+	return id.String(), nil
 }
 
 // CountParquetRows estimates data rows from parquet bytes (best-effort for tests).

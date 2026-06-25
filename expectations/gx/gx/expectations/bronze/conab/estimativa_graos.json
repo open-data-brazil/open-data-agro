@@ -1,0 +1,91 @@
+{
+  "expectations": [
+    {
+      "id": "598588d2-9d9f-4df7-87c9-a47f670465b4",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "b79c15ad-cca5-41d3-aead-925a56b3d00c",
+      "kwargs": {
+        "column": "Produto"
+      },
+      "meta": {
+        "notes": "CONAB crop column (glossary: produto)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "43f2f47f-d3aa-4bd5-b37c-0496c0a6d6f3",
+      "kwargs": {
+        "column": "UF"
+      },
+      "meta": {
+        "notes": "Federative unit code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "609b860a-150c-4191-91c7-e967bb7b23e0",
+      "kwargs": {
+        "column": "Safra"
+      },
+      "meta": {
+        "notes": "Harvest season label (grain key)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "623afe8b-4e16-48dd-94b7-9b1b944dc6a4",
+      "kwargs": {
+        "column": "Produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "0c1f2f56-4fca-4012-b42e-caa409908e86",
+      "kwargs": {
+        "column": "UF"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 UF must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "42fde425-ff4f-407c-99a5-0ccdd56c627a",
+      "kwargs": {
+        "column": "Safra"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 season must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "1181f3e9-0f14-415f-87db-8a89a9e09c89",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Produ\u00e7\u00e3o Agr\u00edcola > Estimativa Gr\u00e3os",
+    "dataset_id": "conab.estimativa-graos",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.estimativa_graos",
+  "notes": null
+}

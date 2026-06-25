@@ -36,6 +36,9 @@ jobs:
           PATH: ${{ github.workspace }}/.local/bin:${{ env.HOME }}/.duckdb/cli/latest:${{ env.PATH }}
         run: DUCKDB_INTEGRATION=1 go test ./internal/processor -run 'SmokeLocal|PreviewPromote' -count=1
 
+      - name: Great Expectations integration
+        run: GE_INTEGRATION=1 go test ./internal/processor -run 'Quality' -count=1
+
       - name: Lint
         uses: golangci/golangci-lint-action@v7
         with:
@@ -91,3 +94,39 @@ jobs:
           name: dbt-docs
           path: dbt/target/
           retention-days: 7
+
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.4'
+          cache-dependency-path: go.sum
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python toolchain
+        run: pip install -r toolchain/python-requirements.txt
+
+      - name: Seed bronze lake for GE
+        env:
+          LAKE_LOCAL_ROOT: /tmp/open-data-agro-lake
+        run: python3 scripts/ci/seed_ge_bronze.py
+
+      - name: Run bronze checkpoint
+        env:
+          LAKE_LOCAL_ROOT: /tmp/open-data-agro-lake
+        run: |
+          python3 scripts/quality/run_checkpoint.py \
+            --checkpoint bronze_conab_estimativa_graos \
+            --bronze-dir /tmp/open-data-agro-lake/bronze/conab/estimativa-graos
+
+      - name: Great Expectations Go integration
+        run: GE_INTEGRATION=1 go test ./internal/processor -run 'Quality' -count=1

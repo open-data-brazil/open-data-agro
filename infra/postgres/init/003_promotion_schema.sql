@@ -1,7 +1,7 @@
 -- Phase 4 — processor promotion audit schema
 
 CREATE TABLE IF NOT EXISTS catalog.promotion_jobs (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  id UUID PRIMARY KEY DEFAULT uuidv7(),
   dataset_id TEXT NOT NULL,
   started_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   finished_at TIMESTAMPTZ,
