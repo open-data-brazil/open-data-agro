@@ -128,7 +128,15 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return result, nil
 	}
 
-	parquetBytes, rowCount, err := ConvertToParquet(entry, download.Body)
+	staged, err := StageRaw(jobID, download.Body)
+	if err != nil {
+		msg := err.Error()
+		_, _ = finish(db.JobFailed, &msg, nil, err)
+		return nil, err
+	}
+	defer staged.Cleanup()
+
+	parquetBytes, rowCount, err := ConvertToParquetFromFile(entry, staged.Path)
 	if err != nil {
 		msg := err.Error()
 		_, _ = finish(db.JobFailed, &msg, nil, err)
