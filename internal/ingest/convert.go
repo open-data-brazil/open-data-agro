@@ -7,7 +7,11 @@ import (
 
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/parquet-go/parquet-go"
+	"github.com/parquet-go/parquet-go/compress/snappy"
 )
+
+// Target ~128MB row groups for DuckDB scans (approximate via row count).
+const bronzeMaxRowsPerRowGroup = 262144
 
 // ConvertToParquet transforms in-memory source bytes into bronze parquet.
 func ConvertToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int, error) {
@@ -72,7 +76,10 @@ func writeStringTable(headers []string, rows [][]string) ([]byte, int, error) {
 	schema := parquet.NewSchema("bronze", group)
 
 	buf := new(bytes.Buffer)
-	writer := parquet.NewGenericWriter[map[string]any](buf, schema)
+	writer := parquet.NewGenericWriter[map[string]any](buf, schema,
+		parquet.Compression(&snappy.Codec{}),
+		parquet.MaxRowsPerRowGroup(bronzeMaxRowsPerRowGroup),
+	)
 
 	batch := make([]map[string]any, 0, len(rows))
 	for _, row := range rows {

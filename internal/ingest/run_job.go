@@ -157,6 +157,28 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
+	metadataKey, err := PartitionMetadataKey(opts.DatasetID, ingestDate)
+	if err != nil {
+		_ = r.store.Delete(ctx, bronzeKey)
+		msg := err.Error()
+		_, _ = finish(db.JobFailed, &msg, nil, err)
+		return nil, err
+	}
+	meta := NewBronzeMetadata(entry, fp, sourceURL, r.store.Backend())
+	metaBytes, err := MarshalBronzeMetadata(meta)
+	if err != nil {
+		_ = r.store.Delete(ctx, bronzeKey)
+		msg := err.Error()
+		_, _ = finish(db.JobFailed, &msg, nil, err)
+		return nil, err
+	}
+	if err := r.store.Put(ctx, metadataKey, metaBytes, "application/json"); err != nil {
+		_ = r.store.Delete(ctx, bronzeKey)
+		msg := err.Error()
+		_, _ = finish(db.JobFailed, &msg, nil, err)
+		return nil, err
+	}
+
 	rowCountCopy := rowCount
 	fileSize := fp.FileSizeBytes
 	fileRec := db.FileRecord{
@@ -175,6 +197,7 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 			_, _ = finish(db.JobFailed, &msg, nil, err)
 			return nil, err
 		}
+		_ = r.store.Delete(ctx, metadataKey)
 		msg := err.Error()
 		_, _ = finish(db.JobFailed, &msg, nil, err)
 		return nil, err
