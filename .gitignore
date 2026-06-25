@@ -1,0 +1,31 @@
+# Local overrides and ephemeral Cursor task rules (not part of harness)
+.local/
+.cursor/rules/_task-active.mdc
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# OS and IDE (non-Cursor)
+.DS_Store
+.idea/
+*.swp
+
+# Python tooling (harness scripts)
+__pycache__/
+.venv/
+venv/
+
+# Node / monorepo
+node_modules/
+dist/
+coverage/
+.turbo/
+.next/
+.vitepress/cache/
+.vitepress/dist/
+playwright-report/
+test-results/
+*.tsbuildinfo
+.tmp/
