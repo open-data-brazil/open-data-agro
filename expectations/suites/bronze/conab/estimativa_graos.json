@@ -2,66 +2,38 @@
   "expectations": [
     {
       "type": "expect_table_row_count_to_be_between",
-      "kwargs": {
-        "min_value": 1
-      },
-      "meta": {
-        "notes": "Bronze partition must contain at least one data row."
-      }
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
     },
     {
       "type": "expect_column_to_exist",
-      "kwargs": {
-        "column": "Produto"
-      },
-      "meta": {
-        "notes": "CONAB crop column (glossary: produto)."
-      }
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "CONAB crop column (portal: produto)." }
     },
     {
       "type": "expect_column_to_exist",
-      "kwargs": {
-        "column": "UF"
-      },
-      "meta": {
-        "notes": "Federative unit code."
-      }
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "Federative unit code." }
     },
     {
       "type": "expect_column_to_exist",
-      "kwargs": {
-        "column": "Safra"
-      },
-      "meta": {
-        "notes": "Harvest season label (grain key)."
-      }
+      "kwargs": { "column": "safra" },
+      "meta": { "notes": "Harvest season label (grain key)." }
     },
     {
       "type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "Produto"
-      },
-      "meta": {
-        "notes": "Grain key — product must be present."
-      }
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "Grain key — product must be present." }
     },
     {
       "type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "UF"
-      },
-      "meta": {
-        "notes": "Grain key — UF must be present."
-      }
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "Grain key — UF must be present." }
     },
     {
       "type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "Safra"
-      },
-      "meta": {
-        "notes": "Grain key — season must be present."
-      }
+      "kwargs": { "column": "safra" },
+      "meta": { "notes": "Grain key — season must be present." }
     }
   ],
   "meta": {

@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build migrate-install migrate-up migrate-down seed analytics-init analytics-smoke
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -33,7 +33,7 @@ dbt-deps:
 	cd dbt && dbt deps --profiles-dir .
 
 dbt-build: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__serie_historica_graos stg_conab__estimativa_graos+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__serie_historica_graos stg_conab__estimativa_graos+ mart_conab__serie_historica_graos'
 
 migrate-install:
 	go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.2
@@ -57,6 +57,17 @@ analytics-init:
 analytics-smoke:
 	@command -v duckdb >/dev/null 2>&1 || (echo "run: make duckdb-install" && exit 1)
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS rows FROM analytics.conab_estimativa_graos"
+
+conab-reference:
+	@chmod +x scripts/conab/fetch_reference_samples.sh
+	./scripts/conab/fetch_reference_samples.sh
+
+conab-mvp:
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_dbt_silver.py
+	$(MAKE) dbt-build LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(MAKE) analytics-smoke DUCKDB_PATH=$(DUCKDB_PATH)
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_graos"
 
 clean:
 	rm -rf $(BIN_DIR)

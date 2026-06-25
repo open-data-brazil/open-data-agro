@@ -34,3 +34,35 @@ models:
               - produto
               - uf
               - safra
+
+  - name: mart_conab__serie_historica_graos
+    description: |
+      Business mart — grain is produto + uf + ano (historical series).
+      Materialized to lake/gold/mart_conab__serie_historica_graos/ as Parquet (local-first).
+    config:
+      meta:
+        dataset_id: conab.serie-historica-graos
+        grain: produto, uf, ano
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: ano
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - uf
+              - ano

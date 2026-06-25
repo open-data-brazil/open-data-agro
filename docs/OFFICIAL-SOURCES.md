@@ -25,8 +25,8 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 
 | Dataset ID | Portal label | Status |
 |------------|--------------|--------|
-| `conab.estimativa-graos` | Estimativa Grãos | **P0 MVP** |
-| `conab.serie-historica-graos` | Série Histórica Grãos | **P0 MVP** |
+| `conab.estimativa-graos` | Estimativa Grãos | **P0 MVP — implemented** |
+| `conab.serie-historica-graos` | Série Histórica Grãos | **P0 MVP — implemented** |
 | `conab.estimativa-cana` | Estimativa Cana-de-Açúcar | Planned |
 | `conab.serie-historica-cana` | Série Histórica Cana-de-Açúcar | Planned |
 | `conab.estimativa-cafe` | Estimativa Café | Planned |

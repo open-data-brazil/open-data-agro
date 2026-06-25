@@ -50,7 +50,7 @@ make analytics-init LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/an
 | View | Source |
 |------|--------|
 | `analytics.conab_estimativa_graos` | `lake/gold/mart_conab__estimativa_graos/mart.parquet` |
-| `analytics.conab_serie_historica_graos` | `lake/silver/conab/serie_historica_graos/**/*.parquet` |
+| `analytics.conab_serie_historica_graos` | `lake/gold/mart_conab__serie_historica_graos/mart.parquet` |
 
 SQL definitions: [views/](views/).
 

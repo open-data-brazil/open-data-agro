@@ -8,7 +8,7 @@
     {
       "type": "expect_column_to_exist",
       "kwargs": { "column": "produto" },
-      "meta": { "notes": "CONAB crop column (portal: produto)." }
+      "meta": { "notes": "CONAB crop column." }
     },
     {
       "type": "expect_column_to_exist",
@@ -17,8 +17,8 @@
     },
     {
       "type": "expect_column_to_exist",
-      "kwargs": { "column": "safra" },
-      "meta": { "notes": "Harvest season label (grain key)." }
+      "kwargs": { "column": "ano_agricola" },
+      "meta": { "notes": "Agricultural year (maps to ano in staging)." }
     },
     {
       "type": "expect_column_values_to_not_be_null",
@@ -32,17 +32,17 @@
     },
     {
       "type": "expect_column_values_to_not_be_null",
-      "kwargs": { "column": "safra" },
-      "meta": { "notes": "Grain key — season must be present." }
+      "kwargs": { "column": "ano_agricola" },
+      "meta": { "notes": "Grain key — year must be present." }
     }
   ],
   "meta": {
     "great_expectations_version": "1.18.1",
-    "dataset_id": "conab.estimativa-graos",
+    "dataset_id": "conab.serie-historica-graos",
     "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
     "agencia": "CONAB",
-    "conab_section": "Produção Agrícola > Estimativa Grãos"
+    "conab_section": "Produção Agrícola > Série Histórica Grãos"
   },
-  "name": "bronze.conab.estimativa_graos",
-  "id": "bronze-conab-estimativa-graos-suite"
+  "name": "bronze.conab.serie_historica_graos",
+  "id": "bronze-conab-serie-historica-graos-suite"
 }

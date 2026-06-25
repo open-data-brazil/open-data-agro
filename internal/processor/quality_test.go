@@ -35,9 +35,10 @@ out = Path(sys.argv[1])
 null_produto = sys.argv[2] == "true"
 produto = [None] if null_produto else ["Soja"]
 pq.write_table(pa.table({
-    "Produto": produto,
-    "UF": ["PR"],
-    "Safra": ["2025/26"],
+    "produto": produto,
+    "uf": ["PR"],
+    "safra": ["UNICA"],
+    "ano_agricola": ["2025/26"],
 }), out / "part-test.parquet")
 `
 	cmd := exec.Command(python, "-c", writeScript, bronzeDir, fmt.Sprintf("%t", nullProduto))

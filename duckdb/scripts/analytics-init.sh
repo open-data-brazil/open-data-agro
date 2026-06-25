@@ -16,6 +16,7 @@ fi
 
 mkdir -p "$(dirname "$DUCKDB_PATH")" "$ROOT/duckdb/exports"
 mkdir -p "$LAKE_ABS/gold/mart_conab__estimativa_graos"
+mkdir -p "$LAKE_ABS/gold/mart_conab__serie_historica_graos"
 
 "$DUCKDB_BIN" "$DUCKDB_PATH" -c "CREATE SCHEMA IF NOT EXISTS analytics;"
 

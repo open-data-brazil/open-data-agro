@@ -7653,3 +7653,1623 @@ where uf is null
 [0m11:55:14.606651 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74f4f0eb83b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74f4f0829e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74f4cf685cd0>]}
 [0m11:55:14.606940 [debug] [MainThread]: Flushing usage events
 [0m11:55:15.547857 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:00:55.325976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e13e8ccd40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e13ec915e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e13e2638f0>]}
+
+
+============================== 12:00:55.328059 | 7cb2dab3-c827-4ee5-9173-75291a7cec05 ==============================
+[0m12:00:55.328059 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:00:55.328438 [debug] [MainThread]: running dbt with arguments {'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'introspect': 'True', 'no_print': 'None', 'invocation_command': 'dbt deps --profiles-dir .', 'quiet': 'False', 'fail_fast': 'False', 'empty': 'None', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'static_parser': 'True', 'debug': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'partial_parse': 'True', 'log_cache_events': 'False', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'log_format': 'default', 'target_path': 'None', 'version_check': 'True'}
+[0m12:00:55.416938 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7cb2dab3-c827-4ee5-9173-75291a7cec05', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e13d7ad010>]}
+[0m12:00:55.428968 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-ytvrlyr0'
+[0m12:00:55.429284 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:00:55.572828 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:00:55.573919 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:00:55.665513 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:00:55.669205 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:00:56.009111 [info ] [MainThread]: Installed from version 1.3.0
+[0m12:00:56.009471 [info ] [MainThread]: Updated version available: 1.4.0
+[0m12:00:56.009773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '7cb2dab3-c827-4ee5-9173-75291a7cec05', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e13d661580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e13d8ac3b0>]}
+[0m12:00:56.010057 [info ] [MainThread]: 
+[0m12:00:56.010300 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:00:56.010992 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.7286111, "process_in_blocks": "0", "process_kernel_time": 0.078016, "process_mem_max_rss": "121648", "process_out_blocks": "2304", "process_user_time": 1.145236}
+[0m12:00:56.011363 [debug] [MainThread]: Command `dbt deps` succeeded at 12:00:56.011299 after 0.73 seconds
+[0m12:00:56.011644 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e13d7cdf40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e13d7fde80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72e13daf8dd0>]}
+[0m12:00:56.011923 [debug] [MainThread]: Flushing usage events
+[0m12:00:56.768777 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:00:58.000598 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefc396db80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefc0bb93d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefc128b7d0>]}
+
+
+============================== 12:00:58.002710 | fa88dd90-b89e-491a-892f-666c7b1aef0c ==============================
+[0m12:00:58.002710 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:00:58.003103 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'profiles_dir': '.', 'write_json': 'True', 'indirect_selection': 'eager', 'empty': 'False', 'log_format': 'default', 'partial_parse': 'True', 'static_parser': 'True', 'cache_selected_only': 'False', 'printer_width': '80', 'warn_error': 'None', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt build --profiles-dir . --select stg_conab__serie_historica_graos stg_conab__estimativa_graos+ mart_conab__serie_historica_graos', 'no_print': 'None', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'quiet': 'False', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'introspect': 'True', 'fail_fast': 'False'}
+[0m12:00:58.168797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefb4b6de50>]}
+[0m12:00:58.217855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefc0bb93d0>]}
+[0m12:00:58.219030 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:00:58.286326 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m12:00:58.363812 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:00:58.364241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefc1288140>]}
+[0m12:00:59.496983 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefb45b1c10>]}
+[0m12:00:59.560813 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:00:59.562346 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:00:59.576425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefb40c35f0>]}
+[0m12:00:59.576845 [info ] [MainThread]: Found 5 models, 24 data tests, 2 sources, 606 macros
+[0m12:00:59.579588 [info ] [MainThread]: 
+[0m12:00:59.579928 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m12:00:59.580168 [info ] [MainThread]: 
+[0m12:00:59.580534 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:00:59.583956 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_conab-mvp'
+[0m12:00:59.605498 [debug] [ThreadPool]: Using duckdb connection "list_conab-mvp"
+[0m12:00:59.605810 [debug] [ThreadPool]: On list_conab-mvp: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_conab-mvp"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"conab-mvp"'
+    
+  
+  
+[0m12:00:59.606065 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:00:59.638896 [debug] [ThreadPool]: SQL status: OK in 0.033 seconds
+[0m12:00:59.640007 [debug] [ThreadPool]: On list_conab-mvp: Close
+[0m12:00:59.640597 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_conab-mvp, now create_conab-mvp_main)
+[0m12:00:59.640971 [debug] [ThreadPool]: Creating schema "database: "conab-mvp"
+schema: "main"
+"
+[0m12:00:59.646469 [debug] [ThreadPool]: Using duckdb connection "create_conab-mvp_main"
+[0m12:00:59.646761 [debug] [ThreadPool]: On create_conab-mvp_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_conab-mvp_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='conab-mvp'
+        and type='sqlite'
+    
+  
+[0m12:00:59.646995 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:00:59.647861 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:00:59.648805 [debug] [ThreadPool]: Using duckdb connection "create_conab-mvp_main"
+[0m12:00:59.649059 [debug] [ThreadPool]: On create_conab-mvp_main: BEGIN
+[0m12:00:59.649401 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:00:59.649643 [debug] [ThreadPool]: Using duckdb connection "create_conab-mvp_main"
+[0m12:00:59.649855 [debug] [ThreadPool]: On create_conab-mvp_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_conab-mvp_main"} */
+
+    
+    
+        create schema if not exists "conab-mvp"."main"
+    
+[0m12:00:59.650229 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:00:59.650893 [debug] [ThreadPool]: On create_conab-mvp_main: COMMIT
+[0m12:00:59.651144 [debug] [ThreadPool]: Using duckdb connection "create_conab-mvp_main"
+[0m12:00:59.651369 [debug] [ThreadPool]: On create_conab-mvp_main: COMMIT
+[0m12:00:59.651709 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:00:59.651970 [debug] [ThreadPool]: On create_conab-mvp_main: Close
+[0m12:00:59.652965 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_conab-mvp_main, now list_conab-mvp_main)
+[0m12:00:59.696809 [debug] [ThreadPool]: Using duckdb connection "list_conab-mvp_main"
+[0m12:00:59.697145 [debug] [ThreadPool]: On list_conab-mvp_main: BEGIN
+[0m12:00:59.697366 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:00:59.698046 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:00:59.698282 [debug] [ThreadPool]: Using duckdb connection "list_conab-mvp_main"
+[0m12:00:59.698514 [debug] [ThreadPool]: On list_conab-mvp_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_conab-mvp_main"} */
+select
+      'conab-mvp' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'conab-mvp'
+  
+[0m12:00:59.700222 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:00:59.701186 [debug] [ThreadPool]: On list_conab-mvp_main: ROLLBACK
+[0m12:00:59.702025 [debug] [ThreadPool]: Failed to rollback 'list_conab-mvp_main'
+[0m12:00:59.702275 [debug] [ThreadPool]: On list_conab-mvp_main: Close
+[0m12:00:59.702714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefb40c2a20>]}
+[0m12:00:59.703119 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:00:59.703372 [debug] [MainThread]: On master: BEGIN
+[0m12:00:59.703609 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:00:59.704060 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:00:59.704313 [debug] [MainThread]: On master: COMMIT
+[0m12:00:59.704545 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:00:59.704759 [debug] [MainThread]: On master: COMMIT
+[0m12:00:59.705082 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:00:59.705343 [debug] [MainThread]: On master: Close
+[0m12:00:59.706999 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_conab__estimativa_graos
+[0m12:00:59.707565 [debug] [Thread-2 (]: Began running node model.open_data_agro.stg_conab__serie_historica_graos
+[0m12:00:59.708272 [info ] [Thread-1 (]: 1 of 29 START sql view model main.stg_conab__estimativa_graos .................. [RUN]
+[0m12:00:59.709005 [info ] [Thread-2 (]: 2 of 29 START sql view model main.stg_conab__serie_historica_graos ............. [RUN]
+[0m12:00:59.709661 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_conab-mvp_main, now model.open_data_agro.stg_conab__estimativa_graos)
+[0m12:00:59.710222 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_conab__serie_historica_graos'
+[0m12:00:59.710718 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_conab__estimativa_graos
+[0m12:00:59.711215 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.stg_conab__serie_historica_graos
+[0m12:00:59.718540 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__estimativa_graos"
+[0m12:00:59.721125 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__serie_historica_graos"
+[0m12:00:59.721758 [debug] [Thread-2 (]: Began executing node model.open_data_agro.stg_conab__serie_historica_graos
+[0m12:00:59.732296 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_conab__estimativa_graos
+[0m12:00:59.743122 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__serie_historica_graos"
+[0m12:00:59.745381 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__estimativa_graos"
+[0m12:00:59.745968 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_conab__serie_historica_graos"
+[0m12:00:59.746353 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__estimativa_graos"
+[0m12:00:59.746653 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__serie_historica_graos: BEGIN
+[0m12:00:59.746968 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__estimativa_graos: BEGIN
+[0m12:00:59.747288 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:00:59.747659 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:00:59.748370 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:00:59.748696 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:00:59.749009 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_conab__serie_historica_graos"
+[0m12:00:59.749333 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__estimativa_graos"
+[0m12:00:59.749665 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__serie_historica_graos"} */
+
+  
+  create view "conab-mvp"."main"."stg_conab__serie_historica_graos__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/conab-mvp-lake/silver/conab/serie_historica_graos/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim(produto) as produto,
+  trim(uf) as uf,
+  trim(ano_agricola) as ano,
+  cast(area_plantada_mil_ha as varchar) as area_plantada_mil_ha,
+  cast(producao_mil_t as varchar) as producao_mil_t
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by produto, uf, ano
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:00:59.750052 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estimativa_graos"} */
+
+  
+  create view "conab-mvp"."main"."stg_conab__estimativa_graos__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/conab-mvp-lake/silver/conab/estimativa_graos/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim(produto) as produto,
+  trim(uf) as uf,
+  trim(coalesce(nullif(trim(safra), ''), trim(ano_agricola))) as safra,
+  cast(area_plantada_mil_ha as varchar) as area_plantada_mil_ha,
+  cast(producao_mil_t as varchar) as producao_mil_t
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by produto, uf, safra
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:00:59.751090 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:00:59.755333 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_conab__serie_historica_graos"
+[0m12:00:59.755667 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m12:00:59.756035 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__serie_historica_graos"} */
+alter view "conab-mvp"."main"."stg_conab__serie_historica_graos__dbt_tmp" rename to "stg_conab__serie_historica_graos"
+[0m12:00:59.758892 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__estimativa_graos"
+[0m12:00:59.759339 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estimativa_graos"} */
+alter view "conab-mvp"."main"."stg_conab__estimativa_graos__dbt_tmp" rename to "stg_conab__estimativa_graos"
+[0m12:00:59.759697 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m12:00:59.765177 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m12:00:59.768191 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__serie_historica_graos: COMMIT
+[0m12:00:59.769130 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__estimativa_graos: COMMIT
+[0m12:00:59.769477 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_conab__serie_historica_graos"
+[0m12:00:59.769784 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__estimativa_graos"
+[0m12:00:59.770110 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__serie_historica_graos: COMMIT
+[0m12:00:59.770448 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__estimativa_graos: COMMIT
+[0m12:00:59.780572 [debug] [Thread-2 (]: SQL status: OK in 0.010 seconds
+[0m12:00:59.784619 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_conab__serie_historica_graos"
+[0m12:00:59.784964 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__serie_historica_graos"} */
+
+      drop view if exists "conab-mvp"."main"."stg_conab__serie_historica_graos__dbt_backup" cascade
+    
+[0m12:00:59.785274 [debug] [Thread-1 (]: SQL status: OK in 0.014 seconds
+[0m12:00:59.787109 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__estimativa_graos"
+[0m12:00:59.787416 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__estimativa_graos"} */
+
+      drop view if exists "conab-mvp"."main"."stg_conab__estimativa_graos__dbt_backup" cascade
+    
+[0m12:00:59.787781 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.789509 [debug] [Thread-2 (]: On model.open_data_agro.stg_conab__serie_historica_graos: Close
+[0m12:00:59.789895 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.791909 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__estimativa_graos: Close
+[0m12:00:59.792404 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefb41330e0>]}
+[0m12:00:59.792692 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefb45730b0>]}
+[0m12:00:59.793161 [info ] [Thread-2 (]: 2 of 29 OK created sql view model main.stg_conab__serie_historica_graos ........ [[32mOK[0m in 0.08s]
+[0m12:00:59.793714 [info ] [Thread-1 (]: 1 of 29 OK created sql view model main.stg_conab__estimativa_graos ............. [[32mOK[0m in 0.08s]
+[0m12:00:59.794160 [debug] [Thread-2 (]: Finished running node model.open_data_agro.stg_conab__serie_historica_graos
+[0m12:00:59.794601 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_conab__estimativa_graos
+[0m12:00:59.795443 [debug] [Thread-4 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c
+[0m12:00:59.796130 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2
+[0m12:00:59.796699 [info ] [Thread-4 (]: 3 of 29 START test dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano  [RUN]
+[0m12:00:59.797194 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e
+[0m12:00:59.797565 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a
+[0m12:00:59.797942 [info ] [Thread-3 (]: 4 of 29 START test not_null_stg_conab__serie_historica_graos_ano ............... [RUN]
+[0m12:00:59.798533 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c'
+[0m12:00:59.799013 [info ] [Thread-2 (]: 5 of 29 START test not_null_stg_conab__serie_historica_graos_capturado_em ...... [RUN]
+[0m12:00:59.799384 [info ] [Thread-1 (]: 6 of 29 START test not_null_stg_conab__serie_historica_graos_fonte_oficial ..... [RUN]
+[0m12:00:59.799879 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2'
+[0m12:00:59.800299 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c
+[0m12:00:59.800847 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_conab__serie_historica_graos, now test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e)
+[0m12:00:59.801214 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_conab__estimativa_graos, now test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a)
+[0m12:00:59.801528 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2
+[0m12:00:59.804610 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c"
+[0m12:00:59.804983 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e
+[0m12:00:59.805293 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a
+[0m12:00:59.811002 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2"
+[0m12:00:59.813726 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e"
+[0m12:00:59.814155 [debug] [Thread-4 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c
+[0m12:00:59.816772 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a"
+[0m12:00:59.817331 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2
+[0m12:00:59.829983 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c"
+[0m12:00:59.830429 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e
+[0m12:00:59.833354 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2"
+[0m12:00:59.833819 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a
+[0m12:00:59.835431 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e"
+[0m12:00:59.835816 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c"
+[0m12:00:59.837405 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a"
+[0m12:00:59.837773 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2"
+[0m12:00:59.838200 [debug] [Thread-4 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c: BEGIN
+[0m12:00:59.838591 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e"
+[0m12:00:59.838886 [debug] [Thread-3 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2: BEGIN
+[0m12:00:59.839253 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a"
+[0m12:00:59.839572 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:00:59.839875 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e: BEGIN
+[0m12:00:59.840191 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:00:59.840524 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a: BEGIN
+[0m12:00:59.840997 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:00:59.841406 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.841710 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:00:59.841996 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.842449 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c"
+[0m12:00:59.842814 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.843124 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2"
+[0m12:00:59.843546 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.843884 [debug] [Thread-4 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        produto, uf, ano
+    from "conab-mvp"."main"."stg_conab__serie_historica_graos"
+    group by produto, uf, ano
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.844191 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e"
+[0m12:00:59.844574 [debug] [Thread-3 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ano
+from "conab-mvp"."main"."stg_conab__serie_historica_graos"
+where ano is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.845097 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a"
+[0m12:00:59.845636 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "conab-mvp"."main"."stg_conab__serie_historica_graos"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.846173 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "conab-mvp"."main"."stg_conab__serie_historica_graos"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.847354 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:00:59.847719 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:00:59.850348 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e: ROLLBACK
+[0m12:00:59.850743 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m12:00:59.851179 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m12:00:59.852486 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a: ROLLBACK
+[0m12:00:59.853236 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e'
+[0m12:00:59.854393 [debug] [Thread-3 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2: ROLLBACK
+[0m12:00:59.855457 [debug] [Thread-4 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c: ROLLBACK
+[0m12:00:59.856153 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a'
+[0m12:00:59.856514 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e: Close
+[0m12:00:59.857226 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2'
+[0m12:00:59.857949 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c'
+[0m12:00:59.858260 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a: Close
+[0m12:00:59.858590 [debug] [Thread-3 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2: Close
+[0m12:00:59.859017 [info ] [Thread-2 (]: 5 of 29 PASS not_null_stg_conab__serie_historica_graos_capturado_em ............ [[32mPASS[0m in 0.06s]
+[0m12:00:59.859357 [debug] [Thread-4 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c: Close
+[0m12:00:59.859819 [info ] [Thread-1 (]: 6 of 29 PASS not_null_stg_conab__serie_historica_graos_fonte_oficial ........... [[32mPASS[0m in 0.06s]
+[0m12:00:59.860252 [info ] [Thread-3 (]: 4 of 29 PASS not_null_stg_conab__serie_historica_graos_ano ..................... [[32mPASS[0m in 0.06s]
+[0m12:00:59.860727 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e
+[0m12:00:59.861224 [info ] [Thread-4 (]: 3 of 29 PASS dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano  [[32mPASS[0m in 0.06s]
+[0m12:00:59.861641 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a
+[0m12:00:59.862058 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2
+[0m12:00:59.862413 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf
+[0m12:00:59.862934 [debug] [Thread-4 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c
+[0m12:00:59.863299 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8
+[0m12:00:59.863636 [debug] [Thread-3 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7
+[0m12:00:59.863975 [info ] [Thread-2 (]: 7 of 29 START test not_null_stg_conab__serie_historica_graos_produto ........... [RUN]
+[0m12:00:59.864350 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe
+[0m12:00:59.864716 [info ] [Thread-1 (]: 8 of 29 START test not_null_stg_conab__serie_historica_graos_uf ................ [RUN]
+[0m12:00:59.865044 [info ] [Thread-3 (]: 9 of 29 START test dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra  [RUN]
+[0m12:00:59.865379 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__serie_historica_graos_capturado_em.ec3791ae1e, now test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf)
+[0m12:00:59.865683 [info ] [Thread-4 (]: 10 of 29 START test not_null_stg_conab__estimativa_graos_capturado_em .......... [RUN]
+[0m12:00:59.866011 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__serie_historica_graos_fonte_oficial.60c63fcd6a, now test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8)
+[0m12:00:59.866315 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__serie_historica_graos_ano.c04b52ecf2, now test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7)
+[0m12:00:59.866609 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf
+[0m12:00:59.866924 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__serie_historica_graos_produto__uf__ano.be72e16d6c, now test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe)
+[0m12:00:59.867283 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8
+[0m12:00:59.867577 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7
+[0m12:00:59.870752 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf"
+[0m12:00:59.871272 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe
+[0m12:00:59.874648 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8"
+[0m12:00:59.878320 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7"
+[0m12:00:59.881229 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe"
+[0m12:00:59.881726 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf
+[0m12:00:59.882212 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8
+[0m12:00:59.882692 [debug] [Thread-3 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7
+[0m12:00:59.884402 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf"
+[0m12:00:59.884743 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe
+[0m12:00:59.886372 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8"
+[0m12:00:59.890336 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7"
+[0m12:00:59.892311 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe"
+[0m12:00:59.893049 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf"
+[0m12:00:59.893810 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8"
+[0m12:00:59.894434 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf: BEGIN
+[0m12:00:59.894835 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe"
+[0m12:00:59.895411 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7"
+[0m12:00:59.895846 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8: BEGIN
+[0m12:00:59.896254 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:00:59.896742 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe: BEGIN
+[0m12:00:59.897097 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7: BEGIN
+[0m12:00:59.897471 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:00:59.898017 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:00:59.898328 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:00:59.898745 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.899639 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.900209 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf"
+[0m12:00:59.900664 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:00:59.901024 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:00:59.901509 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8"
+[0m12:00:59.901931 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto
+from "conab-mvp"."main"."stg_conab__serie_historica_graos"
+where produto is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.902440 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe"
+[0m12:00:59.902734 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7"
+[0m12:00:59.903069 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select uf
+from "conab-mvp"."main"."stg_conab__serie_historica_graos"
+where uf is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.903590 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "conab-mvp"."main"."stg_conab__estimativa_graos"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.903911 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        produto, uf, safra
+    from "conab-mvp"."main"."stg_conab__estimativa_graos"
+    group by produto, uf, safra
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.905217 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:00:59.905564 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:00:59.906005 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.907417 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe: ROLLBACK
+[0m12:00:59.907833 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:00:59.909049 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8: ROLLBACK
+[0m12:00:59.909887 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe'
+[0m12:00:59.911049 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf: ROLLBACK
+[0m12:00:59.911914 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8'
+[0m12:00:59.913070 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7: ROLLBACK
+[0m12:00:59.913414 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe: Close
+[0m12:00:59.914225 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf'
+[0m12:00:59.914580 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8: Close
+[0m12:00:59.915345 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7'
+[0m12:00:59.915730 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf: Close
+[0m12:00:59.916247 [info ] [Thread-4 (]: 10 of 29 PASS not_null_stg_conab__estimativa_graos_capturado_em ................ [[32mPASS[0m in 0.05s]
+[0m12:00:59.916863 [info ] [Thread-1 (]: 8 of 29 PASS not_null_stg_conab__serie_historica_graos_uf ...................... [[32mPASS[0m in 0.05s]
+[0m12:00:59.917262 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7: Close
+[0m12:00:59.917960 [info ] [Thread-2 (]: 7 of 29 PASS not_null_stg_conab__serie_historica_graos_produto ................. [[32mPASS[0m in 0.05s]
+[0m12:00:59.918405 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe
+[0m12:00:59.918807 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8
+[0m12:00:59.919938 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf
+[0m12:00:59.920274 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7
+[0m12:00:59.919484 [info ] [Thread-3 (]: 9 of 29 PASS dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra  [[32mPASS[0m in 0.05s]
+[0m12:00:59.920787 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a
+[0m12:00:59.921258 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e
+[0m12:00:59.921786 [info ] [Thread-4 (]: 11 of 29 START test not_null_stg_conab__estimativa_graos_fonte_oficial ......... [RUN]
+[0m12:00:59.922461 [debug] [Thread-3 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7
+[0m12:00:59.922955 [info ] [Thread-1 (]: 12 of 29 START test not_null_stg_conab__estimativa_graos_produto ............... [RUN]
+[0m12:00:59.923418 [info ] [Thread-2 (]: 13 of 29 START test not_null_stg_conab__estimativa_graos_safra ................. [RUN]
+[0m12:00:59.923991 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__estimativa_graos_capturado_em.b6eb0d4bbe, now test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7)
+[0m12:00:59.924471 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6
+[0m12:00:59.925101 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__serie_historica_graos_uf.c5031a1fb8, now test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a)
+[0m12:00:59.925556 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__serie_historica_graos_produto.b797c067bf, now test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e)
+[0m12:00:59.926052 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7
+[0m12:00:59.926458 [info ] [Thread-3 (]: 14 of 29 START test not_null_stg_conab__estimativa_graos_uf .................... [RUN]
+[0m12:00:59.926948 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a
+[0m12:00:59.927361 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e
+[0m12:00:59.930610 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7"
+[0m12:00:59.931073 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_stg_conab__estimativa_graos_produto__uf__safra.82d8716fc7, now test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6)
+[0m12:00:59.933965 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a"
+[0m12:00:59.936999 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e"
+[0m12:00:59.937513 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6
+[0m12:00:59.937933 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7
+[0m12:00:59.938387 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a
+[0m12:00:59.941073 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6"
+[0m12:00:59.942962 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7"
+[0m12:00:59.943329 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e
+[0m12:00:59.944895 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a"
+[0m12:00:59.947034 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e"
+[0m12:00:59.947408 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6
+[0m12:00:59.947807 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7"
+[0m12:00:59.948333 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a"
+[0m12:00:59.951006 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6"
+[0m12:00:59.951424 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7: BEGIN
+[0m12:00:59.951810 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e"
+[0m12:00:59.952293 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a: BEGIN
+[0m12:00:59.952671 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:00:59.953065 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6"
+[0m12:00:59.953370 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e: BEGIN
+[0m12:00:59.953702 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:00:59.954142 [debug] [Thread-3 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6: BEGIN
+[0m12:00:59.954436 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:00:59.954788 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.955192 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:00:59.955522 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.955926 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7"
+[0m12:00:59.956238 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.956645 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a"
+[0m12:00:59.956946 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "conab-mvp"."main"."stg_conab__estimativa_graos"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.957248 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.957582 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e"
+[0m12:00:59.957915 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto
+from "conab-mvp"."main"."stg_conab__estimativa_graos"
+where produto is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.958295 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6"
+[0m12:00:59.958577 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select safra
+from "conab-mvp"."main"."stg_conab__estimativa_graos"
+where safra is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.959066 [debug] [Thread-3 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select uf
+from "conab-mvp"."main"."stg_conab__estimativa_graos"
+where uf is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:00:59.959439 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:00:59.961239 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7: ROLLBACK
+[0m12:00:59.961625 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:00:59.962003 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:00:59.962770 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7'
+[0m12:00:59.963126 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:00:59.964263 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e: ROLLBACK
+[0m12:00:59.964657 [debug] [Thread-4 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7: Close
+[0m12:00:59.965722 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a: ROLLBACK
+[0m12:00:59.966845 [debug] [Thread-3 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6: ROLLBACK
+[0m12:00:59.967724 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e'
+[0m12:00:59.968396 [info ] [Thread-4 (]: 11 of 29 PASS not_null_stg_conab__estimativa_graos_fonte_oficial ............... [[32mPASS[0m in 0.04s]
+[0m12:00:59.969178 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a'
+[0m12:00:59.970197 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6'
+[0m12:00:59.970725 [debug] [Thread-2 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e: Close
+[0m12:00:59.971411 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7
+[0m12:00:59.971992 [debug] [Thread-1 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a: Close
+[0m12:00:59.972527 [debug] [Thread-3 (]: On test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6: Close
+[0m12:00:59.973119 [debug] [Thread-4 (]: Began running node model.open_data_agro.mart_conab__serie_historica_graos
+[0m12:00:59.973721 [info ] [Thread-2 (]: 13 of 29 PASS not_null_stg_conab__estimativa_graos_safra ....................... [[32mPASS[0m in 0.05s]
+[0m12:00:59.974581 [info ] [Thread-1 (]: 12 of 29 PASS not_null_stg_conab__estimativa_graos_produto ..................... [[32mPASS[0m in 0.05s]
+[0m12:00:59.975319 [info ] [Thread-3 (]: 14 of 29 PASS not_null_stg_conab__estimativa_graos_uf .......................... [[32mPASS[0m in 0.04s]
+[0m12:00:59.975848 [info ] [Thread-4 (]: 15 of 29 START sql external model main.mart_conab__serie_historica_graos ....... [RUN]
+[0m12:00:59.976588 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e
+[0m12:00:59.977274 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a
+[0m12:00:59.978122 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6
+[0m12:00:59.978694 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__estimativa_graos_fonte_oficial.bd1d4da1e7, now model.open_data_agro.mart_conab__serie_historica_graos)
+[0m12:00:59.979466 [debug] [Thread-4 (]: Began compiling node model.open_data_agro.mart_conab__serie_historica_graos
+[0m12:00:59.982404 [debug] [Thread-4 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:00:59.982724 [debug] [Thread-2 (]: Began running node model.open_data_agro.int_conab__graos_unioned
+[0m12:00:59.983130 [debug] [Thread-1 (]: Began running node model.open_data_agro.mart_conab__estimativa_graos
+[0m12:00:59.983683 [info ] [Thread-2 (]: 16 of 29 START sql view model main.int_conab__graos_unioned .................... [RUN]
+[0m12:00:59.984217 [info ] [Thread-1 (]: 17 of 29 START sql external model main.mart_conab__estimativa_graos ............ [RUN]
+[0m12:00:59.984611 [debug] [Thread-4 (]: Began executing node model.open_data_agro.mart_conab__serie_historica_graos
+[0m12:00:59.984973 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__estimativa_graos_safra.075a471a9e, now model.open_data_agro.int_conab__graos_unioned)
+[0m12:00:59.985312 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__estimativa_graos_produto.cbc78b660a, now model.open_data_agro.mart_conab__estimativa_graos)
+[0m12:00:59.995862 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.int_conab__graos_unioned
+[0m12:00:59.996261 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.mart_conab__estimativa_graos
+[0m12:01:00.023085 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.int_conab__graos_unioned"
+[0m12:01:00.024788 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.028060 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.028613 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: BEGIN
+[0m12:01:00.029048 [debug] [Thread-2 (]: Began executing node model.open_data_agro.int_conab__graos_unioned
+[0m12:01:00.029502 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:01:00.029818 [debug] [Thread-1 (]: Began executing node model.open_data_agro.mart_conab__estimativa_graos
+[0m12:01:00.032025 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.int_conab__graos_unioned"
+[0m12:01:00.035453 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.035820 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m12:01:00.036232 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: BEGIN
+[0m12:01:00.036592 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.036913 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:01:00.037210 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.int_conab__graos_unioned"
+[0m12:01:00.037524 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__serie_historica_graos"} */
+
+  
+    
+    
+
+    create  table
+      "conab-mvp"."main"."mart_conab__serie_historica_graos__dbt_tmp"
+  
+    as (
+      
+
+select
+    produto,
+    uf,
+    ano,
+    area_plantada_mil_ha,
+    producao_mil_t,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "conab-mvp"."main"."stg_conab__serie_historica_graos"
+    );
+  
+  
+[0m12:01:00.037937 [debug] [Thread-2 (]: On model.open_data_agro.int_conab__graos_unioned: BEGIN
+[0m12:01:00.038325 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.038618 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:01:00.038901 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.039291 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estimativa_graos"} */
+
+  
+    
+    
+
+    create  table
+      "conab-mvp"."main"."mart_conab__estimativa_graos__dbt_tmp"
+  
+    as (
+      
+
+select
+    produto,
+    uf,
+    safra,
+    area_plantada_mil_ha,
+    producao_mil_t,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "conab-mvp"."main"."stg_conab__estimativa_graos"
+    );
+  
+  
+[0m12:01:00.039716 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.040019 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.int_conab__graos_unioned"
+[0m12:01:00.040300 [debug] [Thread-2 (]: On model.open_data_agro.int_conab__graos_unioned: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.int_conab__graos_unioned"} */
+
+  
+  create view "conab-mvp"."main"."int_conab__graos_unioned__dbt_tmp" as (
+    select
+    'estimativa' as origem,
+    produto,
+    uf,
+    safra as periodo,
+    producao_mil_t,
+    capturado_em,
+    fonte_oficial
+from "conab-mvp"."main"."stg_conab__estimativa_graos"
+
+union all
+
+select
+    'serie_historica' as origem,
+    produto,
+    uf,
+    cast(ano as varchar) as periodo,
+    producao_mil_t,
+    capturado_em,
+    fonte_oficial
+from "conab-mvp"."main"."stg_conab__serie_historica_graos"
+  );
+
+[0m12:01:00.040995 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.042087 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.042405 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__serie_historica_graos"} */
+
+    select count(*) as row_count from "conab-mvp"."main"."mart_conab__serie_historica_graos__dbt_tmp"
+  
+[0m12:01:00.042727 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.043117 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.044144 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.044541 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.046914 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.int_conab__graos_unioned"
+[0m12:01:00.047298 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estimativa_graos"} */
+
+    select count(*) as row_count from "conab-mvp"."main"."mart_conab__estimativa_graos__dbt_tmp"
+  
+[0m12:01:00.047717 [debug] [Thread-2 (]: On model.open_data_agro.int_conab__graos_unioned: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.int_conab__graos_unioned"} */
+alter view "conab-mvp"."main"."int_conab__graos_unioned__dbt_tmp" rename to "int_conab__graos_unioned"
+[0m12:01:00.048870 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.049376 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.049831 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.050239 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.051228 [debug] [Thread-2 (]: On model.open_data_agro.int_conab__graos_unioned: COMMIT
+[0m12:01:00.051574 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__serie_historica_graos"} */
+
+[0m12:01:00.051914 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.int_conab__graos_unioned"
+[0m12:01:00.052915 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.053341 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:01:00.053655 [debug] [Thread-2 (]: On model.open_data_agro.int_conab__graos_unioned: COMMIT
+[0m12:01:00.054115 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.056115 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.056565 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estimativa_graos"} */
+
+[0m12:01:00.056910 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__serie_historica_graos"} */
+copy "conab-mvp"."main"."mart_conab__serie_historica_graos__dbt_tmp" to '/tmp/conab-mvp-lake/gold/mart_conab__serie_historica_graos/mart.parquet' (format parquet)
+[0m12:01:00.057311 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:01:00.058238 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.058576 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estimativa_graos"} */
+copy "conab-mvp"."main"."mart_conab__estimativa_graos__dbt_tmp" to '/tmp/conab-mvp-lake/gold/mart_conab__estimativa_graos/mart.parquet' (format parquet)
+[0m12:01:00.059201 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.060120 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.060575 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.061462 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.061827 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.062202 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m12:01:00.062743 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__serie_historica_graos"} */
+
+      create or replace view "conab-mvp"."main"."mart_conab__serie_historica_graos__dbt_int" as (
+        select * from read_parquet('/tmp/conab-mvp-lake/gold/mart_conab__serie_historica_graos/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:01:00.063264 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.065125 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.int_conab__graos_unioned"
+[0m12:01:00.065658 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estimativa_graos"} */
+
+      create or replace view "conab-mvp"."main"."mart_conab__estimativa_graos__dbt_int" as (
+        select * from read_parquet('/tmp/conab-mvp-lake/gold/mart_conab__estimativa_graos/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:01:00.066032 [debug] [Thread-2 (]: On model.open_data_agro.int_conab__graos_unioned: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.int_conab__graos_unioned"} */
+
+      drop view if exists "conab-mvp"."main"."int_conab__graos_unioned__dbt_backup" cascade
+    
+[0m12:01:00.066421 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.068934 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.069334 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__serie_historica_graos"} */
+alter view "conab-mvp"."main"."mart_conab__serie_historica_graos__dbt_int" rename to "mart_conab__serie_historica_graos"
+[0m12:01:00.069658 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.070087 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.071414 [debug] [Thread-2 (]: On model.open_data_agro.int_conab__graos_unioned: Close
+[0m12:01:00.071786 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.075266 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.075791 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefb46a2f00>]}
+[0m12:01:00.076690 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: COMMIT
+[0m12:01:00.077068 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estimativa_graos"} */
+alter view "conab-mvp"."main"."mart_conab__estimativa_graos__dbt_int" rename to "mart_conab__estimativa_graos"
+[0m12:01:00.077598 [info ] [Thread-2 (]: 16 of 29 OK created sql view model main.int_conab__graos_unioned ............... [[32mOK[0m in 0.09s]
+[0m12:01:00.078032 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.078574 [debug] [Thread-2 (]: Finished running node model.open_data_agro.int_conab__graos_unioned
+[0m12:01:00.078870 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: COMMIT
+[0m12:01:00.079163 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.080380 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: COMMIT
+[0m12:01:00.080721 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.081000 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: COMMIT
+[0m12:01:00.081323 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.083213 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.083542 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__serie_historica_graos"} */
+
+      drop table if exists "conab-mvp"."main"."mart_conab__serie_historica_graos__dbt_backup" cascade
+    
+[0m12:01:00.083851 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.085556 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.085874 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estimativa_graos"} */
+
+      drop table if exists "conab-mvp"."main"."mart_conab__estimativa_graos__dbt_backup" cascade
+    
+[0m12:01:00.086241 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.086577 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:01:00.088645 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_conab__serie_historica_graos"
+[0m12:01:00.090754 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_conab__estimativa_graos"
+[0m12:01:00.091123 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__serie_historica_graos"} */
+
+      drop table if exists "conab-mvp"."main"."mart_conab__serie_historica_graos__dbt_tmp" cascade
+    
+[0m12:01:00.091477 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__estimativa_graos"} */
+
+      drop table if exists "conab-mvp"."main"."mart_conab__estimativa_graos__dbt_tmp" cascade
+    
+[0m12:01:00.093112 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.094120 [debug] [Thread-4 (]: On model.open_data_agro.mart_conab__serie_historica_graos: Close
+[0m12:01:00.094476 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.095100 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefb4b895e0>]}
+[0m12:01:00.096357 [debug] [Thread-1 (]: On model.open_data_agro.mart_conab__estimativa_graos: Close
+[0m12:01:00.096943 [info ] [Thread-4 (]: 15 of 29 OK created sql external model main.mart_conab__serie_historica_graos .. [[32mOK[0m in 0.12s]
+[0m12:01:00.097467 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fa88dd90-b89e-491a-892f-666c7b1aef0c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fef6f7d9400>]}
+[0m12:01:00.097859 [debug] [Thread-4 (]: Finished running node model.open_data_agro.mart_conab__serie_historica_graos
+[0m12:01:00.098370 [info ] [Thread-1 (]: 17 of 29 OK created sql external model main.mart_conab__estimativa_graos ....... [[32mOK[0m in 0.11s]
+[0m12:01:00.098944 [debug] [Thread-3 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925
+[0m12:01:00.099326 [debug] [Thread-1 (]: Finished running node model.open_data_agro.mart_conab__estimativa_graos
+[0m12:01:00.099630 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e
+[0m12:01:00.099983 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495
+[0m12:01:00.100272 [info ] [Thread-3 (]: 18 of 29 START test dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano  [RUN]
+[0m12:01:00.100616 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4
+[0m12:01:00.101048 [info ] [Thread-2 (]: 19 of 29 START test not_null_mart_conab__serie_historica_graos_ano ............. [RUN]
+[0m12:01:00.101370 [info ] [Thread-4 (]: 20 of 29 START test not_null_mart_conab__serie_historica_graos_capturado_em .... [RUN]
+[0m12:01:00.101737 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_stg_conab__estimativa_graos_uf.1225a5f6c6, now test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925)
+[0m12:01:00.102094 [info ] [Thread-1 (]: 21 of 29 START test not_null_mart_conab__serie_historica_graos_fonte_oficial ... [RUN]
+[0m12:01:00.102437 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.open_data_agro.int_conab__graos_unioned, now test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e)
+[0m12:01:00.102770 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_conab__serie_historica_graos, now test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495)
+[0m12:01:00.103076 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925
+[0m12:01:00.103404 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_conab__estimativa_graos, now test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4)
+[0m12:01:00.103722 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e
+[0m12:01:00.104014 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495
+[0m12:01:00.108039 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925"
+[0m12:01:00.108383 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4
+[0m12:01:00.111057 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e"
+[0m12:01:00.113609 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495"
+[0m12:01:00.116351 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4"
+[0m12:01:00.117050 [debug] [Thread-3 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925
+[0m12:01:00.117607 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495
+[0m12:01:00.117905 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e
+[0m12:01:00.118223 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4
+[0m12:01:00.120906 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925"
+[0m12:01:00.122718 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495"
+[0m12:01:00.124262 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e"
+[0m12:01:00.125945 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4"
+[0m12:01:00.126719 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e"
+[0m12:01:00.127193 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925"
+[0m12:01:00.127680 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495"
+[0m12:01:00.128064 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e: BEGIN
+[0m12:01:00.128435 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4"
+[0m12:01:00.128807 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925: BEGIN
+[0m12:01:00.129317 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495: BEGIN
+[0m12:01:00.129825 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:01:00.130183 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4: BEGIN
+[0m12:01:00.130554 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:01:00.130922 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:01:00.131552 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:01:00.131869 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.132641 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.133270 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e"
+[0m12:01:00.133727 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.134118 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.134685 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925"
+[0m12:01:00.135261 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ano
+from "conab-mvp"."main"."mart_conab__serie_historica_graos"
+where ano is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.135732 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4"
+[0m12:01:00.136094 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495"
+[0m12:01:00.136684 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        produto, uf, ano
+    from "conab-mvp"."main"."mart_conab__serie_historica_graos"
+    group by produto, uf, ano
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.137336 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "conab-mvp"."main"."mart_conab__serie_historica_graos"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.137731 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "conab-mvp"."main"."mart_conab__serie_historica_graos"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.138478 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.140610 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e: ROLLBACK
+[0m12:01:00.141029 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.141764 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e'
+[0m12:01:00.142137 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.142656 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m12:01:00.143029 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e: Close
+[0m12:01:00.144118 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925: ROLLBACK
+[0m12:01:00.145593 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495: ROLLBACK
+[0m12:01:00.146808 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4: ROLLBACK
+[0m12:01:00.147336 [info ] [Thread-2 (]: 19 of 29 PASS not_null_mart_conab__serie_historica_graos_ano ................... [[32mPASS[0m in 0.04s]
+[0m12:01:00.148151 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925'
+[0m12:01:00.149240 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495'
+[0m12:01:00.150115 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4'
+[0m12:01:00.150561 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e
+[0m12:01:00.150905 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925: Close
+[0m12:01:00.151278 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495: Close
+[0m12:01:00.151797 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4: Close
+[0m12:01:00.152212 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03
+[0m12:01:00.152984 [info ] [Thread-3 (]: 18 of 29 PASS dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano  [[32mPASS[0m in 0.05s]
+[0m12:01:00.153733 [info ] [Thread-4 (]: 20 of 29 PASS not_null_mart_conab__serie_historica_graos_capturado_em .......... [[32mPASS[0m in 0.05s]
+[0m12:01:00.154340 [info ] [Thread-1 (]: 21 of 29 PASS not_null_mart_conab__serie_historica_graos_fonte_oficial ......... [[32mPASS[0m in 0.05s]
+[0m12:01:00.154814 [info ] [Thread-2 (]: 22 of 29 START test not_null_mart_conab__serie_historica_graos_produto ......... [RUN]
+[0m12:01:00.155644 [debug] [Thread-3 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925
+[0m12:01:00.156322 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495
+[0m12:01:00.156814 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4
+[0m12:01:00.157262 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__serie_historica_graos_ano.7481701e8e, now test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03)
+[0m12:01:00.157860 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333
+[0m12:01:00.158413 [debug] [Thread-4 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9
+[0m12:01:00.158838 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e
+[0m12:01:00.159260 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03
+[0m12:01:00.159701 [info ] [Thread-3 (]: 23 of 29 START test not_null_mart_conab__serie_historica_graos_uf .............. [RUN]
+[0m12:01:00.160221 [info ] [Thread-4 (]: 24 of 29 START test dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra  [RUN]
+[0m12:01:00.160596 [info ] [Thread-1 (]: 25 of 29 START test not_null_mart_conab__estimativa_graos_capturado_em ......... [RUN]
+[0m12:01:00.163529 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03"
+[0m12:01:00.164029 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__serie_historica_graos_produto__uf__ano.0c9d28e925, now test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333)
+[0m12:01:00.164558 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__serie_historica_graos_capturado_em.da5d4b7495, now test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9)
+[0m12:01:00.164903 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__serie_historica_graos_fonte_oficial.18d8308ee4, now test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e)
+[0m12:01:00.165425 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333
+[0m12:01:00.165871 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9
+[0m12:01:00.166226 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e
+[0m12:01:00.166645 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03
+[0m12:01:00.170716 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333"
+[0m12:01:00.173889 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9"
+[0m12:01:00.176555 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e"
+[0m12:01:00.178385 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03"
+[0m12:01:00.178982 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333
+[0m12:01:00.179471 [debug] [Thread-4 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9
+[0m12:01:00.181462 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333"
+[0m12:01:00.181809 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e
+[0m12:01:00.183634 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9"
+[0m12:01:00.184319 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03"
+[0m12:01:00.186173 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e"
+[0m12:01:00.186583 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333"
+[0m12:01:00.187148 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03: BEGIN
+[0m12:01:00.187662 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9"
+[0m12:01:00.188073 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333: BEGIN
+[0m12:01:00.188421 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e"
+[0m12:01:00.188783 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:01:00.189275 [debug] [Thread-4 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9: BEGIN
+[0m12:01:00.189569 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:01:00.189854 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e: BEGIN
+[0m12:01:00.190396 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:01:00.190904 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.191418 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:01:00.191706 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.192162 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03"
+[0m12:01:00.192562 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.193009 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333"
+[0m12:01:00.193360 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.193730 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto
+from "conab-mvp"."main"."mart_conab__serie_historica_graos"
+where produto is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.194267 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9"
+[0m12:01:00.194659 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select uf
+from "conab-mvp"."main"."mart_conab__serie_historica_graos"
+where uf is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.195111 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e"
+[0m12:01:00.195835 [debug] [Thread-4 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        produto, uf, safra
+    from "conab-mvp"."main"."mart_conab__estimativa_graos"
+    group by produto, uf, safra
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.196511 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "conab-mvp"."main"."mart_conab__estimativa_graos"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.197144 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.197794 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.200026 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03: ROLLBACK
+[0m12:01:00.200636 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.201222 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.202602 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333: ROLLBACK
+[0m12:01:00.203506 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03'
+[0m12:01:00.204764 [debug] [Thread-4 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9: ROLLBACK
+[0m12:01:00.206465 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e: ROLLBACK
+[0m12:01:00.207712 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333'
+[0m12:01:00.208271 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03: Close
+[0m12:01:00.209071 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9'
+[0m12:01:00.210271 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e'
+[0m12:01:00.210816 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333: Close
+[0m12:01:00.211383 [debug] [Thread-4 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9: Close
+[0m12:01:00.211872 [info ] [Thread-2 (]: 22 of 29 PASS not_null_mart_conab__serie_historica_graos_produto ............... [[32mPASS[0m in 0.05s]
+[0m12:01:00.212343 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e: Close
+[0m12:01:00.213231 [info ] [Thread-3 (]: 23 of 29 PASS not_null_mart_conab__serie_historica_graos_uf .................... [[32mPASS[0m in 0.05s]
+[0m12:01:00.214285 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03
+[0m12:01:00.213940 [info ] [Thread-4 (]: 24 of 29 PASS dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra  [[32mPASS[0m in 0.05s]
+[0m12:01:00.215113 [info ] [Thread-1 (]: 25 of 29 PASS not_null_mart_conab__estimativa_graos_capturado_em ............... [[32mPASS[0m in 0.05s]
+[0m12:01:00.215767 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333
+[0m12:01:00.216179 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c
+[0m12:01:00.216673 [debug] [Thread-4 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9
+[0m12:01:00.217335 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e
+[0m12:01:00.217895 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d
+[0m12:01:00.218319 [info ] [Thread-2 (]: 26 of 29 START test not_null_mart_conab__estimativa_graos_fonte_oficial ........ [RUN]
+[0m12:01:00.218941 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367
+[0m12:01:00.219589 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7
+[0m12:01:00.220158 [info ] [Thread-3 (]: 27 of 29 START test not_null_mart_conab__estimativa_graos_produto .............. [RUN]
+[0m12:01:00.220739 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__serie_historica_graos_produto.1f239c6b03, now test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c)
+[0m12:01:00.221193 [info ] [Thread-4 (]: 28 of 29 START test not_null_mart_conab__estimativa_graos_safra ................ [RUN]
+[0m12:01:00.221733 [info ] [Thread-1 (]: 29 of 29 START test not_null_mart_conab__estimativa_graos_uf ................... [RUN]
+[0m12:01:00.222177 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__serie_historica_graos_uf.4d80c05333, now test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d)
+[0m12:01:00.222751 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c
+[0m12:01:00.223367 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__estimativa_graos_produto__uf__safra.a2b4256bb9, now test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367)
+[0m12:01:00.223988 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__estimativa_graos_capturado_em.93ccd4ee2e, now test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7)
+[0m12:01:00.224541 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d
+[0m12:01:00.228586 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c"
+[0m12:01:00.229039 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367
+[0m12:01:00.229602 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7
+[0m12:01:00.232507 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d"
+[0m12:01:00.238056 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367"
+[0m12:01:00.238398 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c
+[0m12:01:00.241720 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7"
+[0m12:01:00.242358 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d
+[0m12:01:00.244346 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c"
+[0m12:01:00.244722 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367
+[0m12:01:00.246294 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d"
+[0m12:01:00.246650 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7
+[0m12:01:00.248256 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367"
+[0m12:01:00.248755 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c"
+[0m12:01:00.250431 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7"
+[0m12:01:00.250831 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d"
+[0m12:01:00.251367 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367"
+[0m12:01:00.251654 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c: BEGIN
+[0m12:01:00.252099 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d: BEGIN
+[0m12:01:00.252509 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7"
+[0m12:01:00.252842 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367: BEGIN
+[0m12:01:00.253171 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:01:00.253482 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:01:00.253784 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7: BEGIN
+[0m12:01:00.254058 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:01:00.254588 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:01:00.254916 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.255264 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.255784 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c"
+[0m12:01:00.256176 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.256624 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.257000 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d"
+[0m12:01:00.257419 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "conab-mvp"."main"."mart_conab__estimativa_graos"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.257819 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367"
+[0m12:01:00.258297 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7"
+[0m12:01:00.258624 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto
+from "conab-mvp"."main"."mart_conab__estimativa_graos"
+where produto is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.259234 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select safra
+from "conab-mvp"."main"."mart_conab__estimativa_graos"
+where safra is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.259693 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select uf
+from "conab-mvp"."main"."mart_conab__estimativa_graos"
+where uf is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:01:00.260068 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:01:00.261948 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c: ROLLBACK
+[0m12:01:00.262531 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:01:00.263560 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c'
+[0m12:01:00.264126 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:01:00.264592 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m12:01:00.265052 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c: Close
+[0m12:01:00.266209 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7: ROLLBACK
+[0m12:01:00.268061 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367: ROLLBACK
+[0m12:01:00.269337 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d: ROLLBACK
+[0m12:01:00.269815 [info ] [Thread-2 (]: 26 of 29 PASS not_null_mart_conab__estimativa_graos_fonte_oficial .............. [[32mPASS[0m in 0.05s]
+[0m12:01:00.270615 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7'
+[0m12:01:00.271656 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367'
+[0m12:01:00.272443 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d'
+[0m12:01:00.272985 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c
+[0m12:01:00.273392 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7: Close
+[0m12:01:00.273830 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367: Close
+[0m12:01:00.274369 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d: Close
+[0m12:01:00.275090 [info ] [Thread-1 (]: 29 of 29 PASS not_null_mart_conab__estimativa_graos_uf ......................... [[32mPASS[0m in 0.05s]
+[0m12:01:00.275840 [info ] [Thread-4 (]: 28 of 29 PASS not_null_mart_conab__estimativa_graos_safra ...................... [[32mPASS[0m in 0.05s]
+[0m12:01:00.277191 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7
+[0m12:01:00.276576 [info ] [Thread-3 (]: 27 of 29 PASS not_null_mart_conab__estimativa_graos_produto .................... [[32mPASS[0m in 0.05s]
+[0m12:01:00.278142 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367
+[0m12:01:00.278831 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d
+[0m12:01:00.280196 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:01:00.280486 [debug] [MainThread]: On master: BEGIN
+[0m12:01:00.280731 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:01:00.281223 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:01:00.281482 [debug] [MainThread]: On master: COMMIT
+[0m12:01:00.281716 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:01:00.281946 [debug] [MainThread]: On master: COMMIT
+[0m12:01:00.282291 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:01:00.282543 [debug] [MainThread]: On master: Close
+[0m12:01:00.282842 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:01:00.283074 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__estimativa_graos_uf.a287a5dfe7' was properly closed.
+[0m12:01:00.283288 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__estimativa_graos_fonte_oficial.fcef9e3c9c' was properly closed.
+[0m12:01:00.283510 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__estimativa_graos_safra.dc5c501367' was properly closed.
+[0m12:01:00.283717 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__estimativa_graos_produto.7594e45c2d' was properly closed.
+[0m12:01:00.284040 [info ] [MainThread]: 
+[0m12:01:00.284328 [info ] [MainThread]: Finished running 2 external models, 24 data tests, 3 view models in 0 hours 0 minutes and 0.70 seconds (0.70s).
+[0m12:01:00.286546 [debug] [MainThread]: Command end result
+[0m12:01:00.310578 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:01:00.312060 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:01:00.316623 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m12:01:00.316928 [info ] [MainThread]: 
+[0m12:01:00.317209 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:01:00.317471 [info ] [MainThread]: 
+[0m12:01:00.317722 [info ] [MainThread]: Done. PASS=29 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=29
+[0m12:01:00.318347 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.3600872, "process_in_blocks": "336", "process_kernel_time": 0.134937, "process_mem_max_rss": "216204", "process_out_blocks": "5392", "process_user_time": 3.397607}
+[0m12:01:00.318724 [debug] [MainThread]: Command `dbt build` succeeded at 12:01:00.318661 after 2.36 seconds
+[0m12:01:00.319039 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefc1596630>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefb45c87a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fefc09109e0>]}
+[0m12:01:00.319325 [debug] [MainThread]: Flushing usage events
+[0m12:01:01.100012 [debug] [MainThread]: An error was encountered while trying to flush usage events

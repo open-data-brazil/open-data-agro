@@ -100,6 +100,7 @@ def main() -> int:
     else:
         mapping = {
             "bronze_conab_estimativa_graos": "expectations/suites/bronze/conab/estimativa_graos.json",
+            "bronze_conab_serie_historica_graos": "expectations/suites/bronze/conab/serie_historica_graos.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:

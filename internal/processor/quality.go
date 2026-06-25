@@ -121,6 +121,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 	switch datasetID {
 	case "conab.estimativa-graos":
 		return "bronze_conab_estimativa_graos", true
+	case "conab.serie-historica-graos":
+		return "bronze_conab_serie_historica_graos", true
 	default:
 		return "", false
 	}

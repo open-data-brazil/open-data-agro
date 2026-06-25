@@ -22,6 +22,7 @@ def main() -> int:
     lake_root.mkdir(parents=True, exist_ok=True)
     (lake_root / "gold").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__estimativa_graos").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__serie_historica_graos").mkdir(parents=True, exist_ok=True)
 
     meta = {
         "_dataset_id": ["conab.estimativa-graos"],
@@ -31,11 +32,16 @@ def main() -> int:
 
     estimativa = pa.table(
         {
-            "Produto": ["Soja", "Milho"],
-            "UF": ["PR", "MT"],
-            "Safra": ["2025/26", "2025/26"],
-            "Região": ["Sul", "Centro-Oeste"],
-            "Produção (mil t)": ["100", "120"],
+            "ano_agricola": ["2025/26", "2025/26"],
+            "safra": ["UNICA", "UNICA"],
+            "uf": ["PR", "MT"],
+            "produto": ["SOJA", "MILHO"],
+            "id_produto": ["1", "2"],
+            "id_levantamento": ["012", "012"],
+            "dsc_levantamento": ["12 LEV", "12 LEV"],
+            "area_plantada_mil_ha": ["100", "120"],
+            "producao_mil_t": ["100", "120"],
+            "produtividade_mil_ha_mil_t": ["1.0", "1.0"],
             "_dataset_id": ["conab.estimativa-graos", "conab.estimativa-graos"],
             "_ingested_at": ["2026-06-25T12:00:00Z", "2026-06-25T12:00:00Z"],
             "_source_file": [meta["_source_file"][0], meta["_source_file"][0]],
@@ -45,10 +51,14 @@ def main() -> int:
 
     serie = pa.table(
         {
-            "Produto": ["Soja", "Soja"],
-            "UF": ["PR", "RS"],
-            "Ano": ["2020", "2021"],
-            "Produção (mil t)": ["50", "55"],
+            "ano_agricola": ["2020/21", "2021/22"],
+            "dsc_safra_previsao": ["UNICA", "UNICA"],
+            "uf": ["PR", "RS"],
+            "produto": ["SOJA", "SOJA"],
+            "id_produto": ["1", "1"],
+            "area_plantada_mil_ha": ["50", "55"],
+            "producao_mil_t": ["50", "55"],
+            "produtividade_mil_ha_mil_t": ["1.0", "1.0"],
             "_dataset_id": ["conab.serie-historica-graos", "conab.serie-historica-graos"],
             "_ingested_at": ["2026-06-25T12:00:00Z", "2026-06-25T12:00:00Z"],
             "_source_file": [meta["_source_file"][0], meta["_source_file"][0]],

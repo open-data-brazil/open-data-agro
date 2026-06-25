@@ -87,7 +87,7 @@ func (r *Repository) UpsertDatasetRegistry(ctx context.Context, entry catalog.Re
 	`,
 		entry.DatasetID.String(),
 		entry.SourceURL,
-		catalog.SourcePortalURL(entry.DatasetID),
+		entry.PortalURL(),
 		string(entry.Format),
 		entry.Schedule,
 		entry.ConabSection,

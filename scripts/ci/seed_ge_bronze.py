@@ -18,11 +18,16 @@ def main() -> int:
 
     table = pa.table(
         {
-            "Produto": ["Soja", "Milho"],
-            "UF": ["PR", "MT"],
-            "Safra": ["2025/26", "2025/26"],
-            "Região": ["Sul", "Centro-Oeste"],
-            "Produção (mil t)": ["100", "120"],
+            "ano_agricola": ["2025/26"],
+            "safra": ["UNICA"],
+            "uf": ["PR"],
+            "produto": ["SOJA"],
+            "id_produto": ["1"],
+            "id_levantamento": ["012"],
+            "dsc_levantamento": ["12 LEV"],
+            "area_plantada_mil_ha": ["100"],
+            "producao_mil_t": ["100"],
+            "produtividade_mil_ha_mil_t": ["1.0"],
         }
     )
     pq.write_table(table, bronze_dir / "part-seed.parquet")
