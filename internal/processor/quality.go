@@ -259,6 +259,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_noaa_enso_indices", true
 	case "noaa.global-temp-anomaly":
 		return "bronze_noaa_global_temp_anomaly", true
+	case "eia.petroleum-prices":
+		return "bronze_eia_petroleum_prices", true
 	default:
 		return "", false
 	}

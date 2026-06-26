@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **International new sources (Phase 38):** `eia.petroleum-prices` — U.S. EIA API v2 WTI/Brent daily spot prices, GE suite, dbt mart, DuckDB view, `make international-new-sources-mvp` + `make ci-international-new-sources-mvp`
 - **BR new sources (Phase 37):** `ibge.lspa-area-producao`, `bcb.sgs-selic` — IBGE LSPA SIDRA 6588 monthly UF production + BCB Selic SGS 11, GE suites, dbt marts, DuckDB views, `make br-new-sources-mvp` + `make ci-br-new-sources-mvp`
 - **International extended (Phase 36):** `fao.producao-agro`, `fao.comercio-agro`, `worldbank.ag-indices` — FAOSTAT annual bulk + Pink Sheet agriculture indices, GE suites, dbt marts, DuckDB views, `make international-extended-mvp` + `make ci-international-extended-mvp`
 - **BR comex extended (Phase 35):** `mdic.comex-importacao-ncm-mes`, `mdic.comex-exportacao-uf-ncm`, `mdic.comex-importacao-diesel-ncm` — Comex Stat import/UF export API client, GE suites, dbt marts, DuckDB views, `make mdic-comex-extended-mvp` + `make ci-mdic-comex-extended-mvp`

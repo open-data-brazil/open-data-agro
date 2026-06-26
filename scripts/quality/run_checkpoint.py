@@ -167,6 +167,7 @@ def main() -> int:
             "bronze_worldbank_ag_indices": "expectations/suites/bronze/worldbank/ag_indices.json",
             "bronze_noaa_enso_indices": "expectations/suites/bronze/noaa/enso_indices.json",
             "bronze_noaa_global_temp_anomaly": "expectations/suites/bronze/noaa/global_temp_anomaly.json",
+            "bronze_eia_petroleum_prices": "expectations/suites/bronze/eia/petroleum_prices.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:

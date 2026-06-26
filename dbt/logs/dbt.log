@@ -3623,3 +3623,638 @@ where variavel_codigo is null
 [0m12:49:22.769111 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175ef7130e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175ef710140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175fd113b00>]}
 [0m12:49:22.769434 [debug] [MainThread]: Flushing usage events
 [0m12:49:23.582526 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:52:55.324750 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34d50e2bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34d501afc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34d2173b00>]}
+
+
+============================== 12:52:55.328401 | 25da3ccc-abc0-47f8-9cab-0d08e35ed160 ==============================
+[0m12:52:55.328401 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:52:55.328969 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'partial_parse': 'True', 'no_print': 'None', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt deps --profiles-dir .', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'static_parser': 'True', 'write_json': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '.', 'version_check': 'True', 'empty': 'None', 'log_cache_events': 'False', 'target_path': 'None', 'cache_selected_only': 'False', 'use_colors': 'True', 'printer_width': '80', 'introspect': 'True', 'fail_fast': 'False', 'warn_error': 'None', 'quiet': 'False'}
+[0m12:52:55.423771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '25da3ccc-abc0-47f8-9cab-0d08e35ed160', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34d2983ef0>]}
+[0m12:52:55.436913 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-tcdo_hnq'
+[0m12:52:55.437278 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:52:55.572106 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:52:55.573400 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:52:55.664626 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:52:55.668360 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:52:56.017705 [info ] [MainThread]: Installed from version 1.3.0
+[0m12:52:56.018107 [info ] [MainThread]: Updated version available: 1.4.0
+[0m12:52:56.018463 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '25da3ccc-abc0-47f8-9cab-0d08e35ed160', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34d1e88710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34d1fc43b0>]}
+[0m12:52:56.018789 [info ] [MainThread]: 
+[0m12:52:56.019081 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:52:56.019875 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.7420649, "process_in_blocks": "0", "process_kernel_time": 0.075007, "process_mem_max_rss": "121436", "process_out_blocks": "2304", "process_user_time": 1.267133}
+[0m12:52:56.020276 [debug] [MainThread]: Command `dbt deps` succeeded at 12:52:56.020208 after 0.74 seconds
+[0m12:52:56.020565 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34d4d996d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34d27fb380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d34d27f8800>]}
+[0m12:52:56.020855 [debug] [MainThread]: Flushing usage events
+[0m12:52:56.696742 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:52:58.025971 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f71ffce0c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f71f7feba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f71edd7bf0>]}
+
+
+============================== 12:52:58.028334 | 86ccc200-efa0-4f8c-b843-40d520ddf833 ==============================
+[0m12:52:58.028334 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:52:58.028743 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt build --profiles-dir . --select stg_eia__petroleum_prices+', 'warn_error': 'None', 'target_path': 'None', 'cache_selected_only': 'False', 'version_check': 'True', 'printer_width': '80', 'write_json': 'True', 'debug': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'partial_parse': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'quiet': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'empty': 'False', 'fail_fast': 'False', 'log_format': 'default', 'log_cache_events': 'False'}
+[0m12:52:58.203600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '86ccc200-efa0-4f8c-b843-40d520ddf833', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f71ece0500>]}
+[0m12:52:58.256022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '86ccc200-efa0-4f8c-b843-40d520ddf833', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f71edd7140>]}
+[0m12:52:58.257339 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:52:58.330538 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m12:52:58.503907 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:52:58.504373 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '86ccc200-efa0-4f8c-b843-40d520ddf833', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f71234ae70>]}
+[0m12:53:01.232681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '86ccc200-efa0-4f8c-b843-40d520ddf833', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f7127ed850>]}
+[0m12:53:01.367963 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:53:01.370701 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:53:01.459694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '86ccc200-efa0-4f8c-b843-40d520ddf833', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f7126c52b0>]}
+[0m12:53:01.460195 [info ] [MainThread]: Found 143 models, 416 data tests, 71 sources, 671 macros
+[0m12:53:01.469105 [info ] [MainThread]: 
+[0m12:53:01.469542 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m12:53:01.469825 [info ] [MainThread]: 
+[0m12:53:01.470233 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:53:01.474039 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m12:53:01.495682 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m12:53:01.496087 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m12:53:01.496367 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:53:01.519657 [debug] [ThreadPool]: SQL status: OK in 0.023 seconds
+[0m12:53:01.520760 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m12:53:01.521447 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m12:53:01.521829 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m12:53:01.526704 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:53:01.527023 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m12:53:01.527296 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:53:01.528143 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:53:01.529261 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:53:01.529595 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m12:53:01.530060 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:53:01.530320 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:53:01.530542 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m12:53:01.530963 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:53:01.531665 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:53:01.531917 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:53:01.532128 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:53:01.532470 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:53:01.532718 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m12:53:01.543766 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m12:53:01.548974 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:53:01.549331 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m12:53:01.549575 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:53:01.550134 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:53:01.550396 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:53:01.550620 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m12:53:01.552501 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m12:53:01.554926 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m12:53:01.555766 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m12:53:01.556021 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m12:53:01.568384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '86ccc200-efa0-4f8c-b843-40d520ddf833', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f71257c440>]}
+[0m12:53:01.568868 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:53:01.569131 [debug] [MainThread]: On master: BEGIN
+[0m12:53:01.569364 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:53:01.569894 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:53:01.570179 [debug] [MainThread]: On master: COMMIT
+[0m12:53:01.570423 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:53:01.570641 [debug] [MainThread]: On master: COMMIT
+[0m12:53:01.571024 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:53:01.571282 [debug] [MainThread]: On master: Close
+[0m12:53:01.573942 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_eia__petroleum_prices
+[0m12:53:01.574381 [info ] [Thread-1 (]: 1 of 9 START sql view model main.stg_eia__petroleum_prices ..................... [RUN]
+[0m12:53:01.574741 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_eia__petroleum_prices)
+[0m12:53:01.575059 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_eia__petroleum_prices
+[0m12:53:01.580548 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_eia__petroleum_prices"
+[0m12:53:01.582278 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_eia__petroleum_prices
+[0m12:53:01.604555 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_eia__petroleum_prices"
+[0m12:53:01.605148 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_eia__petroleum_prices"
+[0m12:53:01.605483 [debug] [Thread-1 (]: On model.open_data_agro.stg_eia__petroleum_prices: BEGIN
+[0m12:53:01.605763 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:53:01.606380 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.606696 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_eia__petroleum_prices"
+[0m12:53:01.606991 [debug] [Thread-1 (]: On model.open_data_agro.stg_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_eia__petroleum_prices"} */
+
+  
+  create view "dbt_workspace"."main"."stg_eia__petroleum_prices__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/international-new-sources-ci-lake/silver/eia/petroleum_prices/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    series_id,
+    series_name,
+    commodity_slug,
+    refdate,
+    unit,
+    value,
+    frequency
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://www.eia.gov/opendata/
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by series_id, refdate
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:53:01.608052 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.612765 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_eia__petroleum_prices"
+[0m12:53:01.613084 [debug] [Thread-1 (]: On model.open_data_agro.stg_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_eia__petroleum_prices"} */
+alter view "dbt_workspace"."main"."stg_eia__petroleum_prices__dbt_tmp" rename to "stg_eia__petroleum_prices"
+[0m12:53:01.613638 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:53:01.621755 [debug] [Thread-1 (]: On model.open_data_agro.stg_eia__petroleum_prices: COMMIT
+[0m12:53:01.622128 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_eia__petroleum_prices"
+[0m12:53:01.622428 [debug] [Thread-1 (]: On model.open_data_agro.stg_eia__petroleum_prices: COMMIT
+[0m12:53:01.624425 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:53:01.629863 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_eia__petroleum_prices"
+[0m12:53:01.630419 [debug] [Thread-1 (]: On model.open_data_agro.stg_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_eia__petroleum_prices"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_eia__petroleum_prices__dbt_backup" cascade
+    
+[0m12:53:01.631040 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:53:01.632743 [debug] [Thread-1 (]: On model.open_data_agro.stg_eia__petroleum_prices: Close
+[0m12:53:01.633924 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '86ccc200-efa0-4f8c-b843-40d520ddf833', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f721a53a40>]}
+[0m12:53:01.634414 [info ] [Thread-1 (]: 1 of 9 OK created sql view model main.stg_eia__petroleum_prices ................ [[32mOK[0m in 0.06s]
+[0m12:53:01.634843 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_eia__petroleum_prices
+[0m12:53:01.635699 [debug] [Thread-3 (]: Began running node model.open_data_agro.mart_eia__petroleum_prices
+[0m12:53:01.636400 [info ] [Thread-3 (]: 2 of 9 START sql external model main.mart_eia__petroleum_prices ................ [RUN]
+[0m12:53:01.637094 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_eia__petroleum_prices'
+[0m12:53:01.637553 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.mart_eia__petroleum_prices
+[0m12:53:01.640747 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.641237 [debug] [Thread-3 (]: Began executing node model.open_data_agro.mart_eia__petroleum_prices
+[0m12:53:01.675987 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.676409 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: BEGIN
+[0m12:53:01.676701 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:53:01.677361 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.677683 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.677966 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_eia__petroleum_prices"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_eia__petroleum_prices__dbt_tmp"
+  
+    as (
+      
+
+select
+    series_id,
+    series_name,
+    commodity_slug,
+    refdate,
+    unit,
+    value,
+    frequency,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_eia__petroleum_prices"
+    );
+  
+  
+[0m12:53:01.681156 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:53:01.682144 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.682486 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_eia__petroleum_prices"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_eia__petroleum_prices__dbt_tmp"
+  
+[0m12:53:01.683153 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:53:01.684336 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.684794 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.685085 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_eia__petroleum_prices"} */
+
+[0m12:53:01.685386 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:53:01.687159 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.687504 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_eia__petroleum_prices"} */
+copy "dbt_workspace"."main"."mart_eia__petroleum_prices__dbt_tmp" to '/tmp/international-new-sources-ci-lake/gold/mart_eia__petroleum_prices/mart.parquet' (format parquet)
+[0m12:53:01.688760 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.689600 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.690020 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.690314 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_eia__petroleum_prices"} */
+
+      create or replace view "dbt_workspace"."main"."mart_eia__petroleum_prices__dbt_int" as (
+        select * from read_parquet('/tmp/international-new-sources-ci-lake/gold/mart_eia__petroleum_prices/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:53:01.691007 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:53:01.693310 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.693620 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_eia__petroleum_prices"} */
+alter view "dbt_workspace"."main"."mart_eia__petroleum_prices__dbt_int" rename to "mart_eia__petroleum_prices"
+[0m12:53:01.694327 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:53:01.695228 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: COMMIT
+[0m12:53:01.695533 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.695785 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: COMMIT
+[0m12:53:01.697451 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.699269 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.699571 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_eia__petroleum_prices"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_eia__petroleum_prices__dbt_backup" cascade
+    
+[0m12:53:01.700177 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m12:53:01.702325 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_eia__petroleum_prices"
+[0m12:53:01.702625 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_eia__petroleum_prices"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_eia__petroleum_prices__dbt_tmp" cascade
+    
+[0m12:53:01.704050 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.705073 [debug] [Thread-3 (]: On model.open_data_agro.mart_eia__petroleum_prices: Close
+[0m12:53:01.705526 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '86ccc200-efa0-4f8c-b843-40d520ddf833', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f7128a5490>]}
+[0m12:53:01.705989 [info ] [Thread-3 (]: 2 of 9 OK created sql external model main.mart_eia__petroleum_prices ........... [[32mOK[0m in 0.07s]
+[0m12:53:01.706394 [debug] [Thread-3 (]: Finished running node model.open_data_agro.mart_eia__petroleum_prices
+[0m12:53:01.707260 [debug] [Thread-2 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f
+[0m12:53:01.707885 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22
+[0m12:53:01.707634 [info ] [Thread-2 (]: 3 of 9 START test dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate  [RUN]
+[0m12:53:01.708393 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13
+[0m12:53:01.709175 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32
+[0m12:53:01.708926 [info ] [Thread-1 (]: 4 of 9 START test not_null_mart_eia__petroleum_prices_capturado_em ............. [RUN]
+[0m12:53:01.709642 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f'
+[0m12:53:01.710094 [info ] [Thread-4 (]: 5 of 9 START test not_null_mart_eia__petroleum_prices_commodity_slug ........... [RUN]
+[0m12:53:01.710632 [info ] [Thread-3 (]: 6 of 9 START test not_null_mart_eia__petroleum_prices_fonte_oficial ............ [RUN]
+[0m12:53:01.711012 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_eia__petroleum_prices, now test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22)
+[0m12:53:01.711457 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f
+[0m12:53:01.712034 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13'
+[0m12:53:01.712456 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_eia__petroleum_prices, now test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32)
+[0m12:53:01.712777 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22
+[0m12:53:01.717895 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f"
+[0m12:53:01.718464 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13
+[0m12:53:01.718784 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32
+[0m12:53:01.724559 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22"
+[0m12:53:01.727776 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13"
+[0m12:53:01.730571 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32"
+[0m12:53:01.731136 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22
+[0m12:53:01.731631 [debug] [Thread-2 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f
+[0m12:53:01.732466 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13
+[0m12:53:01.738044 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32
+[0m12:53:01.746084 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22"
+[0m12:53:01.749069 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f"
+[0m12:53:01.751029 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13"
+[0m12:53:01.752708 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32"
+[0m12:53:01.753412 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13"
+[0m12:53:01.753934 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22"
+[0m12:53:01.754466 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f"
+[0m12:53:01.754941 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13: BEGIN
+[0m12:53:01.755278 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32"
+[0m12:53:01.755616 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22: BEGIN
+[0m12:53:01.756055 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f: BEGIN
+[0m12:53:01.756441 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:53:01.756812 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32: BEGIN
+[0m12:53:01.757144 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:53:01.757463 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:53:01.757925 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:53:01.758386 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:53:01.758911 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:53:01.759421 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:53:01.759902 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13"
+[0m12:53:01.760399 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:53:01.760934 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22"
+[0m12:53:01.761375 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f"
+[0m12:53:01.761759 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select commodity_slug
+from "dbt_workspace"."main"."mart_eia__petroleum_prices"
+where commodity_slug is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:53:01.762178 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32"
+[0m12:53:01.762719 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "dbt_workspace"."main"."mart_eia__petroleum_prices"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:53:01.763235 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        series_id, refdate
+    from "dbt_workspace"."main"."mart_eia__petroleum_prices"
+    group by series_id, refdate
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:53:01.763899 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "dbt_workspace"."main"."mart_eia__petroleum_prices"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:53:01.764689 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.767462 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13: ROLLBACK
+[0m12:53:01.767982 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:53:01.768448 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:53:01.768989 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m12:53:01.769917 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13'
+[0m12:53:01.771110 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f: ROLLBACK
+[0m12:53:01.772707 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32: ROLLBACK
+[0m12:53:01.773998 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22: ROLLBACK
+[0m12:53:01.774375 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13: Close
+[0m12:53:01.775117 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f'
+[0m12:53:01.776139 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32'
+[0m12:53:01.777034 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22'
+[0m12:53:01.777382 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f: Close
+[0m12:53:01.777825 [info ] [Thread-4 (]: 5 of 9 PASS not_null_mart_eia__petroleum_prices_commodity_slug ................. [[32mPASS[0m in 0.07s]
+[0m12:53:01.778289 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32: Close
+[0m12:53:01.778807 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22: Close
+[0m12:53:01.779365 [info ] [Thread-2 (]: 3 of 9 PASS dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate  [[32mPASS[0m in 0.07s]
+[0m12:53:01.779801 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13
+[0m12:53:01.780452 [info ] [Thread-3 (]: 6 of 9 PASS not_null_mart_eia__petroleum_prices_fonte_oficial .................. [[32mPASS[0m in 0.07s]
+[0m12:53:01.781084 [info ] [Thread-1 (]: 4 of 9 PASS not_null_mart_eia__petroleum_prices_capturado_em ................... [[32mPASS[0m in 0.07s]
+[0m12:53:01.781527 [debug] [Thread-2 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f
+[0m12:53:01.781858 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50
+[0m12:53:01.782380 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32
+[0m12:53:01.782854 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22
+[0m12:53:01.783180 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3
+[0m12:53:01.783548 [info ] [Thread-4 (]: 7 of 9 START test not_null_mart_eia__petroleum_prices_refdate .................. [RUN]
+[0m12:53:01.783894 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab
+[0m12:53:01.784329 [info ] [Thread-2 (]: 8 of 9 START test not_null_mart_eia__petroleum_prices_series_id ................ [RUN]
+[0m12:53:01.784677 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_eia__petroleum_prices_commodity_slug.8283185f13, now test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50)
+[0m12:53:01.785031 [info ] [Thread-3 (]: 9 of 9 START test not_null_mart_eia__petroleum_prices_value .................... [RUN]
+[0m12:53:01.785344 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_eia__petroleum_prices_series_id__refdate.bbb86ac55f, now test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3)
+[0m12:53:01.785672 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50
+[0m12:53:01.786002 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_eia__petroleum_prices_fonte_oficial.8b0632dd32, now test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab)
+[0m12:53:01.786307 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3
+[0m12:53:01.789373 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50"
+[0m12:53:01.789834 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab
+[0m12:53:01.792859 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3"
+[0m12:53:01.797396 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab"
+[0m12:53:01.798049 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50
+[0m12:53:01.798549 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3
+[0m12:53:01.800234 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50"
+[0m12:53:01.802948 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3"
+[0m12:53:01.803486 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab
+[0m12:53:01.803971 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50"
+[0m12:53:01.805692 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab"
+[0m12:53:01.806088 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3"
+[0m12:53:01.806450 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50: BEGIN
+[0m12:53:01.806925 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab"
+[0m12:53:01.807224 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3: BEGIN
+[0m12:53:01.807511 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:53:01.807824 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab: BEGIN
+[0m12:53:01.808148 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:53:01.808573 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:53:01.808982 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.809335 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.809674 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50"
+[0m12:53:01.810008 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.810384 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3"
+[0m12:53:01.810670 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select refdate
+from "dbt_workspace"."main"."mart_eia__petroleum_prices"
+where refdate is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:53:01.810966 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab"
+[0m12:53:01.811272 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select series_id
+from "dbt_workspace"."main"."mart_eia__petroleum_prices"
+where series_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:53:01.811641 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select value
+from "dbt_workspace"."main"."mart_eia__petroleum_prices"
+where value is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:53:01.812253 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:53:01.813390 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50: ROLLBACK
+[0m12:53:01.813745 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:53:01.814215 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:53:01.814987 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50'
+[0m12:53:01.816239 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3: ROLLBACK
+[0m12:53:01.817301 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab: ROLLBACK
+[0m12:53:01.817632 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50: Close
+[0m12:53:01.818398 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3'
+[0m12:53:01.819196 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab'
+[0m12:53:01.819959 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3: Close
+[0m12:53:01.819704 [info ] [Thread-4 (]: 7 of 9 PASS not_null_mart_eia__petroleum_prices_refdate ........................ [[32mPASS[0m in 0.04s]
+[0m12:53:01.820410 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab: Close
+[0m12:53:01.820882 [info ] [Thread-2 (]: 8 of 9 PASS not_null_mart_eia__petroleum_prices_series_id ...................... [[32mPASS[0m in 0.04s]
+[0m12:53:01.821322 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50
+[0m12:53:01.822026 [info ] [Thread-3 (]: 9 of 9 PASS not_null_mart_eia__petroleum_prices_value .......................... [[32mPASS[0m in 0.04s]
+[0m12:53:01.822665 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3
+[0m12:53:01.823359 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab
+[0m12:53:01.824529 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:53:01.824808 [debug] [MainThread]: On master: BEGIN
+[0m12:53:01.825041 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:53:01.825530 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:53:01.825797 [debug] [MainThread]: On master: COMMIT
+[0m12:53:01.826036 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:53:01.826275 [debug] [MainThread]: On master: COMMIT
+[0m12:53:01.826632 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:53:01.826898 [debug] [MainThread]: On master: Close
+[0m12:53:01.827212 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:53:01.827439 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_eia__petroleum_prices_capturado_em.c69b13dd22' was properly closed.
+[0m12:53:01.827649 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_eia__petroleum_prices_value.382759d9ab' was properly closed.
+[0m12:53:01.827857 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_eia__petroleum_prices_series_id.aad9fb00c3' was properly closed.
+[0m12:53:01.828064 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_eia__petroleum_prices_refdate.294f79df50' was properly closed.
+[0m12:53:01.828328 [info ] [MainThread]: 
+[0m12:53:01.828587 [info ] [MainThread]: Finished running 1 external model, 7 data tests, 1 view model in 0 hours 0 minutes and 0.36 seconds (0.36s).
+[0m12:53:01.829553 [debug] [MainThread]: Command end result
+[0m12:53:01.969540 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:53:01.972271 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:53:01.976355 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m12:53:01.976653 [info ] [MainThread]: 
+[0m12:53:01.976936 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:53:01.977171 [info ] [MainThread]: 
+[0m12:53:01.977417 [info ] [MainThread]: Done. PASS=9 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=9
+[0m12:53:01.978062 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 3.9976208, "process_in_blocks": "4872", "process_kernel_time": 0.149101, "process_mem_max_rss": "210244", "process_out_blocks": "15568", "process_user_time": 5.024415}
+[0m12:53:01.978444 [debug] [MainThread]: Command `dbt build` succeeded at 12:53:01.978381 after 4.00 seconds
+[0m12:53:01.978729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f71ece0230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f71fd3da00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f71fd3f680>]}
+[0m12:53:01.979013 [debug] [MainThread]: Flushing usage events
+[0m12:53:02.598607 [debug] [MainThread]: An error was encountered while trying to flush usage events

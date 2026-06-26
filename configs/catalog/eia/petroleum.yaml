@@ -1,0 +1,19 @@
+# U.S. EIA — Petroleum spot prices (Phase 38 P0)
+# Portal: https://www.eia.gov/opendata/
+# API v2 seriesid route (free API key required for live fetch)
+
+entries:
+  - dataset_id: eia.petroleum-prices
+    source_url: https://api.eia.gov/v2/petroleum/pri/spt/data
+    source_portal_url: https://www.eia.gov/opendata/
+    format: json
+    schedule: daily
+    portal_label: Petroleum spot prices — WTI and Brent
+    eia_series_ids:
+      - PET.RWTC.D
+      - PET.RBRTE.D
+    period_start: 2010
+    frequency: daily
+    license: "EIA Open Data API Terms of Service"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z

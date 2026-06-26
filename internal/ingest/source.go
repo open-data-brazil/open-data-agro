@@ -20,6 +20,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/fao"
 	"github.com/open-data-brazil/open-data-agro/internal/worldbank"
 	"github.com/open-data-brazil/open-data-agro/internal/noaa"
+	"github.com/open-data-brazil/open-data-agro/internal/eia"
 )
 
 // SourceOptions carries optional ingest parameters (PAM crop/year/UF filters, INMET year).
@@ -83,13 +84,15 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		return worldbank.ResolveURL(entry)
 	case "noaa":
 		return noaa.ResolveURL(entry)
+	case "eia":
+		return eia.ResolveURL(entry)
 	default:
 		return "", fmt.Errorf("unsupported agency %q for dataset %s", agency, entry.DatasetID)
 	}
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, faoClient *fao.Client, worldbankClient *worldbank.Client, noaaClient *noaa.Client, opts SourceOptions) (*SourceDownload, error) {
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, faoClient *fao.Client, worldbankClient *worldbank.Client, noaaClient *noaa.Client, eiaClient *eia.Client, opts SourceOptions) (*SourceDownload, error) {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
 		return nil, err
@@ -228,6 +231,19 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 
 	if agency == "noaa" {
 		body, sourceURL, err := noaaClient.FetchClimateSnapshot(ctx, entry, opts.FromDate)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	}
+
+	if agency == "eia" {
+		body, sourceURL, err := eiaClient.FetchPetroleumSnapshot(ctx, entry, opts.FromDate)
 		if err != nil {
 			return nil, err
 		}

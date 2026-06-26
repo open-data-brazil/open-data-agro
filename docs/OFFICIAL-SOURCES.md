@@ -251,6 +251,16 @@ USD-denominated monthly commodity reference prices and agriculture sub-indices. 
 
 Global climate shock features complementing INMET (Phase 17). `fonte_tipo: internacional_oficial`. ONI is seasonal (3-month running mean); global temp is monthly.
 
+### U.S. EIA — Petroleum prices (Phase 38)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `eia.petroleum-prices` | Daily WTI + Brent spot prices | **P0 — implemented** |
+
+**Fonte oficial:** [U.S. EIA Open Data](https://www.eia.gov/opendata/) · API v2 `seriesid` route · series `PET.RWTC.D` (WTI), `PET.RBRTE.D` (Brent) · free `EIA_API_KEY` required for live fetch
+
+Global oil shock reference complementing World Bank Pink Sheet crude oil. `fonte_tipo: internacional_oficial`. Daily grain — no intraday resampling in bronze.
+
 ---
 
 ## Rules

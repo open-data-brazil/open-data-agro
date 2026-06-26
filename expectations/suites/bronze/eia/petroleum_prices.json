@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Petroleum price series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "series_id" },
+      "meta": { "notes": "EIA series ID required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "commodity_slug" },
+      "meta": { "notes": "Canonical slug required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["series_id", "refdate"] },
+      "meta": { "notes": "One value per series per day." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "eia.petroleum-prices",
+    "fonte_oficial": "https://www.eia.gov/opendata/",
+    "agencia": "EIA"
+  },
+  "name": "bronze.eia.petroleum_prices",
+  "id": "bronze-eia-petroleum-prices-suite"
+}

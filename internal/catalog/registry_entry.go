@@ -64,6 +64,7 @@ type RegistryEntry struct {
 	WorldBankPinkSheetSheet string   `json:"worldbankPinkSheetSheet,omitempty" yaml:"worldbank_pink_sheet_sheet,omitempty"`
 	WorldBankSeriesNames    []string `json:"worldbankSeriesNames,omitempty" yaml:"worldbank_series_names,omitempty"`
 	NOAAIndexURL            string   `json:"noaaIndexUrl,omitempty" yaml:"noaa_index_url,omitempty"`
+	EIASeriesIDs            []string `json:"eiaSeriesIds,omitempty" yaml:"eia_series_ids,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 
