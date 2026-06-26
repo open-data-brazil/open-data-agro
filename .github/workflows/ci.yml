@@ -66,6 +66,9 @@ jobs:
       - name: MinIO integration (STORAGE_MODE=minio)
         run: make ci-minio
 
+      - name: R2 runbook and env validation (offline)
+        run: make ci-validate-r2-env
+
       - name: Lint
         uses: golangci/golangci-lint-action@v7
         with:

@@ -114,10 +114,10 @@
 
 Remaining tracks (see `.local/PENDING-TASKS.md`):
 
-- Production: `STORAGE_MODE=r2` deploy runbook + env validation (P4)
+- Optional: native Delta Lake versioning on `./lake/silver/` (Phase 3)
 - Optional: GE bronze referential `cod_ibge` (deferred — post-dbt script is gate)
 
-**Phase 2 MinIO CI:** `make ci-minio` in GitHub Actions `go` job — bronze Put/List + DuckDB `s3://` smoke with Docker MinIO.
+**Phase 2 storage:** `make ci-minio` (MinIO CI) · `make ci-validate-r2-env` / [infra/r2/README.md](../infra/r2/README.md) (R2 production runbook)
 
 ---
 
