@@ -77,6 +77,13 @@ type RegistryEntry struct {
 	EurostatGeo             string   `json:"eurostatGeo,omitempty" yaml:"eurostat_geo,omitempty"`
 	EurostatProducts        []string `json:"eurostatProducts,omitempty" yaml:"eurostat_products,omitempty"`
 	ArgentinaCurrencyCode   string   `json:"argentinaCurrencyCode,omitempty" yaml:"argentina_currency_code,omitempty"`
+	ArgentinaSeriesIDs      []string `json:"argentinaSeriesIds,omitempty" yaml:"argentina_series_ids,omitempty"`
+	OECDAgency              string   `json:"oecdAgency,omitempty" yaml:"oecd_agency,omitempty"`
+	OECDDatasetID           string   `json:"oecdDatasetId,omitempty" yaml:"oecd_dataset_id,omitempty"`
+	OECDDatasetVersion      string   `json:"oecdDatasetVersion,omitempty" yaml:"oecd_dataset_version,omitempty"`
+	OECDDataSelection       string   `json:"oecdDataSelection,omitempty" yaml:"oecd_data_selection,omitempty"`
+	OECDCommodityCodes      []string `json:"oecdCommodityCodes,omitempty" yaml:"oecd_commodity_codes,omitempty"`
+	OECDMeasureCodes        []string `json:"oecdMeasureCodes,omitempty" yaml:"oecd_measure_codes,omitempty"`
 	IpeaSeriesCodes         []string `json:"ipeaSeriesCodes,omitempty" yaml:"ipea_series_codes,omitempty"`
 	ANAStationCodes         []string `json:"anaStationCodes,omitempty" yaml:"ana_station_codes,omitempty"`
 	ANATipoDados            string   `json:"anaTipoDados,omitempty" yaml:"ana_tipo_dados,omitempty"`

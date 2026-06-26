@@ -9,7 +9,7 @@ import (
 // DatasetID is a branded dataset identifier (e.g. conab.estimativa-graos).
 type DatasetID string
 
-var datasetIDPattern = regexp.MustCompile(`^[a-z][a-z0-9]*(\.[a-z][a-z0-9-]*)+$`)
+var datasetIDPattern = regexp.MustCompile(`^[a-z][a-z0-9-]*(\.[a-z][a-z0-9-]*)+$`)
 
 // ParseDatasetID validates and returns a DatasetID.
 func ParseDatasetID(value string) (DatasetID, error) {

@@ -48,7 +48,11 @@ func DatasetSlug(datasetID string) (string, error) {
 
 // BronzeKey builds the bronze object key for a parquet partition.
 func BronzeKey(datasetID string, ingestDate time.Time, partID string) (string, error) {
-	agency, slug, err := catalog.SplitDatasetID(datasetID)
+	agency, err := catalog.StorageAgency(datasetID)
+	if err != nil {
+		return "", err
+	}
+	slug, err := DatasetSlug(datasetID)
 	if err != nil {
 		return "", err
 	}

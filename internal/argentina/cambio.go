@@ -214,8 +214,15 @@ func FlattenCambio(entry catalog.RegistryEntry, raw []byte) ([]string, [][]strin
 	return headers, out, nil
 }
 
-// ResolveURL returns the BCRA exchange-rate API URL for a catalog entry.
+// ResolveURL returns the official API URL for an Argentina catalog entry.
 func ResolveURL(entry catalog.RegistryEntry) (string, error) {
+	if entry.DatasetID.String() == "argentina.magyp-producion-granos" {
+		return ResolveGranosURL(entry)
+	}
+	return resolveCambioURL(entry)
+}
+
+func resolveCambioURL(entry catalog.RegistryEntry) (string, error) {
 	currency := strings.TrimSpace(entry.ArgentinaCurrencyCode)
 	if currency == "" {
 		currency = "USD"

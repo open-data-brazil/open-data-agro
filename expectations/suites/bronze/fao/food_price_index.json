@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "FAO FFPI must contain monthly index observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "index_slug" },
+      "meta": { "notes": "Canonical index slug required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["index_slug", "refmonth"] },
+      "meta": { "notes": "One value per index per month." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "fao.food-price-index",
+    "fonte_oficial": "https://www.fao.org/worldfoodsituation/foodpricesindex/en/",
+    "agencia": "FAO"
+  },
+  "name": "bronze.fao.food_price_index",
+  "id": "bronze-fao-food-price-index-suite"
+}

@@ -33,6 +33,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/igc"
 	"github.com/open-data-brazil/open-data-agro/internal/eurostat"
 	"github.com/open-data-brazil/open-data-agro/internal/argentina"
+	"github.com/open-data-brazil/open-data-agro/internal/oecd"
 	"github.com/open-data-brazil/open-data-agro/internal/un"
 	"github.com/open-data-brazil/open-data-agro/internal/storage"
 )
@@ -89,6 +90,7 @@ type Runner struct {
 	ipea     *ipea.Client
 	eurostat *eurostat.Client
 	argentina *argentina.Client
+	oecd      *oecd.Client
 	un       *un.Client
 	alerts   *alerts.Notifier
 }
@@ -123,6 +125,7 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		ipea:     ipea.NewClient(),
 		eurostat: eurostat.NewClient(),
 		argentina: argentina.NewClient(),
+		oecd:      oecd.NewClient(),
 		un:       un.NewClient(),
 		alerts:   notifier,
 	}
@@ -161,7 +164,7 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.aneel, r.bndes, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.dnit, r.ipea, r.eurostat, r.argentina, r.un, SourceOptions{
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.aneel, r.bndes, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.dnit, r.ipea, r.eurostat, r.argentina, r.oecd, r.un, SourceOptions{
 		Crop:     opts.Crop,
 		FromYear: opts.FromYear,
 		ToYear:   opts.ToYear,

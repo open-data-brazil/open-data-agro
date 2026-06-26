@@ -377,6 +377,18 @@ Global oil shock reference complementing World Bank Pink Sheet crude oil. WASDE 
 
 U.S. export trade context, EU ag price reference, and Argentina FX parity for competitor market models. `fonte_tipo: internacional_oficial`.
 
+### International sources wave 3 (Phase 45)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `oecd-fao.ag-outlook` | OECD-FAO Agricultural Outlook SDMX CSV — Brazil soy/maize/wheat balances | **P0 — implemented** |
+| `fao.food-price-index` | FAO monthly Food Price Index + sub-indices (2002-2004=100) | **P1 — implemented** |
+| `argentina.magyp-producion-granos` | MAGyP annual grain production via datos.gob.ar series API | **P1 — implemented** |
+
+**Fonte oficial:** [OECD-FAO Outlook](https://www.oecd.org/en/data/datasets/oecd-fao-agricultural-outlook.html) · SDMX `https://sdmx.oecd.org/public/rest/data/` (no key) · [FAO FFPI](https://www.fao.org/worldfoodsituation/foodpricesindex/en/) · CSV bulk (no key) · [MAGyP datos abiertos](https://datos.magyp.gob.ar/) · [datos.gob.ar series API](https://apis.datos.gob.ar/series/api/) (no key)
+
+**Deferred (verified):** `imf.commodity-prices` (no PCPS bulk), `paraguay.bcp-exportaciones-soja`, `uruguay.ine-exportaciones-agro`, `noaa.gpcc-precipitation`, `china.nbs-soy-imports` (403), `usda.ams-grain-prices` (403), `baltic.bdi-index` (subscription).
+
 ---
 
 ## Rules

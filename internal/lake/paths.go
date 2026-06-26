@@ -32,7 +32,7 @@ func SilverTableName(datasetID string) (string, error) {
 
 // BronzeGlob returns a glob for all bronze parquet files of a dataset.
 func BronzeGlob(lakeRoot, datasetID string) (string, error) {
-	agency, slug, err := catalog.SplitDatasetID(datasetID)
+	agency, slug, err := storageParts(datasetID)
 	if err != nil {
 		return "", err
 	}
@@ -41,7 +41,7 @@ func BronzeGlob(lakeRoot, datasetID string) (string, error) {
 
 // BronzeDir returns the bronze dataset directory.
 func BronzeDir(lakeRoot, datasetID string) (string, error) {
-	agency, slug, err := catalog.SplitDatasetID(datasetID)
+	agency, slug, err := storageParts(datasetID)
 	if err != nil {
 		return "", err
 	}
@@ -67,12 +67,21 @@ func GoldMartDir(goldRoot, datasetID string) (string, error) {
 }
 
 func silverParts(datasetID string) (agency, table string, err error) {
-	agency, slug, err := catalog.SplitDatasetID(datasetID)
+	agency, slug, err := storageParts(datasetID)
 	if err != nil {
 		return "", "", err
 	}
 	table = strings.ReplaceAll(slug, "-", "_")
 	return agency, table, nil
+}
+
+func storageParts(datasetID string) (agency, slug string, err error) {
+	agency, err = catalog.StorageAgency(datasetID)
+	if err != nil {
+		return "", "", err
+	}
+	_, slug, err = catalog.SplitDatasetID(datasetID)
+	return agency, slug, err
 }
 
 // NormalizeRoot trims trailing slashes from a lake layer root.

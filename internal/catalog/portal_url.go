@@ -61,7 +61,19 @@ func SourcePortalURL(datasetID DatasetID) string {
 		}
 		return USDAFASPSDPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "argentina.") {
+		if datasetID.String() == "argentina.magyp-producion-granos" {
+			return MAGyPDatosAbiertosURL
+		}
+		return BCRAPublicacionesURL
+	}
+	if strings.HasPrefix(datasetID.String(), "oecd-fao.") {
+		return OECDFAOOutlookPortalURL
+	}
 	if strings.HasPrefix(datasetID.String(), "fao.") {
+		if datasetID.String() == "fao.food-price-index" {
+			return FAOFFPIPortalURL
+		}
 		return FAOFaostatPortalURL
 	}
 	if strings.HasPrefix(datasetID.String(), "worldbank.") {
@@ -78,9 +90,6 @@ func SourcePortalURL(datasetID DatasetID) string {
 	}
 	if strings.HasPrefix(datasetID.String(), "eurostat.") {
 		return EurostatAgDatabaseURL
-	}
-	if strings.HasPrefix(datasetID.String(), "argentina.") {
-		return BCRAPublicacionesURL
 	}
 	if strings.HasPrefix(datasetID.String(), "un.") {
 		return UNComtradePortalURL
@@ -141,6 +150,15 @@ const WorldBankCommodityMarketsURL = "https://www.worldbank.org/en/research/comm
 
 // FAOFaostatPortalURL is the FAO FAOSTAT data portal URL.
 const FAOFaostatPortalURL = "https://www.fao.org/faostat/en/#data"
+
+// FAOFFPIPortalURL is the FAO Food Price Index portal URL.
+const FAOFFPIPortalURL = "https://www.fao.org/worldfoodsituation/foodpricesindex/en/"
+
+// OECDFAOOutlookPortalURL is the OECD-FAO Agricultural Outlook dataset page.
+const OECDFAOOutlookPortalURL = "https://www.oecd.org/en/data/datasets/oecd-fao-agricultural-outlook.html"
+
+// MAGyPDatosAbiertosURL is the Argentina MAGyP open data portal URL.
+const MAGyPDatosAbiertosURL = "https://datos.magyp.gob.ar/"
 
 // USDAFASPSDPortalURL is the USDA FAS PSD Online portal URL.
 const USDAFASPSDPortalURL = "https://apps.fas.usda.gov/psdonline/"

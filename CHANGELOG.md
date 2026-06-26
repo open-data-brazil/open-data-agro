@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **International sources wave 3 (Phase 45):** `oecd-fao.ag-outlook`, `fao.food-price-index`, `argentina.magyp-producion-granos` — full E2E pipelines, GE suites, dbt marts, DuckDB views, `make international-sources-wave-3-mvp` + `make ci-international-sources-wave-3-mvp`; IMF PCPS, Paraguay BCP, Uruguay INE, NOAA GPCC, China NBS, USDA AMS, Baltic BDI deferred (verified blockers)
 - **BR sources wave 3 (Phase 44):** `dnit.snv-rodovias-federais`, `ipea.series-macro-regionais`, `ibge.pevs-producao-vegetal`, `ibge.ppm-producao-municipal`, `aneel.tarifas-energia`, `bndes.financiamento-agro`, `inmet.sequia-monitor` — full E2E pipelines, GE suites, dbt marts, DuckDB views, `make br-sources-wave-3-mvp` + `make ci-br-sources-wave-3-mvp`; `inpe.cptec-indices-climaticos`, `mapa.sigef-areas`, `embrapa.solos-brasil` remain deferred (no stable bulk URL)
 - **Source discovery wave 3 (Phase 43):** `.local/SOURCE-DISCOVERY-CATALOG.md` wave 3 section (18 new candidates, 86 total); status sync for 28 implemented fichas; `DISCOVERY-REPORT-WAVE3.md` + `GAP-MATRIX-WAVE3.md`; routes to Phases 44–46 (ingestor only — no IA)
 - **Ingestor signoff (Phase 42):** `make ingestor-signoff-mvp` + `make ci-ingestor-signoff-mvp`; `scripts/ci/spot_check_analytics.py` for PostgreSQL `analytics.*` row/date spot-checks

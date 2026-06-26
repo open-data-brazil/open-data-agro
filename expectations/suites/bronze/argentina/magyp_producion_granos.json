@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "MAGyP grain production must contain annual observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "commodity_slug" },
+      "meta": { "notes": "Canonical commodity slug required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["commodity_slug", "refyear"] },
+      "meta": { "notes": "One production value per commodity per year." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "argentina.magyp-producion-granos",
+    "fonte_oficial": "https://datos.magyp.gob.ar/",
+    "agencia": "MAGyP"
+  },
+  "name": "bronze.argentina.magyp_producion_granos",
+  "id": "bronze-argentina-magyp-producion-granos-suite"
+}

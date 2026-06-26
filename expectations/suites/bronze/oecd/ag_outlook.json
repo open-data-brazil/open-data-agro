@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "OECD-FAO outlook must contain annual observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "commodity_code" },
+      "meta": { "notes": "CPC commodity code required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["commodity_code", "measure_code", "year"] },
+      "meta": { "notes": "One value per commodity × measure × year." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "oecd-fao.ag-outlook",
+    "fonte_oficial": "https://www.oecd.org/en/data/datasets/oecd-fao-agricultural-outlook.html",
+    "agencia": "OECD-FAO"
+  },
+  "name": "bronze.oecd.ag_outlook",
+  "id": "bronze-oecd-ag-outlook-suite"
+}

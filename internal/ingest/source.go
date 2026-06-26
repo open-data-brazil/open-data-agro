@@ -30,6 +30,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/igc"
 	"github.com/open-data-brazil/open-data-agro/internal/eurostat"
 	"github.com/open-data-brazil/open-data-agro/internal/argentina"
+	"github.com/open-data-brazil/open-data-agro/internal/oecd"
 	"github.com/open-data-brazil/open-data-agro/internal/un"
 )
 
@@ -122,13 +123,15 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		return eurostat.ResolveURL(entry)
 	case "argentina":
 		return argentina.ResolveURL(entry)
+	case "oecd-fao":
+		return oecd.ResolveURL(entry)
 	default:
 		return "", fmt.Errorf("unsupported agency %q for dataset %s", agency, entry.DatasetID)
 	}
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, aneelClient *aneel.Client, bndesClient *bndes.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, faoClient *fao.Client, worldbankClient *worldbank.Client, noaaClient *noaa.Client, eiaClient *eia.Client, igcClient *igc.Client, anaClient *ana.Client, antaqClient *antaq.Client, dnitClient *dnit.Client, ipeaClient *ipea.Client, eurostatClient *eurostat.Client, argentinaClient *argentina.Client, unClient *un.Client, opts SourceOptions) (*SourceDownload, error) {
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, aneelClient *aneel.Client, bndesClient *bndes.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, faoClient *fao.Client, worldbankClient *worldbank.Client, noaaClient *noaa.Client, eiaClient *eia.Client, igcClient *igc.Client, anaClient *ana.Client, antaqClient *antaq.Client, dnitClient *dnit.Client, ipeaClient *ipea.Client, eurostatClient *eurostat.Client, argentinaClient *argentina.Client, oecdClient *oecd.Client, unClient *un.Client, opts SourceOptions) (*SourceDownload, error) {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
 		return nil, err
@@ -403,7 +406,32 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 	}
 
 	if agency == "argentina" {
+		if entry.DatasetID.String() == "argentina.magyp-producion-granos" {
+			body, sourceURL, err := argentinaClient.FetchGranosSnapshot(ctx, entry, opts.FromDate)
+			if err != nil {
+				return nil, err
+			}
+			return &SourceDownload{
+				Body:          body,
+				ContentType:   "application/json",
+				ContentLength: int64(len(body)),
+				SourceURL:     sourceURL,
+			}, nil
+		}
 		body, sourceURL, err := argentinaClient.FetchCambioSnapshot(ctx, entry, opts.FromDate)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	}
+
+	if agency == "oecd-fao" {
+		body, sourceURL, err := oecdClient.FetchAgOutlookSnapshot(ctx, entry)
 		if err != nil {
 			return nil, err
 		}

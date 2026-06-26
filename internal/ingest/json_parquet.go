@@ -21,6 +21,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/ana"
 	"github.com/open-data-brazil/open-data-agro/internal/eurostat"
 	"github.com/open-data-brazil/open-data-agro/internal/argentina"
+	"github.com/open-data-brazil/open-data-agro/internal/oecd"
 	"github.com/open-data-brazil/open-data-agro/internal/un"
 )
 
@@ -132,7 +133,20 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		}
 		return writeStringTable(headers, rows)
 	case "argentina":
+		if entry.DatasetID.String() == "argentina.magyp-producion-granos" {
+			headers, rows, err := argentina.FlattenGranos(entry, raw)
+			if err != nil {
+				return nil, 0, err
+			}
+			return writeStringTable(headers, rows)
+		}
 		headers, rows, err := argentina.FlattenCambio(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "oecd-fao":
+		headers, rows, err := oecd.FlattenAgOutlook(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}

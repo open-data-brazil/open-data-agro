@@ -805,6 +805,29 @@ ci-international-sources-wave-2-mvp:
 		LAKE_LOCAL_ROOT=$(CI_INTERNATIONAL_SOURCES_WAVE_2_LAKE) \
 		DUCKDB_PATH=$(CI_INTERNATIONAL_SOURCES_WAVE_2_DUCKDB)
 
+CI_INTERNATIONAL_SOURCES_WAVE_3_LAKE ?= /tmp/international-sources-wave-3-ci-lake
+CI_INTERNATIONAL_SOURCES_WAVE_3_DUCKDB ?= /tmp/international-sources-wave-3-ci.duckdb
+
+dbt-build-international-sources-wave-3: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_oecd__ag_outlook+ stg_fao__food_price_index+ stg_argentina__magyp_producion_granos+'
+
+international-sources-wave-3-mvp:
+	go test ./internal/oecd/... ./internal/fao/... ./internal/argentina/... ./internal/ingest/ -run 'OECD|FFPI|Granos|AgOutlook|GoldenVector'
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_international_sources_wave_3_silver.py
+	$(MAKE) dbt-build-international-sources-wave-3 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.oecd_ag_outlook"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT commodity_code, measure_code, year, value FROM analytics.oecd_ag_outlook LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.fao_food_price_index"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT index_slug, refmonth, value FROM analytics.fao_food_price_index LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.argentina_magyp_producion_granos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT commodity_slug, refyear, value FROM analytics.argentina_magyp_producion_granos LIMIT 3"
+
+ci-international-sources-wave-3-mvp:
+	$(MAKE) international-sources-wave-3-mvp \
+		LAKE_LOCAL_ROOT=$(CI_INTERNATIONAL_SOURCES_WAVE_3_LAKE) \
+		DUCKDB_PATH=$(CI_INTERNATIONAL_SOURCES_WAVE_3_DUCKDB)
+
 ingestor-signoff-mvp: br-sources-wave-2-mvp international-sources-wave-2-mvp
 	@echo "ingestor wave 2 MVPs passed"
 

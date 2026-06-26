@@ -19,3 +19,17 @@ func Agency(datasetID string) (string, error) {
 	agency, _, err := SplitDatasetID(datasetID)
 	return agency, err
 }
+
+// StorageAgency returns the lake path agency segment (may differ from catalog agency).
+func StorageAgency(datasetID string) (string, error) {
+	agency, _, err := SplitDatasetID(datasetID)
+	if err != nil {
+		return "", err
+	}
+	switch agency {
+	case "oecd-fao":
+		return "oecd", nil
+	default:
+		return agency, nil
+	}
+}

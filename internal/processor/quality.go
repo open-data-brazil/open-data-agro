@@ -295,6 +295,12 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_bndes_financiamento_agro", true
 	case "inmet.sequia-monitor":
 		return "bronze_inmet_sequia_monitor", true
+	case "oecd-fao.ag-outlook":
+		return "bronze_oecd_ag_outlook", true
+	case "fao.food-price-index":
+		return "bronze_fao_food_price_index", true
+	case "argentina.magyp-producion-granos":
+		return "bronze_argentina_magyp_producion_granos", true
 	default:
 		return "", false
 	}

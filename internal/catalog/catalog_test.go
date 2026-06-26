@@ -11,6 +11,7 @@ func TestParseDatasetID(t *testing.T) {
 	valid := []string{
 		"conab.estimativa-graos",
 		"conab.precos-agropecuarios-mensal-municipio",
+		"oecd-fao.ag-outlook",
 	}
 	for _, id := range valid {
 		if _, err := ParseDatasetID(id); err != nil {
