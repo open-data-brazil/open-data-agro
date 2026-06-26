@@ -154,7 +154,10 @@ jobs:
         run: make ci-validate-codigo-ibge CI_COD_IBGE_LAKE=/tmp/cod-ibge-ci-lake
 
       - name: Full collection sprint offline pipeline
-        run: make ci-collection-full-mvp
+        run: |
+          export PATH="${{ github.workspace }}/.local/bin:${PATH}"
+          export DUCKDB_BIN="${{ github.workspace }}/.local/bin/duckdb"
+          make ci-collection-full-mvp
 
   quality:
     runs-on: ubuntu-latest

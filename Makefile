@@ -5,6 +5,7 @@ DUCKDB_VERSION ?= 1.5.4
 LAKE_LOCAL_ROOT ?= ./lake
 LAKE_ABS := $(abspath $(LAKE_LOCAL_ROOT))
 DUCKDB_PATH ?= ./duckdb/open_data_agro.duckdb
+DUCKDB_BIN ?= $(CURDIR)/.local/bin/duckdb
 POSTGRES_HOST_PORT ?= 5432
 DATABASE_URL ?= postgresql://open_data_agro:open_data_agro@localhost:$(POSTGRES_HOST_PORT)/open_data_agro?sslmode=disable
 MIGRATIONS_PATH := infra/postgres/migrations
@@ -83,8 +84,8 @@ ci-dbt: duckdb-install python-install
 	cd "$(CURDIR)" && PATH="$(CURDIR)/.local/bin:$$PATH" DUCKDB_BIN="$(CURDIR)/.local/bin/duckdb" \
 		LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb \
 		$(MAKE) analytics-init analytics-smoke
-	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
-	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
+	$(DUCKDB_BIN) /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
+	$(DUCKDB_BIN) /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
 	$(MAKE) ci-validate-codigo-ibge CI_COD_IBGE_LAKE=$(CI_COD_IBGE_LAKE)
 	$(MAKE) ci-collection-full-mvp
 
@@ -115,11 +116,11 @@ p1-collection-mvp: duckdb-install python-install dbt-deps
 		LAKE_LOCAL_ROOT=$(COLLECTION_P1_LAKE) DUCKDB_PATH=$(COLLECTION_P1_DUCKDB) \
 		dbt build --profiles-dir . --select '$(COLLECTION_P1_DBT_SELECT)'
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(COLLECTION_P1_LAKE) DUCKDB_PATH=$(COLLECTION_P1_DUCKDB)
-	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS mesorregioes FROM analytics.ibge_localidades_mesorregioes"
-	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS microrregioes FROM analytics.ibge_localidades_microrregioes"
-	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS precos_mun FROM analytics.conab_precos_semanal_municipio"
-	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS frete_rows FROM analytics.conab_frete"
-	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT uf, ano, quantidade_mil_t FROM analytics.conab_capacidade_estatica WHERE uf = 'MT' LIMIT 3"
+	$(DUCKDB_BIN) $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS mesorregioes FROM analytics.ibge_localidades_mesorregioes"
+	$(DUCKDB_BIN) $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS microrregioes FROM analytics.ibge_localidades_microrregioes"
+	$(DUCKDB_BIN) $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS precos_mun FROM analytics.conab_precos_semanal_municipio"
+	$(DUCKDB_BIN) $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS frete_rows FROM analytics.conab_frete"
+	$(DUCKDB_BIN) $(COLLECTION_P1_DUCKDB) -c "SELECT uf, ano, quantidade_mil_t FROM analytics.conab_capacidade_estatica WHERE uf = 'MT' LIMIT 3"
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(COLLECTION_P1_LAKE)
 
 # Mirror GitHub Actions: offline P1 collection sprint (Waves 0–2).
@@ -140,13 +141,13 @@ collection-macro-mvp: duckdb-install python-install dbt-deps
 		LAKE_LOCAL_ROOT=$(COLLECTION_MACRO_LAKE) DUCKDB_PATH=$(COLLECTION_MACRO_DUCKDB) \
 		dbt build --profiles-dir . --select '$(COLLECTION_MACRO_DBT_SELECT)'
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(COLLECTION_MACRO_LAKE) DUCKDB_PATH=$(COLLECTION_MACRO_DUCKDB)
-	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS estacoes_auto FROM analytics.inmet_estacoes_automaticas"
-	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS bdmep_diario FROM analytics.inmet_bdmep_diario"
-	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS pacote_anual FROM analytics.inmet_pacote_anual_automaticas"
-	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS ipca FROM analytics.bcb_sgs_ipca"
-	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS ptax FROM analytics.bcb_sgs_ptax_usd_venda"
-	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS soja_paranagua FROM analytics.cepea_soja_paranagua"
-	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT produto, praca, data, preco_rs_sc FROM analytics.cepea_milho LIMIT 3"
+	$(DUCKDB_BIN) $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS estacoes_auto FROM analytics.inmet_estacoes_automaticas"
+	$(DUCKDB_BIN) $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS bdmep_diario FROM analytics.inmet_bdmep_diario"
+	$(DUCKDB_BIN) $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS pacote_anual FROM analytics.inmet_pacote_anual_automaticas"
+	$(DUCKDB_BIN) $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS ipca FROM analytics.bcb_sgs_ipca"
+	$(DUCKDB_BIN) $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS ptax FROM analytics.bcb_sgs_ptax_usd_venda"
+	$(DUCKDB_BIN) $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS soja_paranagua FROM analytics.cepea_soja_paranagua"
+	$(DUCKDB_BIN) $(COLLECTION_MACRO_DUCKDB) -c "SELECT produto, praca, data, preco_rs_sc FROM analytics.cepea_milho LIMIT 3"
 
 # Mirror GitHub Actions: offline macro collection (Phases 17–19).
 ci-collection-macro-mvp:
@@ -234,11 +235,11 @@ seed-mvp:
 
 analytics-init:
 	@chmod +x duckdb/scripts/analytics-init.sh duckdb/export-mart.sh
-	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH) DUCKDB_BIN=$(DUCKDB_BIN) ./duckdb/scripts/analytics-init.sh
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH) DUCKDB_BIN="$(DUCKDB_BIN)" ./duckdb/scripts/analytics-init.sh
 
 analytics-smoke:
-	@command -v duckdb >/dev/null 2>&1 || (echo "run: make duckdb-install" && exit 1)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS rows FROM analytics.conab_estimativa_graos"
+	@test -x "$(DUCKDB_BIN)" || (echo "run: make duckdb-install" && exit 1)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS rows FROM analytics.conab_estimativa_graos"
 
 conab-reference:
 	@chmod +x scripts/conab/fetch_reference_samples.sh
@@ -258,12 +259,12 @@ conab-mercado-full-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_mercado_silver.py
 	$(MAKE) dbt-build-mercado LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS oferta FROM analytics.conab_oferta_demanda"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS precos_uf FROM analytics.conab_precos_semanal_uf"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS precos_mun FROM analytics.conab_precos_semanal_municipio"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS precos_min FROM analytics.conab_precos_minimos"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS prohort_diario FROM analytics.conab_prohort_diario"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS prohort_mensal FROM analytics.conab_prohort_mensal"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS oferta FROM analytics.conab_oferta_demanda"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS precos_uf FROM analytics.conab_precos_semanal_uf"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS precos_mun FROM analytics.conab_precos_semanal_municipio"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS precos_min FROM analytics.conab_precos_minimos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS prohort_diario FROM analytics.conab_prohort_diario"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS prohort_mensal FROM analytics.conab_prohort_mensal"
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 conab-mercado-prohort-mvp:
@@ -271,10 +272,10 @@ conab-mercado-prohort-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_mercado_silver.py
 	$(MAKE) dbt-build-mercado-prohort LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS diario_rows FROM analytics.conab_prohort_diario"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mensal_rows FROM analytics.conab_prohort_mensal"
-	duckdb $(DUCKDB_PATH) -c "SELECT produto, municipio_ceasa, cod_ibge_municipio, preco_diario FROM analytics.conab_prohort_diario WHERE cod_ibge_municipio = '3550308' LIMIT 5"
-	duckdb $(DUCKDB_PATH) -c "SELECT produto, municipio_ceasa, cod_ibge_municipio_ceasa, qtd_comercializada_kg FROM analytics.conab_prohort_mensal WHERE cod_ibge_municipio_ceasa = '3550308' LIMIT 5"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS diario_rows FROM analytics.conab_prohort_diario"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mensal_rows FROM analytics.conab_prohort_mensal"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT produto, municipio_ceasa, cod_ibge_municipio, preco_diario FROM analytics.conab_prohort_diario WHERE cod_ibge_municipio = '3550308' LIMIT 5"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT produto, municipio_ceasa, cod_ibge_municipio_ceasa, qtd_comercializada_kg FROM analytics.conab_prohort_mensal WHERE cod_ibge_municipio_ceasa = '3550308' LIMIT 5"
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 conab-mercado-precos-minimos-mvp:
@@ -283,25 +284,25 @@ conab-mercado-precos-minimos-mvp:
 	$(MAKE) dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__precos_minimos+'
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS rows FROM analytics.conab_precos_minimos"
-	duckdb $(DUCKDB_PATH) -c "SELECT produto, uf, ano_inicio_vigencia, preco, unidade_comercializacao FROM analytics.conab_precos_minimos WHERE upper(trim(produto)) = 'SOJA' AND uf = 'MT' ORDER BY ano_inicio_vigencia DESC LIMIT 5"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS rows FROM analytics.conab_precos_minimos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT produto, uf, ano_inicio_vigencia, preco, unidade_comercializacao FROM analytics.conab_precos_minimos WHERE upper(trim(produto)) = 'SOJA' AND uf = 'MT' ORDER BY ano_inicio_vigencia DESC LIMIT 5"
 
 conab-mercado-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_mercado_silver.py
 	$(MAKE) dbt-build-mercado LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS rows FROM analytics.conab_oferta_demanda"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS rows FROM analytics.conab_oferta_demanda"
 
 conab-mercado-precos-mvp:
 	go test ./internal/ingest/ -run 'Precos'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_mercado_silver.py
 	$(MAKE) dbt-build-mercado-precos LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS uf_rows FROM analytics.conab_precos_semanal_uf"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mun_rows FROM analytics.conab_precos_semanal_municipio"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mensal_uf_rows FROM analytics.conab_precos_mensal_uf"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mensal_mun_rows FROM analytics.conab_precos_mensal_municipio"
-	duckdb $(DUCKDB_PATH) -c "SELECT produto, municipio, cod_ibge, mes, valor_produto_kg FROM analytics.conab_precos_mensal_municipio WHERE upper(trim(produto)) = 'SOJA' AND cod_ibge = '5107925' ORDER BY ano, mes LIMIT 5"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS uf_rows FROM analytics.conab_precos_semanal_uf"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mun_rows FROM analytics.conab_precos_semanal_municipio"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mensal_uf_rows FROM analytics.conab_precos_mensal_uf"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mensal_mun_rows FROM analytics.conab_precos_mensal_municipio"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT produto, municipio, cod_ibge, mes, valor_produto_kg FROM analytics.conab_precos_mensal_municipio WHERE upper(trim(produto)) = 'SOJA' AND cod_ibge = '5107925' ORDER BY ano, mes LIMIT 5"
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 dbt-build-abastecimento: dbt-deps
@@ -315,10 +316,10 @@ anp-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_anp_silver.py
 	$(MAKE) dbt-build-anp LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS medios FROM analytics.anp_combustiveis_precos_medios_municipios"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS postos FROM analytics.anp_combustiveis_precos_postos"
-	duckdb $(DUCKDB_PATH) -c "SELECT estado, municipio, produto, preco_medio_revenda FROM analytics.anp_combustiveis_precos_medios_municipios ORDER BY estado, municipio LIMIT 5"
-	duckdb $(DUCKDB_PATH) -c "SELECT municipio, estado, produto, preco_revenda FROM analytics.anp_combustiveis_precos_postos WHERE estado = 'SAO PAULO' LIMIT 5"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS medios FROM analytics.anp_combustiveis_precos_medios_municipios"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS postos FROM analytics.anp_combustiveis_precos_postos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT estado, municipio, produto, preco_medio_revenda FROM analytics.anp_combustiveis_precos_medios_municipios ORDER BY estado, municipio LIMIT 5"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT municipio, estado, produto, preco_revenda FROM analytics.anp_combustiveis_precos_postos WHERE estado = 'SAO PAULO' LIMIT 5"
 
 # Mirror GitHub Actions: offline ANP combustíveis pipeline (Phase 12 P2).
 ci-anp-mvp:
@@ -331,13 +332,13 @@ conab-abastecimento-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_abastecimento_silver.py
 	$(MAKE) dbt-build-abastecimento LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS estoques FROM analytics.conab_estoques_publicos"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS operacoes FROM analytics.conab_operacoes_comercializacao"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS vendas FROM analytics.conab_vendas_balcao"
-	duckdb $(DUCKDB_PATH) -c "SELECT produto, uf_armazem_origem, qtd_negociada FROM analytics.conab_operacoes_comercializacao WHERE upper(trim(produto)) = 'SOJA' LIMIT 5"
-	duckdb $(DUCKDB_PATH) -c "SELECT municipio_armazem_venda, uf, ano, mes, qtd_produto_kg FROM analytics.conab_vendas_balcao WHERE uf = 'MT' ORDER BY ano DESC, mes DESC LIMIT 5"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS medios FROM analytics.anp_combustiveis_precos_medios_municipios"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS postos FROM analytics.anp_combustiveis_precos_postos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS estoques FROM analytics.conab_estoques_publicos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS operacoes FROM analytics.conab_operacoes_comercializacao"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS vendas FROM analytics.conab_vendas_balcao"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT produto, uf_armazem_origem, qtd_negociada FROM analytics.conab_operacoes_comercializacao WHERE upper(trim(produto)) = 'SOJA' LIMIT 5"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT municipio_armazem_venda, uf, ano, mes, qtd_produto_kg FROM analytics.conab_vendas_balcao WHERE uf = 'MT' ORDER BY ano DESC, mes DESC LIMIT 5"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS medios FROM analytics.anp_combustiveis_precos_medios_municipios"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS postos FROM analytics.anp_combustiveis_precos_postos"
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 dbt-build-armazenamento: dbt-deps
@@ -350,7 +351,7 @@ conab-armazenamento-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_armazenamento_silver.py
 	$(MAKE) dbt-build-armazenamento LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS armazens FROM analytics.conab_armazenagem"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS armazens FROM analytics.conab_armazenagem"
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 conab-armazenamento-logistica-mvp:
@@ -358,9 +359,9 @@ conab-armazenamento-logistica-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_armazenamento_silver.py
 	$(MAKE) dbt-build-armazenamento-logistica LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS frete_rows FROM analytics.conab_frete"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS capacidade_rows FROM analytics.conab_capacidade_estatica"
-	duckdb $(DUCKDB_PATH) -c "SELECT uf, ano, quantidade_mil_t FROM analytics.conab_capacidade_estatica WHERE uf IN ('MT', 'PR', 'RS') ORDER BY ano DESC LIMIT 5"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS frete_rows FROM analytics.conab_frete"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS capacidade_rows FROM analytics.conab_capacidade_estatica"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT uf, ano, quantidade_mil_t FROM analytics.conab_capacidade_estatica WHERE uf IN ('MT', 'PR', 'RS') ORDER BY ano DESC LIMIT 5"
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 dbt-build-agricultura-familiar: dbt-deps
@@ -370,8 +371,8 @@ conab-agricultura-familiar-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_agricultura_familiar_silver.py
 	$(MAKE) dbt-build-agricultura-familiar LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS entregas FROM analytics.conab_alimenta_brasil_entregas"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS propostas FROM analytics.conab_alimenta_brasil_propostas"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS entregas FROM analytics.conab_alimenta_brasil_entregas"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS propostas FROM analytics.conab_alimenta_brasil_propostas"
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 validate-codigo-ibge: python-install
@@ -398,15 +399,15 @@ ibge-localidades-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_ibge_localidades_silver.py
 	$(MAKE) dbt-build-ibge-localidades LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS municipios FROM analytics.ibge_localidades_municipios"
-	duckdb $(DUCKDB_PATH) -c "SELECT codigo_ibge, nome, sigla_uf FROM analytics.ibge_localidades_municipios WHERE codigo_ibge = '3550308'"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS ufs FROM analytics.ibge_localidades_ufs"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS regioes FROM analytics.ibge_localidades_regioes"
-	duckdb $(DUCKDB_PATH) -c "SELECT codigo_regiao, sigla_regiao, nome FROM analytics.ibge_localidades_regioes ORDER BY codigo_regiao"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mesorregioes FROM analytics.ibge_localidades_mesorregioes"
-	duckdb $(DUCKDB_PATH) -c "SELECT codigo_mesorregiao, nome, sigla_uf FROM analytics.ibge_localidades_mesorregioes WHERE sigla_uf = 'MT' ORDER BY codigo_mesorregiao LIMIT 3"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS microrregioes FROM analytics.ibge_localidades_microrregioes"
-	duckdb $(DUCKDB_PATH) -c "SELECT codigo_microrregiao, nome, codigo_mesorregiao FROM analytics.ibge_localidades_microrregioes WHERE codigo_microrregiao = '51006'"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS municipios FROM analytics.ibge_localidades_municipios"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_ibge, nome, sigla_uf FROM analytics.ibge_localidades_municipios WHERE codigo_ibge = '3550308'"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS ufs FROM analytics.ibge_localidades_ufs"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS regioes FROM analytics.ibge_localidades_regioes"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_regiao, sigla_regiao, nome FROM analytics.ibge_localidades_regioes ORDER BY codigo_regiao"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mesorregioes FROM analytics.ibge_localidades_mesorregioes"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_mesorregiao, nome, sigla_uf FROM analytics.ibge_localidades_mesorregioes WHERE sigla_uf = 'MT' ORDER BY codigo_mesorregiao LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS microrregioes FROM analytics.ibge_localidades_microrregioes"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_microrregiao, nome, codigo_mesorregiao FROM analytics.ibge_localidades_microrregioes WHERE codigo_microrregiao = '51006'"
 
 dbt-build-ibge-localidades: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__localidades_municipios+ stg_ibge__localidades_ufs+ stg_ibge__localidades_regioes+ stg_ibge__localidades_mesorregioes+ stg_ibge__localidades_microrregioes+'
@@ -420,9 +421,9 @@ ibge-pam-mvp:
 	$(MAKE) dbt-build-ibge-pam LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pam_area_quantidade"
-	duckdb $(DUCKDB_PATH) -c "SELECT municipio, ano, variavel, valor FROM analytics.ibge_pam_rendimento_valor LIMIT 2"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pam_estabelecimentos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pam_area_quantidade"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT municipio, ano, variavel, valor FROM analytics.ibge_pam_rendimento_valor LIMIT 2"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pam_estabelecimentos"
 
 # Mirror GitHub Actions: offline IBGE PAM pipeline (Phase 16).
 ci-ibge-pam-mvp:
@@ -435,9 +436,9 @@ inmet-clima-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_inmet_silver.py
 	$(MAKE) dbt-build-inmet-clima LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.inmet_estacoes_automaticas"
-	duckdb $(DUCKDB_PATH) -c "SELECT cd_estacao, data, variavel, valor FROM analytics.inmet_bdmep_diario LIMIT 2"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.inmet_pacote_anual_automaticas"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.inmet_estacoes_automaticas"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT cd_estacao, data, variavel, valor FROM analytics.inmet_bdmep_diario LIMIT 2"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.inmet_pacote_anual_automaticas"
 
 dbt-build-inmet-clima: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_inmet__estacoes_automaticas+ stg_inmet__estacoes_convencionais+ stg_inmet__bdmep_diario+ stg_inmet__bdmep_mensal+ stg_inmet__pacote_anual_automaticas+'
@@ -450,16 +451,16 @@ bcb-sgs-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_bcb_sgs_silver.py
 	$(MAKE) dbt-build-bcb-sgs LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.bcb_sgs_ipca"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.bcb_sgs_ptax_usd_venda"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.bcb_sgs_ipca"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.bcb_sgs_ptax_usd_venda"
 
 cepea-indicadores-mvp:
 	go test ./internal/cepea/... ./internal/ingest/ -run 'CEPA|Cepea|FlattenIndicador|ParseIndicator'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_cepea_silver.py
 	$(MAKE) dbt-build-cepea LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.cepea_soja_paranagua"
-	duckdb $(DUCKDB_PATH) -c "SELECT produto, praca, data, preco_rs_sc FROM analytics.cepea_milho LIMIT 2"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.cepea_soja_paranagua"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT produto, praca, data, preco_rs_sc FROM analytics.cepea_milho LIMIT 2"
 
 dbt-build-cepea: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_cepea__soja_paranagua+ stg_cepea__soja_parana+ stg_cepea__milho+ stg_cepea__boi_gordo+'
@@ -469,12 +470,12 @@ conab-mvp:
 	$(MAKE) dbt-build LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
 	$(MAKE) analytics-smoke DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_graos"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_estimativa_cana"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_cana"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_estimativa_cafe"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_cafe"
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_custo_producao"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_graos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_estimativa_cana"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_cana"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_estimativa_cafe"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_cafe"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_custo_producao"
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 clean:
