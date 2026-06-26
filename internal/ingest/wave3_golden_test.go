@@ -63,6 +63,80 @@ func TestIBGEPEVSProducaoVegetalGoldenVector(t *testing.T) {
 	}
 }
 
+func TestIBGEPPMProducaoMunicipalGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readIBGEIngestTestdata(t, "ppm_producao_municipal.sample.json")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("ibge.ppm-producao-municipal"),
+		Format:    catalog.FormatJSON,
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 7 {
+		t.Fatalf("rowCount: got %d want 7", rowCount)
+	}
+}
+
+func TestANEELTarifasEnergiaGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readANEELIngestTestdata(t, "tarifas_energia.sample.csv")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("aneel.tarifas-energia"),
+		Format:    catalog.FormatCSV,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 3 {
+		t.Fatalf("rowCount: got %d want 3", rowCount)
+	}
+}
+
+func TestBNDESFinanciamentoAgroGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readBNDESIngestTestdata(t, "financiamento_agro.sample.csv")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("bndes.financiamento-agro"),
+		Format:    catalog.FormatCSV,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 3 {
+		t.Fatalf("rowCount: got %d want 3", rowCount)
+	}
+}
+
+func TestINMETSequiaMonitorGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readINMETIngestTestdata(t, "sequia_monitor.sample.json")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("inmet.sequia-monitor"),
+		Format:    catalog.FormatJSON,
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 2 {
+		t.Fatalf("rowCount: got %d want 2", rowCount)
+	}
+}
+
 func readDNITIngestTestdata(t *testing.T, name string) []byte {
 	t.Helper()
 	path := filepath.Join("..", "dnit", "testdata", name)
@@ -86,6 +160,36 @@ func readIPEAIngestTestdata(t *testing.T, name string) []byte {
 func readIBGEIngestTestdata(t *testing.T, name string) []byte {
 	t.Helper()
 	path := filepath.Join("..", "ibge", "testdata", name)
+	data, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatalf("read %s: %v", path, err)
+	}
+	return data
+}
+
+func readANEELIngestTestdata(t *testing.T, name string) []byte {
+	t.Helper()
+	path := filepath.Join("..", "aneel", "testdata", name)
+	data, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatalf("read %s: %v", path, err)
+	}
+	return data
+}
+
+func readBNDESIngestTestdata(t *testing.T, name string) []byte {
+	t.Helper()
+	path := filepath.Join("..", "bndes", "testdata", name)
+	data, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatalf("read %s: %v", path, err)
+	}
+	return data
+}
+
+func readINMETIngestTestdata(t *testing.T, name string) []byte {
+	t.Helper()
+	path := filepath.Join("..", "inmet", "testdata", name)
 	data, err := os.ReadFile(path)
 	if err != nil {
 		t.Fatalf("read %s: %v", path, err)

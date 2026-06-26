@@ -1,0 +1,19 @@
+# IBGE — PPM Produção Municipal (Phase 44 P2)
+# SIDRA API: https://apisidra.ibge.gov.br/
+# Survey: https://sidra.ibge.gov.br/pesquisa/pam
+# Table 74 — municipal grain n6/in n3, variables 106 (quantidade) and 215 (valor)
+
+entries:
+  - dataset_id: ibge.ppm-producao-municipal
+    source_url: https://apisidra.ibge.gov.br/values/t/74
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/pam
+    format: json
+    schedule: annual
+    portal_label: PPM — quantidade e valor da produção municipal
+    sidra_table: "74"
+    sidra_variables: [106, 215]
+    period_start: 2010
+    period_end: 2023
+    frequency: annual
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z

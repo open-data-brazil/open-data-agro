@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "ANEEL tariff flag history must contain rows." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "DatCompetencia" },
+      "meta": { "notes": "Competence month required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "NomBandeiraAcionada" },
+      "meta": { "notes": "Activated flag name required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["DatCompetencia", "NomBandeiraAcionada"] },
+      "meta": { "notes": "Monthly tariff flag grain." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "aneel.tarifas-energia",
+    "fonte_oficial": "https://dadosabertos.aneel.gov.br/dataset/bandeiras-tarifarias",
+    "agencia": "ANEEL"
+  },
+  "name": "bronze.aneel.tarifas_energia",
+  "id": "bronze-aneel-tarifas-energia-suite"
+}

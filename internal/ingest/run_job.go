@@ -8,11 +8,13 @@ import (
 
 	"github.com/open-data-brazil/open-data-agro/internal/alerts"
 	"github.com/open-data-brazil/open-data-agro/internal/anp"
+	"github.com/open-data-brazil/open-data-agro/internal/aneel"
 	"github.com/open-data-brazil/open-data-agro/internal/antt"
 	"github.com/open-data-brazil/open-data-agro/internal/antaq"
 	"github.com/open-data-brazil/open-data-agro/internal/ana"
 	"github.com/open-data-brazil/open-data-agro/internal/b3"
 	"github.com/open-data-brazil/open-data-agro/internal/bcb"
+	"github.com/open-data-brazil/open-data-agro/internal/bndes"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/cepea"
 	"github.com/open-data-brazil/open-data-agro/internal/conab"
@@ -66,6 +68,8 @@ type Runner struct {
 	conab    *conab.Client
 	anp      *anp.Client
 	antt     *antt.Client
+	aneel    *aneel.Client
+	bndes    *bndes.Client
 	ibge     *ibge.Client
 	inmet    *inmet.Client
 	bcb      *bcb.Client
@@ -98,6 +102,8 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		conab:    conab.NewClient(),
 		anp:      anp.NewClient(),
 		antt:     antt.NewClient(),
+		aneel:    aneel.NewClient(),
+		bndes:    bndes.NewClient(),
 		ibge:     ibge.NewClient(),
 		inmet:    inmet.NewClient(),
 		bcb:      bcb.NewClient(),
@@ -155,7 +161,7 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.dnit, r.ipea, r.eurostat, r.argentina, r.un, SourceOptions{
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.aneel, r.bndes, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.dnit, r.ipea, r.eurostat, r.argentina, r.un, SourceOptions{
 		Crop:     opts.Crop,
 		FromYear: opts.FromYear,
 		ToYear:   opts.ToYear,

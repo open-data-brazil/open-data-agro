@@ -43,3 +43,17 @@
   trim(uf) as uf,
   cast(ano as varchar) as ano
 {% endmacro %}
+
+{% macro inmet_sequia_monitor_fonte_oficial() %}
+  https://www.gov.br/ana/pt-br/servicos/monitor-de-seca
+{% endmacro %}
+
+{% macro inmet_sequia_monitor_columns() %}
+    mapa_id,
+    ano,
+    mes,
+    categoria_seca,
+    area_km2,
+    area_id,
+    tipo_area
+{% endmacro %}

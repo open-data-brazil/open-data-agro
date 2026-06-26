@@ -1,0 +1,37 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "PPM municipal series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "codigo_ibge" },
+      "meta": { "notes": "Municipality code required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "ano" },
+      "meta": { "notes": "Annual period required." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "sidra_tabela", "value_set": ["74"] },
+      "meta": { "notes": "PPM municipal series uses SIDRA table 74." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["codigo_ibge", "ano", "variavel_codigo", "produto_codigo"] },
+      "meta": { "notes": "Municipal annual production grain." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ibge.ppm-producao-municipal",
+    "fonte_oficial": "https://sidra.ibge.gov.br/pesquisa/pam",
+    "agencia": "IBGE"
+  },
+  "name": "bronze.ibge.ppm_producao_municipal",
+  "id": "bronze-ibge-ppm-producao-municipal-suite"
+}

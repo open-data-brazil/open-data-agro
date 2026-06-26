@@ -1,0 +1,37 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Drought monitor tabular areas must contain rows." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "mapa_id" },
+      "meta": { "notes": "Map identifier required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "categoria_seca" },
+      "meta": { "notes": "Drought severity category required." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "categoria_seca", "value_set": ["S0", "S1", "S2", "S3", "S4"] },
+      "meta": { "notes": "ANA drought monitor categories S0-S4." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["mapa_id", "categoria_seca", "area_id", "tipo_area"] },
+      "meta": { "notes": "Map area severity grain." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "inmet.sequia-monitor",
+    "fonte_oficial": "https://www.gov.br/ana/pt-br/servicos/monitor-de-seca",
+    "agencia": "INMET"
+  },
+  "name": "bronze.inmet.sequia_monitor",
+  "id": "bronze-inmet-sequia-monitor-suite"
+}

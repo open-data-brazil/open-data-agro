@@ -6,11 +6,13 @@ import (
 	"strings"
 
 	"github.com/open-data-brazil/open-data-agro/internal/anp"
+	"github.com/open-data-brazil/open-data-agro/internal/aneel"
 	"github.com/open-data-brazil/open-data-agro/internal/antt"
 	"github.com/open-data-brazil/open-data-agro/internal/antaq"
 	"github.com/open-data-brazil/open-data-agro/internal/ana"
 	"github.com/open-data-brazil/open-data-agro/internal/b3"
 	"github.com/open-data-brazil/open-data-agro/internal/bcb"
+	"github.com/open-data-brazil/open-data-agro/internal/bndes"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/cepea"
 	"github.com/open-data-brazil/open-data-agro/internal/conab"
@@ -64,6 +66,10 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		return anp.ResolveURL(entry)
 	case "antt":
 		return antt.ResolveURL(entry)
+	case "aneel":
+		return aneel.ResolveURL(entry)
+	case "bndes":
+		return bndes.ResolveURL(entry)
 	case "dnit":
 		return dnit.ResolveURL(entry)
 	case "ipea":
@@ -77,6 +83,9 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		}
 		if strings.HasPrefix(entry.DatasetID.String(), "ibge.pevs-") {
 			return ibge.ResolvePEVSURL(entry)
+		}
+		if strings.HasPrefix(entry.DatasetID.String(), "ibge.ppm-") {
+			return ibge.ResolvePPMURL(entry)
 		}
 		return ibge.ResolveURL(entry)
 	case "inmet":
@@ -119,7 +128,7 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, faoClient *fao.Client, worldbankClient *worldbank.Client, noaaClient *noaa.Client, eiaClient *eia.Client, igcClient *igc.Client, anaClient *ana.Client, antaqClient *antaq.Client, dnitClient *dnit.Client, ipeaClient *ipea.Client, eurostatClient *eurostat.Client, argentinaClient *argentina.Client, unClient *un.Client, opts SourceOptions) (*SourceDownload, error) {
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, aneelClient *aneel.Client, bndesClient *bndes.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, faoClient *fao.Client, worldbankClient *worldbank.Client, noaaClient *noaa.Client, eiaClient *eia.Client, igcClient *igc.Client, anaClient *ana.Client, antaqClient *antaq.Client, dnitClient *dnit.Client, ipeaClient *ipea.Client, eurostatClient *eurostat.Client, argentinaClient *argentina.Client, unClient *un.Client, opts SourceOptions) (*SourceDownload, error) {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
 		return nil, err
@@ -165,6 +174,23 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 		body, sourceURL, err := ibgeClient.FetchPEVSSnapshot(ctx, entry, ibge.PEVSFetchOptions{
 			FromYear: opts.FromYear,
 			ToYear:   opts.ToYear,
+		})
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	}
+
+	if agency == "ibge" && strings.HasPrefix(entry.DatasetID.String(), "ibge.ppm-") {
+		body, sourceURL, err := ibgeClient.FetchPPMSnapshot(ctx, entry, ibge.PPMFetchOptions{
+			FromYear: opts.FromYear,
+			ToYear:   opts.ToYear,
+			UFs:      opts.UFs,
 		})
 		if err != nil {
 			return nil, err
@@ -444,6 +470,30 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 			ContentLength: result.ContentLength,
 			SourceURL:     sourceURL,
 		}, nil
+	case "aneel":
+		result, err := aneelClient.Download(ctx, sourceURL)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          result.Body,
+			ContentType:   result.ContentType,
+			LastModified:  result.LastModified,
+			ContentLength: result.ContentLength,
+			SourceURL:     sourceURL,
+		}, nil
+	case "bndes":
+		result, err := bndesClient.Download(ctx, sourceURL)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          result.Body,
+			ContentType:   result.ContentType,
+			LastModified:  result.LastModified,
+			ContentLength: result.ContentLength,
+			SourceURL:     sourceURL,
+		}, nil
 	case "antaq":
 		result, err := antaqClient.Download(ctx, sourceURL)
 		if err != nil {
@@ -543,6 +593,17 @@ func downloadINMETSource(ctx context.Context, entry catalog.RegistryEntry, clien
 		return &SourceDownload{
 			Body:          body,
 			ContentType:   "text/csv",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	case "inmet.sequia-monitor":
+		body, sourceURL, err := client.FetchSecaMonitorSnapshot(ctx, entry.SourceURL)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
 			ContentLength: int64(len(body)),
 			SourceURL:     sourceURL,
 		}, nil

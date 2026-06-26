@@ -254,6 +254,46 @@ Regional macro indicators by territory — annual refdate grain for Brazil and U
 
 Plant extraction production statistics at UF level — complements PAM/LSPA annual crop series.
 
+### IBGE — PPM produção municipal (Phase 44)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `ibge.ppm-producao-municipal` | PPM — quantidade e valor da produção municipal | **P2 — implemented** |
+
+**Fonte oficial:** [IBGE SIDRA — PAM/PPM](https://sidra.ibge.gov.br/pesquisa/pam) · table **74**, municipal grain (`n6/in n3` UF batches), variables **106** (quantidade) and **215** (valor), annual 2010–2023
+
+Municipal animal-origin production quantity and value — SIDRA chunked by UF batches.
+
+### ANEEL — Bandeiras tarifárias (Phase 44)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `aneel.tarifas-energia` | Bandeiras tarifárias — acionamento mensal | **P2 — implemented** |
+
+**Fonte oficial:** [ANEEL Dados Abertos](https://dadosabertos.aneel.gov.br/dataset/bandeiras-tarifarias) · CKAN package `bandeiras-tarifarias`, CSV semicolon, resource name contains `Acionamento`
+
+Electricity tariff flag activation history — input cost context for farm energy.
+
+### BNDES — Financiamento agro (Phase 44)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `bndes.financiamento-agro` | Desembolsos por setor CNAE — coluna agropecuária | **P2 — implemented** |
+
+**Fonte oficial:** [BNDES Dados Abertos](https://dadosabertos.bndes.gov.br/dataset/desembolsos) · CKAN package `desembolsos`, CSV semicolon, resource `Por setor CNAE`
+
+Monthly BNDES disbursements to agropecuaria sector (CNAE grouping).
+
+### INMET — Monitor de secas (Phase 44)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `inmet.sequia-monitor` | ANA Monitor de Secas — áreas por categoria S0–S4 | **P1 — implemented** |
+
+**Fonte oficial:** [ANA Monitor de Secas](https://www.gov.br/ana/pt-br/servicos/monitor-de-seca) · API `https://apimsbr.ana.gov.br/rpc/v1/dados-tabulares-monitor` (JSON, no auth)
+
+Drought severity area statistics by map/month — catalog under INMET agency for climate feature grouping.
+
 ### B3 — Mercado futuro agro (Phase 24)
 
 | Dataset ID | Source | Status |

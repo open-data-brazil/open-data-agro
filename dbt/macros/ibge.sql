@@ -105,3 +105,11 @@
     unidade_codigo,
     unidade
 {% endmacro %}
+
+{% macro ibge_ppm_fonte_oficial() %}
+  https://sidra.ibge.gov.br/pesquisa/pam
+{% endmacro %}
+
+{% macro ibge_ppm_producao_municipal_columns() %}
+    {{ ibge_pam_core_columns() }}
+{% endmacro %}

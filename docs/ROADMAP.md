@@ -11,7 +11,7 @@
 
 **Initial source:** [CONAB — Downloads de Arquivos](https://portaldeinformacoes.conab.gov.br/download-arquivos.html)
 
-**Current focus:** Phase 44 BR wave 3 complete (DNIT, IPEA, IBGE PEVS); next: Phase 45 international wave 3 ingest (see `.local/phases/45–46`).
+**Current focus:** Phase 44 BR wave 3 complete (7 datasets E2E); next: Phase 45 international wave 3 ingest (see `.local/phases/45–46`).
 
 ---
 
@@ -156,7 +156,7 @@
 - Phase 40–41 — wave 2 ingest ✅ — MAPA Agrofit, ANA, ANTAQ, GATS, Eurostat, Argentina BCRA · `make ingestor-signoff-mvp`
 - Phase 42 — ingestor signoff ✅ — `make ingestor-signoff-mvp`
 - Phase 43 — source discovery wave 3 ✅ — 86 candidates; 18 new BR + intl official sources; routes to Phases 44–46 (docs only)
-- Phase 44 — BR wave 3 ingest ✅ — `dnit.snv-rodovias-federais`, `ipea.series-macro-regionais`, `ibge.pevs-producao-vegetal`; `make br-sources-wave-3-mvp`
+- Phase 44 — BR wave 3 ingest ✅ — `dnit.snv-rodovias-federais`, `ipea.series-macro-regionais`, `ibge.pevs-producao-vegetal`, `ibge.ppm-producao-municipal`, `aneel.tarifas-energia`, `bndes.financiamento-agro`, `inmet.sequia-monitor`; `make br-sources-wave-3-mvp`
 - **Phase 45 — wave 3 international ingest (next)** — OECD-FAO Outlook, FAO FFPI, Mexico SIAP, NASA POWER, Mercosur competitors
 - Phase 46 — wave 3 signoff (blocked on 44–45)
 

@@ -756,10 +756,10 @@ CI_BR_SOURCES_WAVE_3_LAKE ?= /tmp/br-sources-wave-3-ci-lake
 CI_BR_SOURCES_WAVE_3_DUCKDB ?= /tmp/br-sources-wave-3-ci.duckdb
 
 dbt-build-br-sources-wave-3: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_dnit__snv_rodovias_federais+ stg_ipea__series_macro_regionais+ stg_ibge__pevs_producao_vegetal+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_dnit__snv_rodovias_federais+ stg_ipea__series_macro_regionais+ stg_ibge__pevs_producao_vegetal+ stg_ibge__ppm_producao_municipal+ stg_aneel__tarifas_energia+ stg_bndes__financiamento_agro+ stg_inmet__sequia_monitor+'
 
 br-sources-wave-3-mvp:
-	go test ./internal/dnit/... ./internal/ipea/... ./internal/ibge/... ./internal/ingest/ -run 'DNIT|IPEA|PEVS|StripMetadata|GoldenVector'
+	go test ./internal/dnit/... ./internal/ipea/... ./internal/ibge/... ./internal/aneel/... ./internal/bndes/... ./internal/inmet/... ./internal/ingest/ -run 'DNIT|IPEA|PEVS|PPM|Seca|ResolveURL|StripMetadata|GoldenVector'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_br_sources_wave_3_silver.py
 	$(MAKE) dbt-build-br-sources-wave-3 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
@@ -769,6 +769,14 @@ br-sources-wave-3-mvp:
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT series_code, refdate, value, region_level FROM analytics.ipea_series_macro_regionais LIMIT 3"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pevs_producao_vegetal"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_uf, ano, variavel, valor FROM analytics.ibge_pevs_producao_vegetal LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_ppm_producao_municipal"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_ibge, ano, variavel, valor FROM analytics.ibge_ppm_producao_municipal LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.aneel_tarifas_energia"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT DatCompetencia, NomBandeiraAcionada FROM analytics.aneel_tarifas_energia LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.bndes_financiamento_agro"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT ano, mes, agropecuaria FROM analytics.bndes_financiamento_agro LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.inmet_sequia_monitor"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT mapa_id, ano, mes, categoria_seca, area_km2 FROM analytics.inmet_sequia_monitor LIMIT 3"
 
 ci-br-sources-wave-3-mvp:
 	$(MAKE) br-sources-wave-3-mvp \

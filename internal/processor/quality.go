@@ -287,6 +287,14 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_ipea_series_macro_regionais", true
 	case "ibge.pevs-producao-vegetal":
 		return "bronze_ibge_pevs_producao_vegetal", true
+	case "ibge.ppm-producao-municipal":
+		return "bronze_ibge_ppm_producao_municipal", true
+	case "aneel.tarifas-energia":
+		return "bronze_aneel_tarifas_energia", true
+	case "bndes.financiamento-agro":
+		return "bronze_bndes_financiamento_agro", true
+	case "inmet.sequia-monitor":
+		return "bronze_inmet_sequia_monitor", true
 	default:
 		return "", false
 	}

@@ -10,6 +10,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/cepea"
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 	"github.com/open-data-brazil/open-data-agro/internal/ipea"
+	"github.com/open-data-brazil/open-data-agro/internal/inmet"
 	"github.com/open-data-brazil/open-data-agro/internal/mdic"
 	"github.com/open-data-brazil/open-data-agro/internal/usda"
 	"github.com/open-data-brazil/open-data-agro/internal/fao"
@@ -142,6 +143,15 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 			return nil, 0, err
 		}
 		return writeStringTable(headers, rows)
+	case "inmet":
+		if entry.DatasetID.String() == "inmet.sequia-monitor" {
+			headers, rows, err := inmet.FlattenSecaMonitor(raw)
+			if err != nil {
+				return nil, 0, err
+			}
+			return writeStringTable(headers, rows)
+		}
+		return nil, 0, fmt.Errorf("json ingest not implemented for inmet dataset %s", entry.DatasetID)
 	case "un":
 		headers, rows, err := un.FlattenComtrade(entry, raw)
 		if err != nil {

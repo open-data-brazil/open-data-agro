@@ -25,6 +25,9 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "ibge.pevs-") {
 		return IBGESIDRAPEVSURL
 	}
+	if strings.HasPrefix(datasetID.String(), "ibge.ppm-") {
+		return IBGESIDRAPAMURL
+	}
 	if strings.HasPrefix(datasetID.String(), "ibge.") {
 		return IBGELocalidadesDocsURL
 	}
@@ -93,6 +96,12 @@ func SourcePortalURL(datasetID DatasetID) string {
 	}
 	if strings.HasPrefix(datasetID.String(), "ipea.") {
 		return IPEADataPortalURL
+	}
+	if strings.HasPrefix(datasetID.String(), "aneel.") {
+		return ANEEDadosAbertosPortalURL
+	}
+	if strings.HasPrefix(datasetID.String(), "bndes.") {
+		return BNDESDadosAbertosPortalURL
 	}
 	return ""
 }
@@ -171,6 +180,12 @@ const IBGESIDRALSPAURL = "https://sidra.ibge.gov.br/pesquisa/lspa"
 
 // IBGESIDRAPEVSURL is the IBGE SIDRA PEVS survey portal URL.
 const IBGESIDRAPEVSURL = "https://sidra.ibge.gov.br/pesquisa/pevs"
+
+// ANEEDadosAbertosPortalURL is the ANEEL open data portal URL.
+const ANEEDadosAbertosPortalURL = "https://dadosabertos.aneel.gov.br/"
+
+// BNDESDadosAbertosPortalURL is the BNDES open data portal URL.
+const BNDESDadosAbertosPortalURL = "https://dadosabertos.bndes.gov.br/"
 
 // INMETBDMEPPortalURL is the INMET BDMEP historical data portal URL.
 const INMETBDMEPPortalURL = "https://bdmep.inmet.gov.br/"

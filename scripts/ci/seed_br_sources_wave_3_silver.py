@@ -24,6 +24,10 @@ def main() -> int:
         "mart_dnit__snv_rodovias_federais",
         "mart_ipea__series_macro_regionais",
         "mart_ibge__pevs_producao_vegetal",
+        "mart_ibge__ppm_producao_municipal",
+        "mart_aneel__tarifas_energia",
+        "mart_bndes__financiamento_agro",
+        "mart_inmet__sequia_monitor",
     ]
     for table in gold_tables:
         (lake_root / "gold" / table).mkdir(parents=True, exist_ok=True)
@@ -95,6 +99,67 @@ def main() -> int:
         }
     )
     write_table(lake_root, "ibge", "pevs_producao_vegetal", ibge_pevs)
+
+    ibge_ppm = pa.table(
+        {
+            "sidra_tabela": ["74", "74"],
+            "codigo_ibge": ["1100015", "1100015"],
+            "municipio": ["Alta Floresta D'Oeste - RO", "Alta Floresta D'Oeste - RO"],
+            "ano": ["2023", "2023"],
+            "variavel_codigo": ["106", "215"],
+            "variavel": ["Produção de origem animal", "Valor da produção"],
+            "produto_codigo": ["0", "0"],
+            "produto": ["Total", "Total"],
+            "valor": ["..", "11307"],
+            "unidade_codigo": ["", "40"],
+            "unidade": ["", "Mil Reais"],
+            "_dataset_id": ["ibge.ppm-producao-municipal", "ibge.ppm-producao-municipal"],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "ibge", "ppm_producao_municipal", ibge_ppm)
+
+    aneel_tarifas = pa.table(
+        {
+            "DatGeracaoConjuntoDados": ["2026-06-01", "2026-06-01"],
+            "DatCompetencia": ["2015-01-01", "2015-02-01"],
+            "NomBandeiraAcionada": ["Vermelha P1", "Vermelha P1"],
+            "VlrAdicionalBandeira": ["30,00", "30,00"],
+            "_dataset_id": ["aneel.tarifas-energia", "aneel.tarifas-energia"],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "aneel", "tarifas_energia", aneel_tarifas)
+
+    bndes_fin = pa.table(
+        {
+            "ano": ["1995", "1995"],
+            "mes": ["1", "2"],
+            "agropecuaria": ["49,4775568700004", "35,8757577499998"],
+            "_dataset_id": ["bndes.financiamento-agro", "bndes.financiamento-agro"],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "bndes", "financiamento_agro", bndes_fin)
+
+    inmet_sequia = pa.table(
+        {
+            "mapa_id": ["304", "304"],
+            "ano": ["2026", "2026"],
+            "mes": ["5", "5"],
+            "categoria_seca": ["S4", "S3"],
+            "area_km2": ["0", "0"],
+            "area_id": ["5", "5"],
+            "tipo_area": ["8", "8"],
+            "_dataset_id": ["inmet.sequia-monitor", "inmet.sequia-monitor"],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "inmet", "sequia_monitor", inmet_sequia)
 
     print(f"seeded BR sources wave 3 silver under {lake_root / 'silver'}")
     return 0

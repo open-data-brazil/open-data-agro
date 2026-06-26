@@ -58,6 +58,8 @@ func sidraTableForDataset(datasetID string) string {
 		return "1613"
 	case "ibge.pam-estabelecimentos":
 		return "5457"
+	case "ibge.ppm-producao-municipal":
+		return "74"
 	default:
 		return ""
 	}
@@ -65,7 +67,7 @@ func sidraTableForDataset(datasetID string) string {
 
 // FlattenIBGEJSON routes IBGE JSON payloads to the correct flattener.
 func FlattenIBGEJSON(datasetID string, raw []byte) ([]string, [][]string, error) {
-	if isPAMDataset(datasetID) {
+	if isPAMDataset(datasetID) || isPPMDataset(datasetID) {
 		return FlattenPAM(datasetID, raw)
 	}
 	if isLSPADataset(datasetID) {
