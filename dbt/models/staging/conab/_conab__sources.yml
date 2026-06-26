@@ -41,6 +41,24 @@ sources:
           conab_section: Produção Agrícola
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_cana"
 
+      - name: estimativa_cafe
+        description: Estimativa café — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/estimativa_cafe
+        meta:
+          dataset_id: conab.estimativa-cafe
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Produção Agrícola
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/estimativa_cafe"
+
+      - name: serie_historica_cafe
+        description: Série histórica café — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_cafe
+        meta:
+          dataset_id: conab.serie-historica-cafe
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Produção Agrícola
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_cafe"
+
       - name: oferta_demanda
         description: Oferta e demanda — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/oferta_demanda
         meta:

@@ -25,6 +25,8 @@ def main() -> int:
     (lake_root / "gold" / "mart_conab__serie_historica_graos").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__estimativa_cana").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__serie_historica_cana").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__estimativa_cafe").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__serie_historica_cafe").mkdir(parents=True, exist_ok=True)
 
     meta = {
         "_dataset_id": ["conab.estimativa-graos"],
@@ -112,6 +114,42 @@ def main() -> int:
         }
     )
     write_table(lake_root, "serie_historica_cana", serie_cana)
+
+    estimativa_cafe = pa.table(
+        {
+            "ano_agricola": ["2025/26", "2025/26"],
+            "safra": ["UNICA", "UNICA"],
+            "uf": ["MG", "SP"],
+            "produto": ["CAFE", "CAFE"],
+            "id_produto": ["7498", "7498"],
+            "id_levantamento": ["001", "002"],
+            "dsc_levantamento": ["1º LEV", "2º LEV"],
+            "area_plantada_mil_ha": ["100", "120"],
+            "producao_mil_t": ["50", "60"],
+            "produtividade_mil_ha_mil_t": ["0.5", "0.5"],
+            "_dataset_id": ["conab.estimativa-cafe", "conab.estimativa-cafe"],
+            "_ingested_at": ["2026-06-25T12:00:00Z", "2026-06-25T12:00:00Z"],
+            "_source_file": [meta["_source_file"][0], meta["_source_file"][0]],
+        }
+    )
+    write_table(lake_root, "estimativa_cafe", estimativa_cafe)
+
+    serie_cafe = pa.table(
+        {
+            "ano_agricola": ["2020/21", "2021/22"],
+            "dsc_safra_previsao": ["UNICA", "UNICA"],
+            "uf": ["MG", "SP"],
+            "produto": ["CAFE", "CAFE"],
+            "id_produto": ["7498", "7498"],
+            "area_plantada_mil_ha": ["90", "95"],
+            "producao_mil_t": ["45", "48"],
+            "produtividade_mil_ha_mil_t": ["0.5", "0.5"],
+            "_dataset_id": ["conab.serie-historica-cafe", "conab.serie-historica-cafe"],
+            "_ingested_at": ["2026-06-25T12:00:00Z", "2026-06-25T12:00:00Z"],
+            "_source_file": [meta["_source_file"][0], meta["_source_file"][0]],
+        }
+    )
+    write_table(lake_root, "serie_historica_cafe", serie_cafe)
 
     print(f"seeded silver tables under {lake_root / 'silver' / 'conab'}")
     return 0

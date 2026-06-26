@@ -29,5 +29,7 @@ fetch "VendaBalcao.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arqu
 fetch "Frete.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Frete.txt"
 fetch "LevantamentoCana.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCana.txt"
 fetch "SerieHistoricaCana.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt"
+fetch "LevantamentoCafe.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCafe.txt"
+fetch "SerieHistoricaCafe.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCafe.txt"
 
 echo "saved samples under ${OUT}"

@@ -55,6 +55,30 @@
   cast(produtcao_atr_kg_t as varchar) as producao_atr_kg_t
 {% endmacro %}
 
+{% macro conab_estimativa_cafe_columns() %}
+  trim(produto) as produto,
+  trim(uf) as uf,
+  trim(ano_agricola) as safra,
+  trim(safra) as tipo_safra,
+  cast(id_produto as varchar) as id_produto,
+  cast(id_levantamento as varchar) as id_levantamento,
+  trim(dsc_levantamento) as levantamento,
+  cast(area_plantada_mil_ha as varchar) as area_plantada_mil_ha,
+  cast(producao_mil_t as varchar) as producao_mil_t,
+  cast(produtividade_mil_ha_mil_t as varchar) as produtividade_mil_ha_mil_t
+{% endmacro %}
+
+{% macro conab_serie_historica_cafe_columns() %}
+  trim(produto) as produto,
+  trim(uf) as uf,
+  trim(ano_agricola) as ano,
+  trim(dsc_safra_previsao) as safra_previsao,
+  cast(id_produto as varchar) as id_produto,
+  cast(area_plantada_mil_ha as varchar) as area_plantada_mil_ha,
+  cast(producao_mil_t as varchar) as producao_mil_t,
+  cast(produtividade_mil_ha_mil_t as varchar) as produtividade_mil_ha_mil_t
+{% endmacro %}
+
 {% macro conab_oferta_demanda_columns() %}
   trim(produto) as produto,
   trim(dsc_safra) as safra,
