@@ -1,0 +1,91 @@
+{
+  "expectations": [
+    {
+      "id": "954ae811-4154-4a51-97bb-97d6b62054b0",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "62bb3705-23da-43e9-ad39-4a4846342bda",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "CONAB crop column."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "43b1cd07-c892-417a-8089-65cfa8ac6496",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Federative unit code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "90d4efa2-6e29-4416-b5e4-93541e31c8a4",
+      "kwargs": {
+        "column": "ano_agricola"
+      },
+      "meta": {
+        "notes": "Agricultural year (maps to ano in staging)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "f12c9c82-ddeb-416e-a55d-b8d20ba8f3bb",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "c79fcede-9fa3-4d39-8f18-c05464da478c",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 UF must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "c7611e5f-57d4-45e3-91bf-e9ba9d32dcdd",
+      "kwargs": {
+        "column": "ano_agricola"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 year must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "64f6ee6c-a069-4cbe-bf7c-0d50d8ec4863",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Produ\u00e7\u00e3o Agr\u00edcola > S\u00e9rie Hist\u00f3rica Cana-de-A\u00e7\u00facar",
+    "dataset_id": "conab.serie-historica-cana",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.serie_historica_cana",
+  "notes": null
+}

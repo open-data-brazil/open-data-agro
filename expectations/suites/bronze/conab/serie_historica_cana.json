@@ -1,0 +1,48 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "CONAB crop column." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "Federative unit code." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "ano_agricola" },
+      "meta": { "notes": "Agricultural year (maps to ano in staging)." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "Grain key — product must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "Grain key — UF must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "ano_agricola" },
+      "meta": { "notes": "Grain key — year must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.serie-historica-cana",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Produção Agrícola > Série Histórica Cana-de-Açúcar"
+  },
+  "name": "bronze.conab.serie_historica_cana",
+  "id": "bronze-conab-serie-historica-cana-suite"
+}

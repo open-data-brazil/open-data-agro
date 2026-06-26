@@ -1,0 +1,91 @@
+{
+  "expectations": [
+    {
+      "id": "2522af25-a934-43f9-8a03-78d7d88b8021",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "9d84c206-40cb-4a78-80c4-b3932310f962",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "CONAB crop column (portal: produto)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "3c3f2bb9-a385-416d-a05e-d8b13fc00153",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Federative unit code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "682cb2ee-1152-4556-9cc9-a522bab4f693",
+      "kwargs": {
+        "column": "ano_agricola"
+      },
+      "meta": {
+        "notes": "Agricultural year (maps to safra in staging)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "ace85f58-8e4b-44f0-b839-6623ffdce73d",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "f46fe0f0-cd99-4f3b-ba08-40adb7d310df",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 UF must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "4f092972-39f2-4fad-8f08-bde1e08eb50d",
+      "kwargs": {
+        "column": "ano_agricola"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 season must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "0c31ee9d-84b3-48b2-b7f8-b3caec5189be",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Produ\u00e7\u00e3o Agr\u00edcola > Estimativa Cana-de-A\u00e7\u00facar",
+    "dataset_id": "conab.estimativa-cana",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.estimativa_cana",
+  "notes": null
+}

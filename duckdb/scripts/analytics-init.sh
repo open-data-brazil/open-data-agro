@@ -17,6 +17,8 @@ fi
 mkdir -p "$(dirname "$DUCKDB_PATH")" "$ROOT/duckdb/exports"
 mkdir -p "$LAKE_ABS/gold/mart_conab__estimativa_graos"
 mkdir -p "$LAKE_ABS/gold/mart_conab__serie_historica_graos"
+mkdir -p "$LAKE_ABS/gold/mart_conab__estimativa_cana"
+mkdir -p "$LAKE_ABS/gold/mart_conab__serie_historica_cana"
 mkdir -p "$LAKE_ABS/gold/mart_conab__oferta_demanda"
 mkdir -p "$LAKE_ABS/gold/mart_conab__precos_minimos"
 mkdir -p "$LAKE_ABS/gold/mart_conab__precos_semanal_uf"

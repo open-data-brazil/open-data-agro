@@ -35,6 +35,74 @@ models:
               - uf
               - safra
 
+  - name: mart_conab__estimativa_cana
+    description: |
+      Business mart — grain is produto + uf + safra + id_levantamento (sugarcane estimate by survey round).
+      Materialized to lake/gold/mart_conab__estimativa_cana/ as Parquet (local-first).
+    config:
+      meta:
+        dataset_id: conab.estimativa-cana
+        grain: produto, uf, safra, id_levantamento
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: safra
+        tests:
+          - not_null
+      - name: id_levantamento
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - uf
+              - safra
+              - id_levantamento
+
+  - name: mart_conab__serie_historica_cana
+    description: |
+      Business mart — grain is produto + uf + ano (sugarcane historical series).
+      Materialized to lake/gold/mart_conab__serie_historica_cana/ as Parquet (local-first).
+    config:
+      meta:
+        dataset_id: conab.serie-historica-cana
+        grain: produto, uf, ano
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: ano
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - uf
+              - ano
+
   - name: mart_conab__serie_historica_graos
     description: |
       Business mart — grain is produto + uf + ano (historical series).

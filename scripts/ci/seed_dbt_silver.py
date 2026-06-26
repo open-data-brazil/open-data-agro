@@ -23,6 +23,8 @@ def main() -> int:
     (lake_root / "gold").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__estimativa_graos").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__serie_historica_graos").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__estimativa_cana").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__serie_historica_cana").mkdir(parents=True, exist_ok=True)
 
     meta = {
         "_dataset_id": ["conab.estimativa-graos"],
@@ -65,6 +67,51 @@ def main() -> int:
         }
     )
     write_table(lake_root, "serie_historica_graos", serie)
+
+    estimativa_cana = pa.table(
+        {
+            "ano_agricola": ["2025/26", "2025/26"],
+            "dsc_safra_previsao": ["UNICA", "UNICA"],
+            "uf": ["SP", "MT"],
+            "produto": ["CANA DE ACUCAR", "CANA DE ACUCAR"],
+            "id_produto": ["4238", "4238"],
+            "dsc_levantamento": ["1º LEV", "2º LEV"],
+            "id_levantamento": ["1", "2"],
+            "area_plantada_mil_ha": ["100", "120"],
+            "producao_mil_t": ["1000", "1200"],
+            "producao_acucar_mil_t": ["50", "60"],
+            "producao_etanol_anidro_mil_l": ["100", "110"],
+            "producao_etanol_hidratado_mil_l": ["200", "220"],
+            "producao_etanol_total_mil_l": ["300", "330"],
+            "produtcao_atr_kg_t": ["140", "145"],
+            "_dataset_id": ["conab.estimativa-cana", "conab.estimativa-cana"],
+            "_ingested_at": ["2026-06-25T12:00:00Z", "2026-06-25T12:00:00Z"],
+            "_source_file": [meta["_source_file"][0], meta["_source_file"][0]],
+        }
+    )
+    write_table(lake_root, "estimativa_cana", estimativa_cana)
+
+    serie_cana = pa.table(
+        {
+            "ano_agricola": ["2020/21", "2021/22"],
+            "dsc_safra_previsao": ["UNICA", "UNICA"],
+            "uf": ["SP", "MT"],
+            "produto": ["CANA DE ACUCAR", "CANA DE ACUCAR"],
+            "id_produto": ["4238", "4238"],
+            "area_plantada_mil_ha": ["50", "55"],
+            "producao_mil_t": ["500", "550"],
+            "dsc_situacao_levantamento": ["FINAL", "FINAL"],
+            "producao_acucar_mil_t": ["25", "28"],
+            "producao_etanol_anidro_mil_l": ["80", "85"],
+            "producao_etanol_hidratado_mil_l": ["90", "95"],
+            "producao_etanol_total_mil_l": ["170", "180"],
+            "produtcao_atr_kg_t": ["140", "142"],
+            "_dataset_id": ["conab.serie-historica-cana", "conab.serie-historica-cana"],
+            "_ingested_at": ["2026-06-25T12:00:00Z", "2026-06-25T12:00:00Z"],
+            "_source_file": [meta["_source_file"][0], meta["_source_file"][0]],
+        }
+    )
+    write_table(lake_root, "serie_historica_cana", serie_cana)
 
     print(f"seeded silver tables under {lake_root / 'silver' / 'conab'}")
     return 0

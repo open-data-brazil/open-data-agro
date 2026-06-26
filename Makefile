@@ -84,7 +84,7 @@ dbt-deps:
 	cd dbt && dbt deps --profiles-dir .
 
 dbt-build: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__serie_historica_graos stg_conab__estimativa_graos+ mart_conab__serie_historica_graos'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__serie_historica_graos stg_conab__estimativa_graos+ mart_conab__serie_historica_graos stg_conab__estimativa_cana+ stg_conab__serie_historica_cana+ mart_conab__serie_historica_cana'
 
 migrate-install:
 	go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.2
@@ -267,6 +267,8 @@ conab-mvp:
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH)
 	$(MAKE) analytics-smoke DUCKDB_PATH=$(DUCKDB_PATH)
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_graos"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_estimativa_cana"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_cana"
 
 clean:
 	rm -rf $(BIN_DIR)

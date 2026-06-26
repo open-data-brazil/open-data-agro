@@ -23,6 +23,24 @@ sources:
           agencia: CONAB
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_graos"
 
+      - name: estimativa_cana
+        description: Estimativa cana-de-açúcar — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/estimativa_cana
+        meta:
+          dataset_id: conab.estimativa-cana
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Produção Agrícola
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/estimativa_cana"
+
+      - name: serie_historica_cana
+        description: Série histórica cana-de-açúcar — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_cana
+        meta:
+          dataset_id: conab.serie-historica-cana
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Produção Agrícola
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_cana"
+
       - name: oferta_demanda
         description: Oferta e demanda — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/oferta_demanda
         meta:
