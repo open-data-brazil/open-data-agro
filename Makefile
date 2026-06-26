@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp p1-collection-mvp collection-macro-mvp collection-full-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp p1-collection-mvp collection-macro-mvp collection-full-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -10,6 +10,7 @@ DATABASE_URL ?= postgresql://open_data_agro:open_data_agro@localhost:$(POSTGRES_
 MIGRATIONS_PATH := infra/postgres/migrations
 MIGRATE ?= migrate
 BENCHMARK_PROFILE ?= scripts/benchmark/profiles/fast10.json
+BENCHMARK_STRESS_PROFILE ?= scripts/benchmark/profiles/fast10-stress.json
 MERCADO_DBT_SELECT := stg_conab__oferta_demanda+ stg_conab__precos_semanal_uf+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_uf+ stg_conab__precos_mensal_municipio+ stg_conab__precos_minimos+ stg_conab__prohort_diario+ stg_conab__prohort_mensal+
 CI_COD_IBGE_LAKE ?= /tmp/cod-ibge-ci-lake
 COD_IBGE_DBT_SELECT := stg_conab__custo_producao+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_municipio+ stg_conab__frete+ stg_conab__armazenagem+ stg_conab__estoques_publicos+ stg_conab__alimenta_brasil_propostas+ stg_conab__prohort_diario+ stg_conab__prohort_mensal+ stg_ibge__pam_area_quantidade+ stg_ibge__pam_rendimento_valor+ stg_ibge__pam_estabelecimentos+
@@ -129,6 +130,14 @@ benchmark-ingestor-fast10: build
 benchmark-ingestor-fast10-clean: build
 	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
 	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --profile $(BENCHMARK_PROFILE) --clean
+
+benchmark-ingestor-fast10-stress: build
+	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
+	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --profile $(BENCHMARK_STRESS_PROFILE)
+
+benchmark-ingestor-fast10-stress-clean: build
+	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
+	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --profile $(BENCHMARK_STRESS_PROFILE) --clean
 
 lint:
 	golangci-lint run ./...

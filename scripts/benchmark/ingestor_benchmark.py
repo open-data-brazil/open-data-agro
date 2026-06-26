@@ -4,8 +4,10 @@
 Usage:
   python3 scripts/benchmark/ingestor_benchmark.py --clean --all
   python3 scripts/benchmark/ingestor_benchmark.py --profile scripts/benchmark/profiles/fast10.json
+  python3 scripts/benchmark/ingestor_benchmark.py --profile scripts/benchmark/profiles/fast10-stress.json
   python3 scripts/benchmark/ingestor_benchmark.py --datasets bcb.sgs-ipca,cepea.soja-paranagua
   make benchmark-ingestor-fast10-clean
+  make benchmark-ingestor-fast10-stress
 
 Requires: postgres up, migrations applied, .env with DATABASE_URL.
 """
