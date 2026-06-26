@@ -165,6 +165,16 @@ Monthly export FOB (USD) and quantity (kg) for soja, milho, trigo, and carne bov
 
 Toll plaza locations on federal concessioned highways (`rodovia`, `uf`, `km_m`, coordinates). Complements CONAB `conab.frete` (Phase 13) for logistics context — no tariff series in this dataset.
 
+### MAPA — Dados Abertos / ZARC (Phase 23)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `mapa.zarc-tabua-risco` | ZARC — Tábua de Risco Climático | **P0 — implemented** |
+
+**Fonte oficial:** [MAPA — Portal de Dados Abertos](https://dados.agricultura.gov.br/dataset/tabua-de-risco-zoneamento-agricola-de-risco-climatico) · CKAN package `tabua-de-risco-zoneamento-agricola-de-risco-climatico` (latest annual safra CSV)
+
+Municipal planting-window climate risk (`dec1`–`dec36`) by culture, soil cycle, and management type. Unique vs CONAB/IBGE supply series — complements PAM and estimativa with policy-driven planting constraints for soja, milho, trigo, and other cultures.
+
 ---
 
 ## Rules

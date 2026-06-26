@@ -86,6 +86,16 @@
 
 ---
 
+## Phase 21–23 — Brazil additional official sources
+
+| Phase | Agency | Status | MVP target |
+|-------|--------|--------|------------|
+| 21 | MDIC Comex Stat | **Done** | `make mdic-comex-mvp`, `make ci-mdic-comex-mvp` |
+| 22 | ANTT pedágios (logística) | **Done** | `make dnit-antt-logistica-mvp`, `make ci-dnit-antt-logistica-mvp` |
+| 23 | MAPA ZARC tábua de risco | **Done** | `make mapa-dados-mvp`, `make ci-mapa-dados-mvp` |
+
+---
+
 ## CI jobs (GitHub Actions)
 
 | Job | Purpose | Local mirror |

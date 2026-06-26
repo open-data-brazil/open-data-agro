@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: mart_mapa__zarc_tabua_risco
+    description: |
+      MAPA ZARC climate risk planting windows by municipality, culture, and soil cycle.
+      Grain is geocodigo + cod_cultura + cod_ciclo + cod_solo + safra_ini + safra_fim + cod_outros_manejos.
+    config:
+      meta:
+        dataset_id: mapa.zarc-tabua-risco
+        grain: geocodigo, cod_cultura, cod_ciclo, cod_solo, safra_ini, safra_fim, cod_outros_manejos
+    columns:
+      - name: nome_cultura
+        tests:
+          - not_null
+      - name: geocodigo
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: municipio
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - geocodigo
+              - cod_cultura
+              - cod_ciclo
+              - cod_solo
+              - safra_ini
+              - safra_fim
+              - cod_outros_manejos

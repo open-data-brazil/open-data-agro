@@ -49,6 +49,7 @@ type RegistryEntry struct {
 	ComexNCMs    []string      `json:"comexNcms,omitempty" yaml:"comex_ncms,omitempty"`
 	CKANPackageID string       `json:"ckanPackageId,omitempty" yaml:"ckan_package_id,omitempty"`
 	CKANResourceFormat string  `json:"ckanResourceFormat,omitempty" yaml:"ckan_resource_format,omitempty"`
+	CKANResourceNameContains string `json:"ckanResourceNameContains,omitempty" yaml:"ckan_resource_name_contains,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

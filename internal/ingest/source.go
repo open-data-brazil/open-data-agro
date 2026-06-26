@@ -13,6 +13,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/conab"
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 	"github.com/open-data-brazil/open-data-agro/internal/inmet"
+	"github.com/open-data-brazil/open-data-agro/internal/mapa"
 	"github.com/open-data-brazil/open-data-agro/internal/mdic"
 )
 
@@ -62,13 +63,15 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		return cepea.ResolveURL(entry)
 	case "mdic":
 		return mdic.ResolveURL(entry)
+	case "mapa":
+		return mapa.ResolveURL(entry)
 	default:
 		return "", fmt.Errorf("unsupported agency %q for dataset %s", agency, entry.DatasetID)
 	}
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, opts SourceOptions) (*SourceDownload, error) {
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, opts SourceOptions) (*SourceDownload, error) {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
 		return nil, err
@@ -167,6 +170,18 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 		}, nil
 	case "antt":
 		result, err := anttClient.Download(ctx, sourceURL)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          result.Body,
+			ContentType:   result.ContentType,
+			LastModified:  result.LastModified,
+			ContentLength: result.ContentLength,
+			SourceURL:     sourceURL,
+		}, nil
+	case "mapa":
+		result, err := mapaClient.Download(ctx, sourceURL)
 		if err != nil {
 			return nil, err
 		}

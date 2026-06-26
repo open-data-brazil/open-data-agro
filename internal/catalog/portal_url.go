@@ -37,8 +37,14 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "antt.") {
 		return ANTTDadosAbertosPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "mapa.") {
+		return MAPADadosAbertosPortalURL
+	}
 	return ""
 }
+
+// MAPADadosAbertosPortalURL is the MAPA open data portal URL.
+const MAPADadosAbertosPortalURL = "https://dados.agricultura.gov.br/"
 
 // ANTTDadosAbertosPortalURL is the ANTT open data portal URL.
 const ANTTDadosAbertosPortalURL = "https://dados.antt.gov.br/"

@@ -1,0 +1,49 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "ZARC risk table must contain rows." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "Nome_cultura" },
+      "meta": { "notes": "Culture name for join with IBGE PAM and CONAB supply." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "geocodigo" },
+      "meta": { "notes": "IBGE municipality code for geographic joins." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "UF" },
+      "meta": { "notes": "State code for geographic joins." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "Nome_cultura" },
+      "meta": { "notes": "Culture required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "geocodigo" },
+      "meta": { "notes": "Municipality code required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": ["geocodigo", "Cod_Cultura", "Cod_Ciclo", "Cod_Solo", "SafraIni", "SafraFin", "Cod_Outros_Manejos"]
+      },
+      "meta": { "notes": "One row per municipality culture cycle grain." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "mapa.zarc-tabua-risco",
+    "fonte_oficial": "https://dados.agricultura.gov.br/dataset/tabua-de-risco-zoneamento-agricola-de-risco-climatico",
+    "agencia": "MAPA"
+  },
+  "name": "bronze.mapa.zarc_tabua_risco",
+  "id": "bronze-mapa-zarc-tabua-risco-suite"
+}
