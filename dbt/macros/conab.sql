@@ -79,6 +79,26 @@
   cast(produtividade_mil_ha_mil_t as varchar) as produtividade_mil_ha_mil_t
 {% endmacro %}
 
+{% macro conab_custo_producao_columns() %}
+  trim(empreendimento) as empreendimento,
+  cast(ano as varchar) as ano,
+  cast(mes as varchar) as mes,
+  cast(ano_mes as varchar) as ano_mes,
+  trim(produto) as produto,
+  cast(id_produto as varchar) as id_produto,
+  trim(safra) as safra,
+  trim(uf) as uf,
+  trim(municipio) as municipio,
+  lpad(trim(cod_ibge), 7, '0') as cod_ibge,
+  trim(unidade_comercializacao) as unidade_comercializacao,
+  cast(vlr_custo_variavel_ha as varchar) as vlr_custo_variavel_ha,
+  cast(vlr_custo_variavel_unidade as varchar) as vlr_custo_variavel_unidade,
+  cast(vlr_custo_fixo_ha as varchar) as vlr_custo_fixo_ha,
+  cast(vlr_custo_fixo_unidade as varchar) as vlr_custo_fixo_unidade,
+  cast(vlr_renda_fator_ha as varchar) as vlr_renda_fator_ha,
+  cast(vlr_renda_fator_unidade as varchar) as vlr_renda_fator_unidade
+{% endmacro %}
+
 {% macro conab_oferta_demanda_columns() %}
   trim(produto) as produto,
   trim(dsc_safra) as safra,

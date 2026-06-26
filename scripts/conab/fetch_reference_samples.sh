@@ -31,5 +31,6 @@ fetch "LevantamentoCana.txt" "https://portaldeinformacoes.conab.gov.br/downloads
 fetch "SerieHistoricaCana.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt"
 fetch "LevantamentoCafe.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCafe.txt"
 fetch "SerieHistoricaCafe.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCafe.txt"
+fetch "CustoProducao.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/CustoProducao.txt"
 
 echo "saved samples under ${OUT}"

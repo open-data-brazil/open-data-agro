@@ -59,6 +59,15 @@ sources:
           conab_section: Produção Agrícola
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_cafe"
 
+      - name: custo_producao
+        description: Custo de produção — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/custo_producao
+        meta:
+          dataset_id: conab.custo-producao
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Produção Agrícola
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/custo_producao"
+
       - name: oferta_demanda
         description: Oferta e demanda — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/oferta_demanda
         meta:

@@ -28,6 +28,7 @@ CONAB_IBGE_COLUMNS: dict[str, list[str]] = {
         "cod_ibge_municipio_ceasa",
         "cod_ibge_municipio_origem",
     ],
+    "mart_conab__custo_producao": ["cod_ibge"],
 }
 
 IBGE_MUNICIPIOS_MART = "mart_ibge__localidades_municipios"

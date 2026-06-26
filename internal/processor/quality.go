@@ -131,6 +131,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_conab_estimativa_cafe", true
 	case "conab.serie-historica-cafe":
 		return "bronze_conab_serie_historica_cafe", true
+	case "conab.custo-producao":
+		return "bronze_conab_custo_producao", true
 	case "conab.oferta-demanda":
 		return "bronze_conab_oferta_demanda", true
 	case "conab.precos-minimos":

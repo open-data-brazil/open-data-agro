@@ -31,7 +31,7 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 | `conab.serie-historica-cana` | Série Histórica Cana-de-Açúcar | **P1 — implemented** |
 | `conab.estimativa-cafe` | Estimativa Café | **P1 — implemented** |
 | `conab.serie-historica-cafe` | Série Histórica Café | **P1 — implemented** |
-| `conab.custo-producao` | Custo de Produção | Planned |
+| `conab.custo-producao` | Custo de Produção | **P1 — implemented** |
 
 ### Mercado (Phase 11)
 

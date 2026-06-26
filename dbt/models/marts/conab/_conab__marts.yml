@@ -171,6 +171,48 @@ models:
               - uf
               - ano
 
+  - name: mart_conab__custo_producao
+    description: |
+      Business mart — CONAB production cost survey by municipality and reference month.
+      Grain is empreendimento + produto + cod_ibge + ano + mes + safra.
+    config:
+      meta:
+        dataset_id: conab.custo-producao
+        grain: empreendimento, produto, cod_ibge, ano, mes, safra
+        conab_section: Produção Agrícola
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: cod_ibge
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: ano
+        tests:
+          - not_null
+      - name: mes
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - empreendimento
+              - produto
+              - cod_ibge
+              - ano
+              - mes
+              - safra
+
   - name: mart_conab__serie_historica_graos
     description: |
       Business mart — grain is produto + uf + ano (historical series).

@@ -84,7 +84,7 @@ dbt-deps:
 	cd dbt && dbt deps --profiles-dir .
 
 dbt-build: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__serie_historica_graos stg_conab__estimativa_graos+ mart_conab__serie_historica_graos stg_conab__estimativa_cana+ stg_conab__serie_historica_cana+ mart_conab__serie_historica_cana stg_conab__estimativa_cafe+ stg_conab__serie_historica_cafe+ mart_conab__serie_historica_cafe'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__serie_historica_graos stg_conab__estimativa_graos+ mart_conab__serie_historica_graos stg_conab__estimativa_cana+ stg_conab__serie_historica_cana+ mart_conab__serie_historica_cana stg_conab__estimativa_cafe+ stg_conab__serie_historica_cafe+ mart_conab__serie_historica_cafe stg_conab__custo_producao+'
 
 migrate-install:
 	go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.2
@@ -271,6 +271,7 @@ conab-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_cana"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_estimativa_cafe"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_cafe"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_custo_producao"
 
 clean:
 	rm -rf $(BIN_DIR)

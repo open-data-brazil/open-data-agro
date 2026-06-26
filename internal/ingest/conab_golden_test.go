@@ -27,6 +27,25 @@ func TestLevantamentoGraosGoldenVector(t *testing.T) {
 	}
 }
 
+func TestCustoProducaoGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readCONABTestdata(t, "CustoProducao.sample.txt")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("conab.custo-producao"),
+		Format:    catalog.FormatTXT,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount < 4 {
+		t.Fatalf("rowCount: got %d want >= 4", rowCount)
+	}
+}
+
 func TestLevantamentoCafeGoldenVector(t *testing.T) {
 	t.Parallel()
 

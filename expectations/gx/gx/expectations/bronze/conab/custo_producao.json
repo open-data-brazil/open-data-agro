@@ -1,0 +1,113 @@
+{
+  "expectations": [
+    {
+      "id": "94a07aa5-47d6-4a95-ae6c-8a8934b430f9",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "cadb92f7-1280-44b1-bcae-ed6cb2adda25",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "CONAB crop column."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "7ac77ccc-3cb9-4e3a-a31a-ae327d76b737",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Federative unit code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "e4ee04f6-992d-4192-a9af-c0cf69a195b0",
+      "kwargs": {
+        "column": "cod_ibge"
+      },
+      "meta": {
+        "notes": "IBGE municipality code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "71ec1d90-7d38-4027-813c-f4bd2ec89053",
+      "kwargs": {
+        "column": "ano_mes"
+      },
+      "meta": {
+        "notes": "Reference year-month (YYYYMM)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "71ac6df4-89b5-4765-af4f-349e5b2b3176",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "fe62ea26-9861-4a6d-8788-ea2d698be1e9",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 UF must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "0b844b33-134c-42ef-aa76-1dcdbf6b2371",
+      "kwargs": {
+        "column": "cod_ibge"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 municipality code must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "fa251c0c-b038-42be-a481-f92d485f2941",
+      "kwargs": {
+        "column": "ano_mes"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 reference period must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "fa798c62-2f1f-4f06-9c72-57980fc926bb",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Produ\u00e7\u00e3o Agr\u00edcola > Custo de Produ\u00e7\u00e3o",
+    "dataset_id": "conab.custo-producao",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.custo_producao",
+  "notes": null
+}

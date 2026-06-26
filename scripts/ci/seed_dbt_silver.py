@@ -27,6 +27,7 @@ def main() -> int:
     (lake_root / "gold" / "mart_conab__serie_historica_cana").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__estimativa_cafe").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__serie_historica_cafe").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__custo_producao").mkdir(parents=True, exist_ok=True)
 
     meta = {
         "_dataset_id": ["conab.estimativa-graos"],
@@ -150,6 +151,32 @@ def main() -> int:
         }
     )
     write_table(lake_root, "serie_historica_cafe", serie_cafe)
+
+    custo = pa.table(
+        {
+            "empreendimento": ["AGRICULTURA EMPRESARIAL", "AGRICULTURA FAMILIAR"],
+            "ano": ["2024", "2024"],
+            "mes": ["1", "3"],
+            "ano_mes": ["202401", "202403"],
+            "produto": ["CAFE", "SOJA"],
+            "id_produto": ["7498", "1"],
+            "safra": ["TODAS", "TODAS"],
+            "uf": ["MG", "MT"],
+            "municipio": ["VARGINHA-MG", "SORRISO-MT"],
+            "cod_ibge": ["3170701", "5107925"],
+            "unidade_comercializacao": ["60 kg", "60 kg"],
+            "vlr_custo_variavel_ha": ["10000", "8000"],
+            "vlr_custo_variavel_unidade": ["300", "250"],
+            "vlr_custo_fixo_ha": ["1000", "900"],
+            "vlr_custo_fixo_unidade": ["30", "28"],
+            "vlr_renda_fator_ha": ["500", "400"],
+            "vlr_renda_fator_unidade": ["15", "12"],
+            "_dataset_id": ["conab.custo-producao", "conab.custo-producao"],
+            "_ingested_at": ["2026-06-25T12:00:00Z", "2026-06-25T12:00:00Z"],
+            "_source_file": [meta["_source_file"][0], meta["_source_file"][0]],
+        }
+    )
+    write_table(lake_root, "custo_producao", custo)
 
     print(f"seeded silver tables under {lake_root / 'silver' / 'conab'}")
     return 0
