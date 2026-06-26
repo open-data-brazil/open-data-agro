@@ -133,6 +133,7 @@ conab-mercado-full-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS precos_min FROM analytics.conab_precos_minimos"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS prohort_diario FROM analytics.conab_prohort_diario"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS prohort_mensal FROM analytics.conab_prohort_mensal"
+	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 conab-mercado-prohort-mvp:
 	go test ./internal/ingest/ -run 'Prohort'
@@ -143,6 +144,7 @@ conab-mercado-prohort-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mensal_rows FROM analytics.conab_prohort_mensal"
 	duckdb $(DUCKDB_PATH) -c "SELECT produto, municipio_ceasa, cod_ibge_municipio, preco_diario FROM analytics.conab_prohort_diario WHERE cod_ibge_municipio = '3550308' LIMIT 5"
 	duckdb $(DUCKDB_PATH) -c "SELECT produto, municipio_ceasa, cod_ibge_municipio_ceasa, qtd_comercializada_kg FROM analytics.conab_prohort_mensal WHERE cod_ibge_municipio_ceasa = '3550308' LIMIT 5"
+	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 conab-mercado-precos-minimos-mvp:
 	go test ./internal/ingest/ -run 'PrecosMinimos'
@@ -169,6 +171,7 @@ conab-mercado-precos-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mensal_uf_rows FROM analytics.conab_precos_mensal_uf"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mensal_mun_rows FROM analytics.conab_precos_mensal_municipio"
 	duckdb $(DUCKDB_PATH) -c "SELECT produto, municipio, cod_ibge, mes, valor_produto_kg FROM analytics.conab_precos_mensal_municipio WHERE upper(trim(produto)) = 'SOJA' AND cod_ibge = '5107925' ORDER BY ano, mes LIMIT 5"
+	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 dbt-build-abastecimento: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__estoques_publicos+ stg_conab__operacoes_comercializacao+ stg_conab__vendas_balcao+ stg_anp__combustiveis_precos_medios_municipios+ stg_anp__combustiveis_precos_postos+'

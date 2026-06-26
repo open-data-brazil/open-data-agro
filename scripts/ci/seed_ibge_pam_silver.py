@@ -8,7 +8,6 @@ import sys
 from pathlib import Path
 
 import pyarrow as pa
-import pyarrow.parquet as pq
 from deltalake import write_deltalake
 
 
@@ -18,35 +17,11 @@ def write_table(root: Path, agency: str, table: str, data: pa.Table) -> None:
     write_deltalake(str(path), data, mode="overwrite")
 
 
-def write_reference_municipios(lake_root: Path) -> None:
-    """Minimal municipios gold mart for validate_codigo_ibge in ibge-pam-mvp."""
-    mart_dir = lake_root / "gold" / "mart_ibge__localidades_municipios"
-    mart_dir.mkdir(parents=True, exist_ok=True)
-    table = pa.table(
-        {
-            "codigo_ibge": ["5100102", "5107925"],
-            "nome": ["Acorizal", "Sorriso"],
-            "sigla_uf": ["MT", "MT"],
-            "codigo_uf": ["51", "51"],
-            "codigo_regiao": ["5", "5"],
-            "nome_regiao": ["Centro-Oeste", "Centro-Oeste"],
-            "capturado_em": ["2026-06-25T12:00:00Z", "2026-06-25T12:00:00Z"],
-            "fonte_oficial": [
-                "https://servicodados.ibge.gov.br/api/docs/localidades",
-                "https://servicodados.ibge.gov.br/api/docs/localidades",
-            ],
-            "_dataset_id": [
-                "ibge.localidades-municipios",
-                "ibge.localidades-municipios",
-            ],
-            "_source_file": ["seed", "seed"],
-        }
-    )
-    pq.write_table(table, mart_dir / "mart.parquet")
-
-
 def main() -> int:
     lake_root = Path(os.environ.get("LAKE_LOCAL_ROOT", "/tmp/open-data-agro-lake"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from reference_municipios import write_reference_municipios  # noqa: PLC0415
+
     lake_root.mkdir(parents=True, exist_ok=True)
     (lake_root / "gold").mkdir(parents=True, exist_ok=True)
     for mart in [
