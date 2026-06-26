@@ -1,0 +1,157 @@
+version: 2
+
+models:
+  - name: mart_bcb__sgs_ipca
+    description: |
+      BCB SGS IPCA monthly variation (code 433).
+      Grain is sgs_codigo + data.
+    config:
+      meta:
+        dataset_id: bcb.sgs-ipca
+        grain: sgs_codigo, data
+    columns:
+      - name: sgs_codigo
+        tests:
+          - not_null
+      - name: data
+        tests:
+          - not_null
+      - name: valor
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - sgs_codigo
+              - data
+
+  - name: mart_bcb__sgs_ipca_12m
+    description: |
+      BCB SGS IPCA 12-month accumulated variation (code 13522).
+      Grain is sgs_codigo + data.
+    config:
+      meta:
+        dataset_id: bcb.sgs-ipca-12m
+        grain: sgs_codigo, data
+    columns:
+      - name: sgs_codigo
+        tests:
+          - not_null
+      - name: data
+        tests:
+          - not_null
+      - name: valor
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - sgs_codigo
+              - data
+
+  - name: mart_bcb__sgs_igpm
+    description: |
+      BCB SGS IGP-M monthly variation (code 189).
+      Grain is sgs_codigo + data.
+    config:
+      meta:
+        dataset_id: bcb.sgs-igpm
+        grain: sgs_codigo, data
+    columns:
+      - name: sgs_codigo
+        tests:
+          - not_null
+      - name: data
+        tests:
+          - not_null
+      - name: valor
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - sgs_codigo
+              - data
+
+  - name: mart_bcb__sgs_ptax_usd_venda
+    description: |
+      BCB SGS PTAX USD sell rate (code 1).
+      Grain is sgs_codigo + data.
+    config:
+      meta:
+        dataset_id: bcb.sgs-ptax-usd-venda
+        grain: sgs_codigo, data
+    columns:
+      - name: sgs_codigo
+        tests:
+          - not_null
+      - name: data
+        tests:
+          - not_null
+      - name: valor
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - sgs_codigo
+              - data
+
+  - name: mart_bcb__sgs_ptax_usd_compra
+    description: |
+      BCB SGS PTAX USD buy rate (code 10813).
+      Grain is sgs_codigo + data.
+    config:
+      meta:
+        dataset_id: bcb.sgs-ptax-usd-compra
+        grain: sgs_codigo, data
+    columns:
+      - name: sgs_codigo
+        tests:
+          - not_null
+      - name: data
+        tests:
+          - not_null
+      - name: valor
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - sgs_codigo
+              - data

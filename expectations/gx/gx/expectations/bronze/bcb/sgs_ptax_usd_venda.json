@@ -1,0 +1,64 @@
+{
+  "expectations": [
+    {
+      "id": "3e4e6dba-7cee-4d28-9d68-9a9d407b090a",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "PTAX sell series must contain observations."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "cff5754c-5e76-47fe-b741-8ab240ba142f",
+      "kwargs": {
+        "column": "sgs_codigo",
+        "value_set": [
+          "1"
+        ]
+      },
+      "meta": {
+        "notes": "PTAX USD sell series code."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "688c985b-51cf-450e-a351-ec4cf4d3910d",
+      "kwargs": {
+        "column": "data",
+        "regex": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "meta": {
+        "notes": "Canonical ISO date."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_match_regex"
+    },
+    {
+      "id": "4676310d-965c-4edd-a4e8-b361ec7fdd3f",
+      "kwargs": {
+        "column_list": [
+          "sgs_codigo",
+          "data"
+        ]
+      },
+      "meta": {
+        "notes": "No duplicate observations per series/date."
+      },
+      "severity": "critical",
+      "type": "expect_compound_columns_to_be_unique"
+    }
+  ],
+  "id": "f7a8edf9-0cb3-41b3-b06f-9192aff3479e",
+  "meta": {
+    "agencia": "BCB",
+    "dataset_id": "bcb.sgs-ptax-usd-venda",
+    "fonte_oficial": "https://dadosabertos.bcb.gov.br/",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.bcb.sgs_ptax_usd_venda",
+  "notes": null
+}

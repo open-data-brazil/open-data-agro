@@ -45,6 +45,11 @@ mkdir -p "$LAKE_ABS/gold/mart_ibge__localidades_ufs"
 mkdir -p "$LAKE_ABS/gold/mart_ibge__localidades_regioes"
 mkdir -p "$LAKE_ABS/gold/mart_ibge__localidades_mesorregioes"
 mkdir -p "$LAKE_ABS/gold/mart_ibge__localidades_microrregioes"
+mkdir -p "$LAKE_ABS/gold/mart_bcb__sgs_ipca"
+mkdir -p "$LAKE_ABS/gold/mart_bcb__sgs_ipca_12m"
+mkdir -p "$LAKE_ABS/gold/mart_bcb__sgs_igpm"
+mkdir -p "$LAKE_ABS/gold/mart_bcb__sgs_ptax_usd_venda"
+mkdir -p "$LAKE_ABS/gold/mart_bcb__sgs_ptax_usd_compra"
 
 "$DUCKDB_BIN" "$DUCKDB_PATH" -c "CREATE SCHEMA IF NOT EXISTS analytics;"
 

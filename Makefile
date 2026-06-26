@@ -249,13 +249,16 @@ ibge-pam-mvp:
 inmet-clima-mvp:
 	go test ./internal/inmet/... ./internal/ingest/ -run 'INMET|FlattenEstacoes|BDMEP|Missing'
 
-dbt-build-bcb-sgs:
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_bcb__sgs_ipca+ stg_bcb__sgs_ptax_usd_venda+'
+dbt-build-bcb-sgs: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_bcb__sgs_ipca+ stg_bcb__sgs_ipca_12m+ stg_bcb__sgs_igpm+ stg_bcb__sgs_ptax_usd_venda+ stg_bcb__sgs_ptax_usd_compra+'
 
 bcb-sgs-mvp:
 	go test ./internal/bcb/... ./internal/ingest/ -run 'BCB|SGS|FlattenSGS'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_bcb_sgs_silver.py
 	$(MAKE) dbt-build-bcb-sgs LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH)
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.bcb_sgs_ipca"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.bcb_sgs_ptax_usd_venda"
 
 cepea-indicadores-mvp:
 	go test ./internal/cepea/... ./internal/ingest/ -run 'CEPA|Cepea|FlattenIndicador|ParseIndicator'

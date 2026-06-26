@@ -1,0 +1,97 @@
+{
+  "expectations": [
+    {
+      "id": "122e8e53-6adf-4363-8ccc-d2bba1f816d3",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "IPCA series must contain observations."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "787f3a5b-b460-4043-9db0-5b22ae3d9fa8",
+      "kwargs": {
+        "column": "sgs_codigo"
+      },
+      "meta": {
+        "notes": "SGS series code for traceability."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "6fbe8acd-dcb4-48e9-95f7-21c5b2bef49c",
+      "kwargs": {
+        "column": "sgs_codigo",
+        "value_set": [
+          "433"
+        ]
+      },
+      "meta": {
+        "notes": "IPCA monthly variation series code."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "0c9e3d03-72f9-45b7-b254-efd873f5bb0c",
+      "kwargs": {
+        "column": "data"
+      },
+      "meta": {
+        "notes": "Observation date required."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "586ebe61-27b7-4a0c-9fab-024475d6cf31",
+      "kwargs": {
+        "column": "data",
+        "regex": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "meta": {
+        "notes": "Canonical ISO date."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_match_regex"
+    },
+    {
+      "id": "52767f93-0279-414f-9339-5fd0b14faf49",
+      "kwargs": {
+        "column": "valor"
+      },
+      "meta": {
+        "notes": "Numeric observation value."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "62dcd157-4127-4535-8b9f-1f2c67665a7e",
+      "kwargs": {
+        "column_list": [
+          "sgs_codigo",
+          "data"
+        ]
+      },
+      "meta": {
+        "notes": "No duplicate observations per series/date."
+      },
+      "severity": "critical",
+      "type": "expect_compound_columns_to_be_unique"
+    }
+  ],
+  "id": "db7cd188-c02b-4983-bcd8-194421757f7a",
+  "meta": {
+    "agencia": "BCB",
+    "dataset_id": "bcb.sgs-ipca",
+    "fonte_oficial": "https://dadosabertos.bcb.gov.br/",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.bcb.sgs_ipca",
+  "notes": null
+}

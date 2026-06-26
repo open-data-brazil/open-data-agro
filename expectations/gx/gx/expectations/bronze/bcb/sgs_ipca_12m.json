@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "id": "4da32cec-e317-4448-9128-b04b7afcfe5a",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "IPCA 12m series must contain observations."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "0a5691c4-2324-4a3a-acf5-a571ff383ea7",
+      "kwargs": {
+        "column": "sgs_codigo",
+        "value_set": [
+          "13522"
+        ]
+      },
+      "meta": {
+        "notes": "IPCA 12-month accumulated series code."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    }
+  ],
+  "id": "58fd16d7-d6b0-48ba-a910-0b9c0ac278a6",
+  "meta": {
+    "agencia": "BCB",
+    "dataset_id": "bcb.sgs-ipca-12m",
+    "fonte_oficial": "https://dadosabertos.bcb.gov.br/",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.bcb.sgs_ipca_12m",
+  "notes": null
+}
