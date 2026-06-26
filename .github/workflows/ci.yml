@@ -141,6 +141,9 @@ jobs:
           LAKE_LOCAL_ROOT: /tmp/cod-ibge-ci-lake
         run: make ci-validate-codigo-ibge CI_COD_IBGE_LAKE=/tmp/cod-ibge-ci-lake
 
+      - name: P1 collection sprint offline pipeline
+        run: make ci-p1-collection-mvp
+
   quality:
     runs-on: ubuntu-latest
     steps:

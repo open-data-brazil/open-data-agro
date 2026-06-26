@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CONAB Abastecimento + ANP combustíveis (Phase 12 MVP):** `abastecimento.yaml` (3 datasets), `anp/combustiveis.yaml` (2 datasets), full pipeline for all five datasets including operações and vendas balcão, `make conab-abastecimento-mvp`
 - **ANP combustíveis standalone (Phase 12 P2):** `make anp-mvp` for LPC médios/postos only — `scripts/ci/seed_anp_silver.py`, `dbt-build-anp`, DuckDB views `analytics.anp_combustiveis_*`
 - **P1 collection sprint (Waves 0–2):** `make p1-collection-mvp` — IBGE localidades (UF/região/meso/micro) + CONAB preços municipais + frete/capacidade with `validate-codigo-ibge`
+- **CI P1 collection (sprint Waves 0–2):** `make ci-p1-collection-mvp` in GitHub Actions `dbt` job — mirrors offline collection pipeline with isolated `/tmp` lake
 - **Macro collection (Phases 17–19):** `make collection-macro-mvp` — INMET climate + BCB SGS + CEPEA indicators in one offline lake with DuckDB analytics smoke
 - **Full collection sprint exit:** `make collection-full-mvp` — runs `p1-collection-mvp`, `collection-macro-mvp`, `ibge-pam-mvp`, and `anp-mvp` end-to-end
 - **CONAB Armazenamento e Logística (Phase 13 MVP):** `armazenamento-logistica.yaml` (3 datasets), legacy `.xls` ingest, full pipeline for `conab.armazenagem`, `make conab-armazenamento-mvp`
