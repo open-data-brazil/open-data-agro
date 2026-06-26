@@ -84,6 +84,9 @@
 
 **Cross-cutting validation:** `make validate-codigo-ibge`, `make ci-validate-codigo-ibge`
 
+**Refresh schedule:** [REFRESH-POLICY.md](REFRESH-POLICY.md)  
+**Historical backfill:** [DATA-HISTORY-RANGES.md](DATA-HISTORY-RANGES.md)
+
 ---
 
 ## Phase 21–23 — Brazil additional official sources
@@ -99,6 +102,18 @@
 | 27 | World Bank Pink Sheet monthly | **Done** | `make worldbank-commodities-mvp`, `make ci-worldbank-commodities-mvp` |
 | 28 | NOAA climate global indices (ONI + global temp) | **Done** | `make noaa-climate-mvp`, `make ci-noaa-climate-mvp` |
 | 29 | Unified PostgreSQL (gold → analytics schema) | **Done** | `make unified-db-sync`, `make ci-unified-db-sync` |
+
+---
+
+## Phase 33 — Collection hardening
+
+| Task | Status | Verify |
+|------|--------|--------|
+| Historical ranges doc | **Done** | [DATA-HISTORY-RANGES.md](DATA-HISTORY-RANGES.md) |
+| Refresh policy | **Done** | [REFRESH-POLICY.md](REFRESH-POLICY.md) |
+| CONAB portal audit | **Done** | `.local/phases/33-collection-hardening/CONAB-PORTAL-AUDIT.md` |
+| CI gate | **Done** | `make ci-collection-hardening-mvp` |
+| Local gate | **Done** | `make collection-hardening-mvp` |
 
 ---
 
@@ -126,7 +141,14 @@
 
 ## Next (post-collection)
 
-**Phase 20 scaffold:** [.local/phases/20-analytics-crossing/README.md](../.local/phases/20-analytics-crossing/README.md) — analytics crossing (feature joins); implementation **not started**.
+**Ingestor expansion (`.local/`):**
+
+- Phase 32 — source discovery ✅ — [SOURCE-DISCOVERY-CATALOG.md](../.local/SOURCE-DISCOVERY-CATALOG.md) (local, gitignored)
+- Phase 33 — collection hardening ✅ — [DATA-HISTORY-RANGES.md](DATA-HISTORY-RANGES.md) · `make ci-collection-hardening-mvp`
+- Phases 34–38 — gap closure (ANTT, MDIC, FAO, IBGE LSPA, EIA)
+- Phase 29 — unified PostgreSQL ✅ — `make unified-db-sync`
+
+**Phase 20 scaffold:** [.local/phases/20-analytics-crossing/README.md](../.local/phases/20-analytics-crossing/README.md) — analytics crossing (feature joins); implementation **not started** (IA deferred).
 
 Remaining tracks (see `.local/PENDING-TASKS.md`):
 

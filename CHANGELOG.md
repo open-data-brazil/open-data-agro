@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Collection hardening (Phase 33):** [docs/DATA-HISTORY-RANGES.md](docs/DATA-HISTORY-RANGES.md) — per-dataset source min years and `--from` backfill reference; CONAB portal audit; `make collection-hardening-mvp` + `make ci-collection-hardening-mvp`; `scripts/ci/check_data_history_ranges.py` wired into `ci-dbt`
+- **BCB PTAX history:** catalog `start_date` / `period_start` aligned to **1984** per official SGS series limits
+
+### Added (prior)
+
 - Agent harness (`agent-rules/`, `agent-harness/`, `.cursor/rules/`)
 - Project governance docs (MIT license, SECURITY, CONTRIBUTING, CODE_OF_CONDUCT)
 - Basic documentation scaffold (`docs/`, `AGENTS.md`, `README.md`)

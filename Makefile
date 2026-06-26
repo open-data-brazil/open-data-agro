@@ -82,6 +82,9 @@ ci-delta-versioning: duckdb-install python-install
 ci-new-dataset-checklist:
 	python3 scripts/ci/check_new_dataset_checklist.py
 
+ci-data-history-ranges:
+	python3 scripts/ci/check_data_history_ranges.py
+
 ci-dbt: duckdb-install python-install
 	rm -rf /tmp/open-data-agro-lake /tmp/open-data-agro-ci.duckdb /tmp/open-data-agro-analytics.duckdb
 	LAKE_LOCAL_ROOT=/tmp/open-data-agro-lake python3 scripts/ci/seed_dbt_silver.py
@@ -106,6 +109,7 @@ ci-dbt: duckdb-install python-install
 	$(DUCKDB_BIN) /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
 	$(MAKE) ci-validate-codigo-ibge CI_COD_IBGE_LAKE=$(CI_COD_IBGE_LAKE)
 	$(MAKE) ci-collection-full-mvp
+	$(MAKE) ci-data-history-ranges
 
 # Offline CI: seed CONAB + IBGE PAM marts with cod_ibge/codigo_ibge, build gold, cross-check.
 ci-validate-codigo-ibge: duckdb-install python-install dbt-deps
@@ -186,6 +190,19 @@ ci-collection-full-mvp:
 	$(MAKE) ci-collection-macro-mvp
 	$(MAKE) ci-ibge-pam-mvp
 	$(MAKE) ci-anp-mvp
+
+# Phase 33 — collection hardening: full MVP + stress benchmark + history doc gate.
+collection-hardening-mvp:
+	$(MAKE) collection-full-mvp
+	$(MAKE) benchmark-ingestor-fast10-stress
+	python3 scripts/ci/check_data_history_ranges.py
+	python3 scripts/ci/check_benchmark_profiles.py
+
+# CI mirror: offline collection gates + Phase 33 documentation checks (no live backfill).
+ci-collection-hardening-mvp:
+	python3 scripts/ci/check_data_history_ranges.py
+	python3 scripts/ci/check_benchmark_profiles.py
+	$(MAKE) ci-collection-full-mvp
 
 benchmark-ingestor:
 	@test -f .env || (echo "copy .env.example to .env first" && exit 1)

@@ -6,6 +6,8 @@
 
 **Status column:** `**Pn — implemented**` = full E2E pipeline (ingest → GE → silver → dbt → DuckDB), verified via `make *-mvp` and CI collection gates. Priority `Pn` reflects collection sprint ordering, not implementation state.
 
+**Historical depth:** per-dataset source min years and `--from` backfill examples — [DATA-HISTORY-RANGES.md](DATA-HISTORY-RANGES.md) (Phase 33).
+
 ---
 
 ## CONAB — Portal de Informações Agropecuárias
@@ -128,7 +130,7 @@ Timestamps in source files are **UTC**; missing values use sentinels `9999`, `Nu
 
 **Fonte oficial:** [BCB Dados Abertos](https://dadosabertos.bcb.gov.br/) · API: [api.bcb.gov.br](https://api.bcb.gov.br/)
 
-Historical backfill paginates `dataInicial`/`dataFinal` in ≤10-year chunks per BCB API limits.
+Historical backfill paginates `dataInicial`/`dataFinal` in ≤10-year chunks per BCB API limits. PTAX series from **1984** — see [DATA-HISTORY-RANGES.md](DATA-HISTORY-RANGES.md).
 
 ### CEPEA — Preços Agro (Phase 19)
 
@@ -244,3 +246,5 @@ Global climate shock features complementing INMET (Phase 17). `fonte_tipo: inter
 - [VISION.md](VISION.md)
 - [GLOSSARY.md](GLOSSARY.md)
 - [ROADMAP.md](ROADMAP.md)
+- [DATA-HISTORY-RANGES.md](DATA-HISTORY-RANGES.md)
+- [REFRESH-POLICY.md](REFRESH-POLICY.md)
