@@ -31,8 +31,14 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "cepea.") {
 		return CEPEAPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "mdic.") {
+		return MDICComexStatPortalURL
+	}
 	return ""
 }
+
+// MDICComexStatPortalURL is the MDIC Comex Stat portal and API documentation URL.
+const MDICComexStatPortalURL = "https://comexstat.mdic.gov.br/"
 
 // CEPEAPortalURL is the CEPEA/ESALQ-USP indicators portal URL.
 const CEPEAPortalURL = "https://www.cepea.org.br/"

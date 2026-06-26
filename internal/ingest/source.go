@@ -12,6 +12,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/conab"
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 	"github.com/open-data-brazil/open-data-agro/internal/inmet"
+	"github.com/open-data-brazil/open-data-agro/internal/mdic"
 )
 
 // SourceOptions carries optional ingest parameters (PAM crop/year/UF filters, INMET year).
@@ -56,13 +57,15 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		return bcb.ResolveURL(entry)
 	case "cepea":
 		return cepea.ResolveURL(entry)
+	case "mdic":
+		return mdic.ResolveURL(entry)
 	default:
 		return "", fmt.Errorf("unsupported agency %q for dataset %s", agency, entry.DatasetID)
 	}
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, opts SourceOptions) (*SourceDownload, error) {
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, opts SourceOptions) (*SourceDownload, error) {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
 		return nil, err
@@ -105,6 +108,19 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 
 	if agency == "cepea" {
 		body, sourceURL, err := cepeaClient.FetchIndicadorSnapshot(ctx, entry, opts.FromDate)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	}
+
+	if agency == "mdic" {
+		body, sourceURL, err := mdicClient.FetchComexSnapshot(ctx, entry, opts.FromDate)
 		if err != nil {
 			return nil, err
 		}

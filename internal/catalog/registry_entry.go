@@ -45,6 +45,8 @@ type RegistryEntry struct {
 	Frequency    string        `json:"frequency,omitempty" yaml:"frequency,omitempty"`
 	License      string        `json:"license,omitempty" yaml:"license,omitempty"`
 	FonteTipo    string        `json:"fonteTipo,omitempty" yaml:"fonte_tipo,omitempty"`
+	ComexFlow    string        `json:"comexFlow,omitempty" yaml:"comex_flow,omitempty"`
+	ComexNCMs    []string      `json:"comexNcms,omitempty" yaml:"comex_ncms,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

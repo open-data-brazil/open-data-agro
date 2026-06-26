@@ -145,6 +145,16 @@ Programmatic ingest tries the CEPEA portal first; when Cloudflare blocks access,
 
 Crossing with CONAB local prices (Phase 11) and BCB PTAX (Phase 18) is planned in analytics — see `.local/phases/DATA-CROSSING-VISION.md`.
 
+### MDIC — Comex Stat (Phase 21)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `mdic.comex-exportacao-ncm-mes` | Comex Stat API — exportação mensal NCM agro | **P0 — implemented** |
+
+**Fonte oficial:** [Comex Stat — MDIC](https://comexstat.mdic.gov.br/) · API: [api-comexstat.mdic.gov.br](https://api-comexstat.mdic.gov.br/docs)
+
+Monthly export FOB (USD) and quantity (kg) for soja, milho, trigo, and carne bovina NCM codes. Historical backfill from 2015 via year-chunked API requests.
+
 ---
 
 ## Rules
