@@ -65,3 +65,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **README sprint exit:** status + quick start updated for Phases 0–19 collection complete; `scripts/ci/check_readme_status.py` gate
 - **Phase 6 quality docs:** GE vs `validate_codigo_ibge.py` split in phase README + `scripts/quality/README.md`; `scripts/ci/check_phase6_quality_docs.py` gate
 - **NEW-PROJECT-CHECKLIST sync:** updated for Go local-first post-collection state; `scripts/ci/check_new_project_checklist.py` gate
+- **Prohort OFFICIAL-REFERENCE:** live portal column mapping for `conab.prohort-diario` + `conab.prohort-mensal`; `scripts/ci/check_prohort_official_reference.py` gate
