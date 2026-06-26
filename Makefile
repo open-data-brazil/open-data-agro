@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp ci-ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp ci-anp-mvp p1-collection-mvp ci-p1-collection-mvp collection-macro-mvp ci-collection-macro-mvp collection-full-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp ci-ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp ci-anp-mvp p1-collection-mvp ci-p1-collection-mvp collection-macro-mvp ci-collection-macro-mvp collection-full-mvp ci-collection-full-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -134,6 +134,13 @@ collection-full-mvp:
 	$(MAKE) collection-macro-mvp
 	LAKE_LOCAL_ROOT=/tmp/collection-pam-lake DUCKDB_PATH=/tmp/collection-pam.duckdb $(MAKE) ibge-pam-mvp
 	LAKE_LOCAL_ROOT=/tmp/collection-anp-lake DUCKDB_PATH=/tmp/collection-anp.duckdb $(MAKE) anp-mvp
+
+# Mirror GitHub Actions: full collection sprint exit (isolated /tmp lakes per sub-pipeline).
+ci-collection-full-mvp:
+	$(MAKE) ci-p1-collection-mvp
+	$(MAKE) ci-collection-macro-mvp
+	$(MAKE) ci-ibge-pam-mvp
+	$(MAKE) ci-anp-mvp
 
 benchmark-ingestor:
 	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
