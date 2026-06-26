@@ -4,7 +4,22 @@
 
 **100% open-source** (MIT) toolkit for Brazilian **agricultural open data** — curated datasets, fetch pipelines, and developer-friendly APIs aligned to official primary sources (MAPA, IBGE, CONAB, INMET, Embrapa, and related `.gov.br` agencies).
 
-> **Status:** Phase 0 Go platform scaffold — ingestor CLI, catalog registry, local Postgres.
+> **Status:** **Collection sprint complete** (Phases 0–19) — Go local-first stack: ingest → Great Expectations → dbt → DuckDB for **47 catalog datasets** across CONAB, IBGE, INMET, BCB, CEPEA, and ANP. Sprint exit gate: `make ci-collection-full-mvp` (mirrored in GitHub Actions `dbt` job). Next: analytics crossing (Phase 20+) — see [docs/ROADMAP.md](docs/ROADMAP.md).
+
+---
+
+## Quick start
+
+```bash
+cp .env.example .env
+docker compose up -d postgres
+make migrate-up
+make ci-go                    # Go tests + GE integration
+make ci-dbt                   # full offline pipeline mirror (dbt + collection)
+make collection-full-mvp      # local sprint exit (all collection MVPs)
+```
+
+Single-dataset smoke: `go run ./cmd/ingestor run conab.estimativa-graos` → bronze under `./lake/`.
 
 ---
 
