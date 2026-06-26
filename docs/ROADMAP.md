@@ -11,7 +11,7 @@
 
 **Initial source:** [CONAB — Downloads de Arquivos](https://portaldeinformacoes.conab.gov.br/download-arquivos.html)
 
-**Current focus:** collection sprint complete — offline pipelines + CI gates; next: doc sync and optional analytics phase (see `.local/DATA-CROSSING-VISION.md`).
+**Current focus:** ingestor signoff complete; wave 3 source discovery done — next: Phases 44–45 ingestion (see `.local/phases/44–46`).
 
 ---
 
@@ -153,7 +153,11 @@
 - Phase 36 — international extended ✅ — FAO production/trade + World Bank ag indices · `make ci-international-extended-mvp`
 - Phase 37 — BR new sources ✅ — IBGE LSPA + BCB Selic · `make ci-br-new-sources-mvp`
 - Phase 38 — international new sources ✅ — EIA petroleum, USDA WASDE, IGC GOI, UN Comtrade · `make ci-international-new-sources-mvp`
-- Phase 29 — unified PostgreSQL ✅ — `make unified-db-sync`
+- Phase 40–41 — wave 2 ingest ✅ — MAPA Agrofit, ANA, ANTAQ, GATS, Eurostat, Argentina BCRA · `make ingestor-signoff-mvp`
+- Phase 42 — ingestor signoff ✅ — `make ingestor-signoff-mvp`
+- Phase 43 — source discovery wave 3 ✅ — 86 candidates; 18 new BR + intl official sources; routes to Phases 44–46 (docs only)
+- **Phase 44–45 — wave 3 ingest (next)** — MTR BIT malha rodoviária, OECD-FAO Outlook, FAO FFPI, Mexico SIAP, NASA POWER, Mercosur competitors
+- Phase 46 — wave 3 signoff (blocked on 44–45)
 
 **Phase 20 scaffold:** [.local/phases/20-analytics-crossing/README.md](../.local/phases/20-analytics-crossing/README.md) — analytics crossing (feature joins); implementation **not started** (IA deferred).
 
