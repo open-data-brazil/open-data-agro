@@ -43,8 +43,8 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 | `conab.precos-agropecuarios-mensal-municipio` | Preços agropecuários Mensal Município | **P1 — full pipeline** |
 | `conab.precos-agropecuarios-semanal-uf` | Preços agropecuários Semanal UF | **P1 — full pipeline** |
 | `conab.precos-agropecuarios-semanal-municipio` | Preços agropecuários Semanal Municipio | **P1 — full pipeline** |
-| `conab.prohort-diario` | Prohort Diário | Catalog registered |
-| `conab.prohort-mensal` | Prohort Mensal | Catalog registered |
+| `conab.prohort-diario` | Prohort Diário | **P3 — full pipeline** |
+| `conab.prohort-mensal` | Prohort Mensal | **P3 — full pipeline** |
 
 ### Abastecimento (Phase 12)
 

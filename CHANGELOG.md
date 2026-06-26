@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CONAB Mercado preços mensal UF (Phase 11 P1):** full pipeline for `conab.precos-agropecuarios-mensal-uf`, monthly grain without `semana`, `make conab-mercado-precos-mvp`
 - **CONAB Mercado preços mensal município (Phase 11 P1):** full pipeline for `conab.precos-agropecuarios-mensal-municipio`, `cod_ibge` zero-padded in dbt, `make conab-mercado-precos-mvp`
 - **CONAB Mercado preços mínimos (Phase 11 P2):** full pipeline for `conab.precos-minimos`, vigency-period grain, `make conab-mercado-precos-minimos-mvp`
+- **CONAB Prohort (Phase 11 P3):** full pipeline for `conab.prohort-diario` and `conab.prohort-mensal`, CEASA horticulture prices/trade, `make conab-mercado-prohort-mvp`
 - **CONAB Frete (Phase 13 P1):** full pipeline for `conab.frete`, origin/destination IBGE grain, `make conab-armazenamento-logistica-mvp`
 - **CONAB Capacidade Estática (Phase 13 P1):** full pipeline for `conab.serie-historica-capacidade-estatica`, UF × year grain from legacy `.xls`, `make conab-armazenamento-logistica-mvp`
 - **CONAB Abastecimento + ANP combustíveis (Phase 12 MVP):** `abastecimento.yaml` (3 datasets), `anp/combustiveis.yaml` (2 datasets), full pipeline for `conab.estoques-publicos` and ANP LPC weekly prices, `make conab-abastecimento-mvp`

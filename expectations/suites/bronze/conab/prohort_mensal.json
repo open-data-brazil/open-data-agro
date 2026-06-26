@@ -1,0 +1,43 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "dsc_produto" },
+      "meta": { "notes": "Horticulture product description." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "cod_ibge_municipio_ceasa" },
+      "meta": { "notes": "CEASA municipality IBGE code." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "id_ano_comercializacao" },
+      "meta": { "notes": "Grain key — commercialization year must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "id_mes_comercializacao" },
+      "meta": { "notes": "Grain key — commercialization month must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "dsc_produto" },
+      "meta": { "notes": "Grain key — product must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.prohort-mensal",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Prohort Mensal"
+  },
+  "name": "bronze.conab.prohort_mensal",
+  "id": "bronze-conab-prohort-mensal-suite"
+}

@@ -180,3 +180,30 @@
   trim("UF") as uf,
   cast("Quantidade (mil t)" as varchar) as quantidade_mil_t
 {% endmacro %}
+
+{% macro conab_prohort_diario_columns() %}
+  trim(municipio_ceasa) as municipio_ceasa,
+  lpad(trim(cod_ibge_municipio), 7, '0') as cod_ibge_municipio,
+  trim(uf_ceasa) as uf_ceasa,
+  trim(dsc_ceasa) as ceasa,
+  trim(dsc_produto) as produto,
+  trim(sig_unidade_medida) as unidade_medida,
+  trim(data_preco) as data_preco,
+  cast(preco_diario as varchar) as preco_diario
+{% endmacro %}
+
+{% macro conab_prohort_mensal_columns() %}
+  cast(id_ano_comercializacao as varchar) as ano,
+  cast(id_mes_comercializacao as varchar) as mes,
+  trim(municipio_origem_produto) as municipio_origem,
+  lpad(trim(cod_ibge_municipio_origem_produto), 7, '0') as cod_ibge_municipio_origem,
+  trim(uf_origem_produto) as uf_origem,
+  trim(dsc_ceasa) as ceasa,
+  trim(uf_ceasa) as uf_ceasa,
+  trim(municipio_ceasa) as municipio_ceasa,
+  lpad(trim(cod_ibge_municipio_ceasa), 7, '0') as cod_ibge_municipio_ceasa,
+  trim(dsc_produto) as produto,
+  cast(qtd_comercializada_kg as varchar) as qtd_comercializada_kg,
+  cast(valor_comercializado as varchar) as valor_comercializado,
+  trim(pais_origem) as pais_origem
+{% endmacro %}

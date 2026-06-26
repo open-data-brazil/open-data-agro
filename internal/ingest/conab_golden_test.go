@@ -160,6 +160,44 @@ func TestPrecosMensalMunicipioGoldenVector(t *testing.T) {
 	}
 }
 
+func TestProhortDiarioGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readCONABTestdata(t, "ProhortDiario.sample.txt")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("conab.prohort-diario"),
+		Format:    catalog.FormatTXT,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 5 {
+		t.Fatalf("rowCount: got %d want 5", rowCount)
+	}
+}
+
+func TestProhortMensalGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readCONABTestdata(t, "ProhortMensal.sample.txt")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("conab.prohort-mensal"),
+		Format:    catalog.FormatTXT,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 5 {
+		t.Fatalf("rowCount: got %d want 5", rowCount)
+	}
+}
+
 func TestEstoquesPublicosGoldenVector(t *testing.T) {
 	t.Parallel()
 

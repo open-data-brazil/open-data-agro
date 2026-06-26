@@ -26,6 +26,8 @@ def main() -> int:
     (lake_root / "gold" / "mart_conab__precos_semanal_municipio").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__precos_mensal_uf").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__precos_mensal_municipio").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__prohort_diario").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__prohort_mensal").mkdir(parents=True, exist_ok=True)
 
     source = str(lake_root / "bronze/seed.parquet")
     ingested = "2026-06-25T12:00:00Z"
@@ -176,6 +178,45 @@ def main() -> int:
         }
     )
     write_table(lake_root, "precos_agropecuarios_mensal_municipio", precos_mensal_municipio)
+
+    prohort_diario = pa.table(
+        {
+            "municipio_ceasa": ["SÃO PAULO-SP", "SÃO PAULO-SP"],
+            "cod_ibge_municipio": ["3550308", "3550308"],
+            "uf_ceasa": ["SP", "SP"],
+            "dsc_ceasa": ["CEAGESP - SAO PAULO", "CEAGESP - SAO PAULO"],
+            "dsc_produto": ["TOMATE", "TOMATE"],
+            "sig_unidade_medida": ["KG", "KG"],
+            "data_preco": ["2025/06/01 00:00:00.000", "2025/06/08 00:00:00.000"],
+            "preco_diario": ["3.5", "3.8"],
+            "_dataset_id": ["conab.prohort-diario", "conab.prohort-diario"],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "prohort_diario", prohort_diario)
+
+    prohort_mensal = pa.table(
+        {
+            "id_ano_comercializacao": ["2025", "2025"],
+            "id_mes_comercializacao": ["6", "6"],
+            "municipio_origem_produto": ["NÃO INFORMADO", "NÃO INFORMADO"],
+            "cod_ibge_municipio_origem_produto": ["9999999", "9999999"],
+            "uf_origem_produto": ["NI", "NI"],
+            "dsc_ceasa": ["CEAGESP - SAO PAULO", "CEAGESP - SAO PAULO"],
+            "uf_ceasa": ["SP", "SP"],
+            "municipio_ceasa": ["SÃO PAULO-SP", "SÃO PAULO-SP"],
+            "cod_ibge_municipio_ceasa": ["3550308", "3550308"],
+            "dsc_produto": ["TOMATE", "BATATA"],
+            "qtd_comercializada_kg": ["1000", "500"],
+            "valor_comercializado": ["3500,0", "1200,0"],
+            "pais_origem": ["Brasil", "Brasil"],
+            "_dataset_id": ["conab.prohort-mensal", "conab.prohort-mensal"],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "prohort_mensal", prohort_mensal)
     print(f"seeded mercado silver under {lake_root / 'silver' / 'conab'}")
     return 0
 

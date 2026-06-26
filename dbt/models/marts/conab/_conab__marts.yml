@@ -358,3 +358,76 @@ models:
             combination_of_columns:
               - ano
               - uf
+
+  - name: mart_conab__prohort_diario
+    description: |
+      Business mart — CONAB Prohort daily CEASA horticulture prices.
+      Grain is municipio_ceasa + cod_ibge_municipio + ceasa + produto + unidade_medida + data_preco.
+    config:
+      meta:
+        dataset_id: conab.prohort-diario
+        grain: municipio_ceasa, cod_ibge_municipio, ceasa, produto, unidade_medida, data_preco
+        conab_section: Mercado
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: cod_ibge_municipio
+        tests:
+          - not_null
+      - name: preco_diario
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - municipio_ceasa
+              - cod_ibge_municipio
+              - ceasa
+              - produto
+              - unidade_medida
+              - data_preco
+
+  - name: mart_conab__prohort_mensal
+    description: |
+      Business mart — CONAB Prohort monthly CEASA horticulture trade.
+      Grain is ano + mes + cod_ibge_municipio_ceasa + ceasa + produto + cod_ibge_municipio_origem + pais_origem.
+    config:
+      meta:
+        dataset_id: conab.prohort-mensal
+        grain: ano, mes, cod_ibge_municipio_ceasa, ceasa, produto, cod_ibge_municipio_origem, pais_origem
+        conab_section: Mercado
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: cod_ibge_municipio_ceasa
+        tests:
+          - not_null
+      - name: qtd_comercializada_kg
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - ano
+              - mes
+              - cod_ibge_municipio_ceasa
+              - ceasa
+              - produto
+              - cod_ibge_municipio_origem
+              - pais_origem

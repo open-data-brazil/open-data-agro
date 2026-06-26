@@ -1,0 +1,43 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "dsc_produto" },
+      "meta": { "notes": "Horticulture product description." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "cod_ibge_municipio" },
+      "meta": { "notes": "CEASA municipality IBGE code." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "dsc_produto" },
+      "meta": { "notes": "Grain key — product must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "data_preco" },
+      "meta": { "notes": "Grain key — price date must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "preco_diario" },
+      "meta": { "notes": "Daily price value must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.prohort-diario",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Prohort Diário"
+  },
+  "name": "bronze.conab.prohort_diario",
+  "id": "bronze-conab-prohort-diario-suite"
+}

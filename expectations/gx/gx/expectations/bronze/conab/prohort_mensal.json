@@ -1,0 +1,80 @@
+{
+  "expectations": [
+    {
+      "id": "9e754574-e349-453e-a998-726b311967b5",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "06b9553c-ee2c-4d04-8169-f8aa2a49e001",
+      "kwargs": {
+        "column": "dsc_produto"
+      },
+      "meta": {
+        "notes": "Horticulture product description."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "d94481e6-133d-4293-8abb-302cf0f8a2f8",
+      "kwargs": {
+        "column": "cod_ibge_municipio_ceasa"
+      },
+      "meta": {
+        "notes": "CEASA municipality IBGE code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "a799807e-5e89-4e05-b5ca-a386e471c506",
+      "kwargs": {
+        "column": "id_ano_comercializacao"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 commercialization year must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "f945fada-847e-4f0d-adb1-81a1301884b0",
+      "kwargs": {
+        "column": "id_mes_comercializacao"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 commercialization month must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "cad4f4f7-61e4-494a-b7f7-f203619c7b62",
+      "kwargs": {
+        "column": "dsc_produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "06bb3ad0-f0e6-49fe-8e79-c91a2390db5c",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Prohort Mensal",
+    "dataset_id": "conab.prohort-mensal",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.prohort_mensal",
+  "notes": null
+}

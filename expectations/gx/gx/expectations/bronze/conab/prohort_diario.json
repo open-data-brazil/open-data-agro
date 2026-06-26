@@ -1,0 +1,80 @@
+{
+  "expectations": [
+    {
+      "id": "fc67bcab-5d61-44d5-b27a-fceedd89d8df",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "9022839f-4b75-4556-a6db-19dfe1322c6c",
+      "kwargs": {
+        "column": "dsc_produto"
+      },
+      "meta": {
+        "notes": "Horticulture product description."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "62ef12dc-6b61-4193-b51b-b3719ead7bc5",
+      "kwargs": {
+        "column": "cod_ibge_municipio"
+      },
+      "meta": {
+        "notes": "CEASA municipality IBGE code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "b0378bc3-8752-49cd-ad55-0f64dd66e733",
+      "kwargs": {
+        "column": "dsc_produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "fd7a53d4-b675-44e8-b967-765b5f67aa83",
+      "kwargs": {
+        "column": "data_preco"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 price date must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "436e0104-176c-4633-b011-a780cab3afce",
+      "kwargs": {
+        "column": "preco_diario"
+      },
+      "meta": {
+        "notes": "Daily price value must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "4f2a42a2-5a8d-4788-9f3d-4d730936f831",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Prohort Di\u00e1rio",
+    "dataset_id": "conab.prohort-diario",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.prohort_diario",
+  "notes": null
+}
