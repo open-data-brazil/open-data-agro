@@ -64,3 +64,7 @@
     unidade_codigo,
     unidade
 {% endmacro %}
+
+{% macro ibge_pam_core_columns() %}
+    {{ ibge_pam_area_quantidade_columns() }}
+{% endmacro %}

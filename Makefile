@@ -239,7 +239,7 @@ dbt-build-ibge-localidades: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__localidades_municipios+ stg_ibge__localidades_ufs+ stg_ibge__localidades_regioes+ stg_ibge__localidades_mesorregioes+ stg_ibge__localidades_microrregioes+'
 
 dbt-build-ibge-pam:
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_ibge__pam_area_quantidade+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__pam_area_quantidade stg_ibge__pam_rendimento_valor stg_ibge__pam_estabelecimentos'
 
 ibge-pam-mvp:
 	go test ./internal/ibge/... ./internal/ingest/ -run 'PAM|SIDRA|pam|FlattenPAM'

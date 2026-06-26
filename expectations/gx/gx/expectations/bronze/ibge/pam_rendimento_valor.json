@@ -1,0 +1,60 @@
+{
+  "expectations": [
+    {
+      "id": "38f78cf4-4107-4199-a3cc-b729ed8d3760",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one PAM row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "4266340b-e046-4f10-8a2a-016ff736d874",
+      "kwargs": {
+        "column": "codigo_ibge"
+      },
+      "meta": {
+        "notes": "Seven-digit IBGE municipality code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "036d07db-9566-4ff2-870b-a192544037d9",
+      "kwargs": {
+        "column": "codigo_ibge"
+      },
+      "meta": {
+        "notes": "Municipality code must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "23507f52-f089-4e63-8e36-85e8b78df7ff",
+      "kwargs": {
+        "column": "sidra_tabela",
+        "value_set": [
+          "1613"
+        ]
+      },
+      "meta": {
+        "notes": "Rendimento-valor dataset uses SIDRA table 1613."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    }
+  ],
+  "id": "9e21f82e-eccb-4a97-9ca2-cef8f91345d2",
+  "meta": {
+    "agencia": "IBGE",
+    "dataset_id": "ibge.pam-rendimento-valor",
+    "fonte_oficial": "https://sidra.ibge.gov.br/pesquisa/pam",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.ibge.pam_rendimento_valor",
+  "notes": null
+}

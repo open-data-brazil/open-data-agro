@@ -1,0 +1,49 @@
+{
+  "expectations": [
+    {
+      "id": "1013907a-17df-43f2-b386-735d179bee9a",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one PAM row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "c2027198-d824-4e8c-abd6-1ac987880012",
+      "kwargs": {
+        "column": "codigo_ibge"
+      },
+      "meta": {
+        "notes": "Seven-digit IBGE municipality code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "796d3a14-c358-46c7-9470-acc009a0e03b",
+      "kwargs": {
+        "column": "sidra_tabela",
+        "value_set": [
+          "5457"
+        ]
+      },
+      "meta": {
+        "notes": "Estabelecimentos dataset uses SIDRA table 5457."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    }
+  ],
+  "id": "76a1ded9-5c4a-4d7c-a853-a6b947edcaf7",
+  "meta": {
+    "agencia": "IBGE",
+    "dataset_id": "ibge.pam-estabelecimentos",
+    "fonte_oficial": "https://sidra.ibge.gov.br/pesquisa/pam",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.ibge.pam_estabelecimentos",
+  "notes": null
+}

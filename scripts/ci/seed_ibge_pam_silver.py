@@ -48,6 +48,52 @@ def main() -> int:
     )
     write_table(lake_root, "ibge", "pam_area_quantidade", pam)
 
+    rendimento = pa.table(
+        {
+            "sidra_tabela": ["1613", "1613"],
+            "codigo_ibge": ["5100102", "5100102"],
+            "municipio": ["Acorizal - MT", "Acorizal - MT"],
+            "ano": ["2015", "2015"],
+            "variavel_codigo": ["112", "215"],
+            "variavel": ["Rendimento médio", "Valor da produção"],
+            "produto_codigo": ["2713", "2713"],
+            "produto": ["Soja (em grão)", "Soja (em grão)"],
+            "valor": ["3200", "186000"],
+            "unidade_codigo": ["1010", "1018"],
+            "unidade": ["Quilogramas por Hectare", "Mil Reais"],
+            "_dataset_id": [
+                "ibge.pam-rendimento-valor",
+                "ibge.pam-rendimento-valor",
+            ],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "ibge", "pam_rendimento_valor", rendimento)
+
+    estabelecimentos = pa.table(
+        {
+            "sidra_tabela": ["5457", "5457"],
+            "codigo_ibge": ["5100102", "5107925"],
+            "municipio": ["Acorizal - MT", "Sorriso - MT"],
+            "ano": ["2015", "2015"],
+            "variavel_codigo": ["8331", "8331"],
+            "variavel": ["Número de estabelecimentos", "Número de estabelecimentos"],
+            "produto_codigo": ["2713", "2713"],
+            "produto": ["Soja (em grão)", "Soja (em grão)"],
+            "valor": ["45", "120"],
+            "unidade_codigo": ["1010", "1010"],
+            "unidade": ["Unidades", "Unidades"],
+            "_dataset_id": [
+                "ibge.pam-estabelecimentos",
+                "ibge.pam-estabelecimentos",
+            ],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "ibge", "pam_estabelecimentos", estabelecimentos)
+
     print(f"seeded IBGE PAM silver under {lake_root / 'silver' / 'ibge'}")
     return 0
 

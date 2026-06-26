@@ -62,6 +62,42 @@ func TestIBGEPAMAreaQuantidadeGoldenVector(t *testing.T) {
 	}
 }
 
+func TestIBGEPAMRendimentoValorGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readIBGETestdata(t, "pam_rendimento_valor.sample.json")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("ibge.pam-rendimento-valor"),
+		Format:    catalog.FormatJSON,
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 4 {
+		t.Fatalf("rowCount: got %d want 4", rowCount)
+	}
+}
+
+func TestIBGEPAMEstabelecimentosGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readIBGETestdata(t, "pam_estabelecimentos.sample.json")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("ibge.pam-estabelecimentos"),
+		Format:    catalog.FormatJSON,
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 4 {
+		t.Fatalf("rowCount: got %d want 4", rowCount)
+	}
+}
+
 func TestIBGERegioesGoldenVector(t *testing.T) {
 	t.Parallel()
 
