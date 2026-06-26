@@ -68,6 +68,9 @@ type RegistryEntry struct {
 	ComtradeReporterCode    string   `json:"comtradeReporterCode,omitempty" yaml:"comtrade_reporter_code,omitempty"`
 	ComtradeCmdCodes        []string `json:"comtradeCmdCodes,omitempty" yaml:"comtrade_cmd_codes,omitempty"`
 	ComtradeFlowCodes       []string `json:"comtradeFlowCodes,omitempty" yaml:"comtrade_flow_codes,omitempty"`
+	ANAStationCodes         []string `json:"anaStationCodes,omitempty" yaml:"ana_station_codes,omitempty"`
+	ANATipoDados            string   `json:"anaTipoDados,omitempty" yaml:"ana_tipo_dados,omitempty"`
+	ANANivelConsistencia    string   `json:"anaNivelConsistencia,omitempty" yaml:"ana_nivel_consistencia,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

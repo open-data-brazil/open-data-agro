@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "ANA hydrology series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "station_code" },
+      "meta": { "notes": "Station code required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "observed_at" },
+      "meta": { "notes": "Observation timestamp required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ana.hidrologia-series",
+    "fonte_oficial": "https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos",
+    "agencia": "ANA"
+  },
+  "name": "bronze.ana.hidrologia_series",
+  "id": "bronze-ana-hidrologia-series-suite"
+}

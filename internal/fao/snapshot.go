@@ -15,10 +15,6 @@ const (
 	defaultProductionCSV       = "Production_Crops_Livestock_E_All_Data_(Normalized).csv"
 	defaultTradeBulkURL        = "https://bulks-faostat.fao.org/production/Trade_Crops_Livestock_E_All_Data_(Normalized).zip"
 	defaultTradeCSV            = "Trade_Crops_Livestock_E_All_Data_(Normalized).csv"
-
-	defaultProductionElement = "5510" // Production (tonnes)
-	defaultTradeExportQty    = "5922" // Export quantity
-	defaultTradeImportQty    = "5911" // Import quantity
 )
 
 // FetchSnapshot downloads and filters FAOSTAT bulk data for a catalog entry.

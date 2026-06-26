@@ -269,6 +269,12 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_un_comtrade_bulk", true
 	case "mapa.agrofit-produtos-formulados":
 		return "bronze_mapa_agrofit_produtos_formulados", true
+	case "mapa.agrofit-produtos-tecnicos":
+		return "bronze_mapa_agrofit_produtos_tecnicos", true
+	case "ana.hidrologia-series":
+		return "bronze_ana_hidrologia_series", true
+	case "antaq.movimentacao-carga-portuaria":
+		return "bronze_antaq_movimentacao_carga_portuaria", true
 	default:
 		return "", false
 	}

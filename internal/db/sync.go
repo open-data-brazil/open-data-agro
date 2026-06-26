@@ -143,9 +143,7 @@ func (r *Repository) ReplaceAnalyticsTable(ctx context.Context, tableName string
 	}
 
 	pgxCols := make([]string, len(columns))
-	for i, col := range columns {
-		pgxCols[i] = col
-	}
+	copy(pgxCols, columns)
 
 	copyCount, err := tx.CopyFrom(
 		ctx,

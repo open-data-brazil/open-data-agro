@@ -70,8 +70,20 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "un.") {
 		return UNComtradePortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "ana.") {
+		return ANADadosAbertosPortalURL
+	}
+	if strings.HasPrefix(datasetID.String(), "antaq.") {
+		return ANTAQDadosAbertosPortalURL
+	}
 	return ""
 }
+
+// ANADadosAbertosPortalURL is the ANA open data portal URL.
+const ANADadosAbertosPortalURL = "https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos"
+
+// ANTAQDadosAbertosPortalURL is the ANTAQ open data portal URL.
+const ANTAQDadosAbertosPortalURL = "https://www.gov.br/antaq/pt-br/acesso-a-informacao/dados-abertos"
 
 // NOAANCEIPortalURL is the NOAA NCEI climate monitoring portal URL.
 const NOAANCEIPortalURL = "https://www.ncei.noaa.gov/access/monitoring/"

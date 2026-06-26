@@ -198,10 +198,31 @@ Municipal planting-window climate risk (`dec1`–`dec36`) by culture, soil cycle
 | Dataset ID | Source | Status |
 |------------|--------|--------|
 | `mapa.agrofit-produtos-formulados` | Agrofit — produtos formulados (defensivos) | **P1 — implemented** |
+| `mapa.agrofit-produtos-tecnicos` | Agrofit — produtos técnicos (defensivos) | **P2 — implemented** |
 
-**Fonte oficial:** [MAPA — Agrofit produtos formulados](https://dados.agricultura.gov.br/dataset/agrofit-produtos-formulados) · CKAN bulk CSV `agrofitprodutosformulados.csv`
+**Fonte oficial:** [MAPA — Agrofit](https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit) · CKAN bulk CSV `agrofitprodutosformulados.csv` / `agrofitprodutostecnicos.csv`
 
-Crop protection product registry by culture and pest — policy/input cost context for production models. `fonte_tipo: oficial_gov_br`.
+Crop protection product registry — formulated products by culture/pest; technical active-ingredient registry. `fonte_tipo: oficial_gov_br`.
+
+### ANA — Hidrologia (Phase 40)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `ana.hidrologia-series` | HidroWeb — séries diárias de vazão (estações selecionadas) | **P2 — implemented** |
+
+**Fonte oficial:** [ANA — Dados abertos](https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos) · SOAP `HidroSerieHistorica` em `telemetriaws1.ana.gov.br` (sem API key)
+
+Daily flow series for configured fluviometric stations. Complements INMET climate for hydrology context.
+
+### ANTAQ — Movimentação portuária (Phase 40)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `antaq.movimentacao-carga-portuaria` | Painel Estatístico Aquaviário — movimentação portuária | **P1 — implemented** |
+
+**Fonte oficial:** [ANTAQ — Dados abertos](https://www.gov.br/antaq/pt-br/acesso-a-informacao/dados-abertos) · export bulk [Painel Estatístico Aquaviário](https://web3.antaq.gov.br/ea/sense/download.html)
+
+Monthly port cargo movement by installation, navigation type, and cargo profile. Live bulk export may return HTTP errors from some networks; pipeline validated via fixtures + CI seed.
 
 ### B3 — Mercado futuro agro (Phase 24)
 

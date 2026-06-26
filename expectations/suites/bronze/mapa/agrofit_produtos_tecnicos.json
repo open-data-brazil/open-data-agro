@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Agrofit technical products registry must contain rows." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "NUMERO_REGISTRO" },
+      "meta": { "notes": "MAPA registration number required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "PRODUTO_TECNICO_MARCA_COMERCIAL" },
+      "meta": { "notes": "Technical product brand required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "mapa.agrofit-produtos-tecnicos",
+    "fonte_oficial": "https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit",
+    "agencia": "MAPA"
+  },
+  "name": "bronze.mapa.agrofit_produtos_tecnicos",
+  "id": "bronze-mapa-agrofit-produtos-tecnicos-suite"
+}

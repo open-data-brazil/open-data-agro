@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "ANTAQ port cargo movement must contain rows." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "Ano" },
+      "meta": { "notes": "Year required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "CodigoInstalacaoPortuaria" },
+      "meta": { "notes": "Port installation code required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "antaq.movimentacao-carga-portuaria",
+    "fonte_oficial": "https://www.gov.br/antaq/pt-br/acesso-a-informacao/dados-abertos",
+    "agencia": "ANTAQ"
+  },
+  "name": "bronze.antaq.movimentacao_carga_portuaria",
+  "id": "bronze-antaq-movimentacao-carga-portuaria-suite"
+}

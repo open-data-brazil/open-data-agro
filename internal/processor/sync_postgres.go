@@ -105,17 +105,15 @@ func (s *SyncPostgres) Sync(ctx context.Context, opts SyncPostgresOptions) (*Syn
 		result.Tables = append(result.Tables, *tableResult)
 	}
 
-	status := db.SyncSuccess
 	var errMsg *string
 	if syncErr != nil {
 		msg := syncErr.Error()
 		errMsg = &msg
 		if len(result.Tables) > 0 {
-			status = db.SyncPartial
+			result.Status = db.SyncPartial
 		} else {
-			status = db.SyncFailed
+			result.Status = db.SyncFailed
 		}
-		result.Status = status
 	}
 	if failed > 0 && len(result.Tables) == 0 {
 		result.Status = db.SyncFailed

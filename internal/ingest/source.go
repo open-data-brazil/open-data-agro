@@ -7,6 +7,8 @@ import (
 
 	"github.com/open-data-brazil/open-data-agro/internal/anp"
 	"github.com/open-data-brazil/open-data-agro/internal/antt"
+	"github.com/open-data-brazil/open-data-agro/internal/antaq"
+	"github.com/open-data-brazil/open-data-agro/internal/ana"
 	"github.com/open-data-brazil/open-data-agro/internal/b3"
 	"github.com/open-data-brazil/open-data-agro/internal/bcb"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
@@ -90,6 +92,10 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		return eia.ResolveURL(entry)
 	case "igc":
 		return igc.ResolveURL(entry)
+	case "ana":
+		return ana.ResolveURL(entry)
+	case "antaq":
+		return antaq.ResolveURL(entry)
 	case "un":
 		return un.ResolveURL(entry)
 	default:
@@ -98,7 +104,7 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, faoClient *fao.Client, worldbankClient *worldbank.Client, noaaClient *noaa.Client, eiaClient *eia.Client, igcClient *igc.Client, unClient *un.Client, opts SourceOptions) (*SourceDownload, error) {
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, faoClient *fao.Client, worldbankClient *worldbank.Client, noaaClient *noaa.Client, eiaClient *eia.Client, igcClient *igc.Client, anaClient *ana.Client, antaqClient *antaq.Client, unClient *un.Client, opts SourceOptions) (*SourceDownload, error) {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
 		return nil, err
@@ -286,6 +292,21 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 		}, nil
 	}
 
+	if agency == "ana" {
+		body, sourceURL, err := anaClient.FetchHidrologiaSnapshot(ctx, entry, ana.HidrologiaFetchOptions{
+			DataInicio: opts.FromDate,
+		})
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	}
+
 	if agency == "un" {
 		body, sourceURL, err := unClient.FetchComtradeSnapshot(ctx, entry, opts.FromDate)
 		if err != nil {
@@ -331,6 +352,18 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 		}, nil
 	case "antt":
 		result, err := anttClient.Download(ctx, sourceURL)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          result.Body,
+			ContentType:   result.ContentType,
+			LastModified:  result.LastModified,
+			ContentLength: result.ContentLength,
+			SourceURL:     sourceURL,
+		}, nil
+	case "antaq":
+		result, err := antaqClient.Download(ctx, sourceURL)
 		if err != nil {
 			return nil, err
 		}

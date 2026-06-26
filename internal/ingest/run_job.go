@@ -9,6 +9,8 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/alerts"
 	"github.com/open-data-brazil/open-data-agro/internal/anp"
 	"github.com/open-data-brazil/open-data-agro/internal/antt"
+	"github.com/open-data-brazil/open-data-agro/internal/antaq"
+	"github.com/open-data-brazil/open-data-agro/internal/ana"
 	"github.com/open-data-brazil/open-data-agro/internal/b3"
 	"github.com/open-data-brazil/open-data-agro/internal/bcb"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
@@ -73,6 +75,8 @@ type Runner struct {
 	noaa     *noaa.Client
 	eia      *eia.Client
 	igc      *igc.Client
+	ana      *ana.Client
+	antaq    *antaq.Client
 	un       *un.Client
 	alerts   *alerts.Notifier
 }
@@ -99,6 +103,8 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		noaa:     noaa.NewClient(),
 		eia:      eia.NewClient(),
 		igc:      igc.NewClient(),
+		ana:      ana.NewClient(),
+		antaq:    antaq.NewClient(),
 		un:       un.NewClient(),
 		alerts:   notifier,
 	}
@@ -137,7 +143,7 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.un, SourceOptions{
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.un, SourceOptions{
 		Crop:     opts.Crop,
 		FromYear: opts.FromYear,
 		ToYear:   opts.ToYear,

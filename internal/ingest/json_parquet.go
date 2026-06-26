@@ -16,6 +16,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/noaa"
 	"github.com/open-data-brazil/open-data-agro/internal/eia"
 	"github.com/open-data-brazil/open-data-agro/internal/igc"
+	"github.com/open-data-brazil/open-data-agro/internal/ana"
 	"github.com/open-data-brazil/open-data-agro/internal/un"
 )
 
@@ -103,6 +104,12 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		return writeStringTable(headers, rows)
 	case "igc":
 		headers, rows, err := igc.FlattenGOI(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "ana":
+		headers, rows, err := ana.FlattenHidrologia(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}

@@ -730,15 +730,21 @@ CI_INTERNATIONAL_SOURCES_WAVE_2_LAKE ?= /tmp/international-sources-wave-2-ci-lak
 CI_INTERNATIONAL_SOURCES_WAVE_2_DUCKDB ?= /tmp/international-sources-wave-2-ci.duckdb
 
 dbt-build-br-sources-wave-2: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_mapa__agrofit_produtos_formulados+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_mapa__agrofit_produtos_formulados+ stg_mapa__agrofit_produtos_tecnicos+ stg_ana__hidrologia_series+ stg_antaq__movimentacao_carga_portuaria+'
 
 br-sources-wave-2-mvp:
-	go test ./internal/mapa/... ./internal/ingest/ -run 'Agrofit|GoldenVector'
+	go test ./internal/mapa/... ./internal/ana/... ./internal/antaq/... ./internal/ingest/ -run 'Agrofit|ANA|ANTAQ|Hidrologia|GoldenVector'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_br_sources_wave_2_silver.py
 	$(MAKE) dbt-build-br-sources-wave-2 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mapa_agrofit_produtos_formulados"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT nr_registro, marca_comercial, cultura FROM analytics.mapa_agrofit_produtos_formulados LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mapa_agrofit_produtos_tecnicos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT numero_registro, produto_tecnico_marca_comercial FROM analytics.mapa_agrofit_produtos_tecnicos LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ana_hidrologia_series"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT station_code, observed_at, daily_mean FROM analytics.ana_hidrologia_series LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.antaq_movimentacao_carga_portuaria"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT ano, mes, nome_instalacao_portuaria, peso_toneladas FROM analytics.antaq_movimentacao_carga_portuaria LIMIT 3"
 
 ci-br-sources-wave-2-mvp:
 	$(MAKE) br-sources-wave-2-mvp \

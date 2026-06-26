@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Ingestor signoff (Phase 42):** `make ingestor-signoff-mvp` + `make ci-ingestor-signoff-mvp`; `scripts/ci/spot_check_analytics.py` for PostgreSQL `analytics.*` row/date spot-checks
 - **International sources wave 2 (Phase 41):** `igc.goi-index` — IGC GOI daily index from public xlsb, `internal/igc/`, GE suite, dbt mart, DuckDB view, `make international-sources-wave-2-mvp` + `make ci-international-sources-wave-2-mvp`
-- **BR sources wave 2 (Phase 40):** `mapa.agrofit-produtos-formulados` — MAPA Agrofit CKAN CSV, GE suite, dbt mart, DuckDB view, `make br-sources-wave-2-mvp` + `make ci-br-sources-wave-2-mvp`; ANTAQ port cargo deferred (Painel Estatístico 404)
+- **BR sources wave 2 (Phase 40):** `mapa.agrofit-produtos-formulados`, `mapa.agrofit-produtos-tecnicos`, `ana.hidrologia-series`, `antaq.movimentacao-carga-portuaria` — full E2E pipelines, GE suites, dbt marts, DuckDB views, `make br-sources-wave-2-mvp` + `make ci-br-sources-wave-2-mvp`; CONAB re-audit confirms no separate private-stocks bulk file on portal
 - **Source discovery wave 2 (Phase 39):** `.local/SOURCE-DISCOVERY-CATALOG.md` wave 2 section (≥20 new candidates); `DISCOVERY-REPORT-WAVE2.md`; phases 40–42 planned
 
 ### Added (prior wave)
