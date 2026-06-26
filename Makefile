@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima dbt-build-mdic-comex dbt-build-antt-pedagios dbt-build-mapa-zarc dbt-build-b3-futuros ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp ci-ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp mdic-comex-mvp ci-mdic-comex-mvp dnit-antt-logistica-mvp ci-dnit-antt-logistica-mvp mapa-dados-mvp ci-mapa-dados-mvp b3-futuros-mvp ci-b3-futuros-mvp dbt-build-usda-psd usda-psd-mvp ci-usda-psd-mvp dbt-build-fao-faostat fao-faostat-mvp ci-fao-faostat-mvp dbt-build-worldbank-commodities worldbank-commodities-mvp ci-worldbank-commodities-mvp dbt-build-international-extended international-extended-mvp ci-international-extended-mvp dbt-build-br-new-sources br-new-sources-mvp ci-br-new-sources-mvp dbt-build-international-new-sources international-new-sources-mvp ci-international-new-sources-mvp dbt-build-br-sources-wave-2 br-sources-wave-2-mvp ci-br-sources-wave-2-mvp dbt-build-br-sources-wave-3 br-sources-wave-3-mvp ci-br-sources-wave-3-mvp dbt-build-international-sources-wave-2 international-sources-wave-2-mvp ci-international-sources-wave-2-mvp ingestor-signoff-mvp ci-ingestor-signoff-mvp dbt-build-noaa-climate noaa-climate-mvp ci-noaa-climate-mvp unified-db-sync ci-unified-db-sync seed-unified-db-gold anp-mvp ci-anp-mvp p1-collection-mvp ci-p1-collection-mvp collection-macro-mvp ci-collection-macro-mvp collection-full-mvp ci-collection-full-mvp ci-go ci-minio ci-validate-r2-env validate-r2-env validate-r2-env-live ci-delta-versioning ci-new-dataset-checklist ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima dbt-build-mdic-comex dbt-build-antt-pedagios dbt-build-mapa-zarc dbt-build-b3-futuros ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp ci-ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp mdic-comex-mvp ci-mdic-comex-mvp dnit-antt-logistica-mvp ci-dnit-antt-logistica-mvp mapa-dados-mvp ci-mapa-dados-mvp b3-futuros-mvp ci-b3-futuros-mvp dbt-build-usda-psd usda-psd-mvp ci-usda-psd-mvp dbt-build-fao-faostat fao-faostat-mvp ci-fao-faostat-mvp dbt-build-worldbank-commodities worldbank-commodities-mvp ci-worldbank-commodities-mvp dbt-build-international-extended international-extended-mvp ci-international-extended-mvp dbt-build-br-new-sources br-new-sources-mvp ci-br-new-sources-mvp dbt-build-international-new-sources international-new-sources-mvp ci-international-new-sources-mvp dbt-build-br-sources-wave-2 br-sources-wave-2-mvp ci-br-sources-wave-2-mvp dbt-build-br-sources-wave-3 br-sources-wave-3-mvp ci-br-sources-wave-3-mvp dbt-build-international-sources-wave-2 international-sources-wave-2-mvp ci-international-sources-wave-2-mvp dbt-build-international-sources-wave-3 international-sources-wave-3-mvp ci-international-sources-wave-3-mvp ingestor-signoff-mvp ci-ingestor-signoff-mvp ingestor-signoff-wave-3-mvp ci-ingestor-signoff-wave-3-mvp verify-wave3-gold-manifest spot-check-wave3-duckdb dbt-build-noaa-climate noaa-climate-mvp ci-noaa-climate-mvp unified-db-sync ci-unified-db-sync seed-unified-db-gold anp-mvp ci-anp-mvp p1-collection-mvp ci-p1-collection-mvp collection-macro-mvp ci-collection-macro-mvp collection-full-mvp ci-collection-full-mvp ci-go ci-minio ci-validate-r2-env validate-r2-env validate-r2-env-live ci-delta-versioning ci-new-dataset-checklist ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -835,6 +835,27 @@ ci-ingestor-signoff-mvp:
 	$(MAKE) ci-br-sources-wave-2-mvp
 	$(MAKE) ci-international-sources-wave-2-mvp
 	@echo "ingestor signoff CI passed"
+
+WAVE3_SYNC_MARTS := dnit_snv_rodovias_federais,ipea_series_macro_regionais,ibge_pevs_producao_vegetal,ibge_ppm_producao_municipal,aneel_tarifas_energia,bndes_financiamento_agro,inmet_sequia_monitor,oecd_ag_outlook,fao_food_price_index,argentina_magyp_producion_granos
+
+CI_INGESTOR_SIGNOFF_WAVE_3_LAKE ?= /tmp/ingestor-signoff-wave-3-ci-lake
+CI_INGESTOR_SIGNOFF_WAVE_3_DUCKDB ?= /tmp/ingestor-signoff-wave-3-ci.duckdb
+
+verify-wave3-gold-manifest:
+	LAKE_LOCAL_ROOT=$(LAKE_ABS) python3 scripts/ci/verify_wave3_gold_manifest.py
+
+spot-check-wave3-duckdb:
+	DUCKDB_BIN="$(DUCKDB_BIN)" python3 scripts/ci/spot_check_analytics.py --duckdb "$(DUCKDB_PATH)" --wave3
+
+ingestor-signoff-wave-3-mvp: br-sources-wave-3-mvp international-sources-wave-3-mvp
+	$(MAKE) verify-wave3-gold-manifest LAKE_LOCAL_ROOT=$(LAKE_ABS)
+	$(MAKE) spot-check-wave3-duckdb DUCKDB_PATH=$(DUCKDB_PATH)
+	@echo "ingestor wave 3 signoff: MVPs + gold manifest + duckdb spot-check passed"
+
+ci-ingestor-signoff-wave-3-mvp:
+	$(MAKE) ingestor-signoff-wave-3-mvp \
+		LAKE_LOCAL_ROOT=$(CI_INGESTOR_SIGNOFF_WAVE_3_LAKE) \
+		DUCKDB_PATH=$(CI_INGESTOR_SIGNOFF_WAVE_3_DUCKDB)
 
 dbt-build-noaa-climate: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_noaa__enso_indices+ stg_noaa__global_temp_anomaly+'

@@ -11,7 +11,7 @@
 
 **Initial source:** [CONAB — Downloads de Arquivos](https://portaldeinformacoes.conab.gov.br/download-arquivos.html)
 
-**Current focus:** Phases 44–45 wave 3 ingest complete (10 datasets E2E); next: Phase 46 unified signoff (see `.local/phases/46-unified-db-wave-3-signoff`).
+**Current focus:** Phase 46 wave 3 ingestor signoff complete — `make ingestor-signoff-wave-3-mvp`; next: scheduled ingest (Stage F) or production R2.
 
 ---
 
@@ -158,7 +158,7 @@
 - Phase 43 — source discovery wave 3 ✅ — 86 candidates; 18 new BR + intl official sources; routes to Phases 44–46 (docs only)
 - Phase 44 — BR wave 3 ingest ✅ — `dnit.snv-rodovias-federais`, `ipea.series-macro-regionais`, `ibge.pevs-producao-vegetal`, `ibge.ppm-producao-municipal`, `aneel.tarifas-energia`, `bndes.financiamento-agro`, `inmet.sequia-monitor`; `make br-sources-wave-3-mvp`
 - Phase 45 — wave 3 international ingest ✅ — `oecd-fao.ag-outlook`, `fao.food-price-index`, `argentina.magyp-producion-granos`; `make international-sources-wave-3-mvp`
-- Phase 46 — wave 3 signoff (next)
+- Phase 46 — wave 3 ingestor signoff ✅ — gold manifest + DuckDB spot-check for 10 wave 3 marts; `make ingestor-signoff-wave-3-mvp` + `make ci-ingestor-signoff-wave-3-mvp`
 
 **Phase 20 scaffold:** [.local/phases/20-analytics-crossing/README.md](../.local/phases/20-analytics-crossing/README.md) — analytics crossing (feature joins); implementation **not started** (IA deferred).
 

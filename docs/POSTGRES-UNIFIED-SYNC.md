@@ -44,6 +44,37 @@ UNIFIED_DB_SYNC_MARTS=conab_estimativa_graos,conab_serie_historica_graos make un
 
 Rule: strip `mart_` prefix, replace `__` with `_`.
 
+### Wave 3 marts (Phases 44–45)
+
+Discovered automatically by `processor sync-postgres` when gold parquets exist under `lake/gold/`:
+
+| Gold path | PostgreSQL / DuckDB table | Source |
+|-----------|---------------------------|--------|
+| `gold/mart_dnit__snv_rodovias_federais/mart.parquet` | `analytics.dnit_snv_rodovias_federais` | DNIT SNV federal highways |
+| `gold/mart_ipea__series_macro_regionais/mart.parquet` | `analytics.ipea_series_macro_regionais` | IPEA regional macro series |
+| `gold/mart_ibge__pevs_producao_vegetal/mart.parquet` | `analytics.ibge_pevs_producao_vegetal` | IBGE PEVS vegetable production |
+| `gold/mart_ibge__ppm_producao_municipal/mart.parquet` | `analytics.ibge_ppm_producao_municipal` | IBGE PPM municipal production |
+| `gold/mart_aneel__tarifas_energia/mart.parquet` | `analytics.aneel_tarifas_energia` | ANEEL energy tariffs |
+| `gold/mart_bndes__financiamento_agro/mart.parquet` | `analytics.bndes_financiamento_agro` | BNDES agro financing |
+| `gold/mart_inmet__sequia_monitor/mart.parquet` | `analytics.inmet_sequia_monitor` | INMET/ANA drought monitor |
+| `gold/mart_oecd__ag_outlook/mart.parquet` | `analytics.oecd_ag_outlook` | OECD-FAO agricultural outlook |
+| `gold/mart_fao__food_price_index/mart.parquet` | `analytics.fao_food_price_index` | FAO food price index |
+| `gold/mart_argentina__magyp_producion_granos/mart.parquet` | `analytics.argentina_magyp_producion_granos` | Argentina MAGyP grain production |
+
+Subset sync for wave 3 only:
+
+```bash
+UNIFIED_DB_SYNC_MARTS=$(WAVE3_SYNC_MARTS) make unified-db-sync
+```
+
+(`WAVE3_SYNC_MARTS` is defined in the root `Makefile`.)
+
+Manifest verification without PostgreSQL:
+
+```bash
+make verify-wave3-gold-manifest
+```
+
 ---
 
 ## Manifest

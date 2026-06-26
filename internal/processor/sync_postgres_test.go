@@ -6,10 +6,13 @@ func TestMartTableName(t *testing.T) {
 	t.Parallel()
 
 	cases := map[string]string{
-		"mart_conab__estimativa_graos":        "conab_estimativa_graos",
-		"mart_ibge__localidades_municipios":   "ibge_localidades_municipios",
-		"mart_noaa__global_temp_anomaly":      "noaa_global_temp_anomaly",
-		"mart_worldbank__pink_sheet_monthly":  "worldbank_pink_sheet_monthly",
+		"mart_conab__estimativa_graos":              "conab_estimativa_graos",
+		"mart_ibge__localidades_municipios":         "ibge_localidades_municipios",
+		"mart_noaa__global_temp_anomaly":            "noaa_global_temp_anomaly",
+		"mart_worldbank__pink_sheet_monthly":        "worldbank_pink_sheet_monthly",
+		"mart_dnit__snv_rodovias_federais":          "dnit_snv_rodovias_federais",
+		"mart_oecd__ag_outlook":                     "oecd_ag_outlook",
+		"mart_argentina__magyp_producion_granos":    "argentina_magyp_producion_granos",
 	}
 
 	for dir, want := range cases {
