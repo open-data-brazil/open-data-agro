@@ -1,0 +1,68 @@
+{
+  "name": "fast10",
+  "version": 2,
+  "budget_wall_clock_sec": 720,
+  "description": "Representative end-to-end ingest across agencies including CONAB Mercado weekly UF prices and freight. Real downloads; scope reduced via official CLI flags only.",
+  "integrity_notes": [
+    "No mocks or fixtures — every dataset hits the live official source.",
+    "Same code path as production: download → flatten → parquet → catalog.ingest_*.",
+    "Reduced volume via --from/--to/--crop/--uf/--year, not skipped pipeline stages.",
+    "conab.precos-agropecuarios-semanal-uf covers portal TXT mercado path; conab.frete covers logistics IBGE grain."
+  ],
+  "defaults": {
+    "cepea_from": "2010-01-01",
+    "pam_from": 2024,
+    "pam_to": 2024,
+    "pam_crop": "soja",
+    "pam_uf": "51",
+    "inmet_year": 2024,
+    "inmet_uf": "MT"
+  },
+  "datasets": [
+    "anp.combustiveis-precos-postos",
+    "bcb.sgs-ipca",
+    "bcb.sgs-ptax-usd-venda",
+    "cepea.soja-paranagua",
+    "cepea.soja-parana",
+    "cepea.milho",
+    "cepea.boi-gordo",
+    "conab.estimativa-graos",
+    "conab.precos-agropecuarios-semanal-uf",
+    "conab.frete",
+    "ibge.localidades-ufs",
+    "ibge.localidades-municipios",
+    {
+      "id": "ibge.pam-area-quantidade",
+      "args": {
+        "from": 2024,
+        "to": 2024,
+        "crop": "soja",
+        "uf": "51"
+      }
+    },
+    "inmet.estacoes-automaticas",
+    "inmet.estacoes-convencionais",
+    {
+      "id": "inmet.bdmep-mensal",
+      "args": {
+        "year": 2024,
+        "uf": "MT"
+      }
+    }
+  ],
+  "excluded_from_full_catalog": {
+    "reason": "Full clean benchmark is documented separately; fast10 picks one representative per fetch pattern.",
+    "skipped_patterns": [
+      "ibge.pam-rendimento-valor / pam-estabelecimentos — same SIDRA fetcher as pam-area-quantidade",
+      "inmet.bdmep-diario / pacote-anual-automaticas — same annual ZIP as bdmep-mensal",
+      "Remaining CONAB mercado TXT tables — precos-semanal-uf covers portal CSV; see fast10-stress for large files",
+      "conab.prohort-diario — optional stress profile (~30s download, ~1M rows)"
+    ]
+  },
+  "expected_wall_clock_sec": {
+    "clean_slate": 320,
+    "incremental": 140,
+    "measured_at": "2026-06-26",
+    "note": "16 datasets. Dominant cost: inmet.bdmep-mensal (annual ZIP). conab.frete and precos-semanal-uf add ~15s combined."
+  }
+}

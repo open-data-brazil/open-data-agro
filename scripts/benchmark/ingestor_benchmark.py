@@ -3,7 +3,7 @@
 
 Usage:
   python3 scripts/benchmark/ingestor_benchmark.py --clean --all
-  python3 scripts/benchmark/ingestor_benchmark.py --profile .local/benchmark/profiles/fast10.json
+  python3 scripts/benchmark/ingestor_benchmark.py --profile scripts/benchmark/profiles/fast10.json
   python3 scripts/benchmark/ingestor_benchmark.py --datasets bcb.sgs-ipca,cepea.soja-paranagua
   make benchmark-ingestor-fast10-clean
 
@@ -484,7 +484,7 @@ def main() -> int:
     parser.add_argument("--all", action="store_true", help="Run every dataset in the catalog")
     parser.add_argument("--clean", action="store_true", help="Truncate ingest audit + wipe bronze before run")
     parser.add_argument("--datasets", default="", help="Comma-separated dataset IDs")
-    parser.add_argument("--profile", default="", help="JSON profile path (e.g. .local/benchmark/profiles/fast10.json)")
+    parser.add_argument("--profile", default="", help="JSON profile path (e.g. scripts/benchmark/profiles/fast10.json)")
     parser.add_argument("--from", dest="from_date", default="", help="Global --from for CEPEA datasets")
     parser.add_argument("--json", dest="json_out", default="", help="Write JSON report to path")
     args = parser.parse_args()

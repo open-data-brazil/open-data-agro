@@ -52,7 +52,7 @@
 | Phase | CONAB section | MVP |
 |-------|---------------|-----|
 | 10 | Produção Agrícola | **P0:** Estimativa Grãos, Série Histórica Grãos |
-| 11 | Mercado | Planned |
+| 11 | Mercado | **Done** — oferta-demanda, preços (4), mínimos, prohort; `make conab-mercado-full-mvp` |
 | 12 | Abastecimento | Planned |
 | 13 | Armazenamento e Logística | Planned |
 | 14 | Agricultura Familiar | Planned |

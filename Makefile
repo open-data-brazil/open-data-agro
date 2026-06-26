@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt validate-codigo-ibge benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt validate-codigo-ibge benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -9,6 +9,8 @@ POSTGRES_HOST_PORT ?= 5432
 DATABASE_URL ?= postgresql://open_data_agro:open_data_agro@localhost:$(POSTGRES_HOST_PORT)/open_data_agro?sslmode=disable
 MIGRATIONS_PATH := infra/postgres/migrations
 MIGRATE ?= migrate
+BENCHMARK_PROFILE ?= scripts/benchmark/profiles/fast10.json
+MERCADO_DBT_SELECT := stg_conab__oferta_demanda+ stg_conab__precos_semanal_uf+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_uf+ stg_conab__precos_mensal_municipio+ stg_conab__precos_minimos+ stg_conab__prohort_diario+ stg_conab__prohort_mensal+
 
 test:
 	go test ./...
@@ -53,11 +55,11 @@ benchmark-ingestor-clean:
 
 benchmark-ingestor-fast10: build
 	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
-	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --profile .local/benchmark/profiles/fast10.json
+	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --profile $(BENCHMARK_PROFILE)
 
 benchmark-ingestor-fast10-clean: build
 	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
-	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --profile .local/benchmark/profiles/fast10.json --clean
+	@set -a && . ./.env && set +a && python3 scripts/benchmark/ingestor_benchmark.py --profile $(BENCHMARK_PROFILE) --clean
 
 lint:
 	golangci-lint run ./...
@@ -112,13 +114,25 @@ conab-reference:
 	./scripts/conab/fetch_reference_samples.sh
 
 dbt-build-mercado: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__oferta_demanda+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select '$(MERCADO_DBT_SELECT)'
 
 dbt-build-mercado-precos: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__precos_semanal_uf+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_uf+ stg_conab__precos_mensal_municipio+ stg_conab__precos_minimos+'
 
 dbt-build-mercado-prohort: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__prohort_diario+ stg_conab__prohort_mensal+'
+
+conab-mercado-full-mvp:
+	go test ./internal/ingest/ -run 'OfertaDemanda|Precos|Prohort'
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_mercado_silver.py
+	$(MAKE) dbt-build-mercado LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS oferta FROM analytics.conab_oferta_demanda"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS precos_uf FROM analytics.conab_precos_semanal_uf"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS precos_mun FROM analytics.conab_precos_semanal_municipio"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS precos_min FROM analytics.conab_precos_minimos"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS prohort_diario FROM analytics.conab_prohort_diario"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS prohort_mensal FROM analytics.conab_prohort_mensal"
 
 conab-mercado-prohort-mvp:
 	go test ./internal/ingest/ -run 'Prohort'

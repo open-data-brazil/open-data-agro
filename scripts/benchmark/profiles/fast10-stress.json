@@ -1,0 +1,41 @@
+{
+  "name": "fast10-stress",
+  "version": 2,
+  "budget_wall_clock_sec": 900,
+  "description": "fast10 plus large CONAB CSV tables (~1M rows). Use when you need volume stress in under 15 minutes.",
+  "defaults": {
+    "cepea_from": "2010-01-01",
+    "pam_from": 2024,
+    "pam_to": 2024,
+    "pam_crop": "soja",
+    "pam_uf": "51",
+    "inmet_year": 2024,
+    "inmet_uf": "MT"
+  },
+  "datasets": [
+    "anp.combustiveis-precos-postos",
+    "bcb.sgs-ipca",
+    "bcb.sgs-ptax-usd-venda",
+    "cepea.soja-paranagua",
+    "cepea.soja-parana",
+    "cepea.milho",
+    "cepea.boi-gordo",
+    "conab.estimativa-graos",
+    "conab.precos-agropecuarios-semanal-uf",
+    "conab.frete",
+    "conab.operacoes-comercializacao",
+    "conab.prohort-diario",
+    "ibge.localidades-ufs",
+    "ibge.localidades-municipios",
+    {
+      "id": "ibge.pam-area-quantidade",
+      "args": { "from": 2024, "to": 2024, "crop": "soja", "uf": "51" }
+    },
+    "inmet.estacoes-automaticas",
+    "inmet.estacoes-convencionais",
+    {
+      "id": "inmet.bdmep-mensal",
+      "args": { "year": 2024, "uf": "MT" }
+    }
+  ]
+}
