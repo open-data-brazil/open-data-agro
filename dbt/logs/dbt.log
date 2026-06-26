@@ -16112,3 +16112,1666 @@ parsing.
 [0m09:50:16.992590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a941bbc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a8e9ef950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a8e9ed280>]}
 [0m09:50:16.992936 [debug] [MainThread]: Flushing usage events
 [0m09:50:17.681360 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:51:25.150969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5cd8e0c620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5cd7e86ba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5cd87c5820>]}
+
+
+============================== 09:51:25.153431 | 74dc26ad-b6ce-4b21-9030-64cb31575f24 ==============================
+[0m09:51:25.153431 [info ] [MainThread]: Running with dbt=1.11.11
+[0m09:51:25.153835 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'log_format': 'default', 'cache_selected_only': 'False', 'debug': 'False', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'target_path': 'None', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'use_experimental_parser': 'False', 'no_print': 'None', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'static_parser': 'True', 'partial_parse': 'True', 'profiles_dir': '.', 'indirect_selection': 'eager', 'invocation_command': 'dbt deps --profiles-dir .', 'write_json': 'True', 'log_cache_events': 'False', 'quiet': 'False', 'introspect': 'True'}
+[0m09:51:25.248209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '74dc26ad-b6ce-4b21-9030-64cb31575f24', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5cd8989ca0>]}
+[0m09:51:25.265614 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-656lao14'
+[0m09:51:25.265973 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m09:51:25.404898 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m09:51:25.406753 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m09:51:25.505022 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m09:51:25.509288 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m09:51:25.895911 [info ] [MainThread]: Installed from version 1.3.0
+[0m09:51:25.896390 [info ] [MainThread]: Updated version available: 1.4.0
+[0m09:51:25.897031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '74dc26ad-b6ce-4b21-9030-64cb31575f24', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5cd7a248f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5cd791e030>]}
+[0m09:51:25.897691 [info ] [MainThread]: 
+[0m09:51:25.898251 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m09:51:25.899363 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.7936711, "process_in_blocks": "328", "process_kernel_time": 0.087009, "process_mem_max_rss": "121404", "process_out_blocks": "2304", "process_user_time": 1.320142}
+[0m09:51:25.899931 [debug] [MainThread]: Command `dbt deps` succeeded at 09:51:25.899841 after 0.79 seconds
+[0m09:51:25.900288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5cd85d8cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5cd7ca8530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d5cd7b13e30>]}
+[0m09:51:25.900744 [debug] [MainThread]: Flushing usage events
+[0m09:51:26.589178 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:51:28.126647 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c47450440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c4799fad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c47dc9d90>]}
+
+
+============================== 09:51:28.129342 | f612e2f7-70a7-43a3-8c18-85b259e9d065 ==============================
+[0m09:51:28.129342 [info ] [MainThread]: Running with dbt=1.11.11
+[0m09:51:28.129800 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'static_parser': 'True', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'no_print': 'None', 'log_format': 'default', 'cache_selected_only': 'False', 'write_json': 'True', 'fail_fast': 'False', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'debug': 'False', 'invocation_command': 'dbt build --profiles-dir . --select stg_ibge__pam_area_quantidade+ stg_ibge__pam_rendimento_valor+ stg_ibge__pam_estabelecimentos+', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'profiles_dir': '.', 'log_cache_events': 'False', 'target_path': 'None', 'empty': 'False'}
+[0m09:51:28.414088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c468f02f0>]}
+[0m09:51:28.466956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c46973380>]}
+[0m09:51:28.468705 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m09:51:28.544231 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m09:51:28.648280 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m09:51:28.648752 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c473d7f20>]}
+[0m09:51:30.515646 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.unique_combination_of_columns`
+defined on 'mart_inmet__bdmep_diario' in package 'open_data_agro'
+(models/marts/inmet/_inmet__marts.yml). Arguments to generic tests should be
+nested under the `arguments` property.
+[0m09:51:30.516087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c3a615190>]}
+[0m09:51:31.213608 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c3a3486b0>]}
+[0m09:51:31.509946 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m09:51:31.512884 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m09:51:31.581003 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c3a9be6c0>]}
+[0m09:51:31.581863 [info ] [MainThread]: Found 95 models, 267 data tests, 47 sources, 650 macros
+[0m09:51:31.611184 [info ] [MainThread]: 
+[0m09:51:31.611983 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m09:51:31.612611 [info ] [MainThread]: 
+[0m09:51:31.613449 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m09:51:31.621609 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m09:51:31.680021 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m09:51:31.680756 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m09:51:31.681362 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:51:31.744851 [debug] [ThreadPool]: SQL status: OK in 0.063 seconds
+[0m09:51:31.746730 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m09:51:31.747588 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m09:51:31.748416 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m09:51:31.755796 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m09:51:31.756469 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m09:51:31.756800 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:51:31.758048 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:51:31.759538 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m09:51:31.759913 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m09:51:31.760641 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:51:31.761069 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m09:51:31.761420 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m09:51:31.762339 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:51:31.763435 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m09:51:31.763858 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m09:51:31.764177 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m09:51:31.764741 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:51:31.765086 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m09:51:31.773742 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m09:51:31.781911 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m09:51:31.782733 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m09:51:31.783427 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:51:31.784630 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:51:31.785083 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m09:51:31.785545 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m09:51:31.792528 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m09:51:31.797299 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m09:51:31.799514 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m09:51:31.800192 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m09:51:31.813052 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c49907b90>]}
+[0m09:51:31.813730 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:51:31.814196 [debug] [MainThread]: On master: BEGIN
+[0m09:51:31.814647 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:51:31.816032 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m09:51:31.816682 [debug] [MainThread]: On master: COMMIT
+[0m09:51:31.817380 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:51:31.817986 [debug] [MainThread]: On master: COMMIT
+[0m09:51:31.819466 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m09:51:31.820196 [debug] [MainThread]: On master: Close
+[0m09:51:31.824437 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_ibge__pam_area_quantidade
+[0m09:51:31.825068 [debug] [Thread-2 (]: Began running node model.open_data_agro.stg_ibge__pam_estabelecimentos
+[0m09:51:31.825779 [debug] [Thread-3 (]: Began running node model.open_data_agro.stg_ibge__pam_rendimento_valor
+[0m09:51:31.826716 [info ] [Thread-1 (]: 1 of 27 START sql view model main.stg_ibge__pam_area_quantidade ................ [RUN]
+[0m09:51:31.827915 [info ] [Thread-2 (]: 2 of 27 START sql view model main.stg_ibge__pam_estabelecimentos ............... [RUN]
+[0m09:51:31.828649 [info ] [Thread-3 (]: 3 of 27 START sql view model main.stg_ibge__pam_rendimento_valor ............... [RUN]
+[0m09:51:31.829557 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_ibge__pam_area_quantidade)
+[0m09:51:31.830407 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_ibge__pam_estabelecimentos'
+[0m09:51:31.831234 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_ibge__pam_rendimento_valor'
+[0m09:51:31.831985 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_ibge__pam_area_quantidade
+[0m09:51:31.832643 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.stg_ibge__pam_estabelecimentos
+[0m09:51:31.833433 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.stg_ibge__pam_rendimento_valor
+[0m09:51:31.842444 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m09:51:31.845159 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.stg_ibge__pam_estabelecimentos"
+[0m09:51:31.850759 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.stg_ibge__pam_rendimento_valor"
+[0m09:51:31.851757 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_ibge__pam_area_quantidade
+[0m09:51:31.852223 [debug] [Thread-3 (]: Began executing node model.open_data_agro.stg_ibge__pam_rendimento_valor
+[0m09:51:31.852616 [debug] [Thread-2 (]: Began executing node model.open_data_agro.stg_ibge__pam_estabelecimentos
+[0m09:51:31.882676 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.stg_ibge__pam_rendimento_valor"
+[0m09:51:31.883675 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m09:51:31.886608 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.stg_ibge__pam_estabelecimentos"
+[0m09:51:31.887257 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_rendimento_valor"
+[0m09:51:31.887921 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m09:51:31.888256 [debug] [Thread-3 (]: On model.open_data_agro.stg_ibge__pam_rendimento_valor: BEGIN
+[0m09:51:31.888727 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: BEGIN
+[0m09:51:31.889028 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m09:51:31.889430 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:51:31.890211 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_estabelecimentos"
+[0m09:51:31.890824 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pam_estabelecimentos: BEGIN
+[0m09:51:31.891347 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:51:31.891719 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m09:51:31.892079 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m09:51:31.892394 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m09:51:31.892720 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_rendimento_valor"
+[0m09:51:31.893255 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_area_quantidade"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ibge__pam_area_quantidade__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/ibge-pam-ci-lake/silver/ibge/pam_area_quantidade/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    sidra_tabela,
+    codigo_ibge,
+    municipio,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://sidra.ibge.gov.br/pesquisa/pam
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by codigo_ibge, ano, variavel_codigo, produto_codigo
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m09:51:31.893793 [debug] [Thread-3 (]: On model.open_data_agro.stg_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_rendimento_valor"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ibge__pam_rendimento_valor__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/ibge-pam-ci-lake/silver/ibge/pam_rendimento_valor/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    
+    sidra_tabela,
+    codigo_ibge,
+    municipio,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade
+
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://sidra.ibge.gov.br/pesquisa/pam
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by codigo_ibge, ano, variavel_codigo, produto_codigo
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m09:51:31.894602 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m09:51:31.895095 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_estabelecimentos"
+[0m09:51:31.895416 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_estabelecimentos"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ibge__pam_estabelecimentos__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/ibge-pam-ci-lake/silver/ibge/pam_estabelecimentos/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    
+    sidra_tabela,
+    codigo_ibge,
+    municipio,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade
+
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://sidra.ibge.gov.br/pesquisa/pam
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by codigo_ibge, ano, variavel_codigo, produto_codigo
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m09:51:31.896210 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:51:31.896559 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m09:51:31.902058 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m09:51:31.902540 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m09:51:31.905036 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_rendimento_valor"
+[0m09:51:31.907869 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_estabelecimentos"
+[0m09:51:31.908237 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_area_quantidade"} */
+alter view "dbt_workspace"."main"."stg_ibge__pam_area_quantidade" rename to "stg_ibge__pam_area_quantidade__dbt_backup"
+[0m09:51:31.908580 [debug] [Thread-3 (]: On model.open_data_agro.stg_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_rendimento_valor"} */
+alter view "dbt_workspace"."main"."stg_ibge__pam_rendimento_valor" rename to "stg_ibge__pam_rendimento_valor__dbt_backup"
+[0m09:51:31.908996 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_estabelecimentos"} */
+alter view "dbt_workspace"."main"."stg_ibge__pam_estabelecimentos" rename to "stg_ibge__pam_estabelecimentos__dbt_backup"
+[0m09:51:31.909714 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:51:31.910033 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m09:51:31.912164 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m09:51:31.912490 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m09:51:31.914653 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_rendimento_valor"
+[0m09:51:31.915077 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_area_quantidade"} */
+alter view "dbt_workspace"."main"."stg_ibge__pam_area_quantidade__dbt_tmp" rename to "stg_ibge__pam_area_quantidade"
+[0m09:51:31.917185 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_estabelecimentos"
+[0m09:51:31.917530 [debug] [Thread-3 (]: On model.open_data_agro.stg_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_rendimento_valor"} */
+alter view "dbt_workspace"."main"."stg_ibge__pam_rendimento_valor__dbt_tmp" rename to "stg_ibge__pam_rendimento_valor"
+[0m09:51:31.917985 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_estabelecimentos"} */
+alter view "dbt_workspace"."main"."stg_ibge__pam_estabelecimentos__dbt_tmp" rename to "stg_ibge__pam_estabelecimentos"
+[0m09:51:31.918348 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:51:31.928132 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: COMMIT
+[0m09:51:31.928565 [debug] [Thread-3 (]: SQL status: OK in 0.010 seconds
+[0m09:51:31.928904 [debug] [Thread-2 (]: SQL status: OK in 0.010 seconds
+[0m09:51:31.929231 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m09:51:31.930224 [debug] [Thread-3 (]: On model.open_data_agro.stg_ibge__pam_rendimento_valor: COMMIT
+[0m09:51:31.931287 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pam_estabelecimentos: COMMIT
+[0m09:51:31.931760 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: COMMIT
+[0m09:51:31.932137 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_rendimento_valor"
+[0m09:51:31.932459 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_estabelecimentos"
+[0m09:51:31.932876 [debug] [Thread-3 (]: On model.open_data_agro.stg_ibge__pam_rendimento_valor: COMMIT
+[0m09:51:31.933194 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pam_estabelecimentos: COMMIT
+[0m09:51:31.934768 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:51:31.939360 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_area_quantidade"
+[0m09:51:31.939750 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_area_quantidade"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ibge__pam_area_quantidade__dbt_backup" cascade
+    
+[0m09:51:31.940165 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m09:51:31.940563 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m09:51:31.942804 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_estabelecimentos"
+[0m09:51:31.946086 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pam_rendimento_valor"
+[0m09:51:31.946464 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m09:51:31.946841 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_estabelecimentos"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ibge__pam_estabelecimentos__dbt_backup" cascade
+    
+[0m09:51:31.947240 [debug] [Thread-3 (]: On model.open_data_agro.stg_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pam_rendimento_valor"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ibge__pam_rendimento_valor__dbt_backup" cascade
+    
+[0m09:51:31.949085 [debug] [Thread-1 (]: On model.open_data_agro.stg_ibge__pam_area_quantidade: Close
+[0m09:51:31.950757 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c3a583440>]}
+[0m09:51:31.951295 [info ] [Thread-1 (]: 1 of 27 OK created sql view model main.stg_ibge__pam_area_quantidade ........... [[32mOK[0m in 0.12s]
+[0m09:51:31.951670 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m09:51:31.952097 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m09:51:31.952658 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_ibge__pam_area_quantidade
+[0m09:51:31.953760 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pam_estabelecimentos: Close
+[0m09:51:31.954847 [debug] [Thread-3 (]: On model.open_data_agro.stg_ibge__pam_rendimento_valor: Close
+[0m09:51:31.955647 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c3056b110>]}
+[0m09:51:31.956072 [debug] [Thread-4 (]: Began running node model.open_data_agro.mart_ibge__pam_area_quantidade
+[0m09:51:31.956675 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c305692e0>]}
+[0m09:51:31.957311 [info ] [Thread-2 (]: 2 of 27 OK created sql view model main.stg_ibge__pam_estabelecimentos .......... [[32mOK[0m in 0.13s]
+[0m09:51:31.957805 [info ] [Thread-4 (]: 4 of 27 START sql external model main.mart_ibge__pam_area_quantidade ........... [RUN]
+[0m09:51:31.958440 [info ] [Thread-3 (]: 3 of 27 OK created sql view model main.stg_ibge__pam_rendimento_valor .......... [[32mOK[0m in 0.13s]
+[0m09:51:31.959005 [debug] [Thread-2 (]: Finished running node model.open_data_agro.stg_ibge__pam_estabelecimentos
+[0m09:51:31.959476 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_ibge__pam_area_quantidade'
+[0m09:51:31.959954 [debug] [Thread-3 (]: Finished running node model.open_data_agro.stg_ibge__pam_rendimento_valor
+[0m09:51:31.960465 [debug] [Thread-4 (]: Began compiling node model.open_data_agro.mart_ibge__pam_area_quantidade
+[0m09:51:31.960893 [debug] [Thread-1 (]: Began running node model.open_data_agro.mart_ibge__pam_estabelecimentos
+[0m09:51:31.964334 [debug] [Thread-4 (]: Writing injected SQL for node "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:31.964748 [debug] [Thread-3 (]: Began running node model.open_data_agro.mart_ibge__pam_rendimento_valor
+[0m09:51:31.965174 [info ] [Thread-1 (]: 5 of 27 START sql external model main.mart_ibge__pam_estabelecimentos .......... [RUN]
+[0m09:51:31.965683 [info ] [Thread-3 (]: 6 of 27 START sql external model main.mart_ibge__pam_rendimento_valor .......... [RUN]
+[0m09:51:31.966079 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_ibge__pam_area_quantidade, now model.open_data_agro.mart_ibge__pam_estabelecimentos)
+[0m09:51:31.966444 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_ibge__pam_rendimento_valor, now model.open_data_agro.mart_ibge__pam_rendimento_valor)
+[0m09:51:31.966837 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.mart_ibge__pam_estabelecimentos
+[0m09:51:31.967144 [debug] [Thread-4 (]: Began executing node model.open_data_agro.mart_ibge__pam_area_quantidade
+[0m09:51:31.967483 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.mart_ibge__pam_rendimento_valor
+[0m09:51:31.970491 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:31.996078 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.009853 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.010550 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: BEGIN
+[0m09:51:32.011024 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m09:51:32.011703 [debug] [Thread-1 (]: Began executing node model.open_data_agro.mart_ibge__pam_estabelecimentos
+[0m09:51:32.012061 [debug] [Thread-3 (]: Began executing node model.open_data_agro.mart_ibge__pam_rendimento_valor
+[0m09:51:32.015836 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.016281 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m09:51:32.019790 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.020165 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: BEGIN
+[0m09:51:32.020571 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.020928 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: BEGIN
+[0m09:51:32.021242 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:51:32.021627 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_area_quantidade"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_ibge__pam_area_quantidade__dbt_tmp"
+  
+    as (
+      
+
+select
+    sidra_tabela,
+    codigo_ibge,
+    municipio,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_ibge__pam_area_quantidade"
+    );
+  
+  
+[0m09:51:32.021971 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m09:51:32.022909 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.023515 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.024018 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.024467 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_estabelecimentos"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos__dbt_tmp"
+  
+    as (
+      
+
+select
+    sidra_tabela,
+    codigo_ibge,
+    municipio,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_ibge__pam_estabelecimentos"
+    );
+  
+  
+[0m09:51:32.024971 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.025466 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_rendimento_valor"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor__dbt_tmp"
+  
+    as (
+      
+
+select
+    sidra_tabela,
+    codigo_ibge,
+    municipio,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_ibge__pam_rendimento_valor"
+    );
+  
+  
+[0m09:51:32.034120 [debug] [Thread-3 (]: SQL status: OK in 0.008 seconds
+[0m09:51:32.034546 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m09:51:32.034960 [debug] [Thread-4 (]: SQL status: OK in 0.012 seconds
+[0m09:51:32.035913 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.036801 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.037798 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.038307 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_rendimento_valor"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor__dbt_tmp"
+  
+[0m09:51:32.038708 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_estabelecimentos"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos__dbt_tmp"
+  
+[0m09:51:32.039053 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_area_quantidade"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_ibge__pam_area_quantidade__dbt_tmp"
+  
+[0m09:51:32.040665 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.041052 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.041393 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.042457 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.043493 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.044484 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.045059 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.045408 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.045757 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_rendimento_valor"} */
+
+[0m09:51:32.046287 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.046628 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_estabelecimentos"} */
+
+[0m09:51:32.046971 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m09:51:32.047296 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_area_quantidade"} */
+
+[0m09:51:32.047614 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:51:32.049428 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.049829 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m09:51:32.050616 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.050985 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_rendimento_valor"} */
+copy "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor__dbt_tmp" to '/tmp/ibge-pam-ci-lake/gold/mart_ibge__pam_rendimento_valor/mart.parquet' (format parquet)
+[0m09:51:32.052770 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.053160 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_estabelecimentos"} */
+copy "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos__dbt_tmp" to '/tmp/ibge-pam-ci-lake/gold/mart_ibge__pam_estabelecimentos/mart.parquet' (format parquet)
+[0m09:51:32.053561 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_area_quantidade"} */
+copy "dbt_workspace"."main"."mart_ibge__pam_area_quantidade__dbt_tmp" to '/tmp/ibge-pam-ci-lake/gold/mart_ibge__pam_area_quantidade/mart.parquet' (format parquet)
+[0m09:51:32.055682 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.056480 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.056854 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.057395 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.058354 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.058781 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.059929 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.060479 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_rendimento_valor"} */
+
+      create or replace view "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor__dbt_int" as (
+        select * from read_parquet('/tmp/ibge-pam-ci-lake/gold/mart_ibge__pam_rendimento_valor/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m09:51:32.061117 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.061454 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_estabelecimentos"} */
+
+      create or replace view "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos__dbt_int" as (
+        select * from read_parquet('/tmp/ibge-pam-ci-lake/gold/mart_ibge__pam_estabelecimentos/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m09:51:32.061861 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.062371 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.062924 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_area_quantidade"} */
+
+      create or replace view "dbt_workspace"."main"."mart_ibge__pam_area_quantidade__dbt_int" as (
+        select * from read_parquet('/tmp/ibge-pam-ci-lake/gold/mart_ibge__pam_area_quantidade/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m09:51:32.065367 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.065740 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.066289 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_rendimento_valor"} */
+alter view "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor" rename to "mart_ibge__pam_rendimento_valor__dbt_backup"
+[0m09:51:32.068711 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.069258 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.069802 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_estabelecimentos"} */
+alter view "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos" rename to "mart_ibge__pam_estabelecimentos__dbt_backup"
+[0m09:51:32.070178 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.073407 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.075830 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.076245 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.076655 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_area_quantidade"} */
+alter view "dbt_workspace"."main"."mart_ibge__pam_area_quantidade" rename to "mart_ibge__pam_area_quantidade__dbt_backup"
+[0m09:51:32.077130 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_rendimento_valor"} */
+alter view "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor__dbt_int" rename to "mart_ibge__pam_rendimento_valor"
+[0m09:51:32.079337 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.080005 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_estabelecimentos"} */
+alter view "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos__dbt_int" rename to "mart_ibge__pam_estabelecimentos"
+[0m09:51:32.080410 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m09:51:32.081427 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: COMMIT
+[0m09:51:32.081811 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.082192 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.082532 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.083631 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: COMMIT
+[0m09:51:32.083990 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: COMMIT
+[0m09:51:32.086219 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.086556 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.087010 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_area_quantidade"} */
+alter view "dbt_workspace"."main"."mart_ibge__pam_area_quantidade__dbt_int" rename to "mart_ibge__pam_area_quantidade"
+[0m09:51:32.087408 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: COMMIT
+[0m09:51:32.088584 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.090310 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: COMMIT
+[0m09:51:32.091047 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m09:51:32.091728 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m09:51:32.092354 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.094833 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.098061 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.098771 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: COMMIT
+[0m09:51:32.099362 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_rendimento_valor"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor__dbt_backup" cascade
+    
+[0m09:51:32.099790 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_estabelecimentos"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos__dbt_backup" cascade
+    
+[0m09:51:32.101758 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.104909 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.105491 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m09:51:32.106047 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m09:51:32.106483 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_area_quantidade"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_ibge__pam_area_quantidade__dbt_backup" cascade
+    
+[0m09:51:32.110083 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_rendimento_valor"
+[0m09:51:32.112607 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_estabelecimentos"
+[0m09:51:32.113310 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_rendimento_valor"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor__dbt_tmp" cascade
+    
+[0m09:51:32.113845 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_estabelecimentos"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos__dbt_tmp" cascade
+    
+[0m09:51:32.114681 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.116867 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pam_area_quantidade"
+[0m09:51:32.117336 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.117792 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.118151 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pam_area_quantidade"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ibge__pam_area_quantidade__dbt_tmp" cascade
+    
+[0m09:51:32.119705 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pam_rendimento_valor: Close
+[0m09:51:32.120889 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pam_estabelecimentos: Close
+[0m09:51:32.121673 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c31e13ad0>]}
+[0m09:51:32.122332 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c3a1dc230>]}
+[0m09:51:32.123009 [info ] [Thread-3 (]: 6 of 27 OK created sql external model main.mart_ibge__pam_rendimento_valor ..... [[32mOK[0m in 0.16s]
+[0m09:51:32.123573 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.124033 [info ] [Thread-1 (]: 5 of 27 OK created sql external model main.mart_ibge__pam_estabelecimentos ..... [[32mOK[0m in 0.16s]
+[0m09:51:32.124760 [debug] [Thread-3 (]: Finished running node model.open_data_agro.mart_ibge__pam_rendimento_valor
+[0m09:51:32.126019 [debug] [Thread-4 (]: On model.open_data_agro.mart_ibge__pam_area_quantidade: Close
+[0m09:51:32.126472 [debug] [Thread-1 (]: Finished running node model.open_data_agro.mart_ibge__pam_estabelecimentos
+[0m09:51:32.127060 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f612e2f7-70a7-43a3-8c18-85b259e9d065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c30569250>]}
+[0m09:51:32.127990 [info ] [Thread-4 (]: 4 of 27 OK created sql external model main.mart_ibge__pam_area_quantidade ...... [[32mOK[0m in 0.17s]
+[0m09:51:32.128402 [debug] [Thread-2 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb
+[0m09:51:32.128853 [debug] [Thread-3 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824
+[0m09:51:32.129477 [debug] [Thread-4 (]: Finished running node model.open_data_agro.mart_ibge__pam_area_quantidade
+[0m09:51:32.129901 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b
+[0m09:51:32.130402 [info ] [Thread-2 (]: 7 of 27 START test dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo  [RUN]
+[0m09:51:32.131083 [info ] [Thread-3 (]: 8 of 27 START test dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo  [RUN]
+[0m09:51:32.131770 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243
+[0m09:51:32.132315 [info ] [Thread-1 (]: 9 of 27 START test not_null_mart_ibge__pam_estabelecimentos_ano ................ [RUN]
+[0m09:51:32.133158 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_ibge__pam_estabelecimentos, now test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb)
+[0m09:51:32.133762 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_ibge__pam_rendimento_valor, now test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824)
+[0m09:51:32.134248 [info ] [Thread-4 (]: 10 of 27 START test not_null_mart_ibge__pam_estabelecimentos_codigo_ibge ....... [RUN]
+[0m09:51:32.134821 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_ibge__pam_estabelecimentos, now test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b)
+[0m09:51:32.135308 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb
+[0m09:51:32.135831 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824
+[0m09:51:32.136332 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_ibge__pam_area_quantidade, now test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243)
+[0m09:51:32.136963 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b
+[0m09:51:32.141471 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb"
+[0m09:51:32.144973 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824"
+[0m09:51:32.145464 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243
+[0m09:51:32.151749 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b"
+[0m09:51:32.155630 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243"
+[0m09:51:32.156254 [debug] [Thread-3 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824
+[0m09:51:32.156847 [debug] [Thread-2 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb
+[0m09:51:32.157393 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b
+[0m09:51:32.172874 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824"
+[0m09:51:32.175888 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb"
+[0m09:51:32.176432 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243
+[0m09:51:32.178657 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b"
+[0m09:51:32.180682 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243"
+[0m09:51:32.181325 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824"
+[0m09:51:32.181924 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb"
+[0m09:51:32.182429 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824: BEGIN
+[0m09:51:32.182836 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b"
+[0m09:51:32.183384 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb: BEGIN
+[0m09:51:32.183950 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243"
+[0m09:51:32.184297 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m09:51:32.184739 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b: BEGIN
+[0m09:51:32.185337 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m09:51:32.185830 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243: BEGIN
+[0m09:51:32.186381 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:51:32.186745 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.187237 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m09:51:32.187728 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.188228 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824"
+[0m09:51:32.188578 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.189160 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb"
+[0m09:51:32.189701 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.190172 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        codigo_ibge, ano, variavel_codigo, produto_codigo
+    from "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor"
+    group by codigo_ibge, ano, variavel_codigo, produto_codigo
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.190713 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b"
+[0m09:51:32.191231 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        codigo_ibge, ano, variavel_codigo, produto_codigo
+    from "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos"
+    group by codigo_ibge, ano, variavel_codigo, produto_codigo
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.191848 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243"
+[0m09:51:32.192507 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ano
+from "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos"
+where ano is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.193095 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select codigo_ibge
+from "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos"
+where codigo_ibge is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.194686 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.195187 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.195674 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.196281 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.199144 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b: ROLLBACK
+[0m09:51:32.200761 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824: ROLLBACK
+[0m09:51:32.202340 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb: ROLLBACK
+[0m09:51:32.203723 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243: ROLLBACK
+[0m09:51:32.204760 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b'
+[0m09:51:32.205745 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824'
+[0m09:51:32.206697 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb'
+[0m09:51:32.207628 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243'
+[0m09:51:32.208077 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b: Close
+[0m09:51:32.208478 [debug] [Thread-3 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824: Close
+[0m09:51:32.209024 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb: Close
+[0m09:51:32.209529 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243: Close
+[0m09:51:32.210240 [info ] [Thread-1 (]: 9 of 27 PASS not_null_mart_ibge__pam_estabelecimentos_ano ...................... [[32mPASS[0m in 0.08s]
+[0m09:51:32.210843 [info ] [Thread-3 (]: 8 of 27 PASS dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo  [[32mPASS[0m in 0.08s]
+[0m09:51:32.211391 [info ] [Thread-2 (]: 7 of 27 PASS dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo  [[32mPASS[0m in 0.08s]
+[0m09:51:32.211908 [info ] [Thread-4 (]: 10 of 27 PASS not_null_mart_ibge__pam_estabelecimentos_codigo_ibge ............. [[32mPASS[0m in 0.08s]
+[0m09:51:32.212412 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b
+[0m09:51:32.212898 [debug] [Thread-3 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824
+[0m09:51:32.213501 [debug] [Thread-2 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb
+[0m09:51:32.214136 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243
+[0m09:51:32.214523 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498
+[0m09:51:32.214980 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d
+[0m09:51:32.215466 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1
+[0m09:51:32.216063 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910
+[0m09:51:32.216446 [info ] [Thread-1 (]: 11 of 27 START test not_null_mart_ibge__pam_estabelecimentos_fonte_oficial ..... [RUN]
+[0m09:51:32.216849 [info ] [Thread-3 (]: 12 of 27 START test not_null_mart_ibge__pam_estabelecimentos_produto_codigo .... [RUN]
+[0m09:51:32.217314 [info ] [Thread-2 (]: 13 of 27 START test not_null_mart_ibge__pam_estabelecimentos_valor ............. [RUN]
+[0m09:51:32.217881 [info ] [Thread-4 (]: 14 of 27 START test not_null_mart_ibge__pam_estabelecimentos_variavel_codigo ... [RUN]
+[0m09:51:32.218291 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_ano.459325e70b, now test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498)
+[0m09:51:32.218690 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_rendimento_valor_codigo_ibge__ano__variavel_codigo__produto_codigo.ed8f26b824, now test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d)
+[0m09:51:32.219161 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_estabelecimentos_codigo_ibge__ano__variavel_codigo__produto_codigo.1726b24beb, now test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1)
+[0m09:51:32.219762 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_codigo_ibge.a87c642243, now test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910)
+[0m09:51:32.220167 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498
+[0m09:51:32.220537 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d
+[0m09:51:32.220967 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1
+[0m09:51:32.221495 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910
+[0m09:51:32.225453 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498"
+[0m09:51:32.230206 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d"
+[0m09:51:32.233598 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1"
+[0m09:51:32.236700 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910"
+[0m09:51:32.237438 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498
+[0m09:51:32.237983 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d
+[0m09:51:32.238568 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910
+[0m09:51:32.240980 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498"
+[0m09:51:32.241464 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1
+[0m09:51:32.244698 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d"
+[0m09:51:32.246789 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910"
+[0m09:51:32.248871 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1"
+[0m09:51:32.249401 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498"
+[0m09:51:32.250001 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d"
+[0m09:51:32.250457 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910"
+[0m09:51:32.251105 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498: BEGIN
+[0m09:51:32.251593 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1"
+[0m09:51:32.251995 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d: BEGIN
+[0m09:51:32.252380 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910: BEGIN
+[0m09:51:32.252787 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:51:32.253233 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1: BEGIN
+[0m09:51:32.253652 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m09:51:32.254014 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m09:51:32.254544 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m09:51:32.255037 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.255523 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.255984 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.256368 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.256772 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498"
+[0m09:51:32.257203 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d"
+[0m09:51:32.257577 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910"
+[0m09:51:32.257989 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1"
+[0m09:51:32.258392 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.258854 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto_codigo
+from "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos"
+where produto_codigo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.259271 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select variavel_codigo
+from "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos"
+where variavel_codigo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.259686 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select valor
+from "dbt_workspace"."main"."mart_ibge__pam_estabelecimentos"
+where valor is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.261059 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.261590 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.262996 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d: ROLLBACK
+[0m09:51:32.263479 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.263930 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.265219 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910: ROLLBACK
+[0m09:51:32.266157 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d'
+[0m09:51:32.268026 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498: ROLLBACK
+[0m09:51:32.269431 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1: ROLLBACK
+[0m09:51:32.270359 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910'
+[0m09:51:32.270730 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d: Close
+[0m09:51:32.271655 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498'
+[0m09:51:32.272567 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1'
+[0m09:51:32.272936 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910: Close
+[0m09:51:32.273522 [info ] [Thread-3 (]: 12 of 27 PASS not_null_mart_ibge__pam_estabelecimentos_produto_codigo .......... [[32mPASS[0m in 0.05s]
+[0m09:51:32.273936 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498: Close
+[0m09:51:32.274448 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1: Close
+[0m09:51:32.275069 [info ] [Thread-4 (]: 14 of 27 PASS not_null_mart_ibge__pam_estabelecimentos_variavel_codigo ......... [[32mPASS[0m in 0.06s]
+[0m09:51:32.275602 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d
+[0m09:51:32.276209 [info ] [Thread-1 (]: 11 of 27 PASS not_null_mart_ibge__pam_estabelecimentos_fonte_oficial ........... [[32mPASS[0m in 0.06s]
+[0m09:51:32.276774 [info ] [Thread-2 (]: 13 of 27 PASS not_null_mart_ibge__pam_estabelecimentos_valor ................... [[32mPASS[0m in 0.06s]
+[0m09:51:32.277296 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910
+[0m09:51:32.277738 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac
+[0m09:51:32.278329 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498
+[0m09:51:32.278836 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1
+[0m09:51:32.279290 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8
+[0m09:51:32.279707 [info ] [Thread-3 (]: 15 of 27 START test not_null_mart_ibge__pam_rendimento_valor_ano ............... [RUN]
+[0m09:51:32.280168 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045
+[0m09:51:32.280584 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9
+[0m09:51:32.281054 [info ] [Thread-4 (]: 16 of 27 START test not_null_mart_ibge__pam_rendimento_valor_codigo_ibge ....... [RUN]
+[0m09:51:32.281474 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_produto_codigo.c565fb6e4d, now test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac)
+[0m09:51:32.281873 [info ] [Thread-1 (]: 17 of 27 START test not_null_mart_ibge__pam_rendimento_valor_fonte_oficial ..... [RUN]
+[0m09:51:32.282267 [info ] [Thread-2 (]: 18 of 27 START test not_null_mart_ibge__pam_rendimento_valor_produto_codigo .... [RUN]
+[0m09:51:32.282695 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_variavel_codigo.7e79a6f910, now test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8)
+[0m09:51:32.283057 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac
+[0m09:51:32.283449 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_fonte_oficial.c17b651498, now test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045)
+[0m09:51:32.283847 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_estabelecimentos_valor.08e8cb1fc1, now test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9)
+[0m09:51:32.284239 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8
+[0m09:51:32.287832 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac"
+[0m09:51:32.288290 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045
+[0m09:51:32.288693 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9
+[0m09:51:32.291806 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8"
+[0m09:51:32.295833 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045"
+[0m09:51:32.300979 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9"
+[0m09:51:32.301553 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac
+[0m09:51:32.302471 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8
+[0m09:51:32.303083 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045
+[0m09:51:32.305473 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac"
+[0m09:51:32.309207 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8"
+[0m09:51:32.309738 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9
+[0m09:51:32.365233 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045"
+[0m09:51:32.365863 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac"
+[0m09:51:32.366358 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8"
+[0m09:51:32.368378 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9"
+[0m09:51:32.368870 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac: BEGIN
+[0m09:51:32.369339 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045"
+[0m09:51:32.369775 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8: BEGIN
+[0m09:51:32.370441 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m09:51:32.370950 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045: BEGIN
+[0m09:51:32.371318 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9"
+[0m09:51:32.371717 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m09:51:32.372465 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:51:32.372885 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9: BEGIN
+[0m09:51:32.373267 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.373833 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.374349 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m09:51:32.374794 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.375352 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac"
+[0m09:51:32.375890 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8"
+[0m09:51:32.376472 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045"
+[0m09:51:32.376965 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ano
+from "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor"
+where ano is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.377364 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.377921 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select codigo_ibge
+from "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor"
+where codigo_ibge is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.378381 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.379142 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9"
+[0m09:51:32.380024 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.380627 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.381062 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto_codigo
+from "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor"
+where produto_codigo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.381528 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.383020 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac: ROLLBACK
+[0m09:51:32.384720 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8: ROLLBACK
+[0m09:51:32.386325 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045: ROLLBACK
+[0m09:51:32.387423 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac'
+[0m09:51:32.387946 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.388970 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8'
+[0m09:51:32.390209 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045'
+[0m09:51:32.390778 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac: Close
+[0m09:51:32.392916 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9: ROLLBACK
+[0m09:51:32.393632 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8: Close
+[0m09:51:32.394120 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045: Close
+[0m09:51:32.394887 [info ] [Thread-3 (]: 15 of 27 PASS not_null_mart_ibge__pam_rendimento_valor_ano ..................... [[32mPASS[0m in 0.11s]
+[0m09:51:32.396213 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9'
+[0m09:51:32.397045 [info ] [Thread-4 (]: 16 of 27 PASS not_null_mart_ibge__pam_rendimento_valor_codigo_ibge ............. [[32mPASS[0m in 0.11s]
+[0m09:51:32.397805 [info ] [Thread-1 (]: 17 of 27 PASS not_null_mart_ibge__pam_rendimento_valor_fonte_oficial ........... [[32mPASS[0m in 0.11s]
+[0m09:51:32.398586 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac
+[0m09:51:32.401883 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab
+[0m09:51:32.400538 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8
+[0m09:51:32.401329 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045
+[0m09:51:32.399298 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9: Close
+[0m09:51:32.402559 [info ] [Thread-3 (]: 19 of 27 START test not_null_mart_ibge__pam_rendimento_valor_valor ............. [RUN]
+[0m09:51:32.403274 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe
+[0m09:51:32.404006 [debug] [Thread-1 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2
+[0m09:51:32.406687 [info ] [Thread-2 (]: 18 of 27 PASS not_null_mart_ibge__pam_rendimento_valor_produto_codigo .......... [[32mPASS[0m in 0.12s]
+[0m09:51:32.407399 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_ano.2e51fe5aac, now test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab)
+[0m09:51:32.408108 [info ] [Thread-4 (]: 20 of 27 START test not_null_mart_ibge__pam_rendimento_valor_variavel_codigo ... [RUN]
+[0m09:51:32.408818 [info ] [Thread-1 (]: 21 of 27 START test dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo  [RUN]
+[0m09:51:32.409899 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9
+[0m09:51:32.410620 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab
+[0m09:51:32.411404 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_codigo_ibge.eec3c668b8, now test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe)
+[0m09:51:32.412386 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa
+[0m09:51:32.413000 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_fonte_oficial.1a91dc6045, now test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2)
+[0m09:51:32.418906 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab"
+[0m09:51:32.419673 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe
+[0m09:51:32.420372 [info ] [Thread-2 (]: 22 of 27 START test not_null_mart_ibge__pam_area_quantidade_ano ................ [RUN]
+[0m09:51:32.421077 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2
+[0m09:51:32.427023 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe"
+[0m09:51:32.427761 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab
+[0m09:51:32.428391 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_produto_codigo.b9b38e28d9, now test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa)
+[0m09:51:32.432666 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2"
+[0m09:51:32.434787 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab"
+[0m09:51:32.435327 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa
+[0m09:51:32.438771 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa"
+[0m09:51:32.439287 [debug] [Thread-1 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2
+[0m09:51:32.442207 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2"
+[0m09:51:32.442828 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe
+[0m09:51:32.445902 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe"
+[0m09:51:32.446334 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa
+[0m09:51:32.449679 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa"
+[0m09:51:32.450322 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2"
+[0m09:51:32.450916 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab"
+[0m09:51:32.451864 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe"
+[0m09:51:32.452475 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2: BEGIN
+[0m09:51:32.452990 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa"
+[0m09:51:32.453447 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab: BEGIN
+[0m09:51:32.454090 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe: BEGIN
+[0m09:51:32.454606 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:51:32.454972 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa: BEGIN
+[0m09:51:32.455476 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m09:51:32.456069 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m09:51:32.456652 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m09:51:32.457257 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.457916 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.458603 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2"
+[0m09:51:32.459753 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.460341 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m09:51:32.461239 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab"
+[0m09:51:32.464464 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select valor
+from "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor"
+where valor is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.462511 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa"
+[0m09:51:32.463124 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe"
+[0m09:51:32.461849 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        codigo_ibge, ano, variavel_codigo, produto_codigo
+    from "dbt_workspace"."main"."mart_ibge__pam_area_quantidade"
+    group by codigo_ibge, ano, variavel_codigo, produto_codigo
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.466556 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select variavel_codigo
+from "dbt_workspace"."main"."mart_ibge__pam_rendimento_valor"
+where variavel_codigo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.465838 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ano
+from "dbt_workspace"."main"."mart_ibge__pam_area_quantidade"
+where ano is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.467241 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.471336 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab: ROLLBACK
+[0m09:51:32.472678 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab'
+[0m09:51:32.473360 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m09:51:32.473993 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m09:51:32.474698 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m09:51:32.475423 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab: Close
+[0m09:51:32.477795 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2: ROLLBACK
+[0m09:51:32.479756 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe: ROLLBACK
+[0m09:51:32.481598 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa: ROLLBACK
+[0m09:51:32.482461 [info ] [Thread-3 (]: 19 of 27 PASS not_null_mart_ibge__pam_rendimento_valor_valor ................... [[32mPASS[0m in 0.07s]
+[0m09:51:32.483576 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2'
+[0m09:51:32.484813 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe'
+[0m09:51:32.485831 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa'
+[0m09:51:32.486483 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab
+[0m09:51:32.486896 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2: Close
+[0m09:51:32.487356 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe: Close
+[0m09:51:32.487784 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa: Close
+[0m09:51:32.488209 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb
+[0m09:51:32.489038 [info ] [Thread-1 (]: 21 of 27 PASS dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo  [[32mPASS[0m in 0.08s]
+[0m09:51:32.489749 [info ] [Thread-4 (]: 20 of 27 PASS not_null_mart_ibge__pam_rendimento_valor_variavel_codigo ......... [[32mPASS[0m in 0.08s]
+[0m09:51:32.490315 [info ] [Thread-2 (]: 22 of 27 PASS not_null_mart_ibge__pam_area_quantidade_ano ...................... [[32mPASS[0m in 0.06s]
+[0m09:51:32.490733 [info ] [Thread-3 (]: 23 of 27 START test not_null_mart_ibge__pam_area_quantidade_codigo_ibge ........ [RUN]
+[0m09:51:32.491500 [debug] [Thread-1 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2
+[0m09:51:32.492154 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe
+[0m09:51:32.492589 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa
+[0m09:51:32.492999 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_valor.cb07dbbbab, now test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb)
+[0m09:51:32.493367 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0
+[0m09:51:32.493789 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129
+[0m09:51:32.494261 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e
+[0m09:51:32.494665 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb
+[0m09:51:32.495036 [info ] [Thread-1 (]: 24 of 27 START test not_null_mart_ibge__pam_area_quantidade_fonte_oficial ...... [RUN]
+[0m09:51:32.499967 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__pam_area_quantidade_codigo_ibge__ano__variavel_codigo__produto_codigo.80188168f2, now test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0)
+[0m09:51:32.500596 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0
+[0m09:51:32.495410 [info ] [Thread-4 (]: 25 of 27 START test not_null_mart_ibge__pam_area_quantidade_produto_codigo ..... [RUN]
+[0m09:51:32.495782 [info ] [Thread-2 (]: 26 of 27 START test not_null_mart_ibge__pam_area_quantidade_valor .............. [RUN]
+[0m09:51:32.499206 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb"
+[0m09:51:32.506126 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0"
+[0m09:51:32.507024 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_rendimento_valor_variavel_codigo.9b26dc58fe, now test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129)
+[0m09:51:32.507790 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_ano.2d933577fa, now test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e)
+[0m09:51:32.512225 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e
+[0m09:51:32.508587 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129
+[0m09:51:32.510399 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0
+[0m09:51:32.509344 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb
+[0m09:51:32.517719 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e"
+[0m09:51:32.524165 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129"
+[0m09:51:32.526735 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0"
+[0m09:51:32.528874 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb"
+[0m09:51:32.529640 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e
+[0m09:51:32.530369 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0"
+[0m09:51:32.532453 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e"
+[0m09:51:32.533057 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129
+[0m09:51:32.533704 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb"
+[0m09:51:32.534072 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0: BEGIN
+[0m09:51:32.538508 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129"
+[0m09:51:32.539227 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e"
+[0m09:51:32.539662 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb: BEGIN
+[0m09:51:32.540264 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:51:32.540827 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e: BEGIN
+[0m09:51:32.541223 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m09:51:32.542054 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m09:51:32.542572 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129"
+[0m09:51:32.543123 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.543761 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.544384 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129: BEGIN
+[0m09:51:32.544883 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.545250 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0"
+[0m09:51:32.545667 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb"
+[0m09:51:32.546140 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m09:51:32.546680 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e"
+[0m09:51:32.547274 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "dbt_workspace"."main"."mart_ibge__pam_area_quantidade"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.547883 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select codigo_ibge
+from "dbt_workspace"."main"."mart_ibge__pam_area_quantidade"
+where codigo_ibge is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.548625 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select valor
+from "dbt_workspace"."main"."mart_ibge__pam_area_quantidade"
+where valor is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.549467 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.550455 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.551053 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129"
+[0m09:51:32.551604 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.553145 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0: ROLLBACK
+[0m09:51:32.553589 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m09:51:32.554150 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto_codigo
+from "dbt_workspace"."main"."mart_ibge__pam_area_quantidade"
+where produto_codigo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.555842 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb: ROLLBACK
+[0m09:51:32.556647 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0'
+[0m09:51:32.558602 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e: ROLLBACK
+[0m09:51:32.559274 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m09:51:32.560512 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb'
+[0m09:51:32.561138 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0: Close
+[0m09:51:32.563944 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e'
+[0m09:51:32.566143 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129: ROLLBACK
+[0m09:51:32.566839 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb: Close
+[0m09:51:32.568059 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e: Close
+[0m09:51:32.567712 [info ] [Thread-1 (]: 24 of 27 PASS not_null_mart_ibge__pam_area_quantidade_fonte_oficial ............ [[32mPASS[0m in 0.07s]
+[0m09:51:32.569707 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129'
+[0m09:51:32.570596 [info ] [Thread-3 (]: 23 of 27 PASS not_null_mart_ibge__pam_area_quantidade_codigo_ibge .............. [[32mPASS[0m in 0.08s]
+[0m09:51:32.571474 [info ] [Thread-2 (]: 26 of 27 PASS not_null_mart_ibge__pam_area_quantidade_valor .................... [[32mPASS[0m in 0.06s]
+[0m09:51:32.572109 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0
+[0m09:51:32.572508 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129: Close
+[0m09:51:32.573109 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb
+[0m09:51:32.573609 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e
+[0m09:51:32.574013 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae
+[0m09:51:32.574624 [info ] [Thread-4 (]: 25 of 27 PASS not_null_mart_ibge__pam_area_quantidade_produto_codigo ........... [[32mPASS[0m in 0.07s]
+[0m09:51:32.575200 [info ] [Thread-1 (]: 27 of 27 START test not_null_mart_ibge__pam_area_quantidade_variavel_codigo .... [RUN]
+[0m09:51:32.575695 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129
+[0m09:51:32.576162 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_fonte_oficial.02cdc1eff0, now test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae)
+[0m09:51:32.576626 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae
+[0m09:51:32.580273 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae"
+[0m09:51:32.580842 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae
+[0m09:51:32.582957 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae"
+[0m09:51:32.583520 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae"
+[0m09:51:32.583928 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae: BEGIN
+[0m09:51:32.584276 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:51:32.584987 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.585391 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae"
+[0m09:51:32.585758 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select variavel_codigo
+from "dbt_workspace"."main"."mart_ibge__pam_area_quantidade"
+where variavel_codigo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m09:51:32.587052 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:51:32.588445 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae: ROLLBACK
+[0m09:51:32.589310 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae'
+[0m09:51:32.589650 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae: Close
+[0m09:51:32.590185 [info ] [Thread-1 (]: 27 of 27 PASS not_null_mart_ibge__pam_area_quantidade_variavel_codigo .......... [[32mPASS[0m in 0.01s]
+[0m09:51:32.590669 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae
+[0m09:51:32.591978 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:51:32.592531 [debug] [MainThread]: On master: BEGIN
+[0m09:51:32.592999 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:51:32.593898 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m09:51:32.594427 [debug] [MainThread]: On master: COMMIT
+[0m09:51:32.594921 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:51:32.595402 [debug] [MainThread]: On master: COMMIT
+[0m09:51:32.596100 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:51:32.596611 [debug] [MainThread]: On master: Close
+[0m09:51:32.597241 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:51:32.597673 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_variavel_codigo.86e76e47ae' was properly closed.
+[0m09:51:32.598116 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_valor.e6c379316e' was properly closed.
+[0m09:51:32.598546 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_codigo_ibge.d2d0bcc0bb' was properly closed.
+[0m09:51:32.598934 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_ibge__pam_area_quantidade_produto_codigo.dcdd9e4129' was properly closed.
+[0m09:51:32.599396 [info ] [MainThread]: 
+[0m09:51:32.599848 [info ] [MainThread]: Finished running 3 external models, 21 data tests, 3 view models in 0 hours 0 minutes and 0.99 seconds (0.99s).
+[0m09:51:32.603330 [debug] [MainThread]: Command end result
+[0m09:51:32.675271 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m09:51:32.677718 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m09:51:32.683467 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m09:51:32.684070 [info ] [MainThread]: 
+[0m09:51:32.684565 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m09:51:32.684912 [info ] [MainThread]: 
+[0m09:51:32.685239 [info ] [MainThread]: Done. PASS=27 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=27
+[0m09:51:32.685721 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m09:51:32.686501 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 4.6085305, "process_in_blocks": "88528", "process_kernel_time": 0.202502, "process_mem_max_rss": "211120", "process_out_blocks": "12352", "process_user_time": 5.601892}
+[0m09:51:32.686928 [debug] [MainThread]: Command `dbt build` succeeded at 09:51:32.686854 after 4.61 seconds
+[0m09:51:32.687275 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c47279430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c4799fad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x777c473a1a30>]}
+[0m09:51:32.687622 [debug] [MainThread]: Flushing usage events
+[0m09:51:33.501848 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -48,6 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CI PAM codigo_ibge validation (Phase 16 P4):** `ci-validate-codigo-ibge` extended with IBGE PAM gold marts (`codigo_ibge` vs localidades reference)
 - **CONAB Mercado CI consolidation (Phase 11 §7):** `dbt-build-mercado` covers all 8 mercado marts, `conab-mercado-full-mvp`, committed `scripts/benchmark/profiles/fast10.json` with `precos-semanal-uf` + `frete`
 - **IBGE PAM (Phase 16):** full E2E for area-quantidade, rendimento-valor, estabelecimentos — dbt marts, DuckDB views `analytics.ibge_pam_*`, `make ibge-pam-mvp`
+- **CI IBGE PAM (Phase 16):** `make ci-ibge-pam-mvp` in GitHub Actions `dbt` job — mirrors offline PAM pipeline with `validate-codigo-ibge` on isolated `/tmp` lake
 - **INMET Clima Histórico (Phase 17):** full E2E for station catalogs, BDMEP diário/mensal, pacote-anual-automaticas — dbt marts, DuckDB views, `make inmet-clima-mvp`
 - **BCB Séries Macro (Phase 18):** full E2E for IPCA, IPCA 12m, IGP-M, PTAX compra/venda — dbt marts, DuckDB views, `make bcb-sgs-mvp`
 - **CEPEA Preços Agro (Phase 19):** full E2E for soja Paranaguá/PR, milho, boi gordo — dbt marts, DuckDB views, `make cepea-indicadores-mvp`

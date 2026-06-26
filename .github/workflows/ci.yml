@@ -147,6 +147,9 @@ jobs:
       - name: Macro collection offline pipeline (INMET, BCB, CEPEA)
         run: make ci-collection-macro-mvp
 
+      - name: IBGE PAM offline pipeline
+        run: make ci-ibge-pam-mvp
+
   quality:
     runs-on: ubuntu-latest
     steps:
