@@ -103,6 +103,15 @@
 
 ---
 
+## USDA marketing year
+
+**Definition:** USDA FAS PSD reporting year for a commodity, which may span two calendar years (e.g. U.S. soy MY 2024/25). Stored as the four-digit **market year start** in bronze (`marketing_year` column).
+**Not the same as:** Calendar year (`calendar_year`) or Brazilian safra label.
+**Alignment:** Use `marketing_year` for cross-country PSD joins; use `calendar_year` + `month` for release timing. See [OFFICIAL-SOURCES.md](OFFICIAL-SOURCES.md) USDA section.
+**Code name:** `marketing_year`, `Market_Year`
+
+---
+
 ## Golden vector
 
 **Definition:** Test fixture with input/output pairs from official API samples or published tables.

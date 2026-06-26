@@ -10,6 +10,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/cepea"
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 	"github.com/open-data-brazil/open-data-agro/internal/mdic"
+	"github.com/open-data-brazil/open-data-agro/internal/usda"
 )
 
 func convertJSONFileToParquet(entry catalog.RegistryEntry, path string) ([]byte, int, error) {
@@ -53,6 +54,12 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		return writeStringTable(headers, rows)
 	case "b3":
 		headers, rows, err := b3.FlattenFuturo(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "usda":
+		headers, rows, err := usda.FlattenPSD(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}

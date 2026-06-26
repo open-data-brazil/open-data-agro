@@ -43,8 +43,14 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "b3.") {
 		return B3MarketDataPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "usda.") {
+		return USDAFASPSDPortalURL
+	}
 	return ""
 }
+
+// USDAFASPSDPortalURL is the USDA FAS PSD Online portal URL.
+const USDAFASPSDPortalURL = "https://apps.fas.usda.gov/psdonline/"
 
 // B3MarketDataPortalURL is the B3 market data portal URL.
 const B3MarketDataPortalURL = "https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/"

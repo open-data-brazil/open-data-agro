@@ -152,6 +152,9 @@ def main() -> int:
             "bronze_b3_futuro_soja": "expectations/suites/bronze/b3/futuro_soja.json",
             "bronze_b3_futuro_milho": "expectations/suites/bronze/b3/futuro_milho.json",
             "bronze_b3_futuro_boi": "expectations/suites/bronze/b3/futuro_boi.json",
+            "bronze_usda_psd_soja": "expectations/suites/bronze/usda/psd_soja.json",
+            "bronze_usda_psd_milho": "expectations/suites/bronze/usda/psd_milho.json",
+            "bronze_usda_psd_trigo": "expectations/suites/bronze/usda/psd_trigo.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:

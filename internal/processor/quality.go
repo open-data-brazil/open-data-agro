@@ -225,6 +225,12 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_b3_futuro_milho", true
 	case "b3.futuro-boi":
 		return "bronze_b3_futuro_boi", true
+	case "usda.psd-soja":
+		return "bronze_usda_psd_soja", true
+	case "usda.psd-milho":
+		return "bronze_usda_psd_milho", true
+	case "usda.psd-trigo":
+		return "bronze_usda_psd_trigo", true
 	default:
 		return "", false
 	}

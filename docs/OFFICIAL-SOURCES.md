@@ -187,6 +187,18 @@ Municipal planting-window climate risk (`dec1`–`dec36`) by culture, soil cycle
 
 Daily futures settlement (`AdjstdQt`) by contract symbol. Regulated exchange reference — not `.gov.br`. License documented in catalog and OFFICIAL-REFERENCE. No synthetic continuous rolls in bronze.
 
+### USDA FAS — PSD global supply (Phase 25)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `usda.psd-soja` | Oilseed, Soybean (2222000) — country × marketing year | **P0 — implemented** |
+| `usda.psd-milho` | Corn (0440000) PSD | **P0 — implemented** |
+| `usda.psd-trigo` | Wheat (0410000) PSD | **P1 — implemented** |
+
+**Fonte oficial:** [USDA FAS PSD Online](https://apps.fas.usda.gov/psdonline/) · SOAP `getDatabyCommodityPerYear` (AMIS web service, no API key)
+
+Global production/supply/demand by country and marketing year. `fonte_tipo: internacional_oficial`. Values in official PSD units (typically 1000 MT).
+
 ---
 
 ## Rules

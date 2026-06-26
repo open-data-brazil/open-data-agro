@@ -16,6 +16,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/inmet"
 	"github.com/open-data-brazil/open-data-agro/internal/mapa"
 	"github.com/open-data-brazil/open-data-agro/internal/mdic"
+	"github.com/open-data-brazil/open-data-agro/internal/usda"
 )
 
 // SourceOptions carries optional ingest parameters (PAM crop/year/UF filters, INMET year).
@@ -68,13 +69,15 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		return mapa.ResolveURL(entry)
 	case "b3":
 		return b3.ResolveURL(entry)
+	case "usda":
+		return usda.ResolveURL(entry)
 	default:
 		return "", fmt.Errorf("unsupported agency %q for dataset %s", agency, entry.DatasetID)
 	}
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, opts SourceOptions) (*SourceDownload, error) {
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, opts SourceOptions) (*SourceDownload, error) {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
 		return nil, err
@@ -143,6 +146,19 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 
 	if agency == "b3" {
 		body, sourceURL, err := b3Client.FetchFuturoSnapshot(ctx, entry, opts.FromDate)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	}
+
+	if agency == "usda" {
+		body, sourceURL, err := usdaClient.FetchPSDSnapshot(ctx, entry, opts.FromDate)
 		if err != nil {
 			return nil, err
 		}

@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Wheat PSD must contain rows." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "country_code" },
+      "meta": { "notes": "ISO country code." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "country_code" },
+      "meta": { "notes": "Country required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "marketing_year" },
+      "meta": { "notes": "Marketing year required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "value" },
+      "meta": { "notes": "PSD value required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": ["country_code", "marketing_year", "attribute_id", "calendar_year", "month"]
+      },
+      "meta": { "notes": "One row per country × MY × attribute × release month." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "usda.psd-trigo",
+    "fonte_oficial": "https://apps.fas.usda.gov/psdonline/",
+    "agencia": "USDA FAS",
+    "license": "USDA FAS — public domain"
+  },
+  "name": "bronze.usda.psd_trigo",
+  "id": "bronze-usda-psd-trigo-suite"
+}
