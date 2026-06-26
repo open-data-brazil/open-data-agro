@@ -12,7 +12,7 @@ MIGRATE ?= migrate
 BENCHMARK_PROFILE ?= scripts/benchmark/profiles/fast10.json
 MERCADO_DBT_SELECT := stg_conab__oferta_demanda+ stg_conab__precos_semanal_uf+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_uf+ stg_conab__precos_mensal_municipio+ stg_conab__precos_minimos+ stg_conab__prohort_diario+ stg_conab__prohort_mensal+
 CI_COD_IBGE_LAKE ?= /tmp/cod-ibge-ci-lake
-COD_IBGE_DBT_SELECT := stg_conab__custo_producao+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_municipio+ stg_conab__frete+ stg_conab__armazenagem+ stg_conab__estoques_publicos+ stg_conab__alimenta_brasil_propostas+ stg_conab__prohort_diario+ stg_conab__prohort_mensal+
+COD_IBGE_DBT_SELECT := stg_conab__custo_producao+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_municipio+ stg_conab__frete+ stg_conab__armazenagem+ stg_conab__estoques_publicos+ stg_conab__alimenta_brasil_propostas+ stg_conab__prohort_diario+ stg_conab__prohort_mensal+ stg_ibge__pam_area_quantidade+ stg_ibge__pam_rendimento_valor+ stg_ibge__pam_estabelecimentos+
 
 test:
 	go test ./...
@@ -47,7 +47,7 @@ ci-dbt: duckdb-install python-install
 	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
 	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
 
-# Offline CI: seed all CONAB marts with cod_ibge, build gold, cross-check vs IBGE municipios.
+# Offline CI: seed CONAB + IBGE PAM marts with cod_ibge/codigo_ibge, build gold, cross-check.
 ci-validate-codigo-ibge: duckdb-install python-install dbt-deps
 	rm -rf $(CI_COD_IBGE_LAKE) /tmp/cod-ibge-ci.duckdb
 	cp -f dbt/profiles.yml.example dbt/profiles.yml
@@ -56,6 +56,7 @@ ci-validate-codigo-ibge: duckdb-install python-install dbt-deps
 	LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) python3 scripts/ci/seed_armazenamento_silver.py
 	LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) python3 scripts/ci/seed_abastecimento_silver.py
 	LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) python3 scripts/ci/seed_agricultura_familiar_silver.py
+	LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) python3 scripts/ci/seed_ibge_pam_silver.py
 	cd dbt && PATH="$(CURDIR)/.local/bin:$$PATH" DUCKDB_BIN="$(CURDIR)/.local/bin/duckdb" \
 		LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) DUCKDB_PATH=/tmp/cod-ibge-ci.duckdb \
 		dbt build --profiles-dir . --select '$(COD_IBGE_DBT_SELECT)'
