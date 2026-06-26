@@ -1,0 +1,58 @@
+{
+  "expectations": [
+    {
+      "id": "60b3875e-bda4-43c1-a198-fe36d8991a47",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "a1e64b90-dad4-4c70-811d-59f3ae329da5",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "CONAB product column."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "2b60d50c-46dc-445d-8e74-7607106f0381",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "caf0ac8a-9f85-4243-8e36-3d475062ecbc",
+      "kwargs": {
+        "column": "id_edital"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 edital id must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "df2a045d-586f-4daf-ac5f-1ad9a5cf1faf",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Abastecimento > Opera\u00e7\u00f5es de Comercializa\u00e7\u00e3o",
+    "dataset_id": "conab.operacoes-comercializacao",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.operacoes_comercializacao",
+  "notes": null
+}

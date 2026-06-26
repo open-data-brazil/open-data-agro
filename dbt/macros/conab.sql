@@ -38,12 +38,43 @@
   trim(produto) as produto,
   cast(id_produto as varchar) as id_produto,
   trim(nom_municipio) as municipio,
-  cast(cod_ibge as varchar) as cod_ibge,
+  lpad(trim(cod_ibge), 7, '0') as cod_ibge,
   trim(uf) as uf,
   cast(num_ano as varchar) as ano,
   cast(num_mes as varchar) as mes,
   trim(conta_operacional) as conta_operacional,
   cast(qtd_estoque_kg as varchar) as qtd_estoque_kg
+{% endmacro %}
+
+{% macro conab_operacoes_comercializacao_columns() %}
+  trim(id_edital) as id_edital,
+  cast(num_lote as varchar) as num_lote,
+  trim(num_dco) as num_dco,
+  trim(dsc_dco) as dsc_dco,
+  trim(dsc_situacao_dco) as situacao_dco,
+  trim(produto) as produto,
+  cast(id_produto as varchar) as id_produto,
+  trim(dsc_tipo_operacao) as tipo_operacao,
+  trim(dsc_operacao) as operacao,
+  cast(ano_edital as varchar) as ano_edital,
+  cast(mes_edital as varchar) as mes_edital,
+  trim(uf_armazem_origem) as uf_armazem_origem,
+  trim(dsc_unidade_comercializacao) as unidade_comercializacao,
+  cast(qtd_ofertada as varchar) as qtd_ofertada,
+  cast(qtd_negociada as varchar) as qtd_negociada,
+  cast(vlr_operacao_s_icms as varchar) as vlr_operacao_s_icms,
+  trim(dsc_unidade_medida_ofertada_negociada) as unidade_medida_ofertada_negociada
+{% endmacro %}
+
+{% macro conab_vendas_balcao_columns() %}
+  cast(num_ano_gravacao as varchar) as ano,
+  cast(num_mes_gravacao as varchar) as mes,
+  trim(munipio_armazem_venda) as municipio_armazem_venda,
+  trim(uf) as uf,
+  cast(qtd_produto_kg as varchar) as qtd_produto_kg,
+  cast(valor_comercializado as varchar) as valor_comercializado,
+  cast(numero_atendimentos as varchar) as numero_atendimentos,
+  cast(clientes_atendidos as varchar) as clientes_atendidos
 {% endmacro %}
 
 {% macro conab_armazenagem_columns() %}

@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CONAB Prohort (Phase 11 P3):** full pipeline for `conab.prohort-diario` and `conab.prohort-mensal`, CEASA horticulture prices/trade, `make conab-mercado-prohort-mvp`
 - **CONAB Frete (Phase 13 P1):** full pipeline for `conab.frete`, origin/destination IBGE grain, `make conab-armazenamento-logistica-mvp`
 - **CONAB Capacidade Estática (Phase 13 P1):** full pipeline for `conab.serie-historica-capacidade-estatica`, UF × year grain from legacy `.xls`, `make conab-armazenamento-logistica-mvp`
-- **CONAB Abastecimento + ANP combustíveis (Phase 12 MVP):** `abastecimento.yaml` (3 datasets), `anp/combustiveis.yaml` (2 datasets), full pipeline for `conab.estoques-publicos` and ANP LPC weekly prices, `make conab-abastecimento-mvp`
+- **CONAB Abastecimento + ANP combustíveis (Phase 12 MVP):** `abastecimento.yaml` (3 datasets), `anp/combustiveis.yaml` (2 datasets), full pipeline for all five datasets including operações and vendas balcão, `make conab-abastecimento-mvp`
 - **CONAB Armazenamento e Logística (Phase 13 MVP):** `armazenamento-logistica.yaml` (3 datasets), legacy `.xls` ingest, full pipeline for `conab.armazenagem`, `make conab-armazenamento-mvp`
 - **CONAB Agricultura Familiar (Phase 14 MVP):** `agricultura-familiar.yaml` (2 PAA datasets), full pipeline for entregas and propostas, `make conab-agricultura-familiar-mvp`
 - **IBGE Localidades (Phase 15):** full E2E for municipios + UFs + regiões + meso/micro — dbt marts, DuckDB views `analytics.ibge_localidades_*`, `make ibge-localidades-mvp`

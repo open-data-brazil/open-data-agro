@@ -171,13 +171,18 @@ conab-mercado-precos-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT produto, municipio, cod_ibge, mes, valor_produto_kg FROM analytics.conab_precos_mensal_municipio WHERE upper(trim(produto)) = 'SOJA' AND cod_ibge = '5107925' ORDER BY ano, mes LIMIT 5"
 
 dbt-build-abastecimento: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__estoques_publicos+ stg_anp__combustiveis_precos_medios_municipios+ stg_anp__combustiveis_precos_postos+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__estoques_publicos+ stg_conab__operacoes_comercializacao+ stg_conab__vendas_balcao+ stg_anp__combustiveis_precos_medios_municipios+ stg_anp__combustiveis_precos_postos+'
 
 conab-abastecimento-mvp:
+	go test ./internal/ingest/ -run 'Estoques|Operacoes|VendasBalcao|ANP'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_abastecimento_silver.py
 	$(MAKE) dbt-build-abastecimento LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
-	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS estoques FROM analytics.conab_estoques_publicos"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS operacoes FROM analytics.conab_operacoes_comercializacao"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS vendas FROM analytics.conab_vendas_balcao"
+	duckdb $(DUCKDB_PATH) -c "SELECT produto, uf_armazem_origem, qtd_negociada FROM analytics.conab_operacoes_comercializacao WHERE upper(trim(produto)) = 'SOJA' LIMIT 5"
+	duckdb $(DUCKDB_PATH) -c "SELECT municipio_armazem_venda, uf, ano, mes, qtd_produto_kg FROM analytics.conab_vendas_balcao WHERE uf = 'MT' ORDER BY ano DESC, mes DESC LIMIT 5"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS medios FROM analytics.anp_combustiveis_precos_medios_municipios"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS postos FROM analytics.anp_combustiveis_precos_postos"
 

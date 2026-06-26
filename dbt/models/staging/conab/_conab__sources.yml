@@ -104,6 +104,24 @@ sources:
           conab_section: Abastecimento
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/estoques_publicos"
 
+      - name: operacoes_comercializacao
+        description: Operações de comercialização — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/operacoes_comercializacao
+        meta:
+          dataset_id: conab.operacoes-comercializacao
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Abastecimento
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/operacoes_comercializacao"
+
+      - name: vendas_balcao
+        description: Vendas em balcão — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/vendas_balcao
+        meta:
+          dataset_id: conab.vendas-balcao
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Abastecimento
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/vendas_balcao"
+
       - name: armazenagem
         description: Armazenagem — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/armazenagem
         meta:

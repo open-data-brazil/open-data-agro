@@ -431,3 +431,75 @@ models:
               - produto
               - cod_ibge_municipio_origem
               - pais_origem
+
+  - name: mart_conab__operacoes_comercializacao
+    description: |
+      Business mart — CONAB commercialization operations (auctions / private sales).
+      Grain is id_edital + num_lote + num_dco + produto + id_produto + operacao + ano_edital + mes_edital.
+    config:
+      meta:
+        dataset_id: conab.operacoes-comercializacao
+        grain: id_edital, num_lote, num_dco, produto, id_produto, operacao, ano_edital, mes_edital
+        conab_section: Abastecimento
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: id_edital
+        tests:
+          - not_null
+      - name: uf_armazem_origem
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - id_edital
+              - num_lote
+              - num_dco
+              - produto
+              - id_produto
+              - operacao
+              - ano_edital
+              - mes_edital
+
+  - name: mart_conab__vendas_balcao
+    description: |
+      Business mart — CONAB counter sales by municipality and month.
+      Grain is ano + mes + municipio_armazem_venda + uf.
+    config:
+      meta:
+        dataset_id: conab.vendas-balcao
+        grain: ano, mes, municipio_armazem_venda, uf
+        conab_section: Abastecimento
+    columns:
+      - name: uf
+        tests:
+          - not_null
+      - name: municipio_armazem_venda
+        tests:
+          - not_null
+      - name: qtd_produto_kg
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - ano
+              - mes
+              - municipio_armazem_venda
+              - uf

@@ -22,6 +22,8 @@ def main() -> int:
     lake_root.mkdir(parents=True, exist_ok=True)
     for mart in (
         "mart_conab__estoques_publicos",
+        "mart_conab__operacoes_comercializacao",
+        "mart_conab__vendas_balcao",
         "mart_anp__combustiveis_precos_medios_municipios",
         "mart_anp__combustiveis_precos_postos",
     ):
@@ -47,6 +49,52 @@ def main() -> int:
         }
     )
     write_table(lake_root, "conab", "estoques_publicos", estoques)
+
+    operacoes = pa.table(
+        {
+            "id_edital": ["SEC-201313", "SEC-201315"],
+            "num_lote": ["1", "1"],
+            "num_dco": ["0047252936", "0047252944"],
+            "dsc_dco": ["Autorização de Venda Terceiros", "Autorização de Venda Terceiros"],
+            "dsc_situacao_dco": ["NÃO PAGO", "NÃO PAGO"],
+            "produto": ["SOJA", "SOJA"],
+            "id_produto": ["4744", "4744"],
+            "dsc_tipo_operacao": ["VENDA", "VENDA"],
+            "dsc_operacao": ["PRIVADA", "PRIVADA"],
+            "ano_edital": ["2013", "2013"],
+            "mes_edital": ["8", "8"],
+            "uf_armazem_origem": ["MT", "MT"],
+            "dsc_unidade_comercializacao": ["1 KG (GRANEL)", "1 KG (GRANEL)"],
+            "qtd_ofertada": ["60000.0", "17000.0"],
+            "qtd_negociada": ["60000.0", "17000.0"],
+            "vlr_operacao_s_icms": ["55800.0", "15810.0"],
+            "dsc_unidade_medida_ofertada_negociada": ["QUILO", "QUILO"],
+            "_dataset_id": [
+                "conab.operacoes-comercializacao",
+                "conab.operacoes-comercializacao",
+            ],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "conab", "operacoes_comercializacao", operacoes)
+
+    vendas = pa.table(
+        {
+            "num_ano_gravacao": ["2025", "2026"],
+            "num_mes_gravacao": ["11", "1"],
+            "munipio_armazem_venda": ["RONDONÓPOLIS", "RONDONÓPOLIS"],
+            "uf": ["MT", "MT"],
+            "qtd_produto_kg": ["7820", "9560"],
+            "valor_comercializado": ["7141,112", "10711,98"],
+            "numero_atendimentos": ["6", "8"],
+            "clientes_atendidos": ["6", "8"],
+            "_dataset_id": ["conab.vendas-balcao", "conab.vendas-balcao"],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "conab", "vendas_balcao", vendas)
 
     medios = pa.table(
         {
