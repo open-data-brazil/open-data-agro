@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "BGI futures settlement must contain rows." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "refdate" },
+      "meta": { "notes": "Date required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "symbol" },
+      "meta": { "notes": "Symbol required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["refdate", "symbol"] },
+      "meta": { "notes": "One row per contract per session." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "b3.futuro-boi",
+    "fonte_oficial": "https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/",
+    "agencia": "B3",
+    "license": "B3 Market Data — see OFFICIAL-REFERENCE"
+  },
+  "name": "bronze.b3.futuro_boi",
+  "id": "bronze-b3-futuro-boi-suite"
+}

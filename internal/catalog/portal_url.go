@@ -40,8 +40,14 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "mapa.") {
 		return MAPADadosAbertosPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "b3.") {
+		return B3MarketDataPortalURL
+	}
 	return ""
 }
+
+// B3MarketDataPortalURL is the B3 market data portal URL.
+const B3MarketDataPortalURL = "https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/"
 
 // MAPADadosAbertosPortalURL is the MAPA open data portal URL.
 const MAPADadosAbertosPortalURL = "https://dados.agricultura.gov.br/"

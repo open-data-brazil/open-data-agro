@@ -219,6 +219,12 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_antt_pracas_pedagio", true
 	case "mapa.zarc-tabua-risco":
 		return "bronze_mapa_zarc_tabua_risco", true
+	case "b3.futuro-soja":
+		return "bronze_b3_futuro_soja", true
+	case "b3.futuro-milho":
+		return "bronze_b3_futuro_milho", true
+	case "b3.futuro-boi":
+		return "bronze_b3_futuro_boi", true
 	default:
 		return "", false
 	}

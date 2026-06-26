@@ -1,0 +1,46 @@
+# B3 — Mercado futuro agro (Phase 24)
+# Portal: https://www.b3.com.br/ — Pesquisa por pregão (BVBG.187 SPRD)
+# License: B3 market data terms — non-commercial research; see OFFICIAL-REFERENCE.md
+
+entries:
+  - dataset_id: b3.futuro-soja
+    source_url: https://www.b3.com.br/pesquisapregao/download?filelist=SPRD{YYMMDD}.zip
+    source_portal_url: https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/
+    format: json
+    schedule: daily
+    portal_label: Soja FOB Santos (SOY) — preço de ajuste diário
+    b3_file_prefix: SPRD
+    b3_commodity_prefix: SOY
+    period_start: 2024
+    frequency: daily
+    license: "B3 Market Data — see OFFICIAL-REFERENCE"
+    fonte_tipo: referencia_mercado
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: b3.futuro-milho
+    source_url: https://www.b3.com.br/pesquisapregao/download?filelist=SPRD{YYMMDD}.zip
+    source_portal_url: https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/
+    format: json
+    schedule: daily
+    portal_label: Milho (CCM) — preço de ajuste diário
+    b3_file_prefix: SPRD
+    b3_commodity_prefix: CCM
+    period_start: 2024
+    frequency: daily
+    license: "B3 Market Data — see OFFICIAL-REFERENCE"
+    fonte_tipo: referencia_mercado
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: b3.futuro-boi
+    source_url: https://www.b3.com.br/pesquisapregao/download?filelist=SPRD{YYMMDD}.zip
+    source_portal_url: https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/
+    format: json
+    schedule: daily
+    portal_label: Boi gordo (BGI) — preço de ajuste diário
+    b3_file_prefix: SPRD
+    b3_commodity_prefix: BGI
+    period_start: 2024
+    frequency: daily
+    license: "B3 Market Data — see OFFICIAL-REFERENCE"
+    fonte_tipo: referencia_mercado
+    discovered_at: 2026-06-26T00:00:00Z

@@ -149,6 +149,9 @@ def main() -> int:
             "bronze_mdic_comex_exportacao_ncm_mes": "expectations/suites/bronze/mdic/comex_exportacao_ncm_mes.json",
             "bronze_antt_pracas_pedagio": "expectations/suites/bronze/antt/pracas_pedagio.json",
             "bronze_mapa_zarc_tabua_risco": "expectations/suites/bronze/mapa/zarc_tabua_risco.json",
+            "bronze_b3_futuro_soja": "expectations/suites/bronze/b3/futuro_soja.json",
+            "bronze_b3_futuro_milho": "expectations/suites/bronze/b3/futuro_milho.json",
+            "bronze_b3_futuro_boi": "expectations/suites/bronze/b3/futuro_boi.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:

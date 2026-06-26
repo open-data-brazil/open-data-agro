@@ -93,6 +93,7 @@
 | 21 | MDIC Comex Stat | **Done** | `make mdic-comex-mvp`, `make ci-mdic-comex-mvp` |
 | 22 | ANTT pedágios (logística) | **Done** | `make dnit-antt-logistica-mvp`, `make ci-dnit-antt-logistica-mvp` |
 | 23 | MAPA ZARC tábua de risco | **Done** | `make mapa-dados-mvp`, `make ci-mapa-dados-mvp` |
+| 24 | B3 futuros agro (SOY/CCM/BGI) | **Done** | `make b3-futuros-mvp`, `make ci-b3-futuros-mvp` |
 
 ---
 

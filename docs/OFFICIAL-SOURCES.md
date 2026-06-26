@@ -175,6 +175,18 @@ Toll plaza locations on federal concessioned highways (`rodovia`, `uf`, `km_m`, 
 
 Municipal planting-window climate risk (`dec1`–`dec36`) by culture, soil cycle, and management type. Unique vs CONAB/IBGE supply series — complements PAM and estimativa with policy-driven planting constraints for soja, milho, trigo, and other cultures.
 
+### B3 — Mercado futuro agro (Phase 24)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `b3.futuro-soja` | SOY — preço de ajuste diário (BVBG.187 SPRD) | **P0 — implemented** |
+| `b3.futuro-milho` | CCM — milho futuro | **P1 — implemented** |
+| `b3.futuro-boi` | BGI — boi gordo futuro | **P1 — implemented** |
+
+**Fonte oficial:** [B3 — Pesquisa por pregão](https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/) · arquivo `SPRD{YYMMDD}.zip` (Boletim simplificado derivativos)
+
+Daily futures settlement (`AdjstdQt`) by contract symbol. Regulated exchange reference — not `.gov.br`. License documented in catalog and OFFICIAL-REFERENCE. No synthetic continuous rolls in bronze.
+
 ---
 
 ## Rules

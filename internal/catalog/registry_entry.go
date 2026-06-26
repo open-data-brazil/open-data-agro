@@ -50,6 +50,8 @@ type RegistryEntry struct {
 	CKANPackageID string       `json:"ckanPackageId,omitempty" yaml:"ckan_package_id,omitempty"`
 	CKANResourceFormat string  `json:"ckanResourceFormat,omitempty" yaml:"ckan_resource_format,omitempty"`
 	CKANResourceNameContains string `json:"ckanResourceNameContains,omitempty" yaml:"ckan_resource_name_contains,omitempty"`
+	B3FilePrefix string       `json:"b3FilePrefix,omitempty" yaml:"b3_file_prefix,omitempty"`
+	B3CommodityPrefix string  `json:"b3CommodityPrefix,omitempty" yaml:"b3_commodity_prefix,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 
