@@ -66,3 +66,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Phase 6 quality docs:** GE vs `validate_codigo_ibge.py` split in phase README + `scripts/quality/README.md`; `scripts/ci/check_phase6_quality_docs.py` gate
 - **NEW-PROJECT-CHECKLIST sync:** updated for Go local-first post-collection state; `scripts/ci/check_new_project_checklist.py` gate
 - **Prohort OFFICIAL-REFERENCE:** live portal column mapping for `conab.prohort-diario` + `conab.prohort-mensal`; `scripts/ci/check_prohort_official_reference.py` gate
+- **Phase 20 scaffold:** `.local/phases/20-analytics-crossing/` for post-collection analytics crossing (DATA-CROSSING-VISION); `scripts/ci/check_phase20_scaffold.py` gate
+- **MinIO CI integration (Phase 2):** `make ci-minio` — Docker MinIO, bronze S3 Put/List, DuckDB `s3://` smoke; GitHub Actions `go` job; `scripts/ci/check_minio_ci.py` gate
+
+### Changed
+
+- **docker-compose MinIO images:** pin to `minio/minio:latest` and `minio/mc:latest` (official release tags removed from Docker Hub)
+- **DuckDB S3 smoke:** `FORCE INSTALL httpfs`, robust `parseCountCSV` for extension setup output; MinIO integration test seeds bronze Parquet before read
+
+- **Collection sprint exit (2026-06-26):** Phases 0–19 E2E, `make ci-collection-full-mvp` in GitHub Actions, public docs synced (ROADMAP, OFFICIAL-SOURCES, NEW-PROJECT-CHECKLIST, README)

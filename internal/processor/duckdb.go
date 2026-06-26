@@ -83,7 +83,7 @@ func LocalExtensionsSQL() string {
 // S3ExtensionsSQL installs httpfs for S3-compatible bronze reads (MinIO/R2).
 func S3ExtensionsSQL(vars map[string]string) string {
 	return SubstituteVars(`
-INSTALL httpfs FROM community;
+FORCE INSTALL httpfs;
 LOAD httpfs;
 CREATE OR REPLACE SECRET lake_s3 (
   TYPE s3,

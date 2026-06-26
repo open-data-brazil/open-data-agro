@@ -23,8 +23,15 @@ Console: http://localhost:9001
 ## Integration test
 
 ```bash
+make ci-minio
+```
+
+Or manually:
+
+```bash
 docker compose up -d minio minio-init
 MINIO_INTEGRATION=1 go test ./internal/storage -run TestMinIOListPrefixIntegration -count=1
+MINIO_INTEGRATION=1 go test ./internal/processor -run TestSmokeMinIOPathSwap -count=1
 ```
 
 ## Path parity

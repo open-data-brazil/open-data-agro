@@ -7,6 +7,8 @@ import (
 
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/config"
+	"github.com/open-data-brazil/open-data-agro/internal/ingest"
+	"github.com/open-data-brazil/open-data-agro/internal/storage"
 )
 
 func TestSmokeMinIOPathSwap(t *testing.T) {
@@ -23,9 +25,12 @@ func TestSmokeMinIOPathSwap(t *testing.T) {
 		MinIOSecretKey: envOr("MINIO_SECRET_KEY", "minioadmin"),
 		MinIOBucket:    envOr("MINIO_BUCKET", "open-data-agro"),
 	}
-	reg := catalog.NewRegistry([]catalog.RegistryEntry{{
+	entry := catalog.RegistryEntry{
 		DatasetID: catalog.MustParseDatasetID("conab.estimativa-graos"),
-	}})
+		Format:    catalog.FormatTXT,
+		Delimiter: ";",
+	}
+	reg := catalog.NewRegistry([]catalog.RegistryEntry{entry})
 
 	smoker, err := NewSmoker(cfg, reg)
 	if err != nil {
@@ -41,8 +46,32 @@ func TestSmokeMinIOPathSwap(t *testing.T) {
 		t.Fatalf("got %q want s3 bronze glob", uri)
 	}
 
-	_, err = smoker.Smoke(context.Background(), SmokeOptions{DatasetID: "conab.estimativa-graos"})
+	parquetBytes, _, err := ingest.ConvertToParquet(entry, []byte("a;b\n1;x\n2;y\n"))
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	store, err := storage.NewBronzeStore(config.Config{
+		StorageMode:    cfg.StorageMode,
+		MinIOEndpoint:  cfg.MinIOEndpoint,
+		MinIOAccessKey: cfg.MinIOAccessKey,
+		MinIOSecretKey: cfg.MinIOSecretKey,
+		MinIOBucket:    cfg.MinIOBucket,
+	})
+	if err != nil {
+		t.Fatalf("NewBronzeStore: %v", err)
+	}
+	ctx := context.Background()
+	key := "bronze/conab/estimativa-graos/ingest_date=2026-06-25/part-ci.parquet"
+	if err := store.Put(ctx, key, parquetBytes, "application/vnd.apache.parquet"); err != nil {
+		t.Fatalf("Put bronze to MinIO: %v", err)
+	}
+	t.Cleanup(func() { _ = store.Delete(ctx, key) })
+
+	result, err := smoker.Smoke(ctx, SmokeOptions{DatasetID: "conab.estimativa-graos"})
 	if err != nil {
 		t.Fatalf("Smoke against MinIO: %v", err)
+	}
+	if result.RowCount != 2 {
+		t.Fatalf("row_count: got %d want 2", result.RowCount)
 	}
 }

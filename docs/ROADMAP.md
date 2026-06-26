@@ -110,12 +110,14 @@
 
 ## Next (post-collection)
 
-See `.local/PENDING-TASKS.md`:
+**Phase 20 scaffold:** [.local/phases/20-analytics-crossing/README.md](../.local/phases/20-analytics-crossing/README.md) — analytics crossing (feature joins); implementation **not started**.
 
-- Doc sync (`OFFICIAL-SOURCES.md` status labels, `.local` phase TASKS)
-- Optional GE referential `cod_ibge` expectation
-- Phase 20 — analytics crossing (explicit non-goal until new phase folder)
-- Production: `STORAGE_MODE=r2` deploy runbook
+Remaining tracks (see `.local/PENDING-TASKS.md`):
+
+- Production: `STORAGE_MODE=r2` deploy runbook + env validation (P4)
+- Optional: GE bronze referential `cod_ibge` (deferred — post-dbt script is gate)
+
+**Phase 2 MinIO CI:** `make ci-minio` in GitHub Actions `go` job — bronze Put/List + DuckDB `s3://` smoke with Docker MinIO.
 
 ---
 

@@ -149,5 +149,10 @@ func parseCountCSV(out string) (int, error) {
 	if len(lines) < 2 {
 		return 0, fmt.Errorf("expected header and count line")
 	}
+	for i, line := range lines {
+		if strings.TrimSpace(line) == "row_count" && i+1 < len(lines) {
+			return strconv.Atoi(strings.TrimSpace(lines[i+1]))
+		}
+	}
 	return strconv.Atoi(strings.TrimSpace(lines[1]))
 }

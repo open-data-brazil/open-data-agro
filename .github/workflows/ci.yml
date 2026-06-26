@@ -63,6 +63,9 @@ jobs:
       - name: Great Expectations integration
         run: GE_INTEGRATION=1 go test ./internal/processor -run 'Quality' -count=1
 
+      - name: MinIO integration (STORAGE_MODE=minio)
+        run: make ci-minio
+
       - name: Lint
         uses: golangci/golangci-lint-action@v7
         with:
