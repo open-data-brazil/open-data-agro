@@ -47,6 +47,9 @@ func SourcePortalURL(datasetID DatasetID) string {
 		return B3MarketDataPortalURL
 	}
 	if strings.HasPrefix(datasetID.String(), "usda.") {
+		if datasetID.String() == "usda.wasde" {
+			return USDAWASDEPortalURL
+		}
 		return USDAFASPSDPortalURL
 	}
 	if strings.HasPrefix(datasetID.String(), "fao.") {
@@ -61,6 +64,12 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "eia.") {
 		return EIAOpenDataPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "igc.") {
+		return IGCGOIPortalURL
+	}
+	if strings.HasPrefix(datasetID.String(), "un.") {
+		return UNComtradePortalURL
+	}
 	return ""
 }
 
@@ -70,6 +79,12 @@ const NOAANCEIPortalURL = "https://www.ncei.noaa.gov/access/monitoring/"
 // EIAOpenDataPortalURL is the U.S. EIA Open Data portal URL.
 const EIAOpenDataPortalURL = "https://www.eia.gov/opendata/"
 
+// IGCGOIPortalURL is the IGC Grains and Oilseeds Index public page.
+const IGCGOIPortalURL = "https://igc.int/en/public-site/markets/marketinfo-goi.aspx"
+
+// UNComtradePortalURL is the UN Comtrade Plus portal URL.
+const UNComtradePortalURL = "https://comtradeplus.un.org/"
+
 // WorldBankCommodityMarketsURL is the World Bank commodity markets portal URL.
 const WorldBankCommodityMarketsURL = "https://www.worldbank.org/en/research/commodity-markets"
 
@@ -78,6 +93,9 @@ const FAOFaostatPortalURL = "https://www.fao.org/faostat/en/#data"
 
 // USDAFASPSDPortalURL is the USDA FAS PSD Online portal URL.
 const USDAFASPSDPortalURL = "https://apps.fas.usda.gov/psdonline/"
+
+// USDAWASDEPortalURL is the USDA WASDE report portal URL.
+const USDAWASDEPortalURL = "https://www.usda.gov/oce/commodity-markets/wasde"
 
 // B3MarketDataPortalURL is the B3 market data portal URL.
 const B3MarketDataPortalURL = "https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/"

@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "WASDE must contain supply/demand rows." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "commodity" },
+      "meta": { "notes": "Commodity label required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["report_month", "commodity", "market_year", "attribute"] },
+      "meta": { "notes": "One value per commodity attribute per report month." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "usda.wasde",
+    "fonte_oficial": "https://www.usda.gov/oce/commodity-markets/wasde",
+    "agencia": "USDA"
+  },
+  "name": "bronze.usda.wasde",
+  "id": "bronze-usda-wasde-suite"
+}

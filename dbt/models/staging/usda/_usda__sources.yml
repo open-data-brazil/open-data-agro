@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: usda
-    description: USDA FAS PSD silver Delta tables promoted from open data bronze ingest.
+    description: USDA FAS silver Delta tables promoted from open data bronze ingest.
     tables:
       - name: psd_soja
         description: Soybean PSD by country and marketing year.
@@ -10,3 +10,9 @@ sources:
         description: Corn PSD by country and marketing year.
       - name: psd_trigo
         description: Wheat PSD by country and marketing year.
+      - name: wasde
+        description: WASDE monthly supply/demand estimates.
+
+models:
+  - name: stg_usda__wasde
+    description: Staged USDA WASDE monthly supply/demand estimates.

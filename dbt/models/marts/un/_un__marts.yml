@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: mart_un__comtrade_bulk
+    description: UN Comtrade Brazil ag trade flows by HS chapter (annual).
+    config:
+      meta:
+        dataset_id: un.comtrade-bulk
+        grain: reporter_code, partner_code, flow_code, period, hs_code
+    columns:
+      - name: reporter_code
+        tests: [not_null]
+      - name: flow_code
+        tests: [not_null]
+      - name: period
+        tests: [not_null]
+      - name: hs_code
+        tests: [not_null]
+      - name: commodity_slug
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [reporter_code, partner_code, flow_code, period, hs_code]

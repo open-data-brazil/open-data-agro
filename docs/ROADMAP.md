@@ -102,7 +102,7 @@
 | 27 | World Bank Pink Sheet monthly | **Done** | `make worldbank-commodities-mvp`, `make ci-worldbank-commodities-mvp` |
 | 36 | International extended (FAO prod/trade + WB ag indices) | **Done** | `make international-extended-mvp`, `make ci-international-extended-mvp` |
 | 37 | BR new sources (IBGE LSPA + BCB Selic) | **Done** | `make br-new-sources-mvp`, `make ci-br-new-sources-mvp` |
-| 38 | International new sources (EIA petroleum) | **Done** | `make international-new-sources-mvp`, `make ci-international-new-sources-mvp` |
+| 38 | International new sources (EIA, WASDE, IGC GOI, UN Comtrade) | **Done** | `make international-new-sources-mvp`, `make ci-international-new-sources-mvp` |
 | 28 | NOAA climate global indices (ONI + global temp) | **Done** | `make noaa-climate-mvp`, `make ci-noaa-climate-mvp` |
 | 29 | Unified PostgreSQL (gold → analytics schema) | **Done** | `make unified-db-sync`, `make ci-unified-db-sync` |
 
@@ -152,7 +152,7 @@
 - Phase 35 — BR comex extended ✅ — MDIC import + export UF + diesel · `make ci-mdic-comex-extended-mvp`
 - Phase 36 — international extended ✅ — FAO production/trade + World Bank ag indices · `make ci-international-extended-mvp`
 - Phase 37 — BR new sources ✅ — IBGE LSPA + BCB Selic · `make ci-br-new-sources-mvp`
-- Phase 38 — international new sources ✅ — EIA petroleum prices · `make ci-international-new-sources-mvp`
+- Phase 38 — international new sources ✅ — EIA petroleum, USDA WASDE, IGC GOI, UN Comtrade · `make ci-international-new-sources-mvp`
 - Phase 29 — unified PostgreSQL ✅ — `make unified-db-sync`
 
 **Phase 20 scaffold:** [.local/phases/20-analytics-crossing/README.md](../.local/phases/20-analytics-crossing/README.md) — analytics crossing (feature joins); implementation **not started** (IA deferred).

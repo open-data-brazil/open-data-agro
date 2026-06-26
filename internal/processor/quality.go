@@ -261,6 +261,14 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_noaa_global_temp_anomaly", true
 	case "eia.petroleum-prices":
 		return "bronze_eia_petroleum_prices", true
+	case "usda.wasde":
+		return "bronze_usda_wasde", true
+	case "igc.goi-index":
+		return "bronze_igc_goi_index", true
+	case "un.comtrade-bulk":
+		return "bronze_un_comtrade_bulk", true
+	case "mapa.agrofit-produtos-formulados":
+		return "bronze_mapa_agrofit_produtos_formulados", true
 	default:
 		return "", false
 	}

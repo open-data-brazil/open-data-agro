@@ -65,6 +65,9 @@ type RegistryEntry struct {
 	WorldBankSeriesNames    []string `json:"worldbankSeriesNames,omitempty" yaml:"worldbank_series_names,omitempty"`
 	NOAAIndexURL            string   `json:"noaaIndexUrl,omitempty" yaml:"noaa_index_url,omitempty"`
 	EIASeriesIDs            []string `json:"eiaSeriesIds,omitempty" yaml:"eia_series_ids,omitempty"`
+	ComtradeReporterCode    string   `json:"comtradeReporterCode,omitempty" yaml:"comtrade_reporter_code,omitempty"`
+	ComtradeCmdCodes        []string `json:"comtradeCmdCodes,omitempty" yaml:"comtrade_cmd_codes,omitempty"`
+	ComtradeFlowCodes       []string `json:"comtradeFlowCodes,omitempty" yaml:"comtrade_flow_codes,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

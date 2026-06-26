@@ -154,6 +154,7 @@ def main() -> int:
             "bronze_mdic_comex_importacao_diesel_ncm": "expectations/suites/bronze/mdic/comex_importacao_diesel_ncm.json",
             "bronze_antt_pracas_pedagio": "expectations/suites/bronze/antt/pracas_pedagio.json",
             "bronze_mapa_zarc_tabua_risco": "expectations/suites/bronze/mapa/zarc_tabua_risco.json",
+            "bronze_mapa_agrofit_produtos_formulados": "expectations/suites/bronze/mapa/agrofit_produtos_formulados.json",
             "bronze_b3_futuro_soja": "expectations/suites/bronze/b3/futuro_soja.json",
             "bronze_b3_futuro_milho": "expectations/suites/bronze/b3/futuro_milho.json",
             "bronze_b3_futuro_boi": "expectations/suites/bronze/b3/futuro_boi.json",
@@ -168,6 +169,9 @@ def main() -> int:
             "bronze_noaa_enso_indices": "expectations/suites/bronze/noaa/enso_indices.json",
             "bronze_noaa_global_temp_anomaly": "expectations/suites/bronze/noaa/global_temp_anomaly.json",
             "bronze_eia_petroleum_prices": "expectations/suites/bronze/eia/petroleum_prices.json",
+            "bronze_usda_wasde": "expectations/suites/bronze/usda/wasde.json",
+            "bronze_igc_goi_index": "expectations/suites/bronze/igc/goi_index.json",
+            "bronze_un_comtrade_bulk": "expectations/suites/bronze/un/comtrade_bulk.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:

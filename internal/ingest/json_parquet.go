@@ -15,6 +15,8 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/worldbank"
 	"github.com/open-data-brazil/open-data-agro/internal/noaa"
 	"github.com/open-data-brazil/open-data-agro/internal/eia"
+	"github.com/open-data-brazil/open-data-agro/internal/igc"
+	"github.com/open-data-brazil/open-data-agro/internal/un"
 )
 
 func convertJSONFileToParquet(entry catalog.RegistryEntry, path string) ([]byte, int, error) {
@@ -63,6 +65,13 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		}
 		return writeStringTable(headers, rows)
 	case "usda":
+		if entry.DatasetID.String() == "usda.wasde" {
+			headers, rows, err := usda.FlattenWASDE(entry, raw)
+			if err != nil {
+				return nil, 0, err
+			}
+			return writeStringTable(headers, rows)
+		}
 		headers, rows, err := usda.FlattenPSD(entry, raw)
 		if err != nil {
 			return nil, 0, err
@@ -88,6 +97,18 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		return writeStringTable(headers, rows)
 	case "eia":
 		headers, rows, err := eia.FlattenPetroleum(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "igc":
+		headers, rows, err := igc.FlattenGOI(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "un":
+		headers, rows, err := un.FlattenComtrade(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}

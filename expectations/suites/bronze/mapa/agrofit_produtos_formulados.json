@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Agrofit registry must contain product rows." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "NR_REGISTRO" },
+      "meta": { "notes": "MAPA registration number required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "MARCA_COMERCIAL" },
+      "meta": { "notes": "Commercial brand required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "mapa.agrofit-produtos-formulados",
+    "fonte_oficial": "https://dados.agricultura.gov.br/dataset/agrofit-produtos-formulados",
+    "agencia": "MAPA"
+  },
+  "name": "bronze.mapa.agrofit_produtos_formulados",
+  "id": "bronze-mapa-agrofit-produtos-formulados-suite"
+}

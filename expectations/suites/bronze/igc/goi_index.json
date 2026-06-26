@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "GOI index must contain daily observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "index_slug" },
+      "meta": { "notes": "Canonical index slug required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["index_slug", "refdate"] },
+      "meta": { "notes": "One value per index per day." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "igc.goi-index",
+    "fonte_oficial": "https://igc.int/en/public-site/markets/marketinfo-goi.aspx",
+    "agencia": "IGC"
+  },
+  "name": "bronze.igc.goi_index",
+  "id": "bronze-igc-goi-index-suite"
+}

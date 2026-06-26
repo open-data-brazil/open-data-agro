@@ -1,0 +1,25 @@
+# UN Comtrade — bilateral merchandise trade (Phase 38 P1)
+# Portal: https://comtradeplus.un.org/
+# API: free tier via COMTRADE_SUBSCRIPTION_KEY (500 calls/day, 100k records/call)
+
+entries:
+  - dataset_id: un.comtrade-bulk
+    source_url: https://comtradeapi.un.org/data/v1/get/C/A/HS
+    source_portal_url: https://comtradeplus.un.org/
+    format: json
+    schedule: monthly
+    portal_label: Brazil ag trade by HS chapter (exports + imports)
+    comtrade_reporter_code: "76"
+    comtrade_cmd_codes:
+      - "1201"
+      - "1005"
+      - "1001"
+      - "1006"
+    comtrade_flow_codes:
+      - "X"
+      - "M"
+    period_start: 2010
+    frequency: annual
+    license: "UN Comtrade — attribution required"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z

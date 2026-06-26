@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Comtrade trade rows must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "hs_code" },
+      "meta": { "notes": "HS chapter code required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["reporter_code", "partner_code", "flow_code", "period", "hs_code"] },
+      "meta": { "notes": "One trade row per reporter-partner-flow-period-hs." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "un.comtrade-bulk",
+    "fonte_oficial": "https://comtradeplus.un.org/",
+    "agencia": "UN"
+  },
+  "name": "bronze.un.comtrade_bulk",
+  "id": "bronze-un-comtrade-bulk-suite"
+}

@@ -193,6 +193,16 @@ Toll plaza locations (`antt.pracas-pedagio`), monthly traffic volume by vehicle 
 
 Municipal planting-window climate risk (`dec1`–`dec36`) by culture, soil cycle, and management type. Unique vs CONAB/IBGE supply series — complements PAM and estimativa with policy-driven planting constraints for soja, milho, trigo, and other cultures.
 
+### MAPA — Agrofit registry (Phase 40)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `mapa.agrofit-produtos-formulados` | Agrofit — produtos formulados (defensivos) | **P1 — implemented** |
+
+**Fonte oficial:** [MAPA — Agrofit produtos formulados](https://dados.agricultura.gov.br/dataset/agrofit-produtos-formulados) · CKAN bulk CSV `agrofitprodutosformulados.csv`
+
+Crop protection product registry by culture and pest — policy/input cost context for production models. `fonte_tipo: oficial_gov_br`.
+
 ### B3 — Mercado futuro agro (Phase 24)
 
 | Dataset ID | Source | Status |
@@ -256,10 +266,13 @@ Global climate shock features complementing INMET (Phase 17). `fonte_tipo: inter
 | Dataset ID | Source | Status |
 |------------|--------|--------|
 | `eia.petroleum-prices` | Daily WTI + Brent spot prices | **P0 — implemented** |
+| `usda.wasde` | WASDE monthly supply/demand estimates | **P1 — implemented** |
+| `igc.goi-index` | IGC GOI daily export price index + sub-indices | **P1 — implemented** |
+| `un.comtrade-bulk` | UN Comtrade bulk API — Brazil HS ag chapters | **P1 — implemented** |
 
-**Fonte oficial:** [U.S. EIA Open Data](https://www.eia.gov/opendata/) · API v2 `seriesid` route · series `PET.RWTC.D` (WTI), `PET.RBRTE.D` (Brent) · free `EIA_API_KEY` required for live fetch
+**Fonte oficial:** [U.S. EIA Open Data](https://www.eia.gov/opendata/) · API v2 `seriesid` route · series `PET.RWTC.D` (WTI), `PET.RBRTE.D` (Brent) · free `EIA_API_KEY` required for live fetch · [USDA WASDE](https://www.usda.gov/oce/commodity-markets/wasde) · [IGC GOI](https://igc.int/en/public-site/markets/marketinfo-goi.aspx) · [UN Comtrade API](https://uncomtrade.org/docs/un-comtrade-api/)
 
-Global oil shock reference complementing World Bank Pink Sheet crude oil. `fonte_tipo: internacional_oficial`. Daily grain — no intraday resampling in bronze.
+Global oil shock reference complementing World Bank Pink Sheet crude oil. WASDE supply/demand, IGC competitor price index, and UN bilateral trade for Brazil ag HS chapters. `fonte_tipo: internacional_oficial`. Daily grain for EIA/IGC — no intraday resampling in bronze.
 
 ---
 

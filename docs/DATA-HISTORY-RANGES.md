@@ -146,6 +146,9 @@ API chunks one calendar year per request. Ag NCM series may start later than 199
 | `worldbank.pink-sheet-monthly` | ~1960 | 2010 | CMO monthly xlsx |
 | `worldbank.ag-indices` | ~1960 | 2010 | CMO Monthly Indices sheet |
 | `eia.petroleum-prices` | ~1986 | 2010 | EIA API v2 seriesid; `EIA_API_KEY` for live |
+| `usda.wasde` | 2010 | 2010 | ESMIS monthly XML |
+| `igc.goi-index` | 2000-01-03 | 2000 | IGC public xlsb |
+| `un.comtrade-bulk` | 1962 | 2010 | Comtrade API; `COMTRADE_SUBSCRIPTION_KEY` for live |
 | `noaa.enso-indices` | 1950 | 2010 | ONI ascii |
 | `noaa.global-temp-anomaly` | 1880 | 2010 | NCEI CSV |
 

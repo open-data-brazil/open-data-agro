@@ -13,7 +13,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **International new sources (Phase 38):** `eia.petroleum-prices` — U.S. EIA API v2 WTI/Brent daily spot prices, GE suite, dbt mart, DuckDB view, `make international-new-sources-mvp` + `make ci-international-new-sources-mvp`
+- **Ingestor signoff (Phase 42):** `make ingestor-signoff-mvp` + `make ci-ingestor-signoff-mvp`; `scripts/ci/spot_check_analytics.py` for PostgreSQL `analytics.*` row/date spot-checks
+- **International sources wave 2 (Phase 41):** `igc.goi-index` — IGC GOI daily index from public xlsb, `internal/igc/`, GE suite, dbt mart, DuckDB view, `make international-sources-wave-2-mvp` + `make ci-international-sources-wave-2-mvp`
+- **BR sources wave 2 (Phase 40):** `mapa.agrofit-produtos-formulados` — MAPA Agrofit CKAN CSV, GE suite, dbt mart, DuckDB view, `make br-sources-wave-2-mvp` + `make ci-br-sources-wave-2-mvp`; ANTAQ port cargo deferred (Painel Estatístico 404)
+- **Source discovery wave 2 (Phase 39):** `.local/SOURCE-DISCOVERY-CATALOG.md` wave 2 section (≥20 new candidates); `DISCOVERY-REPORT-WAVE2.md`; phases 40–42 planned
+
+### Added (prior wave)
+
+- **International new sources (Phase 38):** `eia.petroleum-prices` (P0), `usda.wasde`, `igc.goi-index`, `un.comtrade-bulk` (P1) — full ingest + GE + dbt + DuckDB; `make international-new-sources-mvp` + `make ci-international-new-sources-mvp`
 - **BR new sources (Phase 37):** `ibge.lspa-area-producao`, `bcb.sgs-selic` — IBGE LSPA SIDRA 6588 monthly UF production + BCB Selic SGS 11, GE suites, dbt marts, DuckDB views, `make br-new-sources-mvp` + `make ci-br-new-sources-mvp`
 - **International extended (Phase 36):** `fao.producao-agro`, `fao.comercio-agro`, `worldbank.ag-indices` — FAOSTAT annual bulk + Pink Sheet agriculture indices, GE suites, dbt marts, DuckDB views, `make international-extended-mvp` + `make ci-international-extended-mvp`
 - **BR comex extended (Phase 35):** `mdic.comex-importacao-ncm-mes`, `mdic.comex-exportacao-uf-ncm`, `mdic.comex-importacao-diesel-ncm` — Comex Stat import/UF export API client, GE suites, dbt marts, DuckDB views, `make mdic-comex-extended-mvp` + `make ci-mdic-comex-extended-mvp`

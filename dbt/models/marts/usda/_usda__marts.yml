@@ -64,3 +64,23 @@ models:
       - dbt_utils.unique_combination_of_columns:
           arguments:
             combination_of_columns: [country_code, marketing_year, attribute_id, calendar_year, month]
+
+  - name: mart_usda__wasde
+    description: USDA WASDE monthly supply/demand by commodity and marketing year.
+    config:
+      meta:
+        dataset_id: usda.wasde
+        grain: report_month, commodity, market_year, attribute
+    columns:
+      - name: report_month
+        tests: [not_null]
+      - name: commodity
+        tests: [not_null]
+      - name: attribute
+        tests: [not_null]
+      - name: value
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [report_month, commodity, market_year, attribute]
