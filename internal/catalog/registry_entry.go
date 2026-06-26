@@ -68,6 +68,15 @@ type RegistryEntry struct {
 	ComtradeReporterCode    string   `json:"comtradeReporterCode,omitempty" yaml:"comtrade_reporter_code,omitempty"`
 	ComtradeCmdCodes        []string `json:"comtradeCmdCodes,omitempty" yaml:"comtrade_cmd_codes,omitempty"`
 	ComtradeFlowCodes       []string `json:"comtradeFlowCodes,omitempty" yaml:"comtrade_flow_codes,omitempty"`
+	GATSCommodityCodes      []string `json:"gatsCommodityCodes,omitempty" yaml:"gats_commodity_codes,omitempty"`
+	GATSPartnerCodes        []string `json:"gatsPartnerCodes,omitempty" yaml:"gats_partner_codes,omitempty"`
+	GATSFlows               []string `json:"gatsFlows,omitempty" yaml:"gats_flows,omitempty"`
+	GATSYears               []int    `json:"gatsYears,omitempty" yaml:"gats_years,omitempty"`
+	GATSDataValue           string   `json:"gatsDataValue,omitempty" yaml:"gats_data_value,omitempty"`
+	EurostatDatasetCode     string   `json:"eurostatDatasetCode,omitempty" yaml:"eurostat_dataset_code,omitempty"`
+	EurostatGeo             string   `json:"eurostatGeo,omitempty" yaml:"eurostat_geo,omitempty"`
+	EurostatProducts        []string `json:"eurostatProducts,omitempty" yaml:"eurostat_products,omitempty"`
+	ArgentinaCurrencyCode   string   `json:"argentinaCurrencyCode,omitempty" yaml:"argentina_currency_code,omitempty"`
 	ANAStationCodes         []string `json:"anaStationCodes,omitempty" yaml:"ana_station_codes,omitempty"`
 	ANATipoDados            string   `json:"anaTipoDados,omitempty" yaml:"ana_tipo_dados,omitempty"`
 	ANANivelConsistencia    string   `json:"anaNivelConsistencia,omitempty" yaml:"ana_nivel_consistencia,omitempty"`

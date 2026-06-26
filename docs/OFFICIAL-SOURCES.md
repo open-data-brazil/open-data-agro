@@ -295,6 +295,18 @@ Global climate shock features complementing INMET (Phase 17). `fonte_tipo: inter
 
 Global oil shock reference complementing World Bank Pink Sheet crude oil. WASDE supply/demand, IGC competitor price index, and UN bilateral trade for Brazil ag HS chapters. `fonte_tipo: internacional_oficial`. Daily grain for EIA/IGC — no intraday resampling in bronze.
 
+### International sources wave 2 (Phase 41)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `usda.gats-trade` | USDA FAS GATS — U.S. ag trade by commodity and partner | **P1 — implemented** |
+| `eurostat.ag-prices` | EU agricultural output price indices (2015=100) | **P2 — implemented** |
+| `argentina.bcra-cambio` | BCRA official USD exchange-rate daily series | **P2 — implemented** |
+
+**Fonte oficial:** [USDA FAS GATS](https://apps.fas.usda.gov/gats/) · Open Data API `USDA_FAS_API_KEY` required for live fetch · [EUROSTAT agriculture database](https://ec.europa.eu/eurostat/web/agriculture/database) · dataset `apri_pi15_outa` JSON API (no key) · [BCRA estadísticas cambiarias](https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones/USD) (no key)
+
+U.S. export trade context, EU ag price reference, and Argentina FX parity for competitor market models. `fonte_tipo: internacional_oficial`.
+
 ---
 
 ## Rules

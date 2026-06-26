@@ -81,6 +81,12 @@ jobs:
           export DUCKDB_BIN="${{ github.workspace }}/.local/bin/duckdb"
           make ci-br-sources-wave-2-mvp
 
+      - name: International sources wave 2 MVP (Phase 41)
+        run: |
+          export PATH="${{ github.workspace }}/.local/bin:${PATH}"
+          export DUCKDB_BIN="${{ github.workspace }}/.local/bin/duckdb"
+          make ci-international-sources-wave-2-mvp
+
       - name: Lint
         uses: golangci/golangci-lint-action@v9
         with:

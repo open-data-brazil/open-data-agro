@@ -753,15 +753,21 @@ ci-br-sources-wave-2-mvp:
 		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_2_DUCKDB)
 
 dbt-build-international-sources-wave-2: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_igc__goi_index+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_igc__goi_index+ stg_usda__gats_trade+ stg_eurostat__ag_prices+ stg_argentina__bcra_cambio+'
 
 international-sources-wave-2-mvp:
-	go test ./internal/igc/... ./internal/ingest/ -run 'IGC|GOI|GoldenVector'
+	go test ./internal/igc/... ./internal/eurostat/... ./internal/argentina/... ./internal/usda/... ./internal/ingest/ -run 'IGC|GOI|GATS|Eurostat|Argentina|BCRA|GoldenVector'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_international_sources_wave_2_silver.py
 	$(MAKE) dbt-build-international-sources-wave-2 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.igc_goi_index"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT index_name, index_slug, refdate, value FROM analytics.igc_goi_index LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.usda_gats_trade"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT commodity_code, partner_name, year, value FROM analytics.usda_gats_trade LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.eurostat_ag_prices"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT product_name, year, index_value FROM analytics.eurostat_ag_prices LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.argentina_bcra_cambio"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT refdate, exchange_rate FROM analytics.argentina_bcra_cambio LIMIT 3"
 
 ci-international-sources-wave-2-mvp:
 	$(MAKE) international-sources-wave-2-mvp \

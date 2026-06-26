@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "USDA GATS trade rows required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "commodity_code" },
+      "meta": { "notes": "Commodity code required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "year" },
+      "meta": { "notes": "Trade year required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "usda.gats-trade",
+    "fonte_oficial": "https://apps.fas.usda.gov/gats/",
+    "agencia": "USDA FAS"
+  },
+  "name": "bronze.usda.gats_trade",
+  "id": "bronze-usda-gats-trade-suite"
+}

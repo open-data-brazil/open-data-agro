@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "BCRA FX series required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "currency_code" },
+      "meta": { "notes": "Currency code required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "refdate" },
+      "meta": { "notes": "Reference date required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "argentina.bcra-cambio",
+    "fonte_oficial": "https://www.bcra.gob.ar/PublicacionesEstadisticas/Principales_variables.asp",
+    "agencia": "BCRA"
+  },
+  "name": "bronze.argentina.bcra_cambio",
+  "id": "bronze-argentina-bcra-cambio-suite"
+}

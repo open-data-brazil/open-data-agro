@@ -265,6 +265,12 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_usda_wasde", true
 	case "igc.goi-index":
 		return "bronze_igc_goi_index", true
+	case "usda.gats-trade":
+		return "bronze_usda_gats_trade", true
+	case "eurostat.ag-prices":
+		return "bronze_eurostat_ag_prices", true
+	case "argentina.bcra-cambio":
+		return "bronze_argentina_bcra_cambio", true
 	case "un.comtrade-bulk":
 		return "bronze_un_comtrade_bulk", true
 	case "mapa.agrofit-produtos-formulados":

@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "EUROSTAT ag price indices required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "product_code" },
+      "meta": { "notes": "Product code required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "year" },
+      "meta": { "notes": "Year required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "eurostat.ag-prices",
+    "fonte_oficial": "https://ec.europa.eu/eurostat/web/agriculture/database",
+    "agencia": "EUROSTAT"
+  },
+  "name": "bronze.eurostat.ag_prices",
+  "id": "bronze-eurostat-ag-prices-suite"
+}

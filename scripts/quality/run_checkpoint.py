@@ -174,6 +174,9 @@ def main() -> int:
             "bronze_eia_petroleum_prices": "expectations/suites/bronze/eia/petroleum_prices.json",
             "bronze_usda_wasde": "expectations/suites/bronze/usda/wasde.json",
             "bronze_igc_goi_index": "expectations/suites/bronze/igc/goi_index.json",
+            "bronze_usda_gats_trade": "expectations/suites/bronze/usda/gats_trade.json",
+            "bronze_eurostat_ag_prices": "expectations/suites/bronze/eurostat/ag_prices.json",
+            "bronze_argentina_bcra_cambio": "expectations/suites/bronze/argentina/bcra_cambio.json",
             "bronze_un_comtrade_bulk": "expectations/suites/bronze/un/comtrade_bulk.json",
         }
         rel = mapping.get(args.checkpoint)
