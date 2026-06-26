@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: mart_worldbank__pink_sheet_monthly
+    description: World Bank Pink Sheet monthly commodity prices (USD nominal).
+    config:
+      meta:
+        dataset_id: worldbank.pink-sheet-monthly
+        grain: refmonth, series_name
+    columns:
+      - name: refmonth
+        tests: [not_null]
+      - name: series_name
+        tests: [not_null]
+      - name: commodity_slug
+        tests: [not_null]
+      - name: value
+        tests: [not_null]
+      - name: capturado_em
+        tests: [not_null]
+      - name: fonte_oficial
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [refmonth, series_name]

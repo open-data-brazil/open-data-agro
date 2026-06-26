@@ -209,6 +209,16 @@ Global production/supply/demand by country and marketing year. `fonte_tipo: inte
 
 Producer prices (USD/tonne) and price indices by country × year. Items 236/56/15/867. `fonte_tipo: internacional_oficial`.
 
+### World Bank — Pink Sheet commodities (Phase 27)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `worldbank.pink-sheet-monthly` | Pink Sheet monthly prices — soja, milho, trigo, petróleo, carne | **P0 — implemented** |
+
+**Fonte oficial:** [World Bank Commodity Markets](https://www.worldbank.org/en/research/commodity-markets) · `CMO-Historical-Data-Monthly.xlsx` bulk (no API key)
+
+USD-denominated monthly commodity reference prices. Monthly grain — no daily resampling in bronze (Stage H policy). `fonte_tipo: internacional_oficial`.
+
 ---
 
 ## Rules

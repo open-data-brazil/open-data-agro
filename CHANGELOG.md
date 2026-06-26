@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **B3 futuros agro (Phase 24):** `b3.futuro-soja`, `b3.futuro-milho`, `b3.futuro-boi` — SPRD BVBG.187 parser, GE suites, dbt marts, DuckDB views `analytics.b3_futuro_*`, `make b3-futuros-mvp` + `make ci-b3-futuros-mvp`
 - **USDA FAS PSD (Phase 25):** `usda.psd-soja`, `usda.psd-milho`, `usda.psd-trigo` — AMIS SOAP parser, GE suites, dbt marts, DuckDB views `analytics.usda_psd_*`, `make usda-psd-mvp` + `make ci-usda-psd-mvp`
 - **FAO FAOSTAT prices (Phase 26):** `fao.prices-agro` — bulk normalized CSV parser, GE suite, dbt mart, DuckDB view `analytics.fao_prices_agro`, `make fao-faostat-mvp` + `make ci-fao-faostat-mvp`
+- **World Bank Pink Sheet (Phase 27):** `worldbank.pink-sheet-monthly` — XLSX unpivot parser, GE suite, dbt mart, DuckDB view `analytics.worldbank_pink_sheet_monthly`, `make worldbank-commodities-mvp` + `make ci-worldbank-commodities-mvp`
 - **Roadmap sync:** `docs/ROADMAP.md` updated to reflect Go local-first stack, phases 0–19 status, and CI/collection sprint exit targets
 - **Phase TASKS bulk sync:** `.local/phases/*/TASKS.md` checkboxes aligned with repo reality (phases 10–13, 15–17, sprint progress table)
 - **CONAB Armazenamento e Logística (Phase 13 MVP):** `armazenamento-logistica.yaml` (3 datasets), legacy `.xls` ingest, full pipeline for `conab.armazenagem`, `make conab-armazenamento-mvp`

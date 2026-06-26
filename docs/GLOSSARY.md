@@ -112,6 +112,14 @@
 
 ---
 
+## Pink Sheet refmonth
+
+**Definition:** World Bank Pink Sheet monthly period stored as `YYYY-MM` in bronze (`refmonth` column), parsed from FAOSTAT-style `YYYYMMM` codes (e.g. `2024M01` → `2024-01`).
+**Resampling policy:** Bronze is **monthly grain only** — no daily interpolation. Stage H analytics may forward-fill to daily if needed; document in feature pipeline.
+**Code name:** `refmonth`
+
+---
+
 ## Golden vector
 
 **Definition:** Test fixture with input/output pairs from official API samples or published tables.

@@ -58,6 +58,9 @@ type RegistryEntry struct {
 	FAOBulkCSV       string   `json:"faoBulkCsv,omitempty" yaml:"fao_bulk_csv,omitempty"`
 	FAOItemCodes     []string `json:"faoItemCodes,omitempty" yaml:"fao_item_codes,omitempty"`
 	FAOElementCodes  []string `json:"faoElementCodes,omitempty" yaml:"fao_element_codes,omitempty"`
+	WorldBankPinkSheetURL   string   `json:"worldbankPinkSheetUrl,omitempty" yaml:"worldbank_pink_sheet_url,omitempty"`
+	WorldBankPinkSheetSheet string   `json:"worldbankPinkSheetSheet,omitempty" yaml:"worldbank_pink_sheet_sheet,omitempty"`
+	WorldBankSeriesNames    []string `json:"worldbankSeriesNames,omitempty" yaml:"worldbank_series_names,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

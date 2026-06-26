@@ -49,8 +49,14 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "fao.") {
 		return FAOFaostatPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "worldbank.") {
+		return WorldBankCommodityMarketsURL
+	}
 	return ""
 }
+
+// WorldBankCommodityMarketsURL is the World Bank commodity markets portal URL.
+const WorldBankCommodityMarketsURL = "https://www.worldbank.org/en/research/commodity-markets"
 
 // FAOFaostatPortalURL is the FAO FAOSTAT data portal URL.
 const FAOFaostatPortalURL = "https://www.fao.org/faostat/en/#data"
