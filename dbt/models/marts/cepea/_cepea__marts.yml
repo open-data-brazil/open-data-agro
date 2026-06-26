@@ -1,0 +1,122 @@
+version: 2
+
+models:
+  - name: mart_cepea__soja_paranagua
+    description: |
+      CEPEA daily soja port reference price (Paranaguá).
+      Grain is produto + praca + data.
+    config:
+      meta:
+        dataset_id: cepea.soja-paranagua
+        grain: produto, praca, data
+        licenca: CC BY-NC 4.0
+    columns:
+      - name: data
+        tests:
+          - not_null
+      - name: preco_rs_sc
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - praca
+              - data
+
+  - name: mart_cepea__soja_parana
+    description: |
+      CEPEA daily soja regional reference price (Paraná).
+      Grain is produto + praca + data.
+    config:
+      meta:
+        dataset_id: cepea.soja-parana
+        grain: produto, praca, data
+        licenca: CC BY-NC 4.0
+    columns:
+      - name: data
+        tests:
+          - not_null
+      - name: preco_rs_sc
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - praca
+              - data
+
+  - name: mart_cepea__milho
+    description: |
+      CEPEA daily corn reference price (Campinas).
+      Grain is produto + praca + data.
+    config:
+      meta:
+        dataset_id: cepea.milho
+        grain: produto, praca, data
+        licenca: CC BY-NC 4.0
+    columns:
+      - name: data
+        tests:
+          - not_null
+      - name: preco_rs_sc
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - praca
+              - data
+
+  - name: mart_cepea__boi_gordo
+    description: |
+      CEPEA daily cattle reference price (São Paulo).
+      Grain is produto + praca + data.
+    config:
+      meta:
+        dataset_id: cepea.boi-gordo
+        grain: produto, praca, data
+        licenca: CC BY-NC 4.0
+    columns:
+      - name: data
+        tests:
+          - not_null
+      - name: preco_rs_sc
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - praca
+              - data

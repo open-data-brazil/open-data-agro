@@ -1,0 +1,54 @@
+{
+  "expectations": [
+    {
+      "id": "0e1e88f5-02e3-45e0-8376-014571e5410a",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Milho CEPEA series must contain observations."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "20a01e22-deda-49ef-9dec-92c1fd35e4ec",
+      "kwargs": {
+        "column": "produto",
+        "value_set": [
+          "milho"
+        ]
+      },
+      "meta": {
+        "notes": "Corn indicator product slug."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "9abd4e1d-2eca-4b43-b098-3ce62ab3d6b3",
+      "kwargs": {
+        "column_list": [
+          "produto",
+          "praca",
+          "data"
+        ]
+      },
+      "meta": {
+        "notes": "No duplicate observations per location/date."
+      },
+      "severity": "critical",
+      "type": "expect_compound_columns_to_be_unique"
+    }
+  ],
+  "id": "2c1719bc-44ab-4eea-9cb0-19c7dadc9769",
+  "meta": {
+    "agencia": "CEPEA",
+    "dataset_id": "cepea.milho",
+    "fonte_oficial": "https://www.cepea.org.br/",
+    "great_expectations_version": "1.18.1",
+    "licenca": "CC BY-NC 4.0"
+  },
+  "name": "bronze.cepea.milho",
+  "notes": null
+}

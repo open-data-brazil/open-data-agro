@@ -16,9 +16,9 @@
       "meta": { "notes": "Canonical ISO date." }
     },
     {
-      "type": "expect_column_values_to_be_between",
-      "kwargs": { "column": "preco_rs_sc", "min_value": 0, "mostly": 1.0 },
-      "meta": { "notes": "Positive BRL price per 60 kg bag." }
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "preco_rs_sc" },
+      "meta": { "notes": "BRL price per 60 kg bag must be present." }
     },
     {
       "type": "expect_compound_columns_to_be_unique",

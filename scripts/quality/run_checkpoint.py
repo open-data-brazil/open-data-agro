@@ -144,6 +144,7 @@ def main() -> int:
             "bronze_cepea_soja_paranagua": "expectations/suites/bronze/cepea/soja_paranagua.json",
             "bronze_cepea_soja_parana": "expectations/suites/bronze/cepea/soja_parana.json",
             "bronze_cepea_milho": "expectations/suites/bronze/cepea/milho.json",
+            "bronze_cepea_boi_gordo": "expectations/suites/bronze/cepea/boi_gordo.json",
         }
         rel = mapping.get(args.checkpoint)
         if not rel:

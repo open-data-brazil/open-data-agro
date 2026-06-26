@@ -1,0 +1,54 @@
+{
+  "expectations": [
+    {
+      "id": "e4cbc6f0-7c1c-4f5a-8953-133556e86a13",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Boi gordo CEPEA series must contain observations."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "e5e283c5-9432-45cf-8aab-1d136c519345",
+      "kwargs": {
+        "column": "produto",
+        "value_set": [
+          "boi-gordo"
+        ]
+      },
+      "meta": {
+        "notes": "Cattle indicator product slug."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "ed62cf44-e598-4a9d-a129-d6bc9679f863",
+      "kwargs": {
+        "column_list": [
+          "produto",
+          "praca",
+          "data"
+        ]
+      },
+      "meta": {
+        "notes": "No duplicate observations per location/date."
+      },
+      "severity": "critical",
+      "type": "expect_compound_columns_to_be_unique"
+    }
+  ],
+  "id": "51f2a2df-3df8-4cf2-bb6c-8f5b9230eb13",
+  "meta": {
+    "agencia": "CEPEA",
+    "dataset_id": "cepea.boi-gordo",
+    "fonte_oficial": "https://www.cepea.org.br/",
+    "great_expectations_version": "1.18.1",
+    "licenca": "CC BY-NC 4.0"
+  },
+  "name": "bronze.cepea.boi_gordo",
+  "notes": null
+}

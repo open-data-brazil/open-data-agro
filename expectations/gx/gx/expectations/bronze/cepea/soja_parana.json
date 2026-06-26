@@ -1,0 +1,54 @@
+{
+  "expectations": [
+    {
+      "id": "5c2a8200-2fd1-4022-b38a-c5332afb3cb7",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Soja Paran\u00e1 regional series must contain observations."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "d0862508-87ee-423e-b079-242f5b5e2851",
+      "kwargs": {
+        "column": "praca",
+        "value_set": [
+          "Paran\u00e1"
+        ]
+      },
+      "meta": {
+        "notes": "Regional reference location."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "4071e535-8f91-4879-979e-885064a254ee",
+      "kwargs": {
+        "column_list": [
+          "produto",
+          "praca",
+          "data"
+        ]
+      },
+      "meta": {
+        "notes": "No duplicate observations per location/date."
+      },
+      "severity": "critical",
+      "type": "expect_compound_columns_to_be_unique"
+    }
+  ],
+  "id": "8383872b-0f38-493a-9b18-948661693950",
+  "meta": {
+    "agencia": "CEPEA",
+    "dataset_id": "cepea.soja-parana",
+    "fonte_oficial": "https://www.cepea.org.br/",
+    "great_expectations_version": "1.18.1",
+    "licenca": "CC BY-NC 4.0"
+  },
+  "name": "bronze.cepea.soja_parana",
+  "notes": null
+}

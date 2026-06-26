@@ -1,0 +1,78 @@
+{
+  "expectations": [
+    {
+      "id": "6df46316-6743-4db1-a228-365d2828d50b",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Soja Paranagu\u00e1 series must contain observations."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "beae2c7a-27e5-464a-8d8f-d392a4ba17ff",
+      "kwargs": {
+        "column": "praca",
+        "value_set": [
+          "Paranagu\u00e1"
+        ]
+      },
+      "meta": {
+        "notes": "Port reference location."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "b37e44e9-1712-4efc-ad82-a718c9ecd9a7",
+      "kwargs": {
+        "column": "data",
+        "regex": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "meta": {
+        "notes": "Canonical ISO date."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_match_regex"
+    },
+    {
+      "id": "6db2018b-c1de-4099-9771-5e8acc9cf0f1",
+      "kwargs": {
+        "column": "preco_rs_sc"
+      },
+      "meta": {
+        "notes": "BRL price per 60 kg bag must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "42608f3b-1fa5-45e4-99e9-4fcfb316601a",
+      "kwargs": {
+        "column_list": [
+          "produto",
+          "praca",
+          "data"
+        ]
+      },
+      "meta": {
+        "notes": "No duplicate observations per location/date."
+      },
+      "severity": "critical",
+      "type": "expect_compound_columns_to_be_unique"
+    }
+  ],
+  "id": "98ecef78-e65b-409e-abc9-f8add6899120",
+  "meta": {
+    "agencia": "CEPEA",
+    "dataset_id": "cepea.soja-paranagua",
+    "fonte_oficial": "https://www.cepea.org.br/",
+    "fonte_tipo": "referencia_mercado",
+    "great_expectations_version": "1.18.1",
+    "licenca": "CC BY-NC 4.0"
+  },
+  "name": "bronze.cepea.soja_paranagua",
+  "notes": null
+}
