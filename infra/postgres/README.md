@@ -31,6 +31,17 @@ make migrate-down      # roll back last migration
 | 000002 | `ingest_schema` | registry, jobs, files (`uuidv7()`, `source_portal_url`) |
 | 000003 | `promotion_schema` | promotion audit (`quality_failed` status) |
 | 000004 | `monitoring_views` | `v_latest_successful_ingest`, `v_failed_jobs_last_7d` |
+| 000005 | `analytics_schema` | `analytics` schema, sync manifest, mart mirror tables |
+
+## Unified analytics sync (Phase 29)
+
+Gold marts sync into `analytics.*` via `make unified-db-sync`. See [docs/POSTGRES-UNIFIED-SYNC.md](../../docs/POSTGRES-UNIFIED-SYNC.md).
+
+```bash
+make migrate-up
+make unified-db-sync
+psql "$DATABASE_URL" -c "SELECT * FROM analytics.v_latest_sync_tables LIMIT 10;"
+```
 
 ## Seed registry
 

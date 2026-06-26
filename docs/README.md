@@ -15,6 +15,7 @@
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Module layout, layers, design patterns |
 | [API-CONTRACT.md](API-CONTRACT.md) | Public API contract (functions, types, errors) |
 | [ROADMAP.md](ROADMAP.md) | Phases and priorities |
+| [POSTGRES-UNIFIED-SYNC.md](POSTGRES-UNIFIED-SYNC.md) | Gold marts → PostgreSQL `analytics` schema (Stage G) |
 | [NEW-PROJECT-CHECKLIST.md](NEW-PROJECT-CHECKLIST.md) | Pre-implementation checklist |
 
 ## Governance (license, security, releases)

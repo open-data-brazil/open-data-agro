@@ -98,6 +98,7 @@
 | 26 | FAO FAOSTAT prices agro | **Done** | `make fao-faostat-mvp`, `make ci-fao-faostat-mvp` |
 | 27 | World Bank Pink Sheet monthly | **Done** | `make worldbank-commodities-mvp`, `make ci-worldbank-commodities-mvp` |
 | 28 | NOAA climate global indices (ONI + global temp) | **Done** | `make noaa-climate-mvp`, `make ci-noaa-climate-mvp` |
+| 29 | Unified PostgreSQL (gold → analytics schema) | **Done** | `make unified-db-sync`, `make ci-unified-db-sync` |
 
 ---
 

@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima dbt-build-mdic-comex dbt-build-antt-pedagios dbt-build-mapa-zarc dbt-build-b3-futuros ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp ci-ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp mdic-comex-mvp ci-mdic-comex-mvp dnit-antt-logistica-mvp ci-dnit-antt-logistica-mvp mapa-dados-mvp ci-mapa-dados-mvp b3-futuros-mvp ci-b3-futuros-mvp dbt-build-usda-psd usda-psd-mvp ci-usda-psd-mvp dbt-build-fao-faostat fao-faostat-mvp ci-fao-faostat-mvp dbt-build-worldbank-commodities worldbank-commodities-mvp ci-worldbank-commodities-mvp dbt-build-noaa-climate noaa-climate-mvp ci-noaa-climate-mvp anp-mvp ci-anp-mvp p1-collection-mvp ci-p1-collection-mvp collection-macro-mvp ci-collection-macro-mvp collection-full-mvp ci-collection-full-mvp ci-go ci-minio ci-validate-r2-env validate-r2-env validate-r2-env-live ci-delta-versioning ci-new-dataset-checklist ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-clean benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima dbt-build-mdic-comex dbt-build-antt-pedagios dbt-build-mapa-zarc dbt-build-b3-futuros ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp ci-ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp mdic-comex-mvp ci-mdic-comex-mvp dnit-antt-logistica-mvp ci-dnit-antt-logistica-mvp mapa-dados-mvp ci-mapa-dados-mvp b3-futuros-mvp ci-b3-futuros-mvp dbt-build-usda-psd usda-psd-mvp ci-usda-psd-mvp dbt-build-fao-faostat fao-faostat-mvp ci-fao-faostat-mvp dbt-build-worldbank-commodities worldbank-commodities-mvp ci-worldbank-commodities-mvp dbt-build-noaa-climate noaa-climate-mvp ci-noaa-climate-mvp unified-db-sync ci-unified-db-sync seed-unified-db-gold anp-mvp ci-anp-mvp p1-collection-mvp ci-p1-collection-mvp collection-macro-mvp ci-collection-macro-mvp collection-full-mvp ci-collection-full-mvp ci-go ci-minio ci-validate-r2-env validate-r2-env validate-r2-env-live ci-delta-versioning ci-new-dataset-checklist ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-clean benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -44,6 +44,8 @@ CI_WORLDBANK_COMMODITIES_LAKE ?= /tmp/worldbank-commodities-ci-lake
 CI_WORLDBANK_COMMODITIES_DUCKDB ?= /tmp/worldbank-commodities-ci.duckdb
 CI_NOAA_CLIMATE_LAKE ?= /tmp/noaa-climate-ci-lake
 CI_NOAA_CLIMATE_DUCKDB ?= /tmp/noaa-climate-ci.duckdb
+CI_UNIFIED_DB_LAKE ?= /tmp/unified-db-ci-lake
+UNIFIED_DB_SYNC_MARTS ?=
 COLLECTION_MACRO_DBT_SELECT := stg_inmet__estacoes_automaticas+ stg_inmet__estacoes_convencionais+ stg_inmet__bdmep_diario+ stg_inmet__bdmep_mensal+ stg_inmet__pacote_anual_automaticas+ stg_bcb__sgs_ipca+ stg_bcb__sgs_ipca_12m+ stg_bcb__sgs_igpm+ stg_bcb__sgs_ptax_usd_venda+ stg_bcb__sgs_ptax_usd_compra+ stg_cepea__soja_paranagua+ stg_cepea__soja_parana+ stg_cepea__milho+ stg_cepea__boi_gordo+
 
 test:
@@ -614,6 +616,20 @@ ci-noaa-climate-mvp:
 	$(MAKE) noaa-climate-mvp \
 		LAKE_LOCAL_ROOT=$(CI_NOAA_CLIMATE_LAKE) \
 		DUCKDB_PATH=$(CI_NOAA_CLIMATE_DUCKDB)
+
+unified-db-sync: build-processor migrate-up
+	@test -n "$(DATABASE_URL)"
+	LAKE_LOCAL_ROOT=$(LAKE_ABS) DATABASE_URL="$(DATABASE_URL)" DUCKDB_BIN="$(DUCKDB_BIN)" DUCKDB_PATH=$(DUCKDB_PATH) UNIFIED_DB_SYNC_MARTS="$(UNIFIED_DB_SYNC_MARTS)" ./$(BIN_DIR)/processor sync-postgres
+	DATABASE_URL="$(DATABASE_URL)" python3 scripts/ci/verify_unified_db_sync.py --lake-root "$(LAKE_ABS)"
+	@(command -v psql >/dev/null 2>&1 && psql "$(DATABASE_URL)" -c "\dt analytics.*") || docker compose exec -T postgres psql -U open_data_agro -d open_data_agro -c "\dt analytics.*"
+
+ci-unified-db-sync: seed-unified-db-gold
+	$(MAKE) unified-db-sync \
+		LAKE_LOCAL_ROOT=$(CI_UNIFIED_DB_LAKE) \
+		DATABASE_URL="$(DATABASE_URL)"
+
+seed-unified-db-gold:
+	LAKE_LOCAL_ROOT=$(CI_UNIFIED_DB_LAKE) python3 scripts/ci/seed_unified_db_gold.py
 
 conab-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_dbt_silver.py

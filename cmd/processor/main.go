@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/config"
@@ -33,6 +34,7 @@ func newRootCmd() *cobra.Command {
 	root.AddCommand(newPromoteCmd())
 	root.AddCommand(newSmokeCmd())
 	root.AddCommand(newQualityCmd())
+	root.AddCommand(newSyncPostgresCmd())
 	return root
 }
 
@@ -265,6 +267,74 @@ func runPromote(cmd *cobra.Command, datasetID string) error {
 		result.RowCount,
 		result.SilverDir,
 		result.StorageMode,
+	)
+	return err
+}
+
+func newSyncPostgresCmd() *cobra.Command {
+	var martFilter string
+
+	cmd := &cobra.Command{
+		Use:   "sync-postgres",
+		Short: "Sync gold marts into PostgreSQL analytics schema",
+		Long:  "Discovers lake/gold/mart_*/mart.parquet files and full-refreshes analytics.* tables in PostgreSQL.",
+		RunE: func(cmd *cobra.Command, _ []string) error {
+			return runSyncPostgres(cmd, martFilter)
+		},
+	}
+
+	cmd.Flags().StringVar(&martFilter, "marts", "", "Comma-separated analytics table names to sync (default: all gold marts)")
+	return cmd
+}
+
+func runSyncPostgres(cmd *cobra.Command, martFilter string) error {
+	ctx := cmd.Context()
+	cfg, err := config.LoadLakeFromEnv()
+	if err != nil {
+		return err
+	}
+	if strings.TrimSpace(cfg.DatabaseURL) == "" {
+		return fmt.Errorf("DATABASE_URL is required for sync-postgres")
+	}
+
+	repo, err := db.NewRepository(ctx, cfg.DatabaseURL)
+	if err != nil {
+		return err
+	}
+	defer repo.Close()
+
+	filter := processor.ParseMartFilter(martFilter)
+	if envFilter := strings.TrimSpace(os.Getenv("UNIFIED_DB_SYNC_MARTS")); envFilter != "" && martFilter == "" {
+		filter = processor.ParseMartFilter(envFilter)
+	}
+
+	syncer, err := processor.NewSyncPostgres(cfg, repo)
+	if err != nil {
+		return err
+	}
+
+	result, err := syncer.Sync(ctx, processor.SyncPostgresOptions{MartFilter: filter})
+	if err != nil {
+		return err
+	}
+
+	for _, table := range result.Tables {
+		_, _ = fmt.Fprintf(
+			cmd.OutOrStdout(),
+			"synced analytics.%s rows=%d gold=%s min=%s max=%s\n",
+			table.TableName,
+			table.RowCount,
+			table.GoldPath,
+			table.MinDate,
+			table.MaxDate,
+		)
+	}
+	_, err = fmt.Fprintf(
+		cmd.OutOrStdout(),
+		"sync-postgres run=%s status=%s tables=%d\n",
+		result.RunID,
+		result.Status,
+		len(result.Tables),
 	)
 	return err
 }

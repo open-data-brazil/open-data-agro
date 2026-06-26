@@ -42,6 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **FAO FAOSTAT prices (Phase 26):** `fao.prices-agro` — bulk normalized CSV parser, GE suite, dbt mart, DuckDB view `analytics.fao_prices_agro`, `make fao-faostat-mvp` + `make ci-fao-faostat-mvp`
 - **World Bank Pink Sheet (Phase 27):** `worldbank.pink-sheet-monthly` — XLSX unpivot parser, GE suite, dbt mart, DuckDB view `analytics.worldbank_pink_sheet_monthly`, `make worldbank-commodities-mvp` + `make ci-worldbank-commodities-mvp`
 - **NOAA climate indices (Phase 28):** `noaa.enso-indices`, `noaa.global-temp-anomaly` — ONI ASCII + NCEI CSV parsers, GE suites, dbt marts, DuckDB views `analytics.noaa_enso_indices` / `analytics.noaa_global_temp_anomaly`, `make noaa-climate-mvp` + `make ci-noaa-climate-mvp`
+- **Unified PostgreSQL (Phase 29):** `processor sync-postgres`, migration `000005_analytics_schema`, manifest tables, join-key indexes, `make unified-db-sync` + `make ci-unified-db-sync` — see [docs/POSTGRES-UNIFIED-SYNC.md](docs/POSTGRES-UNIFIED-SYNC.md)
 - **Roadmap sync:** `docs/ROADMAP.md` updated to reflect Go local-first stack, phases 0–19 status, and CI/collection sprint exit targets
 - **Phase TASKS bulk sync:** `.local/phases/*/TASKS.md` checkboxes aligned with repo reality (phases 10–13, 15–17, sprint progress table)
 - **CONAB Armazenamento e Logística (Phase 13 MVP):** `armazenamento-logistica.yaml` (3 datasets), legacy `.xls` ingest, full pipeline for `conab.armazenagem`, `make conab-armazenamento-mvp`
