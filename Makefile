@@ -238,13 +238,17 @@ ibge-localidades-mvp:
 dbt-build-ibge-localidades: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__localidades_municipios+ stg_ibge__localidades_ufs+ stg_ibge__localidades_regioes+ stg_ibge__localidades_mesorregioes+ stg_ibge__localidades_microrregioes+'
 
-dbt-build-ibge-pam:
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__pam_area_quantidade stg_ibge__pam_rendimento_valor stg_ibge__pam_estabelecimentos'
+dbt-build-ibge-pam: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__pam_area_quantidade+ stg_ibge__pam_rendimento_valor+ stg_ibge__pam_estabelecimentos+'
 
 ibge-pam-mvp:
 	go test ./internal/ibge/... ./internal/ingest/ -run 'PAM|SIDRA|pam|FlattenPAM'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_ibge_pam_silver.py
 	$(MAKE) dbt-build-ibge-pam LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH)
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pam_area_quantidade"
+	duckdb $(DUCKDB_PATH) -c "SELECT municipio, ano, variavel, valor FROM analytics.ibge_pam_rendimento_valor LIMIT 2"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pam_estabelecimentos"
 
 inmet-clima-mvp:
 	go test ./internal/inmet/... ./internal/ingest/ -run 'INMET|FlattenEstacoes|BDMEP|Missing'

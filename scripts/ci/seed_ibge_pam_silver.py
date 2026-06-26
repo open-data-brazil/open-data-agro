@@ -20,6 +20,13 @@ def write_table(root: Path, agency: str, table: str, data: pa.Table) -> None:
 def main() -> int:
     lake_root = Path(os.environ.get("LAKE_LOCAL_ROOT", "/tmp/open-data-agro-lake"))
     lake_root.mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold").mkdir(parents=True, exist_ok=True)
+    for mart in [
+        "mart_ibge__pam_area_quantidade",
+        "mart_ibge__pam_rendimento_valor",
+        "mart_ibge__pam_estabelecimentos",
+    ]:
+        (lake_root / "gold" / mart).mkdir(parents=True, exist_ok=True)
 
     source = str(lake_root / "bronze/seed.parquet")
     ingested = "2026-06-25T12:00:00Z"

@@ -135,3 +135,111 @@ models:
       - name: fonte_oficial
         tests:
           - not_null
+
+  - name: mart_ibge__pam_area_quantidade
+    description: |
+      PAM municipal area planted, harvested, and production quantity (SIDRA 1612).
+      Grain is codigo_ibge + ano + variavel_codigo + produto_codigo.
+    config:
+      meta:
+        dataset_id: ibge.pam-area-quantidade
+        grain: codigo_ibge, ano, variavel_codigo, produto_codigo
+    columns:
+      - name: codigo_ibge
+        tests:
+          - not_null
+      - name: ano
+        tests:
+          - not_null
+      - name: variavel_codigo
+        tests:
+          - not_null
+      - name: produto_codigo
+        tests:
+          - not_null
+      - name: valor
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - codigo_ibge
+              - ano
+              - variavel_codigo
+              - produto_codigo
+
+  - name: mart_ibge__pam_rendimento_valor
+    description: |
+      PAM municipal yield and production value (SIDRA 1613).
+      Grain is codigo_ibge + ano + variavel_codigo + produto_codigo.
+    config:
+      meta:
+        dataset_id: ibge.pam-rendimento-valor
+        grain: codigo_ibge, ano, variavel_codigo, produto_codigo
+    columns:
+      - name: codigo_ibge
+        tests:
+          - not_null
+      - name: ano
+        tests:
+          - not_null
+      - name: variavel_codigo
+        tests:
+          - not_null
+      - name: produto_codigo
+        tests:
+          - not_null
+      - name: valor
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - codigo_ibge
+              - ano
+              - variavel_codigo
+              - produto_codigo
+
+  - name: mart_ibge__pam_estabelecimentos
+    description: |
+      PAM municipal farm establishment counts (SIDRA 5457).
+      Grain is codigo_ibge + ano + variavel_codigo + produto_codigo.
+    config:
+      meta:
+        dataset_id: ibge.pam-estabelecimentos
+        grain: codigo_ibge, ano, variavel_codigo, produto_codigo
+    columns:
+      - name: codigo_ibge
+        tests:
+          - not_null
+      - name: ano
+        tests:
+          - not_null
+      - name: variavel_codigo
+        tests:
+          - not_null
+      - name: produto_codigo
+        tests:
+          - not_null
+      - name: valor
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - codigo_ibge
+              - ano
+              - variavel_codigo
+              - produto_codigo
