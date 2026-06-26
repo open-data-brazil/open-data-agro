@@ -13318,3 +13318,2085 @@ alter view "dbt_workspace"."main"."mart_usda__gats_trade__dbt_int" rename to "ma
 [0m13:38:46.277093 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1681be1c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1681c29e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1681c29a90>]}
 [0m13:38:46.277561 [debug] [MainThread]: Flushing usage events
 [0m13:38:47.052786 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:54:12.367707 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7697f568a8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7697f756b170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7697f51104a0>]}
+
+
+============================== 13:54:12.372175 | 727d71a2-5911-4db5-8565-c68af6bba2d2 ==============================
+[0m13:54:12.372175 [info ] [MainThread]: Running with dbt=1.11.11
+[0m13:54:12.372810 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'fail_fast': 'False', 'log_cache_events': 'False', 'target_path': 'None', 'use_colors': 'True', 'static_parser': 'True', 'empty': 'None', 'warn_error': 'None', 'use_experimental_parser': 'False', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'profiles_dir': '.', 'write_json': 'True', 'partial_parse': 'True', 'printer_width': '80', 'version_check': 'True', 'invocation_command': 'dbt deps --profiles-dir .', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'no_print': 'None', 'quiet': 'False', 'introspect': 'True'}
+[0m13:54:12.525261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '727d71a2-5911-4db5-8565-c68af6bba2d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7697f74586e0>]}
+[0m13:54:12.559566 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-9tpqfljf'
+[0m13:54:12.559952 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m13:54:12.706914 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m13:54:12.708258 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m13:54:12.861989 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m13:54:12.865794 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m13:54:13.801885 [info ] [MainThread]: Installed from version 1.3.0
+[0m13:54:13.802305 [info ] [MainThread]: Updated version available: 1.4.0
+[0m13:54:13.802644 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '727d71a2-5911-4db5-8565-c68af6bba2d2', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7697f5570200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7697f45f69f0>]}
+[0m13:54:13.802971 [info ] [MainThread]: 
+[0m13:54:13.803297 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m13:54:13.804771 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 1.4861813, "process_in_blocks": "117128", "process_kernel_time": 0.17253, "process_mem_max_rss": "121256", "process_out_blocks": "2328", "process_user_time": 1.376252}
+[0m13:54:13.805282 [debug] [MainThread]: Command `dbt deps` succeeded at 13:54:13.805194 after 1.49 seconds
+[0m13:54:13.805601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7697f55a3d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7697fa0d3b30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7697f45f69f0>]}
+[0m13:54:13.805912 [debug] [MainThread]: Flushing usage events
+[0m13:54:15.030460 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:54:16.504141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc28a5c11c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc28be50080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc2894d8ce0>]}
+
+
+============================== 13:54:16.506765 | af24af22-b51e-44d0-a60a-2c23ec404098 ==============================
+[0m13:54:16.506765 [info ] [MainThread]: Running with dbt=1.11.11
+[0m13:54:16.507290 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'profiles_dir': '.', 'use_experimental_parser': 'False', 'no_print': 'None', 'version_check': 'True', 'partial_parse': 'True', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'introspect': 'True', 'write_json': 'True', 'fail_fast': 'False', 'static_parser': 'True', 'quiet': 'False', 'debug': 'False', 'use_colors': 'True', 'target_path': 'None', 'invocation_command': 'dbt build --profiles-dir . --select stg_dnit__snv_rodovias_federais+ stg_ipea__series_macro_regionais+ stg_ibge__pevs_producao_vegetal+', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'empty': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False'}
+[0m13:54:16.812305 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc28958e540>]}
+[0m13:54:16.881698 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc2892d9d60>]}
+[0m13:54:16.883699 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m13:54:16.969868 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m13:54:17.260632 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 10 files added, 2 files changed.
+[0m13:54:17.262438 [debug] [MainThread]: Partial parsing: added file: open_data_agro://models/staging/dnit/_dnit__sources.yml
+[0m13:54:17.263064 [debug] [MainThread]: Partial parsing: added file: open_data_agro://models/staging/ipea/stg_ipea__series_macro_regionais.sql
+[0m13:54:17.263611 [debug] [MainThread]: Partial parsing: added file: open_data_agro://models/marts/ibge/mart_ibge__pevs_producao_vegetal.sql
+[0m13:54:17.263983 [debug] [MainThread]: Partial parsing: added file: open_data_agro://macros/dnit.sql
+[0m13:54:17.264272 [debug] [MainThread]: Partial parsing: added file: open_data_agro://macros/ipea.sql
+[0m13:54:17.264553 [debug] [MainThread]: Partial parsing: added file: open_data_agro://models/staging/dnit/stg_dnit__snv_rodovias_federais.sql
+[0m13:54:17.264804 [debug] [MainThread]: Partial parsing: added file: open_data_agro://models/marts/dnit/mart_dnit__snv_rodovias_federais.sql
+[0m13:54:17.265062 [debug] [MainThread]: Partial parsing: added file: open_data_agro://models/staging/ibge/stg_ibge__pevs_producao_vegetal.sql
+[0m13:54:17.265354 [debug] [MainThread]: Partial parsing: added file: open_data_agro://models/marts/ipea/mart_ipea__series_macro_regionais.sql
+[0m13:54:17.265631 [debug] [MainThread]: Partial parsing: added file: open_data_agro://models/staging/ipea/_ipea__sources.yml
+[0m13:54:17.265994 [debug] [MainThread]: Partial parsing: updated file: open_data_agro://models/staging/ibge/_ibge__sources.yml
+[0m13:54:17.267194 [debug] [MainThread]: Partial parsing: updated file: open_data_agro://macros/ibge.sql
+[0m13:54:18.190358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc27c52acc0>]}
+[0m13:54:18.448092 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m13:54:18.452749 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m13:54:18.506519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc27cb90650>]}
+[0m13:54:18.507063 [info ] [MainThread]: Found 169 models, 427 data tests, 84 sources, 688 macros
+[0m13:54:18.526809 [info ] [MainThread]: 
+[0m13:54:18.527276 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m13:54:18.527588 [info ] [MainThread]: 
+[0m13:54:18.528027 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m13:54:18.532046 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m13:54:18.568745 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m13:54:18.569131 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m13:54:18.569400 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:54:18.621275 [debug] [ThreadPool]: SQL status: OK in 0.052 seconds
+[0m13:54:18.622922 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m13:54:18.623578 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m13:54:18.624007 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m13:54:18.629401 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:54:18.629757 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m13:54:18.630021 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:54:18.630910 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:54:18.631939 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:54:18.632222 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m13:54:18.632593 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:54:18.632844 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:54:18.633080 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m13:54:18.633687 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:54:18.634365 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m13:54:18.634648 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:54:18.634893 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m13:54:18.635256 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:54:18.635522 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m13:54:18.642737 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m13:54:18.647392 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m13:54:18.647778 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m13:54:18.648053 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:54:18.648669 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:54:18.648963 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m13:54:18.649219 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m13:54:18.655986 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m13:54:18.658865 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m13:54:18.660993 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m13:54:18.661544 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m13:54:18.674194 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc27c1a5e80>]}
+[0m13:54:18.674661 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:54:18.674939 [debug] [MainThread]: On master: BEGIN
+[0m13:54:18.675170 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:54:18.675744 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m13:54:18.676034 [debug] [MainThread]: On master: COMMIT
+[0m13:54:18.676303 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:54:18.676614 [debug] [MainThread]: On master: COMMIT
+[0m13:54:18.677048 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:54:18.677333 [debug] [MainThread]: On master: Close
+[0m13:54:18.680159 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:54:18.680686 [debug] [Thread-2 (]: Began running node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:54:18.681640 [debug] [Thread-3 (]: Began running node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:54:18.681301 [info ] [Thread-1 (]: 1 of 6 START sql view model main.stg_dnit__snv_rodovias_federais ............... [RUN]
+[0m13:54:18.682460 [info ] [Thread-2 (]: 2 of 6 START sql view model main.stg_ibge__pevs_producao_vegetal ............... [RUN]
+[0m13:54:18.683209 [info ] [Thread-3 (]: 3 of 6 START sql view model main.stg_ipea__series_macro_regionais .............. [RUN]
+[0m13:54:18.683783 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_dnit__snv_rodovias_federais)
+[0m13:54:18.684214 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_ibge__pevs_producao_vegetal'
+[0m13:54:18.684744 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_ipea__series_macro_regionais'
+[0m13:54:18.685247 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:54:18.685530 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:54:18.685916 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:54:18.692545 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:18.696302 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:18.699540 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:18.700965 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:54:18.711591 [debug] [Thread-2 (]: Began executing node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:54:18.722352 [debug] [Thread-3 (]: Began executing node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:54:18.726243 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:18.729830 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:18.733228 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:18.734450 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:18.734828 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: BEGIN
+[0m13:54:18.735167 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:18.735439 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:54:18.735923 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:18.736228 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: BEGIN
+[0m13:54:18.736675 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: BEGIN
+[0m13:54:18.736958 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m13:54:18.737272 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.737578 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:54:18.738075 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:18.738493 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.738855 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+
+  
+  create view "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/silver/dnit/snv_rodovias_federais/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    BR as br,
+    UF as uf,
+    "Tipo de trecho" as tipo_trecho,
+    "Código" as codigo,
+    "Local de Início" as local_inicio,
+    "Local de Fim" as local_fim,
+    "km inicial" as km_inicial,
+    "km final" as km_final,
+    "Extensão" as extensao,
+    "Superfície Federal" as superficie_federal,
+    Obras as obras,
+    "Federal Coincidente" as federal_coincidente,
+    "Administração" as administracao,
+    "Ato legal" as ato_legal,
+    "Estadual Coincidente" as estadual_coincidente,
+    "Superfície Est. Coincidente" as superficie_est_coincidente,
+    "Jurisdição" as jurisdicao,
+    "Superfície" as superficie,
+    "Unidade Local" as unidade_local
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by br, uf, codigo, km_inicial, km_final
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m13:54:18.739248 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.739563 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:18.739997 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:18.740309 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ipea__series_macro_regionais__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/silver/ipea/series_macro_regionais/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    series_code,
+    refdate,
+    value,
+    region_level,
+    territory_code
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  http://www.ipeadata.gov.br/
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by series_code, refdate, territory_code
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m13:54:18.740698 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/silver/ibge/pevs_producao_vegetal/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://sidra.ibge.gov.br/pesquisa/pevs
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by codigo_uf, ano, variavel_codigo, produto_codigo
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m13:54:18.742365 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.742737 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.743087 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m13:54:18.750847 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:18.753471 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:18.755831 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:18.756194 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+alter view "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal__dbt_tmp" rename to "stg_ibge__pevs_producao_vegetal"
+[0m13:54:18.756553 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+alter view "dbt_workspace"."main"."stg_ipea__series_macro_regionais__dbt_tmp" rename to "stg_ipea__series_macro_regionais"
+[0m13:54:18.756967 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+alter view "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais__dbt_tmp" rename to "stg_dnit__snv_rodovias_federais"
+[0m13:54:18.757957 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.763493 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m13:54:18.767226 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: COMMIT
+[0m13:54:18.767722 [debug] [Thread-3 (]: SQL status: OK in 0.010 seconds
+[0m13:54:18.768914 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: COMMIT
+[0m13:54:18.769368 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:18.770426 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: COMMIT
+[0m13:54:18.770869 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:18.771476 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: COMMIT
+[0m13:54:18.772014 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:18.772317 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: COMMIT
+[0m13:54:18.772778 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: COMMIT
+[0m13:54:18.775073 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.779245 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:18.779625 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m13:54:18.779980 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal__dbt_backup" cascade
+    
+[0m13:54:18.780347 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m13:54:18.782395 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:18.784440 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:18.784817 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ipea__series_macro_regionais__dbt_backup" cascade
+    
+[0m13:54:18.785117 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.785454 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais__dbt_backup" cascade
+    
+[0m13:54:18.788479 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: Close
+[0m13:54:18.788906 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m13:54:18.790971 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: Close
+[0m13:54:18.791373 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.792684 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: Close
+[0m13:54:18.792987 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc25c3eeea0>]}
+[0m13:54:18.793341 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc25c3efdd0>]}
+[0m13:54:18.793774 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc27c5088c0>]}
+[0m13:54:18.794320 [info ] [Thread-2 (]: 2 of 6 OK created sql view model main.stg_ibge__pevs_producao_vegetal .......... [[32mOK[0m in 0.11s]
+[0m13:54:18.794811 [info ] [Thread-3 (]: 3 of 6 OK created sql view model main.stg_ipea__series_macro_regionais ......... [[32mOK[0m in 0.11s]
+[0m13:54:18.795324 [info ] [Thread-1 (]: 1 of 6 OK created sql view model main.stg_dnit__snv_rodovias_federais .......... [[32mOK[0m in 0.11s]
+[0m13:54:18.795766 [debug] [Thread-2 (]: Finished running node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:54:18.796205 [debug] [Thread-3 (]: Finished running node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:54:18.796622 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:54:18.797280 [debug] [Thread-1 (]: Began running node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:54:18.797699 [debug] [Thread-4 (]: Began running node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:54:18.798374 [info ] [Thread-1 (]: 4 of 6 START sql external model main.mart_ibge__pevs_producao_vegetal .......... [RUN]
+[0m13:54:18.798911 [debug] [Thread-3 (]: Began running node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:54:18.799400 [info ] [Thread-4 (]: 5 of 6 START sql external model main.mart_ipea__series_macro_regionais ......... [RUN]
+[0m13:54:18.800050 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_dnit__snv_rodovias_federais, now model.open_data_agro.mart_ibge__pevs_producao_vegetal)
+[0m13:54:18.800478 [info ] [Thread-3 (]: 6 of 6 START sql external model main.mart_dnit__snv_rodovias_federais .......... [RUN]
+[0m13:54:18.800957 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_ipea__series_macro_regionais'
+[0m13:54:18.801319 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:54:18.801716 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_ipea__series_macro_regionais, now model.open_data_agro.mart_dnit__snv_rodovias_federais)
+[0m13:54:18.802099 [debug] [Thread-4 (]: Began compiling node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:54:18.805072 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.805455 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:54:18.808423 [debug] [Thread-4 (]: Writing injected SQL for node "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.812574 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.813222 [debug] [Thread-4 (]: Began executing node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:54:18.813637 [debug] [Thread-3 (]: Began executing node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:54:18.824253 [debug] [Thread-1 (]: Began executing node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:54:18.862020 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.884091 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.884819 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.885325 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: BEGIN
+[0m13:54:18.885682 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: BEGIN
+[0m13:54:18.886024 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: BEGIN
+[0m13:54:18.886334 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m13:54:18.886619 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:54:18.886927 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:54:18.887667 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.887973 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.888343 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.888681 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.889061 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.889392 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.889765 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp"
+  
+    as (
+      
+
+select
+    series_code,
+    refdate,
+    value,
+    region_level,
+    territory_code,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_ipea__series_macro_regionais"
+    );
+  
+  
+[0m13:54:18.890151 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp"
+  
+    as (
+      
+
+select
+    br,
+    uf,
+    tipo_trecho,
+    codigo,
+    local_inicio,
+    local_fim,
+    km_inicial,
+    km_final,
+    extensao,
+    superficie_federal,
+    obras,
+    federal_coincidente,
+    administracao,
+    ato_legal,
+    estadual_coincidente,
+    superficie_est_coincidente,
+    jurisdicao,
+    superficie,
+    unidade_local,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais"
+    );
+  
+  
+[0m13:54:18.890511 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp"
+  
+    as (
+      
+
+select
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal"
+    );
+  
+  
+[0m13:54:18.903304 [debug] [Thread-4 (]: SQL status: OK in 0.012 seconds
+[0m13:54:18.903781 [debug] [Thread-1 (]: SQL status: OK in 0.013 seconds
+[0m13:54:18.904805 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.905796 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.906177 [debug] [Thread-3 (]: SQL status: OK in 0.015 seconds
+[0m13:54:18.906508 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp"
+  
+[0m13:54:18.906822 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp"
+  
+[0m13:54:18.907635 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.908169 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp"
+  
+[0m13:54:18.908881 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:54:18.909289 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.910489 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.910829 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m13:54:18.911842 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.912950 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.913508 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.913924 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.914313 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+[0m13:54:18.914826 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.915452 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+[0m13:54:18.916075 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:54:18.916571 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+[0m13:54:18.917193 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m13:54:18.919391 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.920106 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:54:18.921523 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.922106 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+copy "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp" to '/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_dnit__snv_rodovias_federais/mart.parquet' (format parquet)
+[0m13:54:18.923433 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.923827 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+copy "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp" to '/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_ipea__series_macro_regionais/mart.parquet' (format parquet)
+[0m13:54:18.924339 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+copy "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp" to '/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_ibge__pevs_producao_vegetal/mart.parquet' (format parquet)
+[0m13:54:18.926641 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.927314 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.927953 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m13:54:18.929299 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.930542 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.931829 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.932652 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.933109 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.933552 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+      create or replace view "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_int" as (
+        select * from read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_ipea__series_macro_regionais/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m13:54:18.934022 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+      create or replace view "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_int" as (
+        select * from read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_dnit__snv_rodovias_federais/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m13:54:18.934676 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.935178 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.935756 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+      create or replace view "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_int" as (
+        select * from read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_ibge__pevs_producao_vegetal/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m13:54:18.938298 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.938725 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m13:54:18.939395 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+alter view "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_int" rename to "mart_ipea__series_macro_regionais"
+[0m13:54:18.942396 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.942912 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:54:18.943419 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.943725 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+alter view "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_int" rename to "mart_dnit__snv_rodovias_federais"
+[0m13:54:18.945992 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.946988 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: COMMIT
+[0m13:54:18.947492 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+alter view "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_int" rename to "mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.947876 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:54:18.948218 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.949150 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: COMMIT
+[0m13:54:18.949592 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.949998 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: COMMIT
+[0m13:54:18.950481 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.951444 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: COMMIT
+[0m13:54:18.951963 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: COMMIT
+[0m13:54:18.952280 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.952739 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: COMMIT
+[0m13:54:18.953175 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.955726 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.956106 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_backup" cascade
+    
+[0m13:54:18.956531 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m13:54:18.956876 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m13:54:18.958879 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.959313 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.961307 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.961736 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_backup" cascade
+    
+[0m13:54:18.964663 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:18.965102 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_backup" cascade
+    
+[0m13:54:18.965673 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp" cascade
+    
+[0m13:54:18.966180 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.966696 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:54:18.970616 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:18.971252 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m13:54:18.975032 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:18.975743 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp" cascade
+    
+[0m13:54:18.977046 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: Close
+[0m13:54:18.977426 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp" cascade
+    
+[0m13:54:18.978146 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc25c274170>]}
+[0m13:54:18.978822 [info ] [Thread-4 (]: 5 of 6 OK created sql external model main.mart_ipea__series_macro_regionais .... [[32mOK[0m in 0.18s]
+[0m13:54:18.979283 [debug] [Thread-4 (]: Finished running node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:54:18.979676 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.980168 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:54:18.981529 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: Close
+[0m13:54:18.982676 [debug] [Thread-3 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: Close
+[0m13:54:18.983187 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc25c203cb0>]}
+[0m13:54:18.983692 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af24af22-b51e-44d0-a60a-2c23ec404098', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc25c33e720>]}
+[0m13:54:18.984184 [info ] [Thread-1 (]: 4 of 6 OK created sql external model main.mart_ibge__pevs_producao_vegetal ..... [[32mOK[0m in 0.18s]
+[0m13:54:18.984660 [info ] [Thread-3 (]: 6 of 6 OK created sql external model main.mart_dnit__snv_rodovias_federais ..... [[32mOK[0m in 0.18s]
+[0m13:54:18.985081 [debug] [Thread-1 (]: Finished running node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:54:18.985748 [debug] [Thread-3 (]: Finished running node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:54:18.987158 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:54:18.987571 [debug] [MainThread]: On master: BEGIN
+[0m13:54:18.988055 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:54:18.988893 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m13:54:18.989368 [debug] [MainThread]: On master: COMMIT
+[0m13:54:18.989796 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:54:18.990223 [debug] [MainThread]: On master: COMMIT
+[0m13:54:18.990836 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:54:18.991303 [debug] [MainThread]: On master: Close
+[0m13:54:18.991849 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:54:18.992278 [debug] [MainThread]: Connection 'model.open_data_agro.mart_ibge__pevs_producao_vegetal' was properly closed.
+[0m13:54:18.992683 [debug] [MainThread]: Connection 'model.open_data_agro.stg_ibge__pevs_producao_vegetal' was properly closed.
+[0m13:54:18.993070 [debug] [MainThread]: Connection 'model.open_data_agro.mart_dnit__snv_rodovias_federais' was properly closed.
+[0m13:54:18.993466 [debug] [MainThread]: Connection 'model.open_data_agro.mart_ipea__series_macro_regionais' was properly closed.
+[0m13:54:18.993996 [info ] [MainThread]: 
+[0m13:54:18.994501 [info ] [MainThread]: Finished running 3 external models, 3 view models in 0 hours 0 minutes and 0.47 seconds (0.47s).
+[0m13:54:18.995687 [debug] [MainThread]: Command end result
+[0m13:54:19.160326 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m13:54:19.163253 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m13:54:19.167900 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m13:54:19.168268 [info ] [MainThread]: 
+[0m13:54:19.168619 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:54:19.168908 [info ] [MainThread]: 
+[0m13:54:19.169192 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m13:54:19.169902 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.7159734, "process_in_blocks": "103968", "process_kernel_time": 0.211046, "process_mem_max_rss": "217428", "process_out_blocks": "16992", "process_user_time": 3.604789}
+[0m13:54:19.170333 [debug] [MainThread]: Command `dbt build` succeeded at 13:54:19.170259 after 2.72 seconds
+[0m13:54:19.170689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc28a13fbf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc28a2ff710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dc28a2fe2a0>]}
+[0m13:54:19.171032 [debug] [MainThread]: Flushing usage events
+[0m13:54:20.421780 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:54:42.159438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c518b5ecf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5176b2390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c515e5ebd0>]}
+
+
+============================== 13:54:42.163102 | b9b1b8c9-c553-4692-989e-8b5e93660189 ==============================
+[0m13:54:42.163102 [info ] [MainThread]: Running with dbt=1.11.11
+[0m13:54:42.163565 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'log_cache_events': 'False', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'fail_fast': 'False', 'printer_width': '80', 'no_print': 'None', 'debug': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt deps --profiles-dir .', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'use_experimental_parser': 'False', 'empty': 'None', 'write_json': 'True', 'quiet': 'False', 'use_colors': 'True'}
+[0m13:54:42.327757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b9b1b8c9-c553-4692-989e-8b5e93660189', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c515aacad0>]}
+[0m13:54:42.356571 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-ayg476db'
+[0m13:54:42.357280 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m13:54:42.460109 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m13:54:42.462055 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m13:54:42.568634 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m13:54:42.573258 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m13:54:42.960679 [info ] [MainThread]: Installed from version 1.3.0
+[0m13:54:42.961111 [info ] [MainThread]: Updated version available: 1.4.0
+[0m13:54:42.961493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'b9b1b8c9-c553-4692-989e-8b5e93660189', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c515ad7260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c515a91220>]}
+[0m13:54:42.961856 [info ] [MainThread]: 
+[0m13:54:42.962162 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m13:54:42.963515 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.8559875, "process_in_blocks": "68360", "process_kernel_time": 0.123033, "process_mem_max_rss": "121464", "process_out_blocks": "2304", "process_user_time": 1.514109}
+[0m13:54:42.964050 [debug] [MainThread]: Command `dbt deps` succeeded at 13:54:42.963964 after 0.86 seconds
+[0m13:54:42.964571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5170752e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5159cbd40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5159ca180>]}
+[0m13:54:42.964986 [debug] [MainThread]: Flushing usage events
+[0m13:54:43.625175 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:54:45.175977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65d70346e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65d6cde7b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65d718d670>]}
+
+
+============================== 13:54:45.178657 | c99a5784-21b7-4fe9-ae8f-8b70214a3d39 ==============================
+[0m13:54:45.178657 [info ] [MainThread]: Running with dbt=1.11.11
+[0m13:54:45.179144 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'invocation_command': 'dbt build --profiles-dir . --select stg_dnit__snv_rodovias_federais+ stg_ipea__series_macro_regionais+ stg_ibge__pevs_producao_vegetal+', 'empty': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'use_colors': 'True', 'version_check': 'True', 'log_format': 'default', 'log_cache_events': 'False', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'quiet': 'False', 'profiles_dir': '.', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'warn_error': 'None', 'write_json': 'True', 'static_parser': 'True', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False'}
+[0m13:54:45.451456 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65d6239190>]}
+[0m13:54:45.519966 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65d6c05c40>]}
+[0m13:54:45.522049 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m13:54:45.606252 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m13:54:45.876920 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:54:45.877441 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m13:54:45.877765 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:54:45.950888 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65d61f9760>]}
+[0m13:54:46.234763 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m13:54:46.238053 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m13:54:46.320645 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65ca016510>]}
+[0m13:54:46.321354 [info ] [MainThread]: Found 169 models, 427 data tests, 84 sources, 688 macros
+[0m13:54:46.347100 [info ] [MainThread]: 
+[0m13:54:46.347788 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m13:54:46.348284 [info ] [MainThread]: 
+[0m13:54:46.348865 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m13:54:46.353577 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m13:54:46.388658 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m13:54:46.389137 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m13:54:46.389474 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:54:46.444379 [debug] [ThreadPool]: SQL status: OK in 0.055 seconds
+[0m13:54:46.446616 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m13:54:46.447903 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m13:54:46.448871 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m13:54:46.460177 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:54:46.460946 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m13:54:46.461525 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:54:46.463658 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m13:54:46.465869 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:54:46.466493 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m13:54:46.467387 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:54:46.467942 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:54:46.468523 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m13:54:46.469703 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:54:46.471121 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m13:54:46.471736 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:54:46.472356 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m13:54:46.473531 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:54:46.474190 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m13:54:46.491415 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m13:54:46.499838 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m13:54:46.500524 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m13:54:46.501047 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:54:46.502367 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:54:46.502811 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m13:54:46.503350 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m13:54:46.508055 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m13:54:46.514261 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m13:54:46.516276 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m13:54:46.516968 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m13:54:46.551879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65d61626c0>]}
+[0m13:54:46.552506 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:54:46.552913 [debug] [MainThread]: On master: BEGIN
+[0m13:54:46.553272 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:54:46.554165 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m13:54:46.554578 [debug] [MainThread]: On master: COMMIT
+[0m13:54:46.554935 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:54:46.555237 [debug] [MainThread]: On master: COMMIT
+[0m13:54:46.555741 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:54:46.556108 [debug] [MainThread]: On master: Close
+[0m13:54:46.558793 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:54:46.559280 [debug] [Thread-2 (]: Began running node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:54:46.559800 [debug] [Thread-3 (]: Began running node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:54:46.560582 [info ] [Thread-1 (]: 1 of 6 START sql view model main.stg_dnit__snv_rodovias_federais ............... [RUN]
+[0m13:54:46.561157 [info ] [Thread-2 (]: 2 of 6 START sql view model main.stg_ibge__pevs_producao_vegetal ............... [RUN]
+[0m13:54:46.561955 [info ] [Thread-3 (]: 3 of 6 START sql view model main.stg_ipea__series_macro_regionais .............. [RUN]
+[0m13:54:46.562821 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_dnit__snv_rodovias_federais)
+[0m13:54:46.563528 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_ibge__pevs_producao_vegetal'
+[0m13:54:46.564356 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_ipea__series_macro_regionais'
+[0m13:54:46.565104 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:54:46.566026 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:54:46.566982 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:54:46.577005 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:46.582609 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:46.590126 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:46.591273 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:54:46.592081 [debug] [Thread-2 (]: Began executing node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:54:46.603166 [debug] [Thread-3 (]: Began executing node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:54:46.638553 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:46.640540 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:46.649588 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:46.650707 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:46.651267 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:46.651720 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: BEGIN
+[0m13:54:46.652144 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: BEGIN
+[0m13:54:46.652539 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:54:46.653092 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:46.653705 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:54:46.654361 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: BEGIN
+[0m13:54:46.655062 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m13:54:46.655601 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m13:54:46.655996 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:54:46.656505 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:46.657359 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:46.657918 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/silver/ibge/pevs_producao_vegetal/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://sidra.ibge.gov.br/pesquisa/pevs
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by codigo_uf, ano, variavel_codigo, produto_codigo
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m13:54:46.658594 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m13:54:46.659154 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+
+  
+  create view "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/silver/dnit/snv_rodovias_federais/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    BR as br,
+    UF as uf,
+    "Tipo de trecho" as tipo_trecho,
+    "Código" as codigo,
+    "Local de Início" as local_inicio,
+    "Local de Fim" as local_fim,
+    "km inicial" as km_inicial,
+    "km final" as km_final,
+    "Extensão" as extensao,
+    "Superfície Federal" as superficie_federal,
+    Obras as obras,
+    "Federal Coincidente" as federal_coincidente,
+    "Administração" as administracao,
+    "Ato legal" as ato_legal,
+    "Estadual Coincidente" as estadual_coincidente,
+    "Superfície Est. Coincidente" as superficie_est_coincidente,
+    "Jurisdição" as jurisdicao,
+    "Superfície" as superficie,
+    "Unidade Local" as unidade_local
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by br, uf, codigo, km_inicial, km_final
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m13:54:46.660021 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:46.660731 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ipea__series_macro_regionais__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/silver/ipea/series_macro_regionais/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    series_code,
+    refdate,
+    value,
+    region_level,
+    territory_code
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  http://www.ipeadata.gov.br/
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by series_code, refdate, territory_code
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m13:54:46.661807 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m13:54:46.662398 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:54:46.668014 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m13:54:46.672883 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:46.676654 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:46.680113 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:46.680615 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+alter view "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal" rename to "stg_ibge__pevs_producao_vegetal__dbt_backup"
+[0m13:54:46.681270 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+alter view "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais" rename to "stg_dnit__snv_rodovias_federais__dbt_backup"
+[0m13:54:46.681740 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+alter view "dbt_workspace"."main"."stg_ipea__series_macro_regionais" rename to "stg_ipea__series_macro_regionais__dbt_backup"
+[0m13:54:46.682821 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:54:46.683284 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:54:46.683755 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:54:46.686710 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:46.690313 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:46.693196 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:46.693745 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+alter view "dbt_workspace"."main"."stg_ipea__series_macro_regionais__dbt_tmp" rename to "stg_ipea__series_macro_regionais"
+[0m13:54:46.694274 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+alter view "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal__dbt_tmp" rename to "stg_ibge__pevs_producao_vegetal"
+[0m13:54:46.694723 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+alter view "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais__dbt_tmp" rename to "stg_dnit__snv_rodovias_federais"
+[0m13:54:46.695775 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m13:54:46.701620 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m13:54:46.707462 [debug] [Thread-1 (]: SQL status: OK in 0.012 seconds
+[0m13:54:46.714769 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: COMMIT
+[0m13:54:46.717565 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: COMMIT
+[0m13:54:46.719138 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: COMMIT
+[0m13:54:46.719776 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:46.720500 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:46.721081 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:46.721561 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: COMMIT
+[0m13:54:46.722164 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: COMMIT
+[0m13:54:46.722708 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: COMMIT
+[0m13:54:46.724887 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:54:46.732068 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:54:46.732603 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m13:54:46.733159 [debug] [Thread-2 (]: SQL status: OK in 0.010 seconds
+[0m13:54:46.733724 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ipea__series_macro_regionais__dbt_backup" cascade
+    
+[0m13:54:46.736463 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:54:46.739087 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:54:46.739780 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais__dbt_backup" cascade
+    
+[0m13:54:46.740254 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal__dbt_backup" cascade
+    
+[0m13:54:46.741574 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:54:46.744027 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: Close
+[0m13:54:46.744573 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:54:46.746949 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: Close
+[0m13:54:46.747640 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m13:54:46.750297 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: Close
+[0m13:54:46.750915 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65c8053320>]}
+[0m13:54:46.751534 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65ca2fba70>]}
+[0m13:54:46.752388 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65933aeba0>]}
+[0m13:54:46.753179 [info ] [Thread-3 (]: 3 of 6 OK created sql view model main.stg_ipea__series_macro_regionais ......... [[32mOK[0m in 0.18s]
+[0m13:54:46.754233 [info ] [Thread-1 (]: 1 of 6 OK created sql view model main.stg_dnit__snv_rodovias_federais .......... [[32mOK[0m in 0.19s]
+[0m13:54:46.755308 [info ] [Thread-2 (]: 2 of 6 OK created sql view model main.stg_ibge__pevs_producao_vegetal .......... [[32mOK[0m in 0.19s]
+[0m13:54:46.756138 [debug] [Thread-3 (]: Finished running node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:54:46.756958 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:54:46.757899 [debug] [Thread-2 (]: Finished running node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:54:46.758871 [debug] [Thread-4 (]: Began running node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:54:46.759419 [debug] [Thread-1 (]: Began running node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:54:46.760280 [debug] [Thread-2 (]: Began running node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:54:46.759951 [info ] [Thread-4 (]: 4 of 6 START sql external model main.mart_ipea__series_macro_regionais ......... [RUN]
+[0m13:54:46.760928 [info ] [Thread-1 (]: 5 of 6 START sql external model main.mart_dnit__snv_rodovias_federais .......... [RUN]
+[0m13:54:46.761448 [info ] [Thread-2 (]: 6 of 6 START sql external model main.mart_ibge__pevs_producao_vegetal .......... [RUN]
+[0m13:54:46.761965 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_ipea__series_macro_regionais'
+[0m13:54:46.762415 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_dnit__snv_rodovias_federais, now model.open_data_agro.mart_dnit__snv_rodovias_federais)
+[0m13:54:46.762877 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_ibge__pevs_producao_vegetal, now model.open_data_agro.mart_ibge__pevs_producao_vegetal)
+[0m13:54:46.763296 [debug] [Thread-4 (]: Began compiling node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:54:46.763770 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:54:46.764270 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:54:46.768709 [debug] [Thread-4 (]: Writing injected SQL for node "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:46.772414 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:46.778146 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.779278 [debug] [Thread-4 (]: Began executing node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:54:46.779860 [debug] [Thread-1 (]: Began executing node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:54:46.796020 [debug] [Thread-2 (]: Began executing node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:54:46.860569 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:46.879415 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:46.884600 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.885664 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: BEGIN
+[0m13:54:46.888479 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m13:54:46.887581 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: BEGIN
+[0m13:54:46.889858 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:54:46.891214 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:54:46.886636 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: BEGIN
+[0m13:54:46.892922 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:54:46.894524 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:54:46.892053 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.895600 [debug] [Thread-4 (]: SQL status: OK in 0.007 seconds
+[0m13:54:46.898213 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:46.898805 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp"
+  
+    as (
+      
+
+select
+    series_code,
+    refdate,
+    value,
+    region_level,
+    territory_code,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_ipea__series_macro_regionais"
+    );
+  
+  
+[0m13:54:46.897470 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp"
+  
+    as (
+      
+
+select
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal"
+    );
+  
+  
+[0m13:54:46.896617 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:46.901695 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp"
+  
+    as (
+      
+
+select
+    br,
+    uf,
+    tipo_trecho,
+    codigo,
+    local_inicio,
+    local_fim,
+    km_inicial,
+    km_final,
+    extensao,
+    superficie_federal,
+    obras,
+    federal_coincidente,
+    administracao,
+    ato_legal,
+    estadual_coincidente,
+    superficie_est_coincidente,
+    jurisdicao,
+    superficie,
+    unidade_local,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais"
+    );
+  
+  
+[0m13:54:46.915906 [debug] [Thread-4 (]: SQL status: OK in 0.016 seconds
+[0m13:54:46.918289 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:46.919124 [debug] [Thread-2 (]: SQL status: OK in 0.018 seconds
+[0m13:54:46.919908 [debug] [Thread-1 (]: SQL status: OK in 0.017 seconds
+[0m13:54:46.920683 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp"
+  
+[0m13:54:46.922546 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.924391 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:46.926035 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp"
+  
+[0m13:54:46.926858 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp"
+  
+[0m13:54:46.927663 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m13:54:46.931402 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:46.932351 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m13:54:46.932915 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:54:46.933806 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:46.935819 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.936480 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+[0m13:54:46.938555 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:46.939677 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.940279 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m13:54:46.941113 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+[0m13:54:46.946913 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m13:54:46.948794 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.949558 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+copy "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp" to '/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_ibge__pevs_producao_vegetal/mart.parquet' (format parquet)
+[0m13:54:46.945174 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:46.946040 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:46.950552 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+copy "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp" to '/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_ipea__series_macro_regionais/mart.parquet' (format parquet)
+[0m13:54:46.951310 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+[0m13:54:46.952268 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:54:46.954118 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:46.954887 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+copy "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp" to '/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_dnit__snv_rodovias_federais/mart.parquet' (format parquet)
+[0m13:54:46.956822 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m13:54:46.958621 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.959607 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.960469 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+      create or replace view "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_int" as (
+        select * from read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_ibge__pevs_producao_vegetal/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m13:54:46.961970 [debug] [Thread-4 (]: SQL status: OK in 0.010 seconds
+[0m13:54:46.963329 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:46.963946 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m13:54:46.964764 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m13:54:46.965612 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:46.973585 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+      create or replace view "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_int" as (
+        select * from read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_ipea__series_macro_regionais/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m13:54:46.972641 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.967396 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:46.974821 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+alter view "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal" rename to "mart_ibge__pevs_producao_vegetal__dbt_backup"
+[0m13:54:46.975785 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:54:46.976812 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:46.982788 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m13:54:46.982011 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:46.983883 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+      create or replace view "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_int" as (
+        select * from read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_dnit__snv_rodovias_federais/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m13:54:46.989135 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.990075 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+alter view "dbt_workspace"."main"."mart_ipea__series_macro_regionais" rename to "mart_ipea__series_macro_regionais__dbt_backup"
+[0m13:54:46.991192 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+alter view "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_int" rename to "mart_ibge__pevs_producao_vegetal"
+[0m13:54:46.992279 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:54:46.993228 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:54:46.999221 [debug] [Thread-4 (]: SQL status: OK in 0.007 seconds
+[0m13:54:46.998387 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:47.007490 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+alter view "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais" rename to "mart_dnit__snv_rodovias_federais__dbt_backup"
+[0m13:54:47.006517 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:47.009038 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+alter view "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_int" rename to "mart_ipea__series_macro_regionais"
+[0m13:54:47.002548 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: COMMIT
+[0m13:54:47.010284 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:47.010939 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: COMMIT
+[0m13:54:47.013522 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m13:54:47.020765 [debug] [Thread-2 (]: SQL status: OK in 0.009 seconds
+[0m13:54:47.025099 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:47.027938 [debug] [Thread-4 (]: SQL status: OK in 0.018 seconds
+[0m13:54:47.027414 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:47.031687 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+alter view "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_int" rename to "mart_dnit__snv_rodovias_federais"
+[0m13:54:47.030650 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: COMMIT
+[0m13:54:47.028474 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_backup" cascade
+    
+[0m13:54:47.033444 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:54:47.034262 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:47.036520 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: COMMIT
+[0m13:54:47.037353 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: COMMIT
+[0m13:54:47.038113 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:47.038925 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m13:54:47.039873 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: COMMIT
+[0m13:54:47.043684 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:54:47.044320 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m13:54:47.045051 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp" cascade
+    
+[0m13:54:47.048565 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:47.049316 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:54:47.050425 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_backup" cascade
+    
+[0m13:54:47.053544 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:47.054175 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m13:54:47.055167 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_backup" cascade
+    
+[0m13:54:47.057529 [debug] [Thread-2 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: Close
+[0m13:54:47.058289 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:54:47.059634 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65847142f0>]}
+[0m13:54:47.065642 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m13:54:47.065374 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:54:47.073788 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp" cascade
+    
+[0m13:54:47.067471 [info ] [Thread-2 (]: 6 of 6 OK created sql external model main.mart_ibge__pevs_producao_vegetal ..... [[32mOK[0m in 0.30s]
+[0m13:54:47.075391 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:54:47.076541 [debug] [Thread-2 (]: Finished running node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:54:47.077295 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:54:47.078091 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp" cascade
+    
+[0m13:54:47.082249 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: Close
+[0m13:54:47.083637 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65c9fd9910>]}
+[0m13:54:47.085836 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m13:54:47.084854 [info ] [Thread-4 (]: 4 of 6 OK created sql external model main.mart_ipea__series_macro_regionais .... [[32mOK[0m in 0.32s]
+[0m13:54:47.089641 [debug] [Thread-4 (]: Finished running node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:54:47.088622 [debug] [Thread-1 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: Close
+[0m13:54:47.095083 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c99a5784-21b7-4fe9-ae8f-8b70214a3d39', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65933d8170>]}
+[0m13:54:47.096411 [info ] [Thread-1 (]: 5 of 6 OK created sql external model main.mart_dnit__snv_rodovias_federais ..... [[32mOK[0m in 0.33s]
+[0m13:54:47.097399 [debug] [Thread-1 (]: Finished running node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:54:47.105517 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:54:47.106136 [debug] [MainThread]: On master: BEGIN
+[0m13:54:47.106659 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:54:47.107640 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m13:54:47.108046 [debug] [MainThread]: On master: COMMIT
+[0m13:54:47.108418 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:54:47.109394 [debug] [MainThread]: On master: COMMIT
+[0m13:54:47.110218 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:54:47.110709 [debug] [MainThread]: On master: Close
+[0m13:54:47.111266 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:54:47.111675 [debug] [MainThread]: Connection 'model.open_data_agro.mart_dnit__snv_rodovias_federais' was properly closed.
+[0m13:54:47.112090 [debug] [MainThread]: Connection 'model.open_data_agro.mart_ibge__pevs_producao_vegetal' was properly closed.
+[0m13:54:47.112907 [debug] [MainThread]: Connection 'model.open_data_agro.stg_ipea__series_macro_regionais' was properly closed.
+[0m13:54:47.113296 [debug] [MainThread]: Connection 'model.open_data_agro.mart_ipea__series_macro_regionais' was properly closed.
+[0m13:54:47.113851 [info ] [MainThread]: 
+[0m13:54:47.114452 [info ] [MainThread]: Finished running 3 external models, 3 view models in 0 hours 0 minutes and 0.76 seconds (0.76s).
+[0m13:54:47.115924 [debug] [MainThread]: Command end result
+[0m13:54:47.375268 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m13:54:47.379625 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m13:54:47.387042 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m13:54:47.387523 [info ] [MainThread]: 
+[0m13:54:47.388011 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:54:47.388399 [info ] [MainThread]: 
+[0m13:54:47.388819 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m13:54:47.389768 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.2674286, "process_in_blocks": "68320", "process_kernel_time": 0.169679, "process_mem_max_rss": "214856", "process_out_blocks": "12656", "process_user_time": 3.382541}
+[0m13:54:47.390336 [debug] [MainThread]: Command `dbt build` succeeded at 13:54:47.390218 after 2.27 seconds
+[0m13:54:47.390823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65d675f7a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65c8063e30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d65d925f0e0>]}
+[0m13:54:47.391269 [debug] [MainThread]: Flushing usage events
+[0m13:54:48.165465 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:55:03.767090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c600a22ae0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c60095ef60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5fe2e5940>]}
+
+
+============================== 13:55:03.772019 | 58daa6f1-1abd-49ae-8152-a614fbfb72b3 ==============================
+[0m13:55:03.772019 [info ] [MainThread]: Running with dbt=1.11.11
+[0m13:55:03.773034 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'profiles_dir': '.', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'warn_error': 'None', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'static_parser': 'True', 'log_cache_events': 'False', 'target_path': 'None', 'debug': 'False', 'quiet': 'False', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'invocation_command': 'dbt deps --profiles-dir .', 'version_check': 'True', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'log_format': 'default', 'introspect': 'True', 'write_json': 'True', 'printer_width': '80'}
+[0m13:55:03.902251 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '58daa6f1-1abd-49ae-8152-a614fbfb72b3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5fd8ddbb0>]}
+[0m13:55:03.921084 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-8lhgi6wg'
+[0m13:55:03.921572 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m13:55:04.021164 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m13:55:04.022654 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m13:55:04.381092 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m13:55:04.386072 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m13:55:04.745043 [info ] [MainThread]: Installed from version 1.3.0
+[0m13:55:04.745581 [info ] [MainThread]: Updated version available: 1.4.0
+[0m13:55:04.745971 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '58daa6f1-1abd-49ae-8152-a614fbfb72b3', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5fd7835c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5fd8f4380>]}
+[0m13:55:04.746355 [info ] [MainThread]: 
+[0m13:55:04.746684 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m13:55:04.747745 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 1.0419233, "process_in_blocks": "0", "process_kernel_time": 0.129856, "process_mem_max_rss": "121340", "process_out_blocks": "2296", "process_user_time": 1.741082}
+[0m13:55:04.748326 [debug] [MainThread]: Command `dbt deps` succeeded at 13:55:04.748222 after 1.04 seconds
+[0m13:55:04.748788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5fdd81df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5fd817ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c5fd7d5910>]}
+[0m13:55:04.749413 [debug] [MainThread]: Flushing usage events
+[0m13:55:05.413336 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:55:07.265338 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37df8edeb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37e21eec90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37e0033b90>]}
+
+
+============================== 13:55:07.268364 | 73f9d943-13fd-42fd-91ff-68c0963f5995 ==============================
+[0m13:55:07.268364 [info ] [MainThread]: Running with dbt=1.11.11
+[0m13:55:07.269087 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'invocation_command': 'dbt build --profiles-dir . --select stg_dnit__snv_rodovias_federais+ stg_ipea__series_macro_regionais+ stg_ibge__pevs_producao_vegetal+', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '.', 'target_path': 'None', 'printer_width': '80', 'use_colors': 'True', 'write_json': 'True', 'partial_parse': 'True', 'introspect': 'True', 'static_parser': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'empty': 'False', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'version_check': 'True', 'log_cache_events': 'False', 'indirect_selection': 'eager'}
+[0m13:55:07.607129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37df59e930>]}
+[0m13:55:07.716479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37e0143f20>]}
+[0m13:55:07.718329 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m13:55:07.854652 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m13:55:08.219013 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m13:55:08.220077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37dfab4140>]}
+[0m13:55:13.966904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37d0d00e30>]}
+[0m13:55:14.353774 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m13:55:14.357629 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m13:55:14.430930 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37d0818ec0>]}
+[0m13:55:14.431762 [info ] [MainThread]: Found 169 models, 427 data tests, 84 sources, 688 macros
+[0m13:55:14.463299 [info ] [MainThread]: 
+[0m13:55:14.463849 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m13:55:14.464197 [info ] [MainThread]: 
+[0m13:55:14.464702 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m13:55:14.470534 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m13:55:14.504121 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m13:55:14.504863 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m13:55:14.505482 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:55:14.556987 [debug] [ThreadPool]: SQL status: OK in 0.051 seconds
+[0m13:55:14.558829 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m13:55:14.560077 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m13:55:14.560807 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m13:55:14.575944 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:55:14.576918 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m13:55:14.577726 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:55:14.580101 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m13:55:14.582162 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:55:14.582793 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m13:55:14.583784 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:55:14.584278 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:55:14.584795 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m13:55:14.586096 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:55:14.588049 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m13:55:14.588901 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m13:55:14.589634 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m13:55:14.591217 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:55:14.592105 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m13:55:14.612111 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m13:55:14.623526 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m13:55:14.624547 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m13:55:14.625371 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:55:14.626898 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m13:55:14.627708 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m13:55:14.628641 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m13:55:14.633080 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m13:55:14.638959 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m13:55:14.641118 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m13:55:14.641903 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m13:55:14.661679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37dfa7f7a0>]}
+[0m13:55:14.662542 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:55:14.663061 [debug] [MainThread]: On master: BEGIN
+[0m13:55:14.663520 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:55:14.664763 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m13:55:14.665366 [debug] [MainThread]: On master: COMMIT
+[0m13:55:14.665804 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:55:14.666207 [debug] [MainThread]: On master: COMMIT
+[0m13:55:14.667522 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m13:55:14.668266 [debug] [MainThread]: On master: Close
+[0m13:55:14.671649 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:55:14.672220 [debug] [Thread-2 (]: Began running node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:55:14.672705 [debug] [Thread-3 (]: Began running node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:55:14.673423 [info ] [Thread-1 (]: 1 of 6 START sql view model main.stg_dnit__snv_rodovias_federais ............... [RUN]
+[0m13:55:14.674175 [info ] [Thread-2 (]: 2 of 6 START sql view model main.stg_ibge__pevs_producao_vegetal ............... [RUN]
+[0m13:55:14.675108 [info ] [Thread-3 (]: 3 of 6 START sql view model main.stg_ipea__series_macro_regionais .............. [RUN]
+[0m13:55:14.675832 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_dnit__snv_rodovias_federais)
+[0m13:55:14.676537 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_ibge__pevs_producao_vegetal'
+[0m13:55:14.677155 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_ipea__series_macro_regionais'
+[0m13:55:14.677675 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:55:14.678371 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:55:14.679146 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:55:14.691156 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:55:14.698327 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:55:14.709118 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:55:14.710756 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:55:14.711719 [debug] [Thread-2 (]: Began executing node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:55:14.722917 [debug] [Thread-3 (]: Began executing node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:55:14.773263 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:55:14.776133 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:55:14.783904 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:55:14.786213 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:55:14.787319 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:55:14.788836 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:55:14.789413 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: BEGIN
+[0m13:55:14.790230 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: BEGIN
+[0m13:55:14.790987 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: BEGIN
+[0m13:55:14.791932 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:55:14.792880 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m13:55:14.793703 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:55:14.795444 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:55:14.797169 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:55:14.798022 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m13:55:14.798916 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m13:55:14.799738 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+
+  
+  create view "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/br-sources-wave-3-ci-lake/silver/dnit/snv_rodovias_federais/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    BR as br,
+    UF as uf,
+    "Tipo de trecho" as tipo_trecho,
+    "Código" as codigo,
+    "Local de Início" as local_inicio,
+    "Local de Fim" as local_fim,
+    "km inicial" as km_inicial,
+    "km final" as km_final,
+    "Extensão" as extensao,
+    "Superfície Federal" as superficie_federal,
+    Obras as obras,
+    "Federal Coincidente" as federal_coincidente,
+    "Administração" as administracao,
+    "Ato legal" as ato_legal,
+    "Estadual Coincidente" as estadual_coincidente,
+    "Superfície Est. Coincidente" as superficie_est_coincidente,
+    "Jurisdição" as jurisdicao,
+    "Superfície" as superficie,
+    "Unidade Local" as unidade_local
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by br, uf, codigo, km_inicial, km_final
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m13:55:14.800710 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:55:14.801587 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:55:14.803559 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ipea__series_macro_regionais__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/br-sources-wave-3-ci-lake/silver/ipea/series_macro_regionais/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    series_code,
+    refdate,
+    value,
+    region_level,
+    territory_code
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  http://www.ipeadata.gov.br/
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by series_code, refdate, territory_code
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m13:55:14.804437 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/br-sources-wave-3-ci-lake/silver/ibge/pevs_producao_vegetal/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://sidra.ibge.gov.br/pesquisa/pevs
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by codigo_uf, ano, variavel_codigo, produto_codigo
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m13:55:14.805406 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m13:55:14.812563 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m13:55:14.818817 [debug] [Thread-3 (]: SQL status: OK in 0.014 seconds
+[0m13:55:14.829194 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:55:14.834259 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:55:14.835031 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:55:14.835589 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+alter view "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais" rename to "stg_dnit__snv_rodovias_federais__dbt_backup"
+[0m13:55:14.836087 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+alter view "dbt_workspace"."main"."stg_ipea__series_macro_regionais" rename to "stg_ipea__series_macro_regionais__dbt_backup"
+[0m13:55:14.836552 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+alter view "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal" rename to "stg_ibge__pevs_producao_vegetal__dbt_backup"
+[0m13:55:14.838442 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:55:14.839270 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:55:14.840024 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m13:55:14.844822 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:55:14.849351 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:55:14.854973 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:55:14.856071 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+alter view "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal__dbt_tmp" rename to "stg_ibge__pevs_producao_vegetal"
+[0m13:55:14.857046 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+alter view "dbt_workspace"."main"."stg_ipea__series_macro_regionais__dbt_tmp" rename to "stg_ipea__series_macro_regionais"
+[0m13:55:14.857813 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+alter view "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais__dbt_tmp" rename to "stg_dnit__snv_rodovias_federais"
+[0m13:55:14.859464 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:55:14.865473 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m13:55:14.866500 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m13:55:14.892380 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: COMMIT
+[0m13:55:14.896254 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: COMMIT
+[0m13:55:14.898549 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: COMMIT
+[0m13:55:14.899508 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:55:14.900373 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:55:14.901228 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:55:14.902059 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: COMMIT
+[0m13:55:14.902890 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: COMMIT
+[0m13:55:14.903693 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: COMMIT
+[0m13:55:14.907100 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:55:14.913243 [debug] [Thread-2 (]: SQL status: OK in 0.008 seconds
+[0m13:55:14.917658 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.stg_ipea__series_macro_regionais"
+[0m13:55:14.922370 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__pevs_producao_vegetal"
+[0m13:55:14.923169 [debug] [Thread-1 (]: SQL status: OK in 0.018 seconds
+[0m13:55:14.924040 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ipea__series_macro_regionais"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ipea__series_macro_regionais__dbt_backup" cascade
+    
+[0m13:55:14.925010 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__pevs_producao_vegetal"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal__dbt_backup" cascade
+    
+[0m13:55:14.928662 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_dnit__snv_rodovias_federais"
+[0m13:55:14.929739 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_dnit__snv_rodovias_federais"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais__dbt_backup" cascade
+    
+[0m13:55:14.931308 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:55:14.934452 [debug] [Thread-3 (]: On model.open_data_agro.stg_ipea__series_macro_regionais: Close
+[0m13:55:14.935250 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m13:55:14.935968 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m13:55:14.939582 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__pevs_producao_vegetal: Close
+[0m13:55:14.941326 [debug] [Thread-1 (]: On model.open_data_agro.stg_dnit__snv_rodovias_federais: Close
+[0m13:55:14.941928 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37d114e360>]}
+[0m13:55:14.942905 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37d0a622a0>]}
+[0m13:55:14.943888 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37d0d655e0>]}
+[0m13:55:14.944707 [info ] [Thread-3 (]: 3 of 6 OK created sql view model main.stg_ipea__series_macro_regionais ......... [[32mOK[0m in 0.26s]
+[0m13:55:14.945820 [info ] [Thread-2 (]: 2 of 6 OK created sql view model main.stg_ibge__pevs_producao_vegetal .......... [[32mOK[0m in 0.27s]
+[0m13:55:14.947021 [info ] [Thread-1 (]: 1 of 6 OK created sql view model main.stg_dnit__snv_rodovias_federais .......... [[32mOK[0m in 0.27s]
+[0m13:55:14.947773 [debug] [Thread-3 (]: Finished running node model.open_data_agro.stg_ipea__series_macro_regionais
+[0m13:55:14.948426 [debug] [Thread-2 (]: Finished running node model.open_data_agro.stg_ibge__pevs_producao_vegetal
+[0m13:55:14.949035 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_dnit__snv_rodovias_federais
+[0m13:55:14.950135 [debug] [Thread-4 (]: Began running node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:55:14.951276 [debug] [Thread-3 (]: Began running node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:55:14.952331 [debug] [Thread-2 (]: Began running node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:55:14.953134 [info ] [Thread-4 (]: 4 of 6 START sql external model main.mart_ipea__series_macro_regionais ......... [RUN]
+[0m13:55:14.954151 [info ] [Thread-3 (]: 5 of 6 START sql external model main.mart_ibge__pevs_producao_vegetal .......... [RUN]
+[0m13:55:14.954986 [info ] [Thread-2 (]: 6 of 6 START sql external model main.mart_dnit__snv_rodovias_federais .......... [RUN]
+[0m13:55:14.956105 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_ipea__series_macro_regionais'
+[0m13:55:14.957108 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_ipea__series_macro_regionais, now model.open_data_agro.mart_ibge__pevs_producao_vegetal)
+[0m13:55:14.957982 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_ibge__pevs_producao_vegetal, now model.open_data_agro.mart_dnit__snv_rodovias_federais)
+[0m13:55:14.958836 [debug] [Thread-4 (]: Began compiling node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:55:14.959657 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:55:14.960446 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:55:14.968505 [debug] [Thread-4 (]: Writing injected SQL for node "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:14.974662 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:14.979839 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:14.981114 [debug] [Thread-4 (]: Began executing node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:55:14.993929 [debug] [Thread-2 (]: Began executing node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:55:14.994865 [debug] [Thread-3 (]: Began executing node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:55:15.065621 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.068055 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.070676 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.071437 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: BEGIN
+[0m13:55:15.072123 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: BEGIN
+[0m13:55:15.073034 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: BEGIN
+[0m13:55:15.073765 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m13:55:15.074568 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:55:15.075100 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:55:15.076740 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:55:15.077527 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m13:55:15.078059 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.078773 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m13:55:15.079542 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.080213 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp"
+  
+    as (
+      
+
+select
+    series_code,
+    refdate,
+    value,
+    region_level,
+    territory_code,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_ipea__series_macro_regionais"
+    );
+  
+  
+[0m13:55:15.080994 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.081713 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp"
+  
+    as (
+      
+
+select
+    br,
+    uf,
+    tipo_trecho,
+    codigo,
+    local_inicio,
+    local_fim,
+    km_inicial,
+    km_final,
+    extensao,
+    superficie_federal,
+    obras,
+    federal_coincidente,
+    administracao,
+    ato_legal,
+    estadual_coincidente,
+    superficie_est_coincidente,
+    jurisdicao,
+    superficie,
+    unidade_local,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_dnit__snv_rodovias_federais"
+    );
+  
+  
+[0m13:55:15.082792 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp"
+  
+    as (
+      
+
+select
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_ibge__pevs_producao_vegetal"
+    );
+  
+  
+[0m13:55:15.087589 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m13:55:15.089504 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.090183 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp"
+  
+[0m13:55:15.090945 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m13:55:15.091554 [debug] [Thread-3 (]: SQL status: OK in 0.008 seconds
+[0m13:55:15.093710 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.094496 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m13:55:15.095868 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.096447 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp"
+  
+[0m13:55:15.097102 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp"
+  
+[0m13:55:15.098953 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.100588 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.101241 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:55:15.101769 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:55:15.102425 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+[0m13:55:15.104236 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.105063 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m13:55:15.107425 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.111684 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.112507 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.113637 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.114269 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+copy "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp" to '/tmp/br-sources-wave-3-ci-lake/gold/mart_ipea__series_macro_regionais/mart.parquet' (format parquet)
+[0m13:55:15.115149 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+[0m13:55:15.115910 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+[0m13:55:15.116881 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m13:55:15.117896 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:55:15.119967 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.121814 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.122481 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m13:55:15.123676 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+copy "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp" to '/tmp/br-sources-wave-3-ci-lake/gold/mart_dnit__snv_rodovias_federais/mart.parquet' (format parquet)
+[0m13:55:15.124474 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+copy "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp" to '/tmp/br-sources-wave-3-ci-lake/gold/mart_ibge__pevs_producao_vegetal/mart.parquet' (format parquet)
+[0m13:55:15.126234 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.127382 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.127890 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+      create or replace view "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_int" as (
+        select * from read_parquet('/tmp/br-sources-wave-3-ci-lake/gold/mart_ipea__series_macro_regionais/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m13:55:15.128971 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:55:15.129735 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m13:55:15.130603 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m13:55:15.131865 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.133845 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.139211 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.140507 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.141209 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+alter view "dbt_workspace"."main"."mart_ipea__series_macro_regionais" rename to "mart_ipea__series_macro_regionais__dbt_backup"
+[0m13:55:15.142216 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.143033 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+      create or replace view "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_int" as (
+        select * from read_parquet('/tmp/br-sources-wave-3-ci-lake/gold/mart_ibge__pevs_producao_vegetal/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m13:55:15.144178 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+      create or replace view "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_int" as (
+        select * from read_parquet('/tmp/br-sources-wave-3-ci-lake/gold/mart_dnit__snv_rodovias_federais/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m13:55:15.144964 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:55:15.149372 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.149934 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+alter view "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_int" rename to "mart_ipea__series_macro_regionais"
+[0m13:55:15.150648 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m13:55:15.151443 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m13:55:15.157080 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.158047 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m13:55:15.162140 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.163162 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+alter view "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais" rename to "mart_dnit__snv_rodovias_federais__dbt_backup"
+[0m13:55:15.164939 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: COMMIT
+[0m13:55:15.165568 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+alter view "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal" rename to "mart_ibge__pevs_producao_vegetal__dbt_backup"
+[0m13:55:15.166494 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.167541 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:55:15.168312 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:55:15.168870 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: COMMIT
+[0m13:55:15.176245 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.181858 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.182979 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+alter view "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_int" rename to "mart_dnit__snv_rodovias_federais"
+[0m13:55:15.183652 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+alter view "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_int" rename to "mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.184828 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m13:55:15.187869 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.188359 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m13:55:15.188904 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_backup" cascade
+    
+[0m13:55:15.189406 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m13:55:15.191726 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: COMMIT
+[0m13:55:15.194906 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: COMMIT
+[0m13:55:15.195934 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.196875 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m13:55:15.197681 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.198559 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: COMMIT
+[0m13:55:15.202526 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_ipea__series_macro_regionais"
+[0m13:55:15.203333 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: COMMIT
+[0m13:55:15.204324 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ipea__series_macro_regionais"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ipea__series_macro_regionais__dbt_tmp" cascade
+    
+[0m13:55:15.205924 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:55:15.210886 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.211756 [debug] [Thread-4 (]: SQL status: OK in 0.006 seconds
+[0m13:55:15.212355 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m13:55:15.213077 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_backup" cascade
+    
+[0m13:55:15.214869 [debug] [Thread-4 (]: On model.open_data_agro.mart_ipea__series_macro_regionais: Close
+[0m13:55:15.218506 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.219835 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e378e0ff0e0>]}
+[0m13:55:15.220555 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+      drop view if exists "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_backup" cascade
+    
+[0m13:55:15.222481 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m13:55:15.221743 [info ] [Thread-4 (]: 4 of 6 OK created sql external model main.mart_ipea__series_macro_regionais .... [[32mOK[0m in 0.26s]
+[0m13:55:15.226985 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_ibge__pevs_producao_vegetal"
+[0m13:55:15.228173 [debug] [Thread-4 (]: Finished running node model.open_data_agro.mart_ipea__series_macro_regionais
+[0m13:55:15.229030 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m13:55:15.229866 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__pevs_producao_vegetal"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ibge__pevs_producao_vegetal__dbt_tmp" cascade
+    
+[0m13:55:15.234752 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.mart_dnit__snv_rodovias_federais"
+[0m13:55:15.235632 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_dnit__snv_rodovias_federais"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_dnit__snv_rodovias_federais__dbt_tmp" cascade
+    
+[0m13:55:15.238218 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m13:55:15.240065 [debug] [Thread-3 (]: On model.open_data_agro.mart_ibge__pevs_producao_vegetal: Close
+[0m13:55:15.240911 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m13:55:15.241998 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37d0b2aae0>]}
+[0m13:55:15.244348 [debug] [Thread-2 (]: On model.open_data_agro.mart_dnit__snv_rodovias_federais: Close
+[0m13:55:15.245382 [info ] [Thread-3 (]: 5 of 6 OK created sql external model main.mart_ibge__pevs_producao_vegetal ..... [[32mOK[0m in 0.29s]
+[0m13:55:15.246407 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '73f9d943-13fd-42fd-91ff-68c0963f5995', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e378e26ac30>]}
+[0m13:55:15.247087 [debug] [Thread-3 (]: Finished running node model.open_data_agro.mart_ibge__pevs_producao_vegetal
+[0m13:55:15.247809 [info ] [Thread-2 (]: 6 of 6 OK created sql external model main.mart_dnit__snv_rodovias_federais ..... [[32mOK[0m in 0.29s]
+[0m13:55:15.248654 [debug] [Thread-2 (]: Finished running node model.open_data_agro.mart_dnit__snv_rodovias_federais
+[0m13:55:15.250493 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:55:15.251288 [debug] [MainThread]: On master: BEGIN
+[0m13:55:15.251919 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:55:15.253285 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m13:55:15.254036 [debug] [MainThread]: On master: COMMIT
+[0m13:55:15.254716 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:55:15.255413 [debug] [MainThread]: On master: COMMIT
+[0m13:55:15.256496 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:55:15.257293 [debug] [MainThread]: On master: Close
+[0m13:55:15.258139 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:55:15.258784 [debug] [MainThread]: Connection 'model.open_data_agro.stg_dnit__snv_rodovias_federais' was properly closed.
+[0m13:55:15.259387 [debug] [MainThread]: Connection 'model.open_data_agro.mart_dnit__snv_rodovias_federais' was properly closed.
+[0m13:55:15.259949 [debug] [MainThread]: Connection 'model.open_data_agro.mart_ibge__pevs_producao_vegetal' was properly closed.
+[0m13:55:15.260502 [debug] [MainThread]: Connection 'model.open_data_agro.mart_ipea__series_macro_regionais' was properly closed.
+[0m13:55:15.261309 [info ] [MainThread]: 
+[0m13:55:15.262106 [info ] [MainThread]: Finished running 3 external models, 3 view models in 0 hours 0 minutes and 0.80 seconds (0.80s).
+[0m13:55:15.264400 [debug] [MainThread]: Command end result
+[0m13:55:15.551213 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m13:55:15.555562 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m13:55:15.562080 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m13:55:15.562706 [info ] [MainThread]: 
+[0m13:55:15.563349 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:55:15.563779 [info ] [MainThread]: 
+[0m13:55:15.564163 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m13:55:15.565161 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 8.358655, "process_in_blocks": "760", "process_kernel_time": 0.265491, "process_mem_max_rss": "216344", "process_out_blocks": "16600", "process_user_time": 9.608606}
+[0m13:55:15.565764 [debug] [MainThread]: Command `dbt build` succeeded at 13:55:15.565660 after 8.36 seconds
+[0m13:55:15.566263 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37e05713a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37d0701100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e37d0703aa0>]}
+[0m13:55:15.566865 [debug] [MainThread]: Flushing usage events
+[0m13:55:16.364317 [debug] [MainThread]: An error was encountered while trying to flush usage events

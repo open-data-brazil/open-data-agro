@@ -77,6 +77,7 @@ type RegistryEntry struct {
 	EurostatGeo             string   `json:"eurostatGeo,omitempty" yaml:"eurostat_geo,omitempty"`
 	EurostatProducts        []string `json:"eurostatProducts,omitempty" yaml:"eurostat_products,omitempty"`
 	ArgentinaCurrencyCode   string   `json:"argentinaCurrencyCode,omitempty" yaml:"argentina_currency_code,omitempty"`
+	IpeaSeriesCodes         []string `json:"ipeaSeriesCodes,omitempty" yaml:"ipea_series_codes,omitempty"`
 	ANAStationCodes         []string `json:"anaStationCodes,omitempty" yaml:"ana_station_codes,omitempty"`
 	ANATipoDados            string   `json:"anaTipoDados,omitempty" yaml:"ana_tipo_dados,omitempty"`
 	ANANivelConsistencia    string   `json:"anaNivelConsistencia,omitempty" yaml:"ana_nivel_consistencia,omitempty"`

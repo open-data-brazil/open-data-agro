@@ -281,6 +281,12 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_ana_hidrologia_series", true
 	case "antaq.movimentacao-carga-portuaria":
 		return "bronze_antaq_movimentacao_carga_portuaria", true
+	case "dnit.snv-rodovias-federais":
+		return "bronze_dnit_snv_rodovias_federais", true
+	case "ipea.series-macro-regionais":
+		return "bronze_ipea_series_macro_regionais", true
+	case "ibge.pevs-producao-vegetal":
+		return "bronze_ibge_pevs_producao_vegetal", true
 	default:
 		return "", false
 	}

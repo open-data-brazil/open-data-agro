@@ -87,3 +87,21 @@
 {% macro ibge_pam_core_columns() %}
     {{ ibge_pam_area_quantidade_columns() }}
 {% endmacro %}
+
+{% macro ibge_pevs_fonte_oficial() %}
+  https://sidra.ibge.gov.br/pesquisa/pevs
+{% endmacro %}
+
+{% macro ibge_pevs_producao_vegetal_columns() %}
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    ano,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    valor,
+    unidade_codigo,
+    unidade
+{% endmacro %}

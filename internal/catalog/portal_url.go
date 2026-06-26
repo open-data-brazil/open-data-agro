@@ -22,6 +22,9 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "ibge.lspa-") {
 		return IBGESIDRALSPAURL
 	}
+	if strings.HasPrefix(datasetID.String(), "ibge.pevs-") {
+		return IBGESIDRAPEVSURL
+	}
 	if strings.HasPrefix(datasetID.String(), "ibge.") {
 		return IBGELocalidadesDocsURL
 	}
@@ -85,8 +88,20 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "antaq.") {
 		return ANTAQDadosAbertosPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "dnit.") {
+		return DNITDadosAbertosPortalURL
+	}
+	if strings.HasPrefix(datasetID.String(), "ipea.") {
+		return IPEADataPortalURL
+	}
 	return ""
 }
+
+// DNITDadosAbertosPortalURL is the DNIT open data portal URL.
+const DNITDadosAbertosPortalURL = "https://servicos.dnit.gov.br/dadosabertos/"
+
+// IPEADataPortalURL is the IPEA data portal URL.
+const IPEADataPortalURL = "http://www.ipea.gov.br/portal/"
 
 // ANADadosAbertosPortalURL is the ANA open data portal URL.
 const ANADadosAbertosPortalURL = "https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos"
@@ -153,6 +168,9 @@ const IBGESIDRAPAMURL = "https://sidra.ibge.gov.br/pesquisa/pam"
 
 // IBGESIDRALSPAURL is the IBGE SIDRA LSPA survey portal URL.
 const IBGESIDRALSPAURL = "https://sidra.ibge.gov.br/pesquisa/lspa"
+
+// IBGESIDRAPEVSURL is the IBGE SIDRA PEVS survey portal URL.
+const IBGESIDRAPEVSURL = "https://sidra.ibge.gov.br/pesquisa/pevs"
 
 // INMETBDMEPPortalURL is the INMET BDMEP historical data portal URL.
 const INMETBDMEPPortalURL = "https://bdmep.inmet.gov.br/"

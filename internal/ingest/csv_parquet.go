@@ -9,6 +9,7 @@ import (
 	"unicode/utf8"
 
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
+	"github.com/open-data-brazil/open-data-agro/internal/dnit"
 	"golang.org/x/text/encoding/charmap"
 	"golang.org/x/text/transform"
 )
@@ -49,7 +50,15 @@ func convertDelimitedFileToParquet(path string, entry catalog.RegistryEntry) ([]
 	if err != nil {
 		return nil, 0, fmt.Errorf("read staged file: %w", err)
 	}
-	return convertDelimitedToParquet(raw, delimiterFor(entry))
+	return convertDelimitedToParquet(preprocessDelimitedRaw(entry, raw), delimiterFor(entry))
+}
+
+func preprocessDelimitedRaw(entry catalog.RegistryEntry, raw []byte) []byte {
+	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
+	if err != nil || agency != "dnit" {
+		return raw
+	}
+	return dnit.StripMetadataRows(raw)
 }
 
 func delimiterFor(entry catalog.RegistryEntry) rune {

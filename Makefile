@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima dbt-build-mdic-comex dbt-build-antt-pedagios dbt-build-mapa-zarc dbt-build-b3-futuros ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp ci-ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp mdic-comex-mvp ci-mdic-comex-mvp dnit-antt-logistica-mvp ci-dnit-antt-logistica-mvp mapa-dados-mvp ci-mapa-dados-mvp b3-futuros-mvp ci-b3-futuros-mvp dbt-build-usda-psd usda-psd-mvp ci-usda-psd-mvp dbt-build-fao-faostat fao-faostat-mvp ci-fao-faostat-mvp dbt-build-worldbank-commodities worldbank-commodities-mvp ci-worldbank-commodities-mvp dbt-build-international-extended international-extended-mvp ci-international-extended-mvp dbt-build-br-new-sources br-new-sources-mvp ci-br-new-sources-mvp dbt-build-international-new-sources international-new-sources-mvp ci-international-new-sources-mvp dbt-build-br-sources-wave-2 br-sources-wave-2-mvp ci-br-sources-wave-2-mvp dbt-build-international-sources-wave-2 international-sources-wave-2-mvp ci-international-sources-wave-2-mvp ingestor-signoff-mvp ci-ingestor-signoff-mvp dbt-build-noaa-climate noaa-climate-mvp ci-noaa-climate-mvp unified-db-sync ci-unified-db-sync seed-unified-db-gold anp-mvp ci-anp-mvp p1-collection-mvp ci-p1-collection-mvp collection-macro-mvp ci-collection-macro-mvp collection-full-mvp ci-collection-full-mvp ci-go ci-minio ci-validate-r2-env validate-r2-env validate-r2-env-live ci-delta-versioning ci-new-dataset-checklist ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-clean benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima dbt-build-mdic-comex dbt-build-antt-pedagios dbt-build-mapa-zarc dbt-build-b3-futuros ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp ci-ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp mdic-comex-mvp ci-mdic-comex-mvp dnit-antt-logistica-mvp ci-dnit-antt-logistica-mvp mapa-dados-mvp ci-mapa-dados-mvp b3-futuros-mvp ci-b3-futuros-mvp dbt-build-usda-psd usda-psd-mvp ci-usda-psd-mvp dbt-build-fao-faostat fao-faostat-mvp ci-fao-faostat-mvp dbt-build-worldbank-commodities worldbank-commodities-mvp ci-worldbank-commodities-mvp dbt-build-international-extended international-extended-mvp ci-international-extended-mvp dbt-build-br-new-sources br-new-sources-mvp ci-br-new-sources-mvp dbt-build-international-new-sources international-new-sources-mvp ci-international-new-sources-mvp dbt-build-br-sources-wave-2 br-sources-wave-2-mvp ci-br-sources-wave-2-mvp dbt-build-br-sources-wave-3 br-sources-wave-3-mvp ci-br-sources-wave-3-mvp dbt-build-international-sources-wave-2 international-sources-wave-2-mvp ci-international-sources-wave-2-mvp ingestor-signoff-mvp ci-ingestor-signoff-mvp dbt-build-noaa-climate noaa-climate-mvp ci-noaa-climate-mvp unified-db-sync ci-unified-db-sync seed-unified-db-gold anp-mvp ci-anp-mvp p1-collection-mvp ci-p1-collection-mvp collection-macro-mvp ci-collection-macro-mvp collection-full-mvp ci-collection-full-mvp ci-go ci-minio ci-validate-r2-env validate-r2-env validate-r2-env-live ci-delta-versioning ci-new-dataset-checklist ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -751,6 +751,29 @@ ci-br-sources-wave-2-mvp:
 	$(MAKE) br-sources-wave-2-mvp \
 		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_2_LAKE) \
 		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_2_DUCKDB)
+
+CI_BR_SOURCES_WAVE_3_LAKE ?= /tmp/br-sources-wave-3-ci-lake
+CI_BR_SOURCES_WAVE_3_DUCKDB ?= /tmp/br-sources-wave-3-ci.duckdb
+
+dbt-build-br-sources-wave-3: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_dnit__snv_rodovias_federais+ stg_ipea__series_macro_regionais+ stg_ibge__pevs_producao_vegetal+'
+
+br-sources-wave-3-mvp:
+	go test ./internal/dnit/... ./internal/ipea/... ./internal/ibge/... ./internal/ingest/ -run 'DNIT|IPEA|PEVS|StripMetadata|GoldenVector'
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_br_sources_wave_3_silver.py
+	$(MAKE) dbt-build-br-sources-wave-3 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.dnit_snv_rodovias_federais"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT br, uf, codigo, jurisdicao FROM analytics.dnit_snv_rodovias_federais LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ipea_series_macro_regionais"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT series_code, refdate, value, region_level FROM analytics.ipea_series_macro_regionais LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pevs_producao_vegetal"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_uf, ano, variavel, valor FROM analytics.ibge_pevs_producao_vegetal LIMIT 3"
+
+ci-br-sources-wave-3-mvp:
+	$(MAKE) br-sources-wave-3-mvp \
+		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_3_LAKE) \
+		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_3_DUCKDB)
 
 dbt-build-international-sources-wave-2: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_igc__goi_index+ stg_usda__gats_trade+ stg_eurostat__ag_prices+ stg_argentina__bcra_cambio+'

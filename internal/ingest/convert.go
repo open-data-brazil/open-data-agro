@@ -35,7 +35,7 @@ func convertToParquet(entry catalog.RegistryEntry, raw []byte, path string) ([]b
 		if path != "" {
 			return convertDelimitedFileToParquet(path, entry)
 		}
-		return convertDelimitedToParquet(raw, delimiterFor(entry))
+		return convertDelimitedToParquet(preprocessDelimitedRaw(entry, raw), delimiterFor(entry))
 	case catalog.FormatJSON:
 		if path != "" {
 			return convertJSONFileToParquet(entry, path)

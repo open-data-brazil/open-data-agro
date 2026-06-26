@@ -1,0 +1,19 @@
+# IBGE — PEVS Produção da Extração Vegetal (Phase 44 P1)
+# SIDRA API: https://apisidra.ibge.gov.br/
+# Survey: https://sidra.ibge.gov.br/pesquisa/pevs
+# Table 289 — UF grain, annual, variables 144 (quantidade) and 145 (valor)
+
+entries:
+  - dataset_id: ibge.pevs-producao-vegetal
+    source_url: https://apisidra.ibge.gov.br/values/t/289
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/pevs
+    format: json
+    schedule: annual
+    portal_label: PEVS — quantidade e valor da extração vegetal por UF
+    sidra_table: "289"
+    sidra_variables: [144, 145]
+    period_start: 2010
+    period_end: 2023
+    frequency: annual
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z

@@ -1,0 +1,37 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "IPEA regional macro series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "series_code" },
+      "meta": { "notes": "Series code required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "refdate" },
+      "meta": { "notes": "Reference date required." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "series_code", "value_set": ["ADH_P_AGRO_RUR", "ADH_P_COM_RUR"] },
+      "meta": { "notes": "Configured IPEA regional macro series." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["series_code", "refdate", "territory_code"] },
+      "meta": { "notes": "Regional series grain." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ipea.series-macro-regionais",
+    "fonte_oficial": "http://www.ipeadata.gov.br/",
+    "agencia": "IPEA"
+  },
+  "name": "bronze.ipea.series_macro_regionais",
+  "id": "bronze-ipea-series-macro-regionais-suite"
+}

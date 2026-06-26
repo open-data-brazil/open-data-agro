@@ -1,0 +1,37 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "SNV jurisdiction CSV must contain highway segments." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "BR" },
+      "meta": { "notes": "Federal highway code required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "UF" },
+      "meta": { "notes": "UF required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "Código" },
+      "meta": { "notes": "Segment code required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["BR", "UF", "Código", "km inicial", "km final"] },
+      "meta": { "notes": "Highway segment grain." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "dnit.snv-rodovias-federais",
+    "fonte_oficial": "https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias",
+    "agencia": "DNIT"
+  },
+  "name": "bronze.dnit.snv_rodovias_federais",
+  "id": "bronze-dnit-snv-rodovias-federais-suite"
+}

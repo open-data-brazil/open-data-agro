@@ -9,6 +9,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/cepea"
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
+	"github.com/open-data-brazil/open-data-agro/internal/ipea"
 	"github.com/open-data-brazil/open-data-agro/internal/mdic"
 	"github.com/open-data-brazil/open-data-agro/internal/usda"
 	"github.com/open-data-brazil/open-data-agro/internal/fao"
@@ -131,6 +132,12 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		return writeStringTable(headers, rows)
 	case "argentina":
 		headers, rows, err := argentina.FlattenCambio(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "ipea":
+		headers, rows, err := ipea.FlattenSeries(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}

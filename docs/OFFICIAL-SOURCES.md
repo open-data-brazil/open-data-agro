@@ -224,6 +224,36 @@ Daily flow series for configured fluviometric stations. Complements INMET climat
 
 Monthly port cargo movement by installation, navigation type, and cargo profile. Live bulk export may return HTTP errors from some networks; pipeline validated via fixtures + CI seed.
 
+### DNIT — SNV rodovias federais (Phase 44)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `dnit.snv-rodovias-federais` | SNV — jurisdição de vias federais | **P0 — implemented** |
+
+**Fonte oficial:** [DNIT — Dados abertos](https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias) · CKAN package `jurisdicao-de-vias` (latest CSV, semicolon delimiter)
+
+Federal highway jurisdiction segments — BR code, UF, km range, administration, surface type. Metadata preamble rows stripped before bronze parse.
+
+### IPEA — Séries macro regionais (Phase 44)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `ipea.series-macro-regionais` | IPEA OData4 — componentes IDH agro/com rural | **P1 — implemented** |
+
+**Fonte oficial:** [IPEA Data](http://www.ipeadata.gov.br/) · OData4 `ValoresSerie(SERCODIGO='...')` — series `ADH_P_AGRO_RUR`, `ADH_P_COM_RUR`
+
+Regional macro indicators by territory — annual refdate grain for Brazil and UF-level states.
+
+### IBGE — PEVS produção vegetal (Phase 44)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `ibge.pevs-producao-vegetal` | PEVS — quantidade e valor da extração vegetal por UF | **P1 — implemented** |
+
+**Fonte oficial:** [IBGE SIDRA — PEVS](https://sidra.ibge.gov.br/pesquisa/pevs) · table **289**, UF grain, variables **144** (quantidade) and **145** (valor), annual
+
+Plant extraction production statistics at UF level — complements PAM/LSPA annual crop series.
+
 ### B3 — Mercado futuro agro (Phase 24)
 
 | Dataset ID | Source | Status |
