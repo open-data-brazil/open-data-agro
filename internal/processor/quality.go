@@ -217,6 +217,10 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_mdic_comex_exportacao_ncm_mes", true
 	case "antt.pracas-pedagio":
 		return "bronze_antt_pracas_pedagio", true
+	case "antt.volume-trafego-pedagio":
+		return "bronze_antt_volume_trafego_pedagio", true
+	case "antt.receita-por-praca":
+		return "bronze_antt_receita_por_praca", true
 	case "mapa.zarc-tabua-risco":
 		return "bronze_mapa_zarc_tabua_risco", true
 	case "b3.futuro-soja":

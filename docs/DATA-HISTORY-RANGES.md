@@ -118,11 +118,13 @@ API chunks one calendar year per request. Ag NCM series may start later than 199
 
 ---
 
-## ANTT, MAPA, B3 (Phases 22–24)
+## ANTT, MAPA, B3 (Phases 22–24, 34)
 
 | `dataset_id` | Source min | Catalog default | Backfill |
 |--------------|------------|-----------------|----------|
 | `antt.pracas-pedagio` | ~2010 | full CKAN CSV | `make dnit-antt-logistica-mvp` |
+| `antt.volume-trafego-pedagio` | 2010 | latest mensal consolidado CSV | `make br-logistica-extended-mvp` |
+| `antt.receita-por-praca` | 2010 | latest annual CSV (`Receita por Praça - YYYY`) | `make br-logistica-extended-mvp` |
 | `mapa.zarc-tabua-risco` | ~2010 (safra) | latest CKAN CSV | `make mapa-dados-mvp` |
 | `b3.futuro-soja` | ~2000 (SOY) | 2024 (MVP window) | `--from 2024-01-01`; extend for history |
 

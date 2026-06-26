@@ -37,3 +37,56 @@ models:
               - rodovia
               - uf
               - km_m
+
+  - name: mart_antt__volume_trafego_pedagio
+    description: |
+      ANTT monthly vehicle volume per toll plaza by vehicle category.
+      Grain is concessionaria + praca + mes_ano + sentido + categoria_eixo + tipo_de_veiculo.
+    config:
+      meta:
+        dataset_id: antt.volume-trafego-pedagio
+        grain: concessionaria, praca, mes_ano, sentido, categoria_eixo, tipo_de_veiculo
+    columns:
+      - name: concessionaria
+        tests:
+          - not_null
+      - name: mes_ano
+        tests:
+          - not_null
+      - name: praca
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+
+  - name: mart_antt__receita_por_praca
+    description: |
+      ANTT monthly toll revenue per plaza with location attributes.
+      Grain is concessionaria + praca_de_pedagio + mes_ano.
+    config:
+      meta:
+        dataset_id: antt.receita-por-praca
+        grain: concessionaria, praca_de_pedagio, mes_ano
+    columns:
+      - name: concessionaria
+        tests:
+          - not_null
+      - name: praca_de_pedagio
+        tests:
+          - not_null
+      - name: mes_ano
+        tests:
+          - not_null
+      - name: rodovia
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null

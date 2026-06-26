@@ -1,0 +1,31 @@
+# ANTT — Extended logistics (Phase 34)
+# Portal: https://dados.antt.gov.br/
+
+entries:
+  - dataset_id: antt.volume-trafego-pedagio
+    source_url: https://dados.antt.gov.br/dataset/volume-trafego-praca-pedagio
+    source_portal_url: https://dados.antt.gov.br/dataset/volume-trafego-praca-pedagio
+    format: csv
+    delimiter: ";"
+    schedule: monthly
+    portal_label: Volume de Tráfego por Praça — mensal consolidado
+    ckan_package_id: volume-trafego-praca-pedagio
+    ckan_resource_format: CSV
+    ckan_resource_name_contains: Mensal consolidado
+    fonte_tipo: oficial_gov_br
+    period_start: 2010
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: antt.receita-por-praca
+    source_url: https://dados.antt.gov.br/dataset/receita-por-praca
+    source_portal_url: https://dados.antt.gov.br/dataset/receita-por-praca
+    format: csv
+    delimiter: ";"
+    schedule: annual
+    portal_label: Receita por Praça — anual
+    ckan_package_id: receita-por-praca
+    ckan_resource_format: CSV
+    ckan_resource_name_contains: "Receita por Praça -"
+    fonte_tipo: oficial_gov_br
+    period_start: 2010
+    discovered_at: 2026-06-26T00:00:00Z

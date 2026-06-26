@@ -32,6 +32,8 @@ CI_MDIC_LAKE ?= /tmp/mdic-ci-lake
 CI_MDIC_DUCKDB ?= /tmp/mdic-ci.duckdb
 CI_ANTT_PEDAGIOS_LAKE ?= /tmp/antt-pedagios-ci-lake
 CI_ANTT_PEDAGIOS_DUCKDB ?= /tmp/antt-pedagios-ci.duckdb
+CI_ANTT_LOGISTICA_EXTENDED_LAKE ?= /tmp/antt-logistica-extended-ci-lake
+CI_ANTT_LOGISTICA_EXTENDED_DUCKDB ?= /tmp/antt-logistica-extended-ci.duckdb
 CI_MAPA_ZARC_LAKE ?= /tmp/mapa-zarc-ci-lake
 CI_MAPA_ZARC_DUCKDB ?= /tmp/mapa-zarc-ci.duckdb
 CI_B3_FUTUROS_LAKE ?= /tmp/b3-futuros-ci-lake
@@ -531,6 +533,24 @@ ci-dnit-antt-logistica-mvp:
 	$(MAKE) dnit-antt-logistica-mvp \
 		LAKE_LOCAL_ROOT=$(CI_ANTT_PEDAGIOS_LAKE) \
 		DUCKDB_PATH=$(CI_ANTT_PEDAGIOS_DUCKDB)
+
+dbt-build-antt-logistica-extended: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_antt__volume_trafego_pedagio+ stg_antt__receita_por_praca+'
+
+br-logistica-extended-mvp:
+	go test ./internal/antt/... ./internal/ingest/ -run 'ANTT|PracasPedagio|VolumeTrafego|ReceitaPorPraca|ResolveURLCKAN'
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_antt_logistica_extended_silver.py
+	$(MAKE) dbt-build-antt-logistica-extended LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.antt_volume_trafego_pedagio"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT concessionaria, praca, mes_ano, volume_total FROM analytics.antt_volume_trafego_pedagio LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.antt_receita_por_praca"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT concessionaria, praca_de_pedagio, rodovia, mes_ano FROM analytics.antt_receita_por_praca LIMIT 3"
+
+ci-br-logistica-extended-mvp:
+	$(MAKE) br-logistica-extended-mvp \
+		LAKE_LOCAL_ROOT=$(CI_ANTT_LOGISTICA_EXTENDED_LAKE) \
+		DUCKDB_PATH=$(CI_ANTT_LOGISTICA_EXTENDED_DUCKDB)
 
 dbt-build-mapa-zarc: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_mapa__zarc_tabua_risco+'

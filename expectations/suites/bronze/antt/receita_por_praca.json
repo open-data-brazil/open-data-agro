@@ -1,0 +1,47 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Monthly toll revenue per plaza must contain rows." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "Rodovia" },
+      "meta": { "notes": "Highway code for join with CONAB frete." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "UF" },
+      "meta": { "notes": "State for geographic joins." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "Mes_ano" },
+      "meta": { "notes": "Month-year grain (MM/YYYY)." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "Receita_Praca_de_Pedagio" },
+      "meta": { "notes": "Revenue in BRL at plaza grain." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "Concessionaria" },
+      "meta": { "notes": "Concessionaire required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "Praca_de_pedagio" },
+      "meta": { "notes": "Plaza identifier required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "antt.receita-por-praca",
+    "fonte_oficial": "https://dados.antt.gov.br/dataset/receita-por-praca",
+    "agencia": "ANTT"
+  },
+  "name": "bronze.antt.receita_por_praca",
+  "id": "bronze-antt-receita-por-praca-suite"
+}

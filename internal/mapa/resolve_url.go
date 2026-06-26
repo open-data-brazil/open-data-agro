@@ -15,7 +15,10 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 )
 
-const ckanAPIBase = "https://dados.agricultura.gov.br/api/3/action/package_show"
+const defaultCKANPackageShowURL = "https://dados.agricultura.gov.br/api/3/action/package_show"
+
+// ckanPackageShowURL is the CKAN package_show endpoint (overridable in tests).
+var ckanPackageShowURL = defaultCKANPackageShowURL
 
 var safraYearPattern = regexp.MustCompile(`Safra (\d{4})/(\d{4})`)
 
@@ -140,7 +143,7 @@ func resolveCKANResourceByName(ctx context.Context, packageID, format, nameConta
 }
 
 func fetchCKANResources(ctx context.Context, packageID string) ([]ckanResource, error) {
-	url := fmt.Sprintf("%s?id=%s", ckanAPIBase, packageID)
+	url := fmt.Sprintf("%s?id=%s", ckanPackageShowURL, packageID)
 
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {

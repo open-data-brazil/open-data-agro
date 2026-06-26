@@ -1,0 +1,47 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Monthly toll traffic volume must contain rows." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "concessionaria" },
+      "meta": { "notes": "Concessionaire for join with pracas catalog." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "praca" },
+      "meta": { "notes": "Plaza label for join with antt.pracas-pedagio." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "mes_ano" },
+      "meta": { "notes": "Month-year grain (MM/YYYY)." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "volume_total" },
+      "meta": { "notes": "Vehicle volume count." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "concessionaria" },
+      "meta": { "notes": "Concessionaire required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "mes_ano" },
+      "meta": { "notes": "Period required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "antt.volume-trafego-pedagio",
+    "fonte_oficial": "https://dados.antt.gov.br/dataset/volume-trafego-praca-pedagio",
+    "agencia": "ANTT"
+  },
+  "name": "bronze.antt.volume_trafego_pedagio",
+  "id": "bronze-antt-volume-trafego-pedagio-suite"
+}
