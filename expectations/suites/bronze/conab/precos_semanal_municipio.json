@@ -1,0 +1,58 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "CONAB product column." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "cod_ibge" },
+      "meta": { "notes": "IBGE municipality code (padded in raw file)." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "valor_produto_kg" },
+      "meta": { "notes": "Weekly price per kg." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "Grain key — product must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "cod_ibge" },
+      "meta": { "notes": "Grain key — municipality code must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "Grain key — UF must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "ano" },
+      "meta": { "notes": "Grain key — year must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "semana" },
+      "meta": { "notes": "Grain key — week number must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.precos-agropecuarios-semanal-municipio",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Preços agropecuários Semanal Município"
+  },
+  "name": "bronze.conab.precos_semanal_municipio",
+  "id": "bronze-conab-precos-semanal-municipio-suite"
+}

@@ -115,7 +115,7 @@ dbt-build-mercado: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__oferta_demanda+'
 
 dbt-build-mercado-precos: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__precos_semanal_uf+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__precos_semanal_uf+ stg_conab__precos_semanal_municipio+'
 
 conab-mercado-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_mercado_silver.py
@@ -124,12 +124,13 @@ conab-mercado-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS rows FROM analytics.conab_oferta_demanda"
 
 conab-mercado-precos-mvp:
-	go test ./internal/ingest/ -run 'PrecosSemanalUF'
+	go test ./internal/ingest/ -run 'PrecosSemanal'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_mercado_silver.py
 	$(MAKE) dbt-build-mercado-precos LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS rows FROM analytics.conab_precos_semanal_uf"
-	duckdb $(DUCKDB_PATH) -c "SELECT produto, uf, valor_produto_kg FROM analytics.conab_precos_semanal_uf WHERE upper(produto) LIKE '%SOJA%' AND uf = 'MT' LIMIT 5"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS uf_rows FROM analytics.conab_precos_semanal_uf"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mun_rows FROM analytics.conab_precos_semanal_municipio"
+	duckdb $(DUCKDB_PATH) -c "SELECT produto, municipio, cod_ibge, valor_produto_kg FROM analytics.conab_precos_semanal_municipio WHERE upper(trim(produto)) = 'SOJA' AND cod_ibge = '5107925' LIMIT 5"
 
 dbt-build-abastecimento: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__estoques_publicos+ stg_anp__combustiveis_precos_medios_municipios+ stg_anp__combustiveis_precos_postos+'

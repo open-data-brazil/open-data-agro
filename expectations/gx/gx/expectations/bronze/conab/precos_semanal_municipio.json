@@ -1,0 +1,113 @@
+{
+  "expectations": [
+    {
+      "id": "5c9f7788-5eee-4097-8dc3-9bb14f6bf3d1",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "8b9714fd-01d7-4404-b0e8-6418dc9ca6e9",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "CONAB product column."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "81f47037-b652-40da-b888-ec57d3f79f29",
+      "kwargs": {
+        "column": "cod_ibge"
+      },
+      "meta": {
+        "notes": "IBGE municipality code (padded in raw file)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "607d7e16-4bf8-4b90-b603-1af44156ef58",
+      "kwargs": {
+        "column": "valor_produto_kg"
+      },
+      "meta": {
+        "notes": "Weekly price per kg."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "3ad59b8f-0991-49e0-9de1-536ac45687c4",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "a5b87cef-7657-4656-bc0c-d558a3716598",
+      "kwargs": {
+        "column": "cod_ibge"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 municipality code must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "5fb9d562-8a1b-458f-b4ee-cd7f293a0b9f",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 UF must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "742d3071-dd4a-4c24-b323-aa33a5497e86",
+      "kwargs": {
+        "column": "ano"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 year must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "a8c5dcfe-6d41-4255-8a67-c94a8daba263",
+      "kwargs": {
+        "column": "semana"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 week number must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "9d4d16c1-7f27-49e6-9de3-393cd9ea73ba",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Pre\u00e7os agropecu\u00e1rios Semanal Munic\u00edpio",
+    "dataset_id": "conab.precos-agropecuarios-semanal-municipio",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.precos_semanal_municipio",
+  "notes": null
+}
