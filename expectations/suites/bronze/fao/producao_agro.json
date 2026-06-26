@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "FAOSTAT production series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "area_code" },
+      "meta": { "notes": "Country code required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "commodity_slug" },
+      "meta": { "notes": "Canonical commodity slug required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["area_code", "item_code", "element_code", "year"] },
+      "meta": { "notes": "Annual production grain." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "fao.producao-agro",
+    "fonte_oficial": "https://www.fao.org/faostat/en/#data/QCL",
+    "agencia": "FAO"
+  },
+  "name": "bronze.fao.producao_agro",
+  "id": "bronze-fao-producao-agro-suite"
+}

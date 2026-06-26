@@ -159,7 +159,10 @@ def main() -> int:
             "bronze_usda_psd_milho": "expectations/suites/bronze/usda/psd_milho.json",
             "bronze_usda_psd_trigo": "expectations/suites/bronze/usda/psd_trigo.json",
             "bronze_fao_prices_agro": "expectations/suites/bronze/fao/prices_agro.json",
+            "bronze_fao_producao_agro": "expectations/suites/bronze/fao/producao_agro.json",
+            "bronze_fao_comercio_agro": "expectations/suites/bronze/fao/comercio_agro.json",
             "bronze_worldbank_pink_sheet_monthly": "expectations/suites/bronze/worldbank/pink_sheet_monthly.json",
+            "bronze_worldbank_ag_indices": "expectations/suites/bronze/worldbank/ag_indices.json",
             "bronze_noaa_enso_indices": "expectations/suites/bronze/noaa/enso_indices.json",
             "bronze_noaa_global_temp_anomaly": "expectations/suites/bronze/noaa/global_temp_anomaly.json",
         }

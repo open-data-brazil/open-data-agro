@@ -1,0 +1,36 @@
+# FAO FAOSTAT — Production crops & livestock (Phase 36 P0)
+# Portal: https://www.fao.org/faostat/en/#data/QCL
+# Bulk: normalized CSV inside zip (no API key)
+
+entries:
+  - dataset_id: fao.producao-agro
+    source_url: https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip
+    source_portal_url: https://www.fao.org/faostat/en/#data/QCL
+    format: json
+    schedule: annual
+    portal_label: Production — soja, milho, trigo, carne bovina
+    fao_bulk_url: https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip
+    fao_bulk_csv: Production_Crops_Livestock_E_All_Data_(Normalized).csv
+    fao_item_codes: ["236", "56", "15", "867"]
+    fao_element_codes: ["5510"]
+    period_start: 2010
+    frequency: annual
+    license: "FAO FAOSTAT — CC BY-NC-SA 3.0 IGO"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: fao.comercio-agro
+    source_url: https://bulks-faostat.fao.org/production/Trade_Crops_Livestock_E_All_Data_(Normalized).zip
+    source_portal_url: https://www.fao.org/faostat/en/#data/TCL
+    format: json
+    schedule: annual
+    portal_label: Trade — import/export quantity by country
+    fao_bulk_url: https://bulks-faostat.fao.org/production/Trade_Crops_Livestock_E_All_Data_(Normalized).zip
+    fao_bulk_csv: Trade_Crops_Livestock_E_All_Data_(Normalized).csv
+    fao_item_codes: ["236", "56", "15", "867"]
+    fao_element_codes: ["5911", "5922"]
+    period_start: 2010
+    frequency: annual
+    license: "FAO FAOSTAT — CC BY-NC-SA 3.0 IGO"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z

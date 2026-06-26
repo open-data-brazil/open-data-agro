@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "FAOSTAT trade series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "element_code" },
+      "meta": { "notes": "Import/export element code required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["area_code", "item_code", "element_code", "year"] },
+      "meta": { "notes": "Annual trade grain." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "fao.comercio-agro",
+    "fonte_oficial": "https://www.fao.org/faostat/en/#data/TCL",
+    "agencia": "FAO"
+  },
+  "name": "bronze.fao.comercio_agro",
+  "id": "bronze-fao-comercio-agro-suite"
+}

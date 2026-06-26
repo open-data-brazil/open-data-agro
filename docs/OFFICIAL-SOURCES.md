@@ -206,25 +206,28 @@ Daily futures settlement (`AdjstdQt`) by contract symbol. Regulated exchange ref
 
 Global production/supply/demand by country and marketing year. `fonte_tipo: internacional_oficial`. Values in official PSD units (typically 1000 MT).
 
-### FAO — FAOSTAT (Phase 26)
+### FAO — FAOSTAT (Phase 26 + 36)
 
 | Dataset ID | Source | Status |
 |------------|--------|--------|
 | `fao.prices-agro` | Producer prices — soja, milho, trigo, carne bovina | **P0 — implemented** |
+| `fao.producao-agro` | Annual production by country — soja, milho, trigo, carne bovina | **P0 — implemented** |
+| `fao.comercio-agro` | Annual import/export quantity by country | **P1 — implemented** |
 
-**Fonte oficial:** [FAO FAOSTAT — Producer Prices (PP)](https://www.fao.org/faostat/en/#data/PP) · bulk `Prices_E_All_Data_(Normalized).zip` (no API key)
+**Fonte oficial:** [FAO FAOSTAT — Producer Prices (PP)](https://www.fao.org/faostat/en/#data/PP) · bulk `Prices_E_All_Data_(Normalized).zip` · [Production (QCL)](https://www.fao.org/faostat/en/#data/QCL) · `Production_Crops_Livestock_E_All_Data_(Normalized).zip` · [Trade (TCL)](https://www.fao.org/faostat/en/#data/TCL) · `Trade_Crops_Livestock_E_All_Data_(Normalized).zip` (no API key)
 
-Producer prices (USD/tonne) and price indices by country × year. Items 236/56/15/867. `fonte_tipo: internacional_oficial`.
+Producer prices (USD/tonne) and price indices by country × year. Production element `5510`; trade elements `5911` (import qty) / `5922` (export qty). Items 236/56/15/867. `fonte_tipo: internacional_oficial`.
 
-### World Bank — Pink Sheet commodities (Phase 27)
+### World Bank — Pink Sheet commodities (Phase 27 + 36)
 
 | Dataset ID | Source | Status |
 |------------|--------|--------|
 | `worldbank.pink-sheet-monthly` | Pink Sheet monthly prices — soja, milho, trigo, petróleo, carne | **P0 — implemented** |
+| `worldbank.ag-indices` | Pink Sheet agriculture sub-indices (2010=100) | **P1 — implemented** |
 
-**Fonte oficial:** [World Bank Commodity Markets](https://www.worldbank.org/en/research/commodity-markets) · `CMO-Historical-Data-Monthly.xlsx` bulk (no API key)
+**Fonte oficial:** [World Bank Commodity Markets](https://www.worldbank.org/en/research/commodity-markets) · `CMO-Historical-Data-Monthly.xlsx` bulk — sheets `Monthly Prices` and `Monthly Indices` (no API key)
 
-USD-denominated monthly commodity reference prices. Monthly grain — no daily resampling in bronze (Stage H policy). `fonte_tipo: internacional_oficial`.
+USD-denominated monthly commodity reference prices and agriculture sub-indices. Monthly grain — no daily resampling in bronze (Stage H policy). `fonte_tipo: internacional_oficial`.
 
 ### NOAA — global climate indices (Phase 28)
 

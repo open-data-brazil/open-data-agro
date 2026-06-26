@@ -68,13 +68,13 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		}
 		return writeStringTable(headers, rows)
 	case "fao":
-		headers, rows, err := fao.FlattenPrices(entry, raw)
+		headers, rows, err := fao.Flatten(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}
 		return writeStringTable(headers, rows)
 	case "worldbank":
-		headers, rows, err := worldbank.FlattenPinkSheet(entry, raw)
+		headers, rows, err := worldbank.Flatten(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}

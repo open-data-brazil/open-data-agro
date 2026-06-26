@@ -31,12 +31,49 @@ var defaultSeriesNames = []string{
 	"Crude oil, average",
 }
 
+var defaultAgIndexSeries = []string{
+	"Agriculture **",
+	"Food **",
+	"Grains",
+	"Oils & Meals",
+	"Beverages",
+	"Raw Materials",
+	"Timber",
+	"Other Food **",
+	"Other Raw Mat.",
+	"Fertilizers **",
+}
+
+// AgIndexSlug maps Pink Sheet agriculture index names to canonical slugs.
+var AgIndexSlug = map[string]string{
+	"Agriculture **":  "agriculture",
+	"Food **":         "food",
+	"Grains":          "grains",
+	"Oils & Meals":    "oleos_e_farelo",
+	"Beverages":       "beverages",
+	"Raw Materials":   "raw_materials",
+	"Timber":          "timber",
+	"Other Food **":   "other_food",
+	"Other Raw Mat.":  "other_raw_materials",
+	"Fertilizers **":  "fertilizers",
+}
+
 type pinkSheetRow struct {
 	RefMonth      string `json:"refmonth"`
 	SeriesName    string `json:"series_name"`
 	Unit          string `json:"unit"`
 	Value         string `json:"value"`
 	CommoditySlug string `json:"commodity_slug"`
+}
+
+// FetchSnapshot downloads and unpivots World Bank Pink Sheet data for a catalog entry.
+func (c *Client) FetchSnapshot(ctx context.Context, entry catalog.RegistryEntry, fromDate string) ([]byte, string, error) {
+	switch entry.DatasetID.String() {
+	case "worldbank.ag-indices":
+		return c.FetchAgIndicesSnapshot(ctx, entry, fromDate)
+	default:
+		return c.FetchPinkSheetSnapshot(ctx, entry, fromDate)
+	}
 }
 
 // FetchPinkSheetSnapshot downloads and unpivots World Bank Pink Sheet monthly prices.
@@ -77,6 +114,50 @@ func (c *Client) FetchPinkSheetSnapshot(ctx context.Context, entry catalog.Regis
 
 	metaURL := fmt.Sprintf("%s (sheet=%s, series=%d, months=%s-%s, rows=%d)",
 		sourceURL, sheetNameOrDefault(sheet), len(seriesNames), startMonth, endMonth, len(rows))
+	return payload, metaURL, nil
+}
+
+// FetchAgIndicesSnapshot downloads agriculture sub-indices from the Pink Sheet workbook.
+func (c *Client) FetchAgIndicesSnapshot(ctx context.Context, entry catalog.RegistryEntry, fromDate string) ([]byte, string, error) {
+	sourceURL := strings.TrimSpace(entry.WorldBankPinkSheetURL)
+	if sourceURL == "" {
+		sourceURL = defaultPinkSheetURL
+	}
+	sheet := strings.TrimSpace(entry.WorldBankPinkSheetSheet)
+	if sheet == "" {
+		sheet = defaultAgIndicesSheet
+	}
+	seriesNames := entry.WorldBankSeriesNames
+	if len(seriesNames) == 0 {
+		seriesNames = defaultAgIndexSeries
+	}
+
+	startMonth, endMonth, err := resolveMonthRange(entry, fromDate)
+	if err != nil {
+		return nil, "", err
+	}
+
+	result, err := c.Download(ctx, sourceURL)
+	if err != nil {
+		return nil, "", err
+	}
+
+	rows, err := parseAgIndicesXLSX(result.Body, sheet, seriesNameSet(seriesNames), startMonth, endMonth)
+	if err != nil {
+		return nil, "", err
+	}
+
+	sort.Slice(rows, func(i, j int) bool {
+		return pinkSheetRowKey(rows[i]) < pinkSheetRowKey(rows[j])
+	})
+
+	payload, err := json.Marshal(rows)
+	if err != nil {
+		return nil, "", err
+	}
+
+	metaURL := fmt.Sprintf("%s (sheet=%s, series=%d, months=%s-%s, rows=%d)",
+		sourceURL, sheet, len(seriesNames), startMonth, endMonth, len(rows))
 	return payload, metaURL, nil
 }
 
@@ -133,6 +214,11 @@ func parseMonthHint(raw string) (string, bool) {
 	return "", false
 }
 
+// Flatten converts merged World Bank JSON into canonical bronze columns.
+func Flatten(entry catalog.RegistryEntry, raw []byte) ([]string, [][]string, error) {
+	return FlattenPinkSheet(entry, raw)
+}
+
 // FlattenPinkSheet converts merged Pink Sheet JSON into canonical bronze columns.
 func FlattenPinkSheet(entry catalog.RegistryEntry, raw []byte) ([]string, [][]string, error) {
 	var rows []pinkSheetRow
@@ -152,6 +238,9 @@ func FlattenPinkSheet(entry catalog.RegistryEntry, raw []byte) ([]string, [][]st
 		slug := strings.TrimSpace(row.CommoditySlug)
 		if slug == "" {
 			slug = SeriesSlug[row.SeriesName]
+			if slug == "" {
+				slug = AgIndexSlug[row.SeriesName]
+			}
 		}
 		out = append(out, []string{
 			row.RefMonth,

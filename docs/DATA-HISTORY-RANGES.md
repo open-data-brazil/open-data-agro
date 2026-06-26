@@ -139,7 +139,10 @@ API chunks one calendar year per request. Ag NCM series may start later than 199
 |--------------|------------|-----------------|----------|
 | `usda.psd-*` | ~1960 | 2010 | SOAP per marketing year |
 | `fao.prices-agro` | ~1991 | 2010 | FAOSTAT bulk zip |
+| `fao.producao-agro` | ~1961 | 2010 | FAOSTAT production bulk zip |
+| `fao.comercio-agro` | ~1961 | 2010 | FAOSTAT trade bulk zip |
 | `worldbank.pink-sheet-monthly` | ~1960 | 2010 | CMO monthly xlsx |
+| `worldbank.ag-indices` | ~1960 | 2010 | CMO Monthly Indices sheet |
 | `noaa.enso-indices` | 1950 | 2010 | ONI ascii |
 | `noaa.global-temp-anomaly` | 1880 | 2010 | NCEI CSV |
 

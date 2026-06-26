@@ -243,8 +243,14 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_usda_psd_trigo", true
 	case "fao.prices-agro":
 		return "bronze_fao_prices_agro", true
+	case "fao.producao-agro":
+		return "bronze_fao_producao_agro", true
+	case "fao.comercio-agro":
+		return "bronze_fao_comercio_agro", true
 	case "worldbank.pink-sheet-monthly":
 		return "bronze_worldbank_pink_sheet_monthly", true
+	case "worldbank.ag-indices":
+		return "bronze_worldbank_ag_indices", true
 	case "noaa.enso-indices":
 		return "bronze_noaa_enso_indices", true
 	case "noaa.global-temp-anomaly":

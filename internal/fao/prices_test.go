@@ -38,9 +38,9 @@ func TestParsePricesCSVSample(t *testing.T) {
 	raw := readFAOTestdata(t, "prices_agro.sample.csv")
 	items := codeSet(defaultItemCodes)
 	elements := codeSet(defaultElementCodes)
-	rows, err := parsePricesCSV(strings.NewReader(string(raw)), items, elements, 2010, 2030)
+	rows, err := parseFAOCSV(strings.NewReader(string(raw)), items, elements, 2010, 2030, true)
 	if err != nil {
-		t.Fatalf("parsePricesCSV: %v", err)
+		t.Fatalf("parseFAOCSV: %v", err)
 	}
 	if len(rows) != 3 {
 		t.Fatalf("rows: got %d want 3", len(rows))

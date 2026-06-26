@@ -180,7 +180,7 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 	}
 
 	if agency == "fao" {
-		body, sourceURL, err := faoClient.FetchPricesSnapshot(ctx, entry, opts.FromDate)
+		body, sourceURL, err := faoClient.FetchSnapshot(ctx, entry, opts.FromDate)
 		if err != nil {
 			return nil, err
 		}
@@ -193,7 +193,7 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 	}
 
 	if agency == "worldbank" {
-		body, sourceURL, err := worldbankClient.FetchPinkSheetSnapshot(ctx, entry, opts.FromDate)
+		body, sourceURL, err := worldbankClient.FetchSnapshot(ctx, entry, opts.FromDate)
 		if err != nil {
 			return nil, err
 		}

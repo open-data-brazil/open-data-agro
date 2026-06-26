@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Agriculture index series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "refmonth" },
+      "meta": { "notes": "Month grain required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "commodity_slug" },
+      "meta": { "notes": "Index slug required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["refmonth", "series_name"] },
+      "meta": { "notes": "One row per index per month." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "worldbank.ag-indices",
+    "fonte_oficial": "https://www.worldbank.org/en/research/commodity-markets",
+    "agencia": "World Bank"
+  },
+  "name": "bronze.worldbank.ag_indices",
+  "id": "bronze-worldbank-ag-indices-suite"
+}

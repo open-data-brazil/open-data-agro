@@ -12,6 +12,8 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 )
 
+const defaultPricesCSV = "Prices_E_All_Data_(Normalized).csv"
+
 const defaultPricesBulkURL = "https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip"
 
 // ItemSlug maps FAOSTAT item codes to canonical commodity slugs.
@@ -25,22 +27,6 @@ var ItemSlug = map[string]string{
 var defaultItemCodes = []string{"236", "56", "15", "867"}
 var defaultElementCodes = []string{"5532", "5539"}
 
-type priceRow struct {
-	AreaCode      string `json:"area_code"`
-	AreaName      string `json:"area_name"`
-	ItemCode      string `json:"item_code"`
-	ItemName      string `json:"item_name"`
-	ElementCode   string `json:"element_code"`
-	ElementName   string `json:"element_name"`
-	Year          string `json:"year"`
-	MonthsCode    string `json:"months_code"`
-	Months        string `json:"months"`
-	Unit          string `json:"unit"`
-	Value         string `json:"value"`
-	Flag          string `json:"flag"`
-	CommoditySlug string `json:"commodity_slug"`
-}
-
 // FetchPricesSnapshot downloads and filters FAOSTAT producer prices bulk data.
 func (c *Client) FetchPricesSnapshot(ctx context.Context, entry catalog.RegistryEntry, fromDate string) ([]byte, string, error) {
 	bulkURL := strings.TrimSpace(entry.FAOBulkURL)
@@ -48,6 +34,9 @@ func (c *Client) FetchPricesSnapshot(ctx context.Context, entry catalog.Registry
 		bulkURL = defaultPricesBulkURL
 	}
 	csvName := strings.TrimSpace(entry.FAOBulkCSV)
+	if csvName == "" {
+		csvName = defaultPricesCSV
+	}
 	itemCodes := entry.FAOItemCodes
 	if len(itemCodes) == 0 {
 		itemCodes = defaultItemCodes
@@ -67,13 +56,13 @@ func (c *Client) FetchPricesSnapshot(ctx context.Context, entry catalog.Registry
 		return nil, "", err
 	}
 
-	rows, err := parsePricesBulkZip(result.Body, csvName, codeSet(itemCodes), codeSet(elementCodes), startYear, endYear)
+	rows, err := parseFAOBulkZip(result.Body, csvName, codeSet(itemCodes), codeSet(elementCodes), startYear, endYear, true)
 	if err != nil {
 		return nil, "", err
 	}
 
 	sort.Slice(rows, func(i, j int) bool {
-		return priceRowKey(rows[i]) < priceRowKey(rows[j])
+		return bulkRowKey(rows[i]) < bulkRowKey(rows[j])
 	})
 
 	payload, err := json.Marshal(rows)
@@ -84,12 +73,6 @@ func (c *Client) FetchPricesSnapshot(ctx context.Context, entry catalog.Registry
 	sourceURL := fmt.Sprintf("%s (items=%d, elements=%d, years=%d-%d, rows=%d)",
 		bulkURL, len(itemCodes), len(elementCodes), startYear, endYear, len(rows))
 	return payload, sourceURL, nil
-}
-
-func priceRowKey(row priceRow) string {
-	return strings.Join([]string{
-		row.AreaCode, row.ItemCode, row.ElementCode, row.Year, row.MonthsCode,
-	}, "|")
 }
 
 func resolveYearRange(entry catalog.RegistryEntry, fromDate string) (int, int, error) {
@@ -126,7 +109,7 @@ func parseYearHint(raw string) (int, bool) {
 
 // FlattenPrices converts merged FAOSTAT prices JSON into canonical bronze columns.
 func FlattenPrices(entry catalog.RegistryEntry, raw []byte) ([]string, [][]string, error) {
-	var rows []priceRow
+	var rows []bulkRow
 	if err := json.Unmarshal(raw, &rows); err != nil {
 		return nil, nil, fmt.Errorf("parse fao prices json: %w", err)
 	}
