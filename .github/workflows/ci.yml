@@ -72,6 +72,9 @@ jobs:
       - name: Delta Lake silver versioning
         run: make ci-delta-versioning
 
+      - name: New dataset checklist doc
+        run: make ci-new-dataset-checklist
+
       - name: Lint
         uses: golangci/golangci-lint-action@v7
         with:

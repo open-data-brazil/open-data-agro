@@ -70,6 +70,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **MinIO CI integration (Phase 2):** `make ci-minio` — Docker MinIO, bronze S3 Put/List, DuckDB `s3://` smoke; GitHub Actions `go` job; `scripts/ci/check_minio_ci.py` gate
 - **R2 production runbook (Phase 2):** `infra/r2/README.md` deploy runbook, `make validate-r2-env` / `make ci-validate-r2-env`, optional `R2_INTEGRATION` live smoke; `scripts/ci/check_r2_runbook.py` gate
 - **Delta Lake silver versioning (Phase 3):** `DELTA_MIN_VERSIONS` wired in `scripts/delta/promote.py`, append + DuckDB time-travel tests, `make ci-delta-versioning`; `scripts/ci/check_delta_versioning.py` gate
+- **New dataset checklist:** `docs/NEW-DATASET-CHECKLIST.md` for adding catalog datasets; `make ci-new-dataset-checklist`; `scripts/ci/check_new_dataset_checklist.py` gate
 
 ### Changed
 
