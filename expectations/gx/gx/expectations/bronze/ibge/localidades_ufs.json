@@ -1,0 +1,58 @@
+{
+  "expectations": [
+    {
+      "id": "c7612c66-841a-47a6-9687-2d975865a59e",
+      "kwargs": {
+        "max_value": 28,
+        "min_value": 27
+      },
+      "meta": {
+        "notes": "Brazil has 26 states + Federal District (27 UFs)."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "82ca6744-e706-441c-b06a-dca3a81d3373",
+      "kwargs": {
+        "column": "sigla_uf"
+      },
+      "meta": {
+        "notes": "Two-letter state code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "a78e593b-c393-4229-8c7b-84a86834162d",
+      "kwargs": {
+        "column": "sigla_uf"
+      },
+      "meta": {
+        "notes": "State code must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "f178a89f-e38e-4179-9493-3b50fd70192b",
+      "kwargs": {
+        "column": "sigla_uf"
+      },
+      "meta": {
+        "notes": "Each UF appears once per snapshot."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    }
+  ],
+  "id": "e748c82b-a0b6-4361-a0b4-56a63fcb0983",
+  "meta": {
+    "agencia": "IBGE",
+    "dataset_id": "ibge.localidades-ufs",
+    "fonte_oficial": "https://servicodados.ibge.gov.br/api/docs/localidades",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.ibge.localidades_ufs",
+  "notes": null
+}

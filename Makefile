@@ -1,8 +1,9 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-abastecimento dbt-build-armazenamento dbt-build-agricultura-familiar dbt-build-ibge-pam dbt-build-bcb-sgs ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-abastecimento dbt-build-armazenamento dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
 LAKE_LOCAL_ROOT ?= ./lake
+LAKE_ABS := $(abspath $(LAKE_LOCAL_ROOT))
 DUCKDB_PATH ?= ./duckdb/open_data_agro.duckdb
 POSTGRES_HOST_PORT ?= 5432
 DATABASE_URL ?= postgresql://open_data_agro:open_data_agro@localhost:$(POSTGRES_HOST_PORT)/open_data_agro?sslmode=disable
@@ -151,6 +152,15 @@ conab-agricultura-familiar-mvp:
 
 ibge-localidades-mvp:
 	go test ./internal/ibge/... ./internal/ingest/ -run 'IBGE|Localidades|Flatten|3550308'
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_ibge_localidades_silver.py
+	$(MAKE) dbt-build-ibge-localidades LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS municipios FROM analytics.ibge_localidades_municipios"
+	duckdb $(DUCKDB_PATH) -c "SELECT codigo_ibge, nome, sigla_uf FROM analytics.ibge_localidades_municipios WHERE codigo_ibge = '3550308'"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS ufs FROM analytics.ibge_localidades_ufs"
+
+dbt-build-ibge-localidades: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__localidades_municipios+ stg_ibge__localidades_ufs+'
 
 dbt-build-ibge-pam:
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_ibge__pam_area_quantidade+'

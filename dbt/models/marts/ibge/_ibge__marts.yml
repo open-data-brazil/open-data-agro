@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: mart_ibge__localidades_municipios
+    description: |
+      IBGE municipality reference — grain is codigo_ibge (seven-digit snapshot).
+      Materialized to lake/gold/mart_ibge__localidades_municipios/ as Parquet (local-first).
+    config:
+      meta:
+        dataset_id: ibge.localidades-municipios
+        grain: codigo_ibge
+    columns:
+      - name: codigo_ibge
+        tests:
+          - not_null
+          - unique
+      - name: nome
+        tests:
+          - not_null
+      - name: sigla_uf
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+
+  - name: mart_ibge__localidades_ufs
+    description: |
+      IBGE state (UF) reference — grain is codigo_uf.
+      Materialized to lake/gold/mart_ibge__localidades_ufs/ as Parquet (local-first).
+    config:
+      meta:
+        dataset_id: ibge.localidades-ufs
+        grain: codigo_uf
+    columns:
+      - name: codigo_uf
+        tests:
+          - not_null
+          - unique
+      - name: sigla_uf
+        tests:
+          - not_null
+          - unique
+      - name: nome
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
