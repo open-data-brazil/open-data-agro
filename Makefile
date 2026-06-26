@@ -258,6 +258,7 @@ duckdb-install:
 	@ln -sf "$(HOME)/.duckdb/cli/latest/duckdb" .local/bin/duckdb
 
 dbt-deps:
+	cp -f dbt/profiles.yml.example dbt/profiles.yml
 	cd dbt && dbt deps --profiles-dir .
 
 dbt-build: dbt-deps
