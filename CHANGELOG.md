@@ -59,3 +59,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Roadmap sync:** `docs/ROADMAP.md` updated to reflect Go local-first stack, phases 0–19 status, and CI/collection sprint exit targets
 - **CI dbt mirror:** `make ci-dbt` extended with `ci-validate-codigo-ibge` and `ci-collection-full-mvp` to match GitHub Actions `dbt` job locally
 - **Phase TASKS bulk sync:** `.local/phases/*/TASKS.md` checkboxes aligned with repo reality (phases 10–13, 15–17, sprint progress table)
+- **OFFICIAL-SOURCES status sync:** normalized all dataset rows to `**Pn — implemented**`; added `scripts/ci/check_official_sources_status.py` gate

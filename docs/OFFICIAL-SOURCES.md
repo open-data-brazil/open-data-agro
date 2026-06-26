@@ -4,6 +4,8 @@
 
 **Initial portal:** [CONAB — Downloads de Arquivos](https://portaldeinformacoes.conab.gov.br/download-arquivos.html)
 
+**Status column:** `**Pn — implemented**` = full E2E pipeline (ingest → GE → silver → dbt → DuckDB), verified via `make *-mvp` and CI collection gates. Priority `Pn` reflects collection sprint ordering, not implementation state.
+
 ---
 
 ## CONAB — Portal de Informações Agropecuárias
@@ -25,8 +27,8 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 
 | Dataset ID | Portal label | Status |
 |------------|--------------|--------|
-| `conab.estimativa-graos` | Estimativa Grãos | **P0 MVP — implemented** |
-| `conab.serie-historica-graos` | Série Histórica Grãos | **P0 MVP — implemented** |
+| `conab.estimativa-graos` | Estimativa Grãos | **P0 — implemented** |
+| `conab.serie-historica-graos` | Série Histórica Grãos | **P0 — implemented** |
 | `conab.estimativa-cana` | Estimativa Cana-de-Açúcar | **P1 — implemented** |
 | `conab.serie-historica-cana` | Série Histórica Cana-de-Açúcar | **P1 — implemented** |
 | `conab.estimativa-cafe` | Estimativa Café | **P1 — implemented** |
@@ -38,21 +40,21 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 | Dataset ID | Portal label | Status |
 |------------|--------------|--------|
 | `conab.oferta-demanda` | Oferta e Demanda | **P1 — implemented** |
-| `conab.precos-minimos` | Preços Mínimos | **P2 — full pipeline** |
-| `conab.precos-agropecuarios-mensal-uf` | Preços agropecuários Mensal UF | **P1 — full pipeline** |
-| `conab.precos-agropecuarios-mensal-municipio` | Preços agropecuários Mensal Município | **P1 — full pipeline** |
-| `conab.precos-agropecuarios-semanal-uf` | Preços agropecuários Semanal UF | **P1 — full pipeline** |
-| `conab.precos-agropecuarios-semanal-municipio` | Preços agropecuários Semanal Municipio | **P1 — full pipeline** |
-| `conab.prohort-diario` | Prohort Diário | **P3 — full pipeline** |
-| `conab.prohort-mensal` | Prohort Mensal | **P3 — full pipeline** |
+| `conab.precos-minimos` | Preços Mínimos | **P2 — implemented** |
+| `conab.precos-agropecuarios-mensal-uf` | Preços agropecuários Mensal UF | **P1 — implemented** |
+| `conab.precos-agropecuarios-mensal-municipio` | Preços agropecuários Mensal Município | **P1 — implemented** |
+| `conab.precos-agropecuarios-semanal-uf` | Preços agropecuários Semanal UF | **P1 — implemented** |
+| `conab.precos-agropecuarios-semanal-municipio` | Preços agropecuários Semanal Municipio | **P1 — implemented** |
+| `conab.prohort-diario` | Prohort Diário | **P3 — implemented** |
+| `conab.prohort-mensal` | Prohort Mensal | **P3 — implemented** |
 
 ### Abastecimento (Phase 12)
 
 | Dataset ID | Portal label | Status |
 |------------|--------------|--------|
 | `conab.estoques-publicos` | Estoques Públicos | **P1 — implemented** |
-| `conab.operacoes-comercializacao` | Operações de Comercialização | **P2 — full pipeline** |
-| `conab.vendas-balcao` | Vendas em Balcão | **P2 — full pipeline** |
+| `conab.operacoes-comercializacao` | Operações de Comercialização | **P2 — implemented** |
+| `conab.vendas-balcao` | Vendas em Balcão | **P2 — implemented** |
 
 ### ANP — Combustíveis (Phase 12 extension)
 
@@ -66,8 +68,8 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 | Dataset ID | Portal label | Status |
 |------------|--------------|--------|
 | `conab.armazenagem` | Armazenagem | **P1 — implemented** |
-| `conab.frete` | Frete | **P1 — full pipeline** |
-| `conab.serie-historica-capacidade-estatica` | Série Histórica da Capacidade Estática | **P1 — full pipeline** |
+| `conab.frete` | Frete | **P1 — implemented** |
+| `conab.serie-historica-capacidade-estatica` | Série Histórica da Capacidade Estática | **P1 — implemented** |
 
 ### Agricultura Familiar (Phase 14)
 
@@ -80,11 +82,11 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 
 | Dataset ID | API resource | Status |
 |------------|--------------|--------|
-| `ibge.localidades-municipios` | `/api/v1/localidades/municipios` | **P0 — full pipeline** |
-| `ibge.localidades-ufs` | `/api/v1/localidades/estados` | **P0 — full pipeline** |
-| `ibge.localidades-regioes` | `/api/v1/localidades/regioes` | **P1 — full pipeline** |
-| `ibge.localidades-mesorregioes` | `/api/v1/localidades/mesorregioes` | **P2 — full pipeline** |
-| `ibge.localidades-microrregioes` | `/api/v1/localidades/microrregioes` | **P2 — full pipeline** |
+| `ibge.localidades-municipios` | `/api/v1/localidades/municipios` | **P0 — implemented** |
+| `ibge.localidades-ufs` | `/api/v1/localidades/estados` | **P0 — implemented** |
+| `ibge.localidades-regioes` | `/api/v1/localidades/regioes` | **P1 — implemented** |
+| `ibge.localidades-mesorregioes` | `/api/v1/localidades/mesorregioes` | **P2 — implemented** |
+| `ibge.localidades-microrregioes` | `/api/v1/localidades/microrregioes` | **P2 — implemented** |
 
 **Fonte oficial:** [IBGE API de Localidades](https://servicodados.ibge.gov.br/api/docs/localidades)
 
