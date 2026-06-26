@@ -326,3 +326,35 @@ models:
               - cod_ibge_destino
               - ano
               - mes
+
+  - name: mart_conab__capacidade_estatica
+    description: |
+      Business mart — static storage capacity by UF and year (000 t).
+      Grain is ano + uf.
+    config:
+      meta:
+        dataset_id: conab.serie-historica-capacidade-estatica
+        grain: ano, uf
+        conab_section: Armazenamento e Logística
+    columns:
+      - name: uf
+        tests:
+          - not_null
+      - name: ano
+        tests:
+          - not_null
+      - name: quantidade_mil_t
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - ano
+              - uf

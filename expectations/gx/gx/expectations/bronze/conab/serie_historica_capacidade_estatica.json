@@ -1,0 +1,58 @@
+{
+  "expectations": [
+    {
+      "id": "2a233c35-262f-4d46-8dc1-4090b1545b1d",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "2d3a4d77-54ae-4088-845d-28d700c90d51",
+      "kwargs": {
+        "column": "Ano"
+      },
+      "meta": {
+        "notes": "Reference year."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "2fc6bc3e-5110-4925-a3e6-694e887ad712",
+      "kwargs": {
+        "column": "UF"
+      },
+      "meta": {
+        "notes": "State code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "1b7bdb2f-8386-4c1f-8f96-2cc9f8fadf79",
+      "kwargs": {
+        "column": "UF"
+      },
+      "meta": {
+        "notes": "State must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "5d9a66a1-c3aa-4613-a717-ac758c317948",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Armazenamento e Log\u00edstica > S\u00e9rie Hist\u00f3rica da Capacidade Est\u00e1tica",
+    "dataset_id": "conab.serie-historica-capacidade-estatica",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.serie_historica_capacidade_estatica",
+  "notes": null
+}

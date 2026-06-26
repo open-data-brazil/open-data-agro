@@ -104,6 +104,15 @@ sources:
           conab_section: Armazenamento e Logística
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/frete"
 
+      - name: serie_historica_capacidade_estatica
+        description: Série histórica capacidade estática — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_capacidade_estatica
+        meta:
+          dataset_id: conab.serie-historica-capacidade-estatica
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Armazenamento e Logística
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/serie_historica_capacidade_estatica"
+
       - name: alimenta_brasil_entregas
         description: Programa Alimenta Brasil — entregas
         meta:

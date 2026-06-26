@@ -174,3 +174,9 @@
   cast(valor_frete_tonelada as varchar) as valor_frete_tonelada,
   cast(valor_tonelada_km as varchar) as valor_tonelada_km
 {% endmacro %}
+
+{% macro conab_capacidade_estatica_columns() %}
+  cast("Ano" as varchar) as ano,
+  trim("UF") as uf,
+  cast("Quantidade (mil t)" as varchar) as quantidade_mil_t
+{% endmacro %}

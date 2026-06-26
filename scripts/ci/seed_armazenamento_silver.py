@@ -22,6 +22,7 @@ def main() -> int:
     lake_root.mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__armazenagem").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__frete").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__capacidade_estatica").mkdir(parents=True, exist_ok=True)
 
     source = str(lake_root / "bronze/seed.parquet")
     ingested = "2026-06-25T12:00:00Z"
@@ -71,7 +72,23 @@ def main() -> int:
         }
     )
     write_table(lake_root, "conab", "frete", frete)
-    print(f"seeded armazenagem silver under {lake_root / 'silver' / 'conab' / 'armazenagem'}")
+
+    capacidade = pa.table(
+        {
+            "Ano": ["2024", "2024", "2023"],
+            "UF": ["MT", "PR", "RS"],
+            "Quantidade (mil t)": ["45234,5", "32100,0", "28900,0"],
+            "_dataset_id": [
+                "conab.serie-historica-capacidade-estatica",
+                "conab.serie-historica-capacidade-estatica",
+                "conab.serie-historica-capacidade-estatica",
+            ],
+            "_ingested_at": [ingested, ingested, ingested],
+            "_source_file": [source, source, source],
+        }
+    )
+    write_table(lake_root, "conab", "serie_historica_capacidade_estatica", capacidade)
+    print(f"seeded armazenamento silver under {lake_root / 'silver' / 'conab'}")
     return 0
 
 

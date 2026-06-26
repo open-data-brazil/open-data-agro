@@ -67,7 +67,7 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 |------------|--------------|--------|
 | `conab.armazenagem` | Armazenagem | **P1 — implemented** |
 | `conab.frete` | Frete | **P1 — full pipeline** |
-| `conab.serie-historica-capacidade-estatica` | Série Histórica da Capacidade Estática | Catalog + GE + `.xls` ingest |
+| `conab.serie-historica-capacidade-estatica` | Série Histórica da Capacidade Estática | **P1 — full pipeline** |
 
 ### Agricultura Familiar (Phase 14)
 
