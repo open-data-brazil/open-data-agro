@@ -30,6 +30,27 @@
     nome
 {% endmacro %}
 
+{% macro ibge_localidades_mesorregioes_columns() %}
+    codigo_mesorregiao,
+    nome,
+    codigo_uf,
+    sigla_uf,
+    nome_uf,
+    codigo_regiao,
+    sigla_regiao,
+    nome_regiao
+{% endmacro %}
+
+{% macro ibge_localidades_microrregioes_columns() %}
+    codigo_microrregiao,
+    nome,
+    codigo_mesorregiao,
+    nome_mesorregiao,
+    codigo_uf,
+    sigla_uf,
+    nome_uf
+{% endmacro %}
+
 {% macro ibge_pam_area_quantidade_columns() %}
     sidra_tabela,
     codigo_ibge,

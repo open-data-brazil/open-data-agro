@@ -80,3 +80,58 @@ models:
       - name: fonte_oficial
         tests:
           - not_null
+
+  - name: mart_ibge__localidades_mesorregioes
+    description: |
+      IBGE mesorregiao reference — grain is codigo_mesorregiao.
+      Materialized to lake/gold/mart_ibge__localidades_mesorregioes/ as Parquet (local-first).
+    config:
+      meta:
+        dataset_id: ibge.localidades-mesorregioes
+        grain: codigo_mesorregiao
+    columns:
+      - name: codigo_mesorregiao
+        tests:
+          - not_null
+          - unique
+      - name: nome
+        tests:
+          - not_null
+      - name: sigla_uf
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+
+  - name: mart_ibge__localidades_microrregioes
+    description: |
+      IBGE microrregiao reference — grain is codigo_microrregiao.
+      Materialized to lake/gold/mart_ibge__localidades_microrregioes/ as Parquet (local-first).
+    config:
+      meta:
+        dataset_id: ibge.localidades-microrregioes
+        grain: codigo_microrregiao
+    columns:
+      - name: codigo_microrregiao
+        tests:
+          - not_null
+          - unique
+      - name: nome
+        tests:
+          - not_null
+      - name: codigo_mesorregiao
+        tests:
+          - not_null
+      - name: sigla_uf
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null

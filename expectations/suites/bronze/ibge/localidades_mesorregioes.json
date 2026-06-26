@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one mesorregiao row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "codigo_mesorregiao" },
+      "meta": { "notes": "Mesorregiao numeric code." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "codigo_mesorregiao" },
+      "meta": { "notes": "Grain key — mesorregiao code must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "sigla_uf" },
+      "meta": { "notes": "Parent UF must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ibge.localidades-mesorregioes",
+    "fonte_oficial": "https://servicodados.ibge.gov.br/api/docs/localidades",
+    "agencia": "IBGE"
+  },
+  "name": "bronze.ibge.localidades_mesorregioes",
+  "id": "bronze-ibge-localidades-mesorregioes-suite"
+}

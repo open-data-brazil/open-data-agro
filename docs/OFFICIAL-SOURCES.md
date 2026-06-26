@@ -83,8 +83,8 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 | `ibge.localidades-municipios` | `/api/v1/localidades/municipios` | **P0 — full pipeline** |
 | `ibge.localidades-ufs` | `/api/v1/localidades/estados` | **P0 — full pipeline** |
 | `ibge.localidades-regioes` | `/api/v1/localidades/regioes` | **P1 — full pipeline** |
-| `ibge.localidades-mesorregioes` | `/api/v1/localidades/mesorregioes` | Catalog + ingest |
-| `ibge.localidades-microrregioes` | `/api/v1/localidades/microrregioes` | Catalog + ingest |
+| `ibge.localidades-mesorregioes` | `/api/v1/localidades/mesorregioes` | **P2 — full pipeline** |
+| `ibge.localidades-microrregioes` | `/api/v1/localidades/microrregioes` | **P2 — full pipeline** |
 
 **Fonte oficial:** [IBGE API de Localidades](https://servicodados.ibge.gov.br/api/docs/localidades)
 

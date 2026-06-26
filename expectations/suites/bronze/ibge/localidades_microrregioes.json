@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one microrregiao row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "codigo_microrregiao" },
+      "meta": { "notes": "Microrregiao numeric code." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "codigo_microrregiao" },
+      "meta": { "notes": "Grain key — microrregiao code must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "codigo_mesorregiao" },
+      "meta": { "notes": "Parent mesorregiao must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ibge.localidades-microrregioes",
+    "fonte_oficial": "https://servicodados.ibge.gov.br/api/docs/localidades",
+    "agencia": "IBGE"
+  },
+  "name": "bronze.ibge.localidades_microrregioes",
+  "id": "bronze-ibge-localidades-microrregioes-suite"
+}

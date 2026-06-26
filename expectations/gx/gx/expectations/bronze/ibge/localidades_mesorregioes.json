@@ -1,0 +1,57 @@
+{
+  "expectations": [
+    {
+      "id": "3812dc54-93d2-4439-b843-8b439efb5883",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one mesorregiao row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "825f2d60-b766-44d2-bd16-377fc998f198",
+      "kwargs": {
+        "column": "codigo_mesorregiao"
+      },
+      "meta": {
+        "notes": "Mesorregiao numeric code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "629fd183-3a5d-4beb-a218-5c15a5f2c7bd",
+      "kwargs": {
+        "column": "codigo_mesorregiao"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 mesorregiao code must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "6cdd8e87-c0e6-4292-9345-2635224ec4d0",
+      "kwargs": {
+        "column": "sigla_uf"
+      },
+      "meta": {
+        "notes": "Parent UF must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "820147e7-681b-4809-8f79-2fa4a3e4f6b5",
+  "meta": {
+    "agencia": "IBGE",
+    "dataset_id": "ibge.localidades-mesorregioes",
+    "fonte_oficial": "https://servicodados.ibge.gov.br/api/docs/localidades",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.ibge.localidades_mesorregioes",
+  "notes": null
+}

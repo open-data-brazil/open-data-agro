@@ -80,6 +80,42 @@ func TestIBGERegioesGoldenVector(t *testing.T) {
 	}
 }
 
+func TestIBGEMesorregioesGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readIBGETestdata(t, "mesorregioes.sample.json")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("ibge.localidades-mesorregioes"),
+		Format:    catalog.FormatJSON,
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 5 {
+		t.Fatalf("rowCount: got %d want 5", rowCount)
+	}
+}
+
+func TestIBGEMicrorregioesGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readIBGETestdata(t, "microrregioes.sample.json")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("ibge.localidades-microrregioes"),
+		Format:    catalog.FormatJSON,
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 5 {
+		t.Fatalf("rowCount: got %d want 5", rowCount)
+	}
+}
+
 func readIBGETestdata(t *testing.T, name string) []byte {
 	t.Helper()
 	path := filepath.Join("..", "ibge", "testdata", name)

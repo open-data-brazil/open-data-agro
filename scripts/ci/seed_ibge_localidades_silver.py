@@ -23,6 +23,8 @@ def main() -> int:
     (lake_root / "gold" / "mart_ibge__localidades_municipios").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_ibge__localidades_ufs").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_ibge__localidades_regioes").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_ibge__localidades_mesorregioes").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_ibge__localidades_microrregioes").mkdir(parents=True, exist_ok=True)
 
     source = str(lake_root / "bronze/seed.parquet")
     ingested = "2026-06-25T12:00:00Z"
@@ -76,6 +78,45 @@ def main() -> int:
         }
     )
     write_table(lake_root, "ibge", "localidades_regioes", regioes)
+
+    mesorregioes = pa.table(
+        {
+            "codigo_mesorregiao": ["5101", "5106"],
+            "nome": ["Norte Mato-grossense", "Sudoeste Mato-grossense"],
+            "codigo_uf": ["51", "51"],
+            "sigla_uf": ["MT", "MT"],
+            "nome_uf": ["Mato Grosso", "Mato Grosso"],
+            "codigo_regiao": ["5", "5"],
+            "sigla_regiao": ["CO", "CO"],
+            "nome_regiao": ["Centro-Oeste", "Centro-Oeste"],
+            "_dataset_id": [
+                "ibge.localidades-mesorregioes",
+                "ibge.localidades-mesorregioes",
+            ],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "ibge", "localidades_mesorregioes", mesorregioes)
+
+    microrregioes = pa.table(
+        {
+            "codigo_microrregiao": ["51006", "51018"],
+            "nome": ["Alto Teles Pires", "Primavera do Leste"],
+            "codigo_mesorregiao": ["5101", "5106"],
+            "nome_mesorregiao": ["Norte Mato-grossense", "Sudoeste Mato-grossense"],
+            "codigo_uf": ["51", "51"],
+            "sigla_uf": ["MT", "MT"],
+            "nome_uf": ["Mato Grosso", "Mato Grosso"],
+            "_dataset_id": [
+                "ibge.localidades-microrregioes",
+                "ibge.localidades-microrregioes",
+            ],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "ibge", "localidades_microrregioes", microrregioes)
     print(f"seeded IBGE localidades silver under {lake_root / 'silver' / 'ibge'}")
     return 0
 

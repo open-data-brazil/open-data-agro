@@ -195,9 +195,13 @@ ibge-localidades-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS ufs FROM analytics.ibge_localidades_ufs"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS regioes FROM analytics.ibge_localidades_regioes"
 	duckdb $(DUCKDB_PATH) -c "SELECT codigo_regiao, sigla_regiao, nome FROM analytics.ibge_localidades_regioes ORDER BY codigo_regiao"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS mesorregioes FROM analytics.ibge_localidades_mesorregioes"
+	duckdb $(DUCKDB_PATH) -c "SELECT codigo_mesorregiao, nome, sigla_uf FROM analytics.ibge_localidades_mesorregioes WHERE sigla_uf = 'MT' ORDER BY codigo_mesorregiao LIMIT 3"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS microrregioes FROM analytics.ibge_localidades_microrregioes"
+	duckdb $(DUCKDB_PATH) -c "SELECT codigo_microrregiao, nome, codigo_mesorregiao FROM analytics.ibge_localidades_microrregioes WHERE codigo_microrregiao = '51006'"
 
 dbt-build-ibge-localidades: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__localidades_municipios+ stg_ibge__localidades_ufs+ stg_ibge__localidades_regioes+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__localidades_municipios+ stg_ibge__localidades_ufs+ stg_ibge__localidades_regioes+ stg_ibge__localidades_mesorregioes+ stg_ibge__localidades_microrregioes+'
 
 dbt-build-ibge-pam:
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_ibge__pam_area_quantidade+'
