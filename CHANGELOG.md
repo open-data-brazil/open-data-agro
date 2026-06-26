@@ -36,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Full collection sprint exit:** `make collection-full-mvp` — runs `p1-collection-mvp`, `collection-macro-mvp`, `ibge-pam-mvp`, and `anp-mvp` end-to-end
 - **CI full collection sprint exit:** `make ci-collection-full-mvp` in GitHub Actions `dbt` job — chains all four offline collection CI pipelines with isolated `/tmp` lakes
 - **Roadmap sync:** `docs/ROADMAP.md` updated to reflect Go local-first stack, phases 0–19 status, and CI/collection sprint exit targets
+- **CI dbt mirror:** `make ci-dbt` extended with `ci-validate-codigo-ibge` and `ci-collection-full-mvp` to match GitHub Actions `dbt` job locally
 - **CONAB Armazenamento e Logística (Phase 13 MVP):** `armazenamento-logistica.yaml` (3 datasets), legacy `.xls` ingest, full pipeline for `conab.armazenagem`, `make conab-armazenamento-mvp`
 - **CONAB Agricultura Familiar (Phase 14 MVP):** `agricultura-familiar.yaml` (2 PAA datasets), full pipeline for entregas and propostas, `make conab-agricultura-familiar-mvp`
 - **IBGE Localidades (Phase 15):** full E2E for municipios + UFs + regiões + meso/micro — dbt marts, DuckDB views `analytics.ibge_localidades_*`, `make ibge-localidades-mvp`

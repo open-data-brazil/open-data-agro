@@ -61,6 +61,8 @@ ci-dbt: duckdb-install python-install
 		$(MAKE) analytics-init analytics-smoke
 	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
 	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
+	$(MAKE) ci-validate-codigo-ibge CI_COD_IBGE_LAKE=$(CI_COD_IBGE_LAKE)
+	$(MAKE) ci-collection-full-mvp
 
 # Offline CI: seed CONAB + IBGE PAM marts with cod_ibge/codigo_ibge, build gold, cross-check.
 ci-validate-codigo-ibge: duckdb-install python-install dbt-deps

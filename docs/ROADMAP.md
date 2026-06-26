@@ -92,7 +92,7 @@
 |-----|---------|--------------|
 | `security` | `govulncheck` | — |
 | `go` | unit tests, DuckDB + GE integration, lint | `make ci-go` |
-| `dbt` | dbt build, analytics smoke, cod_ibge validation, full collection | `make ci-dbt`, `make ci-validate-codigo-ibge`, `make ci-collection-full-mvp` |
+| `dbt` | dbt build, analytics smoke, cod_ibge validation, full collection | `make ci-dbt` (full mirror) |
 | `quality` | bronze GE checkpoint | `scripts/quality/run_checkpoint.py` |
 
 ---
