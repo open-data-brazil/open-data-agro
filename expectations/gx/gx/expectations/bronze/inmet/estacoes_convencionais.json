@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "id": "661979e5-cb95-4fba-8f87-905c1e5e9853",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Conventional station catalog rows."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "9976492d-8469-4fa2-9721-37c123c5d02d",
+      "kwargs": {
+        "column": "cd_estacao"
+      },
+      "meta": {
+        "notes": "Unique station codes."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    }
+  ],
+  "id": "87c4e51f-5e94-4864-ad0a-e7fbd5290eb2",
+  "meta": {
+    "agencia": "INMET",
+    "dataset_id": "inmet.estacoes-convencionais",
+    "fonte_oficial": "https://portal.inmet.gov.br/paginas/catalogoman",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.inmet.estacoes_convencionais",
+  "notes": null
+}

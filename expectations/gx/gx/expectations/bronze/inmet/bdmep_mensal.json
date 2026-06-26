@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "id": "85d0b912-e8b4-47b8-b0c9-997535a3dd1a",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Monthly long-format rows."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "d9991086-8175-48d9-a889-d65d90ae8efd",
+      "kwargs": {
+        "column": "mes"
+      },
+      "meta": {
+        "notes": "YYYY-MM month bucket."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    }
+  ],
+  "id": "dce19ea8-5243-4c8a-bf10-ff6356412732",
+  "meta": {
+    "agencia": "INMET",
+    "dataset_id": "inmet.bdmep-mensal",
+    "fonte_oficial": "https://bdmep.inmet.gov.br/",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.inmet.bdmep_mensal",
+  "notes": null
+}

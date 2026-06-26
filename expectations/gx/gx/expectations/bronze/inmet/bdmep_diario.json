@@ -1,0 +1,80 @@
+{
+  "expectations": [
+    {
+      "id": "9b5dc64e-d979-4741-8ba4-f2d2c9d2096a",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Daily long-format rows required."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "190186b2-7809-4b52-87e2-e7ebdeb535ba",
+      "kwargs": {
+        "column": "cd_estacao"
+      },
+      "meta": {
+        "notes": "Station code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "8e8799fe-c852-41ee-9c23-f0a317c80545",
+      "kwargs": {
+        "column": "data"
+      },
+      "meta": {
+        "notes": "Observation date (UTC source)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "747c8dd2-b051-4701-84e2-e516755d1f4b",
+      "kwargs": {
+        "column": "data"
+      },
+      "meta": {
+        "notes": "Date must be parseable and present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "45306b9e-7dda-4320-8e63-df3d147766d0",
+      "kwargs": {
+        "column": "data",
+        "regex": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "meta": {
+        "notes": "Canonical YYYY-MM-DD date."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_match_regex"
+    },
+    {
+      "id": "9bede05c-860d-465c-91de-2e1f620d5637",
+      "kwargs": {
+        "column": "valor"
+      },
+      "meta": {
+        "notes": "Measurement value; 9999 sentinels normalized to null upstream."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    }
+  ],
+  "id": "c9e00741-3eb8-4946-a616-9c725c0cd45a",
+  "meta": {
+    "agencia": "INMET",
+    "dataset_id": "inmet.bdmep-diario",
+    "fonte_oficial": "https://bdmep.inmet.gov.br/",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.inmet.bdmep_diario",
+  "notes": null
+}

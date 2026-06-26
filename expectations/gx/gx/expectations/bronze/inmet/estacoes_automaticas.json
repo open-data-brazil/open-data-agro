@@ -1,0 +1,79 @@
+{
+  "expectations": [
+    {
+      "id": "a04dc958-001d-4306-9816-7be5d240aace",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Station catalog must contain at least one row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "e9f3ef96-36cf-4d2f-a8ec-1e60f9736adb",
+      "kwargs": {
+        "column": "cd_estacao"
+      },
+      "meta": {
+        "notes": "INMET station code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "e7bbb51b-0b97-4e8e-b1b5-7288e83bcdd0",
+      "kwargs": {
+        "column": "cd_estacao"
+      },
+      "meta": {
+        "notes": "Station code must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "7ae54b2d-a365-401b-9630-205b109e9e92",
+      "kwargs": {
+        "column": "cd_estacao"
+      },
+      "meta": {
+        "notes": "Each station appears once per snapshot."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    },
+    {
+      "id": "86f0ae2b-8f6a-4a71-a5fb-34d3ba187a00",
+      "kwargs": {
+        "column": "latitude"
+      },
+      "meta": {
+        "notes": "Latitude required for geospatial joins."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "ceb1a775-2dab-4dbb-b7c8-68e761685278",
+      "kwargs": {
+        "column": "longitude"
+      },
+      "meta": {
+        "notes": "Longitude required for geospatial joins."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "78052ddc-9542-4c16-9db3-b079fd9cba6c",
+  "meta": {
+    "agencia": "INMET",
+    "dataset_id": "inmet.estacoes-automaticas",
+    "fonte_oficial": "https://portal.inmet.gov.br/paginas/catalogoaut",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.inmet.estacoes_automaticas",
+  "notes": null
+}

@@ -35,6 +35,8 @@ models:
         +materialized: view
       cepea:
         +materialized: view
+      inmet:
+        +materialized: view
     intermediate:
       conab:
         +materialized: view
@@ -46,4 +48,6 @@ models:
       ibge:
         +materialized: external
       cepea:
+        +materialized: external
+      inmet:
         +materialized: external

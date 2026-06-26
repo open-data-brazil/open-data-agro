@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: inmet
+    description: INMET silver Delta tables promoted from bronze ingest.
+    meta:
+      fonte_oficial: https://portal.inmet.gov.br/
+      agencia: INMET
+    tables:
+      - name: estacoes_automaticas
+        description: Automatic weather station catalog.
+      - name: estacoes_convencionais
+        description: Conventional weather station catalog.
+      - name: bdmep_diario
+        description: BDMEP daily climate observations (long format).
+      - name: bdmep_mensal
+        description: BDMEP monthly climate rollups (long format).

@@ -1,0 +1,108 @@
+version: 2
+
+models:
+  - name: mart_inmet__estacoes_automaticas
+    description: INMET automatic weather station catalog (one row per station).
+    meta:
+      fonte_oficial: https://portal.inmet.gov.br/
+      agencia: INMET
+      dataset_id: inmet.estacoes-automaticas
+    columns:
+      - name: cd_estacao
+        description: WMO station code.
+        tests:
+          - not_null
+          - unique
+      - name: nome
+        description: Station name.
+        tests:
+          - not_null
+      - name: uf
+        description: Federative unit (UF).
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+
+  - name: mart_inmet__estacoes_convencionais
+    description: INMET conventional weather station catalog (one row per station).
+    meta:
+      fonte_oficial: https://portal.inmet.gov.br/
+      agencia: INMET
+      dataset_id: inmet.estacoes-convencionais
+    columns:
+      - name: cd_estacao
+        description: WMO station code.
+        tests:
+          - not_null
+          - unique
+      - name: nome
+        description: Station name.
+        tests:
+          - not_null
+      - name: uf
+        description: Federative unit (UF).
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+
+  - name: mart_inmet__bdmep_diario
+    description: BDMEP daily climate observations in long format.
+    meta:
+      fonte_oficial: https://bdmep.inmet.gov.br/
+      agencia: INMET
+      dataset_id: inmet.bdmep-diario
+    columns:
+      - name: cd_estacao
+        description: WMO station code.
+        tests:
+          - not_null
+      - name: data
+        description: Observation date (YYYY-MM-DD, UTC source).
+        tests:
+          - not_null
+      - name: variavel
+        description: Climate variable code (e.g. precipitacao, temperatura_ar).
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - cd_estacao
+            - data
+            - variavel
+
+  - name: mart_inmet__bdmep_mensal
+    description: BDMEP monthly climate rollups in long format.
+    meta:
+      fonte_oficial: https://bdmep.inmet.gov.br/
+      agencia: INMET
+      dataset_id: inmet.bdmep-mensal
+    columns:
+      - name: cd_estacao
+        description: WMO station code.
+        tests:
+          - not_null
+      - name: mes
+        description: Month key (YYYY-MM).
+        tests:
+          - not_null
+      - name: variavel
+        description: Climate variable code.
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - cd_estacao
+            - mes
+            - variavel

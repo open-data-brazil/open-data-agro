@@ -54,6 +54,10 @@ mkdir -p "$LAKE_ABS/gold/mart_cepea__soja_paranagua"
 mkdir -p "$LAKE_ABS/gold/mart_cepea__soja_parana"
 mkdir -p "$LAKE_ABS/gold/mart_cepea__milho"
 mkdir -p "$LAKE_ABS/gold/mart_cepea__boi_gordo"
+mkdir -p "$LAKE_ABS/gold/mart_inmet__estacoes_automaticas"
+mkdir -p "$LAKE_ABS/gold/mart_inmet__estacoes_convencionais"
+mkdir -p "$LAKE_ABS/gold/mart_inmet__bdmep_diario"
+mkdir -p "$LAKE_ABS/gold/mart_inmet__bdmep_mensal"
 
 "$DUCKDB_BIN" "$DUCKDB_PATH" -c "CREATE SCHEMA IF NOT EXISTS analytics;"
 
