@@ -108,11 +108,14 @@ Historical export via CEPEA “Consulta ao Banco de Dados”; live window uses p
 
 ---
 
-## MDIC Comex (Phase 21)
+## MDIC Comex (Phase 21 + 35)
 
 | `dataset_id` | Source min | Catalog default | Backfill |
 |--------------|------------|-----------------|----------|
 | `mdic.comex-exportacao-ncm-mes` | **1997** (API) | 2015 (ag NCM spot-check) | `--from 2015-01-01` or `1997-01-01` |
+| `mdic.comex-importacao-ncm-mes` | **1997** (API) | 2015 (fertilizer NCMs) | `make mdic-comex-extended-mvp` |
+| `mdic.comex-exportacao-uf-ncm` | **1997** (API) | 2015 (ag NCM × UF) | `make mdic-comex-extended-mvp` |
+| `mdic.comex-importacao-diesel-ncm` | **1997** (API) | 2015 (diesel NCMs) | `make mdic-comex-extended-mvp` |
 
 API chunks one calendar year per request. Ag NCM series may start later than 1997 depending on code.
 

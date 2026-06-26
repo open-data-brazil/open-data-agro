@@ -139,3 +139,39 @@
 **Definition:** Transform raw official records into canonical project types (codes, dates, units, CRS).
 **Not the same as:** Business analytics or aggregation for dashboards.
 **Code name:** `normalize*`, `toCanonical*`
+
+---
+
+## NCM (Nomenclatura Comum do Mercosul)
+
+**Definition:** Eight-digit Brazilian foreign trade product code used by MDIC Comex Stat.
+**Code name:** `co_ncm` (bronze), `produto_slug` (canonical join key)
+
+### Ag export NCMs (`mdic.comex-exportacao-ncm-mes`, `mdic.comex-exportacao-uf-ncm`)
+
+| `co_ncm` | `produto_slug` | Product |
+|----------|----------------|---------|
+| `12019000` | `soja` | Soja |
+| `10059000` | `milho` | Milho |
+| `10019900` | `trigo` | Trigo |
+| `02013000` | `carne_bovina` | Carne bovina (fresca/refrigerada) |
+| `02023000` | `carne_bovina` | Carne bovina (congelada) |
+
+### Fertilizer import NCMs (`mdic.comex-importacao-ncm-mes`)
+
+| `co_ncm` | `produto_slug` | Product |
+|----------|----------------|---------|
+| `31021010` | `ureia` | Ureia |
+| `31022100` | `sulfato_amonia` | Sulfato de amônio |
+| `31023000` | `nitrato_amonia` | Nitrato de amônio |
+| `31024000` | `misturas_amonia` | Misturas de amônio |
+| `31052000` | `npk` | Adubos NPK |
+
+### Diesel import NCMs (`mdic.comex-importacao-diesel-ncm`)
+
+| `co_ncm` | `produto_slug` | Product |
+|----------|----------------|---------|
+| `27101921` | `diesel` | Gasóleo (óleo diesel) |
+| `27101922` | `oleo_combustivel` | Outros óleos combustíveis |
+
+Source of truth for slug mapping: `internal/mdic/comex.go` → `ProdutoSlug`.

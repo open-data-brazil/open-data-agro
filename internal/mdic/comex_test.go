@@ -44,6 +44,93 @@ func TestFlattenComexExport(t *testing.T) {
 	}
 }
 
+func TestFlattenComexImport(t *testing.T) {
+	t.Parallel()
+
+	raw := readTestdata(t, "comex_import.sample.json")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("mdic.comex-importacao-ncm-mes"),
+		ComexFlow: "import",
+	}
+
+	headers, rows, err := FlattenComex(entry, raw)
+	if err != nil {
+		t.Fatalf("FlattenComex: %v", err)
+	}
+	if len(rows) != 2 {
+		t.Fatalf("rows: got %d want 2", len(rows))
+	}
+
+	idx := map[string]int{}
+	for i, h := range headers {
+		idx[h] = i
+	}
+	if got := rows[0][idx["co_ncm"]]; got != "31021010" {
+		t.Fatalf("co_ncm: got %q", got)
+	}
+	if got := rows[0][idx["produto_slug"]]; got != "ureia" {
+		t.Fatalf("produto_slug: got %q want ureia", got)
+	}
+	if got := rows[0][idx["valor_cif_usd"]]; got != "125000000" {
+		t.Fatalf("valor_cif_usd: got %q", got)
+	}
+}
+
+func TestFlattenComexExportUF(t *testing.T) {
+	t.Parallel()
+
+	raw := readTestdata(t, "comex_export_uf.sample.json")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("mdic.comex-exportacao-uf-ncm"),
+		ComexFlow: "export",
+	}
+
+	headers, rows, err := FlattenComex(entry, raw)
+	if err != nil {
+		t.Fatalf("FlattenComex: %v", err)
+	}
+	if len(rows) != 3 {
+		t.Fatalf("rows: got %d want 3", len(rows))
+	}
+
+	idx := map[string]int{}
+	for i, h := range headers {
+		idx[h] = i
+	}
+	if got := rows[0][idx["uf"]]; got != "PR" {
+		t.Fatalf("uf: got %q want PR", got)
+	}
+	if got := rows[1][idx["uf"]]; got != "MT" {
+		t.Fatalf("uf: got %q want MT", got)
+	}
+}
+
+func TestFlattenComexImportDiesel(t *testing.T) {
+	t.Parallel()
+
+	raw := readTestdata(t, "comex_import_diesel.sample.json")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("mdic.comex-importacao-diesel-ncm"),
+		ComexFlow: "import",
+	}
+
+	headers, rows, err := FlattenComex(entry, raw)
+	if err != nil {
+		t.Fatalf("FlattenComex: %v", err)
+	}
+	if len(rows) != 1 {
+		t.Fatalf("rows: got %d want 1", len(rows))
+	}
+
+	idx := map[string]int{}
+	for i, h := range headers {
+		idx[h] = i
+	}
+	if got := rows[0][idx["produto_slug"]]; got != "diesel" {
+		t.Fatalf("produto_slug: got %q want diesel", got)
+	}
+}
+
 func TestMonthToDate(t *testing.T) {
 	t.Parallel()
 

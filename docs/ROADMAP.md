@@ -146,7 +146,8 @@
 - Phase 32 — source discovery ✅ — [SOURCE-DISCOVERY-CATALOG.md](../.local/SOURCE-DISCOVERY-CATALOG.md) (local, gitignored)
 - Phase 33 — collection hardening ✅ — [DATA-HISTORY-RANGES.md](DATA-HISTORY-RANGES.md) · `make ci-collection-hardening-mvp`
 - Phase 34 — BR logistics extended ✅ — ANTT volume + receita · `make ci-br-logistica-extended-mvp`
-- Phases 35–38 — gap closure (MDIC, FAO, IBGE LSPA, EIA)
+- Phase 35 — BR comex extended ✅ — MDIC import + export UF + diesel · `make ci-mdic-comex-extended-mvp`
+- Phases 36–38 — gap closure (FAO, IBGE LSPA, EIA)
 - Phase 29 — unified PostgreSQL ✅ — `make unified-db-sync`
 
 **Phase 20 scaffold:** [.local/phases/20-analytics-crossing/README.md](../.local/phases/20-analytics-crossing/README.md) — analytics crossing (feature joins); implementation **not started** (IA deferred).

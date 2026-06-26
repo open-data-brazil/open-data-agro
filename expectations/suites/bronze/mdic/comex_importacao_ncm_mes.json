@@ -1,0 +1,42 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Comex import series must contain observations." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "co_ncm" },
+      "meta": { "notes": "Official NCM code for traceability." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "data" },
+      "meta": { "notes": "Month grain required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "valor_cif_usd" },
+      "meta": { "notes": "CIF import value in USD." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "quantidade_kg" },
+      "meta": { "notes": "Import quantity in kilograms." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["co_ncm", "data"] },
+      "meta": { "notes": "No duplicate observations per NCM/month." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "mdic.comex-importacao-ncm-mes",
+    "fonte_oficial": "https://comexstat.mdic.gov.br/",
+    "agencia": "MDIC"
+  },
+  "name": "bronze.mdic.comex_importacao_ncm_mes",
+  "id": "bronze-mdic-comex-importacao-ncm-mes-suite"
+}

@@ -47,6 +47,8 @@ type RegistryEntry struct {
 	FonteTipo    string        `json:"fonteTipo,omitempty" yaml:"fonte_tipo,omitempty"`
 	ComexFlow    string        `json:"comexFlow,omitempty" yaml:"comex_flow,omitempty"`
 	ComexNCMs    []string      `json:"comexNcms,omitempty" yaml:"comex_ncms,omitempty"`
+	ComexDetails []string      `json:"comexDetails,omitempty" yaml:"comex_details,omitempty"`
+	ComexMetrics []string      `json:"comexMetrics,omitempty" yaml:"comex_metrics,omitempty"`
 	CKANPackageID string       `json:"ckanPackageId,omitempty" yaml:"ckan_package_id,omitempty"`
 	CKANResourceFormat string  `json:"ckanResourceFormat,omitempty" yaml:"ckan_resource_format,omitempty"`
 	CKANResourceNameContains string `json:"ckanResourceNameContains,omitempty" yaml:"ckan_resource_name_contains,omitempty"`

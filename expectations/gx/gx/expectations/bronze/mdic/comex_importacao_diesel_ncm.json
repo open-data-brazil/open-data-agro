@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Diesel import series must contain observations." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "produto_slug" },
+      "meta": { "notes": "Canonical diesel slug for joins." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "valor_cif_usd" },
+      "meta": { "notes": "CIF import value in USD." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["co_ncm", "data"] },
+      "meta": { "notes": "No duplicate observations per NCM/month." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "mdic.comex-importacao-diesel-ncm",
+    "fonte_oficial": "https://comexstat.mdic.gov.br/",
+    "agencia": "MDIC"
+  },
+  "name": "bronze.mdic.comex_importacao_diesel_ncm",
+  "id": "bronze-mdic-comex-importacao-diesel-ncm-suite"
+}

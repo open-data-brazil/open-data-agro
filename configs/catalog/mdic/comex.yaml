@@ -1,4 +1,4 @@
-# MDIC — Comex Stat exportação agro (Phase 21)
+# MDIC — Comex Stat (Phase 21 + 35)
 # Portal: https://comexstat.mdic.gov.br/
 # API: https://api-comexstat.mdic.gov.br/general
 
@@ -10,12 +10,83 @@ entries:
     schedule: monthly
     portal_label: Exportação mensal por NCM — commodities agro
     comex_flow: export
-    comex_ncms:
+    comex_details:
+      - ncm
+    comex_metrics:
+      - metricFOB
+      - metricKG
+    comex_ncms: &agro_export_ncms
       - "12019000"  # soja
       - "10059000"  # milho
       - "10019900"  # trigo
       - "02013000"  # carne bovina (fresca/refrigerada)
       - "02023000"  # carne bovina (congelada)
+    period_start: 2015
+    frequency: monthly
+    fonte_tipo: oficial_gov_br
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: mdic.comex-importacao-ncm-mes
+    source_url: https://api-comexstat.mdic.gov.br/general
+    source_portal_url: https://comexstat.mdic.gov.br/
+    format: json
+    schedule: monthly
+    portal_label: Importação mensal por NCM — fertilizantes e insumos
+    comex_flow: import
+    comex_details:
+      - ncm
+    comex_metrics:
+      - metricCIF
+      - metricKG
+      - metricFreight
+      - metricInsurance
+    comex_ncms: &fertilizer_import_ncms
+      - "31021010"  # ureia
+      - "31022100"  # sulfato de amônio
+      - "31023000"  # nitrato de amônio
+      - "31024000"  # misturas de amônio
+      - "31052000"  # NPK
+    period_start: 2015
+    frequency: monthly
+    fonte_tipo: oficial_gov_br
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: mdic.comex-exportacao-uf-ncm
+    source_url: https://api-comexstat.mdic.gov.br/general
+    source_portal_url: https://comexstat.mdic.gov.br/
+    format: json
+    schedule: monthly
+    portal_label: Exportação mensal por UF × NCM — commodities agro
+    comex_flow: export
+    comex_details:
+      - state
+      - ncm
+    comex_metrics:
+      - metricFOB
+      - metricKG
+    comex_ncms: *agro_export_ncms
+    period_start: 2015
+    frequency: monthly
+    fonte_tipo: oficial_gov_br
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: mdic.comex-importacao-diesel-ncm
+    source_url: https://api-comexstat.mdic.gov.br/general
+    source_portal_url: https://comexstat.mdic.gov.br/
+    format: json
+    schedule: monthly
+    portal_label: Importação mensal — diesel e óleos combustíveis
+    comex_flow: import
+    comex_details:
+      - ncm
+    comex_metrics:
+      - metricCIF
+      - metricKG
+      - metricFreight
+      - metricInsurance
+    comex_ncms: &diesel_import_ncms
+      - "27101921"  # gasóleo (óleo diesel)
+      - "27101922"  # outros óleos combustíveis
     period_start: 2015
     frequency: monthly
     fonte_tipo: oficial_gov_br

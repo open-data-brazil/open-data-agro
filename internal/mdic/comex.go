@@ -15,12 +15,12 @@ import (
 const generalEndpoint = "/general"
 
 type comexRequest struct {
-	Flow        string         `json:"flow"`
-	MonthDetail bool           `json:"monthDetail"`
-	Period      comexPeriod    `json:"period"`
-	Filters     []comexFilter  `json:"filters"`
-	Details     []string       `json:"details"`
-	Metrics     []string       `json:"metrics"`
+	Flow        string        `json:"flow"`
+	MonthDetail bool          `json:"monthDetail"`
+	Period      comexPeriod   `json:"period"`
+	Filters     []comexFilter `json:"filters"`
+	Details     []string      `json:"details"`
+	Metrics     []string      `json:"metrics"`
 }
 
 type comexPeriod struct {
@@ -41,12 +41,16 @@ type comexResponse struct {
 }
 
 type comexRow struct {
-	CoNCM         string `json:"coNcm"`
-	NCM           string `json:"ncm"`
-	Year          string `json:"year"`
-	MonthNumber   string `json:"monthNumber"`
-	MetricFOB     string `json:"metricFOB"`
-	MetricKG      string `json:"metricKG"`
+	CoNCM           string `json:"coNcm"`
+	NCM             string `json:"ncm"`
+	Year            string `json:"year"`
+	MonthNumber     string `json:"monthNumber"`
+	State           string `json:"state"`
+	MetricFOB       string `json:"metricFOB"`
+	MetricKG        string `json:"metricKG"`
+	MetricCIF       string `json:"metricCIF"`
+	MetricFreight   string `json:"metricFreight"`
+	MetricInsurance string `json:"metricInsurance"`
 }
 
 type mergedRow struct {
@@ -62,9 +66,47 @@ var ProdutoSlug = map[string]string{
 	"10019900": "trigo",
 	"02013000": "carne_bovina",
 	"02023000": "carne_bovina",
+	"31021010": "ureia",
+	"31022100": "sulfato_amonia",
+	"31023000": "nitrato_amonia",
+	"31024000": "misturas_amonia",
+	"31052000": "npk",
+	"27101921": "diesel",
+	"27101922": "oleo_combustivel",
 }
 
-// FetchComexSnapshot downloads monthly export rows for configured NCM codes.
+// StateToUF maps Comex Stat state names to IBGE sigla.
+var StateToUF = map[string]string{
+	"Acre":                "AC",
+	"Alagoas":             "AL",
+	"Amapá":               "AP",
+	"Amazonas":            "AM",
+	"Bahia":               "BA",
+	"Ceará":               "CE",
+	"Distrito Federal":    "DF",
+	"Espírito Santo":      "ES",
+	"Goiás":               "GO",
+	"Maranhão":            "MA",
+	"Mato Grosso":         "MT",
+	"Mato Grosso do Sul":  "MS",
+	"Minas Gerais":        "MG",
+	"Pará":                "PA",
+	"Paraíba":             "PB",
+	"Paraná":              "PR",
+	"Pernambuco":          "PE",
+	"Piauí":               "PI",
+	"Rio de Janeiro":      "RJ",
+	"Rio Grande do Norte": "RN",
+	"Rio Grande do Sul":   "RS",
+	"Rondônia":            "RO",
+	"Roraima":             "RR",
+	"Santa Catarina":      "SC",
+	"São Paulo":           "SP",
+	"Sergipe":             "SE",
+	"Tocantins":           "TO",
+}
+
+// FetchComexSnapshot downloads monthly Comex rows for configured NCM codes.
 func (c *Client) FetchComexSnapshot(ctx context.Context, entry catalog.RegistryEntry, fromDate string) ([]byte, string, error) {
 	flow := strings.TrimSpace(entry.ComexFlow)
 	if flow == "" {
@@ -75,9 +117,30 @@ func (c *Client) FetchComexSnapshot(ctx context.Context, entry catalog.RegistryE
 		return nil, "", fmt.Errorf("dataset %s missing comex_ncms", entry.DatasetID)
 	}
 
+	details := entry.ComexDetails
+	if len(details) == 0 {
+		details = []string{"ncm"}
+	}
+	metrics := entry.ComexMetrics
+	if len(metrics) == 0 {
+		if strings.EqualFold(flow, "import") {
+			metrics = []string{"metricCIF", "metricKG", "metricFreight", "metricInsurance"}
+		} else {
+			metrics = []string{"metricFOB", "metricKG"}
+		}
+	}
+
 	start, end, err := resolveComexRange(entry, fromDate)
 	if err != nil {
 		return nil, "", err
+	}
+
+	hasState := false
+	for _, d := range details {
+		if strings.EqualFold(d, "state") {
+			hasState = true
+			break
+		}
 	}
 
 	merged := make(map[string]mergedRow)
@@ -98,8 +161,8 @@ func (c *Client) FetchComexSnapshot(ctx context.Context, entry catalog.RegistryE
 			MonthDetail: true,
 			Period:      comexPeriod{From: periodFrom, To: periodTo},
 			Filters:     []comexFilter{{Filter: "ncm", Values: ncms}},
-			Details:     []string{"ncm"},
-			Metrics:     []string{"metricFOB", "metricKG"},
+			Details:     details,
+			Metrics:     metrics,
 		})
 		if err != nil {
 			return nil, "", err
@@ -114,12 +177,12 @@ func (c *Client) FetchComexSnapshot(ctx context.Context, entry catalog.RegistryE
 		if err := json.Unmarshal(raw, &resp); err != nil {
 			return nil, "", fmt.Errorf("parse comex response %s-%s: %w", periodFrom, periodTo, err)
 		}
-		if resp.Success == false && len(resp.Data.List) == 0 {
+		if !resp.Success && len(resp.Data.List) == 0 {
 			continue
 		}
 
 		for _, row := range resp.Data.List {
-			key := row.CoNCM + "|" + row.Year + "|" + row.MonthNumber
+			key := mergeKey(row, hasState)
 			merged[key] = mergedRow{comexRow: row, periodFrom: periodFrom, periodTo: periodTo}
 		}
 		chunkCount++
@@ -151,8 +214,15 @@ func (c *Client) FetchComexSnapshot(ctx context.Context, entry catalog.RegistryE
 		return nil, "", err
 	}
 
-	sourceURL := fmt.Sprintf("%s%s (ncm=%d, chunks=%d)", comexAPIBase, generalEndpoint, len(ncms), chunkCount)
+	sourceURL := fmt.Sprintf("%s%s (flow=%s, ncm=%d, chunks=%d)", comexAPIBase, generalEndpoint, flow, len(ncms), chunkCount)
 	return payload, sourceURL, nil
+}
+
+func mergeKey(row comexRow, hasState bool) string {
+	if hasState {
+		return row.CoNCM + "|" + strings.TrimSpace(row.State) + "|" + row.Year + "|" + row.MonthNumber
+	}
+	return row.CoNCM + "|" + row.Year + "|" + row.MonthNumber
 }
 
 func resolveComexRange(entry catalog.RegistryEntry, fromDate string) (time.Time, time.Time, error) {
@@ -198,9 +268,20 @@ func parseISODate(raw string) (time.Time, error) {
 
 // FlattenComex converts merged Comex JSON rows into canonical bronze columns.
 func FlattenComex(entry catalog.RegistryEntry, raw []byte) ([]string, [][]string, error) {
-	var rows []comexRow
-	if err := json.Unmarshal(raw, &rows); err != nil {
-		return nil, nil, fmt.Errorf("parse comex json: %w", err)
+	switch entry.DatasetID.String() {
+	case "mdic.comex-importacao-ncm-mes", "mdic.comex-importacao-diesel-ncm":
+		return flattenComexImport(entry, raw)
+	case "mdic.comex-exportacao-uf-ncm":
+		return flattenComexExportUF(entry, raw)
+	default:
+		return flattenComexExportNCM(entry, raw)
+	}
+}
+
+func flattenComexExportNCM(entry catalog.RegistryEntry, raw []byte) ([]string, [][]string, error) {
+	rows, err := parseComexRows(raw)
+	if err != nil {
+		return nil, nil, err
 	}
 
 	headers := []string{
@@ -226,14 +307,10 @@ func FlattenComex(entry catalog.RegistryEntry, raw []byte) ([]string, [][]string
 		if err != nil {
 			continue
 		}
-		slug := ProdutoSlug[coNCM]
-		if slug == "" {
-			slug = "outros"
-		}
 		out = append(out, []string{
 			coNCM,
 			strings.TrimSpace(row.NCM),
-			slug,
+			produtoSlug(coNCM),
 			isoDate,
 			fob,
 			kg,
@@ -245,6 +322,136 @@ func FlattenComex(entry catalog.RegistryEntry, raw []byte) ([]string, [][]string
 		return nil, nil, fmt.Errorf("no comex rows to flatten for %s", entry.DatasetID)
 	}
 	return headers, out, nil
+}
+
+func flattenComexImport(entry catalog.RegistryEntry, raw []byte) ([]string, [][]string, error) {
+	rows, err := parseComexRows(raw)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	headers := []string{
+		"co_ncm", "ncm_descricao", "produto_slug", "data",
+		"valor_cif_usd", "quantidade_kg", "valor_frete_usd", "valor_seguro_usd", "ano",
+	}
+	out := make([][]string, 0, len(rows))
+
+	for _, row := range rows {
+		coNCM := strings.TrimSpace(row.CoNCM)
+		if coNCM == "" {
+			continue
+		}
+		isoDate, err := monthToDate(row.Year, row.MonthNumber)
+		if err != nil {
+			continue
+		}
+		cif, err := normalizeMetric(row.MetricCIF)
+		if err != nil {
+			continue
+		}
+		kg, err := normalizeMetric(row.MetricKG)
+		if err != nil {
+			continue
+		}
+		freight, err := normalizeMetric(row.MetricFreight)
+		if err != nil {
+			continue
+		}
+		insurance, err := normalizeMetric(row.MetricInsurance)
+		if err != nil {
+			continue
+		}
+		out = append(out, []string{
+			coNCM,
+			strings.TrimSpace(row.NCM),
+			produtoSlug(coNCM),
+			isoDate,
+			cif,
+			kg,
+			freight,
+			insurance,
+			isoDate[:4],
+		})
+	}
+
+	if len(out) == 0 {
+		return nil, nil, fmt.Errorf("no comex rows to flatten for %s", entry.DatasetID)
+	}
+	return headers, out, nil
+}
+
+func flattenComexExportUF(entry catalog.RegistryEntry, raw []byte) ([]string, [][]string, error) {
+	rows, err := parseComexRows(raw)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	headers := []string{
+		"co_ncm", "ncm_descricao", "produto_slug", "uf", "data",
+		"valor_fob_usd", "quantidade_kg", "ano",
+	}
+	out := make([][]string, 0, len(rows))
+
+	for _, row := range rows {
+		coNCM := strings.TrimSpace(row.CoNCM)
+		if coNCM == "" {
+			continue
+		}
+		uf := stateToUF(row.State)
+		if uf == "" {
+			continue
+		}
+		isoDate, err := monthToDate(row.Year, row.MonthNumber)
+		if err != nil {
+			continue
+		}
+		fob, err := normalizeMetric(row.MetricFOB)
+		if err != nil {
+			continue
+		}
+		kg, err := normalizeMetric(row.MetricKG)
+		if err != nil {
+			continue
+		}
+		out = append(out, []string{
+			coNCM,
+			strings.TrimSpace(row.NCM),
+			produtoSlug(coNCM),
+			uf,
+			isoDate,
+			fob,
+			kg,
+			isoDate[:4],
+		})
+	}
+
+	if len(out) == 0 {
+		return nil, nil, fmt.Errorf("no comex rows to flatten for %s", entry.DatasetID)
+	}
+	return headers, out, nil
+}
+
+func parseComexRows(raw []byte) ([]comexRow, error) {
+	var rows []comexRow
+	if err := json.Unmarshal(raw, &rows); err != nil {
+		return nil, fmt.Errorf("parse comex json: %w", err)
+	}
+	return rows, nil
+}
+
+func produtoSlug(coNCM string) string {
+	if slug := ProdutoSlug[coNCM]; slug != "" {
+		return slug
+	}
+	return "outros"
+}
+
+func stateToUF(name string) string {
+	name = strings.TrimSpace(name)
+	if uf, ok := StateToUF[name]; ok {
+		return uf
+	}
+	return ""
 }
 
 func monthToDate(yearRaw, monthRaw string) (string, error) {

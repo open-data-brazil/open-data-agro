@@ -34,3 +34,100 @@ models:
             combination_of_columns:
               - co_ncm
               - data
+
+  - name: mart_mdic__comex_importacao_ncm_mes
+    description: |
+      MDIC Comex Stat monthly fertilizer/input imports by NCM.
+      Grain is co_ncm + data (month).
+    config:
+      meta:
+        dataset_id: mdic.comex-importacao-ncm-mes
+        grain: co_ncm, data
+    columns:
+      - name: co_ncm
+        tests:
+          - not_null
+      - name: data
+        tests:
+          - not_null
+      - name: valor_cif_usd
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - co_ncm
+              - data
+
+  - name: mart_mdic__comex_exportacao_uf_ncm
+    description: |
+      MDIC Comex Stat monthly ag commodity exports by UF and NCM.
+      Grain is co_ncm + uf + data (month).
+    config:
+      meta:
+        dataset_id: mdic.comex-exportacao-uf-ncm
+        grain: co_ncm, uf, data
+    columns:
+      - name: co_ncm
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: data
+        tests:
+          - not_null
+      - name: valor_fob_usd
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - co_ncm
+              - uf
+              - data
+
+  - name: mart_mdic__comex_importacao_diesel_ncm
+    description: |
+      MDIC Comex Stat monthly diesel/fuel oil imports by NCM.
+      Grain is co_ncm + data (month).
+    config:
+      meta:
+        dataset_id: mdic.comex-importacao-diesel-ncm
+        grain: co_ncm, data
+    columns:
+      - name: co_ncm
+        tests:
+          - not_null
+      - name: produto_slug
+        tests:
+          - not_null
+      - name: valor_cif_usd
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - co_ncm
+              - data

@@ -30,6 +30,8 @@ CI_ANP_LAKE ?= /tmp/anp-ci-lake
 CI_ANP_DUCKDB ?= /tmp/anp-ci.duckdb
 CI_MDIC_LAKE ?= /tmp/mdic-ci-lake
 CI_MDIC_DUCKDB ?= /tmp/mdic-ci.duckdb
+CI_MDIC_COMEX_EXTENDED_LAKE ?= /tmp/mdic-comex-extended-ci-lake
+CI_MDIC_COMEX_EXTENDED_DUCKDB ?= /tmp/mdic-comex-extended-ci.duckdb
 CI_ANTT_PEDAGIOS_LAKE ?= /tmp/antt-pedagios-ci-lake
 CI_ANTT_PEDAGIOS_DUCKDB ?= /tmp/antt-pedagios-ci.duckdb
 CI_ANTT_LOGISTICA_EXTENDED_LAKE ?= /tmp/antt-logistica-extended-ci-lake
@@ -517,6 +519,26 @@ ci-mdic-comex-mvp:
 	$(MAKE) mdic-comex-mvp \
 		LAKE_LOCAL_ROOT=$(CI_MDIC_LAKE) \
 		DUCKDB_PATH=$(CI_MDIC_DUCKDB)
+
+dbt-build-mdic-comex-extended: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_mdic__comex_importacao_ncm_mes+ stg_mdic__comex_exportacao_uf_ncm+ stg_mdic__comex_importacao_diesel_ncm+'
+
+mdic-comex-extended-mvp:
+	go test ./internal/mdic/... ./internal/ingest/ -run 'MDIC|Comex|FlattenComex'
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_mdic_comex_extended_silver.py
+	$(MAKE) dbt-build-mdic-comex-extended LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mdic_comex_importacao_ncm_mes"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT co_ncm, produto_slug, data, valor_cif_usd FROM analytics.mdic_comex_importacao_ncm_mes LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mdic_comex_exportacao_uf_ncm"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT uf, co_ncm, produto_slug, valor_fob_usd FROM analytics.mdic_comex_exportacao_uf_ncm LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mdic_comex_importacao_diesel_ncm"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT produto_slug, data, valor_cif_usd FROM analytics.mdic_comex_importacao_diesel_ncm LIMIT 3"
+
+ci-mdic-comex-extended-mvp:
+	$(MAKE) mdic-comex-extended-mvp \
+		LAKE_LOCAL_ROOT=$(CI_MDIC_COMEX_EXTENDED_LAKE) \
+		DUCKDB_PATH=$(CI_MDIC_COMEX_EXTENDED_DUCKDB)
 
 dbt-build-antt-pedagios: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_antt__pracas_pedagio+'

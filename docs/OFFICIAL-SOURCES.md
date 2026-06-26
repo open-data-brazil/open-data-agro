@@ -147,15 +147,18 @@ Programmatic ingest tries the CEPEA portal first; when Cloudflare blocks access,
 
 Crossing with CONAB local prices (Phase 11) and BCB PTAX (Phase 18) is planned in analytics — see `.local/phases/DATA-CROSSING-VISION.md`.
 
-### MDIC — Comex Stat (Phase 21)
+### MDIC — Comex Stat (Phase 21 + 35)
 
 | Dataset ID | Source | Status |
 |------------|--------|--------|
 | `mdic.comex-exportacao-ncm-mes` | Comex Stat API — exportação mensal NCM agro | **P0 — implemented** |
+| `mdic.comex-importacao-ncm-mes` | Comex Stat API — importação mensal NCM fertilizantes | **P0 — implemented** |
+| `mdic.comex-exportacao-uf-ncm` | Comex Stat API — exportação mensal UF × NCM agro | **P0 — implemented** |
+| `mdic.comex-importacao-diesel-ncm` | Comex Stat API — importação diesel/óleos combustíveis | **P0 — implemented** |
 
 **Fonte oficial:** [Comex Stat — MDIC](https://comexstat.mdic.gov.br/) · API: [api-comexstat.mdic.gov.br](https://api-comexstat.mdic.gov.br/docs)
 
-Monthly export FOB (USD) and quantity (kg) for soja, milho, trigo, and carne bovina NCM codes. Historical backfill from 2015 via year-chunked API requests.
+Monthly export FOB (USD) and quantity (kg) for ag commodities; import CIF for fertilizers and diesel; state-level export by UF. NCM → `produto_slug` mapping in [GLOSSARY.md](GLOSSARY.md). Historical backfill from 2015 via year-chunked `POST /general` requests.
 
 ### ANTT — Logística rodoviária / Pedágios (Phase 22 + 34)
 
