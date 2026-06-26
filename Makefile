@@ -198,8 +198,9 @@ dbt-build-armazenamento-logistica: dbt-deps
 conab-armazenamento-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_armazenamento_silver.py
 	$(MAKE) dbt-build-armazenamento LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
-	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS armazens FROM analytics.conab_armazenagem"
+	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 conab-armazenamento-logistica-mvp:
 	go test ./internal/ingest/ -run 'Frete|Capacidade'
@@ -209,6 +210,7 @@ conab-armazenamento-logistica-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS frete_rows FROM analytics.conab_frete"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS capacidade_rows FROM analytics.conab_capacidade_estatica"
 	duckdb $(DUCKDB_PATH) -c "SELECT uf, ano, quantidade_mil_t FROM analytics.conab_capacidade_estatica WHERE uf IN ('MT', 'PR', 'RS') ORDER BY ano DESC LIMIT 5"
+	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 dbt-build-agricultura-familiar: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__alimenta_brasil_entregas+ stg_conab__alimenta_brasil_propostas+'

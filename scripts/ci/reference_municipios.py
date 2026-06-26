@@ -7,11 +7,27 @@ from pathlib import Path
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-# Codes referenced by mercado / PAM CI seeds (7-digit IBGE).
+# Codes referenced by mercado / PAM / armazenamento CI seeds (7-digit IBGE).
 REFERENCE_MUNICIPIOS: list[dict[str, str]] = [
+    {
+        "codigo_ibge": "1200203",
+        "nome": "Cruzeiro do Sul",
+        "sigla_uf": "AC",
+        "codigo_uf": "12",
+        "codigo_regiao": "1",
+        "nome_regiao": "Norte",
+    },
     {
         "codigo_ibge": "5100102",
         "nome": "Acorizal",
+        "sigla_uf": "MT",
+        "codigo_uf": "51",
+        "codigo_regiao": "5",
+        "nome_regiao": "Centro-Oeste",
+    },
+    {
+        "codigo_ibge": "5102637",
+        "nome": "Campo Novo do Parecis",
         "sigla_uf": "MT",
         "codigo_uf": "51",
         "codigo_regiao": "5",
@@ -24,6 +40,14 @@ REFERENCE_MUNICIPIOS: list[dict[str, str]] = [
         "codigo_uf": "51",
         "codigo_regiao": "5",
         "nome_regiao": "Centro-Oeste",
+    },
+    {
+        "codigo_ibge": "3548500",
+        "nome": "Santos",
+        "sigla_uf": "SP",
+        "codigo_uf": "35",
+        "codigo_regiao": "3",
+        "nome_regiao": "Sudeste",
     },
     {
         "codigo_ibge": "3550308",

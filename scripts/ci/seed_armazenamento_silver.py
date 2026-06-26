@@ -19,7 +19,11 @@ def write_table(root: Path, agency: str, table: str, data: pa.Table) -> None:
 
 def main() -> int:
     lake_root = Path(os.environ.get("LAKE_LOCAL_ROOT", "/tmp/open-data-agro-lake"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from reference_municipios import write_reference_municipios  # noqa: PLC0415
+
     lake_root.mkdir(parents=True, exist_ok=True)
+    write_reference_municipios(lake_root)
     (lake_root / "gold" / "mart_conab__armazenagem").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__frete").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__capacidade_estatica").mkdir(parents=True, exist_ok=True)

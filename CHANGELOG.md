@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **IBGE Localidades (Phase 15):** full E2E for municipios + UFs + regiões + meso/micro — dbt marts, DuckDB views `analytics.ibge_localidades_*`, `make ibge-localidades-mvp`
 - **IBGE cod_ibge validation (Phase 15 P4):** `scripts/quality/validate_codigo_ibge.py` cross-checks CONAB gold marts against `mart_ibge__localidades_municipios`, `make validate-codigo-ibge`
 - **CONAB Mercado cod_ibge validation (Phase 11 P4):** `validate-codigo-ibge` wired into `conab-mercado-full-mvp`, `conab-mercado-precos-mvp`, and `conab-mercado-prohort-mvp`; shared `scripts/ci/reference_municipios.py` for CI seeds
+- **CONAB Armazenamento cod_ibge validation (Phase 13 P4):** `validate-codigo-ibge` wired into `conab-armazenamento-mvp` and `conab-armazenamento-logistica-mvp`; frete origin/destination and armazenagem `cod_ibge` checked against IBGE localidades
 - **CONAB Mercado CI consolidation (Phase 11 §7):** `dbt-build-mercado` covers all 8 mercado marts, `conab-mercado-full-mvp`, committed `scripts/benchmark/profiles/fast10.json` with `precos-semanal-uf` + `frete`
 - **IBGE PAM (Phase 16 ingest):** `ibge/pam.yaml` (3 datasets), SIDRA API client with chunked UF/year/crop pulls, bronze Parquet, GE suites, dbt staging for area-quantidade, `make ibge-pam-mvp`
 - **INMET Clima Histórico (Phase 17 ingest):** `inmet/clima.yaml` (5 datasets), station catalog + BDMEP annual ZIP client, daily/monthly long-format bronze, GE suites, `make inmet-clima-mvp`
