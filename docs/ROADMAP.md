@@ -1,76 +1,127 @@
 # Roadmap — Open Data Agro
 
-> Phases align with `.local/IMPLEMENTATION-PLAN.md` (detailed tasks in `.local/phases/`).
+> Phases align with `.local/IMPLEMENTATION-PLAN.md` (detailed tasks in `.local/phases/`).  
+> Pending work tracker: `.local/PENDING-TASKS.md` (gitignored).
 
 ---
 
 ## Objective
 
-**Public agro data ingestor** — CONAB portal first, extensible to MAPA, IBGE, INMET.
+**Public agro data ingestor** — CONAB portal first, extensible to IBGE, INMET, BCB, CEPEA, ANP.
 
 **Initial source:** [CONAB — Downloads de Arquivos](https://portaldeinformacoes.conab.gov.br/download-arquivos.html)
 
----
-
-## Stack
-
-| Layer | Technology |
-|-------|------------|
-| Ingestão | App personalizado (`apps/ingestor`) |
-| Data Lake | Cloudflare R2 — Parquet (bronze) |
-| Lakehouse | Delta Lake (silver/gold) |
-| Processamento | DuckDB |
-| Transformação | dbt |
-| Qualidade | Great Expectations |
-| DB operacional | PostgreSQL |
-| DB analítico | DuckDB |
+**Current focus:** collection sprint complete — offline pipelines + CI gates; next: doc sync and optional analytics phase (see `.local/DATA-CROSSING-VISION.md`).
 
 ---
 
-## Phase 0 — Scaffold (current)
+## Stack (local-first)
+
+| Layer | Technology | Local default |
+|-------|------------|---------------|
+| Ingestão / orquestração | **Go** (`cmd/ingestor`, `cmd/processor`) | `make build` |
+| Data Lake | **Parquet** bronze | `./lake/bronze/` |
+| Lakehouse | **Parquet** silver/gold via dbt | `./lake/silver/`, `./lake/gold/` |
+| Object storage (prod) | MinIO / Cloudflare R2 | `STORAGE_MODE=local` (default) |
+| Processamento | **DuckDB** | CLI + `DUCKDB_PATH` |
+| Transformação | **dbt** | DuckDB profile under `dbt/` |
+| Qualidade | **Great Expectations** | `expectations/` on bronze |
+| DB operacional | **PostgreSQL 18** | Docker Compose |
+| DB analítico | **DuckDB** | `duckdb/open_data_agro.duckdb` |
+
+---
+
+## Phase 0 — Platform scaffold
 
 - [x] Agent harness + governance docs
-- [x] `.local` implementation plan + phases
-- [ ] Monorepo toolchain (TypeScript, pnpm, Docker Postgres)
-- [ ] CI pipeline
+- [x] `.local` implementation plan + phase folders
+- [x] Go workspace (`go.work`), Docker Postgres + Redis
+- [x] CI pipeline — [`.github/workflows/ci.yml`](../.github/workflows/ci.yml)
+
+**Local CI mirror:** `make ci-go`, `make ci-dbt`
+
+---
 
 ## Phase 1–8 — Platform
 
-| Phase | Task | Status |
-|-------|------|--------|
-| 1 | Ingestor app | Planned |
-| 2 | R2 + Parquet bronze | Planned |
-| 3 | Delta Lake | Planned |
-| 4 | DuckDB processing | Planned |
-| 5 | dbt transforms | Planned |
-| 6 | Great Expectations | Planned |
-| 7 | PostgreSQL ops DB | Planned |
-| 8 | DuckDB analytics | Planned |
-
-## Phase 10–14 — CONAB datasets
-
-| Phase | CONAB section | MVP |
-|-------|---------------|-----|
-| 10 | Produção Agrícola | **P0:** Estimativa Grãos, Série Histórica Grãos |
-| 11 | Mercado | **Done** — oferta-demanda, preços (4), mínimos, prohort; `make conab-mercado-full-mvp` |
-| 12 | Abastecimento | **Done** — estoques, operações, vendas balcão + ANP LPC; `make conab-abastecimento-mvp` |
-| 13 | Armazenamento e Logística | Planned |
-| 14 | Agricultura Familiar | Planned |
+| Phase | Task | Status | Verify |
+|-------|------|--------|--------|
+| 1 | Ingestor CLI (`cmd/ingestor`) | **Done** | `go run ./cmd/ingestor run conab.estimativa-graos` |
+| 2 | Parquet bronze layout | **Done** | `./lake/bronze/` |
+| 3 | Silver/gold layout | **Done** | dbt → `./lake/gold/` |
+| 4 | DuckDB processing + promote | **Done** | `make build-processor` |
+| 5 | dbt transforms | **Done** | `make dbt-build` |
+| 6 | Great Expectations gates | **Done** | `GE_INTEGRATION=1 go test ./internal/processor -run Quality` |
+| 7 | PostgreSQL ops DB | **Done** | `make migrate-up` |
+| 8 | DuckDB analytics views | **Done** | `make analytics-init` |
 
 ---
 
-## MVP path
+## Phase 10–14 — CONAB (+ ANP)
 
-```
-00-platform-scaffold → 01-ingestor-app → 02-data-lake-r2-parquet → 07-db-postgresql → 10-conab-producao-agricola (estimativa-graos)
+| Phase | Section | Status | MVP target |
+|-------|---------|--------|------------|
+| 10 | Produção Agrícola | **Done** | `make conab-mvp` — grãos, cana, café, custo produção |
+| 11 | Mercado | **Done** | `make conab-mercado-full-mvp` — 8 datasets incl. prohort |
+| 12 | Abastecimento + ANP | **Done** | `make conab-abastecimento-mvp`, `make anp-mvp` |
+| 13 | Armazenamento e Logística | **Done** | `make conab-armazenamento-logistica-mvp` — frete + capacidade |
+| 14 | Agricultura Familiar | **Done** | `make conab-agricultura-familiar-mvp` |
+
+---
+
+## Phase 15–19 — Multi-source collection
+
+| Phase | Agency | Status | MVP target |
+|-------|--------|--------|------------|
+| 15 | IBGE Localidades | **Done** | `make ibge-localidades-mvp`, `make ibge-localidades-live-smoke` |
+| 16 | IBGE PAM | **Done** | `make ibge-pam-mvp` |
+| 17 | INMET Clima | **Done** | `make inmet-clima-mvp` |
+| 18 | BCB SGS macro | **Done** | `make bcb-sgs-mvp` |
+| 19 | CEPEA preços agro | **Done** | `make cepea-indicadores-mvp` |
+
+**Collection sprint exit (local):** `make collection-full-mvp`  
+**Collection sprint exit (CI):** `make ci-collection-full-mvp`
+
+**Cross-cutting validation:** `make validate-codigo-ibge`, `make ci-validate-codigo-ibge`
+
+---
+
+## CI jobs (GitHub Actions)
+
+| Job | Purpose | Local mirror |
+|-----|---------|--------------|
+| `security` | `govulncheck` | — |
+| `go` | unit tests, DuckDB + GE integration, lint | `make ci-go` |
+| `dbt` | dbt build, analytics smoke, cod_ibge validation, full collection | `make ci-dbt`, `make ci-validate-codigo-ibge`, `make ci-collection-full-mvp` |
+| `quality` | bronze GE checkpoint | `scripts/quality/run_checkpoint.py` |
+
+---
+
+## MVP path (achieved)
+
+```text
+00-platform → 01-ingestor → 02-lake → 06-GE → 07-postgres → 10-conab-mvp
+→ 11-mercado → 12-abastecimento → 13-logística → 14-PAA
+→ 15-localidades → 16-PAM → 17-INMET → 18-BCB → 19-CEPEA
+→ collection-full-mvp (sprint exit)
 ```
 
-Then: phases 3–6, 8, and remaining CONAB families.
+---
+
+## Next (post-collection)
+
+See `.local/PENDING-TASKS.md`:
+
+- Doc sync (`OFFICIAL-SOURCES.md` status labels, `.local` phase TASKS)
+- Optional GE referential `cod_ibge` expectation
+- Phase 20 — analytics crossing (explicit non-goal until new phase folder)
+- Production: `STORAGE_MODE=r2` deploy runbook
 
 ---
 
 ## Related
 
-- [.local/IMPLEMENTATION-PLAN.md](../.local/IMPLEMENTATION-PLAN.md) (local, gitignored)
+- [OFFICIAL-SOURCES.md](OFFICIAL-SOURCES.md) — per-dataset catalog
 - [NEW-PROJECT-CHECKLIST.md](NEW-PROJECT-CHECKLIST.md)
-- [OFFICIAL-SOURCES.md](OFFICIAL-SOURCES.md)
+- `.local/IMPLEMENTATION-PLAN.md` (gitignored)
+- `.local/PENDING-TASKS.md` (gitignored)
