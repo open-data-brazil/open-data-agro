@@ -231,6 +231,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_usda_psd_milho", true
 	case "usda.psd-trigo":
 		return "bronze_usda_psd_trigo", true
+	case "fao.prices-agro":
+		return "bronze_fao_prices_agro", true
 	default:
 		return "", false
 	}

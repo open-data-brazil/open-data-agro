@@ -20,6 +20,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/mapa"
 	"github.com/open-data-brazil/open-data-agro/internal/mdic"
 	"github.com/open-data-brazil/open-data-agro/internal/usda"
+	"github.com/open-data-brazil/open-data-agro/internal/fao"
 	"github.com/open-data-brazil/open-data-agro/internal/storage"
 )
 
@@ -62,6 +63,7 @@ type Runner struct {
 	mapa     *mapa.Client
 	b3       *b3.Client
 	usda     *usda.Client
+	fao      *fao.Client
 	alerts   *alerts.Notifier
 }
 
@@ -82,6 +84,7 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		mapa:     mapa.NewClient(),
 		b3:       b3.NewClient(),
 		usda:     usda.NewClient(),
+		fao:      fao.NewClient(),
 		alerts:   notifier,
 	}
 }
@@ -119,7 +122,7 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, SourceOptions{
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, SourceOptions{
 		Crop:     opts.Crop,
 		FromYear: opts.FromYear,
 		ToYear:   opts.ToYear,

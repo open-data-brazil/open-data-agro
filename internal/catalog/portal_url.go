@@ -46,8 +46,14 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "usda.") {
 		return USDAFASPSDPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "fao.") {
+		return FAOFaostatPortalURL
+	}
 	return ""
 }
+
+// FAOFaostatPortalURL is the FAO FAOSTAT data portal URL.
+const FAOFaostatPortalURL = "https://www.fao.org/faostat/en/#data"
 
 // USDAFASPSDPortalURL is the USDA FAS PSD Online portal URL.
 const USDAFASPSDPortalURL = "https://apps.fas.usda.gov/psdonline/"

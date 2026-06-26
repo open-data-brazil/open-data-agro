@@ -1,0 +1,20 @@
+# FAO FAOSTAT — Producer prices (Phase 26 P0)
+# Portal: https://www.fao.org/faostat/en/#data/PP
+# Bulk: normalized CSV inside zip (no API key)
+
+entries:
+  - dataset_id: fao.prices-agro
+    source_url: https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip
+    source_portal_url: https://www.fao.org/faostat/en/#data/PP
+    format: json
+    schedule: annual
+    portal_label: Producer prices — soja, milho, trigo, carne bovina
+    fao_bulk_url: https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip
+    fao_bulk_csv: Prices_E_All_Data_(Normalized).csv
+    fao_item_codes: ["236", "56", "15", "867"]
+    fao_element_codes: ["5532", "5539"]
+    period_start: 2010
+    frequency: annual
+    license: "FAO FAOSTAT — CC BY-NC-SA 3.0 IGO"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z

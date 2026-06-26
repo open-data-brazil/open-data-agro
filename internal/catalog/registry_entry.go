@@ -54,6 +54,10 @@ type RegistryEntry struct {
 	B3CommodityPrefix string  `json:"b3CommodityPrefix,omitempty" yaml:"b3_commodity_prefix,omitempty"`
 	PSDCommodityCode string   `json:"psdCommodityCode,omitempty" yaml:"psd_commodity_code,omitempty"`
 	PSDCommoditySlug string   `json:"psdCommoditySlug,omitempty" yaml:"psd_commodity_slug,omitempty"`
+	FAOBulkURL       string   `json:"faoBulkUrl,omitempty" yaml:"fao_bulk_url,omitempty"`
+	FAOBulkCSV       string   `json:"faoBulkCsv,omitempty" yaml:"fao_bulk_csv,omitempty"`
+	FAOItemCodes     []string `json:"faoItemCodes,omitempty" yaml:"fao_item_codes,omitempty"`
+	FAOElementCodes  []string `json:"faoElementCodes,omitempty" yaml:"fao_element_codes,omitempty"`
 	DiscoveredAt time.Time     `json:"discoveredAt" yaml:"discovered_at"`
 }
 

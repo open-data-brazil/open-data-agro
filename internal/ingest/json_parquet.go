@@ -11,6 +11,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 	"github.com/open-data-brazil/open-data-agro/internal/mdic"
 	"github.com/open-data-brazil/open-data-agro/internal/usda"
+	"github.com/open-data-brazil/open-data-agro/internal/fao"
 )
 
 func convertJSONFileToParquet(entry catalog.RegistryEntry, path string) ([]byte, int, error) {
@@ -60,6 +61,12 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		return writeStringTable(headers, rows)
 	case "usda":
 		headers, rows, err := usda.FlattenPSD(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "fao":
+		headers, rows, err := fao.FlattenPrices(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}

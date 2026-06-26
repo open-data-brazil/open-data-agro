@@ -1,0 +1,50 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "FAO producer prices must contain rows." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "area_code" },
+      "meta": { "notes": "FAOSTAT area code." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "commodity_slug" },
+      "meta": { "notes": "Canonical slug soja/milho/trigo/carne_bovina." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "area_code" },
+      "meta": { "notes": "Area required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "year" },
+      "meta": { "notes": "Year required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "value" },
+      "meta": { "notes": "Price value required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": ["area_code", "item_code", "element_code", "year", "months_code"]
+      },
+      "meta": { "notes": "One row per area × item × element × year × month." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "fao.prices-agro",
+    "fonte_oficial": "https://www.fao.org/faostat/en/#data/PP",
+    "agencia": "FAO FAOSTAT",
+    "license": "FAO FAOSTAT — CC BY-NC-SA 3.0 IGO"
+  },
+  "name": "bronze.fao.prices_agro",
+  "id": "bronze-fao-prices-agro-suite"
+}

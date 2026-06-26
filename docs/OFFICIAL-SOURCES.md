@@ -199,6 +199,16 @@ Daily futures settlement (`AdjstdQt`) by contract symbol. Regulated exchange ref
 
 Global production/supply/demand by country and marketing year. `fonte_tipo: internacional_oficial`. Values in official PSD units (typically 1000 MT).
 
+### FAO — FAOSTAT (Phase 26)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `fao.prices-agro` | Producer prices — soja, milho, trigo, carne bovina | **P0 — implemented** |
+
+**Fonte oficial:** [FAO FAOSTAT — Producer Prices (PP)](https://www.fao.org/faostat/en/#data/PP) · bulk `Prices_E_All_Data_(Normalized).zip` (no API key)
+
+Producer prices (USD/tonne) and price indices by country × year. Items 236/56/15/867. `fonte_tipo: internacional_oficial`.
+
 ---
 
 ## Rules

@@ -95,6 +95,7 @@
 | 23 | MAPA ZARC tábua de risco | **Done** | `make mapa-dados-mvp`, `make ci-mapa-dados-mvp` |
 | 24 | B3 futuros agro (SOY/CCM/BGI) | **Done** | `make b3-futuros-mvp`, `make ci-b3-futuros-mvp` |
 | 25 | USDA FAS PSD (soja/milho/trigo) | **Done** | `make usda-psd-mvp`, `make ci-usda-psd-mvp` |
+| 26 | FAO FAOSTAT prices agro | **Done** | `make fao-faostat-mvp`, `make ci-fao-faostat-mvp` |
 
 ---
 
