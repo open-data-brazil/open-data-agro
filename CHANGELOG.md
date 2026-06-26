@@ -69,6 +69,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Phase 20 scaffold:** `.local/phases/20-analytics-crossing/` for post-collection analytics crossing (DATA-CROSSING-VISION); `scripts/ci/check_phase20_scaffold.py` gate
 - **MinIO CI integration (Phase 2):** `make ci-minio` — Docker MinIO, bronze S3 Put/List, DuckDB `s3://` smoke; GitHub Actions `go` job; `scripts/ci/check_minio_ci.py` gate
 - **R2 production runbook (Phase 2):** `infra/r2/README.md` deploy runbook, `make validate-r2-env` / `make ci-validate-r2-env`, optional `R2_INTEGRATION` live smoke; `scripts/ci/check_r2_runbook.py` gate
+- **Delta Lake silver versioning (Phase 3):** `DELTA_MIN_VERSIONS` wired in `scripts/delta/promote.py`, append + DuckDB time-travel tests, `make ci-delta-versioning`; `scripts/ci/check_delta_versioning.py` gate
 
 ### Changed
 

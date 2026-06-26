@@ -120,19 +120,26 @@ def promote(
         exists = DeltaTable.is_deltatable(silver_uri, storage_options=storage_options)
 
     mode = "append" if exists else "overwrite"
+    retention = retention_configuration(min_versions)
     write_deltalake(
         silver_uri,
         table,
         mode=mode,
         schema_mode="merge",
         storage_options=storage_options,
-        configuration={
-            "delta.logRetentionDuration": "interval 30 days",
-            "delta.deletedFileRetentionDuration": "interval 7 days",
-        },
+        configuration=retention,
     )
 
     return row_count
+
+
+def retention_configuration(min_versions: int) -> dict[str, str]:
+    """Map DELTA_MIN_VERSIONS policy to Delta table log retention."""
+    days = max(7, min_versions)
+    return {
+        "delta.logRetentionDuration": f"interval {days} days",
+        "delta.deletedFileRetentionDuration": "interval 7 days",
+    }
 
 
 def main() -> int:

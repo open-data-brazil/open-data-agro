@@ -114,10 +114,9 @@
 
 Remaining tracks (see `.local/PENDING-TASKS.md`):
 
-- Optional: native Delta Lake versioning on `./lake/silver/` (Phase 3)
 - Optional: GE bronze referential `cod_ibge` (deferred — post-dbt script is gate)
 
-**Phase 2 storage:** `make ci-minio` (MinIO CI) · `make ci-validate-r2-env` / [infra/r2/README.md](../infra/r2/README.md) (R2 production runbook)
+**Phase 2–3 storage:** `make ci-minio` · `make ci-validate-r2-env` · `make ci-delta-versioning` (native Delta silver versioning)
 
 ---
 
