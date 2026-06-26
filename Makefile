@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp p1-collection-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp p1-collection-mvp collection-macro-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -16,6 +16,9 @@ COD_IBGE_DBT_SELECT := stg_conab__custo_producao+ stg_conab__precos_semanal_muni
 COLLECTION_P1_LAKE ?= /tmp/p1-collection-lake
 COLLECTION_P1_DUCKDB ?= /tmp/p1-collection.duckdb
 COLLECTION_P1_DBT_SELECT := stg_ibge__localidades_ufs+ stg_ibge__localidades_regioes+ stg_ibge__localidades_mesorregioes+ stg_ibge__localidades_microrregioes+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_municipio+ stg_conab__frete+ stg_conab__capacidade_estatica+
+COLLECTION_MACRO_LAKE ?= /tmp/macro-collection-lake
+COLLECTION_MACRO_DUCKDB ?= /tmp/macro-collection.duckdb
+COLLECTION_MACRO_DBT_SELECT := stg_inmet__estacoes_automaticas+ stg_inmet__estacoes_convencionais+ stg_inmet__bdmep_diario+ stg_inmet__bdmep_mensal+ stg_inmet__pacote_anual_automaticas+ stg_bcb__sgs_ipca+ stg_bcb__sgs_ipca_12m+ stg_bcb__sgs_igpm+ stg_bcb__sgs_ptax_usd_venda+ stg_bcb__sgs_ptax_usd_compra+ stg_cepea__soja_paranagua+ stg_cepea__soja_parana+ stg_cepea__milho+ stg_cepea__boi_gordo+
 
 test:
 	go test ./...
@@ -83,6 +86,26 @@ p1-collection-mvp: duckdb-install python-install dbt-deps
 	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS frete_rows FROM analytics.conab_frete"
 	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT uf, ano, quantidade_mil_t FROM analytics.conab_capacidade_estatica WHERE uf = 'MT' LIMIT 3"
 	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(COLLECTION_P1_LAKE)
+
+# Phases 17–19: INMET climate + BCB macro + CEPEA port prices in one offline lake.
+collection-macro-mvp: duckdb-install python-install dbt-deps
+	go test ./internal/inmet/... ./internal/bcb/... ./internal/cepea/... ./internal/ingest/ -run 'INMET|BCB|SGS|CEPA|Cepea|Flatten'
+	rm -rf $(COLLECTION_MACRO_LAKE) $(COLLECTION_MACRO_DUCKDB)
+	cp -f dbt/profiles.yml.example dbt/profiles.yml
+	LAKE_LOCAL_ROOT=$(COLLECTION_MACRO_LAKE) python3 scripts/ci/seed_inmet_silver.py
+	LAKE_LOCAL_ROOT=$(COLLECTION_MACRO_LAKE) python3 scripts/ci/seed_bcb_sgs_silver.py
+	LAKE_LOCAL_ROOT=$(COLLECTION_MACRO_LAKE) python3 scripts/ci/seed_cepea_silver.py
+	cd dbt && PATH="$(CURDIR)/.local/bin:$$PATH" DUCKDB_BIN="$(CURDIR)/.local/bin/duckdb" \
+		LAKE_LOCAL_ROOT=$(COLLECTION_MACRO_LAKE) DUCKDB_PATH=$(COLLECTION_MACRO_DUCKDB) \
+		dbt build --profiles-dir . --select '$(COLLECTION_MACRO_DBT_SELECT)'
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(COLLECTION_MACRO_LAKE) DUCKDB_PATH=$(COLLECTION_MACRO_DUCKDB)
+	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS estacoes_auto FROM analytics.inmet_estacoes_automaticas"
+	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS bdmep_diario FROM analytics.inmet_bdmep_diario"
+	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS pacote_anual FROM analytics.inmet_pacote_anual_automaticas"
+	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS ipca FROM analytics.bcb_sgs_ipca"
+	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS ptax FROM analytics.bcb_sgs_ptax_usd_venda"
+	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS soja_paranagua FROM analytics.cepea_soja_paranagua"
+	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT produto, praca, data, preco_rs_sc FROM analytics.cepea_milho LIMIT 3"
 
 benchmark-ingestor:
 	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
