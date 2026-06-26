@@ -35,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CONAB Armazenamento cod_ibge validation (Phase 13 P4):** `validate-codigo-ibge` wired into `conab-armazenamento-mvp` and `conab-armazenamento-logistica-mvp`; frete origin/destination and armazenagem `cod_ibge` checked against IBGE localidades
 - **CONAB Abastecimento + PAA cod_ibge validation (Phase 12/14 P4):** `validate-codigo-ibge` wired into `conab-abastecimento-mvp` and `conab-agricultura-familiar-mvp`; estoques públicos and Alimenta Brasil propostas checked against IBGE localidades
 - **CONAB Produção cod_ibge validation (Phase 10 P4):** `validate-codigo-ibge` wired into `conab-mvp`; custo de produção `cod_ibge` checked against IBGE localidades
+- **CI cod_ibge validation (Phase 15 P5):** `make ci-validate-codigo-ibge` seeds all CONAB marts with `cod_ibge`, runs dbt gold build, and cross-checks in GitHub Actions `dbt` job
 - **CONAB Mercado CI consolidation (Phase 11 §7):** `dbt-build-mercado` covers all 8 mercado marts, `conab-mercado-full-mvp`, committed `scripts/benchmark/profiles/fast10.json` with `precos-semanal-uf` + `frete`
 - **IBGE PAM (Phase 16):** full E2E for area-quantidade, rendimento-valor, estabelecimentos — dbt marts, DuckDB views `analytics.ibge_pam_*`, `make ibge-pam-mvp`
 - **INMET Clima Histórico (Phase 17):** full E2E for station catalogs, BDMEP diário/mensal, pacote-anual-automaticas — dbt marts, DuckDB views, `make inmet-clima-mvp`

@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt validate-codigo-ibge benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -11,6 +11,8 @@ MIGRATIONS_PATH := infra/postgres/migrations
 MIGRATE ?= migrate
 BENCHMARK_PROFILE ?= scripts/benchmark/profiles/fast10.json
 MERCADO_DBT_SELECT := stg_conab__oferta_demanda+ stg_conab__precos_semanal_uf+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_uf+ stg_conab__precos_mensal_municipio+ stg_conab__precos_minimos+ stg_conab__prohort_diario+ stg_conab__prohort_mensal+
+CI_COD_IBGE_LAKE ?= /tmp/cod-ibge-ci-lake
+COD_IBGE_DBT_SELECT := stg_conab__custo_producao+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_municipio+ stg_conab__frete+ stg_conab__armazenagem+ stg_conab__estoques_publicos+ stg_conab__alimenta_brasil_propostas+ stg_conab__prohort_diario+ stg_conab__prohort_mensal+
 
 test:
 	go test ./...
@@ -44,6 +46,20 @@ ci-dbt: duckdb-install python-install
 		$(MAKE) analytics-init analytics-smoke
 	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT COUNT(*) FROM analytics.conab_oferta_demanda"
 	duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
+
+# Offline CI: seed all CONAB marts with cod_ibge, build gold, cross-check vs IBGE municipios.
+ci-validate-codigo-ibge: duckdb-install python-install dbt-deps
+	rm -rf $(CI_COD_IBGE_LAKE) /tmp/cod-ibge-ci.duckdb
+	cp -f dbt/profiles.yml.example dbt/profiles.yml
+	LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) python3 scripts/ci/seed_dbt_silver.py
+	LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) python3 scripts/ci/seed_mercado_silver.py
+	LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) python3 scripts/ci/seed_armazenamento_silver.py
+	LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) python3 scripts/ci/seed_abastecimento_silver.py
+	LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) python3 scripts/ci/seed_agricultura_familiar_silver.py
+	cd dbt && PATH="$(CURDIR)/.local/bin:$$PATH" DUCKDB_BIN="$(CURDIR)/.local/bin/duckdb" \
+		LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) DUCKDB_PATH=/tmp/cod-ibge-ci.duckdb \
+		dbt build --profiles-dir . --select '$(COD_IBGE_DBT_SELECT)'
+	python3 scripts/quality/validate_codigo_ibge.py --lake-root $(CI_COD_IBGE_LAKE)
 
 benchmark-ingestor:
 	@test -f .env || (echo "copy .env.example to .env first" && exit 1)

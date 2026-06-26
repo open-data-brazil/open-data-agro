@@ -136,6 +136,11 @@ jobs:
           make analytics-smoke DUCKDB_PATH=/tmp/open-data-agro-analytics.duckdb
           duckdb /tmp/open-data-agro-analytics.duckdb -c "SELECT * FROM analytics.conab_estimativa_graos LIMIT 10"
 
+      - name: Validate cod_ibge in CONAB gold marts
+        env:
+          LAKE_LOCAL_ROOT: /tmp/cod-ibge-ci-lake
+        run: make ci-validate-codigo-ibge CI_COD_IBGE_LAKE=/tmp/cod-ibge-ci-lake
+
   quality:
     runs-on: ubuntu-latest
     steps:
