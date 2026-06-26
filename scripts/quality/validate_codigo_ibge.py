@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate CONAB IBGE municipality codes against the IBGE localidades mart."""
+"""Validate municipality IBGE codes in gold marts against localidades reference."""
 
 from __future__ import annotations
 
@@ -30,6 +30,15 @@ CONAB_IBGE_COLUMNS: dict[str, list[str]] = {
     ],
     "mart_conab__custo_producao": ["cod_ibge"],
 }
+
+# IBGE PAM gold marts use canonical codigo_ibge column name.
+IBGE_PAM_IBGE_COLUMNS: dict[str, list[str]] = {
+    "mart_ibge__pam_area_quantidade": ["codigo_ibge"],
+    "mart_ibge__pam_rendimento_valor": ["codigo_ibge"],
+    "mart_ibge__pam_estabelecimentos": ["codigo_ibge"],
+}
+
+MART_IBGE_COLUMNS = {**CONAB_IBGE_COLUMNS, **IBGE_PAM_IBGE_COLUMNS}
 
 IBGE_MUNICIPIOS_MART = "mart_ibge__localidades_municipios"
 
@@ -122,7 +131,7 @@ def run_validation(lake_root: Path, *, sample_limit: int = 10) -> dict:
     reports: list[dict] = []
     skipped: list[str] = []
 
-    for mart_name, columns in CONAB_IBGE_COLUMNS.items():
+    for mart_name, columns in MART_IBGE_COLUMNS.items():
         mart_path = lake_root / "gold" / mart_name / "mart.parquet"
         if not mart_path.is_file():
             skipped.append(mart_name)
@@ -143,7 +152,7 @@ def run_validation(lake_root: Path, *, sample_limit: int = 10) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Validate CONAB cod_ibge values against IBGE municipios mart"
+        description="Validate cod_ibge / codigo_ibge in gold marts against IBGE municipios reference"
     )
     parser.add_argument(
         "--lake-root",
