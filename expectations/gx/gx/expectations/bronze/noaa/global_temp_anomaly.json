@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Global temperature anomaly rows must be present." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "refmonth" },
+      "meta": { "notes": "Monthly period YYYY-MM." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "refmonth" },
+      "meta": { "notes": "Month required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "anomaly" },
+      "meta": { "notes": "Temperature anomaly required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["refmonth", "index_name"] },
+      "meta": { "notes": "One row per month × index." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "noaa.global-temp-anomaly",
+    "fonte_oficial": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series",
+    "agencia": "NOAA NCEI",
+    "license": "NOAA NCEI — U.S. Government work (public domain)"
+  },
+  "name": "bronze.noaa.global_temp_anomaly",
+  "id": "bronze-noaa-global-temp-anomaly-suite"
+}

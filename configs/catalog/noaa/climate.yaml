@@ -1,0 +1,28 @@
+# NOAA — global climate indices (Phase 28 P2)
+# ONI: CPC ENSO index · Global temp: NCEI Climate at a Glance (no API key)
+
+entries:
+  - dataset_id: noaa.enso-indices
+    source_url: https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt
+    source_portal_url: https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php
+    format: json
+    schedule: monthly
+    portal_label: Oceanic Niño Index (ONI) — 3-month running mean SST anomaly
+    noaa_index_url: https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt
+    period_start: 2010
+    frequency: seasonal
+    license: "NOAA CPC/NCEI — U.S. Government work (public domain)"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: noaa.global-temp-anomaly
+    source_url: https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series/globe/land_ocean/0/0/2010-2026.csv
+    source_portal_url: https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series
+    format: json
+    schedule: monthly
+    portal_label: Global land+ocean temperature anomaly (monthly)
+    period_start: 2010
+    frequency: monthly
+    license: "NOAA NCEI — U.S. Government work (public domain)"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z

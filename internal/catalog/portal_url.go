@@ -52,8 +52,14 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "worldbank.") {
 		return WorldBankCommodityMarketsURL
 	}
+	if strings.HasPrefix(datasetID.String(), "noaa.") {
+		return NOAANCEIPortalURL
+	}
 	return ""
 }
+
+// NOAANCEIPortalURL is the NOAA NCEI climate monitoring portal URL.
+const NOAANCEIPortalURL = "https://www.ncei.noaa.gov/access/monitoring/"
 
 // WorldBankCommodityMarketsURL is the World Bank commodity markets portal URL.
 const WorldBankCommodityMarketsURL = "https://www.worldbank.org/en/research/commodity-markets"

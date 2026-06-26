@@ -219,6 +219,17 @@ Producer prices (USD/tonne) and price indices by country × year. Items 236/56/1
 
 USD-denominated monthly commodity reference prices. Monthly grain — no daily resampling in bronze (Stage H policy). `fonte_tipo: internacional_oficial`.
 
+### NOAA — global climate indices (Phase 28)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `noaa.enso-indices` | Oceanic Niño Index (ONI) — seasonal ENSO SST anomaly | **P2 — implemented** |
+| `noaa.global-temp-anomaly` | Global land+ocean monthly temperature anomaly | **P2 — implemented** |
+
+**Fonte oficial:** [NOAA CPC ONI](https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php) · `oni.ascii.txt` · [NCEI Climate at a Glance](https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series) · CSV `globe/land_ocean/0/0/{start}-{end}.csv` (no API key)
+
+Global climate shock features complementing INMET (Phase 17). `fonte_tipo: internacional_oficial`. ONI is seasonal (3-month running mean); global temp is monthly.
+
 ---
 
 ## Rules

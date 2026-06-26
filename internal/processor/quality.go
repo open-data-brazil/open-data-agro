@@ -235,6 +235,10 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_fao_prices_agro", true
 	case "worldbank.pink-sheet-monthly":
 		return "bronze_worldbank_pink_sheet_monthly", true
+	case "noaa.enso-indices":
+		return "bronze_noaa_enso_indices", true
+	case "noaa.global-temp-anomaly":
+		return "bronze_noaa_global_temp_anomaly", true
 	default:
 		return "", false
 	}

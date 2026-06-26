@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: mart_noaa__enso_indices
+    description: NOAA Oceanic Niño Index (ONI) seasonal anomalies.
+    config:
+      meta:
+        dataset_id: noaa.enso-indices
+        grain: refyear, season_code
+    columns:
+      - name: refyear
+        tests: [not_null]
+      - name: season_code
+        tests: [not_null]
+      - name: anomaly
+        tests: [not_null]
+      - name: capturado_em
+        tests: [not_null]
+      - name: fonte_oficial
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [refyear, season_code]
+
+  - name: mart_noaa__global_temp_anomaly
+    description: NOAA NCEI global land+ocean monthly temperature anomaly.
+    config:
+      meta:
+        dataset_id: noaa.global-temp-anomaly
+        grain: refmonth, index_name
+    columns:
+      - name: refmonth
+        tests: [not_null]
+      - name: anomaly
+        tests: [not_null]
+      - name: capturado_em
+        tests: [not_null]
+      - name: fonte_oficial
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [refmonth, index_name]

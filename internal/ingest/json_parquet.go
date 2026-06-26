@@ -13,6 +13,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/usda"
 	"github.com/open-data-brazil/open-data-agro/internal/fao"
 	"github.com/open-data-brazil/open-data-agro/internal/worldbank"
+	"github.com/open-data-brazil/open-data-agro/internal/noaa"
 )
 
 func convertJSONFileToParquet(entry catalog.RegistryEntry, path string) ([]byte, int, error) {
@@ -74,6 +75,12 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		return writeStringTable(headers, rows)
 	case "worldbank":
 		headers, rows, err := worldbank.FlattenPinkSheet(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "noaa":
+		headers, rows, err := noaa.FlattenClimate(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}
