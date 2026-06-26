@@ -8,6 +8,7 @@ Committed samples are the first 5 data rows plus header from:
 - `PrecosSemanalUF.txt` → `conab.precos-agropecuarios-semanal-uf`
 - `PrecosSemanalMunicipio.txt` → `conab.precos-agropecuarios-semanal-municipio`
 - `PrecosMensalUF.txt` → `conab.precos-agropecuarios-mensal-uf`
+- `PrecosMensalMunicipio.txt` → `conab.precos-agropecuarios-mensal-municipio`
 - `Estoques.txt` → `conab.estoques-publicos`
 - `ArmazensCadastrados.txt` → `conab.armazenagem`
 - `exportacao_capacidade_estatica.xls` → `conab.serie-historica-capacidade-estatica`

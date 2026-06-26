@@ -1,0 +1,113 @@
+{
+  "expectations": [
+    {
+      "id": "314d8817-c569-4d36-9d9b-9353e5a4df0f",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "597402c5-d881-46ff-8dfb-f960c53810fd",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "CONAB product column."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "139165d5-2e4b-4ebe-86b5-221faf62fe38",
+      "kwargs": {
+        "column": "cod_ibge"
+      },
+      "meta": {
+        "notes": "IBGE municipality code (padded in raw file)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "0b9416a1-df0b-477e-a663-70acae60d66a",
+      "kwargs": {
+        "column": "valor_produto_kg"
+      },
+      "meta": {
+        "notes": "Monthly price per kg."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "a9e44c7d-7209-4188-809a-218a5ed6a51f",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "349c12c6-d56b-4cf9-acbd-af38173bf1dd",
+      "kwargs": {
+        "column": "cod_ibge"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 municipality code must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "0fe2a74b-97ae-47b9-a0c4-69b569a88d0a",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 UF must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "7038ce16-ad7a-4cdb-871e-86a7461060f6",
+      "kwargs": {
+        "column": "ano"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 year must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "88e15ac9-989b-4193-b409-d42ef0518c25",
+      "kwargs": {
+        "column": "mes"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 month must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "f5da9fcd-b8f3-42ae-9066-b57004befdc9",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Pre\u00e7os agropecu\u00e1rios Mensal Munic\u00edpio",
+    "dataset_id": "conab.precos-agropecuarios-mensal-municipio",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.precos_mensal_municipio",
+  "notes": null
+}

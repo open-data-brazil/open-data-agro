@@ -24,6 +24,7 @@ def main() -> int:
     (lake_root / "gold" / "mart_conab__precos_semanal_uf").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__precos_semanal_municipio").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__precos_mensal_uf").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__precos_mensal_municipio").mkdir(parents=True, exist_ok=True)
 
     source = str(lake_root / "bronze/seed.parquet")
     ingested = "2026-06-25T12:00:00Z"
@@ -127,6 +128,32 @@ def main() -> int:
         }
     )
     write_table(lake_root, "precos_agropecuarios_mensal_uf", precos_mensal_uf)
+
+    precos_mensal_municipio = pa.table(
+        {
+            "produto": ["SOJA", "SOJA"],
+            "classificao_produto": ["EM GRAOS", "EM GRAOS"],
+            "id_produto": ["4744", "4744"],
+            "nom_municipio": ["SORRISO-MT", "SORRISO-MT"],
+            "cod_ibge": ["5107925", "5107925"],
+            "uf": ["MT", "MT"],
+            "regiao": ["CENTRO-OESTE", "CENTRO-OESTE"],
+            "ano": ["2025", "2025"],
+            "mes": ["6", "7"],
+            "dsc_nivel_comercializacao": [
+                "PRECO RECEBIDO P/ PRODUTOR",
+                "PRECO RECEBIDO P/ PRODUTOR",
+            ],
+            "valor_produto_kg": ["1,83", "1,88"],
+            "_dataset_id": [
+                "conab.precos-agropecuarios-mensal-municipio",
+                "conab.precos-agropecuarios-mensal-municipio",
+            ],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "precos_agropecuarios_mensal_municipio", precos_mensal_municipio)
     print(f"seeded mercado silver under {lake_root / 'silver' / 'conab'}")
     return 0
 

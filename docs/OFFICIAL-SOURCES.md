@@ -40,7 +40,7 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 | `conab.oferta-demanda` | Oferta e Demanda | **P1 — implemented** |
 | `conab.precos-minimos` | Preços Mínimos | Catalog registered |
 | `conab.precos-agropecuarios-mensal-uf` | Preços agropecuários Mensal UF | **P1 — full pipeline** |
-| `conab.precos-agropecuarios-mensal-municipio` | Preços agropecuários Mensal Município | Catalog registered |
+| `conab.precos-agropecuarios-mensal-municipio` | Preços agropecuários Mensal Município | **P1 — full pipeline** |
 | `conab.precos-agropecuarios-semanal-uf` | Preços agropecuários Semanal UF | **P1 — full pipeline** |
 | `conab.precos-agropecuarios-semanal-municipio` | Preços agropecuários Semanal Municipio | **P1 — full pipeline** |
 | `conab.prohort-diario` | Prohort Diário | Catalog registered |
