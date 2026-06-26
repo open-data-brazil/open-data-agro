@@ -295,7 +295,7 @@ dbt-build-cepea: dbt-deps
 conab-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_dbt_silver.py
 	$(MAKE) dbt-build LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
-	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
 	$(MAKE) analytics-smoke DUCKDB_PATH=$(DUCKDB_PATH)
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_graos"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_estimativa_cana"
@@ -303,6 +303,7 @@ conab-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_estimativa_cafe"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_serie_historica_cafe"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.conab_custo_producao"
+	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 
 clean:
 	rm -rf $(BIN_DIR)

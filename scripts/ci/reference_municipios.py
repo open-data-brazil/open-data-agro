@@ -74,6 +74,14 @@ REFERENCE_MUNICIPIOS: list[dict[str, str]] = [
         "nome_regiao": "Centro-Oeste",
     },
     {
+        "codigo_ibge": "3170701",
+        "nome": "Varginha",
+        "sigla_uf": "MG",
+        "codigo_uf": "31",
+        "codigo_regiao": "3",
+        "nome_regiao": "Sudeste",
+    },
+    {
         "codigo_ibge": "3548500",
         "nome": "Santos",
         "sigla_uf": "SP",

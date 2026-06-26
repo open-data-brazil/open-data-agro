@@ -34,8 +34,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CONAB Mercado cod_ibge validation (Phase 11 P4):** `validate-codigo-ibge` wired into `conab-mercado-full-mvp`, `conab-mercado-precos-mvp`, and `conab-mercado-prohort-mvp`; shared `scripts/ci/reference_municipios.py` for CI seeds
 - **CONAB Armazenamento cod_ibge validation (Phase 13 P4):** `validate-codigo-ibge` wired into `conab-armazenamento-mvp` and `conab-armazenamento-logistica-mvp`; frete origin/destination and armazenagem `cod_ibge` checked against IBGE localidades
 - **CONAB Abastecimento + PAA cod_ibge validation (Phase 12/14 P4):** `validate-codigo-ibge` wired into `conab-abastecimento-mvp` and `conab-agricultura-familiar-mvp`; estoques públicos and Alimenta Brasil propostas checked against IBGE localidades
+- **CONAB Produção cod_ibge validation (Phase 10 P4):** `validate-codigo-ibge` wired into `conab-mvp`; custo de produção `cod_ibge` checked against IBGE localidades
 - **CONAB Mercado CI consolidation (Phase 11 §7):** `dbt-build-mercado` covers all 8 mercado marts, `conab-mercado-full-mvp`, committed `scripts/benchmark/profiles/fast10.json` with `precos-semanal-uf` + `frete`
-- **IBGE PAM (Phase 16 ingest):** `ibge/pam.yaml` (3 datasets), SIDRA API client with chunked UF/year/crop pulls, bronze Parquet, GE suites, dbt staging for area-quantidade, `make ibge-pam-mvp`
-- **INMET Clima Histórico (Phase 17 ingest):** `inmet/clima.yaml` (5 datasets), station catalog + BDMEP annual ZIP client, daily/monthly long-format bronze, GE suites, `make inmet-clima-mvp`
-- **BCB Séries Macro (Phase 18 ingest):** `bcb/sgs.yaml` (5 datasets), SGS API client with 10-year pagination, bronze Parquet, GE suites, dbt staging for IPCA/PTAX, `make bcb-sgs-mvp`
-- **CEPEA Preços Agro (Phase 19 ingest):** `cepea/indicadores.yaml` (4 datasets), HTML indicator client with CEPEA/NA mirror fallback, bronze Parquet, GE suites, `--from` ISO date, `make cepea-indicadores-mvp`
+- **IBGE PAM (Phase 16):** full E2E for area-quantidade, rendimento-valor, estabelecimentos — dbt marts, DuckDB views `analytics.ibge_pam_*`, `make ibge-pam-mvp`
+- **INMET Clima Histórico (Phase 17):** full E2E for station catalogs, BDMEP diário/mensal, pacote-anual-automaticas — dbt marts, DuckDB views, `make inmet-clima-mvp`
+- **BCB Séries Macro (Phase 18):** full E2E for IPCA, IPCA 12m, IGP-M, PTAX compra/venda — dbt marts, DuckDB views, `make bcb-sgs-mvp`
+- **CEPEA Preços Agro (Phase 19):** full E2E for soja Paranaguá/PR, milho, boi gordo — dbt marts, DuckDB views, `make cepea-indicadores-mvp`
