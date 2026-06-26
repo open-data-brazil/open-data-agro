@@ -24,6 +24,12 @@
     nome_regiao
 {% endmacro %}
 
+{% macro ibge_localidades_regioes_columns() %}
+    codigo_regiao,
+    sigla_regiao,
+    nome
+{% endmacro %}
+
 {% macro ibge_pam_area_quantidade_columns() %}
     sidra_tabela,
     codigo_ibge,

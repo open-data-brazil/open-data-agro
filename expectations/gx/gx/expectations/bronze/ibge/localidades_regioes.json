@@ -1,0 +1,47 @@
+{
+  "expectations": [
+    {
+      "id": "6085fe69-171a-408b-81a9-728e09d93434",
+      "kwargs": {
+        "max_value": 6,
+        "min_value": 5
+      },
+      "meta": {
+        "notes": "Brazil has five macro-regions."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "bd5f87e2-e55e-46cc-8d12-e0fb0897c5e2",
+      "kwargs": {
+        "column": "codigo_regiao"
+      },
+      "meta": {
+        "notes": "Region numeric code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "6bada32c-1375-4f47-8e47-92d6cce25794",
+      "kwargs": {
+        "column": "codigo_regiao"
+      },
+      "meta": {
+        "notes": "Each region appears once per snapshot."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_be_unique"
+    }
+  ],
+  "id": "20c94e64-c02d-48ff-ace4-876c546d7417",
+  "meta": {
+    "agencia": "IBGE",
+    "dataset_id": "ibge.localidades-regioes",
+    "fonte_oficial": "https://servicodados.ibge.gov.br/api/docs/localidades",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.ibge.localidades_regioes",
+  "notes": null
+}

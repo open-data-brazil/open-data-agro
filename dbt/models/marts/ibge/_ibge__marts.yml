@@ -53,3 +53,30 @@ models:
       - name: fonte_oficial
         tests:
           - not_null
+
+  - name: mart_ibge__localidades_regioes
+    description: |
+      IBGE macro-region reference — grain is codigo_regiao.
+      Materialized to lake/gold/mart_ibge__localidades_regioes/ as Parquet (local-first).
+    config:
+      meta:
+        dataset_id: ibge.localidades-regioes
+        grain: codigo_regiao
+    columns:
+      - name: codigo_regiao
+        tests:
+          - not_null
+          - unique
+      - name: sigla_regiao
+        tests:
+          - not_null
+          - unique
+      - name: nome
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null

@@ -193,9 +193,11 @@ ibge-localidades-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS municipios FROM analytics.ibge_localidades_municipios"
 	duckdb $(DUCKDB_PATH) -c "SELECT codigo_ibge, nome, sigla_uf FROM analytics.ibge_localidades_municipios WHERE codigo_ibge = '3550308'"
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS ufs FROM analytics.ibge_localidades_ufs"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS regioes FROM analytics.ibge_localidades_regioes"
+	duckdb $(DUCKDB_PATH) -c "SELECT codigo_regiao, sigla_regiao, nome FROM analytics.ibge_localidades_regioes ORDER BY codigo_regiao"
 
 dbt-build-ibge-localidades: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__localidades_municipios+ stg_ibge__localidades_ufs+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__localidades_municipios+ stg_ibge__localidades_ufs+ stg_ibge__localidades_regioes+'
 
 dbt-build-ibge-pam:
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_ibge__pam_area_quantidade+'

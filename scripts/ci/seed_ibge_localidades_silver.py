@@ -22,6 +22,7 @@ def main() -> int:
     lake_root.mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_ibge__localidades_municipios").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_ibge__localidades_ufs").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_ibge__localidades_regioes").mkdir(parents=True, exist_ok=True)
 
     source = str(lake_root / "bronze/seed.parquet")
     ingested = "2026-06-25T12:00:00Z"
@@ -59,6 +60,22 @@ def main() -> int:
 
     write_table(lake_root, "ibge", "localidades_municipios", municipios)
     write_table(lake_root, "ibge", "localidades_ufs", ufs)
+
+    regioes = pa.table(
+        {
+            "codigo_regiao": ["1", "3", "5"],
+            "sigla_regiao": ["N", "SE", "CO"],
+            "nome": ["Norte", "Sudeste", "Centro-Oeste"],
+            "_dataset_id": [
+                "ibge.localidades-regioes",
+                "ibge.localidades-regioes",
+                "ibge.localidades-regioes",
+            ],
+            "_ingested_at": [ingested, ingested, ingested],
+            "_source_file": [source, source, source],
+        }
+    )
+    write_table(lake_root, "ibge", "localidades_regioes", regioes)
     print(f"seeded IBGE localidades silver under {lake_root / 'silver' / 'ibge'}")
     return 0
 
