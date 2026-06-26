@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Selic series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "sgs_codigo" },
+      "meta": { "notes": "SGS series code required." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "sgs_codigo", "value_set": ["11"] },
+      "meta": { "notes": "Selic target rate is SGS series 11." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["sgs_codigo", "data"] },
+      "meta": { "notes": "One value per calendar day." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "bcb.sgs-selic",
+    "fonte_oficial": "https://dadosabertos.bcb.gov.br/",
+    "agencia": "BCB"
+  },
+  "name": "bronze.bcb.sgs_selic",
+  "id": "bronze-bcb-sgs-selic-suite"
+}

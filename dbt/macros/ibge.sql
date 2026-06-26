@@ -51,6 +51,25 @@
     nome_uf
 {% endmacro %}
 
+{% macro ibge_lspa_fonte_oficial() %}
+  https://sidra.ibge.gov.br/pesquisa/lspa
+{% endmacro %}
+
+{% macro ibge_lspa_area_producao_columns() %}
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    mes,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    produto_slug,
+    valor,
+    unidade_codigo,
+    unidade
+{% endmacro %}
+
 {% macro ibge_pam_area_quantidade_columns() %}
     sidra_tabela,
     codigo_ibge,

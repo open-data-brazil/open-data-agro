@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **BR new sources (Phase 37):** `ibge.lspa-area-producao`, `bcb.sgs-selic` — IBGE LSPA SIDRA 6588 monthly UF production + BCB Selic SGS 11, GE suites, dbt marts, DuckDB views, `make br-new-sources-mvp` + `make ci-br-new-sources-mvp`
 - **International extended (Phase 36):** `fao.producao-agro`, `fao.comercio-agro`, `worldbank.ag-indices` — FAOSTAT annual bulk + Pink Sheet agriculture indices, GE suites, dbt marts, DuckDB views, `make international-extended-mvp` + `make ci-international-extended-mvp`
 - **BR comex extended (Phase 35):** `mdic.comex-importacao-ncm-mes`, `mdic.comex-exportacao-uf-ncm`, `mdic.comex-importacao-diesel-ncm` — Comex Stat import/UF export API client, GE suites, dbt marts, DuckDB views, `make mdic-comex-extended-mvp` + `make ci-mdic-comex-extended-mvp`
 - **BR logistics extended (Phase 34):** `antt.volume-trafego-pedagio` (P0) and `antt.receita-por-praca` (P1) — CKAN name/year resolver, GE suites, dbt marts, DuckDB views `analytics.antt_volume_trafego_pedagio` / `analytics.antt_receita_por_praca`, `make br-logistica-extended-mvp` + `make ci-br-logistica-extended-mvp`; `antt.tarifas-pedagio` deferred (CKAN package 404)

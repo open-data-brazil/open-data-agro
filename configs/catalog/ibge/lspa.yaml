@@ -1,0 +1,24 @@
+# IBGE — LSPA Levantamento Sistemático da Produção Agrícola (Phase 37 P0)
+# SIDRA API: https://apisidra.ibge.gov.br/
+# Survey: https://sidra.ibge.gov.br/pesquisa/lspa
+# Historical monthly series: table 6588 (UF grain)
+
+entries:
+  - dataset_id: ibge.lspa-area-producao
+    source_url: https://apisidra.ibge.gov.br/values/t/6588
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/lspa
+    format: json
+    schedule: monthly
+    portal_label: LSPA — área plantada, colhida e produção mensal por UF
+    sidra_table: "6588"
+    sidra_classification: "48"
+    sidra_variables: [109, 216, 35]
+    sidra_crops:
+      soja: 39443
+      milho: 39441
+      trigo: 39445
+    period_start: 2010
+    period_end: 2025
+    frequency: monthly
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z

@@ -155,3 +155,25 @@ models:
             combination_of_columns:
               - sgs_codigo
               - data
+
+  - name: mart_bcb__sgs_selic
+    description: BCB SGS Selic target rate (code 11).
+    config:
+      meta:
+        dataset_id: bcb.sgs-selic
+        grain: sgs_codigo, data
+    columns:
+      - name: sgs_codigo
+        tests: [not_null]
+      - name: data
+        tests: [not_null]
+      - name: valor
+        tests: [not_null]
+      - name: capturado_em
+        tests: [not_null]
+      - name: fonte_oficial
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [sgs_codigo, data]

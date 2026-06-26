@@ -63,6 +63,7 @@ Portal audit: all listed sections mapped — see `.local/phases/33-collection-ha
 | `ibge.pam-area-quantidade` | **1974** | 2010 (MVP window) | `go run ./cmd/ingestor run ibge.pam-area-quantidade --from 1974 --to 2024` |
 | `ibge.pam-rendimento-valor` | **1974** | 2010 | `--from 1974` |
 | `ibge.pam-estabelecimentos` | **2007** | 2010 | `--from 2007` |
+| `ibge.lspa-area-producao` | **2006** (6588) | 2010 | SIDRA monthly UF; `--from 2010 --to 2025` |
 
 Use `--uf` and `--crop` to chunk large SIDRA pulls.
 
@@ -90,6 +91,7 @@ National full backfill can exceed 100 GB — prefer `--uf` + `--year` increments
 | `bcb.sgs-ptax-usd-venda` | 1 | **1984** | 01/01/1984 | `--from 1984-01-01` |
 | `bcb.sgs-ptax-usd-compra` | 10813 | **1984** | 01/01/1984 | `--from 1984-01-01` |
 | `bcb.sgs-igpm` | 189 | 1989 | 01/01/1995 | |
+| `bcb.sgs-selic` | 11 | **1986** | 01/01/1986 | daily; `--from 1986-01-01` |
 
 API paginates ≤10 years per request (`internal/bcb/sgs.go`).
 

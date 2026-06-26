@@ -68,5 +68,8 @@ func FlattenIBGEJSON(datasetID string, raw []byte) ([]string, [][]string, error)
 	if isPAMDataset(datasetID) {
 		return FlattenPAM(datasetID, raw)
 	}
+	if isLSPADataset(datasetID) {
+		return FlattenLSPA(datasetID, raw)
+	}
 	return FlattenLocalidades(datasetID, raw)
 }

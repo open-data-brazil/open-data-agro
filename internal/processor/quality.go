@@ -185,6 +185,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_ibge_pam_rendimento_valor", true
 	case "ibge.pam-estabelecimentos":
 		return "bronze_ibge_pam_estabelecimentos", true
+	case "ibge.lspa-area-producao":
+		return "bronze_ibge_lspa_area_producao", true
 	case "inmet.estacoes-automaticas":
 		return "bronze_inmet_estacoes_automaticas", true
 	case "inmet.estacoes-convencionais":
@@ -205,6 +207,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_bcb_sgs_igpm", true
 	case "bcb.sgs-ptax-usd-compra":
 		return "bronze_bcb_sgs_ptax_usd_compra", true
+	case "bcb.sgs-selic":
+		return "bronze_bcb_sgs_selic", true
 	case "cepea.soja-paranagua":
 		return "bronze_cepea_soja_paranagua", true
 	case "cepea.soja-parana":

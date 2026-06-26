@@ -152,6 +152,24 @@ func TestIBGEMicrorregioesGoldenVector(t *testing.T) {
 	}
 }
 
+func TestIBGELSPAAreaProducaoGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readIBGETestdata(t, "lspa_area_producao.sample.json")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("ibge.lspa-area-producao"),
+		Format:    catalog.FormatJSON,
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount != 3 {
+		t.Fatalf("rowCount: got %d want 3", rowCount)
+	}
+}
+
 func readIBGETestdata(t *testing.T, name string) []byte {
 	t.Helper()
 	path := filepath.Join("..", "ibge", "testdata", name)

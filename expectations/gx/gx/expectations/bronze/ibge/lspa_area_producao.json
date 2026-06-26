@@ -1,0 +1,37 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "LSPA monthly series must contain observations." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "codigo_uf" },
+      "meta": { "notes": "UF code required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "mes" },
+      "meta": { "notes": "Monthly period YYYYMM required." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "sidra_tabela", "value_set": ["6588"] },
+      "meta": { "notes": "Historical LSPA monthly series uses SIDRA table 6588." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["codigo_uf", "mes", "variavel_codigo", "produto_codigo"] },
+      "meta": { "notes": "UF monthly production grain." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ibge.lspa-area-producao",
+    "fonte_oficial": "https://sidra.ibge.gov.br/pesquisa/lspa",
+    "agencia": "IBGE"
+  },
+  "name": "bronze.ibge.lspa_area_producao",
+  "id": "bronze-ibge-lspa-area-producao-suite"
+}

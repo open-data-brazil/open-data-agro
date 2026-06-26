@@ -104,6 +104,16 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 
 MVP crops (soja, milho, trigo) use SIDRA classification `c81` (1612), `c82` (1613), `c782` (5457) with product codes `2713`, `2711`, `2716`.
 
+### IBGE — LSPA Produção Agrícola (Phase 37)
+
+| Dataset ID | SIDRA table | Status |
+|------------|-------------|--------|
+| `ibge.lspa-area-producao` | 6588 — área plantada, colhida, produção mensal por UF | **P0 — implemented** |
+
+**Fonte oficial:** [IBGE SIDRA — LSPA](https://sidra.ibge.gov.br/pesquisa/lspa) · historical monthly series table **6588** (UF grain, `c48` crop classification)
+
+Core crops: soja `39443`, milho `39441`, trigo `39445`. Variables `109` (área plantada), `216` (área colhida), `35` (produção). Complements CONAB `estimativa-graos`.
+
 ### INMET — Clima Histórico (Phase 17)
 
 | Dataset ID | Source | Status |
@@ -127,6 +137,7 @@ Timestamps in source files are **UTC**; missing values use sentinels `9999`, `Nu
 | `bcb.sgs-ipca-12m` | 13522 — IPCA acumulado 12 meses | **P1 — implemented** |
 | `bcb.sgs-igpm` | 189 — IGP-M variação mensual | **P2 — implemented** |
 | `bcb.sgs-ptax-usd-compra` | 10813 — Dólar PTAX compra | **P2 — implemented** |
+| `bcb.sgs-selic` | 11 — Taxa Selic meta (% a.a.) | **P1 — implemented** |
 
 **Fonte oficial:** [BCB Dados Abertos](https://dadosabertos.bcb.gov.br/) · API: [api.bcb.gov.br](https://api.bcb.gov.br/)
 

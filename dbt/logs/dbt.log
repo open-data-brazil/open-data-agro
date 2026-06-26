@@ -2503,3 +2503,1123 @@ where year is null
 [0m12:43:27.952413 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c94b75a52b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c94b7f2c1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c94a1fe5d60>]}
 [0m12:43:27.952731 [debug] [MainThread]: Flushing usage events
 [0m12:43:28.831783 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:49:14.230967 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76c52ea22540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76c52ea7d1c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76c530e231a0>]}
+
+
+============================== 12:49:14.233692 | 1782df75-09da-44e8-9200-0f2380dcae48 ==============================
+[0m12:49:14.233692 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:49:14.234191 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'static_parser': 'True', 'indirect_selection': 'eager', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None', 'target_path': 'None', 'log_cache_events': 'False', 'no_print': 'None', 'quiet': 'False', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'partial_parse': 'True', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'printer_width': '80', 'write_json': 'True', 'version_check': 'True', 'invocation_command': 'dbt deps --profiles-dir .', 'introspect': 'True', 'fail_fast': 'False'}
+[0m12:49:14.342027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1782df75-09da-44e8-9200-0f2380dcae48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76c52dfe07d0>]}
+[0m12:49:14.357297 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-fyzvmzls'
+[0m12:49:14.357698 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:49:14.484394 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:49:14.486141 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:49:14.842358 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:49:14.846987 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:49:15.209724 [info ] [MainThread]: Installed from version 1.3.0
+[0m12:49:15.210486 [info ] [MainThread]: Updated version available: 1.4.0
+[0m12:49:15.211128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '1782df75-09da-44e8-9200-0f2380dcae48', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76c52e32efc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76c52deeab70>]}
+[0m12:49:15.211745 [info ] [MainThread]: 
+[0m12:49:15.212125 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m12:49:15.213452 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 1.0347525, "process_in_blocks": "136", "process_kernel_time": 0.110015, "process_mem_max_rss": "121480", "process_out_blocks": "2296", "process_user_time": 1.375197}
+[0m12:49:15.214128 [debug] [MainThread]: Command `dbt deps` succeeded at 12:49:15.214003 after 1.04 seconds
+[0m12:49:15.214824 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76c52e100200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76c52e047cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76c52e0447a0>]}
+[0m12:49:15.215514 [debug] [MainThread]: Flushing usage events
+[0m12:49:15.872325 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:49:17.494002 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175fd05b530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175fdb53800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175ff15ee70>]}
+
+
+============================== 12:49:17.498214 | 7f48800e-37cb-403a-8ecc-35b97d1768d7 ==============================
+[0m12:49:17.498214 [info ] [MainThread]: Running with dbt=1.11.11
+[0m12:49:17.499060 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '.', 'cache_selected_only': 'False', 'log_format': 'default', 'warn_error': 'None', 'empty': 'False', 'invocation_command': 'dbt build --profiles-dir . --select stg_ibge__lspa_area_producao+ stg_bcb__sgs_selic+', 'version_check': 'True', 'printer_width': '80', 'fail_fast': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'use_experimental_parser': 'False', 'write_json': 'True', 'partial_parse': 'True', 'static_parser': 'True', 'log_cache_events': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'introspect': 'True', 'debug': 'False', 'target_path': 'None', 'use_colors': 'True'}
+[0m12:49:17.719107 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175fc06a540>]}
+[0m12:49:17.783937 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175fd0e64e0>]}
+[0m12:49:17.785593 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m12:49:17.872030 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m12:49:18.064923 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:49:18.065391 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175fcb980b0>]}
+[0m12:49:19.715227 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'experimental_parser', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175efc2b2c0>]}
+[0m12:49:21.368423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175f02f7e30>]}
+[0m12:49:21.532538 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:49:21.535506 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:49:21.643186 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175efe22d50>]}
+[0m12:49:21.643804 [info ] [MainThread]: Found 141 models, 409 data tests, 70 sources, 669 macros
+[0m12:49:21.661766 [info ] [MainThread]: 
+[0m12:49:21.662325 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m12:49:21.662659 [info ] [MainThread]: 
+[0m12:49:21.663339 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m12:49:21.668344 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m12:49:21.696625 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m12:49:21.697056 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m12:49:21.697389 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:49:21.729235 [debug] [ThreadPool]: SQL status: OK in 0.032 seconds
+[0m12:49:21.731017 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m12:49:21.731886 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m12:49:21.732406 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m12:49:21.739830 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:49:21.740300 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m12:49:21.740615 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:49:21.741829 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:49:21.743241 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:49:21.743618 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m12:49:21.744236 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:49:21.744559 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:49:21.744839 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m12:49:21.745368 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:49:21.746296 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:49:21.746629 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m12:49:21.746920 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m12:49:21.747449 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m12:49:21.747768 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m12:49:21.760480 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m12:49:21.766180 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:49:21.766814 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m12:49:21.767152 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:49:21.768014 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m12:49:21.768375 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m12:49:21.768671 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m12:49:21.771856 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m12:49:21.776716 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m12:49:21.778485 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m12:49:21.779107 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m12:49:21.792687 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175efb60320>]}
+[0m12:49:21.793323 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:49:21.793662 [debug] [MainThread]: On master: BEGIN
+[0m12:49:21.793948 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:49:21.794729 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:49:21.795087 [debug] [MainThread]: On master: COMMIT
+[0m12:49:21.795397 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:49:21.795673 [debug] [MainThread]: On master: COMMIT
+[0m12:49:21.796108 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:49:21.796434 [debug] [MainThread]: On master: Close
+[0m12:49:21.798717 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_bcb__sgs_selic
+[0m12:49:21.799584 [debug] [Thread-2 (]: Began running node model.open_data_agro.stg_ibge__lspa_area_producao
+[0m12:49:21.800293 [info ] [Thread-1 (]: 1 of 18 START sql view model main.stg_bcb__sgs_selic ........................... [RUN]
+[0m12:49:21.801050 [info ] [Thread-2 (]: 2 of 18 START sql view model main.stg_ibge__lspa_area_producao ................. [RUN]
+[0m12:49:21.801706 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_bcb__sgs_selic)
+[0m12:49:21.802374 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.open_data_agro.stg_ibge__lspa_area_producao'
+[0m12:49:21.802936 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_bcb__sgs_selic
+[0m12:49:21.803713 [debug] [Thread-2 (]: Began compiling node model.open_data_agro.stg_ibge__lspa_area_producao
+[0m12:49:21.816907 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_bcb__sgs_selic"
+[0m12:49:21.822464 [debug] [Thread-2 (]: Writing injected SQL for node "model.open_data_agro.stg_ibge__lspa_area_producao"
+[0m12:49:21.823444 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_bcb__sgs_selic
+[0m12:49:21.824092 [debug] [Thread-2 (]: Began executing node model.open_data_agro.stg_ibge__lspa_area_producao
+[0m12:49:21.870062 [debug] [Thread-2 (]: Writing runtime sql for node "model.open_data_agro.stg_ibge__lspa_area_producao"
+[0m12:49:21.871225 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_bcb__sgs_selic"
+[0m12:49:21.872088 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__lspa_area_producao"
+[0m12:49:21.872558 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__lspa_area_producao: BEGIN
+[0m12:49:21.872990 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_bcb__sgs_selic"
+[0m12:49:21.873366 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:49:21.873775 [debug] [Thread-1 (]: On model.open_data_agro.stg_bcb__sgs_selic: BEGIN
+[0m12:49:21.874596 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:49:21.875143 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:49:21.875649 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__lspa_area_producao"
+[0m12:49:21.876131 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__lspa_area_producao"} */
+
+  
+  create view "dbt_workspace"."main"."stg_ibge__lspa_area_producao__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/br-new-sources-ci-lake/silver/ibge/lspa_area_producao/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    mes,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    produto_slug,
+    valor,
+    unidade_codigo,
+    unidade
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://sidra.ibge.gov.br/pesquisa/lspa
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by codigo_uf, mes, variavel_codigo, produto_codigo
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:49:21.876802 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:49:21.877248 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_bcb__sgs_selic"
+[0m12:49:21.877842 [debug] [Thread-1 (]: On model.open_data_agro.stg_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_bcb__sgs_selic"} */
+
+  
+  create view "dbt_workspace"."main"."stg_bcb__sgs_selic__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/tmp/br-new-sources-ci-lake/silver/bcb/sgs_selic/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+    sgs_codigo,
+    data,
+    valor,
+    ano
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        '
+  https://dadosabertos.bcb.gov.br/
+' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by sgs_codigo, data
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m12:49:21.878436 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:49:21.884840 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__lspa_area_producao"
+[0m12:49:21.885319 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m12:49:21.885776 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__lspa_area_producao"} */
+alter view "dbt_workspace"."main"."stg_ibge__lspa_area_producao__dbt_tmp" rename to "stg_ibge__lspa_area_producao"
+[0m12:49:21.888988 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_bcb__sgs_selic"
+[0m12:49:21.889773 [debug] [Thread-1 (]: On model.open_data_agro.stg_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_bcb__sgs_selic"} */
+alter view "dbt_workspace"."main"."stg_bcb__sgs_selic__dbt_tmp" rename to "stg_bcb__sgs_selic"
+[0m12:49:21.890521 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m12:49:21.891147 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:49:21.912716 [debug] [Thread-1 (]: On model.open_data_agro.stg_bcb__sgs_selic: COMMIT
+[0m12:49:21.913598 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__lspa_area_producao: COMMIT
+[0m12:49:21.914341 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_bcb__sgs_selic"
+[0m12:49:21.914817 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__lspa_area_producao"
+[0m12:49:21.915190 [debug] [Thread-1 (]: On model.open_data_agro.stg_bcb__sgs_selic: COMMIT
+[0m12:49:21.915553 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__lspa_area_producao: COMMIT
+[0m12:49:21.917193 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:49:21.923554 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_bcb__sgs_selic"
+[0m12:49:21.924105 [debug] [Thread-2 (]: SQL status: OK in 0.008 seconds
+[0m12:49:21.924723 [debug] [Thread-1 (]: On model.open_data_agro.stg_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_bcb__sgs_selic"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_bcb__sgs_selic__dbt_backup" cascade
+    
+[0m12:49:21.927227 [debug] [Thread-2 (]: Using duckdb connection "model.open_data_agro.stg_ibge__lspa_area_producao"
+[0m12:49:21.927904 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_ibge__lspa_area_producao"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_ibge__lspa_area_producao__dbt_backup" cascade
+    
+[0m12:49:21.928491 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:49:21.931030 [debug] [Thread-1 (]: On model.open_data_agro.stg_bcb__sgs_selic: Close
+[0m12:49:21.931523 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:49:21.934463 [debug] [Thread-2 (]: On model.open_data_agro.stg_ibge__lspa_area_producao: Close
+[0m12:49:21.935559 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175e737fad0>]}
+[0m12:49:21.936115 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175e737f140>]}
+[0m12:49:21.937140 [info ] [Thread-1 (]: 1 of 18 OK created sql view model main.stg_bcb__sgs_selic ...................... [[32mOK[0m in 0.13s]
+[0m12:49:21.938065 [info ] [Thread-2 (]: 2 of 18 OK created sql view model main.stg_ibge__lspa_area_producao ............ [[32mOK[0m in 0.13s]
+[0m12:49:21.939037 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_bcb__sgs_selic
+[0m12:49:21.939844 [debug] [Thread-2 (]: Finished running node model.open_data_agro.stg_ibge__lspa_area_producao
+[0m12:49:21.940831 [debug] [Thread-4 (]: Began running node model.open_data_agro.mart_bcb__sgs_selic
+[0m12:49:21.941725 [debug] [Thread-1 (]: Began running node model.open_data_agro.mart_ibge__lspa_area_producao
+[0m12:49:21.942737 [info ] [Thread-4 (]: 3 of 18 START sql external model main.mart_bcb__sgs_selic ...................... [RUN]
+[0m12:49:21.943786 [info ] [Thread-1 (]: 4 of 18 START sql external model main.mart_ibge__lspa_area_producao ............ [RUN]
+[0m12:49:21.944745 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_bcb__sgs_selic'
+[0m12:49:21.945494 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_bcb__sgs_selic, now model.open_data_agro.mart_ibge__lspa_area_producao)
+[0m12:49:21.946299 [debug] [Thread-4 (]: Began compiling node model.open_data_agro.mart_bcb__sgs_selic
+[0m12:49:21.947034 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.mart_ibge__lspa_area_producao
+[0m12:49:21.955593 [debug] [Thread-4 (]: Writing injected SQL for node "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:21.962436 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:21.963388 [debug] [Thread-1 (]: Began executing node model.open_data_agro.mart_ibge__lspa_area_producao
+[0m12:49:21.963966 [debug] [Thread-4 (]: Began executing node model.open_data_agro.mart_bcb__sgs_selic
+[0m12:49:22.062667 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.065911 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.066417 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: BEGIN
+[0m12:49:22.066821 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: BEGIN
+[0m12:49:22.067206 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:49:22.067558 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m12:49:22.068362 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m12:49:22.068780 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.069146 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.069528 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__lspa_area_producao"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_ibge__lspa_area_producao__dbt_tmp"
+  
+    as (
+      
+
+select
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    mes,
+    variavel_codigo,
+    variavel,
+    produto_codigo,
+    produto,
+    produto_slug,
+    valor,
+    unidade_codigo,
+    unidade,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_ibge__lspa_area_producao"
+    );
+  
+  
+[0m12:49:22.069915 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.070481 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_bcb__sgs_selic"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_bcb__sgs_selic__dbt_tmp"
+  
+    as (
+      
+
+select
+    sgs_codigo,
+    data,
+    valor,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_bcb__sgs_selic"
+    );
+  
+  
+[0m12:49:22.074253 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.075455 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.075909 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_bcb__sgs_selic"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_bcb__sgs_selic__dbt_tmp"
+  
+[0m12:49:22.076345 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m12:49:22.077609 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.078038 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__lspa_area_producao"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_ibge__lspa_area_producao__dbt_tmp"
+  
+[0m12:49:22.078452 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.080244 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.080729 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.082174 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.082698 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.083152 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_bcb__sgs_selic"} */
+
+[0m12:49:22.083616 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m12:49:22.084014 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.086261 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.086692 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__lspa_area_producao"} */
+
+[0m12:49:22.087077 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_bcb__sgs_selic"} */
+copy "dbt_workspace"."main"."mart_bcb__sgs_selic__dbt_tmp" to '/tmp/br-new-sources-ci-lake/gold/mart_bcb__sgs_selic/mart.parquet' (format parquet)
+[0m12:49:22.087501 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m12:49:22.088770 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.089236 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__lspa_area_producao"} */
+copy "dbt_workspace"."main"."mart_ibge__lspa_area_producao__dbt_tmp" to '/tmp/br-new-sources-ci-lake/gold/mart_ibge__lspa_area_producao/mart.parquet' (format parquet)
+[0m12:49:22.089797 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.091252 [debug] [Thread-4 (]: Writing runtime sql for node "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.091949 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.093179 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.093870 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.094350 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.094742 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_bcb__sgs_selic"} */
+
+      create or replace view "dbt_workspace"."main"."mart_bcb__sgs_selic__dbt_int" as (
+        select * from read_parquet('/tmp/br-new-sources-ci-lake/gold/mart_bcb__sgs_selic/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:49:22.095158 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__lspa_area_producao"} */
+
+      create or replace view "dbt_workspace"."main"."mart_ibge__lspa_area_producao__dbt_int" as (
+        select * from read_parquet('/tmp/br-new-sources-ci-lake/gold/mart_ibge__lspa_area_producao/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m12:49:22.096523 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:49:22.099611 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.100046 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m12:49:22.100477 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_bcb__sgs_selic"} */
+alter view "dbt_workspace"."main"."mart_bcb__sgs_selic__dbt_int" rename to "mart_bcb__sgs_selic"
+[0m12:49:22.104010 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.104704 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__lspa_area_producao"} */
+alter view "dbt_workspace"."main"."mart_ibge__lspa_area_producao__dbt_int" rename to "mart_ibge__lspa_area_producao"
+[0m12:49:22.105280 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:49:22.106655 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: COMMIT
+[0m12:49:22.107106 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.107583 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.108911 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: COMMIT
+[0m12:49:22.109369 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: COMMIT
+[0m12:49:22.109789 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.110355 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: COMMIT
+[0m12:49:22.111881 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.114285 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.114705 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_bcb__sgs_selic"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_bcb__sgs_selic__dbt_backup" cascade
+    
+[0m12:49:22.115091 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m12:49:22.117393 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.117850 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__lspa_area_producao"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ibge__lspa_area_producao__dbt_backup" cascade
+    
+[0m12:49:22.118270 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.121440 [debug] [Thread-4 (]: Using duckdb connection "model.open_data_agro.mart_bcb__sgs_selic"
+[0m12:49:22.121887 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_bcb__sgs_selic"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_bcb__sgs_selic__dbt_tmp" cascade
+    
+[0m12:49:22.122289 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m12:49:22.125223 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.mart_ibge__lspa_area_producao"
+[0m12:49:22.125709 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_ibge__lspa_area_producao"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_ibge__lspa_area_producao__dbt_tmp" cascade
+    
+[0m12:49:22.126714 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m12:49:22.128172 [debug] [Thread-4 (]: On model.open_data_agro.mart_bcb__sgs_selic: Close
+[0m12:49:22.128579 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.130042 [debug] [Thread-1 (]: On model.open_data_agro.mart_ibge__lspa_area_producao: Close
+[0m12:49:22.130767 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175b448be30>]}
+[0m12:49:22.131495 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7f48800e-37cb-403a-8ecc-35b97d1768d7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175e715ae10>]}
+[0m12:49:22.132461 [info ] [Thread-4 (]: 3 of 18 OK created sql external model main.mart_bcb__sgs_selic ................. [[32mOK[0m in 0.19s]
+[0m12:49:22.133470 [info ] [Thread-1 (]: 4 of 18 OK created sql external model main.mart_ibge__lspa_area_producao ....... [[32mOK[0m in 0.19s]
+[0m12:49:22.134365 [debug] [Thread-4 (]: Finished running node model.open_data_agro.mart_bcb__sgs_selic
+[0m12:49:22.135193 [debug] [Thread-1 (]: Finished running node model.open_data_agro.mart_ibge__lspa_area_producao
+[0m12:49:22.136422 [debug] [Thread-1 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748
+[0m12:49:22.137219 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f
+[0m12:49:22.138474 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978
+[0m12:49:22.139072 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7
+[0m12:49:22.137981 [info ] [Thread-1 (]: 5 of 18 START test dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data  [RUN]
+[0m12:49:22.139874 [info ] [Thread-3 (]: 6 of 18 START test not_null_mart_bcb__sgs_selic_capturado_em ................... [RUN]
+[0m12:49:22.140700 [info ] [Thread-2 (]: 7 of 18 START test not_null_mart_bcb__sgs_selic_data ........................... [RUN]
+[0m12:49:22.141452 [info ] [Thread-4 (]: 8 of 18 START test not_null_mart_bcb__sgs_selic_fonte_oficial .................. [RUN]
+[0m12:49:22.142342 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_ibge__lspa_area_producao, now test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748)
+[0m12:49:22.143304 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f'
+[0m12:49:22.144053 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_ibge__lspa_area_producao, now test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978)
+[0m12:49:22.144818 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_bcb__sgs_selic, now test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7)
+[0m12:49:22.145613 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748
+[0m12:49:22.146304 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f
+[0m12:49:22.147058 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978
+[0m12:49:22.147699 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7
+[0m12:49:22.154910 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748"
+[0m12:49:22.167713 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f"
+[0m12:49:22.174273 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978"
+[0m12:49:22.182140 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7"
+[0m12:49:22.183319 [debug] [Thread-1 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748
+[0m12:49:22.184162 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f
+[0m12:49:22.186537 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978
+[0m12:49:22.213029 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7
+[0m12:49:22.238280 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748"
+[0m12:49:22.239197 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f"
+[0m12:49:22.241802 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978"
+[0m12:49:22.245441 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7"
+[0m12:49:22.246801 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748"
+[0m12:49:22.247784 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f"
+[0m12:49:22.248241 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7"
+[0m12:49:22.248677 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978"
+[0m12:49:22.249266 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748: BEGIN
+[0m12:49:22.249964 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f: BEGIN
+[0m12:49:22.250610 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7: BEGIN
+[0m12:49:22.251245 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978: BEGIN
+[0m12:49:22.251770 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:49:22.252206 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m12:49:22.252781 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:49:22.253458 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:49:22.254719 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.255248 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.255785 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.256451 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748"
+[0m12:49:22.256869 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f"
+[0m12:49:22.257280 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m12:49:22.257671 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7"
+[0m12:49:22.258067 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        sgs_codigo, data
+    from "dbt_workspace"."main"."mart_bcb__sgs_selic"
+    group by sgs_codigo, data
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.258493 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "dbt_workspace"."main"."mart_bcb__sgs_selic"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.258873 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978"
+[0m12:49:22.259250 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "dbt_workspace"."main"."mart_bcb__sgs_selic"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.260072 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select data
+from "dbt_workspace"."main"."mart_bcb__sgs_selic"
+where data is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.260809 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:49:22.261445 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:49:22.261938 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.264695 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f: ROLLBACK
+[0m12:49:22.266025 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7: ROLLBACK
+[0m12:49:22.266570 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m12:49:22.267693 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f'
+[0m12:49:22.269443 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748: ROLLBACK
+[0m12:49:22.270479 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7'
+[0m12:49:22.271009 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f: Close
+[0m12:49:22.272307 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978: ROLLBACK
+[0m12:49:22.273274 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748'
+[0m12:49:22.273669 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7: Close
+[0m12:49:22.275166 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978'
+[0m12:49:22.274388 [info ] [Thread-3 (]: 6 of 18 PASS not_null_mart_bcb__sgs_selic_capturado_em ......................... [[32mPASS[0m in 0.13s]
+[0m12:49:22.275780 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748: Close
+[0m12:49:22.276424 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978: Close
+[0m12:49:22.276911 [info ] [Thread-4 (]: 8 of 18 PASS not_null_mart_bcb__sgs_selic_fonte_oficial ........................ [[32mPASS[0m in 0.13s]
+[0m12:49:22.277445 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f
+[0m12:49:22.278280 [info ] [Thread-1 (]: 5 of 18 PASS dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data  [[32mPASS[0m in 0.14s]
+[0m12:49:22.279145 [info ] [Thread-2 (]: 7 of 18 PASS not_null_mart_bcb__sgs_selic_data ................................. [[32mPASS[0m in 0.14s]
+[0m12:49:22.280043 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7
+[0m12:49:22.280707 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56
+[0m12:49:22.281706 [debug] [Thread-1 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748
+[0m12:49:22.282423 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978
+[0m12:49:22.282968 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9
+[0m12:49:22.283663 [info ] [Thread-3 (]: 9 of 18 START test not_null_mart_bcb__sgs_selic_sgs_codigo ..................... [RUN]
+[0m12:49:22.284351 [debug] [Thread-1 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf
+[0m12:49:22.284926 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738
+[0m12:49:22.285453 [info ] [Thread-4 (]: 10 of 18 START test not_null_mart_bcb__sgs_selic_valor ......................... [RUN]
+[0m12:49:22.286180 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_bcb__sgs_selic_capturado_em.17ef7a016f, now test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56)
+[0m12:49:22.286788 [info ] [Thread-1 (]: 11 of 18 START test dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo  [RUN]
+[0m12:49:22.287229 [info ] [Thread-2 (]: 12 of 18 START test not_null_mart_ibge__lspa_area_producao_codigo_uf ........... [RUN]
+[0m12:49:22.287830 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_bcb__sgs_selic_fonte_oficial.ca7d5820a7, now test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9)
+[0m12:49:22.288357 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56
+[0m12:49:22.289077 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_bcb__sgs_selic_sgs_codigo__data.da49f82748, now test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf)
+[0m12:49:22.289506 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_bcb__sgs_selic_data.59154d9978, now test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738)
+[0m12:49:22.289962 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9
+[0m12:49:22.296744 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56"
+[0m12:49:22.297539 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf
+[0m12:49:22.298170 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738
+[0m12:49:22.301647 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9"
+[0m12:49:22.302478 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56
+[0m12:49:22.306238 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf"
+[0m12:49:22.311137 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738"
+[0m12:49:22.314507 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56"
+[0m12:49:22.315268 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9
+[0m12:49:22.316105 [debug] [Thread-1 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf
+[0m12:49:22.316609 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738
+[0m12:49:22.319524 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9"
+[0m12:49:22.320331 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56"
+[0m12:49:22.323503 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf"
+[0m12:49:22.327756 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738"
+[0m12:49:22.328647 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56: BEGIN
+[0m12:49:22.329329 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9"
+[0m12:49:22.330081 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:49:22.330901 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9: BEGIN
+[0m12:49:22.331674 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf"
+[0m12:49:22.332444 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738"
+[0m12:49:22.333067 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:49:22.333648 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m12:49:22.334218 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf: BEGIN
+[0m12:49:22.334757 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738: BEGIN
+[0m12:49:22.335539 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56"
+[0m12:49:22.336107 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:49:22.336543 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.337141 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:49:22.337760 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sgs_codigo
+from "dbt_workspace"."main"."mart_bcb__sgs_selic"
+where sgs_codigo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.338608 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9"
+[0m12:49:22.339483 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.339949 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.340545 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select valor
+from "dbt_workspace"."main"."mart_bcb__sgs_selic"
+where valor is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.341172 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.341761 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf"
+[0m12:49:22.342265 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738"
+[0m12:49:22.344313 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56: ROLLBACK
+[0m12:49:22.344816 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        codigo_uf, mes, variavel_codigo, produto_codigo
+    from "dbt_workspace"."main"."mart_ibge__lspa_area_producao"
+    group by codigo_uf, mes, variavel_codigo, produto_codigo
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.345277 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.345661 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select codigo_uf
+from "dbt_workspace"."main"."mart_ibge__lspa_area_producao"
+where codigo_uf is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.346554 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56'
+[0m12:49:22.349193 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9: ROLLBACK
+[0m12:49:22.350401 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.351000 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56: Close
+[0m12:49:22.351568 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.352655 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9'
+[0m12:49:22.353658 [info ] [Thread-3 (]: 9 of 18 PASS not_null_mart_bcb__sgs_selic_sgs_codigo ........................... [[32mPASS[0m in 0.07s]
+[0m12:49:22.355409 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf: ROLLBACK
+[0m12:49:22.357531 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738: ROLLBACK
+[0m12:49:22.358248 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9: Close
+[0m12:49:22.359315 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56
+[0m12:49:22.361054 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf'
+[0m12:49:22.362729 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738'
+[0m12:49:22.364516 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a
+[0m12:49:22.363893 [info ] [Thread-4 (]: 10 of 18 PASS not_null_mart_bcb__sgs_selic_valor ............................... [[32mPASS[0m in 0.08s]
+[0m12:49:22.365521 [debug] [Thread-1 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf: Close
+[0m12:49:22.366174 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738: Close
+[0m12:49:22.366881 [info ] [Thread-3 (]: 13 of 18 START test not_null_mart_ibge__lspa_area_producao_fonte_oficial ....... [RUN]
+[0m12:49:22.367596 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9
+[0m12:49:22.368528 [info ] [Thread-1 (]: 11 of 18 PASS dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo  [[32mPASS[0m in 0.08s]
+[0m12:49:22.370066 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_bcb__sgs_selic_sgs_codigo.10e0c7db56, now test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a)
+[0m12:49:22.369479 [info ] [Thread-2 (]: 12 of 18 PASS not_null_mart_ibge__lspa_area_producao_codigo_uf ................. [[32mPASS[0m in 0.08s]
+[0m12:49:22.370918 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517
+[0m12:49:22.371904 [debug] [Thread-1 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf
+[0m12:49:22.372530 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a
+[0m12:49:22.373467 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738
+[0m12:49:22.374185 [info ] [Thread-4 (]: 14 of 18 START test not_null_mart_ibge__lspa_area_producao_mes ................. [RUN]
+[0m12:49:22.375078 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1
+[0m12:49:22.381650 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a"
+[0m12:49:22.382482 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57
+[0m12:49:22.383197 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_bcb__sgs_selic_valor.8059cef4f9, now test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517)
+[0m12:49:22.383896 [info ] [Thread-1 (]: 15 of 18 START test not_null_mart_ibge__lspa_area_producao_produto_codigo ...... [RUN]
+[0m12:49:22.384676 [info ] [Thread-2 (]: 16 of 18 START test not_null_mart_ibge__lspa_area_producao_produto_slug ........ [RUN]
+[0m12:49:22.385215 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517
+[0m12:49:22.385801 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a
+[0m12:49:22.386377 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_ibge__lspa_area_producao_codigo_uf__mes__variavel_codigo__produto_codigo.2f2db0f4cf, now test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1)
+[0m12:49:22.387061 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__lspa_area_producao_codigo_uf.f0a4562738, now test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57)
+[0m12:49:22.392710 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517"
+[0m12:49:22.395295 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a"
+[0m12:49:22.395938 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1
+[0m12:49:22.396699 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57
+[0m12:49:22.398105 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a"
+[0m12:49:22.398652 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517
+[0m12:49:22.403531 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1"
+[0m12:49:22.408932 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57"
+[0m12:49:22.409665 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a: BEGIN
+[0m12:49:22.412409 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517"
+[0m12:49:22.413245 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1
+[0m12:49:22.413965 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:49:22.416768 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1"
+[0m12:49:22.417322 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57
+[0m12:49:22.417921 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517"
+[0m12:49:22.420847 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57"
+[0m12:49:22.421477 [debug] [Thread-3 (]: SQL status: OK in 0.008 seconds
+[0m12:49:22.422067 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517: BEGIN
+[0m12:49:22.422933 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a"
+[0m12:49:22.423723 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1"
+[0m12:49:22.424405 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:49:22.425086 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57"
+[0m12:49:22.425723 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "dbt_workspace"."main"."mart_ibge__lspa_area_producao"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.426319 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1: BEGIN
+[0m12:49:22.426979 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57: BEGIN
+[0m12:49:22.427615 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.428177 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:49:22.428565 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m12:49:22.429037 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.429593 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517"
+[0m12:49:22.430803 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.431429 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.433444 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a: ROLLBACK
+[0m12:49:22.434110 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select mes
+from "dbt_workspace"."main"."mart_ibge__lspa_area_producao"
+where mes is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.434886 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1"
+[0m12:49:22.435517 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57"
+[0m12:49:22.436935 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a'
+[0m12:49:22.437793 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto_codigo
+from "dbt_workspace"."main"."mart_ibge__lspa_area_producao"
+where produto_codigo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.438487 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto_slug
+from "dbt_workspace"."main"."mart_ibge__lspa_area_producao"
+where produto_slug is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.439196 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.439925 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a: Close
+[0m12:49:22.442054 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517: ROLLBACK
+[0m12:49:22.442775 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.444241 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m12:49:22.445069 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517'
+[0m12:49:22.443763 [info ] [Thread-3 (]: 13 of 18 PASS not_null_mart_ibge__lspa_area_producao_fonte_oficial ............. [[32mPASS[0m in 0.07s]
+[0m12:49:22.446900 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1: ROLLBACK
+[0m12:49:22.449325 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57: ROLLBACK
+[0m12:49:22.449849 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517: Close
+[0m12:49:22.450757 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a
+[0m12:49:22.451812 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1'
+[0m12:49:22.452642 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57'
+[0m12:49:22.454040 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518
+[0m12:49:22.453550 [info ] [Thread-4 (]: 14 of 18 PASS not_null_mart_ibge__lspa_area_producao_mes ....................... [[32mPASS[0m in 0.07s]
+[0m12:49:22.454887 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1: Close
+[0m12:49:22.455484 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57: Close
+[0m12:49:22.456074 [info ] [Thread-3 (]: 17 of 18 START test not_null_mart_ibge__lspa_area_producao_valor ............... [RUN]
+[0m12:49:22.456946 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517
+[0m12:49:22.458141 [info ] [Thread-1 (]: 15 of 18 PASS not_null_mart_ibge__lspa_area_producao_produto_codigo ............ [[32mPASS[0m in 0.07s]
+[0m12:49:22.460740 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__lspa_area_producao_fonte_oficial.0576d9848a, now test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518)
+[0m12:49:22.459832 [info ] [Thread-2 (]: 16 of 18 PASS not_null_mart_ibge__lspa_area_producao_produto_slug .............. [[32mPASS[0m in 0.07s]
+[0m12:49:22.462050 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0
+[0m12:49:22.462922 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1
+[0m12:49:22.463676 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518
+[0m12:49:22.465095 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57
+[0m12:49:22.465859 [info ] [Thread-4 (]: 18 of 18 START test not_null_mart_ibge__lspa_area_producao_variavel_codigo ..... [RUN]
+[0m12:49:22.470946 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518"
+[0m12:49:22.471782 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_ibge__lspa_area_producao_mes.cc45521517, now test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0)
+[0m12:49:22.472647 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0
+[0m12:49:22.477108 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0"
+[0m12:49:22.477596 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518
+[0m12:49:22.481337 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518"
+[0m12:49:22.481993 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0
+[0m12:49:22.482724 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518"
+[0m12:49:22.488493 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0"
+[0m12:49:22.489323 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518: BEGIN
+[0m12:49:22.489985 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m12:49:22.490732 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0"
+[0m12:49:22.491281 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0: BEGIN
+[0m12:49:22.491781 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m12:49:22.492337 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m12:49:22.492712 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518"
+[0m12:49:22.493077 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:49:22.493684 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select valor
+from "dbt_workspace"."main"."mart_ibge__lspa_area_producao"
+where valor is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.494409 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0"
+[0m12:49:22.495140 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select variavel_codigo
+from "dbt_workspace"."main"."mart_ibge__lspa_area_producao"
+where variavel_codigo is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m12:49:22.496327 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m12:49:22.497031 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m12:49:22.498668 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518: ROLLBACK
+[0m12:49:22.500797 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0: ROLLBACK
+[0m12:49:22.502273 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0'
+[0m12:49:22.503327 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518'
+[0m12:49:22.503796 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0: Close
+[0m12:49:22.504221 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518: Close
+[0m12:49:22.504899 [info ] [Thread-4 (]: 18 of 18 PASS not_null_mart_ibge__lspa_area_producao_variavel_codigo ........... [[32mPASS[0m in 0.03s]
+[0m12:49:22.506399 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0
+[0m12:49:22.505579 [info ] [Thread-3 (]: 17 of 18 PASS not_null_mart_ibge__lspa_area_producao_valor ..................... [[32mPASS[0m in 0.04s]
+[0m12:49:22.507405 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518
+[0m12:49:22.509105 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:49:22.509870 [debug] [MainThread]: On master: BEGIN
+[0m12:49:22.510461 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:49:22.511596 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m12:49:22.511979 [debug] [MainThread]: On master: COMMIT
+[0m12:49:22.512283 [debug] [MainThread]: Using duckdb connection "master"
+[0m12:49:22.512701 [debug] [MainThread]: On master: COMMIT
+[0m12:49:22.513561 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m12:49:22.514067 [debug] [MainThread]: On master: Close
+[0m12:49:22.514690 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:49:22.515147 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_codigo.cd91c05fe1' was properly closed.
+[0m12:49:22.515594 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_produto_slug.93ec589d57' was properly closed.
+[0m12:49:22.516083 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_variavel_codigo.e3d57068a0' was properly closed.
+[0m12:49:22.516578 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_ibge__lspa_area_producao_valor.aa74f45518' was properly closed.
+[0m12:49:22.517143 [info ] [MainThread]: 
+[0m12:49:22.517745 [info ] [MainThread]: Finished running 2 external models, 14 data tests, 2 view models in 0 hours 0 minutes and 0.85 seconds (0.85s).
+[0m12:49:22.520820 [debug] [MainThread]: Command end result
+[0m12:49:22.757718 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m12:49:22.761158 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m12:49:22.766328 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m12:49:22.766729 [info ] [MainThread]: 
+[0m12:49:22.767106 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:49:22.767392 [info ] [MainThread]: 
+[0m12:49:22.767658 [info ] [MainThread]: Done. PASS=18 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=18
+[0m12:49:22.768409 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 5.331466, "process_in_blocks": "4856", "process_kernel_time": 0.197739, "process_mem_max_rss": "215740", "process_out_blocks": "15664", "process_user_time": 6.586311}
+[0m12:49:22.768793 [debug] [MainThread]: Command `dbt build` succeeded at 12:49:22.768729 after 5.33 seconds
+[0m12:49:22.769111 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175ef7130e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175ef710140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7175fd113b00>]}
+[0m12:49:22.769434 [debug] [MainThread]: Flushing usage events
+[0m12:49:23.582526 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -59,6 +59,9 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		if strings.HasPrefix(entry.DatasetID.String(), "ibge.pam-") {
 			return ibge.ResolvePAMURL(entry)
 		}
+		if strings.HasPrefix(entry.DatasetID.String(), "ibge.lspa-") {
+			return ibge.ResolveLSPAURL(entry)
+		}
 		return ibge.ResolveURL(entry)
 	case "inmet":
 		return inmet.ResolveURL(entry)
@@ -94,6 +97,24 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 
 	if agency == "ibge" && strings.HasPrefix(entry.DatasetID.String(), "ibge.pam-") {
 		body, sourceURL, err := ibgeClient.FetchPAMSnapshot(ctx, entry, ibge.PAMFetchOptions{
+			Crop:     opts.Crop,
+			FromYear: opts.FromYear,
+			ToYear:   opts.ToYear,
+			UFs:      opts.UFs,
+		})
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	}
+
+	if agency == "ibge" && strings.HasPrefix(entry.DatasetID.String(), "ibge.lspa-") {
+		body, sourceURL, err := ibgeClient.FetchLSPASnapshot(ctx, entry, ibge.LSPAFetchOptions{
 			Crop:     opts.Crop,
 			FromYear: opts.FromYear,
 			ToYear:   opts.ToYear,

@@ -243,3 +243,29 @@ models:
               - ano
               - variavel_codigo
               - produto_codigo
+
+  - name: mart_ibge__lspa_area_producao
+    description: LSPA monthly UF area planted, harvested, and production (SIDRA 6588).
+    config:
+      meta:
+        dataset_id: ibge.lspa-area-producao
+        grain: codigo_uf, mes, variavel_codigo, produto_codigo
+    columns:
+      - name: codigo_uf
+        tests: [not_null]
+      - name: mes
+        tests: [not_null]
+      - name: variavel_codigo
+        tests: [not_null]
+      - name: produto_codigo
+        tests: [not_null]
+      - name: produto_slug
+        tests: [not_null]
+      - name: valor
+        tests: [not_null]
+      - name: fonte_oficial
+        tests: [not_null]
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [codigo_uf, mes, variavel_codigo, produto_codigo]
