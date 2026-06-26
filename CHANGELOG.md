@@ -34,6 +34,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CONAB Armazenamento e Logística (Phase 13 MVP):** `armazenamento-logistica.yaml` (3 datasets), legacy `.xls` ingest, full pipeline for `conab.armazenagem`, `make conab-armazenamento-mvp`
 - **CONAB Agricultura Familiar (Phase 14 MVP):** `agricultura-familiar.yaml` (2 PAA datasets), full pipeline for entregas and propostas, `make conab-agricultura-familiar-mvp`
 - **IBGE Localidades (Phase 15):** full E2E for municipios + UFs + regiões + meso/micro — dbt marts, DuckDB views `analytics.ibge_localidades_*`, `make ibge-localidades-mvp`
+- **IBGE Localidades live smoke (Phase 15 P2):** `make ibge-localidades-live-smoke` — live ingestor for all five localidades datasets + `scripts/ci/check_ibge_localidades_bronze.py` row-count gate
+- **validate-codigo-ibge-lake:** `make validate-codigo-ibge-lake` — cross-check CONAB/PAM `cod_ibge` against full `./lake` municipios mart (~5.5k rows)
 - **IBGE cod_ibge validation (Phase 15 P4):** `scripts/quality/validate_codigo_ibge.py` cross-checks CONAB gold marts against `mart_ibge__localidades_municipios`, `make validate-codigo-ibge`
 - **CONAB Mercado cod_ibge validation (Phase 11 P4):** `validate-codigo-ibge` wired into `conab-mercado-full-mvp`, `conab-mercado-precos-mvp`, and `conab-mercado-prohort-mvp`; shared `scripts/ci/reference_municipios.py` for CI seeds
 - **CONAB Armazenamento cod_ibge validation (Phase 13 P4):** `validate-codigo-ibge` wired into `conab-armazenamento-mvp` and `conab-armazenamento-logistica-mvp`; frete origin/destination and armazenagem `cod_ibge` checked against IBGE localidades

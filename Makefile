@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp p1-collection-mvp collection-macro-mvp collection-full-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp p1-collection-mvp collection-macro-mvp collection-full-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -308,6 +308,22 @@ conab-agricultura-familiar-mvp:
 
 validate-codigo-ibge: python-install
 	python3 scripts/quality/validate_codigo_ibge.py --lake-root $(LAKE_ABS)
+
+validate-codigo-ibge-lake: python-install
+	@test -f $(LAKE_ABS)/gold/mart_ibge__localidades_municipios/mart.parquet || \
+		(echo "Missing gold mart — ingest + promote + dbt on ./lake first" && exit 1)
+	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=./lake
+
+IBGE_LOCALIDADES_LIVE_DATASETS := ibge.localidades-municipios ibge.localidades-ufs ibge.localidades-regioes ibge.localidades-mesorregioes ibge.localidades-microrregioes
+
+ibge-localidades-live-smoke: python-install
+	@test -f .env || (echo "Missing .env — copy .env.example and set DATABASE_URL" && exit 1)
+	@set -a && . ./.env && set +a && \
+	for ds in $(IBGE_LOCALIDADES_LIVE_DATASETS); do \
+		echo "==> ingest $$ds"; \
+		go run ./cmd/ingestor run $$ds || exit 1; \
+	done
+	python3 scripts/ci/check_ibge_localidades_bronze.py --lake-root $(LAKE_ABS)
 
 ibge-localidades-mvp:
 	go test ./internal/ibge/... ./internal/ingest/ -run 'IBGE|Localidades|Flatten|3550308'
