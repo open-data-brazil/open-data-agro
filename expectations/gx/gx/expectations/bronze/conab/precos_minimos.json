@@ -1,0 +1,102 @@
+{
+  "expectations": [
+    {
+      "id": "520cbc1c-2d14-49c9-9318-627464518e5b",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "420aac8e-6fe3-48b2-abc5-950b76e8eab6",
+      "kwargs": {
+        "column": "descricao_produto_preco_minimo"
+      },
+      "meta": {
+        "notes": "CONAB minimum price product description."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "9e5e5be2-c667-43bc-8f8d-0a70049120b0",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "State code (UF)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "f46924f1-7f3d-4f50-9172-9d86b086cad8",
+      "kwargs": {
+        "column": "preco"
+      },
+      "meta": {
+        "notes": "Minimum price value."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "491e85b4-6d5c-4ea9-a515-cb2af7252af8",
+      "kwargs": {
+        "column": "descricao_produto_preco_minimo"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product description must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "39a5bda5-041d-4456-8f29-918ce9b82f1f",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 UF must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "165500a7-0402-4c39-bfae-898e12d84592",
+      "kwargs": {
+        "column": "ano_inicio_vigencia"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 vigency start year must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "31fb9fa0-70c8-495c-b435-773030a18c0e",
+      "kwargs": {
+        "column": "mes_incio_vigencia"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 vigency start month (portal typo preserved)."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "688e6ebd-48a2-433f-b953-58b97a80e8e4",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Pre\u00e7os M\u00ednimos",
+    "dataset_id": "conab.precos-minimos",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.precos_minimos",
+  "notes": null
+}

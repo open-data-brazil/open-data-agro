@@ -144,3 +144,18 @@
   trim(dsc_nivel_comercializacao) as nivel_comercializacao,
   cast(valor_produto_kg as varchar) as valor_produto_kg
 {% endmacro %}
+
+{% macro conab_precos_minimos_columns() %}
+  trim(descricao_produto_preco_minimo) as produto,
+  cast(id_produto as varchar) as id_produto,
+  trim(uf) as uf,
+  trim(regionalizacao) as regionalizacao,
+  cast(ano_inicio_vigencia as varchar) as ano_inicio_vigencia,
+  cast(mes_incio_vigencia as varchar) as mes_inicio_vigencia,
+  cast(ano_termino_vigencia as varchar) as ano_termino_vigencia,
+  cast(mes_termino_vigencia as varchar) as mes_termino_vigencia,
+  cast(preco as varchar) as preco,
+  trim(dsc_unidade_comercializacao) as unidade_comercializacao,
+  trim(nome_normativo) as nome_normativo,
+  trim(url) as url_normativo
+{% endmacro %}

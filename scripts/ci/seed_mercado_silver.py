@@ -21,6 +21,7 @@ def main() -> int:
     lake_root = Path(os.environ.get("LAKE_LOCAL_ROOT", "/tmp/open-data-agro-lake"))
     lake_root.mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__oferta_demanda").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__precos_minimos").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__precos_semanal_uf").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__precos_semanal_municipio").mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__precos_mensal_uf").mkdir(parents=True, exist_ok=True)
@@ -72,6 +73,27 @@ def main() -> int:
         }
     )
     write_table(lake_root, "oferta_demanda", oferta)
+
+    precos_minimos = pa.table(
+        {
+            "descricao_produto_preco_minimo": ["SOJA", "SOJA"],
+            "id_produto": ["4744", "4744"],
+            "uf": ["MT", "MT"],
+            "regionalizacao": ["MT", "MT"],
+            "ano_inicio_vigencia": ["2024", "2025"],
+            "mes_incio_vigencia": ["01", "01"],
+            "ano_termino_vigencia": ["2024", "2025"],
+            "mes_termino_vigencia": ["12", "12"],
+            "preco": ["45.24", "46.10"],
+            "dsc_unidade_comercializacao": ["60 kg", "60 kg"],
+            "nome_normativo": ["PORTARIA N 190", "PORTARIA N 190"],
+            "url": ["NI", "NI"],
+            "_dataset_id": ["conab.precos-minimos", "conab.precos-minimos"],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "precos_minimos", precos_minimos)
     write_table(lake_root, "precos_agropecuarios_semanal_uf", precos)
 
     precos_municipio = pa.table(

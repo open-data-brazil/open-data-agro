@@ -247,3 +247,41 @@ models:
               - ano
               - mes
               - nivel_comercializacao
+
+  - name: mart_conab__precos_minimos
+    description: |
+      Business mart — CONAB minimum prices by UF and vigency period.
+      Grain is produto + id_produto + uf + regionalizacao + vigency start/end.
+    config:
+      meta:
+        dataset_id: conab.precos-minimos
+        grain: produto, id_produto, uf, regionalizacao, ano_inicio_vigencia, mes_inicio_vigencia, ano_termino_vigencia, mes_termino_vigencia
+        conab_section: Mercado
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: preco
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - id_produto
+              - uf
+              - regionalizacao
+              - ano_inicio_vigencia
+              - mes_inicio_vigencia
+              - ano_termino_vigencia
+              - mes_termino_vigencia

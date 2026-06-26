@@ -65,6 +65,25 @@ func TestOfertaDemandaGoldenVector(t *testing.T) {
 	}
 }
 
+func TestPrecosMinimosGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readCONABTestdata(t, "PrecoMinimo.sample.txt")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("conab.precos-minimos"),
+		Format:    catalog.FormatTXT,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount < 4 {
+		t.Fatalf("rowCount: got %d want >= 4", rowCount)
+	}
+}
+
 func TestPrecosSemanalUFGoldenVector(t *testing.T) {
 	t.Parallel()
 

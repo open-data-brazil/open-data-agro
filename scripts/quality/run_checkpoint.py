@@ -102,6 +102,7 @@ def main() -> int:
             "bronze_conab_estimativa_graos": "expectations/suites/bronze/conab/estimativa_graos.json",
             "bronze_conab_serie_historica_graos": "expectations/suites/bronze/conab/serie_historica_graos.json",
             "bronze_conab_oferta_demanda": "expectations/suites/bronze/conab/oferta_demanda.json",
+            "bronze_conab_precos_minimos": "expectations/suites/bronze/conab/precos_minimos.json",
             "bronze_conab_precos_semanal_uf": "expectations/suites/bronze/conab/precos_semanal_uf.json",
             "bronze_conab_precos_semanal_municipio": "expectations/suites/bronze/conab/precos_semanal_municipio.json",
             "bronze_conab_precos_mensal_uf": "expectations/suites/bronze/conab/precos_mensal_uf.json",

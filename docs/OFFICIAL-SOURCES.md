@@ -38,7 +38,7 @@ Detailed per-dataset mapping: `.local/phases/10-conab-producao-agricola/OFFICIAL
 | Dataset ID | Portal label | Status |
 |------------|--------------|--------|
 | `conab.oferta-demanda` | Oferta e Demanda | **P1 — implemented** |
-| `conab.precos-minimos` | Preços Mínimos | Catalog registered |
+| `conab.precos-minimos` | Preços Mínimos | **P2 — full pipeline** |
 | `conab.precos-agropecuarios-mensal-uf` | Preços agropecuários Mensal UF | **P1 — full pipeline** |
 | `conab.precos-agropecuarios-mensal-municipio` | Preços agropecuários Mensal Município | **P1 — full pipeline** |
 | `conab.precos-agropecuarios-semanal-uf` | Preços agropecuários Semanal UF | **P1 — full pipeline** |

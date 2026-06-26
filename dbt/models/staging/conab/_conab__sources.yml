@@ -32,6 +32,15 @@ sources:
           conab_section: Mercado
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/oferta_demanda"
 
+      - name: precos_minimos
+        description: Preços mínimos — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/precos_minimos
+        meta:
+          dataset_id: conab.precos-minimos
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Mercado
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/precos_minimos"
+
       - name: precos_agropecuarios_semanal_uf
         description: Preços agropecuários semanal UF — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/precos_agropecuarios_semanal_uf
         meta:

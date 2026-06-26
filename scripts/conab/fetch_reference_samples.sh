@@ -16,6 +16,7 @@ fetch() {
 fetch "LevantamentoGraos.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoGraos.txt"
 fetch "SerieHistoricaGraos.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaGraos.txt"
 fetch "OfertaDemanda.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/OfertaDemanda.txt"
+fetch "PrecoMinimo.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecoMinimo.txt"
 fetch "PrecosSemanalUF.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalUF.txt"
 fetch "PrecosSemanalMunicipio.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalMunicipio.txt"
 fetch "PrecosMensalUF.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalUF.txt"

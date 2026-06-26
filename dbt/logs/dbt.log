@@ -25137,3 +25137,610 @@ where valor_produto_kg is null
 [0m07:31:50.902868 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1dae3aa390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1da0eecf80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b1daf43f170>]}
 [0m07:31:50.903177 [debug] [MainThread]: Flushing usage events
 [0m07:31:51.702008 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:40:59.592148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x716955932ab0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7169543fe6f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7169542fb140>]}
+
+
+============================== 07:40:59.595940 | c51354b4-4e0c-4ce2-8151-2d898be30e1d ==============================
+[0m07:40:59.595940 [info ] [MainThread]: Running with dbt=1.11.11
+[0m07:40:59.596711 [debug] [MainThread]: running dbt with arguments {'empty': 'None', 'quiet': 'False', 'invocation_command': 'dbt deps --profiles-dir .', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'printer_width': '80', 'profiles_dir': '.', 'introspect': 'True', 'log_format': 'default', 'write_json': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'warn_error': 'None', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'partial_parse': 'True', 'debug': 'False'}
+[0m07:40:59.694916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c51354b4-4e0c-4ce2-8151-2d898be30e1d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7169556df7d0>]}
+[0m07:40:59.710888 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-kjg4mrm2'
+[0m07:40:59.711252 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m07:40:59.837459 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m07:40:59.838693 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m07:40:59.933848 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m07:40:59.937594 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m07:41:00.279528 [info ] [MainThread]: Installed from version 1.3.0
+[0m07:41:00.279902 [info ] [MainThread]: Updated version available: 1.4.0
+[0m07:41:00.280215 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'c51354b4-4e0c-4ce2-8151-2d898be30e1d', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x716953ccd580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x716953a47a70>]}
+[0m07:41:00.280528 [info ] [MainThread]: 
+[0m07:41:00.280801 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m07:41:00.283173 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.7369939, "process_in_blocks": "1464", "process_kernel_time": 0.083285, "process_mem_max_rss": "121472", "process_out_blocks": "2304", "process_user_time": 1.217165}
+[0m07:41:00.283590 [debug] [MainThread]: Command `dbt deps` succeeded at 07:41:00.283519 after 0.74 seconds
+[0m07:41:00.283876 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7169549cbf50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7169567e88c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71695569d7f0>]}
+[0m07:41:00.284169 [debug] [MainThread]: Flushing usage events
+[0m07:41:01.015152 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:41:02.338362 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb543788f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb53673b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb53fb5a90>]}
+
+
+============================== 07:41:02.340551 | 449957f7-ba53-42c2-9e2f-dd7e0776865c ==============================
+[0m07:41:02.340551 [info ] [MainThread]: Running with dbt=1.11.11
+[0m07:41:02.340954 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'introspect': 'True', 'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'quiet': 'False', 'partial_parse': 'True', 'no_print': 'None', 'indirect_selection': 'eager', 'warn_error': 'None', 'use_colors': 'True', 'cache_selected_only': 'False', 'write_json': 'True', 'debug': 'False', 'target_path': 'None', 'invocation_command': 'dbt build --profiles-dir . --select stg_conab__precos_minimos+', 'log_cache_events': 'False', 'empty': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'fail_fast': 'False', 'profiles_dir': '.', 'static_parser': 'True'}
+[0m07:41:02.522536 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '449957f7-ba53-42c2-9e2f-dd7e0776865c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb536d3650>]}
+[0m07:41:02.572551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '449957f7-ba53-42c2-9e2f-dd7e0776865c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb533fe000>]}
+[0m07:41:02.574313 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m07:41:02.645561 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m07:41:02.734315 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m07:41:02.734728 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '449957f7-ba53-42c2-9e2f-dd7e0776865c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb53fb4440>]}
+[0m07:41:04.317990 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '449957f7-ba53-42c2-9e2f-dd7e0776865c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb12fdfda0>]}
+[0m07:41:04.399354 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m07:41:04.401094 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m07:41:04.429410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '449957f7-ba53-42c2-9e2f-dd7e0776865c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb470f34d0>]}
+[0m07:41:04.429868 [info ] [MainThread]: Found 36 models, 79 data tests, 19 sources, 627 macros
+[0m07:41:04.432923 [info ] [MainThread]: 
+[0m07:41:04.433298 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m07:41:04.433560 [info ] [MainThread]: 
+[0m07:41:04.433936 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m07:41:04.437426 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m07:41:04.468430 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m07:41:04.468805 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m07:41:04.469069 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:41:04.499976 [debug] [ThreadPool]: SQL status: OK in 0.031 seconds
+[0m07:41:04.501155 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m07:41:04.501723 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m07:41:04.502115 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m07:41:04.508308 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m07:41:04.508714 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m07:41:04.509009 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:41:04.509942 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m07:41:04.511133 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m07:41:04.511423 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m07:41:04.511806 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m07:41:04.512067 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m07:41:04.512310 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m07:41:04.512720 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m07:41:04.513404 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m07:41:04.513681 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m07:41:04.513922 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m07:41:04.514282 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m07:41:04.514563 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m07:41:04.516885 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m07:41:04.524356 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m07:41:04.525045 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m07:41:04.525645 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:41:04.526849 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m07:41:04.527414 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m07:41:04.527789 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m07:41:04.529934 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m07:41:04.531298 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m07:41:04.532536 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m07:41:04.532813 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m07:41:04.535314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '449957f7-ba53-42c2-9e2f-dd7e0776865c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb562dc200>]}
+[0m07:41:04.535700 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:41:04.535964 [debug] [MainThread]: On master: BEGIN
+[0m07:41:04.536193 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m07:41:04.536687 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m07:41:04.536937 [debug] [MainThread]: On master: COMMIT
+[0m07:41:04.537164 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:41:04.537400 [debug] [MainThread]: On master: COMMIT
+[0m07:41:04.537802 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m07:41:04.538058 [debug] [MainThread]: On master: Close
+[0m07:41:04.540387 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_conab__precos_minimos
+[0m07:41:04.541099 [info ] [Thread-1 (]: 1 of 8 START sql view model main.stg_conab__precos_minimos ..................... [RUN]
+[0m07:41:04.541706 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_conab__precos_minimos)
+[0m07:41:04.542215 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_conab__precos_minimos
+[0m07:41:04.549837 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__precos_minimos"
+[0m07:41:04.551798 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_conab__precos_minimos
+[0m07:41:04.575295 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__precos_minimos"
+[0m07:41:04.575840 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__precos_minimos"
+[0m07:41:04.576154 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__precos_minimos: BEGIN
+[0m07:41:04.576426 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:41:04.577021 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m07:41:04.577319 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__precos_minimos"
+[0m07:41:04.577612 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__precos_minimos"} */
+
+  
+  create view "dbt_workspace"."main"."stg_conab__precos_minimos__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/home/iiii/WebstormProjects/open-data-agro/lake/silver/conab/precos_minimos/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim(descricao_produto_preco_minimo) as produto,
+  cast(id_produto as varchar) as id_produto,
+  trim(uf) as uf,
+  trim(regionalizacao) as regionalizacao,
+  cast(ano_inicio_vigencia as varchar) as ano_inicio_vigencia,
+  cast(mes_incio_vigencia as varchar) as mes_inicio_vigencia,
+  cast(ano_termino_vigencia as varchar) as ano_termino_vigencia,
+  cast(mes_termino_vigencia as varchar) as mes_termino_vigencia,
+  cast(preco as varchar) as preco,
+  trim(dsc_unidade_comercializacao) as unidade_comercializacao,
+  trim(nome_normativo) as nome_normativo,
+  trim(url) as url_normativo
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by
+                produto,
+                id_produto,
+                uf,
+                regionalizacao,
+                ano_inicio_vigencia,
+                mes_inicio_vigencia,
+                ano_termino_vigencia,
+                mes_termino_vigencia
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m07:41:04.578912 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m07:41:04.583302 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__precos_minimos"
+[0m07:41:04.583664 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__precos_minimos"} */
+alter view "dbt_workspace"."main"."stg_conab__precos_minimos__dbt_tmp" rename to "stg_conab__precos_minimos"
+[0m07:41:04.584254 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m07:41:04.592312 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__precos_minimos: COMMIT
+[0m07:41:04.592725 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__precos_minimos"
+[0m07:41:04.593019 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__precos_minimos: COMMIT
+[0m07:41:04.594907 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m07:41:04.598887 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__precos_minimos"
+[0m07:41:04.599241 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__precos_minimos"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_conab__precos_minimos__dbt_backup" cascade
+    
+[0m07:41:04.599912 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m07:41:04.601609 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__precos_minimos: Close
+[0m07:41:04.602974 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '449957f7-ba53-42c2-9e2f-dd7e0776865c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb563df650>]}
+[0m07:41:04.603490 [info ] [Thread-1 (]: 1 of 8 OK created sql view model main.stg_conab__precos_minimos ................ [[32mOK[0m in 0.06s]
+[0m07:41:04.603911 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_conab__precos_minimos
+[0m07:41:04.604822 [debug] [Thread-3 (]: Began running node model.open_data_agro.mart_conab__precos_minimos
+[0m07:41:04.605550 [info ] [Thread-3 (]: 2 of 8 START sql external model main.mart_conab__precos_minimos ................ [RUN]
+[0m07:41:04.606319 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_conab__precos_minimos'
+[0m07:41:04.606849 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.mart_conab__precos_minimos
+[0m07:41:04.610491 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.610962 [debug] [Thread-3 (]: Began executing node model.open_data_agro.mart_conab__precos_minimos
+[0m07:41:04.644333 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.644743 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: BEGIN
+[0m07:41:04.645022 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:41:04.645695 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m07:41:04.646017 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.646310 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__precos_minimos"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_conab__precos_minimos__dbt_tmp"
+  
+    as (
+      
+
+select
+    produto,
+    id_produto,
+    uf,
+    regionalizacao,
+    ano_inicio_vigencia,
+    mes_inicio_vigencia,
+    ano_termino_vigencia,
+    mes_termino_vigencia,
+    preco,
+    unidade_comercializacao,
+    nome_normativo,
+    url_normativo,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_conab__precos_minimos"
+    );
+  
+  
+[0m07:41:04.665070 [debug] [Thread-3 (]: SQL status: OK in 0.018 seconds
+[0m07:41:04.666826 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.667254 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__precos_minimos"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_conab__precos_minimos__dbt_tmp"
+  
+[0m07:41:04.668074 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m07:41:04.669210 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.669659 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.669948 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__precos_minimos"} */
+
+[0m07:41:04.670246 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m07:41:04.672039 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.672376 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__precos_minimos"} */
+copy "dbt_workspace"."main"."mart_conab__precos_minimos__dbt_tmp" to '/home/iiii/WebstormProjects/open-data-agro/lake/gold/mart_conab__precos_minimos/mart.parquet' (format parquet)
+[0m07:41:04.680944 [debug] [Thread-3 (]: SQL status: OK in 0.008 seconds
+[0m07:41:04.681860 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.682307 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.682620 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__precos_minimos"} */
+
+      create or replace view "dbt_workspace"."main"."mart_conab__precos_minimos__dbt_int" as (
+        select * from read_parquet('/home/iiii/WebstormProjects/open-data-agro/lake/gold/mart_conab__precos_minimos/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m07:41:04.683866 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m07:41:04.686391 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.686713 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__precos_minimos"} */
+alter view "dbt_workspace"."main"."mart_conab__precos_minimos__dbt_int" rename to "mart_conab__precos_minimos"
+[0m07:41:04.687234 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m07:41:04.688168 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: COMMIT
+[0m07:41:04.688522 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.688874 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: COMMIT
+[0m07:41:04.696629 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m07:41:04.699386 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.699756 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__precos_minimos"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__precos_minimos__dbt_backup" cascade
+    
+[0m07:41:04.700353 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m07:41:04.702470 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__precos_minimos"
+[0m07:41:04.702783 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__precos_minimos"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__precos_minimos__dbt_tmp" cascade
+    
+[0m07:41:04.704142 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m07:41:04.705271 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__precos_minimos: Close
+[0m07:41:04.705704 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '449957f7-ba53-42c2-9e2f-dd7e0776865c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb123aec90>]}
+[0m07:41:04.706174 [info ] [Thread-3 (]: 2 of 8 OK created sql external model main.mart_conab__precos_minimos ........... [[32mOK[0m in 0.10s]
+[0m07:41:04.706619 [debug] [Thread-3 (]: Finished running node model.open_data_agro.mart_conab__precos_minimos
+[0m07:41:04.707693 [debug] [Thread-2 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66
+[0m07:41:04.708214 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f
+[0m07:41:04.708616 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227
+[0m07:41:04.709264 [info ] [Thread-2 (]: 3 of 8 START test dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia  [RUN]
+[0m07:41:04.709796 [info ] [Thread-1 (]: 4 of 8 START test not_null_mart_conab__precos_minimos_capturado_em ............. [RUN]
+[0m07:41:04.710134 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3
+[0m07:41:04.710581 [info ] [Thread-4 (]: 5 of 8 START test not_null_mart_conab__precos_minimos_fonte_oficial ............ [RUN]
+[0m07:41:04.711352 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66'
+[0m07:41:04.711826 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_conab__precos_minimos, now test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f)
+[0m07:41:04.712139 [info ] [Thread-3 (]: 6 of 8 START test not_null_mart_conab__precos_minimos_preco .................... [RUN]
+[0m07:41:04.712654 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227'
+[0m07:41:04.713267 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66
+[0m07:41:04.713823 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f
+[0m07:41:04.714209 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_conab__precos_minimos, now test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3)
+[0m07:41:04.714726 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227
+[0m07:41:04.718202 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66"
+[0m07:41:04.723717 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3
+[0m07:41:04.724710 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f"
+[0m07:41:04.728196 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227"
+[0m07:41:04.728729 [debug] [Thread-2 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66
+[0m07:41:04.731538 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3"
+[0m07:41:04.737314 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f
+[0m07:41:04.737877 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227
+[0m07:41:04.745592 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66"
+[0m07:41:04.747548 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f"
+[0m07:41:04.747957 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3
+[0m07:41:04.749538 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227"
+[0m07:41:04.752423 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3"
+[0m07:41:04.753069 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f"
+[0m07:41:04.753930 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66"
+[0m07:41:04.754433 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227"
+[0m07:41:04.754807 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f: BEGIN
+[0m07:41:04.755121 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3"
+[0m07:41:04.755543 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66: BEGIN
+[0m07:41:04.756027 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227: BEGIN
+[0m07:41:04.756343 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:41:04.756631 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3: BEGIN
+[0m07:41:04.757015 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:41:04.757447 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m07:41:04.757975 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m07:41:04.758474 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m07:41:04.759063 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m07:41:04.759466 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f"
+[0m07:41:04.759906 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m07:41:04.760273 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66"
+[0m07:41:04.760574 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m07:41:04.760894 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "dbt_workspace"."main"."mart_conab__precos_minimos"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:41:04.761232 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227"
+[0m07:41:04.761602 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        produto, id_produto, uf, regionalizacao, ano_inicio_vigencia, mes_inicio_vigencia, ano_termino_vigencia, mes_termino_vigencia
+    from "dbt_workspace"."main"."mart_conab__precos_minimos"
+    group by produto, id_produto, uf, regionalizacao, ano_inicio_vigencia, mes_inicio_vigencia, ano_termino_vigencia, mes_termino_vigencia
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:41:04.761976 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3"
+[0m07:41:04.762475 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "dbt_workspace"."main"."mart_conab__precos_minimos"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:41:04.763206 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select preco
+from "dbt_workspace"."main"."mart_conab__precos_minimos"
+where preco is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:41:04.763659 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m07:41:04.766610 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f: ROLLBACK
+[0m07:41:04.767064 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m07:41:04.767535 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m07:41:04.768247 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f'
+[0m07:41:04.768631 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m07:41:04.769973 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3: ROLLBACK
+[0m07:41:04.770421 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f: Close
+[0m07:41:04.771504 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66: ROLLBACK
+[0m07:41:04.772599 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227: ROLLBACK
+[0m07:41:04.773503 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3'
+[0m07:41:04.774737 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66'
+[0m07:41:04.774088 [info ] [Thread-1 (]: 4 of 8 PASS not_null_mart_conab__precos_minimos_capturado_em ................... [[32mPASS[0m in 0.06s]
+[0m07:41:04.775672 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227'
+[0m07:41:04.776054 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3: Close
+[0m07:41:04.776401 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66: Close
+[0m07:41:04.776886 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f
+[0m07:41:04.777229 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227: Close
+[0m07:41:04.777669 [info ] [Thread-3 (]: 6 of 8 PASS not_null_mart_conab__precos_minimos_preco .......................... [[32mPASS[0m in 0.06s]
+[0m07:41:04.778116 [info ] [Thread-2 (]: 3 of 8 PASS dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia  [[32mPASS[0m in 0.07s]
+[0m07:41:04.778491 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3
+[0m07:41:04.779069 [info ] [Thread-4 (]: 5 of 8 PASS not_null_mart_conab__precos_minimos_fonte_oficial .................. [[32mPASS[0m in 0.07s]
+[0m07:41:04.779467 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3
+[0m07:41:04.779885 [debug] [Thread-2 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66
+[0m07:41:04.780204 [info ] [Thread-1 (]: 7 of 8 START test not_null_mart_conab__precos_minimos_produto .................. [RUN]
+[0m07:41:04.780616 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227
+[0m07:41:04.780964 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806
+[0m07:41:04.781367 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__precos_minimos_capturado_em.6d96fb945f, now test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3)
+[0m07:41:04.781883 [info ] [Thread-3 (]: 8 of 8 START test not_null_mart_conab__precos_minimos_uf ....................... [RUN]
+[0m07:41:04.782212 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3
+[0m07:41:04.782516 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__precos_minimos_preco.6c8c7ffff3, now test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806)
+[0m07:41:04.785417 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3"
+[0m07:41:04.785781 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806
+[0m07:41:04.788498 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806"
+[0m07:41:04.788898 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3
+[0m07:41:04.790541 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3"
+[0m07:41:04.790876 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806
+[0m07:41:04.792485 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806"
+[0m07:41:04.792930 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3"
+[0m07:41:04.793266 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3: BEGIN
+[0m07:41:04.793545 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:41:04.793835 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806"
+[0m07:41:04.794285 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806: BEGIN
+[0m07:41:04.794544 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m07:41:04.794812 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m07:41:04.795237 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3"
+[0m07:41:04.795516 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select produto
+from "dbt_workspace"."main"."mart_conab__precos_minimos"
+where produto is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:41:04.795808 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m07:41:04.796209 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806"
+[0m07:41:04.796482 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select uf
+from "dbt_workspace"."main"."mart_conab__precos_minimos"
+where uf is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:41:04.796918 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m07:41:04.798665 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3: ROLLBACK
+[0m07:41:04.799202 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m07:41:04.800205 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3'
+[0m07:41:04.801421 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806: ROLLBACK
+[0m07:41:04.801793 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3: Close
+[0m07:41:04.802695 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806'
+[0m07:41:04.803056 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806: Close
+[0m07:41:04.803685 [info ] [Thread-1 (]: 7 of 8 PASS not_null_mart_conab__precos_minimos_produto ........................ [[32mPASS[0m in 0.02s]
+[0m07:41:04.804311 [info ] [Thread-3 (]: 8 of 8 PASS not_null_mart_conab__precos_minimos_uf ............................. [[32mPASS[0m in 0.02s]
+[0m07:41:04.804973 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3
+[0m07:41:04.805536 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806
+[0m07:41:04.806714 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:41:04.807005 [debug] [MainThread]: On master: BEGIN
+[0m07:41:04.807251 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m07:41:04.807767 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m07:41:04.808030 [debug] [MainThread]: On master: COMMIT
+[0m07:41:04.808274 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:41:04.808495 [debug] [MainThread]: On master: COMMIT
+[0m07:41:04.808856 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m07:41:04.809111 [debug] [MainThread]: On master: Close
+[0m07:41:04.809415 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:41:04.809665 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__precos_minimos_produto.0695cb66b3' was properly closed.
+[0m07:41:04.809882 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__precos_minimos_uf.7b71d7e806' was properly closed.
+[0m07:41:04.810138 [debug] [MainThread]: Connection 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__precos_minimos_produto__id_produto__uf__regionalizacao__ano_inicio_vigencia__mes_inicio_vigencia__ano_termino_vigencia__mes_termino_vigencia.ad10469a66' was properly closed.
+[0m07:41:04.810478 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__precos_minimos_fonte_oficial.3ca95d5227' was properly closed.
+[0m07:41:04.810773 [info ] [MainThread]: 
+[0m07:41:04.811038 [info ] [MainThread]: Finished running 1 external model, 6 data tests, 1 view model in 0 hours 0 minutes and 0.38 seconds (0.38s).
+[0m07:41:04.811954 [debug] [MainThread]: Command end result
+[0m07:41:04.895676 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m07:41:04.897413 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m07:41:04.901385 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m07:41:04.901701 [info ] [MainThread]: 
+[0m07:41:04.901981 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m07:41:04.902218 [info ] [MainThread]: 
+[0m07:41:04.902469 [info ] [MainThread]: Done. PASS=8 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=8
+[0m07:41:04.903088 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.6109464, "process_in_blocks": "21320", "process_kernel_time": 0.200086, "process_mem_max_rss": "256564", "process_out_blocks": "14440", "process_user_time": 3.576794}
+[0m07:41:04.903436 [debug] [MainThread]: Command `dbt build` succeeded at 07:41:04.903376 after 2.61 seconds
+[0m07:41:04.903709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb53887080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb53f808f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb536b5c70>]}
+[0m07:41:04.903976 [debug] [MainThread]: Flushing usage events
+[0m07:41:10.705723 [debug] [MainThread]: An error was encountered while trying to flush usage events

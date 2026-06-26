@@ -1,0 +1,53 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "descricao_produto_preco_minimo" },
+      "meta": { "notes": "CONAB minimum price product description." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "State code (UF)." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "preco" },
+      "meta": { "notes": "Minimum price value." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "descricao_produto_preco_minimo" },
+      "meta": { "notes": "Grain key — product description must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "Grain key — UF must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "ano_inicio_vigencia" },
+      "meta": { "notes": "Grain key — vigency start year must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "mes_incio_vigencia" },
+      "meta": { "notes": "Grain key — vigency start month (portal typo preserved)." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.precos-minimos",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Preços Mínimos"
+  },
+  "name": "bronze.conab.precos_minimos",
+  "id": "bronze-conab-precos-minimos-suite"
+}

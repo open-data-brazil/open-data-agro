@@ -5,6 +5,7 @@ Committed samples are the first 5 data rows plus header from:
 - `LevantamentoGraos.txt` → `conab.estimativa-graos`
 - `SerieHistoricaGraos.txt` → `conab.serie-historica-graos`
 - `OfertaDemanda.txt` → `conab.oferta-demanda`
+- `PrecoMinimo.txt` → `conab.precos-minimos`
 - `PrecosSemanalUF.txt` → `conab.precos-agropecuarios-semanal-uf`
 - `PrecosSemanalMunicipio.txt` → `conab.precos-agropecuarios-semanal-municipio`
 - `PrecosMensalUF.txt` → `conab.precos-agropecuarios-mensal-uf`
