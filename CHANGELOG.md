@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CONAB Mercado (Phase 11 MVP):** `mercado.yaml` catalog (8 datasets), full pipeline for `conab.oferta-demanda`, `make conab-mercado-mvp`
 - **CONAB Mercado preços semanal UF (Phase 11 P1):** full pipeline for `conab.precos-agropecuarios-semanal-uf`, ISO-8859-1 → UTF-8 for portal TXT, `make conab-mercado-precos-mvp`
 - **CONAB Mercado preços semanal município (Phase 11 P1):** full pipeline for `conab.precos-agropecuarios-semanal-municipio`, `cod_ibge` zero-padded in dbt, `make conab-mercado-precos-mvp`
+- **CONAB Mercado preços mensal UF (Phase 11 P1):** full pipeline for `conab.precos-agropecuarios-mensal-uf`, monthly grain without `semana`, `make conab-mercado-precos-mvp`
 - **CONAB Abastecimento + ANP combustíveis (Phase 12 MVP):** `abastecimento.yaml` (3 datasets), `anp/combustiveis.yaml` (2 datasets), full pipeline for `conab.estoques-publicos` and ANP LPC weekly prices, `make conab-abastecimento-mvp`
 - **CONAB Armazenamento e Logística (Phase 13 MVP):** `armazenamento-logistica.yaml` (3 datasets), legacy `.xls` ingest, full pipeline for `conab.armazenagem`, `make conab-armazenamento-mvp`
 - **CONAB Agricultura Familiar (Phase 14 MVP):** `agricultura-familiar.yaml` (2 PAA datasets), full pipeline for entregas and propostas, `make conab-agricultura-familiar-mvp`

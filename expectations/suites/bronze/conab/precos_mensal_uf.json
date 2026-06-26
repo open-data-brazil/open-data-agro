@@ -1,0 +1,53 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Bronze partition must contain at least one data row." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "CONAB product column." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "State code (UF)." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "valor_produto_kg" },
+      "meta": { "notes": "Monthly price per kg." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "produto" },
+      "meta": { "notes": "Grain key — product must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "Grain key — UF must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "ano" },
+      "meta": { "notes": "Grain key — year must be present." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "mes" },
+      "meta": { "notes": "Grain key — month must be present." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "conab.precos-agropecuarios-mensal-uf",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Preços agropecuários Mensal UF"
+  },
+  "name": "bronze.conab.precos_mensal_uf",
+  "id": "bronze-conab-precos-mensal-uf-suite"
+}

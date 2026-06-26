@@ -18,6 +18,7 @@ fetch "SerieHistoricaGraos.txt" "https://portaldeinformacoes.conab.gov.br/downlo
 fetch "OfertaDemanda.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/OfertaDemanda.txt"
 fetch "PrecosSemanalUF.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalUF.txt"
 fetch "PrecosSemanalMunicipio.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalMunicipio.txt"
+fetch "PrecosMensalUF.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalUF.txt"
 fetch "LevantamentoCana.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCana.txt"
 fetch "SerieHistoricaCana.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt"
 

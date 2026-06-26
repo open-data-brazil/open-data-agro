@@ -118,3 +118,15 @@
   trim(dsc_nivel_comercializacao) as nivel_comercializacao,
   cast(valor_produto_kg as varchar) as valor_produto_kg
 {% endmacro %}
+
+{% macro conab_precos_mensal_uf_columns() %}
+  trim(produto) as produto,
+  trim(classificao_produto) as classificacao_produto,
+  cast(id_produto as varchar) as id_produto,
+  trim(uf) as uf,
+  trim(regiao) as regiao,
+  cast(ano as varchar) as ano,
+  cast(mes as varchar) as mes,
+  trim(dsc_nivel_comercializacao) as nivel_comercializacao,
+  cast(valor_produto_kg as varchar) as valor_produto_kg
+{% endmacro %}

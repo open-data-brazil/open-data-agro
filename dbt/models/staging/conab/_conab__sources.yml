@@ -50,6 +50,15 @@ sources:
           conab_section: Mercado
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/precos_agropecuarios_semanal_municipio"
 
+      - name: precos_agropecuarios_mensal_uf
+        description: Preços agropecuários mensal UF — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/precos_agropecuarios_mensal_uf
+        meta:
+          dataset_id: conab.precos-agropecuarios-mensal-uf
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Mercado
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/precos_agropecuarios_mensal_uf"
+
       - name: estoques_publicos
         description: Estoques públicos — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/estoques_publicos
         meta:

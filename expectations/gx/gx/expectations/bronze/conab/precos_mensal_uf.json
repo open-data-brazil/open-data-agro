@@ -1,0 +1,102 @@
+{
+  "expectations": [
+    {
+      "id": "ff704b23-e0a9-4d46-9e6f-ae845cad1ded",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "6cf19880-5dd3-4cd2-bcb1-494f041c9497",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "CONAB product column."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "f61e4326-16be-45cd-8fed-7892ff588a7a",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "State code (UF)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "ecf5d975-6dcc-4a32-81f2-5250b6651f3b",
+      "kwargs": {
+        "column": "valor_produto_kg"
+      },
+      "meta": {
+        "notes": "Monthly price per kg."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "d073c7b9-d75f-4cc4-ad65-c7139f0c558e",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "18e03547-5689-464e-867c-1992a18c3159",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 UF must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "d282a59f-c392-475a-8002-6223f6eda2d7",
+      "kwargs": {
+        "column": "ano"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 year must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "86535560-b954-488f-9296-7b821be4e750",
+      "kwargs": {
+        "column": "mes"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 month must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "a4f54ce5-5c2f-435c-9a21-428f6bd1b725",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Pre\u00e7os agropecu\u00e1rios Mensal UF",
+    "dataset_id": "conab.precos-agropecuarios-mensal-uf",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.precos_mensal_uf",
+  "notes": null
+}

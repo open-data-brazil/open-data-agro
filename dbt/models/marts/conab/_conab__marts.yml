@@ -172,3 +172,39 @@ models:
               - mes
               - semana
               - nivel_comercializacao
+
+  - name: mart_conab__precos_mensal_uf
+    description: |
+      Business mart — monthly ag prices by UF.
+      Grain is produto + id_produto + uf + ano + mes + nivel_comercializacao.
+    config:
+      meta:
+        dataset_id: conab.precos-agropecuarios-mensal-uf
+        grain: produto, id_produto, uf, ano, mes, nivel_comercializacao
+        conab_section: Mercado
+    columns:
+      - name: produto
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: valor_produto_kg
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto
+              - id_produto
+              - uf
+              - ano
+              - mes
+              - nivel_comercializacao

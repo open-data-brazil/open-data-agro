@@ -129,6 +129,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_conab_precos_semanal_uf", true
 	case "conab.precos-agropecuarios-semanal-municipio":
 		return "bronze_conab_precos_semanal_municipio", true
+	case "conab.precos-agropecuarios-mensal-uf":
+		return "bronze_conab_precos_mensal_uf", true
 	case "conab.estoques-publicos":
 		return "bronze_conab_estoques_publicos", true
 	case "conab.operacoes-comercializacao":
