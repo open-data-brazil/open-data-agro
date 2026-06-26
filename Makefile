@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp p1-collection-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -13,6 +13,9 @@ BENCHMARK_PROFILE ?= scripts/benchmark/profiles/fast10.json
 MERCADO_DBT_SELECT := stg_conab__oferta_demanda+ stg_conab__precos_semanal_uf+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_uf+ stg_conab__precos_mensal_municipio+ stg_conab__precos_minimos+ stg_conab__prohort_diario+ stg_conab__prohort_mensal+
 CI_COD_IBGE_LAKE ?= /tmp/cod-ibge-ci-lake
 COD_IBGE_DBT_SELECT := stg_conab__custo_producao+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_municipio+ stg_conab__frete+ stg_conab__armazenagem+ stg_conab__estoques_publicos+ stg_conab__alimenta_brasil_propostas+ stg_conab__prohort_diario+ stg_conab__prohort_mensal+ stg_ibge__pam_area_quantidade+ stg_ibge__pam_rendimento_valor+ stg_ibge__pam_estabelecimentos+
+COLLECTION_P1_LAKE ?= /tmp/p1-collection-lake
+COLLECTION_P1_DUCKDB ?= /tmp/p1-collection.duckdb
+COLLECTION_P1_DBT_SELECT := stg_ibge__localidades_ufs+ stg_ibge__localidades_regioes+ stg_ibge__localidades_mesorregioes+ stg_ibge__localidades_microrregioes+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_municipio+ stg_conab__frete+ stg_conab__capacidade_estatica+
 
 test:
 	go test ./...
@@ -61,6 +64,25 @@ ci-validate-codigo-ibge: duckdb-install python-install dbt-deps
 		LAKE_LOCAL_ROOT=$(CI_COD_IBGE_LAKE) DUCKDB_PATH=/tmp/cod-ibge-ci.duckdb \
 		dbt build --profiles-dir . --select '$(COD_IBGE_DBT_SELECT)'
 	python3 scripts/quality/validate_codigo_ibge.py --lake-root $(CI_COD_IBGE_LAKE)
+
+# P1 collection sprint: Waves 0–2 (localidades + municipal prices + logistics) in one offline lake.
+p1-collection-mvp: duckdb-install python-install dbt-deps
+	go test ./internal/ibge/... ./internal/ingest/ -run 'IBGE|Localidades|Precos|Frete|Capacidade'
+	rm -rf $(COLLECTION_P1_LAKE) $(COLLECTION_P1_DUCKDB)
+	cp -f dbt/profiles.yml.example dbt/profiles.yml
+	LAKE_LOCAL_ROOT=$(COLLECTION_P1_LAKE) python3 scripts/ci/seed_ibge_localidades_silver.py
+	LAKE_LOCAL_ROOT=$(COLLECTION_P1_LAKE) python3 scripts/ci/seed_mercado_silver.py
+	LAKE_LOCAL_ROOT=$(COLLECTION_P1_LAKE) python3 scripts/ci/seed_armazenamento_silver.py
+	cd dbt && PATH="$(CURDIR)/.local/bin:$$PATH" DUCKDB_BIN="$(CURDIR)/.local/bin/duckdb" \
+		LAKE_LOCAL_ROOT=$(COLLECTION_P1_LAKE) DUCKDB_PATH=$(COLLECTION_P1_DUCKDB) \
+		dbt build --profiles-dir . --select '$(COLLECTION_P1_DBT_SELECT)'
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(COLLECTION_P1_LAKE) DUCKDB_PATH=$(COLLECTION_P1_DUCKDB)
+	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS mesorregioes FROM analytics.ibge_localidades_mesorregioes"
+	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS microrregioes FROM analytics.ibge_localidades_microrregioes"
+	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS precos_mun FROM analytics.conab_precos_semanal_municipio"
+	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT COUNT(*) AS frete_rows FROM analytics.conab_frete"
+	duckdb $(COLLECTION_P1_DUCKDB) -c "SELECT uf, ano, quantidade_mil_t FROM analytics.conab_capacidade_estatica WHERE uf = 'MT' LIMIT 3"
+	$(MAKE) validate-codigo-ibge LAKE_LOCAL_ROOT=$(COLLECTION_P1_LAKE)
 
 benchmark-ingestor:
 	@test -f .env || (echo "copy .env.example to .env first" && exit 1)
