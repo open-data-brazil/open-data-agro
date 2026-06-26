@@ -45,6 +45,24 @@ func TestINMETBDMEPDiarioGoldenVector(t *testing.T) {
 	}
 }
 
+func TestINMETPacoteAnualAutomaticasGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readINMETTestdata(t, "bdmep_daily_long.sample.csv")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("inmet.pacote-anual-automaticas"),
+		Format:    catalog.FormatCSV,
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount < 3 {
+		t.Fatalf("rowCount: got %d want >= 3", rowCount)
+	}
+}
+
 func readINMETTestdata(t *testing.T, name string) []byte {
 	t.Helper()
 	path := filepath.Join("..", "inmet", "testdata", name)

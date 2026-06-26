@@ -1,0 +1,80 @@
+{
+  "expectations": [
+    {
+      "id": "86525740-ef19-4edb-aa7d-45473ecd7ae2",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Annual automatic-station ZIP long-format rows required."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "a2efa4ce-807e-4781-8c5e-3b55abff8d75",
+      "kwargs": {
+        "column": "cd_estacao"
+      },
+      "meta": {
+        "notes": "Station code."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "524cd835-72ac-400e-b621-ff85924a37c3",
+      "kwargs": {
+        "column": "data"
+      },
+      "meta": {
+        "notes": "Observation date (UTC source)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "d9f0a042-b9d2-4e6a-a15c-1df2c285d0ea",
+      "kwargs": {
+        "column": "data"
+      },
+      "meta": {
+        "notes": "Date must be parseable and present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "3d9f8963-f855-42ea-b796-98477e002988",
+      "kwargs": {
+        "column": "data",
+        "regex": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "meta": {
+        "notes": "Canonical YYYY-MM-DD date."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_match_regex"
+    },
+    {
+      "id": "fd586cf4-d467-45c8-82e1-2045dd01475a",
+      "kwargs": {
+        "column": "valor"
+      },
+      "meta": {
+        "notes": "Measurement value; 9999 sentinels normalized to null upstream."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    }
+  ],
+  "id": "ca0b3920-826f-4889-8b8c-8c9391bd6547",
+  "meta": {
+    "agencia": "INMET",
+    "dataset_id": "inmet.pacote-anual-automaticas",
+    "fonte_oficial": "https://portal.inmet.gov.br/dadoshistoricos",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.inmet.pacote_anual_automaticas",
+  "notes": null
+}

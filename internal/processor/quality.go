@@ -193,6 +193,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_inmet_bdmep_diario", true
 	case "inmet.bdmep-mensal":
 		return "bronze_inmet_bdmep_mensal", true
+	case "inmet.pacote-anual-automaticas":
+		return "bronze_inmet_pacote_anual_automaticas", true
 	case "bcb.sgs-ipca":
 		return "bronze_bcb_sgs_ipca", true
 	case "bcb.sgs-ptax-usd-venda":

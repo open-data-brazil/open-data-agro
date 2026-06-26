@@ -106,3 +106,33 @@ models:
             - cd_estacao
             - mes
             - variavel
+
+  - name: mart_inmet__pacote_anual_automaticas
+    description: BDMEP annual automatic-station package in daily long format.
+    meta:
+      fonte_oficial: https://portal.inmet.gov.br/dadoshistoricos
+      agencia: INMET
+      dataset_id: inmet.pacote-anual-automaticas
+    columns:
+      - name: cd_estacao
+        description: WMO station code.
+        tests:
+          - not_null
+      - name: data
+        description: Observation date (YYYY-MM-DD, UTC source).
+        tests:
+          - not_null
+      - name: variavel
+        description: Climate variable code.
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - cd_estacao
+              - data
+              - variavel

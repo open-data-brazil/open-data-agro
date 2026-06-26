@@ -34,6 +34,7 @@ def main() -> int:
         "mart_inmet__estacoes_convencionais",
         "mart_inmet__bdmep_diario",
         "mart_inmet__bdmep_mensal",
+        "mart_inmet__pacote_anual_automaticas",
     ]:
         (lake_root / "gold" / mart).mkdir(parents=True, exist_ok=True)
 
@@ -97,6 +98,17 @@ def main() -> int:
         **meta_cols("inmet.bdmep-mensal", source, ingested, 2),
     }
     write_table(lake_root, "inmet", "bdmep_mensal", pa.table(mensal))
+
+    pacote = {
+        "cd_estacao": ["A901", "A901"],
+        "data": ["2024-01-01", "2024-01-01"],
+        "variavel": ["precipitacao", "temperatura_ar"],
+        "valor": ["1.2", "27.3"],
+        "uf": ["MT", "MT"],
+        "ano": ["2024", "2024"],
+        **meta_cols("inmet.pacote-anual-automaticas", source, ingested, 2),
+    }
+    write_table(lake_root, "inmet", "pacote_anual_automaticas", pa.table(pacote))
 
     print(f"seeded INMET silver under {lake_root / 'silver' / 'inmet'}")
     return 0

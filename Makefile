@@ -257,9 +257,10 @@ inmet-clima-mvp:
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH)
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.inmet_estacoes_automaticas"
 	duckdb $(DUCKDB_PATH) -c "SELECT cd_estacao, data, variavel, valor FROM analytics.inmet_bdmep_diario LIMIT 2"
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.inmet_pacote_anual_automaticas"
 
 dbt-build-inmet-clima: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_inmet__estacoes_automaticas+ stg_inmet__estacoes_convencionais+ stg_inmet__bdmep_diario+ stg_inmet__bdmep_mensal+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_inmet__estacoes_automaticas+ stg_inmet__estacoes_convencionais+ stg_inmet__bdmep_diario+ stg_inmet__bdmep_mensal+ stg_inmet__pacote_anual_automaticas+'
 
 dbt-build-bcb-sgs: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_bcb__sgs_ipca+ stg_bcb__sgs_ipca_12m+ stg_bcb__sgs_igpm+ stg_bcb__sgs_ptax_usd_venda+ stg_bcb__sgs_ptax_usd_compra+'

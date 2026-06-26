@@ -136,6 +136,7 @@ def main() -> int:
             "bronze_inmet_estacoes_convencionais": "expectations/suites/bronze/inmet/estacoes_convencionais.json",
             "bronze_inmet_bdmep_diario": "expectations/suites/bronze/inmet/bdmep_diario.json",
             "bronze_inmet_bdmep_mensal": "expectations/suites/bronze/inmet/bdmep_mensal.json",
+            "bronze_inmet_pacote_anual_automaticas": "expectations/suites/bronze/inmet/pacote_anual_automaticas.json",
             "bronze_bcb_sgs_ipca": "expectations/suites/bronze/bcb/sgs_ipca.json",
             "bronze_bcb_sgs_ptax_usd_venda": "expectations/suites/bronze/bcb/sgs_ptax_usd_venda.json",
             "bronze_bcb_sgs_ipca_12m": "expectations/suites/bronze/bcb/sgs_ipca_12m.json",
