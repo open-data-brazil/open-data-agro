@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CONAB Capacidade Estática (Phase 13 P1):** full pipeline for `conab.serie-historica-capacidade-estatica`, UF × year grain from legacy `.xls`, `make conab-armazenamento-logistica-mvp`
 - **CONAB Abastecimento + ANP combustíveis (Phase 12 MVP):** `abastecimento.yaml` (3 datasets), `anp/combustiveis.yaml` (2 datasets), full pipeline for all five datasets including operações and vendas balcão, `make conab-abastecimento-mvp`
 - **ANP combustíveis standalone (Phase 12 P2):** `make anp-mvp` for LPC médios/postos only — `scripts/ci/seed_anp_silver.py`, `dbt-build-anp`, DuckDB views `analytics.anp_combustiveis_*`
+- **CI ANP combustíveis (Phase 12 P2):** `make ci-anp-mvp` in GitHub Actions `dbt` job — mirrors offline ANP pipeline with isolated `/tmp` lake
 - **P1 collection sprint (Waves 0–2):** `make p1-collection-mvp` — IBGE localidades (UF/região/meso/micro) + CONAB preços municipais + frete/capacidade with `validate-codigo-ibge`
 - **CI P1 collection (sprint Waves 0–2):** `make ci-p1-collection-mvp` in GitHub Actions `dbt` job — mirrors offline collection pipeline with isolated `/tmp` lake
 - **Macro collection (Phases 17–19):** `make collection-macro-mvp` — INMET climate + BCB SGS + CEPEA indicators in one offline lake with DuckDB analytics smoke
