@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: mart_antt__pracas_pedagio
+    description: |
+      ANTT toll plazas on federal concessioned highways.
+      Grain is concessionaria + praca_de_pedagio + rodovia + uf + km_m.
+    config:
+      meta:
+        dataset_id: antt.pracas-pedagio
+        grain: concessionaria, praca_de_pedagio, rodovia, uf, km_m
+    columns:
+      - name: concessionaria
+        tests:
+          - not_null
+      - name: praca_de_pedagio
+        tests:
+          - not_null
+      - name: rodovia
+        tests:
+          - not_null
+      - name: uf
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - concessionaria
+              - praca_de_pedagio
+              - rodovia
+              - uf
+              - km_m

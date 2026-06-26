@@ -34,8 +34,14 @@ func SourcePortalURL(datasetID DatasetID) string {
 	if strings.HasPrefix(datasetID.String(), "mdic.") {
 		return MDICComexStatPortalURL
 	}
+	if strings.HasPrefix(datasetID.String(), "antt.") {
+		return ANTTDadosAbertosPortalURL
+	}
 	return ""
 }
+
+// ANTTDadosAbertosPortalURL is the ANTT open data portal URL.
+const ANTTDadosAbertosPortalURL = "https://dados.antt.gov.br/"
 
 // MDICComexStatPortalURL is the MDIC Comex Stat portal and API documentation URL.
 const MDICComexStatPortalURL = "https://comexstat.mdic.gov.br/"

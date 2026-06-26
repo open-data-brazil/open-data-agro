@@ -215,6 +215,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_cepea_boi_gordo", true
 	case "mdic.comex-exportacao-ncm-mes":
 		return "bronze_mdic_comex_exportacao_ncm_mes", true
+	case "antt.pracas-pedagio":
+		return "bronze_antt_pracas_pedagio", true
 	default:
 		return "", false
 	}

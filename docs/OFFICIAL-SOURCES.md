@@ -155,6 +155,16 @@ Crossing with CONAB local prices (Phase 11) and BCB PTAX (Phase 18) is planned i
 
 Monthly export FOB (USD) and quantity (kg) for soja, milho, trigo, and carne bovina NCM codes. Historical backfill from 2015 via year-chunked API requests.
 
+### ANTT — Logística rodoviária / Pedágios (Phase 22)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `antt.pracas-pedagio` | Praças de Pedágio — concessionárias | **P0 — implemented** |
+
+**Fonte oficial:** [ANTT — Portal de Dados Abertos](https://dados.antt.gov.br/dataset/praca-de-pedagio) · CKAN package `praca-de-pedagio` (latest CSV resource)
+
+Toll plaza locations on federal concessioned highways (`rodovia`, `uf`, `km_m`, coordinates). Complements CONAB `conab.frete` (Phase 13) for logistics context — no tariff series in this dataset.
+
 ---
 
 ## Rules

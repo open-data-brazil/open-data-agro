@@ -1,0 +1,49 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Toll plaza catalog must contain rows." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "rodovia" },
+      "meta": { "notes": "Highway code for join with CONAB frete context." }
+    },
+    {
+      "type": "expect_column_to_exist",
+      "kwargs": { "column": "uf" },
+      "meta": { "notes": "State code for geographic joins." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "concessionaria" },
+      "meta": { "notes": "Concessionaire name required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "praca_de_pedagio" },
+      "meta": { "notes": "Plaza identifier required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "rodovia" },
+      "meta": { "notes": "Highway required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": ["concessionaria", "praca_de_pedagio", "rodovia", "uf", "km_m"]
+      },
+      "meta": { "notes": "One row per plaza location grain." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "antt.pracas-pedagio",
+    "fonte_oficial": "https://dados.antt.gov.br/dataset/praca-de-pedagio",
+    "agencia": "ANTT"
+  },
+  "name": "bronze.antt.pracas_pedagio",
+  "id": "bronze-antt-pracas-pedagio-suite"
+}
