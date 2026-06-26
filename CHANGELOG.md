@@ -63,3 +63,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Benchmark docs sync:** `.local/benchmark/README.md` paths → `scripts/benchmark/profiles/`; fast10=16 / fast10-stress=18; `make benchmark-ingestor-fast10-stress` documented; `scripts/ci/check_benchmark_profiles.py` gate
 - **IMPLEMENTATION-PLAN sync:** Phases 15–19 documented as full E2E with `make *-mvp` gates; grãos DoD marked complete; `scripts/ci/check_implementation_plan.py` gate
 - **README sprint exit:** status + quick start updated for Phases 0–19 collection complete; `scripts/ci/check_readme_status.py` gate
+- **Phase 6 quality docs:** GE vs `validate_codigo_ibge.py` split in phase README + `scripts/quality/README.md`; `scripts/ci/check_phase6_quality_docs.py` gate
