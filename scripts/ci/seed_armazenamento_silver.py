@@ -21,6 +21,7 @@ def main() -> int:
     lake_root = Path(os.environ.get("LAKE_LOCAL_ROOT", "/tmp/open-data-agro-lake"))
     lake_root.mkdir(parents=True, exist_ok=True)
     (lake_root / "gold" / "mart_conab__armazenagem").mkdir(parents=True, exist_ok=True)
+    (lake_root / "gold" / "mart_conab__frete").mkdir(parents=True, exist_ok=True)
 
     source = str(lake_root / "bronze/seed.parquet")
     ingested = "2026-06-25T12:00:00Z"
@@ -49,6 +50,27 @@ def main() -> int:
         }
     )
     write_table(lake_root, "conab", "armazenagem", armazenagem)
+
+    frete = pa.table(
+        {
+            "dsc_fonte": ["PESQUISA", "PESQUISA"],
+            "municipio_origem": ["CAMPO NOVO DO PARECIS-MT", "CAMPO NOVO DO PARECIS-MT"],
+            "cod_ibge_origem": ["5102637", "5102637"],
+            "uf_origem": ["MT", "MT"],
+            "municipio_destino": ["SANTOS-SP", "SANTOS-SP"],
+            "cod_ibge_destino": ["3548500", "3548500"],
+            "uf_destino": ["SP", "SP"],
+            "ano": ["2015", "2015"],
+            "mes": ["10", "11"],
+            "distancia_km": ["2210", "2210"],
+            "valor_frete_tonelada": ["310,0", "315,0"],
+            "valor_tonelada_km": ["0,1403", "0,1425"],
+            "_dataset_id": ["conab.frete", "conab.frete"],
+            "_ingested_at": [ingested, ingested],
+            "_source_file": [source, source],
+        }
+    )
+    write_table(lake_root, "conab", "frete", frete)
     print(f"seeded armazenagem silver under {lake_root / 'silver' / 'conab' / 'armazenagem'}")
     return 0
 

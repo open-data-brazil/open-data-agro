@@ -25744,3 +25744,695 @@ where uf is null
 [0m07:41:04.903709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb53887080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb53f808f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75bb536b5c70>]}
 [0m07:41:04.903976 [debug] [MainThread]: Flushing usage events
 [0m07:41:10.705723 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:46:33.378237 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e50b4bac530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e50b394cfe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e50b4046030>]}
+
+
+============================== 07:46:33.381880 | c4396cf2-495c-490d-a420-577f3e3d97ad ==============================
+[0m07:46:33.381880 [info ] [MainThread]: Running with dbt=1.11.11
+[0m07:46:33.382589 [debug] [MainThread]: running dbt with arguments {'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'printer_width': '80', 'invocation_command': 'dbt deps --profiles-dir .', 'use_colors': 'True', 'static_parser': 'True', 'log_cache_events': 'False', 'no_print': 'None', 'log_format': 'default', 'write_json': 'True', 'empty': 'None', 'profiles_dir': '.', 'partial_parse': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'quiet': 'False', 'version_check': 'True', 'cache_selected_only': 'False', 'introspect': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m07:46:33.482988 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c4396cf2-495c-490d-a420-577f3e3d97ad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e50b51d0770>]}
+[0m07:46:33.497639 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-ypsztfb0'
+[0m07:46:33.498015 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m07:46:33.628056 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m07:46:33.629155 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m07:46:33.722704 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m07:46:33.726532 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m07:46:34.077862 [info ] [MainThread]: Installed from version 1.3.0
+[0m07:46:34.078307 [info ] [MainThread]: Updated version available: 1.4.0
+[0m07:46:34.078695 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'c4396cf2-495c-490d-a420-577f3e3d97ad', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e50b4729850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e50b4758260>]}
+[0m07:46:34.079069 [info ] [MainThread]: 
+[0m07:46:34.079398 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m07:46:34.080420 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.7491728, "process_in_blocks": "0", "process_kernel_time": 0.090809, "process_mem_max_rss": "121552", "process_out_blocks": "2304", "process_user_time": 1.255368}
+[0m07:46:34.080895 [debug] [MainThread]: Command `dbt deps` succeeded at 07:46:34.080816 after 0.75 seconds
+[0m07:46:34.081268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e50b398fd40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e50b685f5c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e50b4011ac0>]}
+[0m07:46:34.081660 [debug] [MainThread]: Flushing usage events
+[0m07:46:34.730054 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:46:36.276425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2dcc83f80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2ded5f020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2dc7e1ee0>]}
+
+
+============================== 07:46:36.279630 | fb544a35-299c-4b7c-b5d0-094c4b666b45 ==============================
+[0m07:46:36.279630 [info ] [MainThread]: Running with dbt=1.11.11
+[0m07:46:36.280438 [debug] [MainThread]: running dbt with arguments {'log_path': '/data/dev/projects/webstorm/open-data-agro/dbt/logs', 'use_experimental_parser': 'False', 'invocation_command': 'dbt build --profiles-dir . --select stg_conab__frete+', 'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'partial_parse': 'True', 'introspect': 'True', 'empty': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'profiles_dir': '.', 'debug': 'False', 'quiet': 'False'}
+[0m07:46:36.465039 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fb544a35-299c-4b7c-b5d0-094c4b666b45', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2dbfbb800>]}
+[0m07:46:36.519848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fb544a35-299c-4b7c-b5d0-094c4b666b45', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2dec23860>]}
+[0m07:46:36.521143 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m07:46:36.593867 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m07:46:36.679989 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m07:46:36.680433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fb544a35-299c-4b7c-b5d0-094c4b666b45', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2dc770410>]}
+[0m07:46:38.411634 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fb544a35-299c-4b7c-b5d0-094c4b666b45', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2cf85c950>]}
+[0m07:46:38.506005 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m07:46:38.507980 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m07:46:38.535239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fb544a35-299c-4b7c-b5d0-094c4b666b45', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2cf8ed490>]}
+[0m07:46:38.535738 [info ] [MainThread]: Found 38 models, 87 data tests, 20 sources, 628 macros
+[0m07:46:38.539578 [info ] [MainThread]: 
+[0m07:46:38.540006 [info ] [MainThread]: Concurrency: 4 threads (target='dev_local')
+[0m07:46:38.540296 [info ] [MainThread]: 
+[0m07:46:38.540682 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m07:46:38.544507 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_dbt_workspace'
+[0m07:46:38.569011 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace"
+[0m07:46:38.569439 [debug] [ThreadPool]: On list_dbt_workspace: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"dbt_workspace"'
+    
+  
+  
+[0m07:46:38.569745 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:46:38.601075 [debug] [ThreadPool]: SQL status: OK in 0.031 seconds
+[0m07:46:38.602365 [debug] [ThreadPool]: On list_dbt_workspace: Close
+[0m07:46:38.603073 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dbt_workspace, now create_dbt_workspace_main)
+[0m07:46:38.603593 [debug] [ThreadPool]: Creating schema "database: "dbt_workspace"
+schema: "main"
+"
+[0m07:46:38.609972 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m07:46:38.610660 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='dbt_workspace'
+        and type='sqlite'
+    
+  
+[0m07:46:38.610988 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:46:38.612019 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m07:46:38.613324 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m07:46:38.613668 [debug] [ThreadPool]: On create_dbt_workspace_main: BEGIN
+[0m07:46:38.614159 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m07:46:38.614473 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m07:46:38.614752 [debug] [ThreadPool]: On create_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "create_dbt_workspace_main"} */
+
+    
+    
+        create schema if not exists "dbt_workspace"."main"
+    
+[0m07:46:38.615265 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m07:46:38.616052 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m07:46:38.616359 [debug] [ThreadPool]: Using duckdb connection "create_dbt_workspace_main"
+[0m07:46:38.616616 [debug] [ThreadPool]: On create_dbt_workspace_main: COMMIT
+[0m07:46:38.617066 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m07:46:38.617369 [debug] [ThreadPool]: On create_dbt_workspace_main: Close
+[0m07:46:38.619916 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_dbt_workspace_main, now list_dbt_workspace_main)
+[0m07:46:38.624784 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m07:46:38.625173 [debug] [ThreadPool]: On list_dbt_workspace_main: BEGIN
+[0m07:46:38.625461 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:46:38.626107 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m07:46:38.626429 [debug] [ThreadPool]: Using duckdb connection "list_dbt_workspace_main"
+[0m07:46:38.626861 [debug] [ThreadPool]: On list_dbt_workspace_main: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "connection_name": "list_dbt_workspace_main"} */
+select
+      'dbt_workspace' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'dbt_workspace'
+  
+[0m07:46:38.629478 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m07:46:38.631063 [debug] [ThreadPool]: On list_dbt_workspace_main: ROLLBACK
+[0m07:46:38.632197 [debug] [ThreadPool]: Failed to rollback 'list_dbt_workspace_main'
+[0m07:46:38.632565 [debug] [ThreadPool]: On list_dbt_workspace_main: Close
+[0m07:46:38.635977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fb544a35-299c-4b7c-b5d0-094c4b666b45', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2dec23bc0>]}
+[0m07:46:38.636622 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:46:38.637003 [debug] [MainThread]: On master: BEGIN
+[0m07:46:38.637338 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m07:46:38.638209 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:46:38.638603 [debug] [MainThread]: On master: COMMIT
+[0m07:46:38.638947 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:46:38.639276 [debug] [MainThread]: On master: COMMIT
+[0m07:46:38.639924 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m07:46:38.640352 [debug] [MainThread]: On master: Close
+[0m07:46:38.643061 [debug] [Thread-1 (]: Began running node model.open_data_agro.stg_conab__frete
+[0m07:46:38.643979 [info ] [Thread-1 (]: 1 of 10 START sql view model main.stg_conab__frete ............................. [RUN]
+[0m07:46:38.644766 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dbt_workspace_main, now model.open_data_agro.stg_conab__frete)
+[0m07:46:38.645384 [debug] [Thread-1 (]: Began compiling node model.open_data_agro.stg_conab__frete
+[0m07:46:38.654452 [debug] [Thread-1 (]: Writing injected SQL for node "model.open_data_agro.stg_conab__frete"
+[0m07:46:38.654984 [debug] [Thread-1 (]: Began executing node model.open_data_agro.stg_conab__frete
+[0m07:46:38.681068 [debug] [Thread-1 (]: Writing runtime sql for node "model.open_data_agro.stg_conab__frete"
+[0m07:46:38.681684 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__frete"
+[0m07:46:38.682032 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__frete: BEGIN
+[0m07:46:38.682335 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:46:38.683118 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m07:46:38.683496 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__frete"
+[0m07:46:38.683842 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__frete"} */
+
+  
+  create view "dbt_workspace"."main"."stg_conab__frete__dbt_tmp" as (
+    with silver as (
+    select * from 
+  read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/silver/conab/frete/**/*.parquet')
+
+),
+
+renamed as (
+    select
+        
+  trim(dsc_fonte) as fonte,
+  trim(municipio_origem) as municipio_origem,
+  lpad(trim(cod_ibge_origem), 7, '0') as cod_ibge_origem,
+  trim(uf_origem) as uf_origem,
+  trim(municipio_destino) as municipio_destino,
+  lpad(trim(cod_ibge_destino), 7, '0') as cod_ibge_destino,
+  trim(uf_destino) as uf_destino,
+  cast(ano as varchar) as ano,
+  cast(mes as varchar) as mes,
+  cast(distancia_km as varchar) as distancia_km,
+  cast(valor_frete_tonelada as varchar) as valor_frete_tonelada,
+  cast(valor_tonelada_km as varchar) as valor_tonelada_km
+,
+        cast(_ingested_at as varchar) as capturado_em,
+        'https://portaldeinformacoes.conab.gov.br/download-arquivos.html' as fonte_oficial,
+        _dataset_id,
+        _source_file
+    from silver
+)
+
+select * exclude (rn)
+from (
+    select
+        *,
+        row_number() over (
+            partition by
+                fonte,
+                cod_ibge_origem,
+                cod_ibge_destino,
+                ano,
+                mes
+            order by capturado_em desc, _source_file desc
+        ) as rn
+    from renamed
+)
+where rn = 1
+  );
+
+[0m07:46:38.685405 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m07:46:38.690561 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__frete"
+[0m07:46:38.690972 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__frete"} */
+alter view "dbt_workspace"."main"."stg_conab__frete__dbt_tmp" rename to "stg_conab__frete"
+[0m07:46:38.691681 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m07:46:38.701518 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__frete: COMMIT
+[0m07:46:38.701962 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__frete"
+[0m07:46:38.702277 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__frete: COMMIT
+[0m07:46:38.707440 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m07:46:38.712862 [debug] [Thread-1 (]: Using duckdb connection "model.open_data_agro.stg_conab__frete"
+[0m07:46:38.713373 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.stg_conab__frete"} */
+
+      drop view if exists "dbt_workspace"."main"."stg_conab__frete__dbt_backup" cascade
+    
+[0m07:46:38.714077 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m07:46:38.716419 [debug] [Thread-1 (]: On model.open_data_agro.stg_conab__frete: Close
+[0m07:46:38.717987 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fb544a35-299c-4b7c-b5d0-094c4b666b45', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2deb53320>]}
+[0m07:46:38.718553 [info ] [Thread-1 (]: 1 of 10 OK created sql view model main.stg_conab__frete ........................ [[32mOK[0m in 0.07s]
+[0m07:46:38.719066 [debug] [Thread-1 (]: Finished running node model.open_data_agro.stg_conab__frete
+[0m07:46:38.720079 [debug] [Thread-3 (]: Began running node model.open_data_agro.mart_conab__frete
+[0m07:46:38.720535 [info ] [Thread-3 (]: 2 of 10 START sql external model main.mart_conab__frete ........................ [RUN]
+[0m07:46:38.720958 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.open_data_agro.mart_conab__frete'
+[0m07:46:38.721387 [debug] [Thread-3 (]: Began compiling node model.open_data_agro.mart_conab__frete
+[0m07:46:38.724800 [debug] [Thread-3 (]: Writing injected SQL for node "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.725343 [debug] [Thread-3 (]: Began executing node model.open_data_agro.mart_conab__frete
+[0m07:46:38.763619 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.764316 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: BEGIN
+[0m07:46:38.764942 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:46:38.766094 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m07:46:38.766538 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.766938 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__frete"} */
+
+  
+    
+    
+
+    create  table
+      "dbt_workspace"."main"."mart_conab__frete__dbt_tmp"
+  
+    as (
+      
+
+select
+    fonte,
+    municipio_origem,
+    cod_ibge_origem,
+    uf_origem,
+    municipio_destino,
+    cod_ibge_destino,
+    uf_destino,
+    ano,
+    mes,
+    distancia_km,
+    valor_frete_tonelada,
+    valor_tonelada_km,
+    capturado_em,
+    fonte_oficial,
+    _dataset_id,
+    _source_file
+from "dbt_workspace"."main"."stg_conab__frete"
+    );
+  
+  
+[0m07:46:38.786922 [debug] [Thread-3 (]: SQL status: OK in 0.020 seconds
+[0m07:46:38.788132 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.788590 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__frete"} */
+
+    select count(*) as row_count from "dbt_workspace"."main"."mart_conab__frete__dbt_tmp"
+  
+[0m07:46:38.789504 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m07:46:38.790794 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.791354 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.791721 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__frete"} */
+
+[0m07:46:38.792089 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m07:46:38.794779 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.795156 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__frete"} */
+copy "dbt_workspace"."main"."mart_conab__frete__dbt_tmp" to '/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_conab__frete/mart.parquet' (format parquet)
+[0m07:46:38.805571 [debug] [Thread-3 (]: SQL status: OK in 0.010 seconds
+[0m07:46:38.807221 [debug] [Thread-3 (]: Writing runtime sql for node "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.808036 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.808476 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__frete"} */
+
+      create or replace view "dbt_workspace"."main"."mart_conab__frete__dbt_int" as (
+        select * from read_parquet('/data/dev/projects/webstorm/open-data-agro/lake/gold/mart_conab__frete/mart.parquet', union_by_name=False)
+        -- if relation is empty, filter by all columns having null values
+        
+      );
+    
+[0m07:46:38.809654 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m07:46:38.812264 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.812643 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__frete"} */
+alter view "dbt_workspace"."main"."mart_conab__frete__dbt_int" rename to "mart_conab__frete"
+[0m07:46:38.813373 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m07:46:38.814413 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: COMMIT
+[0m07:46:38.814756 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.815041 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: COMMIT
+[0m07:46:38.823551 [debug] [Thread-3 (]: SQL status: OK in 0.008 seconds
+[0m07:46:38.825701 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.826067 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__frete"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__frete__dbt_backup" cascade
+    
+[0m07:46:38.826727 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m07:46:38.829173 [debug] [Thread-3 (]: Using duckdb connection "model.open_data_agro.mart_conab__frete"
+[0m07:46:38.829542 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "model.open_data_agro.mart_conab__frete"} */
+
+      drop table if exists "dbt_workspace"."main"."mart_conab__frete__dbt_tmp" cascade
+    
+[0m07:46:38.831117 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m07:46:38.832370 [debug] [Thread-3 (]: On model.open_data_agro.mart_conab__frete: Close
+[0m07:46:38.832927 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fb544a35-299c-4b7c-b5d0-094c4b666b45', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2beae99a0>]}
+[0m07:46:38.833557 [info ] [Thread-3 (]: 2 of 10 OK created sql external model main.mart_conab__frete ................... [[32mOK[0m in 0.11s]
+[0m07:46:38.834034 [debug] [Thread-3 (]: Finished running node model.open_data_agro.mart_conab__frete
+[0m07:46:38.834978 [debug] [Thread-2 (]: Began running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5
+[0m07:46:38.835531 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91
+[0m07:46:38.835900 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28
+[0m07:46:38.836366 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d
+[0m07:46:38.836800 [info ] [Thread-2 (]: 3 of 10 START test dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes  [RUN]
+[0m07:46:38.837348 [info ] [Thread-1 (]: 4 of 10 START test not_null_mart_conab__frete_capturado_em ..................... [RUN]
+[0m07:46:38.837838 [info ] [Thread-4 (]: 5 of 10 START test not_null_mart_conab__frete_cod_ibge_destino ................. [RUN]
+[0m07:46:38.838485 [info ] [Thread-3 (]: 6 of 10 START test not_null_mart_conab__frete_cod_ibge_origem .................. [RUN]
+[0m07:46:38.839175 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5'
+[0m07:46:38.839801 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.open_data_agro.stg_conab__frete, now test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91)
+[0m07:46:38.840268 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28'
+[0m07:46:38.840683 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.open_data_agro.mart_conab__frete, now test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d)
+[0m07:46:38.841186 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5
+[0m07:46:38.841715 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91
+[0m07:46:38.842112 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28
+[0m07:46:38.842564 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d
+[0m07:46:38.847100 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5"
+[0m07:46:38.853756 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91"
+[0m07:46:38.857140 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28"
+[0m07:46:38.860363 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d"
+[0m07:46:38.861215 [debug] [Thread-2 (]: Began executing node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5
+[0m07:46:38.861775 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91
+[0m07:46:38.867531 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28
+[0m07:46:38.902439 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91"
+[0m07:46:38.903458 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5"
+[0m07:46:38.903889 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d
+[0m07:46:38.905486 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28"
+[0m07:46:38.907930 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d"
+[0m07:46:38.908457 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91"
+[0m07:46:38.908989 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5"
+[0m07:46:38.909485 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91: BEGIN
+[0m07:46:38.909860 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28"
+[0m07:46:38.910270 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d"
+[0m07:46:38.910799 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5: BEGIN
+[0m07:46:38.911341 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:46:38.911718 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28: BEGIN
+[0m07:46:38.912108 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d: BEGIN
+[0m07:46:38.912593 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:46:38.913093 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m07:46:38.913548 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m07:46:38.914090 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m07:46:38.915025 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m07:46:38.915419 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91"
+[0m07:46:38.915997 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m07:46:38.916524 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m07:46:38.916849 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28"
+[0m07:46:38.917263 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select capturado_em
+from "dbt_workspace"."main"."mart_conab__frete"
+where capturado_em is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:46:38.917689 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5"
+[0m07:46:38.918205 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d"
+[0m07:46:38.918699 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select cod_ibge_destino
+from "dbt_workspace"."main"."mart_conab__frete"
+where cod_ibge_destino is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:46:38.919272 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+
+
+
+
+
+with validation_errors as (
+
+    select
+        fonte, cod_ibge_origem, cod_ibge_destino, ano, mes
+    from "dbt_workspace"."main"."mart_conab__frete"
+    group by fonte, cod_ibge_origem, cod_ibge_destino, ano, mes
+    having count(*) > 1
+
+)
+
+select *
+from validation_errors
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:46:38.919718 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select cod_ibge_origem
+from "dbt_workspace"."main"."mart_conab__frete"
+where cod_ibge_origem is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:46:38.920248 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m07:46:38.923650 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91: ROLLBACK
+[0m07:46:38.924265 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m07:46:38.924853 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m07:46:38.925290 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m07:46:38.926552 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91'
+[0m07:46:38.928134 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5: ROLLBACK
+[0m07:46:38.929354 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28: ROLLBACK
+[0m07:46:38.930991 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d: ROLLBACK
+[0m07:46:38.931465 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91: Close
+[0m07:46:38.932623 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5'
+[0m07:46:38.933561 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28'
+[0m07:46:38.934620 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d'
+[0m07:46:38.935205 [debug] [Thread-2 (]: On test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5: Close
+[0m07:46:38.935785 [info ] [Thread-1 (]: 4 of 10 PASS not_null_mart_conab__frete_capturado_em ........................... [[32mPASS[0m in 0.10s]
+[0m07:46:38.936253 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28: Close
+[0m07:46:38.936788 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d: Close
+[0m07:46:38.937435 [info ] [Thread-2 (]: 3 of 10 PASS dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes  [[32mPASS[0m in 0.10s]
+[0m07:46:38.937999 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91
+[0m07:46:38.938904 [info ] [Thread-4 (]: 5 of 10 PASS not_null_mart_conab__frete_cod_ibge_destino ....................... [[32mPASS[0m in 0.10s]
+[0m07:46:38.939574 [info ] [Thread-3 (]: 6 of 10 PASS not_null_mart_conab__frete_cod_ibge_origem ........................ [[32mPASS[0m in 0.10s]
+[0m07:46:38.940337 [debug] [Thread-2 (]: Finished running node test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5
+[0m07:46:38.940766 [debug] [Thread-1 (]: Began running node test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5
+[0m07:46:38.941448 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28
+[0m07:46:38.942020 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d
+[0m07:46:38.942520 [debug] [Thread-2 (]: Began running node test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8
+[0m07:46:38.943039 [info ] [Thread-1 (]: 7 of 10 START test not_null_mart_conab__frete_fonte_oficial .................... [RUN]
+[0m07:46:38.943557 [debug] [Thread-4 (]: Began running node test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637
+[0m07:46:38.944055 [debug] [Thread-3 (]: Began running node test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38
+[0m07:46:38.944457 [info ] [Thread-2 (]: 8 of 10 START test not_null_mart_conab__frete_uf_destino ....................... [RUN]
+[0m07:46:38.944918 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__frete_capturado_em.c648bd1c91, now test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5)
+[0m07:46:38.945323 [info ] [Thread-4 (]: 9 of 10 START test not_null_mart_conab__frete_uf_origem ........................ [RUN]
+[0m07:46:38.945745 [info ] [Thread-3 (]: 10 of 10 START test not_null_mart_conab__frete_valor_frete_tonelada ............ [RUN]
+[0m07:46:38.946143 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.open_data_agro.dbt_utils_unique_combination_of_columns_mart_conab__frete_fonte__cod_ibge_origem__cod_ibge_destino__ano__mes.745d9d15d5, now test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8)
+[0m07:46:38.946479 [debug] [Thread-1 (]: Began compiling node test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5
+[0m07:46:38.946885 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__frete_cod_ibge_destino.041058ce28, now test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637)
+[0m07:46:38.947309 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.open_data_agro.not_null_mart_conab__frete_cod_ibge_origem.9b9fbf188d, now test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38)
+[0m07:46:38.947698 [debug] [Thread-2 (]: Began compiling node test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8
+[0m07:46:38.951256 [debug] [Thread-1 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5"
+[0m07:46:38.951742 [debug] [Thread-4 (]: Began compiling node test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637
+[0m07:46:38.952225 [debug] [Thread-3 (]: Began compiling node test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38
+[0m07:46:38.955694 [debug] [Thread-2 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8"
+[0m07:46:38.959111 [debug] [Thread-4 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637"
+[0m07:46:38.959629 [debug] [Thread-1 (]: Began executing node test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5
+[0m07:46:38.964008 [debug] [Thread-3 (]: Writing injected SQL for node "test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38"
+[0m07:46:38.964754 [debug] [Thread-2 (]: Began executing node test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8
+[0m07:46:38.966891 [debug] [Thread-1 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5"
+[0m07:46:38.967599 [debug] [Thread-4 (]: Began executing node test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637
+[0m07:46:38.971078 [debug] [Thread-2 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8"
+[0m07:46:38.973132 [debug] [Thread-4 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637"
+[0m07:46:38.973641 [debug] [Thread-3 (]: Began executing node test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38
+[0m07:46:38.974170 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5"
+[0m07:46:38.974730 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8"
+[0m07:46:38.976864 [debug] [Thread-3 (]: Writing runtime sql for node "test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38"
+[0m07:46:38.977284 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637"
+[0m07:46:38.977653 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5: BEGIN
+[0m07:46:38.978055 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8: BEGIN
+[0m07:46:38.978554 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637: BEGIN
+[0m07:46:38.978991 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38"
+[0m07:46:38.979317 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:46:38.979671 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m07:46:38.980005 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m07:46:38.980340 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38: BEGIN
+[0m07:46:38.981057 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m07:46:38.981402 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m07:46:38.981697 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m07:46:38.982061 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m07:46:38.982387 [debug] [Thread-2 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8"
+[0m07:46:38.982722 [debug] [Thread-1 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5"
+[0m07:46:38.983152 [debug] [Thread-4 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637"
+[0m07:46:38.983532 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m07:46:38.984052 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select uf_destino
+from "dbt_workspace"."main"."mart_conab__frete"
+where uf_destino is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:46:38.984645 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select fonte_oficial
+from "dbt_workspace"."main"."mart_conab__frete"
+where fonte_oficial is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:46:38.985056 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select uf_origem
+from "dbt_workspace"."main"."mart_conab__frete"
+where uf_origem is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:46:38.985468 [debug] [Thread-3 (]: Using duckdb connection "test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38"
+[0m07:46:38.986288 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "open_data_agro", "target_name": "dev_local", "node_id": "test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select valor_frete_tonelada
+from "dbt_workspace"."main"."mart_conab__frete"
+where valor_frete_tonelada is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m07:46:38.986917 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m07:46:38.987368 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m07:46:38.988593 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637: ROLLBACK
+[0m07:46:38.989030 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m07:46:38.989469 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m07:46:38.990763 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5: ROLLBACK
+[0m07:46:38.991627 [debug] [Thread-4 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637'
+[0m07:46:38.993042 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38: ROLLBACK
+[0m07:46:38.994186 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8: ROLLBACK
+[0m07:46:38.995330 [debug] [Thread-1 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5'
+[0m07:46:38.995906 [debug] [Thread-4 (]: On test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637: Close
+[0m07:46:38.996959 [debug] [Thread-3 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38'
+[0m07:46:38.998166 [debug] [Thread-2 (]: Failed to rollback 'test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8'
+[0m07:46:38.998702 [debug] [Thread-1 (]: On test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5: Close
+[0m07:46:38.999430 [info ] [Thread-4 (]: 9 of 10 PASS not_null_mart_conab__frete_uf_origem .............................. [[32mPASS[0m in 0.05s]
+[0m07:46:38.999819 [debug] [Thread-3 (]: On test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38: Close
+[0m07:46:39.000375 [debug] [Thread-2 (]: On test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8: Close
+[0m07:46:39.001545 [debug] [Thread-4 (]: Finished running node test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637
+[0m07:46:39.001125 [info ] [Thread-1 (]: 7 of 10 PASS not_null_mart_conab__frete_fonte_oficial .......................... [[32mPASS[0m in 0.06s]
+[0m07:46:39.002301 [info ] [Thread-3 (]: 10 of 10 PASS not_null_mart_conab__frete_valor_frete_tonelada .................. [[32mPASS[0m in 0.05s]
+[0m07:46:39.003015 [info ] [Thread-2 (]: 8 of 10 PASS not_null_mart_conab__frete_uf_destino ............................. [[32mPASS[0m in 0.06s]
+[0m07:46:39.003588 [debug] [Thread-1 (]: Finished running node test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5
+[0m07:46:39.004062 [debug] [Thread-3 (]: Finished running node test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38
+[0m07:46:39.004494 [debug] [Thread-2 (]: Finished running node test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8
+[0m07:46:39.005967 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:46:39.006546 [debug] [MainThread]: On master: BEGIN
+[0m07:46:39.007046 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m07:46:39.007950 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m07:46:39.008371 [debug] [MainThread]: On master: COMMIT
+[0m07:46:39.008674 [debug] [MainThread]: Using duckdb connection "master"
+[0m07:46:39.008954 [debug] [MainThread]: On master: COMMIT
+[0m07:46:39.009498 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m07:46:39.009820 [debug] [MainThread]: On master: Close
+[0m07:46:39.010195 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:46:39.010466 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__frete_fonte_oficial.e87ce2ffc5' was properly closed.
+[0m07:46:39.010707 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__frete_valor_frete_tonelada.ca7b628d38' was properly closed.
+[0m07:46:39.010958 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__frete_uf_destino.3360b54ef8' was properly closed.
+[0m07:46:39.011204 [debug] [MainThread]: Connection 'test.open_data_agro.not_null_mart_conab__frete_uf_origem.9af498b637' was properly closed.
+[0m07:46:39.011510 [info ] [MainThread]: 
+[0m07:46:39.011847 [info ] [MainThread]: Finished running 1 external model, 8 data tests, 1 view model in 0 hours 0 minutes and 0.47 seconds (0.47s).
+[0m07:46:39.013004 [debug] [MainThread]: Command end result
+[0m07:46:39.101257 [debug] [MainThread]: Wrote artifact WritableManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/manifest.json
+[0m07:46:39.103108 [debug] [MainThread]: Wrote artifact SemanticManifest to /data/dev/projects/webstorm/open-data-agro/dbt/target/semantic_manifest.json
+[0m07:46:39.107614 [debug] [MainThread]: Wrote artifact RunExecutionResult to /data/dev/projects/webstorm/open-data-agro/dbt/target/run_results.json
+[0m07:46:39.107991 [info ] [MainThread]: 
+[0m07:46:39.108319 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m07:46:39.108590 [info ] [MainThread]: 
+[0m07:46:39.108879 [info ] [MainThread]: Done. PASS=10 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=10
+[0m07:46:39.109600 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 2.8820236, "process_in_blocks": "24", "process_kernel_time": 0.179513, "process_mem_max_rss": "246324", "process_out_blocks": "13760", "process_user_time": 4.127807}
+[0m07:46:39.110012 [debug] [MainThread]: Command `dbt build` succeeded at 07:46:39.109944 after 2.88 seconds
+[0m07:46:39.110340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2dc07e450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2dc07eba0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78c2beabe7e0>]}
+[0m07:46:39.110676 [debug] [MainThread]: Flushing usage events
+[0m07:46:39.809373 [debug] [MainThread]: An error was encountered while trying to flush usage events

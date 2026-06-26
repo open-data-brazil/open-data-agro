@@ -159,3 +159,18 @@
   trim(nome_normativo) as nome_normativo,
   trim(url) as url_normativo
 {% endmacro %}
+
+{% macro conab_frete_columns() %}
+  trim(dsc_fonte) as fonte,
+  trim(municipio_origem) as municipio_origem,
+  lpad(trim(cod_ibge_origem), 7, '0') as cod_ibge_origem,
+  trim(uf_origem) as uf_origem,
+  trim(municipio_destino) as municipio_destino,
+  lpad(trim(cod_ibge_destino), 7, '0') as cod_ibge_destino,
+  trim(uf_destino) as uf_destino,
+  cast(ano as varchar) as ano,
+  cast(mes as varchar) as mes,
+  cast(distancia_km as varchar) as distancia_km,
+  cast(valor_frete_tonelada as varchar) as valor_frete_tonelada,
+  cast(valor_tonelada_km as varchar) as valor_tonelada_km
+{% endmacro %}

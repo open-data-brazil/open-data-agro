@@ -1,0 +1,58 @@
+{
+  "expectations": [
+    {
+      "id": "60227795-46c4-493d-af04-6cd2480723f0",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "a08ec571-9d76-4614-a65c-e76ab284073c",
+      "kwargs": {
+        "column": "municipio_origem"
+      },
+      "meta": {
+        "notes": "Origin municipality."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "f641b0f5-64d9-4c78-bb50-c4c53389f5d2",
+      "kwargs": {
+        "column": "municipio_destino"
+      },
+      "meta": {
+        "notes": "Destination municipality."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "676c94de-9337-4f2b-9154-a59597d7181d",
+      "kwargs": {
+        "column": "ano"
+      },
+      "meta": {
+        "notes": "Reference year must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "4e1ad47c-1740-4866-88a1-c1b198e16df6",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Armazenamento e Log\u00edstica > Frete",
+    "dataset_id": "conab.frete",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.frete",
+  "notes": null
+}

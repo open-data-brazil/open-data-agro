@@ -238,6 +238,25 @@ func TestArmazenagemGoldenVector(t *testing.T) {
 	}
 }
 
+func TestFreteGoldenVector(t *testing.T) {
+	t.Parallel()
+
+	raw := readCONABTestdata(t, "Frete.sample.txt")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("conab.frete"),
+		Format:    catalog.FormatTXT,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("ConvertToParquet: %v", err)
+	}
+	if rowCount < 4 {
+		t.Fatalf("rowCount: got %d want >= 4", rowCount)
+	}
+}
+
 func TestCapacidadeEstaticaGoldenVector(t *testing.T) {
 	t.Parallel()
 

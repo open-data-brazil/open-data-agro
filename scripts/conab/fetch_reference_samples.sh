@@ -21,6 +21,7 @@ fetch "PrecosSemanalUF.txt" "https://portaldeinformacoes.conab.gov.br/downloads/
 fetch "PrecosSemanalMunicipio.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalMunicipio.txt"
 fetch "PrecosMensalUF.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalUF.txt"
 fetch "PrecosMensalMunicipio.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalMunicipio.txt"
+fetch "Frete.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Frete.txt"
 fetch "LevantamentoCana.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCana.txt"
 fetch "SerieHistoricaCana.txt" "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt"
 

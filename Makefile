@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-abastecimento dbt-build-armazenamento dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-abastecimento dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs ibge-localidades-mvp ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp ci-go ci-dbt benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -155,13 +155,24 @@ conab-abastecimento-mvp:
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS postos FROM analytics.anp_combustiveis_precos_postos"
 
 dbt-build-armazenamento: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__armazenagem+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__armazenagem+'
+
+dbt-build-armazenamento-logistica: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_conab__frete+'
 
 conab-armazenamento-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_armazenamento_silver.py
 	$(MAKE) dbt-build-armazenamento LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) DUCKDB_PATH=$(DUCKDB_PATH)
 	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS armazens FROM analytics.conab_armazenagem"
+
+conab-armazenamento-logistica-mvp:
+	go test ./internal/ingest/ -run 'Frete'
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_armazenamento_silver.py
+	$(MAKE) dbt-build-armazenamento-logistica LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	duckdb $(DUCKDB_PATH) -c "SELECT COUNT(*) AS frete_rows FROM analytics.conab_frete"
+	duckdb $(DUCKDB_PATH) -c "SELECT uf_origem, uf_destino, ano, valor_frete_tonelada FROM analytics.conab_frete WHERE uf_origem = 'MT' AND uf_destino = 'SP' ORDER BY ano DESC, mes DESC LIMIT 5"
 
 dbt-build-agricultura-familiar: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) dbt build --profiles-dir . --select 'stg_conab__alimenta_brasil_entregas+ stg_conab__alimenta_brasil_propostas+'

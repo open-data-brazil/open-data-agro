@@ -285,3 +285,44 @@ models:
               - mes_inicio_vigencia
               - ano_termino_vigencia
               - mes_termino_vigencia
+
+  - name: mart_conab__frete
+    description: |
+      Business mart — CONAB freight routes by origin/destination municipality.
+      Grain is fonte + cod_ibge_origem + cod_ibge_destino + ano + mes.
+    config:
+      meta:
+        dataset_id: conab.frete
+        grain: fonte, cod_ibge_origem, cod_ibge_destino, ano, mes
+        conab_section: Armazenamento e Logística
+    columns:
+      - name: cod_ibge_origem
+        tests:
+          - not_null
+      - name: cod_ibge_destino
+        tests:
+          - not_null
+      - name: uf_origem
+        tests:
+          - not_null
+      - name: uf_destino
+        tests:
+          - not_null
+      - name: valor_frete_tonelada
+        tests:
+          - not_null
+      - name: capturado_em
+        tests:
+          - not_null
+      - name: fonte_oficial
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - fonte
+              - cod_ibge_origem
+              - cod_ibge_destino
+              - ano
+              - mes

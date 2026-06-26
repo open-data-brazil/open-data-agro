@@ -95,6 +95,15 @@ sources:
           conab_section: Armazenamento e Logística
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/armazenagem"
 
+      - name: frete
+        description: Frete — reads {{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/frete
+        meta:
+          dataset_id: conab.frete
+          fonte_oficial: https://portaldeinformacoes.conab.gov.br/download-arquivos.html
+          agencia: CONAB
+          conab_section: Armazenamento e Logística
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/conab/frete"
+
       - name: alimenta_brasil_entregas
         description: Programa Alimenta Brasil — entregas
         meta:
