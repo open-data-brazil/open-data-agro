@@ -64,3 +64,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **IMPLEMENTATION-PLAN sync:** Phases 15–19 documented as full E2E with `make *-mvp` gates; grãos DoD marked complete; `scripts/ci/check_implementation_plan.py` gate
 - **README sprint exit:** status + quick start updated for Phases 0–19 collection complete; `scripts/ci/check_readme_status.py` gate
 - **Phase 6 quality docs:** GE vs `validate_codigo_ibge.py` split in phase README + `scripts/quality/README.md`; `scripts/ci/check_phase6_quality_docs.py` gate
+- **NEW-PROJECT-CHECKLIST sync:** updated for Go local-first post-collection state; `scripts/ci/check_new_project_checklist.py` gate

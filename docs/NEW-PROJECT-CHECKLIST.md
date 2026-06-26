@@ -1,17 +1,17 @@
 # New Project Checklist
 
-> Complete **before writing the first line of code**.
-> Status: documentation and harness phase — ready for toolchain scaffold.
+> Pre-coding checklist — **updated 2026-06-26** after collection sprint (Phases 0–19).  
+> Status: **Go local-first platform operational** — 47 catalog datasets with offline `make *-mvp` and CI gates.
 
 ---
 
 ## Architecture and domain
 
-- [x] **Layers defined** — fetch / embed / core / adapters — see [ARCHITECTURE.md](ARCHITECTURE.md)
+- [x] **Layers defined** — ingest / bronze / silver / gold / analytics — see [ARCHITECTURE.md](ARCHITECTURE.md)
 - [x] **Value types** — canonical codes and metadata — see [GLOSSARY.md](GLOSSARY.md)
-- [ ] **Business rules** — GIVEN/WHEN/THEN in `DATA-RULES.md` (create with first dataset)
-- [ ] **Use cases** — expand beyond UC-001 in [use-cases/](use-cases/)
-- [x] **API contract** — [API-CONTRACT.md](API-CONTRACT.md)
+- [—] **Business rules** — `DATA-RULES.md` deferred to Phase 20+ analytics (cross-mart joins); bronze GE + `validate_codigo_ibge.py` cover collection gates
+- [~] **Use cases** — [UC-001](use-cases/UC-001-lookup-municipality.md) exists; expand when public API ships
+- [x] **API contract** — [API-CONTRACT.md](API-CONTRACT.md) (CLI / lake layout sketch)
 - [x] **Glossary** — [GLOSSARY.md](GLOSSARY.md)
 
 ---
@@ -20,7 +20,7 @@
 
 - [x] **SECURITY.md** — private vulnerability reporting
 - [x] **SECURITY-PRACTICES.md** — maintainer and integrator guidance
-- [ ] **OWASP Top 10:2025** — dependency audit when scaffold exists
+- [x] **OWASP Top 10:2025** — `govulncheck` in GitHub Actions `security` job
 - [x] **Agentic 2026** — harness rules apply to agent sessions
 
 ---
@@ -32,15 +32,15 @@
 - [x] **VERSIONING.md** — SemVer and release process
 - [x] **CONTRIBUTING.md** — contribution + security contribution
 - [x] **CODE_OF_CONDUCT.md**
-- [x] **CHANGELOG.md** — Keep a Changelog format
+- [x] **CHANGELOG.md** — Keep a Changelog format (`[Unreleased]` tracks collection sprint)
 - [x] **GOVERNANCE.md** — document index
 
 ---
 
 ## Official sources
 
-- [x] **Source catalog scaffold** — [OFFICIAL-SOURCES.md](OFFICIAL-SOURCES.md)
-- [ ] **Per-dataset rows** — fill as implemented
+- [x] **Source catalog** — [OFFICIAL-SOURCES.md](OFFICIAL-SOURCES.md) (47 datasets, `**Pn — implemented**` status)
+- [x] **Per-dataset rows** — synced with `configs/catalog/`; gate: `python3 scripts/ci/check_official_sources_status.py`
 
 ---
 
@@ -53,10 +53,17 @@
 
 ## Implementation readiness
 
-- [ ] Toolchain chosen — **TypeScript 5+**, pnpm, Vitest (see [ARCHITECTURE.md](ARCHITECTURE.md))
-- [ ] Monorepo scaffold (`packages/core`, `scripts/`)
-- [ ] Golden test vectors from official API samples
-- [ ] CI pipeline
+- [x] **Toolchain** — **Go 1.22+**, DuckDB, dbt, Python quality scripts (see [ROADMAP.md](ROADMAP.md) stack table)
+- [x] **Repo layout** — `cmd/ingestor`, `cmd/processor`, `internal/`, `dbt/`, `expectations/`, `lake/` local-first
+- [x] **Golden test vectors** — `internal/*/testdata/` + `go test ./internal/ingest/`
+- [x] **CI pipeline** — [`.github/workflows/ci.yml`](../.github/workflows/ci.yml); local mirror: `make ci-go`, `make ci-dbt`
+
+**Collection sprint exit gates:**
+
+```bash
+make collection-full-mvp      # local
+make ci-collection-full-mvp   # offline CI (also in GitHub Actions dbt job)
+```
 
 ---
 
@@ -64,7 +71,7 @@
 
 | Role | Name | Date |
 |------|------|------|
-| Product / domain | | |
-| Tech lead | | |
+| Product / domain | Collection sprint (João P1) | 2026-06-26 |
+| Tech lead | Phases 0–19 E2E + CI gates | 2026-06-26 |
 
-When implementation checklist items are checked, coding may begin.
+Post-collection work: see `.local/PENDING-TASKS.md` (Phase 20 analytics, R2/MinIO production track).
