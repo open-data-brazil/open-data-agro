@@ -1,0 +1,102 @@
+{
+  "expectations": [
+    {
+      "id": "0e8af709-1ba9-4329-a165-31dc7766ea4b",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "Bronze partition must contain at least one data row."
+      },
+      "severity": "critical",
+      "type": "expect_table_row_count_to_be_between"
+    },
+    {
+      "id": "8eae0994-e881-4ba3-a257-a19fc42bd663",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "CONAB product column."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "511e473b-21c8-419b-8119-3e2a04c9ac69",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "State code (UF)."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "5f532626-d2c0-40b7-beba-be0a991e30cb",
+      "kwargs": {
+        "column": "valor_produto_kg"
+      },
+      "meta": {
+        "notes": "Weekly price per kg."
+      },
+      "severity": "critical",
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "dffc5508-e6ab-41e3-be34-606d1b80d420",
+      "kwargs": {
+        "column": "produto"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 product must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "a8141b51-4204-41a9-9f72-02b5a071c508",
+      "kwargs": {
+        "column": "uf"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 UF must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "e417d20f-9b31-4f8e-8f69-2c484d3065ab",
+      "kwargs": {
+        "column": "ano"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 year must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "0b56d7af-2fc9-46d7-b811-0d3ecbb9d65a",
+      "kwargs": {
+        "column": "semana"
+      },
+      "meta": {
+        "notes": "Grain key \u2014 week number must be present."
+      },
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    }
+  ],
+  "id": "9576a6f0-e69c-41ee-b24e-04ab43d877d7",
+  "meta": {
+    "agencia": "CONAB",
+    "conab_section": "Mercado > Pre\u00e7os agropecu\u00e1rios Semanal UF",
+    "dataset_id": "conab.precos-agropecuarios-semanal-uf",
+    "fonte_oficial": "https://portaldeinformacoes.conab.gov.br/download-arquivos.html",
+    "great_expectations_version": "1.18.1"
+  },
+  "name": "bronze.conab.precos_semanal_uf",
+  "notes": null
+}

@@ -88,3 +88,17 @@
   cast(valor_executado as varchar) as valor_executado,
   cast(valor_devolvido as varchar) as valor_devolvido
 {% endmacro %}
+
+{% macro conab_precos_semanal_uf_columns() %}
+  trim(produto) as produto,
+  trim(classificao_produto) as classificacao_produto,
+  cast(id_produto as varchar) as id_produto,
+  trim(uf) as uf,
+  trim(regiao) as regiao,
+  cast(ano as varchar) as ano,
+  cast(mes as varchar) as mes,
+  trim(data_inicial_final_semana) as data_inicial_final_semana,
+  cast(semana as varchar) as semana,
+  trim(dsc_nivel_comercializacao) as nivel_comercializacao,
+  cast(valor_produto_kg as varchar) as valor_produto_kg
+{% endmacro %}

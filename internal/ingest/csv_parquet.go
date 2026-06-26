@@ -6,11 +6,15 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"unicode/utf8"
 
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
+	"golang.org/x/text/encoding/charmap"
+	"golang.org/x/text/transform"
 )
 
 func convertDelimitedToParquet(raw []byte, delimiter rune) ([]byte, int, error) {
+	raw = normalizeTextEncoding(raw)
 	reader := csv.NewReader(bytes.NewReader(raw))
 	reader.Comma = delimiter
 	reader.LazyQuotes = true
@@ -57,4 +61,17 @@ func delimiterFor(entry catalog.RegistryEntry) rune {
 		return ';'
 	}
 	return runes[0]
+}
+
+// normalizeTextEncoding converts ISO-8859-1 CONAB portal downloads to UTF-8 when needed.
+func normalizeTextEncoding(raw []byte) []byte {
+	if utf8.Valid(raw) {
+		return raw
+	}
+	reader := transform.NewReader(bytes.NewReader(raw), charmap.ISO8859_1.NewDecoder())
+	decoded, err := io.ReadAll(reader)
+	if err != nil {
+		return raw
+	}
+	return decoded
 }

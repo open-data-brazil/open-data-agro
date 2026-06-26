@@ -30,6 +30,26 @@ func TestConvertDelimitedToParquetPreservesHeaders(t *testing.T) {
 	}
 }
 
+func TestConvertDelimitedLatin1ToUTF8(t *testing.T) {
+	t.Parallel()
+
+	// "NÃO" in ISO-8859-1 (portal encoding for PrecosSemanalUF.txt).
+	raw := []byte("produto;classificao_produto\nSOJA;N\xC3O INFORMADO\n")
+	entry := catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("conab.precos-agropecuarios-semanal-uf"),
+		Format:    catalog.FormatTXT,
+		Delimiter: ";",
+	}
+
+	_, rowCount, err := ConvertToParquet(entry, raw)
+	if err != nil {
+		t.Fatalf("convert: %v", err)
+	}
+	if rowCount != 1 {
+		t.Fatalf("rowCount: got %d want 1", rowCount)
+	}
+}
+
 func TestBronzeKey(t *testing.T) {
 	t.Parallel()
 
