@@ -1,4 +1,4 @@
-.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp p1-collection-mvp ci-p1-collection-mvp collection-macro-mvp collection-full-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
+.PHONY: test lint build build-processor clean duckdb-install python-install dbt-deps dbt-build dbt-build-mercado dbt-build-mercado-precos dbt-build-mercado-prohort dbt-build-abastecimento dbt-build-anp dbt-build-armazenamento dbt-build-armazenamento-logistica dbt-build-agricultura-familiar dbt-build-ibge-localidades dbt-build-ibge-pam dbt-build-bcb-sgs dbt-build-cepea dbt-build-inmet-clima ibge-localidades-mvp ibge-localidades-live-smoke ibge-pam-mvp inmet-clima-mvp bcb-sgs-mvp cepea-indicadores-mvp anp-mvp p1-collection-mvp ci-p1-collection-mvp collection-macro-mvp ci-collection-macro-mvp collection-full-mvp ci-go ci-dbt ci-validate-codigo-ibge validate-codigo-ibge validate-codigo-ibge-lake benchmark-ingestor benchmark-ingestor-clean benchmark-ingestor-fast10 benchmark-ingestor-fast10-clean benchmark-ingestor-fast10-stress benchmark-ingestor-fast10-stress-clean migrate-install migrate-up migrate-down seed analytics-init analytics-smoke conab-reference conab-mvp conab-mercado-mvp conab-mercado-full-mvp conab-mercado-precos-mvp conab-mercado-precos-minimos-mvp conab-mercado-prohort-mvp conab-abastecimento-mvp conab-armazenamento-mvp conab-armazenamento-logistica-mvp conab-agricultura-familiar-mvp
 
 BIN_DIR := bin
 DUCKDB_VERSION ?= 1.5.4
@@ -21,6 +21,8 @@ CI_P1_COLLECTION_DUCKDB ?= /tmp/p1-collection-ci.duckdb
 COLLECTION_P1_DBT_SELECT := stg_ibge__localidades_ufs+ stg_ibge__localidades_regioes+ stg_ibge__localidades_mesorregioes+ stg_ibge__localidades_microrregioes+ stg_conab__precos_semanal_municipio+ stg_conab__precos_mensal_municipio+ stg_conab__frete+ stg_conab__capacidade_estatica+
 COLLECTION_MACRO_LAKE ?= /tmp/macro-collection-lake
 COLLECTION_MACRO_DUCKDB ?= /tmp/macro-collection.duckdb
+CI_COLLECTION_MACRO_LAKE ?= /tmp/macro-collection-ci-lake
+CI_COLLECTION_MACRO_DUCKDB ?= /tmp/macro-collection-ci.duckdb
 COLLECTION_MACRO_DBT_SELECT := stg_inmet__estacoes_automaticas+ stg_inmet__estacoes_convencionais+ stg_inmet__bdmep_diario+ stg_inmet__bdmep_mensal+ stg_inmet__pacote_anual_automaticas+ stg_bcb__sgs_ipca+ stg_bcb__sgs_ipca_12m+ stg_bcb__sgs_igpm+ stg_bcb__sgs_ptax_usd_venda+ stg_bcb__sgs_ptax_usd_compra+ stg_cepea__soja_paranagua+ stg_cepea__soja_parana+ stg_cepea__milho+ stg_cepea__boi_gordo+
 
 test:
@@ -115,6 +117,12 @@ collection-macro-mvp: duckdb-install python-install dbt-deps
 	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS ptax FROM analytics.bcb_sgs_ptax_usd_venda"
 	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT COUNT(*) AS soja_paranagua FROM analytics.cepea_soja_paranagua"
 	duckdb $(COLLECTION_MACRO_DUCKDB) -c "SELECT produto, praca, data, preco_rs_sc FROM analytics.cepea_milho LIMIT 3"
+
+# Mirror GitHub Actions: offline macro collection (Phases 17–19).
+ci-collection-macro-mvp:
+	$(MAKE) collection-macro-mvp \
+		COLLECTION_MACRO_LAKE=$(CI_COLLECTION_MACRO_LAKE) \
+		COLLECTION_MACRO_DUCKDB=$(CI_COLLECTION_MACRO_DUCKDB)
 
 # Sprint exit: P1 prices/logistics + macro indicators + PAM + ANP offline pipelines.
 collection-full-mvp:

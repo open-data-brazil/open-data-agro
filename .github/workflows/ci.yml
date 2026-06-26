@@ -144,6 +144,9 @@ jobs:
       - name: P1 collection sprint offline pipeline
         run: make ci-p1-collection-mvp
 
+      - name: Macro collection offline pipeline (INMET, BCB, CEPEA)
+        run: make ci-collection-macro-mvp
+
   quality:
     runs-on: ubuntu-latest
     steps:
