@@ -8,7 +8,7 @@
 
 **Historical depth:** per-dataset source min years and `--from` backfill examples — [DATA-HISTORY-RANGES.md](DATA-HISTORY-RANGES.md) (Phase 33).
 
-**Deferred / unreachable sources** (removed from active catalog 2026-06-27): [DEFERRED-SOURCES.md](DEFERRED-SOURCES.md).
+**Deferred / unreachable sources** (removed from active catalog 2026-06-27): [DEFERRED-SOURCES.md](DEFERRED-SOURCES.md). Phase 57 audit (`make re-enable-deferred-mvp`): **0/9 re-enabled** — blockers unchanged.
 
 ---
 

@@ -4,6 +4,8 @@ These datasets were **removed from the active catalog** (`configs/catalog/`) on 
 
 **Phase 51 re-audit (2026-06-27):** all nine entries below were probed again from CI network. **None** are ready for re-enable; see [`.local/phases/51-source-discovery-wave-5/DISCOVERY-REPORT-WAVE5.md`](../.local/phases/51-source-discovery-wave-5/DISCOVERY-REPORT-WAVE5.md) (local, gitignored).
 
+**Phase 57 re-audit (2026-06-27):** live probe via `make re-enable-deferred-mvp` — **0/9 re-enabled**. All YAML blockers unchanged; parser golden vectors pass (ready when URLs unblock). Discovery deferrals (`antt.tarifas-pedagio`, `inpe.cptec-indices-climaticos`, `embrapa.solos-brasil`) still blocked; `mapa.sigef-areas` re-enabled in Phase 52.
+
 ## Summary
 
 | Dataset ID | Why deferred | Live access path (future) | Phase 51 status |
@@ -16,7 +18,19 @@ These datasets were **removed from the active catalog** (`configs/catalog/`) on 
 | `usda.psd-soja` | SOAP/WSDL **HTTP 404** from BR CI; US egress likely required | Run from US egress; verify SOAP `getDatabyCommodityPerYear` on `PSDExternalAPIService/svcPSD_AMIS.asmx` | **Still blocked** |
 | `usda.psd-milho` | Same as PSD soja | Same as above | **Still blocked** |
 | `usda.psd-trigo` | Same as PSD soja | Same as above | **Still blocked** |
-| `wto.its-trade-statistics` | API returns **401** without key; ingest used **fixture** without `WTO_API_KEY` | Subscribe at [WTO API portal](https://api.wto.org/); set repo secret `WTO_API_KEY`; remove fixture fallback or gate on key presence | **Still 401** |
+| `wto.its-trade-statistics` | API returns **401** without key; ingest used **fixture** without `WTO_API_KEY` | Subscribe at [WTO API portal](https://api.wto.org/); set repo secret `WTO_API_KEY`; remove fixture fallback or gate on key presence | **Still 401** (Phase 57) |
+
+## Phase 57 audit summary
+
+| Dataset ID | Phase 57 HTTP | Verdict |
+|------------|---------------|---------|
+| `antaq.movimentacao-carga-portuaria` | 404 | still blocked |
+| `fao.comercio-agro` | 403 | still blocked |
+| `mexico.siap-produccion-agricola` | portal 200 | still deferred (no bulk API) |
+| `noaa.gpcc-precipitation` | grid 404 | still blocked |
+| `usda.gats-trade` | 403 without key | key required |
+| `usda.psd-soja/milho/trigo` | WSDL unreachable | still blocked |
+| `wto.its-trade-statistics` | 401 without key | key required |
 
 ## Discovery deferrals (not in `_deferred/` YAML)
 
@@ -51,7 +65,9 @@ These remain in the catalog; warnings are expected until secrets are configured:
 ## Validation
 
 ```bash
+make re-enable-deferred-mvp
+python3 scripts/ci/verify_deferred_reenable_probe.py
 python3 scripts/ci/verify_wave5_discovery_probe.py
 ```
 
-Expect 18/18 approved primary URLs OK and deferred blockers still non-200.
+Expect 0 re-enable candidates; deferred blockers still non-200 (or key-gated).
