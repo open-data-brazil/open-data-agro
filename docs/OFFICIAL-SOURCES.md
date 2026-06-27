@@ -356,6 +356,22 @@ Complements existing `bndes.financiamento-agro` (CNAE agropecuária column) and 
 
 **Gate:** `make br-sources-wave-5-finance-mvp` · `make ci-br-sources-wave-5-finance-mvp`
 
+### Industry & market wave 5 (Phase 56)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `abiove.balanco-complexo-soja` | Abiove — exportações soja em grão (mensal, ComexStat via ABIOVE) | **P3 — implemented** |
+| `abiove.exportacoes-complexo-soja` | Abiove — biodiesel produção por matéria-prima (anual) | **P3 — implemented** |
+| `abiove.capacidade-instalada-esmagamento` | Abiove — esmagamento mensal complexo soja (mil t) | **P3 — implemented** |
+| `b3.futuro-cafe` | B3 SPRD — café arábica (ICF) preço de ajuste diário | **P1 — implemented** |
+| `b3.futuro-acucar` | B3 SPRD — açúcar cristal (CNL) preço de ajuste diário | **P1 — implemented** |
+
+**Fonte oficial:** [Abiove estatísticas](https://abiove.org.br/estatisticas/) · direct XLSX on `abiove.org.br/abiove_content/` · [B3 pesquisa por pregão](https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/) · SPRD prefixes **ICF**, **CNL**
+
+Industry sources use `fonte_tipo: referencia_mercado` (same tier as CEPEA/B3). Abiove tables cite ComexStat/ANP where noted on the workbook. B3 license documented in catalog (`license` field). **Rejected:** `b3.futuro-algodao`, `cna.pesquisas-setoriais` (Phase 51).
+
+**Gate:** `make industry-sources-wave-5-mvp` · `make ci-industry-sources-wave-5-mvp`
+
 ### BR sources wave 4 (Phase 48)
 
 | Dataset ID | Source | Status |
@@ -492,7 +508,7 @@ EU ag price reference and Argentina FX parity for competitor market models. `fon
 | 53 IBGE | `ibge.ppm-efetivo-rebanhos`, … `ibge.pnad-rural-renda-ocupacao` (10 datasets) | [apisidra.ibge.gov.br](https://apisidra.ibge.gov.br/) — **Phase 53 ✅ implemented** |
 | 54 Env/logistics | `ibama.sisfogo-incendios`, `ibama.licencas-ambientais`, `ibama.autos-infracao`, `ana.pluviometria-redes`, `embrapa.agroapi-agrofit`, `transportes.mtr-bit-malha-shapefile` | [dadosabertos.ibama.gov.br](https://dadosabertos.ibama.gov.br/) · [gov.br/ana](https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos) · [AgroAPI store](https://www.agroapi.cnptia.embrapa.br/store/) · [MTR BIT](https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas) — **Phase 54 ✅ implemented** |
 | 55 Finance | `bcb.cim-agro-credito-rural`, `bndes.desembolsos-linhas-agro`, `anp.etanol-precos` | [bcb.gov.br](https://www.bcb.gov.br/publicacoes/cim) · BNDES CKAN · [gov.br/anp](https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis) — **Phase 55 ✅ implemented** |
-| 56 Industry | `abiove.balanco-complexo-soja`, `abiove.exportacoes-complexo-soja`, `abiove.capacidade-instalada-esmagamento`, `b3.futuro-cafe`, `b3.futuro-acucar` | [abiove.org.br/estatisticas](https://abiove.org.br/estatisticas/) · B3 SPRD prefixes **ICF** (café), **CNL** (açúcar) |
+| 56 Industry | `abiove.balanco-complexo-soja`, `abiove.exportacoes-complexo-soja`, `abiove.capacidade-instalada-esmagamento`, `b3.futuro-cafe`, `b3.futuro-acucar` | [abiove.org.br/estatisticas](https://abiove.org.br/estatisticas/) · B3 SPRD prefixes **ICF** (café), **CNL** (açúcar) — **Phase 56 ✅ implemented** |
 
 **Rejected (Phase 51):** `mapa.fertilizantes-registro` (duplicate SIPEAGRO), `b3.futuro-algodao` (no B3 cotton contract), `cna.pesquisas-setoriais` (membership only).
 

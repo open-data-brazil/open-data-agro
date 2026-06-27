@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "ICF coffee futures settlement must contain rows." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "commodity", "value_set": ["ICF"] },
+      "meta": { "notes": "Arabica coffee prefix." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "refdate" },
+      "meta": { "notes": "Date required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "symbol" },
+      "meta": { "notes": "Symbol required." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["refdate", "symbol"] },
+      "meta": { "notes": "One row per contract per session." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "b3.futuro-cafe",
+    "fonte_oficial": "https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/",
+    "agencia": "B3",
+    "license": "B3 Market Data — see OFFICIAL-REFERENCE"
+  },
+  "name": "bronze.b3.futuro_cafe",
+  "id": "bronze-b3-futuro-cafe-suite"
+}

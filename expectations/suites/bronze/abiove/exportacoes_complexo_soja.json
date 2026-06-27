@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Abiove feedstock production table must contain rows." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "row_label" },
+      "meta": { "notes": "Feedstock label required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "period" },
+      "meta": { "notes": "Year period required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "abiove.exportacoes-complexo-soja",
+    "fonte_oficial": "https://abiove.org.br/estatisticas/",
+    "agencia": "Abiove"
+  },
+  "name": "bronze.abiove.exportacoes_complexo_soja",
+  "id": "bronze-abiove-exportacoes-complexo-soja-suite"
+}

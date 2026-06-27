@@ -1,0 +1,27 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Abiove crush capacity monthly rows required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "period" },
+      "meta": { "notes": "Month column required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "value" },
+      "meta": { "notes": "Crush volume required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "abiove.capacidade-instalada-esmagamento",
+    "fonte_oficial": "https://abiove.org.br/estatisticas/",
+    "agencia": "Abiove"
+  },
+  "name": "bronze.abiove.capacidade_instalada_esmagamento",
+  "id": "bronze-abiove-capacidade-instalada-esmagamento-suite"
+}

@@ -243,6 +243,16 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_b3_futuro_milho", true
 	case "b3.futuro-boi":
 		return "bronze_b3_futuro_boi", true
+	case "b3.futuro-cafe":
+		return "bronze_b3_futuro_cafe", true
+	case "b3.futuro-acucar":
+		return "bronze_b3_futuro_acucar", true
+	case "abiove.balanco-complexo-soja":
+		return "bronze_abiove_balanco_complexo_soja", true
+	case "abiove.exportacoes-complexo-soja":
+		return "bronze_abiove_exportacoes_complexo_soja", true
+	case "abiove.capacidade-instalada-esmagamento":
+		return "bronze_abiove_capacidade_instalada_esmagamento", true
 	case "fao.prices-agro":
 		return "bronze_fao_prices_agro", true
 	case "fao.producao-agro":

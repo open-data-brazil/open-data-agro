@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Abiove soy export balance must contain rows." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "row_label" },
+      "meta": { "notes": "Month or category label required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "metric" },
+      "meta": { "notes": "Metric name required." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "value" },
+      "meta": { "notes": "Observation value required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "abiove.balanco-complexo-soja",
+    "fonte_oficial": "https://abiove.org.br/estatisticas/",
+    "agencia": "Abiove"
+  },
+  "name": "bronze.abiove.balanco_complexo_soja",
+  "id": "bronze-abiove-balanco-complexo-soja-suite"
+}

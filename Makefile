@@ -1028,6 +1028,34 @@ ci-br-sources-wave-5-finance-mvp:
 		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_5_FINANCE_LAKE) \
 		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_5_FINANCE_DUCKDB)
 
+CI_INDUSTRY_SOURCES_WAVE_5_LAKE ?= /tmp/industry-sources-wave-5-ci-lake
+CI_INDUSTRY_SOURCES_WAVE_5_DUCKDB ?= /tmp/industry-sources-wave-5-ci.duckdb
+
+dbt-build-industry-sources-wave-5: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_abiove__balanco_complexo_soja+ stg_abiove__exportacoes_complexo_soja+ stg_abiove__capacidade_instalada_esmagamento+ stg_b3__futuro_cafe+ stg_b3__futuro_acucar+'
+
+industry-sources-wave-5-mvp:
+	go test ./internal/abiove/... ./internal/b3/... ./internal/ingest/ -run 'Abiove|B3|Futuro|Flatten|ICF|CNL|ConvertWorkbook'
+	chmod +x scripts/ci/seed_industry_sources_wave_5_silver.py
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_industry_sources_wave_5_silver.py
+	$(MAKE) dbt-build-industry-sources-wave-5 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.abiove_balanco_complexo_soja"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT row_label, metric, value FROM analytics.abiove_balanco_complexo_soja LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.abiove_exportacoes_complexo_soja"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.abiove_capacidade_instalada_esmagamento"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.b3_futuro_cafe"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT refdate, symbol, price FROM analytics.b3_futuro_cafe LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.b3_futuro_acucar"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT refdate, symbol, price FROM analytics.b3_futuro_acucar LIMIT 3"
+	curl -sfS "https://abiove.org.br/abiove_content/Abiove/exp_202605.xlsx" -o /dev/null
+	curl -sfS "https://www.b3.com.br/pesquisapregao/download?filelist=SPRD250627.zip" -o /dev/null
+
+ci-industry-sources-wave-5-mvp:
+	$(MAKE) industry-sources-wave-5-mvp \
+		LAKE_LOCAL_ROOT=$(CI_INDUSTRY_SOURCES_WAVE_5_LAKE) \
+		DUCKDB_PATH=$(CI_INDUSTRY_SOURCES_WAVE_5_DUCKDB)
+
 dbt-build-noaa-climate: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_noaa__enso_indices+ stg_noaa__global_temp_anomaly+'
 

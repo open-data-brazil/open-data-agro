@@ -46,6 +46,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/copernicus"
 	"github.com/open-data-brazil/open-data-agro/internal/inpe"
 	"github.com/open-data-brazil/open-data-agro/internal/embrapa"
+	"github.com/open-data-brazil/open-data-agro/internal/abiove"
 	"github.com/open-data-brazil/open-data-agro/internal/ibama"
 	"github.com/open-data-brazil/open-data-agro/internal/ons"
 	"github.com/open-data-brazil/open-data-agro/internal/suframa"
@@ -122,6 +123,7 @@ type Runner struct {
 	inpe       *inpe.Client
 	ibama      *ibama.Client
 	embrapa    *embrapa.Client
+	abiove     *abiove.Client
 	alerts   *alerts.Notifier
 }
 
@@ -172,6 +174,7 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		inpe:       inpe.NewClient(),
 		ibama:      ibama.NewClient(),
 		embrapa:    embrapa.NewClient(),
+		abiove:     abiove.NewClient(),
 		alerts:   notifier,
 	}
 }
@@ -209,7 +212,7 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.aneel, r.bndes, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.dnit, r.ipea, r.eurostat, r.argentina, r.oecd, r.un, r.cftc, r.jrc, r.wto, r.fred, r.nasa, r.sagis, r.japan, r.mexico, r.copernicus, r.suframa, r.transportes, r.ons, r.inpe, r.ibama, r.embrapa, SourceOptions{
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.aneel, r.bndes, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.dnit, r.ipea, r.eurostat, r.argentina, r.oecd, r.un, r.cftc, r.jrc, r.wto, r.fred, r.nasa, r.sagis, r.japan, r.mexico, r.copernicus, r.suframa, r.transportes, r.ons, r.inpe, r.ibama, r.embrapa, r.abiove, SourceOptions{
 		Crop:     opts.Crop,
 		FromYear: opts.FromYear,
 		ToYear:   opts.ToYear,

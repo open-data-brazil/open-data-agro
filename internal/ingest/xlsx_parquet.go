@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"github.com/open-data-brazil/open-data-agro/internal/anp"
+	"github.com/open-data-brazil/open-data-agro/internal/abiove"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/xuri/excelize/v2"
 )
@@ -35,6 +36,18 @@ func convertWorkbookSheet(entry catalog.RegistryEntry, book *excelize.File) ([]b
 	}
 	if sheet == "" {
 		return nil, 0, fmt.Errorf("workbook has no sheets")
+	}
+
+	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
+	if err != nil {
+		return nil, 0, err
+	}
+	if agency == "abiove" {
+		headers, rows, err := abiove.ConvertWorkbook(entry, book)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
 	}
 
 	table, err := book.GetRows(sheet)
