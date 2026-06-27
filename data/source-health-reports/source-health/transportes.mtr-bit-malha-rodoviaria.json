@@ -1,13 +1,15 @@
 {
   "datasetId": "transportes.mtr-bit-malha-rodoviaria",
   "endpoints": [
-    "https://servicos.dnit.gov.br/dadosabertos/dataset/fb78d7a5-3883-4ce8-a29e-7bcc8cf1c8c7/resource/b3f56608-29bf-4297-86a4-5118d523e449/download/snv_202204abril.csv",
+    "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias",
     "https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-06-27",
+  "lastFailureDate": "2026-06-27",
   "lastSuccessDate": "2026-06-27",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (ckan package_show: Get \"https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias\": dial tcp 189.9.19.9:443: i/o timeout)",
   "lastSampleSha256": "c08bba08d0efa491d549137e696e333c4f032269f9c52a4bf438c609fdc75eac",
   "lastModified": "Mon, 18 Jul 2022 23:28:08 GMT"
 }

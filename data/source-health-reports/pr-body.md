@@ -2,11 +2,11 @@
 
 ### Source health probe
 
-- Executed at: 2026-06-27T10:27:20Z
+- Executed at: 2026-06-27T10:31:42Z
 - Run date: 2026-06-27
 - Datasets probed: 111
-- OK: 74 · Warning: 37 · Critical: 0
-- Updated samples: 1
+- OK: 71 · Warning: 40 · Critical: 0
+- Updated samples: 5
 - Deprecated (2+ days): 0
 
 ### Source health alerts
@@ -26,6 +26,12 @@
 - **bcb.sgs-selic** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados
   - https://dadosabertos.bcb.gov.br/
+- **dnit.condicoes-conservacao-rodovias** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
+  - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento
+  - https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento
+- **dnit.snv-rodovias-federais** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+  - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
+  - https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
 - **eia.petroleum-prices** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://api.eia.gov/v2/petroleum/pri/spt/data
   - https://www.eia.gov/opendata/
@@ -59,7 +65,7 @@
 - **ibge.ppm-producao-municipal** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://apisidra.ibge.gov.br/values/t/74
   - https://sidra.ibge.gov.br/pesquisa/pam
-- **igc.goi-index** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 406 for https://igc.int/_csv/igc__goi.xlsb)
+- **igc.goi-index** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://igc.int/_csv/igc__goi.xlsb
   - https://igc.int/en/public-site/markets/marketinfo-goi.aspx
 - **inmet.bdmep-diario** (warning, day 1): Possible link deprecation — official source unreachable after retries.
@@ -95,7 +101,7 @@
 - **mdic.comex-importacao-diesel-ncm** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://api-comexstat.mdic.gov.br/general
   - https://comexstat.mdic.gov.br/
-- **mexico.siap-produccion-agricola** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 500 for https://www.gob.mx/siap)
+- **mexico.siap-produccion-agricola** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://www.gob.mx/siap
 - **noaa.gpcc-precipitation** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://opendata.dwd.de/climate_environment/GPCC/Monitoring/
@@ -103,6 +109,9 @@
 - **oecd-fao.ag-outlook** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://sdmx.oecd.org/public/rest/data/OECD.TAD.ATM,DSD_AGR@DF_OUTLOOK_2024_2033,1.1/BRA.A....T.AO_2024_2033?format=csvfilewithlabels
   - https://www.oecd.org/en/data/datasets/oecd-fao-agricultural-outlook.html
+- **transportes.mtr-bit-malha-rodoviaria** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+  - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
+  - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
 - **un.comtrade-bulk** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://comtradeapi.un.org/data/v1/get/C/A/HS
   - https://comtradeplus.un.org/
