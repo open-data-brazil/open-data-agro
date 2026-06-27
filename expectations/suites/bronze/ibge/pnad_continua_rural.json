@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "ibge.pnad-continua-rural bronze rows"
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "codigo_uf",
+          "trimestre",
+          "variavel_codigo"
+        ]
+      },
+      "meta": {
+        "notes": "grain"
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ibge.pnad-continua-rural",
+    "fonte_oficial": "https://sidra.ibge.gov.br/pesquisa/pnad",
+    "agencia": "IBGE"
+  },
+  "name": "bronze.ibge.pnad_continua_rural",
+  "id": "bronze-ibge-pnad-continua-rural-suite"
+}

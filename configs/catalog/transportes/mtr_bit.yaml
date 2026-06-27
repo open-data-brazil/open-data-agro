@@ -1,0 +1,17 @@
+# MTR BIT — federal road network metadata via DNIT SNV (Phase 48 P1)
+# Portal: https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
+# Shapefile deferred; ingest SNV jurisdiction CSV metadata
+
+entries:
+  - dataset_id: transportes.mtr-bit-malha-rodoviaria
+    source_url: https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
+    source_portal_url: https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
+    ckan_package_id: jurisdicao-de-vias
+    ckan_resource_format: CSV
+    format: csv
+    delimiter: ";"
+    schedule: quarterly
+    portal_label: MTR BIT — malha rodoviária federal (metadados SNV)
+    fonte_tipo: oficial_gov_br
+    license: "Open Data BR"
+    discovered_at: 2026-06-26T00:00:00Z

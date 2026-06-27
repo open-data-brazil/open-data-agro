@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "inpe.deter-alertas-desmatamento bronze rows"
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "view_date",
+          "uf",
+          "class_name"
+        ]
+      },
+      "meta": {
+        "notes": "grain"
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "inpe.deter-alertas-desmatamento",
+    "fonte_oficial": "https://terrabrasilis.dpi.inpe.br/downloads/",
+    "agencia": "INPE"
+  },
+  "name": "bronze.inpe.deter_alertas_desmatamento",
+  "id": "bronze-inpe-deter-alertas-desmatamento-suite"
+}

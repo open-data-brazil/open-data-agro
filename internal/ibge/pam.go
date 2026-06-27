@@ -76,5 +76,11 @@ func FlattenIBGEJSON(datasetID string, raw []byte) ([]string, [][]string, error)
 	if isPEVSDataset(datasetID) {
 		return FlattenPEVS(datasetID, raw)
 	}
+	if isCensoAgroDataset(datasetID) {
+		return FlattenCensoAgro(datasetID, raw)
+	}
+	if isPNADRuralDataset(datasetID) {
+		return FlattenPNADRural(datasetID, raw)
+	}
 	return FlattenLocalidades(datasetID, raw)
 }

@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "transportes.mtr-bit-malha-rodoviaria bronze rows"
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "BR",
+          "UF",
+          "Código"
+        ]
+      },
+      "meta": {
+        "notes": "grain"
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "transportes.mtr-bit-malha-rodoviaria",
+    "fonte_oficial": "https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas",
+    "agencia": "TRANSPORTES"
+  },
+  "name": "bronze.transportes.mtr_bit_malha_rodoviaria",
+  "id": "bronze-transportes-mtr-bit-malha-rodoviaria-suite"
+}

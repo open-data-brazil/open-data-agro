@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "ons.carga-energetica bronze rows"
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "id_subsistema",
+          "din_instante"
+        ]
+      },
+      "meta": {
+        "notes": "grain"
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ons.carga-energetica",
+    "fonte_oficial": "https://dados.ons.org.br/dataset/carga-energia",
+    "agencia": "ONS"
+  },
+  "name": "bronze.ons.carga_energetica",
+  "id": "bronze-ons-carga-energetica-suite"
+}

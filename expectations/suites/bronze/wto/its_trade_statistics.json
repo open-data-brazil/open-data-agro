@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "wto.its-trade-statistics must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "reporter_code",
+          "indicator_code",
+          "period",
+          "flow_code"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "wto.its-trade-statistics",
+    "agencia": "WTO"
+  },
+  "name": "bronze.wto.its_trade_statistics",
+  "id": "bronze-wto-its-trade-statistics-suite"
+}

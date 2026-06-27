@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "mapa.sif-abate-estatisticas bronze rows"
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "MES_ANO",
+          "UF_PROCEDENCIA",
+          "CATEGORIA"
+        ]
+      },
+      "meta": {
+        "notes": "grain"
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "mapa.sif-abate-estatisticas",
+    "fonte_oficial": "https://dados.agricultura.gov.br/dataset/servico-de-inspecao-federal-sif",
+    "agencia": "MAPA"
+  },
+  "name": "bronze.mapa.sif_abate_estatisticas",
+  "id": "bronze-mapa-sif-abate-estatisticas-suite"
+}

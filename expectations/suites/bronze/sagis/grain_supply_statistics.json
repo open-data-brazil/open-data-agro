@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "sagis.grain-supply-statistics must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "commodity_slug",
+          "marketing_year"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "sagis.grain-supply-statistics",
+    "agencia": "SAGIS"
+  },
+  "name": "bronze.sagis.grain_supply_statistics",
+  "id": "bronze-sagis-grain-supply-statistics-suite"
+}

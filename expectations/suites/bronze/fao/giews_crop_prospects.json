@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "fao.giews-crop-prospects must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "country_code",
+          "crop_slug",
+          "marketing_year"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "fao.giews-crop-prospects",
+    "agencia": "FAO"
+  },
+  "name": "bronze.fao.giews_crop_prospects",
+  "id": "bronze-fao-giews-crop-prospects-suite"
+}

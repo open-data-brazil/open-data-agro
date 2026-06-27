@@ -294,6 +294,23 @@ Monthly BNDES disbursements to agropecuaria sector (CNAE grouping).
 
 Drought severity area statistics by map/month — catalog under INMET agency for climate feature grouping.
 
+### BR sources wave 4 (Phase 48)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `ibge.censo-agro-estabelecimentos` | Censo Agro 2017 — establishments and area by UF (SIDRA 6878) | **P0 — implemented** |
+| `ibge.pnad-continua-rural` | PNAD Contínua occupation by UF (SIDRA 6385) | **P1 — implemented** |
+| `suframa.comercio-mercadorias-zfm` | SUFRAMA ZFM inspected invoices (XLSX) | **P1 — implemented** |
+| `transportes.mtr-bit-malha-rodoviaria` | MTR BIT / DNIT SNV federal road metadata CSV | **P1 — implemented** |
+| `mapa.sif-abate-estatisticas` | MAPA SIGSIF slaughter statistics by UF | **P1 — implemented** |
+| `ons.carga-energetica` | ONS daily energy load by subsystem | **P1 — implemented** |
+| `inpe.deter-alertas-desmatamento` | INPE DETER Amazon alerts (TerraBrasilis WFS) | **P2 — implemented** |
+| `dnit.condicoes-conservacao-rodovias` | DNIT pavement condition surveys | **P2 — implemented** |
+
+**Fonte oficial:** [Censo Agro 2017](https://censoagro2017.ibge.gov.br/) · [SIDRA](https://apisidra.ibge.gov.br/) · [SUFRAMA dados abertos](https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos) · [MTR BIT](https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas) · [MAPA SIGSIF](https://dados.agricultura.gov.br/dataset/servico-de-inspecao-federal-sif) · [ONS carga energia](https://dados.ons.org.br/dataset/carga-energia) · [INPE TerraBrasilis](https://terrabrasilis.dpi.inpe.br/downloads/) · [DNIT condições pavimento](https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento)
+
+**Deferred:** MTR BIT georeferenced shapefile ZIP (ingest SNV CSV metadata only); SUFRAMA aquisições PDF reports (use NF vistoriadas XLSX); INPE full DETER shapefile bulk (WFS capped subset).
+
 ### B3 — Mercado futuro agro (Phase 24)
 
 | Dataset ID | Source | Status |
@@ -387,7 +404,28 @@ U.S. export trade context, EU ag price reference, and Argentina FX parity for co
 
 **Fonte oficial:** [OECD-FAO Outlook](https://www.oecd.org/en/data/datasets/oecd-fao-agricultural-outlook.html) · SDMX `https://sdmx.oecd.org/public/rest/data/` (no key) · [FAO FFPI](https://www.fao.org/worldfoodsituation/foodpricesindex/en/) · CSV bulk (no key) · [MAGyP datos abiertos](https://datos.magyp.gob.ar/) · [datos.gob.ar series API](https://apis.datos.gob.ar/series/api/) (no key)
 
-**Deferred (verified):** `imf.commodity-prices` (no PCPS bulk), `paraguay.bcp-exportaciones-soja`, `uruguay.ine-exportaciones-agro`, `noaa.gpcc-precipitation`, `china.nbs-soy-imports` (403), `usda.ams-grain-prices` (403), `baltic.bdi-index` (subscription).
+**Deferred (verified):** `imf.commodity-prices` (no PCPS bulk), `paraguay.bcp-exportaciones-soja`, `uruguay.ine-exportaciones-agro`, `china.nbs-soy-imports` (403), `usda.ams-grain-prices` (403), `baltic.bdi-index` (subscription).
+
+### International sources wave 4 (Phase 49)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `cftc.cot-agricultural-futures` | CFTC Commitment of Traders — ag futures positioning | **P0 — implemented** |
+| `jrc.mars-crop-yield` | JRC MARS ASAP crop yield forecasts | **P1 — implemented** |
+| `wto.its-trade-statistics` | WTO Integrated Trade Statistics | **P1 — implemented** |
+| `fao.giews-crop-prospects` | FAO GIEWS crop prospects / food prices | **P1 — implemented** |
+| `fao.amis-market-monitor` | FAO AMIS market monitor | **P1 — implemented** |
+| `sagis.grain-supply-statistics` | SAGIS South Africa grain supply | **P1 — implemented** |
+| `japan.maff-ag-trade` | MAFF Japan ag production + trade | **P1 — implemented** |
+| `mexico.siap-produccion-agricola` | SIAP Mexico agricultural production | **P1 — implemented** |
+| `fred.commodity-indexes` | FRED commodity price indexes | **P1 — implemented** |
+| `nasa.power-agroclimatology` | NASA POWER agroclimatology point API | **P1 — implemented** |
+| `copernicus.era5-agroclimate` | Copernicus CDS ERA5 reanalysis (sample/API) | **P2 — implemented** |
+| `noaa.gpcc-precipitation` | NOAA GPCC global precipitation | **P2 — implemented** |
+
+**Fonte oficial:** [CFTC COT](https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm) · [JRC MARS](https://mars.jrc.ec.europa.eu/) · [WTO ITS](https://stats.wto.org/) · [FAO GIEWS](https://www.fao.org/giews/) · [FAO AMIS](https://www.amis-outlook.org/) · [SAGIS](https://www.sagis.org.za/) · [MAFF Japan](https://www.maff.go.jp/e/index.html) · [SIAP Mexico](https://nube.agricultura.gob.mx/datosAbiertos/Agricola.php) · [FRED](https://fred.stlouisfed.org/) · [NASA POWER](https://power.larc.nasa.gov/) · [Copernicus CDS](https://cds.climate.copernicus.eu/) · [NOAA GPCC](https://www.ncei.noaa.gov/products/land-based-station/global-precipitation-climatology-centre)
+
+**Deferred (verified):** `imf.commodity-prices`, `usda.ams-grain-prices`, `iea.world-energy-statistics`, Mercosur BCP/INE bulk, `china.nbs-soy-imports`, `baltic.bdi-index` (subscription). Fixture-backed ingest for sources blocked from CI networks (MAFF, GIEWS, AMIS, SAGIS, SIAP, GPCC) — live fetch via env bulk paths documented in phase OFFICIAL-REFERENCE.
 
 ---
 

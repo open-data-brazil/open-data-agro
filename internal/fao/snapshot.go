@@ -26,6 +26,10 @@ func (c *Client) FetchSnapshot(ctx context.Context, entry catalog.RegistryEntry,
 		return c.fetchAnnualBulkSnapshot(ctx, entry, fromDate, defaultTradeBulkURL, defaultTradeCSV, false)
 	case "fao.food-price-index":
 		return c.FetchFFPISnapshot(ctx, entry)
+	case "fao.giews-crop-prospects":
+		return c.FetchGIEWSCropProspectsSnapshot(ctx, entry)
+	case "fao.amis-market-monitor":
+		return c.FetchAMISMarketMonitorSnapshot(ctx, entry)
 	default:
 		return c.FetchPricesSnapshot(ctx, entry, fromDate)
 	}
@@ -85,6 +89,10 @@ func Flatten(entry catalog.RegistryEntry, raw []byte) ([]string, [][]string, err
 		return flattenAnnualBulk(entry, raw)
 	case "fao.food-price-index":
 		return FlattenFFPI(entry, raw)
+	case "fao.giews-crop-prospects":
+		return FlattenGIEWSCropProspects(entry, raw)
+	case "fao.amis-market-monitor":
+		return FlattenAMISMarketMonitor(entry, raw)
 	default:
 		return FlattenPrices(entry, raw)
 	}

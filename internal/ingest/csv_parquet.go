@@ -10,6 +10,7 @@ import (
 
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/dnit"
+	"github.com/open-data-brazil/open-data-agro/internal/transportes"
 	"golang.org/x/text/encoding/charmap"
 	"golang.org/x/text/transform"
 )
@@ -55,10 +56,21 @@ func convertDelimitedFileToParquet(path string, entry catalog.RegistryEntry) ([]
 
 func preprocessDelimitedRaw(entry catalog.RegistryEntry, raw []byte) []byte {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
-	if err != nil || agency != "dnit" {
+	if err != nil {
 		return raw
 	}
-	return dnit.StripMetadataRows(raw)
+	switch agency {
+	case "dnit":
+		return dnit.StripMetadataRows(raw)
+	case "transportes":
+		stripped, stripErr := transportes.PrepareCSV(raw)
+		if stripErr != nil {
+			return raw
+		}
+		return stripped
+	default:
+		return raw
+	}
 }
 
 func delimiterFor(entry catalog.RegistryEntry) rune {

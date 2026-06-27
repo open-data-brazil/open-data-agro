@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "mexico.siap-produccion-agricola must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "state_code",
+          "crop_slug",
+          "refyear"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "mexico.siap-produccion-agricola",
+    "agencia": "MEXICO"
+  },
+  "name": "bronze.mexico.siap_produccion_agricola",
+  "id": "bronze-mexico-siap-produccion-agricola-suite"
+}

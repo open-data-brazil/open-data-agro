@@ -39,6 +39,20 @@ type ckanResource struct {
 
 // ResolveURL returns the latest CKAN CSV resource download URL for a DNIT catalog entry.
 func ResolveURL(entry catalog.RegistryEntry) (string, error) {
+	if entry.DatasetID.String() == "dnit.condicoes-conservacao-rodovias" {
+		packageID := strings.TrimSpace(entry.CKANPackageID)
+		if packageID == "" {
+			packageID = "condicoes-do-pavimento"
+		}
+		nameFilter := strings.TrimSpace(entry.CKANResourceNameContains)
+		if nameFilter == "" {
+			nameFilter = "Pavimento Levantamentos"
+		}
+		ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
+		defer cancel()
+		return resolveCKANResourceByName(ctx, packageID, "CSV", nameFilter)
+	}
+
 	packageID := strings.TrimSpace(entry.CKANPackageID)
 	if packageID == "" {
 		return resolveDirectURL(entry)

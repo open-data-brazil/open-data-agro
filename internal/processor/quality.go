@@ -301,6 +301,46 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_fao_food_price_index", true
 	case "argentina.magyp-producion-granos":
 		return "bronze_argentina_magyp_producion_granos", true
+	case "cftc.cot-agricultural-futures":
+		return "bronze_cftc_cot_agricultural_futures", true
+	case "jrc.mars-crop-yield":
+		return "bronze_jrc_mars_crop_yield", true
+	case "wto.its-trade-statistics":
+		return "bronze_wto_its_trade_statistics", true
+	case "fao.giews-crop-prospects":
+		return "bronze_fao_giews_crop_prospects", true
+	case "fao.amis-market-monitor":
+		return "bronze_fao_amis_market_monitor", true
+	case "sagis.grain-supply-statistics":
+		return "bronze_sagis_grain_supply_statistics", true
+	case "japan.maff-ag-trade":
+		return "bronze_japan_maff_ag_trade", true
+	case "mexico.siap-produccion-agricola":
+		return "bronze_mexico_siap_produccion_agricola", true
+	case "fred.commodity-indexes":
+		return "bronze_fred_commodity_indexes", true
+	case "nasa.power-agroclimatology":
+		return "bronze_nasa_power_agroclimatology", true
+	case "copernicus.era5-agroclimate":
+		return "bronze_copernicus_era5_agroclimate", true
+	case "noaa.gpcc-precipitation":
+		return "bronze_noaa_gpcc_precipitation", true
+	case "ibge.censo-agro-estabelecimentos":
+		return "bronze_ibge_censo_agro_estabelecimentos", true
+	case "ibge.pnad-continua-rural":
+		return "bronze_ibge_pnad_continua_rural", true
+	case "suframa.comercio-mercadorias-zfm":
+		return "bronze_suframa_comercio_mercadorias_zfm", true
+	case "transportes.mtr-bit-malha-rodoviaria":
+		return "bronze_transportes_mtr_bit_malha_rodoviaria", true
+	case "mapa.sif-abate-estatisticas":
+		return "bronze_mapa_sif_abate_estatisticas", true
+	case "ons.carga-energetica":
+		return "bronze_ons_carga_energetica", true
+	case "inpe.deter-alertas-desmatamento":
+		return "bronze_inpe_deter_alertas_desmatamento", true
+	case "dnit.condicoes-conservacao-rodovias":
+		return "bronze_dnit_condicoes_conservacao_rodovias", true
 	default:
 		return "", false
 	}

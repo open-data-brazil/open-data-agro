@@ -39,6 +39,10 @@ type ckanResource struct {
 
 // ResolveURL returns the CKAN resource download URL for a MAPA catalog entry.
 func ResolveURL(entry catalog.RegistryEntry) (string, error) {
+	if entry.DatasetID.String() == "mapa.sif-abate-estatisticas" {
+		return ResolveSIFAbateURL(entry)
+	}
+
 	packageID := strings.TrimSpace(entry.CKANPackageID)
 	if packageID == "" {
 		return resolveDirectURL(entry)

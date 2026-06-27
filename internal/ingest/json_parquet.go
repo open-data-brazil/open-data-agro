@@ -18,11 +18,21 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/noaa"
 	"github.com/open-data-brazil/open-data-agro/internal/eia"
 	"github.com/open-data-brazil/open-data-agro/internal/igc"
+	"github.com/open-data-brazil/open-data-agro/internal/inpe"
 	"github.com/open-data-brazil/open-data-agro/internal/ana"
 	"github.com/open-data-brazil/open-data-agro/internal/eurostat"
 	"github.com/open-data-brazil/open-data-agro/internal/argentina"
 	"github.com/open-data-brazil/open-data-agro/internal/oecd"
 	"github.com/open-data-brazil/open-data-agro/internal/un"
+	"github.com/open-data-brazil/open-data-agro/internal/cftc"
+	"github.com/open-data-brazil/open-data-agro/internal/jrc"
+	"github.com/open-data-brazil/open-data-agro/internal/wto"
+	"github.com/open-data-brazil/open-data-agro/internal/fred"
+	"github.com/open-data-brazil/open-data-agro/internal/nasa"
+	"github.com/open-data-brazil/open-data-agro/internal/sagis"
+	"github.com/open-data-brazil/open-data-agro/internal/japan"
+	"github.com/open-data-brazil/open-data-agro/internal/mexico"
+	"github.com/open-data-brazil/open-data-agro/internal/copernicus"
 )
 
 func convertJSONFileToParquet(entry catalog.RegistryEntry, path string) ([]byte, int, error) {
@@ -151,6 +161,12 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 			return nil, 0, err
 		}
 		return writeStringTable(headers, rows)
+	case "inpe":
+		headers, rows, err := inpe.FlattenDETER(raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
 	case "ipea":
 		headers, rows, err := ipea.FlattenSeries(entry, raw)
 		if err != nil {
@@ -168,6 +184,60 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		return nil, 0, fmt.Errorf("json ingest not implemented for inmet dataset %s", entry.DatasetID)
 	case "un":
 		headers, rows, err := un.FlattenComtrade(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "cftc":
+		headers, rows, err := cftc.FlattenCOTAgricultural(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "jrc":
+		headers, rows, err := jrc.FlattenMARSCropYield(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "wto":
+		headers, rows, err := wto.FlattenITSTrade(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "fred":
+		headers, rows, err := fred.FlattenCommodityIndexes(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "nasa":
+		headers, rows, err := nasa.FlattenPOWERAgro(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "sagis":
+		headers, rows, err := sagis.FlattenGrainSupply(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "japan":
+		headers, rows, err := japan.FlattenMAFFAgTrade(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "mexico":
+		headers, rows, err := mexico.FlattenSIAPProduccion(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "copernicus":
+		headers, rows, err := copernicus.FlattenERA5Agroclimate(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}

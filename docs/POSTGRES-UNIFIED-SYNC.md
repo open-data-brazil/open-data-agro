@@ -75,6 +75,38 @@ Manifest verification without PostgreSQL:
 make verify-wave3-gold-manifest
 ```
 
+### Wave 4 marts (Phases 48–49)
+
+| Gold path | PostgreSQL / DuckDB table | Source |
+|-----------|---------------------------|--------|
+| `gold/mart_ibge__censo_agro_estabelecimentos/mart.parquet` | `analytics.ibge_censo_agro_estabelecimentos` | IBGE Censo Agro 2017 |
+| `gold/mart_ibge__pnad_continua_rural/mart.parquet` | `analytics.ibge_pnad_continua_rural` | IBGE PNAD rural occupation |
+| `gold/mart_suframa__comercio_mercadorias_zfm/mart.parquet` | `analytics.suframa_comercio_mercadorias_zfm` | SUFRAMA ZFM trade |
+| `gold/mart_transportes__mtr_bit_malha_rodoviaria/mart.parquet` | `analytics.transportes_mtr_bit_malha_rodoviaria` | MTR BIT / DNIT SNV roads |
+| `gold/mart_mapa__sif_abate_estatisticas/mart.parquet` | `analytics.mapa_sif_abate_estatisticas` | MAPA SIF slaughter |
+| `gold/mart_ons__carga_energetica/mart.parquet` | `analytics.ons_carga_energetica` | ONS energy load |
+| `gold/mart_inpe__deter_alertas_desmatamento/mart.parquet` | `analytics.inpe_deter_alertas_desmatamento` | INPE DETER alerts |
+| `gold/mart_dnit__condicoes_conservacao_rodovias/mart.parquet` | `analytics.dnit_condicoes_conservacao_rodovias` | DNIT pavement condition |
+| `gold/mart_cftc__cot_agricultural_futures/mart.parquet` | `analytics.cftc_cot_agricultural_futures` | CFTC Commitment of Traders |
+| `gold/mart_jrc__mars_crop_yield/mart.parquet` | `analytics.jrc_mars_crop_yield` | JRC MARS crop yield |
+| `gold/mart_wto__its_trade_statistics/mart.parquet` | `analytics.wto_its_trade_statistics` | WTO trade statistics |
+| `gold/mart_fao__giews_crop_prospects/mart.parquet` | `analytics.fao_giews_crop_prospects` | FAO GIEWS |
+| `gold/mart_fao__amis_market_monitor/mart.parquet` | `analytics.fao_amis_market_monitor` | FAO AMIS |
+| `gold/mart_sagis__grain_supply_statistics/mart.parquet` | `analytics.sagis_grain_supply_statistics` | SAGIS grain supply |
+| `gold/mart_japan__maff_ag_trade/mart.parquet` | `analytics.japan_maff_ag_trade` | MAFF Japan ag trade |
+| `gold/mart_mexico__siap_produccion_agricola/mart.parquet` | `analytics.mexico_siap_produccion_agricola` | Mexico SIAP production |
+| `gold/mart_fred__commodity_indexes/mart.parquet` | `analytics.fred_commodity_indexes` | FRED commodity indexes |
+| `gold/mart_nasa__power_agroclimatology/mart.parquet` | `analytics.nasa_power_agroclimatology` | NASA POWER agroclimate |
+| `gold/mart_copernicus__era5_agroclimate/mart.parquet` | `analytics.copernicus_era5_agroclimate` | Copernicus ERA5 |
+| `gold/mart_noaa__gpcc_precipitation/mart.parquet` | `analytics.noaa_gpcc_precipitation` | NOAA GPCC precipitation |
+
+Manifest verification without PostgreSQL:
+
+```bash
+make verify-wave4-gold-manifest
+make spot-check-wave4-duckdb DUCKDB_PATH=duckdb/open_data_agro.duckdb
+```
+
 ---
 
 ## Manifest

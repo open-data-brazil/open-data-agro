@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "fred.commodity-indexes must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "series_id",
+          "refmonth"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "fred.commodity-indexes",
+    "agencia": "FRED"
+  },
+  "name": "bronze.fred.commodity_indexes",
+  "id": "bronze-fred-commodity-indexes-suite"
+}

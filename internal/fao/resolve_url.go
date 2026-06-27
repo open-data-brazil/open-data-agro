@@ -16,6 +16,20 @@ func ResolveURL(entry catalog.RegistryEntry) (string, error) {
 		}
 		return url, nil
 	}
+	if entry.DatasetID.String() == "fao.giews-crop-prospects" {
+		url := strings.TrimSpace(entry.SourceURL)
+		if url == "" {
+			url = "https://www.fao.org/giews/food-prospects-archive/en/"
+		}
+		return url, nil
+	}
+	if entry.DatasetID.String() == "fao.amis-market-monitor" {
+		url := strings.TrimSpace(entry.SourceURL)
+		if url == "" {
+			url = "https://www.amis-outlook.org/#/market-database"
+		}
+		return url, nil
+	}
 	url := strings.TrimSpace(entry.FAOBulkURL)
 	if url == "" {
 		url = defaultPricesBulkURL

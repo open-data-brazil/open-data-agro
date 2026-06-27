@@ -1,0 +1,37 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "ibge.censo-agro-estabelecimentos bronze rows"
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "codigo_uf",
+          "ano",
+          "variavel_codigo",
+          "condicao_produtor_codigo",
+          "tipologia_codigo",
+          "atividade_codigo"
+        ]
+      },
+      "meta": {
+        "notes": "grain"
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ibge.censo-agro-estabelecimentos",
+    "fonte_oficial": "https://censoagro2017.ibge.gov.br/",
+    "agencia": "IBGE"
+  },
+  "name": "bronze.ibge.censo_agro_estabelecimentos",
+  "id": "bronze-ibge-censo-agro-estabelecimentos-suite"
+}

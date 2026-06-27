@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "cftc.cot-agricultural-futures must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "commodity_slug",
+          "report_date"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "cftc.cot-agricultural-futures",
+    "agencia": "CFTC"
+  },
+  "name": "bronze.cftc.cot_agricultural_futures",
+  "id": "bronze-cftc-cot-agricultural-futures-suite"
+}

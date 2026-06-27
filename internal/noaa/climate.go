@@ -225,6 +225,8 @@ func (c *Client) FetchClimateSnapshot(ctx context.Context, entry catalog.Registr
 		return c.FetchENSOSnapshot(ctx, entry, fromDate)
 	case "noaa.global-temp-anomaly":
 		return c.FetchGlobalTempSnapshot(ctx, entry, fromDate)
+	case "noaa.gpcc-precipitation":
+		return c.FetchGPCCPrecipitationSnapshot(ctx, entry)
 	default:
 		return nil, "", fmt.Errorf("unsupported noaa dataset %s", entry.DatasetID)
 	}
@@ -237,6 +239,8 @@ func FlattenClimate(entry catalog.RegistryEntry, raw []byte) ([]string, [][]stri
 		return FlattenENSO(entry, raw)
 	case "noaa.global-temp-anomaly":
 		return FlattenGlobalTemp(entry, raw)
+	case "noaa.gpcc-precipitation":
+		return FlattenGPCCPrecipitation(entry, raw)
 	default:
 		return nil, nil, fmt.Errorf("unsupported noaa dataset %s", entry.DatasetID)
 	}

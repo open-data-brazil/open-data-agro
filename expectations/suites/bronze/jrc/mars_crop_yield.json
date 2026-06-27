@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "jrc.mars-crop-yield must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "country",
+          "crop_slug",
+          "harvest_year",
+          "forecast_timing"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "jrc.mars-crop-yield",
+    "agencia": "JRC"
+  },
+  "name": "bronze.jrc.mars_crop_yield",
+  "id": "bronze-jrc-mars-crop-yield-suite"
+}

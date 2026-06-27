@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "japan.maff-ag-trade must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "commodity_slug",
+          "refyear",
+          "flow_code"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "japan.maff-ag-trade",
+    "agencia": "JAPAN"
+  },
+  "name": "bronze.japan.maff_ag_trade",
+  "id": "bronze-japan-maff-ag-trade-suite"
+}

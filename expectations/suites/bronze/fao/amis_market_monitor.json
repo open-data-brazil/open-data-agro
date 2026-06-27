@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "fao.amis-market-monitor must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "commodity_slug",
+          "refmonth",
+          "indicator_slug"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "fao.amis-market-monitor",
+    "agencia": "FAO"
+  },
+  "name": "bronze.fao.amis_market_monitor",
+  "id": "bronze-fao-amis-market-monitor-suite"
+}

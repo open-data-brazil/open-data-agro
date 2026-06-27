@@ -1,0 +1,34 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "copernicus.era5-agroclimate must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "latitude",
+          "longitude",
+          "refdate",
+          "variable_slug"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "copernicus.era5-agroclimate",
+    "agencia": "COPERNICUS"
+  },
+  "name": "bronze.copernicus.era5_agroclimate",
+  "id": "bronze-copernicus-era5-agroclimate-suite"
+}

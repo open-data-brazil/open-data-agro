@@ -35,6 +35,19 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/argentina"
 	"github.com/open-data-brazil/open-data-agro/internal/oecd"
 	"github.com/open-data-brazil/open-data-agro/internal/un"
+	"github.com/open-data-brazil/open-data-agro/internal/cftc"
+	"github.com/open-data-brazil/open-data-agro/internal/jrc"
+	"github.com/open-data-brazil/open-data-agro/internal/wto"
+	"github.com/open-data-brazil/open-data-agro/internal/fred"
+	"github.com/open-data-brazil/open-data-agro/internal/nasa"
+	"github.com/open-data-brazil/open-data-agro/internal/sagis"
+	"github.com/open-data-brazil/open-data-agro/internal/japan"
+	"github.com/open-data-brazil/open-data-agro/internal/mexico"
+	"github.com/open-data-brazil/open-data-agro/internal/copernicus"
+	"github.com/open-data-brazil/open-data-agro/internal/inpe"
+	"github.com/open-data-brazil/open-data-agro/internal/ons"
+	"github.com/open-data-brazil/open-data-agro/internal/suframa"
+	"github.com/open-data-brazil/open-data-agro/internal/transportes"
 	"github.com/open-data-brazil/open-data-agro/internal/storage"
 )
 
@@ -92,6 +105,19 @@ type Runner struct {
 	argentina *argentina.Client
 	oecd      *oecd.Client
 	un       *un.Client
+	cftc     *cftc.Client
+	jrc      *jrc.Client
+	wto      *wto.Client
+	fred     *fred.Client
+	nasa     *nasa.Client
+	sagis    *sagis.Client
+	japan    *japan.Client
+	mexico   *mexico.Client
+	copernicus *copernicus.Client
+	suframa    *suframa.Client
+	transportes *transportes.Client
+	ons        *ons.Client
+	inpe       *inpe.Client
 	alerts   *alerts.Notifier
 }
 
@@ -127,6 +153,19 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		argentina: argentina.NewClient(),
 		oecd:      oecd.NewClient(),
 		un:       un.NewClient(),
+		cftc:     cftc.NewClient(),
+		jrc:      jrc.NewClient(),
+		wto:      wto.NewClient(),
+		fred:     fred.NewClient(),
+		nasa:     nasa.NewClient(),
+		sagis:    sagis.NewClient(),
+		japan:    japan.NewClient(),
+		mexico:   mexico.NewClient(),
+		copernicus: copernicus.NewClient(),
+		suframa:    suframa.NewClient(),
+		transportes: transportes.NewClient(),
+		ons:        ons.NewClient(),
+		inpe:       inpe.NewClient(),
 		alerts:   notifier,
 	}
 }
@@ -164,7 +203,7 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.aneel, r.bndes, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.dnit, r.ipea, r.eurostat, r.argentina, r.oecd, r.un, SourceOptions{
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.aneel, r.bndes, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.dnit, r.ipea, r.eurostat, r.argentina, r.oecd, r.un, r.cftc, r.jrc, r.wto, r.fred, r.nasa, r.sagis, r.japan, r.mexico, r.copernicus, r.suframa, r.transportes, r.ons, r.inpe, SourceOptions{
 		Crop:     opts.Crop,
 		FromYear: opts.FromYear,
 		ToYear:   opts.ToYear,

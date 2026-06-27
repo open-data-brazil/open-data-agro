@@ -1,0 +1,30 @@
+# IBGE — Censo Agropecuário 2017 establishments (Phase 48 P0)
+# SIDRA table 6878 — establishments and area by UF (totals)
+# Portal: https://censoagro2017.ibge.gov.br/
+
+entries:
+  - dataset_id: ibge.censo-agro-estabelecimentos
+    source_url: https://apisidra.ibge.gov.br/values/t/6878
+    source_portal_url: https://censoagro2017.ibge.gov.br/
+    format: json
+    schedule: decennial
+    portal_label: Censo Agro 2017 — estabelecimentos e área por UF
+    sidra_table: "6878"
+    period_start: 2017
+    period_end: 2017
+    frequency: decennial
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: ibge.pnad-continua-rural
+    source_url: https://apisidra.ibge.gov.br/values/t/6385
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/pnad
+    format: json
+    schedule: quarterly
+    portal_label: PNAD Contínua — ocupação por UF (proxy rural labor)
+    sidra_table: "6385"
+    period_start: 2012
+    period_end: 2026
+    frequency: quarterly
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z

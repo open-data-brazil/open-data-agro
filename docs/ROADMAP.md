@@ -159,6 +159,10 @@
 - Phase 44 — BR wave 3 ingest ✅ — `dnit.snv-rodovias-federais`, `ipea.series-macro-regionais`, `ibge.pevs-producao-vegetal`, `ibge.ppm-producao-municipal`, `aneel.tarifas-energia`, `bndes.financiamento-agro`, `inmet.sequia-monitor`; `make br-sources-wave-3-mvp`
 - Phase 45 — wave 3 international ingest ✅ — `oecd-fao.ag-outlook`, `fao.food-price-index`, `argentina.magyp-producion-granos`; `make international-sources-wave-3-mvp`
 - Phase 46 — wave 3 ingestor signoff ✅ — gold manifest + DuckDB spot-check for 10 wave 3 marts; `make ingestor-signoff-wave-3-mvp` + `make ci-ingestor-signoff-wave-3-mvp`
+- Phase 47 — source discovery wave 4 ✅ — 104+ catalog candidates; routes to Phases 48–50 (docs only)
+- Phase 48 — BR wave 4 ingest ✅ — Censo Agro, PNAD rural, SUFRAMA, MTR BIT, MAPA SIF, ONS, INPE DETER, DNIT pavement; `make br-sources-wave-4-mvp`
+- Phase 49 — international wave 4 ingest ✅ — CFTC COT, JRC MARS, WTO, FAO GIEWS/AMIS, SAGIS, MAFF, FRED, NASA POWER, Copernicus ERA5, NOAA GPCC; `make international-sources-wave-4-mvp`
+- **Phase 50 — wave 4 ingestor signoff ✅** — gold manifest + DuckDB spot-check for 20 wave 4 marts; `make ingestor-signoff-wave-4-mvp`
 
 **Phase 20 scaffold:** [.local/phases/20-analytics-crossing/README.md](../.local/phases/20-analytics-crossing/README.md) — analytics crossing (feature joins); implementation **not started** (IA deferred).
 

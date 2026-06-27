@@ -783,6 +783,38 @@ ci-br-sources-wave-3-mvp:
 		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_3_LAKE) \
 		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_3_DUCKDB)
 
+CI_BR_SOURCES_WAVE_4_LAKE ?= /tmp/br-sources-wave-4-ci-lake
+CI_BR_SOURCES_WAVE_4_DUCKDB ?= /tmp/br-sources-wave-4-ci.duckdb
+
+dbt-build-br-sources-wave-4: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__censo_agro_estabelecimentos+ stg_ibge__pnad_continua_rural+ stg_suframa__comercio_mercadorias_zfm+ stg_transportes__mtr_bit_malha_rodoviaria+ stg_mapa__sif_abate_estatisticas+ stg_ons__carga_energetica+ stg_inpe__deter_alertas_desmatamento+ stg_dnit__condicoes_conservacao_rodovias+'
+
+br-sources-wave-4-mvp:
+	go test ./internal/ibge/... ./internal/suframa/... ./internal/transportes/... ./internal/mapa/... ./internal/ons/... ./internal/inpe/... ./internal/dnit/... ./internal/ingest/ -run 'Censo|PNAD|SUFRAMA|MTR|SIF|ONS|DETER|Condicoes|StripMetadata|GoldenVector'
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_br_sources_wave_4_silver.py
+	$(MAKE) dbt-build-br-sources-wave-4 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_censo_agro_estabelecimentos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_uf, ano, variavel, valor FROM analytics.ibge_censo_agro_estabelecimentos LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pnad_continua_rural"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_uf, trimestre, variavel, valor FROM analytics.ibge_pnad_continua_rural LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.suframa_comercio_mercadorias_zfm"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.transportes_mtr_bit_malha_rodoviaria"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c 'SELECT BR, UF, "Código" FROM analytics.transportes_mtr_bit_malha_rodoviaria LIMIT 3'
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mapa_sif_abate_estatisticas"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT MES_ANO, UF_PROCEDENCIA, CATEGORIA FROM analytics.mapa_sif_abate_estatisticas LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ons_carga_energetica"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT id_subsistema, din_instante, val_cargaenergiamwmed FROM analytics.ons_carga_energetica LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.inpe_deter_alertas_desmatamento"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT view_date, uf, class_name FROM analytics.inpe_deter_alertas_desmatamento LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.dnit_condicoes_conservacao_rodovias"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT Rodovia, km, ICM FROM analytics.dnit_condicoes_conservacao_rodovias LIMIT 3"
+
+ci-br-sources-wave-4-mvp:
+	$(MAKE) br-sources-wave-4-mvp \
+		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_4_LAKE) \
+		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_4_DUCKDB)
+
 dbt-build-international-sources-wave-2: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_igc__goi_index+ stg_usda__gats_trade+ stg_eurostat__ag_prices+ stg_argentina__bcra_cambio+'
 
@@ -828,6 +860,33 @@ ci-international-sources-wave-3-mvp:
 		LAKE_LOCAL_ROOT=$(CI_INTERNATIONAL_SOURCES_WAVE_3_LAKE) \
 		DUCKDB_PATH=$(CI_INTERNATIONAL_SOURCES_WAVE_3_DUCKDB)
 
+CI_INTERNATIONAL_SOURCES_WAVE_4_LAKE ?= /tmp/international-sources-wave-4-ci-lake
+CI_INTERNATIONAL_SOURCES_WAVE_4_DUCKDB ?= /tmp/international-sources-wave-4-ci.duckdb
+
+WAVE4_INTL_DBT_SELECT := stg_cftc__cot_agricultural_futures+ stg_jrc__mars_crop_yield+ stg_wto__its_trade_statistics+ stg_fao__giews_crop_prospects+ stg_fao__amis_market_monitor+ stg_sagis__grain_supply_statistics+ stg_japan__maff_ag_trade+ stg_mexico__siap_produccion_agricola+ stg_fred__commodity_indexes+ stg_nasa__power_agroclimatology+ stg_copernicus__era5_agroclimate+ stg_noaa__gpcc_precipitation+
+
+dbt-build-international-sources-wave-4: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select '$(WAVE4_INTL_DBT_SELECT)'
+
+international-sources-wave-4-mvp:
+	go test ./internal/cftc/... ./internal/jrc/... ./internal/wto/... ./internal/fred/... ./internal/nasa/... ./internal/sagis/... ./internal/japan/... ./internal/mexico/... ./internal/copernicus/... ./internal/fao/... ./internal/noaa/... ./internal/ingest/ -run 'CFTC|JRC|WTO|GIEWS|AMIS|SAGIS|MAFF|SIAP|FRED|NASA|ERA5|GPCC|GoldenVector|Flatten'
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_international_sources_wave_4_silver.py
+	$(MAKE) dbt-build-international-sources-wave-4 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.cftc_cot_agricultural_futures"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT commodity_slug, report_date, open_interest_all FROM analytics.cftc_cot_agricultural_futures LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.jrc_mars_crop_yield"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT country, crop_slug, forecast_yield_kg_ha FROM analytics.jrc_mars_crop_yield LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.fred_commodity_indexes"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT series_id, refmonth, value FROM analytics.fred_commodity_indexes LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.nasa_power_agroclimatology"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT parameter_slug, refdate, value FROM analytics.nasa_power_agroclimatology LIMIT 3"
+
+ci-international-sources-wave-4-mvp:
+	$(MAKE) international-sources-wave-4-mvp \
+		LAKE_LOCAL_ROOT=$(CI_INTERNATIONAL_SOURCES_WAVE_4_LAKE) \
+		DUCKDB_PATH=$(CI_INTERNATIONAL_SOURCES_WAVE_4_DUCKDB)
+
 ingestor-signoff-mvp: br-sources-wave-2-mvp international-sources-wave-2-mvp
 	@echo "ingestor wave 2 MVPs passed"
 
@@ -856,6 +915,25 @@ ci-ingestor-signoff-wave-3-mvp:
 	$(MAKE) ingestor-signoff-wave-3-mvp \
 		LAKE_LOCAL_ROOT=$(CI_INGESTOR_SIGNOFF_WAVE_3_LAKE) \
 		DUCKDB_PATH=$(CI_INGESTOR_SIGNOFF_WAVE_3_DUCKDB)
+
+CI_INGESTOR_SIGNOFF_WAVE_4_LAKE ?= /tmp/ingestor-signoff-wave-4-ci-lake
+CI_INGESTOR_SIGNOFF_WAVE_4_DUCKDB ?= /tmp/ingestor-signoff-wave-4-ci.duckdb
+
+verify-wave4-gold-manifest:
+	LAKE_LOCAL_ROOT=$(LAKE_ABS) python3 scripts/ci/verify_wave4_gold_manifest.py
+
+spot-check-wave4-duckdb:
+	DUCKDB_BIN="$(DUCKDB_BIN)" python3 scripts/ci/spot_check_analytics.py --duckdb "$(DUCKDB_PATH)" --wave4
+
+ingestor-signoff-wave-4-mvp: br-sources-wave-4-mvp international-sources-wave-4-mvp
+	$(MAKE) verify-wave4-gold-manifest LAKE_LOCAL_ROOT=$(LAKE_ABS)
+	$(MAKE) spot-check-wave4-duckdb DUCKDB_PATH=$(DUCKDB_PATH)
+	@echo "ingestor wave 4 signoff: MVPs + gold manifest + duckdb spot-check passed"
+
+ci-ingestor-signoff-wave-4-mvp:
+	$(MAKE) ingestor-signoff-wave-4-mvp \
+		LAKE_LOCAL_ROOT=$(CI_INGESTOR_SIGNOFF_WAVE_4_LAKE) \
+		DUCKDB_PATH=$(CI_INGESTOR_SIGNOFF_WAVE_4_DUCKDB)
 
 dbt-build-noaa-climate: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_noaa__enso_indices+ stg_noaa__global_temp_anomaly+'

@@ -1,0 +1,33 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "noaa.gpcc-precipitation must contain observations."
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "refmonth",
+          "latitude",
+          "longitude"
+        ]
+      },
+      "meta": {
+        "notes": "Dedupe key uniqueness."
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "noaa.gpcc-precipitation",
+    "agencia": "NOAA"
+  },
+  "name": "bronze.noaa.gpcc_precipitation",
+  "id": "bronze-noaa-gpcc-precipitation-suite"
+}

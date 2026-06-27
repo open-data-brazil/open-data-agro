@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "min_value": 1
+      },
+      "meta": {
+        "notes": "suframa.comercio-mercadorias-zfm bronze rows"
+      }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": {
+        "column_list": [
+          "column_1"
+        ]
+      },
+      "meta": {
+        "notes": "grain"
+      }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "suframa.comercio-mercadorias-zfm",
+    "fonte_oficial": "https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos",
+    "agencia": "SUFRAMA"
+  },
+  "name": "bronze.suframa.comercio_mercadorias_zfm",
+  "id": "bronze-suframa-comercio-mercadorias-zfm-suite"
+}

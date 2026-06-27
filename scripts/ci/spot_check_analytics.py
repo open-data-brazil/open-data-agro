@@ -21,6 +21,29 @@ WAVE3_TABLES: tuple[str, ...] = (
     "argentina_magyp_producion_granos",
 )
 
+WAVE4_TABLES: tuple[str, ...] = (
+    "ibge_censo_agro_estabelecimentos",
+    "ibge_pnad_continua_rural",
+    "suframa_comercio_mercadorias_zfm",
+    "transportes_mtr_bit_malha_rodoviaria",
+    "mapa_sif_abate_estatisticas",
+    "ons_carga_energetica",
+    "inpe_deter_alertas_desmatamento",
+    "dnit_condicoes_conservacao_rodovias",
+    "cftc_cot_agricultural_futures",
+    "jrc_mars_crop_yield",
+    "wto_its_trade_statistics",
+    "fao_giews_crop_prospects",
+    "fao_amis_market_monitor",
+    "sagis_grain_supply_statistics",
+    "japan_maff_ag_trade",
+    "mexico_siap_produccion_agricola",
+    "fred_commodity_indexes",
+    "nasa_power_agroclimatology",
+    "copernicus_era5_agroclimate",
+    "noaa_gpcc_precipitation",
+)
+
 DATE_COLUMNS: tuple[str, ...] = (
     "data",
     "refdate",
@@ -186,6 +209,11 @@ def main() -> int:
         action="store_true",
         help="check only wave 3 ingest marts (10 tables)",
     )
+    parser.add_argument(
+        "--wave4",
+        action="store_true",
+        help="check only wave 4 ingest marts (20 tables)",
+    )
     args = parser.parse_args()
 
     use_duckdb = bool(args.duckdb.strip())
@@ -199,11 +227,22 @@ def main() -> int:
     else:
         tables = list_postgres_tables(args.database_url)
 
+    if args.wave3 and args.wave4:
+        print("use only one of --wave3 or --wave4", file=sys.stderr)
+        return 2
+
     if args.wave3:
         tables = [t for t in WAVE3_TABLES if t in tables]
         missing = [t for t in WAVE3_TABLES if t not in tables]
         if missing:
             print("missing wave 3 tables:", ", ".join(missing), file=sys.stderr)
+            return 2
+
+    if args.wave4:
+        tables = [t for t in WAVE4_TABLES if t in tables]
+        missing = [t for t in WAVE4_TABLES if t not in tables]
+        if missing:
+            print("missing wave 4 tables:", ", ".join(missing), file=sys.stderr)
             return 2
 
     if not tables:
