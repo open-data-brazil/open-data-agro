@@ -23,16 +23,13 @@ def main() -> int:
     gold_tables = [
         "mart_cftc__cot_agricultural_futures",
         "mart_jrc__mars_crop_yield",
-        "mart_wto__its_trade_statistics",
         "mart_fao__giews_crop_prospects",
         "mart_fao__amis_market_monitor",
         "mart_sagis__grain_supply_statistics",
         "mart_japan__maff_ag_trade",
-        "mart_mexico__siap_produccion_agricola",
         "mart_fred__commodity_indexes",
         "mart_nasa__power_agroclimatology",
         "mart_copernicus__era5_agroclimate",
-        "mart_noaa__gpcc_precipitation",
     ]
     for table in gold_tables:
         (lake_root / "gold" / table).mkdir(parents=True, exist_ok=True)
@@ -79,26 +76,6 @@ def main() -> int:
                 "forecast_timing": ["75p"],
                 "region_name": ["Central America"],
                 "_dataset_id": ["jrc.mars-crop-yield"],
-                **meta,
-            }
-        ),
-    )
-
-    write_table(
-        lake_root,
-        "wto",
-        "its_trade_statistics",
-        pa.table(
-            {
-                "reporter_code": ["76"],
-                "reporter_name": ["Brazil"],
-                "partner_code": ["000"],
-                "partner_name": ["World"],
-                "indicator_code": ["HS_P_0070"],
-                "period": ["2023"],
-                "value_usd": ["98000000"],
-                "flow_code": ["X"],
-                "_dataset_id": ["wto.its-trade-statistics"],
                 **meta,
             }
         ),
@@ -176,23 +153,6 @@ def main() -> int:
 
     write_table(
         lake_root,
-        "mexico",
-        "siap_produccion_agricola",
-        pa.table(
-            {
-                "state_code": ["JAL"],
-                "crop_slug": ["milho"],
-                "refyear": ["2023"],
-                "area_ha": ["125000"],
-                "production_t": ["980000"],
-                "_dataset_id": ["mexico.siap-produccion-agricola"],
-                **meta,
-            }
-        ),
-    )
-
-    write_table(
-        lake_root,
         "fred",
         "commodity_indexes",
         pa.table(
@@ -236,23 +196,6 @@ def main() -> int:
                 "value": ["24.0"],
                 "unit": ["degC"],
                 "_dataset_id": ["copernicus.era5-agroclimate"],
-                **meta,
-            }
-        ),
-    )
-
-    write_table(
-        lake_root,
-        "noaa",
-        "gpcc_precipitation",
-        pa.table(
-            {
-                "refmonth": ["2024-01-01"],
-                "latitude": ["-15.75"],
-                "longitude": ["-47.75"],
-                "precip_mm": ["145.2"],
-                "grid_resolution": ["1.0"],
-                "_dataset_id": ["noaa.gpcc-precipitation"],
                 **meta,
             }
         ),

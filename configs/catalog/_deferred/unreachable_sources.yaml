@@ -1,0 +1,124 @@
+# Deferred catalog entries — NOT loaded by ingestor or source-health bot.
+# See docs/DEFERRED-SOURCES.md for re-enable steps.
+
+entries:
+  - dataset_id: antaq.movimentacao-carga-portuaria
+    source_url: https://web3.antaq.gov.br/ea/sense/download.html
+    source_portal_url: https://www.gov.br/antaq/pt-br/acesso-a-informacao/dados-abertos
+    format: csv
+    delimiter: ";"
+    schedule: monthly
+    portal_label: Painel Estatístico Aquaviário — movimentação portuária
+    fonte_tipo: oficial_gov_br
+    license: open_data
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: fao.comercio-agro
+    source_url: https://bulks-faostat.fao.org/production/Trade_Crops_Livestock_E_All_Data_(Normalized).zip
+    source_portal_url: https://www.fao.org/faostat/en/#data/TCL
+    format: json
+    schedule: annual
+    portal_label: Trade — import/export quantity by country
+    fao_bulk_url: https://bulks-faostat.fao.org/production/Trade_Crops_Livestock_E_All_Data_(Normalized).zip
+    fao_bulk_csv: Trade_Crops_Livestock_E_All_Data_(Normalized).csv
+    fao_item_codes: ["236", "56", "15", "867"]
+    fao_element_codes: ["5911", "5922"]
+    period_start: 2010
+    frequency: annual
+    license: "FAO FAOSTAT — CC BY-NC-SA 3.0 IGO"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: mexico.siap-produccion-agricola
+    source_url: https://www.gob.mx/siap
+    source_portal_url: https://www.gob.mx/siap
+    format: json
+    schedule: annual
+    portal_label: SIAP Mexico agricultural production by state
+    fonte_tipo: internacional_oficial
+    license: open_data
+    period_start: 2010
+    frequency: annual
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: noaa.gpcc-precipitation
+    source_url: https://opendata.dwd.de/climate_environment/GPCC/Monitoring/
+    source_portal_url: https://www.ncei.noaa.gov/data/gpcc-monthly/
+    format: json
+    schedule: monthly
+    portal_label: GPCC global precipitation grid sample
+    fonte_tipo: internacional_oficial
+    license: open_data
+    period_start: 2010
+    frequency: monthly
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: usda.gats-trade
+    source_url: https://apps.fas.usda.gov/OpenData/api/gats/trade
+    source_portal_url: https://apps.fas.usda.gov/gats/
+    format: json
+    schedule: monthly
+    portal_label: GATS — U.S. agricultural trade by commodity and partner
+    fonte_tipo: internacional_oficial
+    license: "USDA FAS Open Data"
+    gats_commodity_codes: ["401", "801"]
+    gats_partner_codes: ["5880", "1220"]
+    gats_flows: ["exports"]
+    gats_years: [2022, 2023, 2024]
+    gats_data_value: value
+    period_start: 2020
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: usda.psd-soja
+    source_url: https://apps.fas.usda.gov/PSDExternalAPIService/svcPSD_AMIS.asmx#getDatabyCommodityPerYear?commodity=2222000
+    source_portal_url: https://apps.fas.usda.gov/psdonline/
+    format: json
+    schedule: monthly
+    portal_label: Soybean PSD by country × marketing year
+    psd_commodity_code: "2222000"
+    psd_commodity_slug: soja
+    period_start: 2010
+    frequency: marketing_year
+    license: "USDA FAS — public domain"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: usda.psd-milho
+    source_url: https://apps.fas.usda.gov/PSDExternalAPIService/svcPSD_AMIS.asmx#getDatabyCommodityPerYear?commodity=0440000
+    source_portal_url: https://apps.fas.usda.gov/psdonline/
+    format: json
+    schedule: monthly
+    portal_label: Corn PSD by country × marketing year
+    psd_commodity_code: "0440000"
+    psd_commodity_slug: milho
+    period_start: 2010
+    frequency: marketing_year
+    license: "USDA FAS — public domain"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: usda.psd-trigo
+    source_url: https://apps.fas.usda.gov/PSDExternalAPIService/svcPSD_AMIS.asmx#getDatabyCommodityPerYear?commodity=0410000
+    source_portal_url: https://apps.fas.usda.gov/psdonline/
+    format: json
+    schedule: monthly
+    portal_label: Wheat PSD by country × marketing year
+    psd_commodity_code: "0410000"
+    psd_commodity_slug: trigo
+    period_start: 2010
+    frequency: marketing_year
+    license: "USDA FAS — public domain"
+    fonte_tipo: internacional_oficial
+    discovered_at: 2026-06-26T00:00:00Z
+
+  - dataset_id: wto.its-trade-statistics
+    source_url: https://api.wto.org/timeseries/v1/data
+    source_portal_url: https://stats.wto.org/
+    format: json
+    schedule: annual
+    portal_label: WTO International Trade Statistics — ag export indicators
+    fonte_tipo: internacional_oficial
+    license: open_data
+    period_start: 2010
+    frequency: annual
+    discovered_at: 2026-06-26T00:00:00Z

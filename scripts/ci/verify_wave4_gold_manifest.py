@@ -19,16 +19,13 @@ WAVE4_MARTS: list[tuple[str, str]] = [
     ("mart_dnit__condicoes_conservacao_rodovias", "dnit_condicoes_conservacao_rodovias"),
     ("mart_cftc__cot_agricultural_futures", "cftc_cot_agricultural_futures"),
     ("mart_jrc__mars_crop_yield", "jrc_mars_crop_yield"),
-    ("mart_wto__its_trade_statistics", "wto_its_trade_statistics"),
     ("mart_fao__giews_crop_prospects", "fao_giews_crop_prospects"),
     ("mart_fao__amis_market_monitor", "fao_amis_market_monitor"),
     ("mart_sagis__grain_supply_statistics", "sagis_grain_supply_statistics"),
     ("mart_japan__maff_ag_trade", "japan_maff_ag_trade"),
-    ("mart_mexico__siap_produccion_agricola", "mexico_siap_produccion_agricola"),
     ("mart_fred__commodity_indexes", "fred_commodity_indexes"),
     ("mart_nasa__power_agroclimatology", "nasa_power_agroclimatology"),
     ("mart_copernicus__era5_agroclimate", "copernicus_era5_agroclimate"),
-    ("mart_noaa__gpcc_precipitation", "noaa_gpcc_precipitation"),
 ]
 
 

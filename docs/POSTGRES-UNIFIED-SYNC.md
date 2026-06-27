@@ -89,16 +89,15 @@ make verify-wave3-gold-manifest
 | `gold/mart_dnit__condicoes_conservacao_rodovias/mart.parquet` | `analytics.dnit_condicoes_conservacao_rodovias` | DNIT pavement condition |
 | `gold/mart_cftc__cot_agricultural_futures/mart.parquet` | `analytics.cftc_cot_agricultural_futures` | CFTC Commitment of Traders |
 | `gold/mart_jrc__mars_crop_yield/mart.parquet` | `analytics.jrc_mars_crop_yield` | JRC MARS crop yield |
-| `gold/mart_wto__its_trade_statistics/mart.parquet` | `analytics.wto_its_trade_statistics` | WTO trade statistics |
 | `gold/mart_fao__giews_crop_prospects/mart.parquet` | `analytics.fao_giews_crop_prospects` | FAO GIEWS |
 | `gold/mart_fao__amis_market_monitor/mart.parquet` | `analytics.fao_amis_market_monitor` | FAO AMIS |
 | `gold/mart_sagis__grain_supply_statistics/mart.parquet` | `analytics.sagis_grain_supply_statistics` | SAGIS grain supply |
 | `gold/mart_japan__maff_ag_trade/mart.parquet` | `analytics.japan_maff_ag_trade` | MAFF Japan ag trade |
-| `gold/mart_mexico__siap_produccion_agricola/mart.parquet` | `analytics.mexico_siap_produccion_agricola` | Mexico SIAP production |
 | `gold/mart_fred__commodity_indexes/mart.parquet` | `analytics.fred_commodity_indexes` | FRED commodity indexes |
 | `gold/mart_nasa__power_agroclimatology/mart.parquet` | `analytics.nasa_power_agroclimatology` | NASA POWER agroclimate |
 | `gold/mart_copernicus__era5_agroclimate/mart.parquet` | `analytics.copernicus_era5_agroclimate` | Copernicus ERA5 |
-| `gold/mart_noaa__gpcc_precipitation/mart.parquet` | `analytics.noaa_gpcc_precipitation` | NOAA GPCC precipitation |
+
+Deferred wave-4 international marts (`wto`, `mexico.siap`, `noaa.gpcc`) are documented in [DEFERRED-SOURCES.md](DEFERRED-SOURCES.md).
 
 Manifest verification without PostgreSQL:
 

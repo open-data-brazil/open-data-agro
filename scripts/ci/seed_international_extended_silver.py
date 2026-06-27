@@ -22,7 +22,6 @@ def main() -> int:
     lake_root.mkdir(parents=True, exist_ok=True)
     for mart in (
         "mart_fao__producao_agro",
-        "mart_fao__comercio_agro",
         "mart_worldbank__ag_indices",
     ):
         (lake_root / "gold" / mart).mkdir(parents=True, exist_ok=True)
@@ -49,26 +48,6 @@ def main() -> int:
         }
     )
     write_table(lake_root, "fao", "producao_agro", producao)
-
-    comercio = pa.table(
-        {
-            "area_code": ["21", "231"],
-            "area_name": ["Brazil", "United States of America"],
-            "item_code": ["236", "56"],
-            "item_name": ["Soya beans", "Maize (corn)"],
-            "commodity_slug": ["soja", "milho"],
-            "element_code": ["5922", "5922"],
-            "element_name": ["Export quantity", "Export quantity"],
-            "year": ["2023", "2023"],
-            "unit": ["t", "t"],
-            "value": ["98000000.000000", "52000000.000000"],
-            "flag": ["A", "A"],
-            "_dataset_id": ["fao.comercio-agro", "fao.comercio-agro"],
-            "_ingested_at": [ingested, ingested],
-            "_source_file": [source, source],
-        }
-    )
-    write_table(lake_root, "fao", "comercio_agro", comercio)
 
     ag_indices = pa.table(
         {

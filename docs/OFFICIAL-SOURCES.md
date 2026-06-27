@@ -8,6 +8,8 @@
 
 **Historical depth:** per-dataset source min years and `--from` backfill examples — [DATA-HISTORY-RANGES.md](DATA-HISTORY-RANGES.md) (Phase 33).
 
+**Deferred / unreachable sources** (removed from active catalog 2026-06-27): [DEFERRED-SOURCES.md](DEFERRED-SOURCES.md).
+
 ---
 
 ## CONAB — Portal de Informações Agropecuárias
@@ -216,13 +218,7 @@ Daily flow series for configured fluviometric stations. Complements INMET climat
 
 ### ANTAQ — Movimentação portuária (Phase 40)
 
-| Dataset ID | Source | Status |
-|------------|--------|--------|
-| `antaq.movimentacao-carga-portuaria` | Painel Estatístico Aquaviário — movimentação portuária | **P1 — implemented** |
-
-**Fonte oficial:** [ANTAQ — Dados abertos](https://www.gov.br/antaq/pt-br/acesso-a-informacao/dados-abertos) · export bulk [Painel Estatístico Aquaviário](https://web3.antaq.gov.br/ea/sense/download.html)
-
-Monthly port cargo movement by installation, navigation type, and cargo profile. Live bulk export may return HTTP errors from some networks; pipeline validated via fixtures + CI seed.
+**Deferred** — bulk export URL returns HTTP 404. See [DEFERRED-SOURCES.md](DEFERRED-SOURCES.md#summary) (`antaq.movimentacao-carga-portuaria`).
 
 ### DNIT — SNV rodovias federais (Phase 44)
 
@@ -325,15 +321,9 @@ Daily futures settlement (`AdjstdQt`) by contract symbol. Regulated exchange ref
 
 ### USDA FAS — PSD global supply (Phase 25)
 
-| Dataset ID | Source | Status |
-|------------|--------|--------|
-| `usda.psd-soja` | Oilseed, Soybean (2222000) — country × marketing year | **P0 — implemented** |
-| `usda.psd-milho` | Corn (0440000) PSD | **P0 — implemented** |
-| `usda.psd-trigo` | Wheat (0410000) PSD | **P1 — implemented** |
+**Deferred** — `apps.fas.usda.gov` unreachable from BR/CI without US egress. See [DEFERRED-SOURCES.md](DEFERRED-SOURCES.md) (`usda.psd-soja`, `usda.psd-milho`, `usda.psd-trigo`).
 
-**Fonte oficial:** [USDA FAS PSD Online](https://apps.fas.usda.gov/psdonline/) · SOAP `getDatabyCommodityPerYear` (AMIS web service, no API key)
-
-Global production/supply/demand by country and marketing year. `fonte_tipo: internacional_oficial`. Values in official PSD units (typically 1000 MT).
+**Still active:** `usda.wasde` — [USDA WASDE](https://www.usda.gov/oce/commodity-markets/wasde) (HTML index, no PSD SOAP).
 
 ### FAO — FAOSTAT (Phase 26 + 36)
 
@@ -341,12 +331,12 @@ Global production/supply/demand by country and marketing year. `fonte_tipo: inte
 |------------|--------|--------|
 | `fao.prices-agro` | Producer prices — soja, milho, trigo, carne bovina | **P0 — implemented** |
 | `fao.producao-agro` | Annual production by country — soja, milho, trigo, carne bovina | **P0 — implemented** |
-| `fao.comercio-agro` | Annual import/export quantity by country | **P1 — implemented** |
 
-**Fonte oficial:** [FAO FAOSTAT — Producer Prices (PP)](https://www.fao.org/faostat/en/#data/PP) · bulk `Prices_E_All_Data_(Normalized).zip` · [Production (QCL)](https://www.fao.org/faostat/en/#data/QCL) · `Production_Crops_Livestock_E_All_Data_(Normalized).zip` · [Trade (TCL)](https://www.fao.org/faostat/en/#data/TCL) · `Trade_Crops_Livestock_E_All_Data_(Normalized).zip` (no API key)
+**Fonte oficial:** [FAO FAOSTAT — Producer Prices (PP)](https://www.fao.org/faostat/en/#data/PP) · bulk `Prices_E_All_Data_(Normalized).zip` · [Production (QCL)](https://www.fao.org/faostat/en/#data/QCL) · `Production_Crops_Livestock_E_All_Data_(Normalized).zip` (no API key)
 
-Producer prices (USD/tonne) and price indices by country × year. Production element `5510`; trade elements `5911` (import qty) / `5922` (export qty). Items 236/56/15/867. `fonte_tipo: internacional_oficial`.
+Producer prices (USD/tonne) and price indices by country × year. Production element `5510`. Items 236/56/15/867. `fonte_tipo: internacional_oficial`.
 
+**Deferred:** `fao.comercio-agro` — Trade bulk ZIP returns HTTP 403. See [DEFERRED-SOURCES.md](DEFERRED-SOURCES.md).
 ### World Bank — Pink Sheet commodities (Phase 27 + 36)
 
 | Dataset ID | Source | Status |
@@ -386,14 +376,14 @@ Global oil shock reference complementing World Bank Pink Sheet crude oil. WASDE 
 
 | Dataset ID | Source | Status |
 |------------|--------|--------|
-| `usda.gats-trade` | USDA FAS GATS — U.S. ag trade by commodity and partner | **P1 — implemented** |
 | `eurostat.ag-prices` | EU agricultural output price indices (2015=100) | **P2 — implemented** |
 | `argentina.bcra-cambio` | BCRA official USD exchange-rate daily series | **P2 — implemented** |
 
-**Fonte oficial:** [USDA FAS GATS](https://apps.fas.usda.gov/gats/) · Open Data API `USDA_FAS_API_KEY` required for live fetch · [EUROSTAT agriculture database](https://ec.europa.eu/eurostat/web/agriculture/database) · dataset `apri_pi15_outa` JSON API (no key) · [BCRA estadísticas cambiarias](https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones/USD) (no key)
+**Fonte oficial:** [EUROSTAT agriculture database](https://ec.europa.eu/eurostat/web/agriculture/database) · dataset `apri_pi15_outa` JSON API (no key) · [BCRA estadísticas cambiarias](https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones/USD) (no key)
 
-U.S. export trade context, EU ag price reference, and Argentina FX parity for competitor market models. `fonte_tipo: internacional_oficial`.
+EU ag price reference and Argentina FX parity for competitor market models. `fonte_tipo: internacional_oficial`.
 
+**Deferred:** `usda.gats-trade` — see [DEFERRED-SOURCES.md](DEFERRED-SOURCES.md).
 ### International sources wave 3 (Phase 45)
 
 | Dataset ID | Source | Status |
@@ -412,21 +402,19 @@ U.S. export trade context, EU ag price reference, and Argentina FX parity for co
 |------------|--------|--------|
 | `cftc.cot-agricultural-futures` | CFTC Commitment of Traders — ag futures positioning | **P0 — implemented** |
 | `jrc.mars-crop-yield` | JRC MARS ASAP crop yield forecasts | **P1 — implemented** |
-| `wto.its-trade-statistics` | WTO Integrated Trade Statistics | **P1 — implemented** |
 | `fao.giews-crop-prospects` | FAO GIEWS crop prospects / food prices | **P1 — implemented** |
 | `fao.amis-market-monitor` | FAO AMIS market monitor | **P1 — implemented** |
 | `sagis.grain-supply-statistics` | SAGIS South Africa grain supply | **P1 — implemented** |
 | `japan.maff-ag-trade` | MAFF Japan ag production + trade | **P1 — implemented** |
-| `mexico.siap-produccion-agricola` | SIAP Mexico agricultural production | **P1 — implemented** |
 | `fred.commodity-indexes` | FRED commodity price indexes | **P1 — implemented** |
 | `nasa.power-agroclimatology` | NASA POWER agroclimatology point API | **P1 — implemented** |
 | `copernicus.era5-agroclimate` | Copernicus CDS ERA5 reanalysis (sample/API) | **P2 — implemented** |
-| `noaa.gpcc-precipitation` | NOAA GPCC global precipitation | **P2 — implemented** |
 
-**Fonte oficial:** [CFTC COT](https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm) · [JRC MARS](https://mars.jrc.ec.europa.eu/) · [WTO ITS](https://stats.wto.org/) · [FAO GIEWS](https://www.fao.org/giews/) · [FAO AMIS](https://www.amis-outlook.org/) · [SAGIS](https://www.sagis.org.za/) · [MAFF Japan](https://www.maff.go.jp/e/index.html) · [SIAP Mexico](https://nube.agricultura.gob.mx/datosAbiertos/Agricola.php) · [FRED](https://fred.stlouisfed.org/) · [NASA POWER](https://power.larc.nasa.gov/) · [Copernicus CDS](https://cds.climate.copernicus.eu/) · [NOAA GPCC](https://www.ncei.noaa.gov/products/land-based-station/global-precipitation-climatology-centre)
+**Fonte oficial:** [CFTC COT](https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm) · [JRC MARS](https://mars.jrc.ec.europa.eu/) · [FAO GIEWS](https://www.fao.org/giews/) · [FAO AMIS](https://www.amis-outlook.org/) · [SAGIS](https://www.sagis.org.za/) · [MAFF Japan](https://www.maff.go.jp/e/index.html) · [FRED](https://fred.stlouisfed.org/) · [NASA POWER](https://power.larc.nasa.gov/) · [Copernicus CDS](https://cds.climate.copernicus.eu/)
 
-**Deferred (verified):** `imf.commodity-prices`, `usda.ams-grain-prices`, `iea.world-energy-statistics`, Mercosur BCP/INE bulk, `china.nbs-soy-imports`, `baltic.bdi-index` (subscription). Fixture-backed ingest for sources blocked from CI networks (MAFF, GIEWS, AMIS, SAGIS, SIAP, GPCC) — live fetch via env bulk paths documented in phase OFFICIAL-REFERENCE.
+**Deferred (2026-06-27):** `wto.its-trade-statistics`, `mexico.siap-produccion-agricola`, `noaa.gpcc-precipitation` — see [DEFERRED-SOURCES.md](DEFERRED-SOURCES.md).
 
+**Other deferred (verified):** `imf.commodity-prices`, `usda.ams-grain-prices`, `iea.world-energy-statistics`, Mercosur BCP/INE bulk, `china.nbs-soy-imports`, `baltic.bdi-index` (subscription). Fixture-backed ingest for sources blocked from CI networks (MAFF, GIEWS, AMIS, SAGIS) — live fetch via env bulk paths documented in phase OFFICIAL-REFERENCE.
 ---
 
 ## Rules

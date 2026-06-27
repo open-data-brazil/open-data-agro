@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"gopkg.in/yaml.v3"
 )
@@ -21,6 +22,9 @@ func LoadRegistryDir(dir string) ([]RegistryEntry, error) {
 			return walkErr
 		}
 		if d.IsDir() || filepath.Ext(path) != ".yaml" {
+			return nil
+		}
+		if isDeferredCatalogPath(path) {
 			return nil
 		}
 
@@ -48,6 +52,15 @@ func LoadRegistryDir(dir string) ([]RegistryEntry, error) {
 	}
 
 	return entries, nil
+}
+
+func isDeferredCatalogPath(path string) bool {
+	for _, part := range strings.Split(filepath.ToSlash(path), "/") {
+		if part == "_deferred" || strings.HasPrefix(part, "_deferred.") {
+			return true
+		}
+	}
+	return false
 }
 
 // Registry provides lookup helpers over loaded catalog entries.

@@ -64,25 +64,6 @@ func TestANAHidrologiaSeriesGoldenVector(t *testing.T) {
 	}
 }
 
-func TestANTAQMovimentacaoCargaPortuariaGoldenVector(t *testing.T) {
-	t.Parallel()
-
-	raw := readANTAQTestdata(t, "movimentacao_carga_portuaria.sample.csv")
-	entry := catalog.RegistryEntry{
-		DatasetID: catalog.MustParseDatasetID("antaq.movimentacao-carga-portuaria"),
-		Format:    catalog.FormatCSV,
-		Delimiter: ";",
-	}
-
-	_, rowCount, err := ConvertToParquet(entry, raw)
-	if err != nil {
-		t.Fatalf("ConvertToParquet: %v", err)
-	}
-	if rowCount != 3 {
-		t.Fatalf("rowCount: got %d want 3", rowCount)
-	}
-}
-
 func TestIGCGOIIndexGoldenVector(t *testing.T) {
 	t.Parallel()
 
@@ -114,16 +95,6 @@ func readIGCTestdata(t *testing.T, name string) []byte {
 func readANATestdata(t *testing.T, name string) []byte {
 	t.Helper()
 	path := filepath.Join("..", "ana", "testdata", name)
-	data, err := os.ReadFile(path)
-	if err != nil {
-		t.Fatalf("read %s: %v", path, err)
-	}
-	return data
-}
-
-func readANTAQTestdata(t *testing.T, name string) []byte {
-	t.Helper()
-	path := filepath.Join("..", "antaq", "testdata", name)
 	data, err := os.ReadFile(path)
 	if err != nil {
 		t.Fatalf("read %s: %v", path, err)

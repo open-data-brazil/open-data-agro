@@ -616,22 +616,13 @@ ci-b3-futuros-mvp:
 		DUCKDB_PATH=$(CI_B3_FUTUROS_DUCKDB)
 
 dbt-build-usda-psd: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_usda__psd_soja+ stg_usda__psd_milho+ stg_usda__psd_trigo+'
+	@echo "usda.psd-* deferred — see docs/DEFERRED-SOURCES.md"
 
 usda-psd-mvp:
-	go test ./internal/usda/... ./internal/ingest/ -run 'USDA|PSD|FlattenPSD'
-	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_usda_psd_silver.py
-	$(MAKE) dbt-build-usda-psd LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
-	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
-	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.usda_psd_soja"
-	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.usda_psd_milho"
-	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.usda_psd_trigo"
-	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT country_code, marketing_year, attribute_name, value FROM analytics.usda_psd_soja LIMIT 3"
+	@echo "usda.psd-* deferred — see docs/DEFERRED-SOURCES.md"
 
 ci-usda-psd-mvp:
-	$(MAKE) usda-psd-mvp \
-		LAKE_LOCAL_ROOT=$(CI_USDA_PSD_LAKE) \
-		DUCKDB_PATH=$(CI_USDA_PSD_DUCKDB)
+	@echo "usda.psd-* deferred — see docs/DEFERRED-SOURCES.md"
 
 dbt-build-fao-faostat: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_fao__prices_agro+'
@@ -666,17 +657,15 @@ ci-worldbank-commodities-mvp:
 		DUCKDB_PATH=$(CI_WORLDBANK_COMMODITIES_DUCKDB)
 
 dbt-build-international-extended: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_fao__producao_agro+ stg_fao__comercio_agro+ stg_worldbank__ag_indices+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_fao__producao_agro+ stg_worldbank__ag_indices+'
 
 international-extended-mvp:
-	go test ./internal/fao/... ./internal/worldbank/... ./internal/ingest/ -run 'Producao|Comercio|AgIndices|GoldenVector'
+	go test ./internal/fao/... ./internal/worldbank/... ./internal/ingest/ -run 'Producao|AgIndices|GoldenVector'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_international_extended_silver.py
 	$(MAKE) dbt-build-international-extended LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.fao_producao_agro"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT area_name, commodity_slug, year, value FROM analytics.fao_producao_agro LIMIT 3"
-	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.fao_comercio_agro"
-	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT area_name, commodity_slug, element_name, year FROM analytics.fao_comercio_agro LIMIT 3"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.worldbank_ag_indices"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT refmonth, commodity_slug, series_name, value FROM analytics.worldbank_ag_indices LIMIT 3"
 
@@ -731,10 +720,10 @@ CI_INTERNATIONAL_SOURCES_WAVE_2_LAKE ?= /tmp/international-sources-wave-2-ci-lak
 CI_INTERNATIONAL_SOURCES_WAVE_2_DUCKDB ?= /tmp/international-sources-wave-2-ci.duckdb
 
 dbt-build-br-sources-wave-2: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_mapa__agrofit_produtos_formulados+ stg_mapa__agrofit_produtos_tecnicos+ stg_ana__hidrologia_series+ stg_antaq__movimentacao_carga_portuaria+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_mapa__agrofit_produtos_formulados+ stg_mapa__agrofit_produtos_tecnicos+ stg_ana__hidrologia_series+'
 
 br-sources-wave-2-mvp:
-	go test ./internal/mapa/... ./internal/ana/... ./internal/antaq/... ./internal/ingest/ -run 'Agrofit|ANA|ANTAQ|Hidrologia|GoldenVector'
+	go test ./internal/mapa/... ./internal/ana/... ./internal/ingest/ -run 'Agrofit|ANA|Hidrologia|GoldenVector'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_br_sources_wave_2_silver.py
 	$(MAKE) dbt-build-br-sources-wave-2 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
@@ -744,8 +733,6 @@ br-sources-wave-2-mvp:
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT numero_registro, produto_tecnico_marca_comercial FROM analytics.mapa_agrofit_produtos_tecnicos LIMIT 3"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ana_hidrologia_series"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT station_code, observed_at, daily_mean FROM analytics.ana_hidrologia_series LIMIT 3"
-	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.antaq_movimentacao_carga_portuaria"
-	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT ano, mes, nome_instalacao_portuaria, peso_toneladas FROM analytics.antaq_movimentacao_carga_portuaria LIMIT 3"
 
 ci-br-sources-wave-2-mvp:
 	$(MAKE) br-sources-wave-2-mvp \
@@ -816,17 +803,15 @@ ci-br-sources-wave-4-mvp:
 		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_4_DUCKDB)
 
 dbt-build-international-sources-wave-2: dbt-deps
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_igc__goi_index+ stg_usda__gats_trade+ stg_eurostat__ag_prices+ stg_argentina__bcra_cambio+'
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_igc__goi_index+ stg_eurostat__ag_prices+ stg_argentina__bcra_cambio+'
 
 international-sources-wave-2-mvp:
-	go test ./internal/igc/... ./internal/eurostat/... ./internal/argentina/... ./internal/usda/... ./internal/ingest/ -run 'IGC|GOI|GATS|Eurostat|Argentina|BCRA|GoldenVector'
+	go test ./internal/igc/... ./internal/eurostat/... ./internal/argentina/... ./internal/ingest/ -run 'IGC|GOI|Eurostat|Argentina|BCRA|GoldenVector'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_international_sources_wave_2_silver.py
 	$(MAKE) dbt-build-international-sources-wave-2 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.igc_goi_index"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT index_name, index_slug, refdate, value FROM analytics.igc_goi_index LIMIT 3"
-	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.usda_gats_trade"
-	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT commodity_code, partner_name, year, value FROM analytics.usda_gats_trade LIMIT 3"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.eurostat_ag_prices"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT product_name, year, index_value FROM analytics.eurostat_ag_prices LIMIT 3"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.argentina_bcra_cambio"
@@ -863,13 +848,13 @@ ci-international-sources-wave-3-mvp:
 CI_INTERNATIONAL_SOURCES_WAVE_4_LAKE ?= /tmp/international-sources-wave-4-ci-lake
 CI_INTERNATIONAL_SOURCES_WAVE_4_DUCKDB ?= /tmp/international-sources-wave-4-ci.duckdb
 
-WAVE4_INTL_DBT_SELECT := stg_cftc__cot_agricultural_futures+ stg_jrc__mars_crop_yield+ stg_wto__its_trade_statistics+ stg_fao__giews_crop_prospects+ stg_fao__amis_market_monitor+ stg_sagis__grain_supply_statistics+ stg_japan__maff_ag_trade+ stg_mexico__siap_produccion_agricola+ stg_fred__commodity_indexes+ stg_nasa__power_agroclimatology+ stg_copernicus__era5_agroclimate+ stg_noaa__gpcc_precipitation+
+WAVE4_INTL_DBT_SELECT := stg_cftc__cot_agricultural_futures+ stg_jrc__mars_crop_yield+ stg_fao__giews_crop_prospects+ stg_fao__amis_market_monitor+ stg_sagis__grain_supply_statistics+ stg_japan__maff_ag_trade+ stg_fred__commodity_indexes+ stg_nasa__power_agroclimatology+ stg_copernicus__era5_agroclimate+
 
 dbt-build-international-sources-wave-4: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select '$(WAVE4_INTL_DBT_SELECT)'
 
 international-sources-wave-4-mvp:
-	go test ./internal/cftc/... ./internal/jrc/... ./internal/wto/... ./internal/fred/... ./internal/nasa/... ./internal/sagis/... ./internal/japan/... ./internal/mexico/... ./internal/copernicus/... ./internal/fao/... ./internal/noaa/... ./internal/ingest/ -run 'CFTC|JRC|WTO|GIEWS|AMIS|SAGIS|MAFF|SIAP|FRED|NASA|ERA5|GPCC|GoldenVector|Flatten'
+	go test ./internal/cftc/... ./internal/jrc/... ./internal/fred/... ./internal/nasa/... ./internal/sagis/... ./internal/japan/... ./internal/copernicus/... ./internal/fao/... ./internal/ingest/ -run 'CFTC|JRC|GIEWS|AMIS|SAGIS|MAFF|FRED|NASA|ERA5|GoldenVector|Flatten'
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_international_sources_wave_4_silver.py
 	$(MAKE) dbt-build-international-sources-wave-4 LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
 	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)

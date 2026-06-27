@@ -24,24 +24,6 @@ func TestFAOProducaoAgroGoldenVector(t *testing.T) {
 	}
 }
 
-func TestFAOComercioAgroGoldenVector(t *testing.T) {
-	t.Parallel()
-
-	raw := readFAOIngestTestdata(t, "comercio_agro.sample.json")
-	entry := catalog.RegistryEntry{
-		DatasetID: catalog.MustParseDatasetID("fao.comercio-agro"),
-		Format:    catalog.FormatJSON,
-	}
-
-	_, rowCount, err := ConvertToParquet(entry, raw)
-	if err != nil {
-		t.Fatalf("ConvertToParquet: %v", err)
-	}
-	if rowCount != 3 {
-		t.Fatalf("rowCount: got %d want 3", rowCount)
-	}
-}
-
 func TestWorldBankAgIndicesGoldenVector(t *testing.T) {
 	t.Parallel()
 

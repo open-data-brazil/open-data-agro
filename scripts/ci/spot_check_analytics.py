@@ -32,16 +32,13 @@ WAVE4_TABLES: tuple[str, ...] = (
     "dnit_condicoes_conservacao_rodovias",
     "cftc_cot_agricultural_futures",
     "jrc_mars_crop_yield",
-    "wto_its_trade_statistics",
     "fao_giews_crop_prospects",
     "fao_amis_market_monitor",
     "sagis_grain_supply_statistics",
     "japan_maff_ag_trade",
-    "mexico_siap_produccion_agricola",
     "fred_commodity_indexes",
     "nasa_power_agroclimatology",
     "copernicus_era5_agroclimate",
-    "noaa_gpcc_precipitation",
 )
 
 DATE_COLUMNS: tuple[str, ...] = (

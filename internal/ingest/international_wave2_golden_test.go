@@ -8,24 +8,6 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 )
 
-func TestUSDAGATSTradeGoldenVector(t *testing.T) {
-	t.Parallel()
-
-	raw := readUSDATestdata(t, "gats_trade.sample.json")
-	entry := catalog.RegistryEntry{
-		DatasetID: catalog.MustParseDatasetID("usda.gats-trade"),
-		Format:    catalog.FormatJSON,
-	}
-
-	_, rowCount, err := ConvertToParquet(entry, raw)
-	if err != nil {
-		t.Fatalf("ConvertToParquet: %v", err)
-	}
-	if rowCount != 2 {
-		t.Fatalf("rowCount: got %d want 2", rowCount)
-	}
-}
-
 func TestEurostatAgPricesGoldenVector(t *testing.T) {
 	t.Parallel()
 
@@ -60,16 +42,6 @@ func TestArgentinaBCRACambioGoldenVector(t *testing.T) {
 	if rowCount != 2 {
 		t.Fatalf("rowCount: got %d want 2", rowCount)
 	}
-}
-
-func readUSDATestdata(t *testing.T, name string) []byte {
-	t.Helper()
-	path := filepath.Join("..", "usda", "testdata", name)
-	data, err := os.ReadFile(path)
-	if err != nil {
-		t.Fatalf("read %s: %v", path, err)
-	}
-	return data
 }
 
 func readEurostatTestdata(t *testing.T, name string) []byte {

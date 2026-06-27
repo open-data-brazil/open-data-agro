@@ -239,18 +239,10 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_b3_futuro_milho", true
 	case "b3.futuro-boi":
 		return "bronze_b3_futuro_boi", true
-	case "usda.psd-soja":
-		return "bronze_usda_psd_soja", true
-	case "usda.psd-milho":
-		return "bronze_usda_psd_milho", true
-	case "usda.psd-trigo":
-		return "bronze_usda_psd_trigo", true
 	case "fao.prices-agro":
 		return "bronze_fao_prices_agro", true
 	case "fao.producao-agro":
 		return "bronze_fao_producao_agro", true
-	case "fao.comercio-agro":
-		return "bronze_fao_comercio_agro", true
 	case "worldbank.pink-sheet-monthly":
 		return "bronze_worldbank_pink_sheet_monthly", true
 	case "worldbank.ag-indices":
@@ -265,8 +257,6 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_usda_wasde", true
 	case "igc.goi-index":
 		return "bronze_igc_goi_index", true
-	case "usda.gats-trade":
-		return "bronze_usda_gats_trade", true
 	case "eurostat.ag-prices":
 		return "bronze_eurostat_ag_prices", true
 	case "argentina.bcra-cambio":
@@ -279,8 +269,6 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_mapa_agrofit_produtos_tecnicos", true
 	case "ana.hidrologia-series":
 		return "bronze_ana_hidrologia_series", true
-	case "antaq.movimentacao-carga-portuaria":
-		return "bronze_antaq_movimentacao_carga_portuaria", true
 	case "dnit.snv-rodovias-federais":
 		return "bronze_dnit_snv_rodovias_federais", true
 	case "ipea.series-macro-regionais":
@@ -305,8 +293,6 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_cftc_cot_agricultural_futures", true
 	case "jrc.mars-crop-yield":
 		return "bronze_jrc_mars_crop_yield", true
-	case "wto.its-trade-statistics":
-		return "bronze_wto_its_trade_statistics", true
 	case "fao.giews-crop-prospects":
 		return "bronze_fao_giews_crop_prospects", true
 	case "fao.amis-market-monitor":
@@ -315,16 +301,12 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_sagis_grain_supply_statistics", true
 	case "japan.maff-ag-trade":
 		return "bronze_japan_maff_ag_trade", true
-	case "mexico.siap-produccion-agricola":
-		return "bronze_mexico_siap_produccion_agricola", true
 	case "fred.commodity-indexes":
 		return "bronze_fred_commodity_indexes", true
 	case "nasa.power-agroclimatology":
 		return "bronze_nasa_power_agroclimatology", true
 	case "copernicus.era5-agroclimate":
 		return "bronze_copernicus_era5_agroclimate", true
-	case "noaa.gpcc-precipitation":
-		return "bronze_noaa_gpcc_precipitation", true
 	case "ibge.censo-agro-estabelecimentos":
 		return "bronze_ibge_censo_agro_estabelecimentos", true
 	case "ibge.pnad-continua-rural":

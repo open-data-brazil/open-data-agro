@@ -24,7 +24,6 @@ def main() -> int:
         "mart_mapa__agrofit_produtos_formulados",
         "mart_mapa__agrofit_produtos_tecnicos",
         "mart_ana__hidrologia_series",
-        "mart_antaq__movimentacao_carga_portuaria",
     ]
     for table in gold_tables:
         (lake_root / "gold" / table).mkdir(parents=True, exist_ok=True)
@@ -93,25 +92,6 @@ def main() -> int:
         }
     )
     write_table(lake_root, "ana", "hidrologia_series", ana_hidro)
-
-    antaq_carga = pa.table(
-        {
-            "Ano": ["2024", "2024"],
-            "Mes": ["01", "01"],
-            "CodigoInstalacaoPortuaria": ["BRSP001", "BRSP001"],
-            "NomeInstalacaoPortuaria": ["Santos", "Santos"],
-            "TipoMovimentacao": ["Carga", "Carga"],
-            "TipoNavegacao": ["Longo Curso", "Longo Curso"],
-            "Sentido": ["Entrada", "Saída"],
-            "NaturezaCarga": ["Granéis Sólidos", "Contêineres"],
-            "TipoOperacao": ["Descarga", "Embarque"],
-            "PesoToneladas": ["12500000,50", "8200000,00"],
-            "_dataset_id": ["antaq.movimentacao-carga-portuaria", "antaq.movimentacao-carga-portuaria"],
-            "_ingested_at": [ingested, ingested],
-            "_source_file": [source, source],
-        }
-    )
-    write_table(lake_root, "antaq", "movimentacao_carga_portuaria", antaq_carga)
 
     print(f"seeded BR sources wave 2 silver under {lake_root / 'silver'}")
     return 0

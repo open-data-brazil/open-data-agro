@@ -22,7 +22,6 @@ def main() -> int:
     lake_root.mkdir(parents=True, exist_ok=True)
     gold_tables = [
         "mart_igc__goi_index",
-        "mart_usda__gats_trade",
         "mart_eurostat__ag_prices",
         "mart_argentina__bcra_cambio",
     ]
@@ -46,23 +45,6 @@ def main() -> int:
         }
     )
     write_table(lake_root, "igc", "goi_index", goi)
-
-    gats = pa.table(
-        {
-            "commodity_code": ["401", "801"],
-            "commodity_name": ["Corn", "Soybeans"],
-            "partner_code": ["5880", "1220"],
-            "partner_name": ["Brazil", "Canada"],
-            "flow": ["exports", "exports"],
-            "year": ["2023", "2023"],
-            "value": ["1234.5", "5678.0"],
-            "unit": ["value", "value"],
-            "_dataset_id": ["usda.gats-trade", "usda.gats-trade"],
-            "_ingested_at": [ingested, ingested],
-            "_source_file": [source, source],
-        }
-    )
-    write_table(lake_root, "usda", "gats_trade", gats)
 
     eurostat = pa.table(
         {
