@@ -45,7 +45,6 @@ jobs:
 
       - name: Probe official source links
         run: make source-health-bot
-        continue-on-error: true
         id: probe
 
       - name: Write job summary
@@ -60,14 +59,7 @@ jobs:
 
       - name: Publish reports to main
         if: inputs.dry_run != true
-        env:
-          DIRECT_PUSH: ${{ secrets.SOURCE_HEALTH_GITHUB_TOKEN != '' && 'true' || 'false' }}
-        run: |
-          ARGS=()
-          if [ "${DIRECT_PUSH}" = "true" ]; then
-            ARGS+=(--direct-push)
-          fi
-          bash scripts/source-health-publish.sh "${ARGS[@]}"
+        run: bash scripts/source-health-publish.sh
 
       - name: Probe had critical failures
         if: steps.probe.outcome == 'failure'

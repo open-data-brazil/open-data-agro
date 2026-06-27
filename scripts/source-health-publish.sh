@@ -5,11 +5,6 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "${ROOT}"
 
-DIRECT_PUSH=false
-if [[ "${1:-}" == "--direct-push" ]]; then
-  DIRECT_PUSH=true
-fi
-
 configure_git() {
   git config user.name "github-actions[bot]"
   git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -26,10 +21,6 @@ if not latest.exists():
 report = json.loads(latest.read_text(encoding="utf-8"))
 print(report.get("commitMessage", "chore(source-health): daily probe"))
 PY
-}
-
-has_staged_changes() {
-  ! git diff --staged --quiet
 }
 
 try_push_main() {
@@ -68,7 +59,7 @@ main() {
   commit_msg="$(read_commit_message)"
   git commit -m "${commit_msg}"
 
-  if [[ "${DIRECT_PUSH}" == "true" ]] && try_push_main; then
+  if try_push_main; then
     echo "Direct push to main succeeded."
     exit 0
   fi
@@ -76,9 +67,17 @@ main() {
   branch="bot/source-health-reports/$(create_branch_name)"
   git checkout -b "${branch}"
   git push -u origin "${branch}"
-  pr_url="$(open_pull_request "${branch}")"
-  echo "Opened PR: ${pr_url}"
-  gh pr merge "${branch}" --auto --merge || true
+  echo "Branch pushed: ${branch}"
+
+  if pr_url="$(open_pull_request "${branch}" 2>&1)"; then
+    echo "Opened PR: ${pr_url}"
+    gh pr merge "${branch}" --auto --merge || true
+    exit 0
+  fi
+
+  echo "PR creation skipped (Actions token may lack pull-requests:write)."
+  echo "Reports are on branch ${branch} — merge manually or set SOURCE_HEALTH_GITHUB_TOKEN."
+  exit 0
 }
 
 main "$@"
