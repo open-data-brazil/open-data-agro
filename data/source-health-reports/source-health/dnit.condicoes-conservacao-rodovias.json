@@ -1,13 +1,15 @@
 {
   "datasetId": "dnit.condicoes-conservacao-rodovias",
   "endpoints": [
-    "https://servicos.dnit.gov.br/dadosabertos/dataset/b41e3382-79f5-4b1d-b936-dc75aaa82dfa/resource/9b12ea3d-bbb5-49d5-aa43-db5945e86d90/download/levantamentos_pavimentada_2026_05.csv",
+    "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento",
     "https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-06-27",
+  "lastFailureDate": "2026-06-27",
   "lastSuccessDate": "2026-06-27",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (ckan package_show: Get \"https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento\": dial tcp 189.9.19.9:443: i/o timeout)",
   "lastSampleSha256": "64fed210495b4a8d51f25f1ea89c27c903471713745ed9b2fd922bc21d3a8d10",
   "lastModified": "Wed, 10 Jun 2026 13:01:35 GMT"
 }

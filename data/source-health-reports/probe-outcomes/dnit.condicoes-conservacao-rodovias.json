@@ -3,25 +3,18 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://servicos.dnit.gov.br/dadosabertos/dataset/b41e3382-79f5-4b1d-b936-dc75aaa82dfa/resource/9b12ea3d-bbb5-49d5-aa43-db5945e86d90/download/levantamentos_pavimentada_2026_05.csv",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "64fed210495b4a8d51f25f1ea89c27c903471713745ed9b2fd922bc21d3a8d10",
-      "lastModified": "Wed, 10 Jun 2026 13:01:35 GMT",
-      "contentType": "text/csv"
+      "url": "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento",
+      "status": "resolve_error",
+      "error": "ckan package_show: Get \"https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento\": dial tcp 189.9.19.9:443: i/o timeout"
     },
     {
       "role": "portal",
       "url": "https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "56006de7785268b1c78d2f05db3bff7952773ef92aafc1af7703f3f43f632e73",
-      "contentType": "text/html; charset=utf-8"
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento\": dial tcp 189.9.19.9:443: i/o timeout"
     }
   ],
-  "probedAt": "2026-06-27T10:27:05.382146622Z",
-  "overallOk": true,
+  "probedAt": "2026-06-27T10:35:50.826435012Z",
+  "overallOk": false,
   "hasUpdate": false
 }
