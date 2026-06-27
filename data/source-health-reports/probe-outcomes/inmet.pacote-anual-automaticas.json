@@ -5,19 +5,16 @@
       "role": "source",
       "url": "https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip",
       "status": "unavailable",
-      "error": "probe failed after 3 attempts: unexpected status 404 for https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip"
+      "error": "probe failed after 3 attempts: Get \"https://portal.inmet.gov.br/uploads/dadoshistoricos/%7Byear%7D.zip\": dial tcp 201.57.198.188:443: i/o timeout"
     },
     {
       "role": "portal",
       "url": "https://portal.inmet.gov.br/dadoshistoricos",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "19f9a9ed7ba1c89a65250406976204a814ecc8fc3b55d85644fbe71e25651354",
-      "contentType": "text/html; charset=UTF-8"
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://portal.inmet.gov.br/dadoshistoricos\": dial tcp 201.57.198.188:443: i/o timeout"
     }
   ],
-  "probedAt": "2026-06-27T10:35:41.822074241Z",
+  "probedAt": "2026-06-27T10:54:25.227504896Z",
   "overallOk": false,
   "hasUpdate": false
 }

@@ -5,20 +5,16 @@
       "role": "source",
       "url": "https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip",
       "status": "unavailable",
-      "error": "probe failed after 3 attempts: unexpected status 404 for https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip"
+      "error": "probe failed after 3 attempts: Get \"https://portal.inmet.gov.br/uploads/dadoshistoricos/%7Byear%7D.zip\": dial tcp 201.57.198.188:443: i/o timeout"
     },
     {
       "role": "portal",
       "url": "https://bdmep.inmet.gov.br/",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 2300,
-      "sampleSha256": "82c6d4aafbc7fdb74b1b23e5055ec345bddb6369fc81fb70c2b8e16500cb99ab",
-      "lastModified": "Tue, 03 Feb 2026 20:49:45 GMT",
-      "contentType": "text/html"
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://bdmep.inmet.gov.br/\": dial tcp 201.57.198.188:443: i/o timeout"
     }
   ],
-  "probedAt": "2026-06-27T10:35:41.227212376Z",
+  "probedAt": "2026-06-27T10:53:28.692556791Z",
   "overallOk": false,
   "hasUpdate": false
 }

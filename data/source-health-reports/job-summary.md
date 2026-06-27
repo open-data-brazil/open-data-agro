@@ -1,9 +1,9 @@
 ### Source health probe
 
-- Executed at: 2026-06-27T10:37:55Z
+- Executed at: 2026-06-27T10:57:31Z
 - Run date: 2026-06-27
 - Datasets probed: 111
-- OK: 71 · Warning: 40 · Critical: 0
+- OK: 54 · Warning: 57 · Critical: 0
 - Updated samples: 5
 - Deprecated (2+ days): 0
 
@@ -12,9 +12,19 @@
 - **ana.hidrologia-series** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica
   - https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos
+- **anp.combustiveis-precos-medios-municipios** (warning, day 1): Possible link deprecation — official source unreachable after retries. (fetch LPC listing: Get "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas": dial tcp 161.148.164.31:443: i/o timeout)
+  - https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
+- **anp.combustiveis-precos-postos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (fetch LPC listing: Get "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas": dial tcp 161.148.164.31:443: i/o timeout)
+  - https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
 - **antaq.movimentacao-carga-portuaria** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://web3.antaq.gov.br/ea/sense/download.html
   - https://www.gov.br/antaq/pt-br/acesso-a-informacao/dados-abertos
+- **antt.volume-trafego-pedagio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=volume-trafego-praca-pedagio": read tcp 10.1.0.241:38450->200.198.195.143:443: read: connection reset by peer)
+  - https://dados.antt.gov.br/dataset/volume-trafego-praca-pedagio
+- **antt.receita-por-praca** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=receita-por-praca": read tcp 10.1.0.241:60538->200.198.195.143:443: read: connection reset by peer)
+  - https://dados.antt.gov.br/dataset/receita-por-praca
+- **antt.pracas-pedagio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=praca-de-pedagio": read tcp 10.1.0.241:60550->200.198.195.143:443: read: connection reset by peer)
+  - https://dados.antt.gov.br/dataset/praca-de-pedagio
 - **bcb.sgs-ptax-usd-venda** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados
   - https://dadosabertos.bcb.gov.br/
@@ -24,10 +34,10 @@
 - **bcb.sgs-selic** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados
   - https://dadosabertos.bcb.gov.br/
-- **dnit.condicoes-conservacao-rodovias** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.condicoes-conservacao-rodovias** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento
   - https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento
-- **dnit.snv-rodovias-federais** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.snv-rodovias-federais** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
 - **eia.petroleum-prices** (warning, day 1): Possible link deprecation — official source unreachable after retries.
@@ -45,6 +55,21 @@
 - **ibge.pnad-continua-rural** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://apisidra.ibge.gov.br/values/t/6385
   - https://sidra.ibge.gov.br/pesquisa/pnad
+- **ibge.localidades-municipios** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **ibge.localidades-ufs** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **ibge.localidades-regioes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **ibge.localidades-mesorregioes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **ibge.localidades-microrregioes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
 - **ibge.lspa-area-producao** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://apisidra.ibge.gov.br/values/t/6588
   - https://sidra.ibge.gov.br/pesquisa/lspa
@@ -66,6 +91,12 @@
 - **igc.goi-index** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://igc.int/_csv/igc__goi.xlsb
   - https://igc.int/en/public-site/markets/marketinfo-goi.aspx
+- **inmet.estacoes-automaticas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apitempo.inmet.gov.br/estacoes/T": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://apitempo.inmet.gov.br/estacoes/T
+  - https://portal.inmet.gov.br/paginas/catalogoaut
+- **inmet.estacoes-convencionais** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apitempo.inmet.gov.br/estacoes/M": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://apitempo.inmet.gov.br/estacoes/M
+  - https://portal.inmet.gov.br/paginas/catalogoman
 - **inmet.bdmep-diario** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip
   - https://bdmep.inmet.gov.br/
@@ -81,12 +112,23 @@
 - **inpe.deter-alertas-desmatamento** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://terrabrasilis.dpi.inpe.br/geoserver/deter-amz/wfs
   - https://terrabrasilis.dpi.inpe.br/downloads/
+- **ipea.series-macro-regionais** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "http://www.ipeadata.gov.br/api/odata4/": dial tcp 45.171.102.13:80: i/o timeout)
+  - http://www.ipeadata.gov.br/api/odata4/
+  - http://www.ipea.gov.br/portal/
 - **japan.maff-ag-trade** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://www.maff.go.jp/e/data/stat/export/index.html
   - https://www.maff.go.jp/e/
+- **mapa.agrofit-produtos-formulados** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/d30b30d7-e256-484e-9ab8-cd40974e1238/download/agrofitprodutosformulados.csv": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/d30b30d7-e256-484e-9ab8-cd40974e1238/download/agrofitprodutosformulados.csv
+  - https://dados.agricultura.gov.br/dataset/agrofit-produtos-formulados
 - **mapa.agrofit-produtos-tecnicos** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/a200c70b-e025-4a9a-be1b-ec7275d7921f/download/agrofitprodutostecnicos.csv
   - https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit
+- **mapa.sif-abate-estatisticas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/dataset/062166e3-b515-4274-8e7d-68aadd64b820/resource/341dc717-4716-42ab-b189-c8d7a9d2a1ba/download/sigsifrelatorioabates.csv": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/062166e3-b515-4274-8e7d-68aadd64b820/resource/341dc717-4716-42ab-b189-c8d7a9d2a1ba/download/sigsifrelatorioabates.csv
+  - https://dados.agricultura.gov.br/dataset/servico-de-inspecao-federal-sif
+- **mapa.zarc-tabua-risco** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=tabua-de-risco-zoneamento-agricola-de-risco-climatico": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/tabua-de-risco-zoneamento-agricola-de-risco-climatico
 - **mdic.comex-exportacao-ncm-mes** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://api-comexstat.mdic.gov.br/general
   - https://comexstat.mdic.gov.br/
@@ -107,7 +149,10 @@
 - **oecd-fao.ag-outlook** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://sdmx.oecd.org/public/rest/data/OECD.TAD.ATM,DSD_AGR@DF_OUTLOOK_2024_2033,1.1/BRA.A....T.AO_2024_2033?format=csvfilewithlabels
   - https://www.oecd.org/en/data/datasets/oecd-fao-agricultural-outlook.html
-- **transportes.mtr-bit-malha-rodoviaria** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **suframa.comercio-mercadorias-zfm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx": dial tcp 161.148.164.31:443: i/o timeout)
+  - https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx
+  - https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados
+- **transportes.mtr-bit-malha-rodoviaria** (warning, day 1): Possible link deprecation — official source unreachable after retries.
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
 - **un.comtrade-bulk** (warning, day 1): Possible link deprecation — official source unreachable after retries.

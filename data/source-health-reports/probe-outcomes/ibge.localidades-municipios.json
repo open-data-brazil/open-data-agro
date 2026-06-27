@@ -4,23 +4,17 @@
     {
       "role": "source",
       "url": "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "d1d0774c6f75fcebb22a41f92d7618bfdc5cd1594b7b33cb2992c1e3aab0254c",
-      "contentType": "application/json; charset=utf-8"
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome\": dial tcp 170.84.40.205:443: i/o timeout"
     },
     {
       "role": "portal",
       "url": "https://servicodados.ibge.gov.br/api/docs/localidades",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "be8dc3afda9388be7f91bd638c6969c0df239ea72ab885ada6973966ce972dfb",
-      "contentType": "text/html; charset=utf-8"
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/docs/localidades\": dial tcp 170.84.40.205:443: i/o timeout"
     }
   ],
-  "probedAt": "2026-06-27T10:36:02.641919628Z",
-  "overallOk": true,
+  "probedAt": "2026-06-27T10:45:10.626856766Z",
+  "overallOk": false,
   "hasUpdate": false
 }
