@@ -1,0 +1,126 @@
+## Source health daily probe
+
+### Source health probe
+
+- Executed at: 2026-06-27T10:27:20Z
+- Run date: 2026-06-27
+- Datasets probed: 111
+- OK: 74 · Warning: 37 · Critical: 0
+- Updated samples: 1
+- Deprecated (2+ days): 0
+
+### Source health alerts
+
+- **ana.hidrologia-series** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica
+  - https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos
+- **antaq.movimentacao-carga-portuaria** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://web3.antaq.gov.br/ea/sense/download.html
+  - https://www.gov.br/antaq/pt-br/acesso-a-informacao/dados-abertos
+- **bcb.sgs-ptax-usd-venda** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados
+  - https://dadosabertos.bcb.gov.br/
+- **bcb.sgs-ptax-usd-compra** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados
+  - https://dadosabertos.bcb.gov.br/
+- **bcb.sgs-selic** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados
+  - https://dadosabertos.bcb.gov.br/
+- **eia.petroleum-prices** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://api.eia.gov/v2/petroleum/pri/spt/data
+  - https://www.eia.gov/opendata/
+- **fao.giews-crop-prospects** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://www.fao.org/giews/food-prospects-archive/en/
+  - https://www.fao.org/giews/
+- **fao.comercio-agro** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://bulks-faostat.fao.org/production/Trade_Crops_Livestock_E_All_Data_(Normalized).zip
+  - https://www.fao.org/faostat/en/#data/TCL
+- **ibge.censo-agro-estabelecimentos** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apisidra.ibge.gov.br/values/t/6878
+  - https://censoagro2017.ibge.gov.br/
+- **ibge.pnad-continua-rural** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apisidra.ibge.gov.br/values/t/6385
+  - https://sidra.ibge.gov.br/pesquisa/pnad
+- **ibge.lspa-area-producao** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apisidra.ibge.gov.br/values/t/6588
+  - https://sidra.ibge.gov.br/pesquisa/lspa
+- **ibge.pam-area-quantidade** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apisidra.ibge.gov.br/values/t/1612
+  - https://sidra.ibge.gov.br/pesquisa/pam
+- **ibge.pam-rendimento-valor** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apisidra.ibge.gov.br/values/t/1613
+  - https://sidra.ibge.gov.br/pesquisa/pam
+- **ibge.pam-estabelecimentos** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apisidra.ibge.gov.br/values/t/5457
+  - https://sidra.ibge.gov.br/pesquisa/pam
+- **ibge.pevs-producao-vegetal** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apisidra.ibge.gov.br/values/t/289
+  - https://sidra.ibge.gov.br/pesquisa/pevs
+- **ibge.ppm-producao-municipal** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apisidra.ibge.gov.br/values/t/74
+  - https://sidra.ibge.gov.br/pesquisa/pam
+- **igc.goi-index** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 406 for https://igc.int/_csv/igc__goi.xlsb)
+  - https://igc.int/_csv/igc__goi.xlsb
+  - https://igc.int/en/public-site/markets/marketinfo-goi.aspx
+- **inmet.bdmep-diario** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip
+  - https://bdmep.inmet.gov.br/
+- **inmet.bdmep-mensal** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip
+  - https://bdmep.inmet.gov.br/
+- **inmet.pacote-anual-automaticas** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip
+  - https://portal.inmet.gov.br/dadoshistoricos
+- **inmet.sequia-monitor** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apimsbr.ana.gov.br/rpc/v1/dados-tabulares-monitor
+  - https://www.gov.br/ana/pt-br/servicos/monitor-de-seca
+- **inpe.deter-alertas-desmatamento** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://terrabrasilis.dpi.inpe.br/geoserver/deter-amz/wfs
+  - https://terrabrasilis.dpi.inpe.br/downloads/
+- **japan.maff-ag-trade** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://www.maff.go.jp/e/data/stat/export/index.html
+  - https://www.maff.go.jp/e/
+- **mapa.agrofit-produtos-tecnicos** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/a200c70b-e025-4a9a-be1b-ec7275d7921f/download/agrofitprodutostecnicos.csv
+  - https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit
+- **mdic.comex-exportacao-ncm-mes** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mdic.comex-importacao-ncm-mes** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mdic.comex-exportacao-uf-ncm** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mdic.comex-importacao-diesel-ncm** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mexico.siap-produccion-agricola** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 500 for https://www.gob.mx/siap)
+  - https://www.gob.mx/siap
+- **noaa.gpcc-precipitation** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://opendata.dwd.de/climate_environment/GPCC/Monitoring/
+  - https://www.ncei.noaa.gov/data/gpcc-monthly/
+- **oecd-fao.ag-outlook** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://sdmx.oecd.org/public/rest/data/OECD.TAD.ATM,DSD_AGR@DF_OUTLOOK_2024_2033,1.1/BRA.A....T.AO_2024_2033?format=csvfilewithlabels
+  - https://www.oecd.org/en/data/datasets/oecd-fao-agricultural-outlook.html
+- **un.comtrade-bulk** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://comtradeapi.un.org/data/v1/get/C/A/HS
+  - https://comtradeplus.un.org/
+- **usda.gats-trade** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apps.fas.usda.gov/OpenData/api/gats/trade
+  - https://apps.fas.usda.gov/gats/
+- **usda.psd-soja** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apps.fas.usda.gov/PSDExternalAPIService/svcPSD_AMIS.asmx#getDatabyCommodityPerYear?commodity=2222000
+  - https://apps.fas.usda.gov/psdonline/
+- **usda.psd-milho** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apps.fas.usda.gov/PSDExternalAPIService/svcPSD_AMIS.asmx#getDatabyCommodityPerYear?commodity=0440000
+  - https://apps.fas.usda.gov/psdonline/
+- **usda.psd-trigo** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://apps.fas.usda.gov/PSDExternalAPIService/svcPSD_AMIS.asmx#getDatabyCommodityPerYear?commodity=0410000
+  - https://apps.fas.usda.gov/psdonline/
+- **wto.its-trade-statistics** (warning, day 1): Possible link deprecation — official source unreachable after retries.
+  - https://api.wto.org/timeseries/v1/data
+  - https://stats.wto.org/
+
+
+See `data/source-health-reports/latest.json` for full outcomes.

@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 
@@ -80,7 +81,9 @@ func resolveLatestXLSXURL(ctx context.Context) (string, error) {
 		}
 		year := 0
 		if y := yearPattern.FindString(link); y != "" {
-			fmt.Sscanf(y, "%d", &year)
+			if parsed, err := strconv.Atoi(y); err == nil {
+				year = parsed
+			}
 		}
 		if !strings.HasPrefix(link, "http") {
 			link = "https://www.gov.br" + link

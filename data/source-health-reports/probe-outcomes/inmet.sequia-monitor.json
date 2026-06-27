@@ -1,0 +1,20 @@
+{
+  "datasetId": "inmet.sequia-monitor",
+  "endpoints": [
+    {
+      "role": "source",
+      "url": "https://apimsbr.ana.gov.br/rpc/v1/dados-tabulares-monitor",
+      "status": "resolve_error",
+      "error": "source_url for inmet.sequia-monitor must be on portal.inmet.gov.br, bdmep.inmet.gov.br, or apitempo.inmet.gov.br"
+    },
+    {
+      "role": "portal",
+      "url": "https://www.gov.br/ana/pt-br/servicos/monitor-de-seca",
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/ana/pt-br/servicos/monitor-de-seca"
+    }
+  ],
+  "probedAt": "2026-06-27T10:27:09.273974341Z",
+  "overallOk": false,
+  "hasUpdate": false
+}

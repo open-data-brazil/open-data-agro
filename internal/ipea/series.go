@@ -35,7 +35,6 @@ func (c *Client) FetchSeriesSnapshot(ctx context.Context, entry catalog.Registry
 	}
 
 	var merged []seriesValue
-	var requestURLs []string
 
 	for _, code := range codes {
 		code = strings.TrimSpace(code)
@@ -43,7 +42,6 @@ func (c *Client) FetchSeriesSnapshot(ctx context.Context, entry catalog.Registry
 			continue
 		}
 		requestURL := buildSeriesURL(code)
-		requestURLs = append(requestURLs, requestURL)
 
 		result, err := c.Download(ctx, requestURL)
 		if err != nil {

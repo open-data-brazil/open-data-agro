@@ -1,7 +1,6 @@
 package suframa
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 )
@@ -24,5 +23,4 @@ func TestResolveURLDirect(t *testing.T) {
 	if !strings.HasSuffix(strings.ToLower(raw), ".xlsx") {
 		t.Fatalf("expected xlsx suffix")
 	}
-	_ = fmt.Sprintf("%s", entry.DatasetID)
 }

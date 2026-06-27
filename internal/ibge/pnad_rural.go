@@ -9,8 +9,6 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 )
 
-const pnadQuarterChunkSize = 4
-
 // PNADFetchOptions controls chunked SIDRA pulls for PNAD datasets.
 type PNADFetchOptions struct {
 	UFs []string

@@ -1,0 +1,20 @@
+{
+  "datasetId": "usda.gats-trade",
+  "endpoints": [
+    {
+      "role": "source",
+      "url": "https://apps.fas.usda.gov/OpenData/api/gats/trade",
+      "status": "resolve_error",
+      "error": "dataset usda.gats-trade missing psd_commodity_code"
+    },
+    {
+      "role": "portal",
+      "url": "https://apps.fas.usda.gov/gats/",
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://apps.fas.usda.gov/gats/\": dial tcp 162.79.21.203:443: connect: connection refused"
+    }
+  ],
+  "probedAt": "2026-06-27T10:27:12.701101951Z",
+  "overallOk": false,
+  "hasUpdate": false
+}

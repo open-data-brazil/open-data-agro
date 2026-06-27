@@ -1,0 +1,24 @@
+{
+  "datasetId": "inmet.bdmep-diario",
+  "endpoints": [
+    {
+      "role": "source",
+      "url": "https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip",
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: unexpected status 404 for https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip"
+    },
+    {
+      "role": "portal",
+      "url": "https://bdmep.inmet.gov.br/",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 2300,
+      "sampleSha256": "be20038609af98814118242b40ec8c4b3ed76dd65f85d28647f2ab6dcb9982da",
+      "lastModified": "Tue, 03 Feb 2026 20:49:45 GMT",
+      "contentType": "text/html"
+    }
+  ],
+  "probedAt": "2026-06-27T10:27:04.071307356Z",
+  "overallOk": false,
+  "hasUpdate": false
+}

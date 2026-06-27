@@ -1,7 +1,6 @@
 package ons
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 )
@@ -14,5 +13,4 @@ func TestResolveURLDirect(t *testing.T) {
 	if !strings.Contains(lower, "amazonaws.com") {
 		t.Fatalf("expected ONS S3 url")
 	}
-	_ = fmt.Sprintf("%s", raw)
 }

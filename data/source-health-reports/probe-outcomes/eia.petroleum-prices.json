@@ -1,0 +1,23 @@
+{
+  "datasetId": "eia.petroleum-prices",
+  "endpoints": [
+    {
+      "role": "source",
+      "url": "https://api.eia.gov/v2/petroleum/pri/spt/data",
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: unexpected status 403 for https://api.eia.gov/v2/petroleum/pri/spt/data"
+    },
+    {
+      "role": "portal",
+      "url": "https://www.eia.gov/opendata/",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "a8fb04e3a1e188f7f7a55b8c2982fd7f32f19db55945e6c29754c23b0767ae23",
+      "contentType": "text/html; charset=UTF-8"
+    }
+  ],
+  "probedAt": "2026-06-27T10:27:05.913636476Z",
+  "overallOk": false,
+  "hasUpdate": false
+}

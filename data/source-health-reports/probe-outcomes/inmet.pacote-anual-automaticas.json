@@ -1,0 +1,23 @@
+{
+  "datasetId": "inmet.pacote-anual-automaticas",
+  "endpoints": [
+    {
+      "role": "source",
+      "url": "https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip",
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: unexpected status 404 for https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip"
+    },
+    {
+      "role": "portal",
+      "url": "https://portal.inmet.gov.br/dadoshistoricos",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "0eda5bbf9fbef0a2f6b35f864210842ad673d9a358098a7b17cdd534ca6e752f",
+      "contentType": "text/html; charset=UTF-8"
+    }
+  ],
+  "probedAt": "2026-06-27T10:27:09.236508272Z",
+  "overallOk": false,
+  "hasUpdate": false
+}

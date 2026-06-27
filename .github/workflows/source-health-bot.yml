@@ -1,0 +1,76 @@
+name: Source health bot
+
+# Daily 00:00 America/Sao_Paulo (UTC-3) → 03:00 UTC
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Probe only — skip git publish'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: source-health-bot
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.SOURCE_HEALTH_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+      EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.SOURCE_HEALTH_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: '1.26.4'
+          cache-dependency-path: go.sum
+
+      - name: Sync workspace
+        run: go work sync
+
+      - name: Probe official source links
+        run: make source-health-bot
+        continue-on-error: true
+        id: probe
+
+      - name: Write job summary
+        if: always()
+        run: |
+          if [ -f data/source-health-reports/job-summary.md ]; then
+            cat data/source-health-reports/job-summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Unit tests (sourceprobe)
+        run: go test ./internal/sourceprobe/... -count=1
+
+      - name: Publish reports to main
+        if: inputs.dry_run != true
+        env:
+          DIRECT_PUSH: ${{ secrets.SOURCE_HEALTH_GITHUB_TOKEN != '' && 'true' || 'false' }}
+        run: |
+          ARGS=()
+          if [ "${DIRECT_PUSH}" = "true" ]; then
+            ARGS+=(--direct-push)
+          fi
+          bash scripts/source-health-publish.sh "${ARGS[@]}"
+
+      - name: Probe had critical failures
+        if: steps.probe.outcome == 'failure'
+        run: |
+          echo "One or more sources are critically degraded (2+ consecutive failure days)."
+          exit 1

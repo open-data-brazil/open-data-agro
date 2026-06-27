@@ -163,6 +163,7 @@
 - Phase 48 — BR wave 4 ingest ✅ — Censo Agro, PNAD rural, SUFRAMA, MTR BIT, MAPA SIF, ONS, INPE DETER, DNIT pavement; `make br-sources-wave-4-mvp`
 - Phase 49 — international wave 4 ingest ✅ — CFTC COT, JRC MARS, WTO, FAO GIEWS/AMIS, SAGIS, MAFF, FRED, NASA POWER, Copernicus ERA5, NOAA GPCC; `make international-sources-wave-4-mvp`
 - **Phase 50 — wave 4 ingestor signoff ✅** — gold manifest + DuckDB spot-check for 20 wave 4 marts; `make ingestor-signoff-wave-4-mvp`
+- **Source health bot ✅** — daily link probe for ~97 catalog datasets; `make source-health-bot`; GitHub Action commits reports to `main`
 
 **Phase 20 scaffold:** [.local/phases/20-analytics-crossing/README.md](../.local/phases/20-analytics-crossing/README.md) — analytics crossing (feature joins); implementation **not started** (IA deferred).
 
