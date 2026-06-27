@@ -1,0 +1,40 @@
+# IBAMA — wave 5 environment & logistics (Phase 54)
+# Portal: https://dadosabertos.ibama.gov.br/
+
+entries:
+  - dataset_id: ibama.sisfogo-incendios
+    source_url: https://dadosabertos.ibama.gov.br/dados/SISFOGO/ROI.csv
+    source_portal_url: https://dadosabertos.ibama.gov.br/dataset/sisfogo-incendios-florestais
+    format: csv
+    delimiter: ";"
+    schedule: monthly
+    portal_label: SISFOGO — registros de ocorrência de incêndios
+    fonte_tipo: oficial_gov_br
+    license: open_data
+    discovered_at: 2026-06-27T00:00:00Z
+
+  - dataset_id: ibama.licencas-ambientais
+    source_url: https://stibamadadosabertosprd.blob.core.windows.net/dados-abertos/dados/SISLIC/sislic-licencas.csv
+    source_portal_url: https://dadosabertos.ibama.gov.br/dataset/licencas-ambientais-de-atividades-e-empreendimentos-licenciados-pelo-ibama
+    ckan_package_id: licencas-ambientais-de-atividades-e-empreendimentos-licenciados-pelo-ibama
+    ckan_resource_format: CSV
+    format: csv
+    delimiter: ";"
+    schedule: weekly
+    portal_label: SISLIC — licenças ambientais federais (IBAMA)
+    fonte_tipo: oficial_gov_br
+    license: open_data
+    discovered_at: 2026-06-27T00:00:00Z
+
+  - dataset_id: ibama.autos-infracao
+    source_url: https://stibamadadosabertosprd.blob.core.windows.net/dados-abertos/dados/SIFISC/auto_infracao/auto_infracao/auto_infracao_csv.zip
+    source_portal_url: https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao
+    ckan_package_id: fiscalizacao-auto-de-infracao
+    ckan_resource_format: CSV
+    format: csv
+    delimiter: ";"
+    schedule: weekly
+    portal_label: SIFISC — autos de infração (ZIP anual por arquivo)
+    fonte_tipo: oficial_gov_br
+    license: open_data
+    discovered_at: 2026-06-27T00:00:00Z

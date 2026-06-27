@@ -1,0 +1,19 @@
+# ANA — pluviometry networks via HidroWeb (Phase 54)
+# tipoDados=2 (rain); complement INMET BDMEP when legacy SOAP has no rows
+
+entries:
+  - dataset_id: ana.pluviometria-redes
+    source_url: https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica
+    source_portal_url: https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos
+    format: json
+    schedule: weekly
+    portal_label: ANA HidroWeb — daily rainfall (selected stations)
+    fonte_tipo: oficial_gov_br
+    license: open_data
+    ana_station_codes:
+      - "87017001"
+      - "15400000"
+    ana_tipo_dados: "2"
+    ana_nivel_consistencia: "1"
+    start_date: "01/01/2024"
+    discovered_at: 2026-06-27T00:00:00Z

@@ -347,6 +347,18 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_mapa_sigef_areas", true
 	case "mapa.sisser-seguro-rural":
 		return "bronze_mapa_sisser_seguro_rural", true
+	case "ibama.sisfogo-incendios":
+		return "bronze_ibama_sisfogo_incendios", true
+	case "ibama.licencas-ambientais":
+		return "bronze_ibama_licencas_ambientais", true
+	case "ibama.autos-infracao":
+		return "bronze_ibama_autos_infracao", true
+	case "ana.pluviometria-redes":
+		return "bronze_ana_pluviometria_redes", true
+	case "embrapa.agroapi-agrofit":
+		return "bronze_embrapa_agroapi_agrofit", true
+	case "transportes.mtr-bit-malha-shapefile":
+		return "bronze_transportes_mtr_bit_malha_shapefile", true
 	case "ons.carga-energetica":
 		return "bronze_ons_carga_energetica", true
 	case "inpe.deter-alertas-desmatamento":

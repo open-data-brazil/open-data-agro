@@ -8,8 +8,16 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/dnit"
 )
 
-// ResolveURL returns the DNIT SNV jurisdiction CSV used as MTR BIT road metadata.
+// ResolveURL returns the download URL for a transportes catalog entry.
 func ResolveURL(entry catalog.RegistryEntry) (string, error) {
+	id := entry.DatasetID.String()
+	if id == "transportes.mtr-bit-malha-shapefile" {
+		raw := strings.TrimSpace(entry.SourceURL)
+		if raw != "" {
+			return raw, nil
+		}
+		return defaultBaseFerroZIPURL, nil
+	}
 	return dnit.ResolveURL(entry)
 }
 

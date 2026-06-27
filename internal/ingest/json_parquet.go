@@ -33,6 +33,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/japan"
 	"github.com/open-data-brazil/open-data-agro/internal/mexico"
 	"github.com/open-data-brazil/open-data-agro/internal/copernicus"
+	"github.com/open-data-brazil/open-data-agro/internal/embrapa"
 )
 
 func convertJSONFileToParquet(entry catalog.RegistryEntry, path string) ([]byte, int, error) {
@@ -238,6 +239,12 @@ func convertJSONToParquet(entry catalog.RegistryEntry, raw []byte) ([]byte, int,
 		return writeStringTable(headers, rows)
 	case "copernicus":
 		headers, rows, err := copernicus.FlattenERA5Agroclimate(entry, raw)
+		if err != nil {
+			return nil, 0, err
+		}
+		return writeStringTable(headers, rows)
+	case "embrapa":
+		headers, rows, err := embrapa.FlattenAgroAPIAgrofit(entry, raw)
 		if err != nil {
 			return nil, 0, err
 		}

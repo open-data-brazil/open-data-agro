@@ -94,8 +94,17 @@ APPROVED_PROBES: list[ProbeSpec] = [
         "https://dadosabertos.ibama.gov.br/api/3/action/package_show?id=licencas-ambientais-de-atividades-e-empreendimentos-licenciados-pelo-ibama",
     ),
     ProbeSpec(
+        "ibama.autos-infracao",
+        "https://dadosabertos.ibama.gov.br/api/3/action/package_show?id=fiscalizacao-auto-de-infracao",
+    ),
+    ProbeSpec(
+        "ana.pluviometria-redes",
+        "https://telemetriaws1.ana.gov.br/ServiceANA.asmx?WSDL",
+        min_bytes=500,
+    ),
+    ProbeSpec(
         "embrapa.agroapi-agrofit",
-        "https://www.embrapa.br/agroapi",
+        "https://www.agroapi.cnptia.embrapa.br/store/apis/info?name=AGROFIT&provider=agroapi&version=v1",
     ),
     ProbeSpec(
         "bcb.cim-agro-credito-rural",
@@ -114,7 +123,7 @@ APPROVED_PROBES: list[ProbeSpec] = [
     ),
     ProbeSpec(
         "transportes.mtr-bit-malha-shapefile",
-        "https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/Base-GEO/BaseFerro.zip",
+        "https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip",
         min_bytes=1000,
     ),
 ]

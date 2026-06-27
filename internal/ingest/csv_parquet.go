@@ -10,6 +10,7 @@ import (
 
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/open-data-brazil/open-data-agro/internal/dnit"
+	"github.com/open-data-brazil/open-data-agro/internal/ibama"
 	"github.com/open-data-brazil/open-data-agro/internal/transportes"
 	"golang.org/x/text/encoding/charmap"
 	"golang.org/x/text/transform"
@@ -68,6 +69,8 @@ func preprocessDelimitedRaw(entry catalog.RegistryEntry, raw []byte) []byte {
 			return raw
 		}
 		return stripped
+	case "ibama":
+		return ibama.NormalizeCSV(raw)
 	default:
 		return raw
 	}

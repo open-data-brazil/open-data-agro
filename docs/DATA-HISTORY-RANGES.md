@@ -179,6 +179,19 @@ API chunks one calendar year per request. Ag NCM series may start later than 199
 
 ---
 
+## Wave 5 env/logistics (Phase 54)
+
+| `dataset_id` | Source min | Catalog default | Backfill |
+|--------------|------------|-----------------|----------|
+| `ibama.sisfogo-incendios` | ~1970s incidents | full ROI CSV | `go run ./cmd/ingestor run ibama.sisfogo-incendios` |
+| `ibama.licencas-ambientais` | rolling SISLIC | full snapshot | same |
+| `ibama.autos-infracao` | 1977 (`auto_infracao_YYYY.csv`) | latest year in ZIP | `--from-year 2024` or `IBAMA_AUTOS_BULK_PATH` |
+| `ana.pluviometria-redes` | station-dependent | 2024-01-01 | fixture if SOAP empty; complement INMET BDMEP |
+| `embrapa.agroapi-agrofit` | current registry | API page | `EMBRAPA_AGROAPI_KEY` for live |
+| `transportes.mtr-bit-malha-shapefile` | current BIT release | full ZIP DBF attrs | `TRANSPORTES_SHAPEFILE_BULK_PATH` optional |
+
+---
+
 ## Spot-check policy (Phase 33 acceptance)
 
 For each major agency, verify **3 representative years** after a live backfill:

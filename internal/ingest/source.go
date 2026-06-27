@@ -30,6 +30,8 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/igc"
 	"github.com/open-data-brazil/open-data-agro/internal/eurostat"
 	"github.com/open-data-brazil/open-data-agro/internal/argentina"
+	"github.com/open-data-brazil/open-data-agro/internal/embrapa"
+	"github.com/open-data-brazil/open-data-agro/internal/ibama"
 	"github.com/open-data-brazil/open-data-agro/internal/inpe"
 	"github.com/open-data-brazil/open-data-agro/internal/ons"
 	"github.com/open-data-brazil/open-data-agro/internal/suframa"
@@ -145,6 +147,10 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		return ana.ResolveURL(entry)
 	case "antaq":
 		return antaq.ResolveURL(entry)
+	case "embrapa":
+		return embrapa.ResolveURL(entry)
+	case "ibama":
+		return ibama.ResolveURL(entry)
 	case "un":
 		return un.ResolveURL(entry)
 	case "eurostat":
@@ -177,7 +183,7 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 }
 
 // DownloadSource fetches bytes for a catalog entry from its official portal.
-func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, aneelClient *aneel.Client, bndesClient *bndes.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, faoClient *fao.Client, worldbankClient *worldbank.Client, noaaClient *noaa.Client, eiaClient *eia.Client, igcClient *igc.Client, anaClient *ana.Client, antaqClient *antaq.Client, dnitClient *dnit.Client, ipeaClient *ipea.Client, eurostatClient *eurostat.Client, argentinaClient *argentina.Client, oecdClient *oecd.Client, unClient *un.Client, cftcClient *cftc.Client, jrcClient *jrc.Client, wtoClient *wto.Client, fredClient *fred.Client, nasaClient *nasa.Client, sagisClient *sagis.Client, japanClient *japan.Client, mexicoClient *mexico.Client, copernicusClient *copernicus.Client, suframaClient *suframa.Client, transportesClient *transportes.Client, onsClient *ons.Client, inpeClient *inpe.Client, opts SourceOptions) (*SourceDownload, error) {
+func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClient *conab.Client, anpClient *anp.Client, anttClient *antt.Client, aneelClient *aneel.Client, bndesClient *bndes.Client, ibgeClient *ibge.Client, inmetClient *inmet.Client, bcbClient *bcb.Client, cepeaClient *cepea.Client, mdicClient *mdic.Client, mapaClient *mapa.Client, b3Client *b3.Client, usdaClient *usda.Client, faoClient *fao.Client, worldbankClient *worldbank.Client, noaaClient *noaa.Client, eiaClient *eia.Client, igcClient *igc.Client, anaClient *ana.Client, antaqClient *antaq.Client, dnitClient *dnit.Client, ipeaClient *ipea.Client, eurostatClient *eurostat.Client, argentinaClient *argentina.Client, oecdClient *oecd.Client, unClient *un.Client, cftcClient *cftc.Client, jrcClient *jrc.Client, wtoClient *wto.Client, fredClient *fred.Client, nasaClient *nasa.Client, sagisClient *sagis.Client, japanClient *japan.Client, mexicoClient *mexico.Client, copernicusClient *copernicus.Client, suframaClient *suframa.Client, transportesClient *transportes.Client, onsClient *ons.Client, inpeClient *inpe.Client, ibamaClient *ibama.Client, embrapaClient *embrapa.Client, opts SourceOptions) (*SourceDownload, error) {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
 		return nil, err
@@ -466,6 +472,20 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 	}
 
 	if agency == "ana" {
+		if entry.DatasetID.String() == "ana.pluviometria-redes" {
+			body, sourceURL, err := anaClient.FetchPluviometriaSnapshot(ctx, entry, ana.HidrologiaFetchOptions{
+				DataInicio: opts.FromDate,
+			})
+			if err != nil {
+				return nil, err
+			}
+			return &SourceDownload{
+				Body:          body,
+				ContentType:   "application/json",
+				ContentLength: int64(len(body)),
+				SourceURL:     sourceURL,
+			}, nil
+		}
 		body, sourceURL, err := anaClient.FetchHidrologiaSnapshot(ctx, entry, ana.HidrologiaFetchOptions{
 			DataInicio: opts.FromDate,
 		})
@@ -607,6 +627,57 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 			ContentLength: int64(len(body)),
 			SourceURL:     sourceURL,
 		}, nil
+	}
+
+	if agency == "embrapa" {
+		body, sourceURL, err := embrapaClient.FetchAgroAPIAgrofitSnapshot(ctx, entry)
+		if err != nil {
+			return nil, err
+		}
+		return &SourceDownload{
+			Body:          body,
+			ContentType:   "application/json",
+			ContentLength: int64(len(body)),
+			SourceURL:     sourceURL,
+		}, nil
+	}
+
+	if agency == "ibama" {
+		switch entry.DatasetID.String() {
+		case "ibama.sisfogo-incendios":
+			body, sourceURL, err := ibamaClient.FetchSISFOGOSnapshot(ctx, entry)
+			if err != nil {
+				return nil, err
+			}
+			return &SourceDownload{
+				Body:          body,
+				ContentType:   "text/csv",
+				ContentLength: int64(len(body)),
+				SourceURL:     sourceURL,
+			}, nil
+		case "ibama.licencas-ambientais":
+			body, sourceURL, err := ibamaClient.FetchLicencasSnapshot(ctx, entry)
+			if err != nil {
+				return nil, err
+			}
+			return &SourceDownload{
+				Body:          body,
+				ContentType:   "text/csv",
+				ContentLength: int64(len(body)),
+				SourceURL:     sourceURL,
+			}, nil
+		case "ibama.autos-infracao":
+			body, sourceURL, err := ibamaClient.FetchAutosSnapshot(ctx, entry, opts.FromYear)
+			if err != nil {
+				return nil, err
+			}
+			return &SourceDownload{
+				Body:          body,
+				ContentType:   "text/csv",
+				ContentLength: int64(len(body)),
+				SourceURL:     sourceURL,
+			}, nil
+		}
 	}
 
 	if agency == "japan" {
@@ -792,6 +863,18 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 			SourceURL:     sourceURL,
 		}, nil
 	case "transportes":
+		if entry.DatasetID.String() == "transportes.mtr-bit-malha-shapefile" {
+			body, sourceURL, err := transportesClient.FetchMTRBITShapefileSnapshot(ctx, entry)
+			if err != nil {
+				return nil, err
+			}
+			return &SourceDownload{
+				Body:          body,
+				ContentType:   "text/csv",
+				ContentLength: int64(len(body)),
+				SourceURL:     sourceURL,
+			}, nil
+		}
 		result, err := transportesClient.Download(ctx, sourceURL)
 		if err != nil {
 			return nil, err

@@ -45,6 +45,8 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/mexico"
 	"github.com/open-data-brazil/open-data-agro/internal/copernicus"
 	"github.com/open-data-brazil/open-data-agro/internal/inpe"
+	"github.com/open-data-brazil/open-data-agro/internal/embrapa"
+	"github.com/open-data-brazil/open-data-agro/internal/ibama"
 	"github.com/open-data-brazil/open-data-agro/internal/ons"
 	"github.com/open-data-brazil/open-data-agro/internal/suframa"
 	"github.com/open-data-brazil/open-data-agro/internal/transportes"
@@ -118,6 +120,8 @@ type Runner struct {
 	transportes *transportes.Client
 	ons        *ons.Client
 	inpe       *inpe.Client
+	ibama      *ibama.Client
+	embrapa    *embrapa.Client
 	alerts   *alerts.Notifier
 }
 
@@ -166,6 +170,8 @@ func NewRunner(registry *catalog.Registry, repo *db.Repository, store storage.Br
 		transportes: transportes.NewClient(),
 		ons:        ons.NewClient(),
 		inpe:       inpe.NewClient(),
+		ibama:      ibama.NewClient(),
+		embrapa:    embrapa.NewClient(),
 		alerts:   notifier,
 	}
 }
@@ -203,7 +209,7 @@ func (r *Runner) Run(ctx context.Context, opts RunOptions) (*RunResult, error) {
 		return nil, err
 	}
 
-	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.aneel, r.bndes, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.dnit, r.ipea, r.eurostat, r.argentina, r.oecd, r.un, r.cftc, r.jrc, r.wto, r.fred, r.nasa, r.sagis, r.japan, r.mexico, r.copernicus, r.suframa, r.transportes, r.ons, r.inpe, SourceOptions{
+	download, err := DownloadSource(ctx, entry, r.conab, r.anp, r.antt, r.aneel, r.bndes, r.ibge, r.inmet, r.bcb, r.cepea, r.mdic, r.mapa, r.b3, r.usda, r.fao, r.worldbank, r.noaa, r.eia, r.igc, r.ana, r.antaq, r.dnit, r.ipea, r.eurostat, r.argentina, r.oecd, r.un, r.cftc, r.jrc, r.wto, r.fred, r.nasa, r.sagis, r.japan, r.mexico, r.copernicus, r.suframa, r.transportes, r.ons, r.inpe, r.ibama, r.embrapa, SourceOptions{
 		Crop:     opts.Crop,
 		FromYear: opts.FromYear,
 		ToYear:   opts.ToYear,

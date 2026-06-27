@@ -977,6 +977,32 @@ ci-br-sources-wave-5-mapa-mvp:
 		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_5_MAPA_LAKE) \
 		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_5_MAPA_DUCKDB)
 
+CI_BR_SOURCES_WAVE_5_ENV_LOGISTICS_LAKE ?= /tmp/br-sources-wave-5-env-logistics-ci-lake
+CI_BR_SOURCES_WAVE_5_ENV_LOGISTICS_DUCKDB ?= /tmp/br-sources-wave-5-env-logistics-ci.duckdb
+
+dbt-build-br-sources-wave-5-env-logistics: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibama__sisfogo_incendios+ stg_ibama__licencas_ambientais+ stg_ibama__autos_infracao+ stg_ana__pluviometria_redes+ stg_embrapa__agroapi_agrofit+ stg_transportes__mtr_bit_malha_shapefile+'
+
+br-sources-wave-5-env-logistics-mvp:
+	go test ./internal/ibama/... ./internal/embrapa/... ./internal/ana/... ./internal/transportes/... ./internal/ingest/ -run 'IBAMA|Embrapa|ANAPluviometria|TransportesMTRBIT|ExtractAutos|ParseDBF|SISFOGO|Licencas|AgroAPI|Pluviometria|Shapefile'
+	chmod +x scripts/ci/seed_br_sources_wave_5_env_logistics_silver.py
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_br_sources_wave_5_env_logistics_silver.py
+	$(MAKE) dbt-build-br-sources-wave-5-env-logistics LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibama_sisfogo_incendios"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT UF, MUNICIPIO FROM analytics.ibama_sisfogo_incendios LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibama_licencas_ambientais"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibama_autos_infracao"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ana_pluviometria_redes"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT station_code, daily_mean FROM analytics.ana_pluviometria_redes LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.embrapa_agroapi_agrofit"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.transportes_mtr_bit_malha_shapefile"
+
+ci-br-sources-wave-5-env-logistics-mvp:
+	$(MAKE) br-sources-wave-5-env-logistics-mvp \
+		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_5_ENV_LOGISTICS_LAKE) \
+		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_5_ENV_LOGISTICS_DUCKDB)
+
 dbt-build-noaa-climate: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_noaa__enso_indices+ stg_noaa__global_temp_anomaly+'
 
