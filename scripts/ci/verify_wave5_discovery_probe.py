@@ -29,7 +29,15 @@ APPROVED_PROBES: list[ProbeSpec] = [
         "https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro",
     ),
     ProbeSpec(
+        "mapa.sipeagro-produtos",
+        "https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro",
+    ),
+    ProbeSpec(
         "mapa.sigef-producao-sementes",
+        "https://dados.agricultura.gov.br/api/3/action/package_show?id=dados-referentes-ao-controle-da-producao-de-sementes-sigef",
+    ),
+    ProbeSpec(
+        "mapa.sigef-areas",
         "https://dados.agricultura.gov.br/api/3/action/package_show?id=dados-referentes-ao-controle-da-producao-de-sementes-sigef",
     ),
     ProbeSpec(

@@ -952,6 +952,31 @@ ci-br-sources-wave-5-ibge-mvp:
 		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_5_IBGE_LAKE) \
 		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_5_IBGE_DUCKDB)
 
+CI_BR_SOURCES_WAVE_5_MAPA_LAKE ?= /tmp/br-sources-wave-5-mapa-ci-lake
+CI_BR_SOURCES_WAVE_5_MAPA_DUCKDB ?= /tmp/br-sources-wave-5-mapa-ci.duckdb
+
+dbt-build-br-sources-wave-5-mapa: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_mapa__sipeagro_estabelecimentos+ stg_mapa__sipeagro_produtos+ stg_mapa__sigef_producao_sementes+ stg_mapa__sigef_areas+ stg_mapa__sisser_seguro_rural+'
+
+br-sources-wave-5-mapa-mvp:
+	go test ./internal/mapa/... ./internal/ingest/ -run 'SIPEAGRO|SIGEF|SISSER|MAPASIPEAGRO|MAPASIGEF|MAPASISSER|MergeSIPEAGRO|ParseSIPEAGRO|ParseSISSER|ResolveSIPEAGRO'
+	chmod +x scripts/ci/seed_br_sources_wave_5_mapa_silver.py
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_br_sources_wave_5_mapa_silver.py
+	$(MAKE) dbt-build-br-sources-wave-5-mapa LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mapa_sipeagro_estabelecimentos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT linha_produto, uf FROM analytics.mapa_sipeagro_estabelecimentos LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mapa_sipeagro_produtos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mapa_sigef_producao_sementes"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT Safra, UF FROM analytics.mapa_sigef_producao_sementes LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mapa_sigef_areas"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.mapa_sisser_seguro_rural"
+
+ci-br-sources-wave-5-mapa-mvp:
+	$(MAKE) br-sources-wave-5-mapa-mvp \
+		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_5_MAPA_LAKE) \
+		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_5_MAPA_DUCKDB)
+
 dbt-build-noaa-climate: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_noaa__enso_indices+ stg_noaa__global_temp_anomaly+'
 

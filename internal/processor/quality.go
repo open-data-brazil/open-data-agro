@@ -337,6 +337,16 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_transportes_mtr_bit_malha_rodoviaria", true
 	case "mapa.sif-abate-estatisticas":
 		return "bronze_mapa_sif_abate_estatisticas", true
+	case "mapa.sipeagro-estabelecimentos":
+		return "bronze_mapa_sipeagro_estabelecimentos", true
+	case "mapa.sipeagro-produtos":
+		return "bronze_mapa_sipeagro_produtos", true
+	case "mapa.sigef-producao-sementes":
+		return "bronze_mapa_sigef_producao_sementes", true
+	case "mapa.sigef-areas":
+		return "bronze_mapa_sigef_areas", true
+	case "mapa.sisser-seguro-rural":
+		return "bronze_mapa_sisser_seguro_rural", true
 	case "ons.carga-energetica":
 		return "bronze_ons_carga_energetica", true
 	case "inpe.deter-alertas-desmatamento":

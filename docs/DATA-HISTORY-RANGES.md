@@ -82,6 +82,16 @@ Portal audit: all listed sections mapped — see `.local/phases/33-collection-ha
 
 Use `--uf` and `--crop` to chunk large SIDRA pulls.
 
+### MAPA wave 5 (Phase 52)
+
+| `dataset_id` | Source min | Catalog default | Backfill |
+|--------------|------------|-----------------|----------|
+| `mapa.sipeagro-estabelecimentos` | current | full CKAN merge | `go run ./cmd/ingestor run mapa.sipeagro-estabelecimentos` |
+| `mapa.sipeagro-produtos` | current | 5 product-line CSVs | same ingestor pattern |
+| `mapa.sigef-producao-sementes` | current safra | latest CSV | CKAN resource “Campos de produção” |
+| `mapa.sigef-areas` | current period | latest CSV | CKAN resource “Declarações de área” |
+| `mapa.sisser-seguro-rural` | **2006** (PSR) | merged CSVs | all PSR periods 2006–2025 in one pull |
+
 ---
 
 ## INMET (Phase 17)

@@ -1,0 +1,25 @@
+# MAPA — SIPEAGRO registry (Phase 52 wave 5)
+# Portal: https://dados.agricultura.gov.br/dataset/sipeagro
+
+entries:
+  - dataset_id: mapa.sipeagro-estabelecimentos
+    source_url: https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro
+    source_portal_url: https://dados.agricultura.gov.br/dataset/sipeagro
+    format: csv
+    delimiter: ";"
+    schedule: monthly
+    portal_label: SIPEAGRO — estabelecimentos registrados por linha de produto
+    ckan_package_id: sipeagro
+    fonte_tipo: oficial_gov_br
+    discovered_at: 2026-06-27T00:00:00Z
+
+  - dataset_id: mapa.sipeagro-produtos
+    source_url: https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro
+    source_portal_url: https://dados.agricultura.gov.br/dataset/sipeagro
+    format: csv
+    delimiter: ";"
+    schedule: monthly
+    portal_label: SIPEAGRO — linhas de insumos (fertilizantes, veterinários, alimentação animal)
+    ckan_package_id: sipeagro
+    fonte_tipo: oficial_gov_br
+    discovered_at: 2026-06-27T00:00:00Z

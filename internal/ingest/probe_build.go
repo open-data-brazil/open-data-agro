@@ -11,6 +11,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/ibge"
 	"github.com/open-data-brazil/open-data-agro/internal/inmet"
 	"github.com/open-data-brazil/open-data-agro/internal/inpe"
+	"github.com/open-data-brazil/open-data-agro/internal/mapa"
 	"github.com/open-data-brazil/open-data-agro/internal/mdic"
 	"github.com/open-data-brazil/open-data-agro/internal/oecd"
 	"github.com/open-data-brazil/open-data-agro/internal/un"
@@ -73,6 +74,12 @@ func BuildProbeSpec(entry catalog.RegistryEntry) (ProbeSpec, error) {
 			Body:    string(body),
 			Headers: map[string]string{"Accept": "application/json", "Content-Type": "application/json"},
 		}, nil
+	case "mapa":
+		url, err := mapa.BuildProbeURL(entry)
+		if err != nil {
+			return ProbeSpec{}, err
+		}
+		return ProbeSpec{URL: url, Headers: probeHeaders(entry)}, nil
 	case "inpe":
 		url, err := inpe.BuildProbeURL(entry)
 		if err != nil {

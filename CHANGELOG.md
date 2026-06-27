@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **BR sources wave 5 MAPA (Phase 52):** `mapa.sipeagro-estabelecimentos`, `mapa.sipeagro-produtos`, `mapa.sigef-producao-sementes`, `mapa.sigef-areas`, `mapa.sisser-seguro-rural` — CKAN merge clients, GE suites, dbt marts, DuckDB views, `make br-sources-wave-5-mapa-mvp` + `make ci-br-sources-wave-5-mapa-mvp`
 - **BR sources wave 5 IBGE (Phase 53):** `ibge.ppm-efetivo-rebanhos`, `ibge.ppm-vacas-ordenhadas`, `ibge.ppm-ovinos-tosquiados`, `ibge.ppm-aquicultura`, `ibge.pam-precos-produtor`, `ibge.pam-culturas-estendidas`, `ibge.lspa-rendimento-medio`, `ibge.censo-agro-area-uso-solo`, `ibge.censo-agro-maquinario`, `ibge.pnad-rural-renda-ocupacao` — full E2E pipelines, GE suites, dbt marts, DuckDB views, `make br-sources-wave-5-ibge-mvp` + `make ci-br-sources-wave-5-ibge-mvp`
 - **Source discovery wave 5 (Phase 51):** `.local/SOURCE-DISCOVERY-CATALOG.md` wave 5 section (40 fichas, 32 approved); `DISCOVERY-REPORT-WAVE5.md` + updated `SOURCE-GAP-MATRIX-WAVE5.md`; live probe gate `scripts/ci/verify_wave5_discovery_probe.py`; routes to Phases 52–58 (ingestor only — no IA)
 - **Source health bot:** daily probe of all catalog `source_url` / portal links via GET sample (4 KiB, same User-Agent as ingest); reports in `data/source-health-reports/`, auto-generated [docs/SOURCE-HEALTH.md](docs/SOURCE-HEALTH.md); `make source-health-bot` + GitHub Action `.github/workflows/source-health-bot.yml` (03:00 UTC) commits to `main` with deprecated/updated summary or all-OK timestamp

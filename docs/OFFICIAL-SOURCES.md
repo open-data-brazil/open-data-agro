@@ -290,6 +290,22 @@ Monthly BNDES disbursements to agropecuaria sector (CNAE grouping).
 
 Drought severity area statistics by map/month — catalog under INMET agency for climate feature grouping.
 
+### BR sources wave 5 — MAPA (Phase 52)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `mapa.sipeagro-estabelecimentos` | SIPEAGRO — estabelecimentos registrados (8 linhas de produto CKAN) | **P0 — implemented** |
+| `mapa.sipeagro-produtos` | SIPEAGRO — insumos (fertilizantes, veterinários, alimentação animal) | **P0 — implemented** |
+| `mapa.sigef-producao-sementes` | SIGEF — campos de produção de sementes | **P0 — implemented** |
+| `mapa.sigef-areas` | SIGEF — declarações de área para produção (uso próprio) | **P1 — implemented** |
+| `mapa.sisser-seguro-rural` | SISSER — Programa Seguro Rural (PSR) propostas | **P1 — implemented** |
+
+**Fonte oficial:** [MAPA dados abertos](https://dados.agricultura.gov.br/) · CKAN packages [SIPEAGRO](https://dados.agricultura.gov.br/dataset/sipeagro) · [SIGEF](https://dados.agricultura.gov.br/dataset/dados-referentes-ao-controle-da-producao-de-sementes-sigef) · [SISSER](https://dados.agricultura.gov.br/dataset/sisser3)
+
+SIPEAGRO merges multiple CSV resources with normalized columns (`linha_produto`, `uf`, `numero_registro_estabelecimento`, …). SISSER merges all PSR CSV periods (2006–2025). `mapa.fertilizantes-registro` rejected — use SIPEAGRO Fertilizantes line.
+
+**Gate:** `make br-sources-wave-5-mapa-mvp` · `make ci-br-sources-wave-5-mapa-mvp`
+
 ### BR sources wave 5 — IBGE (Phase 53)
 
 | Dataset ID | Source | Status |
@@ -443,7 +459,7 @@ EU ag price reference and Argentina FX parity for competitor market models. `fon
 
 | Phase | Approved `dataset_id` | Primary URL (verified 2026-06-27) |
 |-------|----------------------|-----------------------------------|
-| 52 MAPA | `mapa.sipeagro-estabelecimentos`, `mapa.sipeagro-produtos`, `mapa.sigef-producao-sementes`, `mapa.sigef-areas`, `mapa.sisser-seguro-rural` | [dados.agricultura.gov.br](https://dados.agricultura.gov.br/) CKAN |
+| 52 MAPA | `mapa.sipeagro-estabelecimentos`, … `mapa.sisser-seguro-rural` (5 datasets) | [dados.agricultura.gov.br](https://dados.agricultura.gov.br/) CKAN — **Phase 52 ✅ implemented** |
 | 53 IBGE | `ibge.ppm-efetivo-rebanhos`, … `ibge.pnad-rural-renda-ocupacao` (10 datasets) | [apisidra.ibge.gov.br](https://apisidra.ibge.gov.br/) — **Phase 53 ✅ implemented** |
 | 54 Env/logistics | `ibama.sisfogo-incendios`, `ibama.licencas-ambientais`, `ibama.autos-infracao`, `ana.pluviometria-redes`, `embrapa.agroapi-agrofit`, `transportes.mtr-bit-malha-shapefile` | [dadosabertos.ibama.gov.br](https://dadosabertos.ibama.gov.br/) · [gov.br/ana](https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos) · [embrapa.br/agroapi](https://www.embrapa.br/agroapi) · [MTR BIT](https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas) |
 | 55 Finance | `bcb.cim-agro-credito-rural`, `bndes.desembolsos-linhas-agro`, `anp.etanol-precos` | [bcb.gov.br](https://www.bcb.gov.br/publicacoes/cim) · BNDES CKAN · [gov.br/anp](https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis) |

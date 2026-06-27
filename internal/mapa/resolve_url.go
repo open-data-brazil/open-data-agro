@@ -37,10 +37,22 @@ type ckanResource struct {
 	LastModified string `json:"last_modified"`
 }
 
+// ListCKANResources returns CKAN resources for a MAPA package id.
+func ListCKANResources(ctx context.Context, packageID string) ([]ckanResource, error) {
+	return fetchCKANResources(ctx, packageID)
+}
+
 // ResolveURL returns the CKAN resource download URL for a MAPA catalog entry.
 func ResolveURL(entry catalog.RegistryEntry) (string, error) {
-	if entry.DatasetID.String() == "mapa.sif-abate-estatisticas" {
+	id := entry.DatasetID.String()
+	if id == "mapa.sif-abate-estatisticas" {
 		return ResolveSIFAbateURL(entry)
+	}
+	if strings.HasPrefix(id, "mapa.sipeagro-") {
+		return resolveSIPEAGROURL(entry)
+	}
+	if id == "mapa.sisser-seguro-rural" {
+		return resolveSISSERURL(entry)
 	}
 
 	packageID := strings.TrimSpace(entry.CKANPackageID)

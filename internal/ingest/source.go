@@ -740,6 +740,30 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 			SourceURL:     sourceURL,
 		}, nil
 	case "mapa":
+		if strings.HasPrefix(entry.DatasetID.String(), "mapa.sipeagro-") {
+			body, sourceURL, err := mapaClient.FetchSIPEAGROSnapshot(ctx, entry)
+			if err != nil {
+				return nil, err
+			}
+			return &SourceDownload{
+				Body:          body,
+				ContentType:   "text/csv",
+				ContentLength: int64(len(body)),
+				SourceURL:     sourceURL,
+			}, nil
+		}
+		if entry.DatasetID.String() == "mapa.sisser-seguro-rural" {
+			body, sourceURL, err := mapaClient.FetchSISSERSnapshot(ctx, entry)
+			if err != nil {
+				return nil, err
+			}
+			return &SourceDownload{
+				Body:          body,
+				ContentType:   "text/csv",
+				ContentLength: int64(len(body)),
+				SourceURL:     sourceURL,
+			}, nil
+		}
 		result, err := mapaClient.Download(ctx, sourceURL)
 		if err != nil {
 			return nil, err
