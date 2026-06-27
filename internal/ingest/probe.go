@@ -3,42 +3,50 @@ package ingest
 import (
 	"context"
 	"fmt"
-	"os"
 	"strings"
 	"sync"
 	"time"
 
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
-	"github.com/open-data-brazil/open-data-agro/internal/cepea"
 	"github.com/open-data-brazil/open-data-agro/internal/sourceprobe"
 )
 
-// ProbeCatalogEntry resolves the operational URL and probes a sample GET (ingest-compatible headers).
+// ProbeCatalogEntry resolves the operational URL and probes a sample request (ingest-compatible).
 func ProbeCatalogEntry(ctx context.Context, client *sourceprobe.Client, entry catalog.RegistryEntry) sourceprobe.EndpointProbe {
-	role := "source"
-	url, resolveErr := resolveProbeURL(entry)
-	if resolveErr != nil {
-		return sourceprobe.EndpointProbe{
-			Role:   role,
-			URL:    strings.TrimSpace(entry.SourceURL),
-			Status: sourceprobe.ProbeResolveError,
-			Error:  resolveErr.Error(),
-		}
-	}
-
-	result, err := client.ProbeURLWithHeaders(ctx, url, probeHeaders(entry))
+	spec, err := BuildProbeSpec(entry)
 	if err != nil {
 		return sourceprobe.EndpointProbe{
-			Role:   role,
-			URL:    url,
-			Status: sourceprobe.ProbeUnavailable,
+			Role:   "source",
+			URL:    strings.TrimSpace(entry.SourceURL),
+			Status: sourceprobe.ProbeResolveError,
 			Error:  err.Error(),
 		}
 	}
 
+	var result *sourceprobe.SampleResult
+	var probeErr error
+	if spec.Method == "POST" || spec.Body != "" {
+		result, probeErr = client.ProbeHTTP(ctx, sourceprobe.HTTPRequest{
+			Method:  spec.Method,
+			URL:     spec.URL,
+			Headers: spec.Headers,
+			Body:    spec.Body,
+		})
+	} else {
+		result, probeErr = client.ProbeURLWithHeaders(ctx, spec.URL, spec.Headers)
+	}
+	if probeErr != nil {
+		return sourceprobe.EndpointProbe{
+			Role:   "source",
+			URL:    spec.URL,
+			Status: sourceprobe.ProbeUnavailable,
+			Error:  probeErr.Error(),
+		}
+	}
+
 	return sourceprobe.EndpointProbe{
-		Role:         role,
-		URL:          url,
+		Role:         "source",
+		URL:          spec.URL,
 		Status:       sourceprobe.ProbeOK,
 		HTTPStatus:   result.HTTPStatus,
 		SampleBytes:  result.SampleBytes,
@@ -48,38 +56,6 @@ func ProbeCatalogEntry(ctx context.Context, client *sourceprobe.Client, entry ca
 	}
 }
 
-func resolveProbeURL(entry catalog.RegistryEntry) (string, error) {
-	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
-	if err != nil {
-		return "", err
-	}
-
-	if agency == "cepea" {
-		mirror, mirrorErr := cepea.MirrorURL(entry.DatasetID.String())
-		if mirrorErr == nil {
-			return mirror, nil
-		}
-	}
-
-	url, err := ResolveSourceURL(entry)
-	if err != nil {
-		return "", err
-	}
-
-	if agency == "eia" {
-		key := strings.TrimSpace(os.Getenv("EIA_API_KEY"))
-		if key != "" && !strings.Contains(url, "api_key=") {
-			sep := "?"
-			if strings.Contains(url, "?") {
-				sep = "&"
-			}
-			url = url + sep + "api_key=" + key
-		}
-	}
-
-	return url, nil
-}
-
 func probeHeaders(entry catalog.RegistryEntry) map[string]string {
 	agency, _, err := catalog.SplitDatasetID(entry.DatasetID.String())
 	if err != nil {
@@ -87,11 +63,11 @@ func probeHeaders(entry catalog.RegistryEntry) map[string]string {
 	}
 
 	switch agency {
-	case "bcb", "eia", "fred", "nasa", "usda", "worldbank", "oecd-fao", "igc", "eurostat", "argentina", "un", "wto", "jrc", "fao", "ons", "inpe", "ipea", "bndes", "aneel", "mdic", "ibge", "cftc", "copernicus", "sagis", "japan", "mexico":
+	case "bcb", "eia", "fred", "nasa", "worldbank", "oecd-fao", "eurostat", "argentina", "jrc", "fao", "ons", "inpe", "ipea", "bndes", "aneel", "mdic", "ibge", "cftc", "copernicus", "sagis", "mexico":
 		return map[string]string{"Accept": "application/json"}
-	case "cepea":
-		return map[string]string{"Accept": "text/html,application/xhtml+xml"}
-	case "conab", "anp", "antt", "antaq", "mapa", "b3", "dnit", "suframa", "transportes", "inmet", "ana", "noaa":
+	case "cepea", "japan":
+		return map[string]string{"Accept": "text/html,application/xhtml+xml,*/*"}
+	case "conab", "anp", "antt", "antaq", "mapa", "b3", "dnit", "suframa", "transportes", "inmet", "ana", "noaa", "igc", "usda", "un", "wto":
 		return map[string]string{"Accept": "*/*"}
 	default:
 		return map[string]string{"Accept": "*/*"}
@@ -127,16 +103,16 @@ func ProbePortalURL(ctx context.Context, client *sourceprobe.Client, entry catal
 	}, true
 }
 
-// ProbeSourceURLForTest exposes resolveProbeURL for unit tests.
+// ProbeSourceURLForTest exposes BuildProbeSpec for unit tests.
 func ProbeSourceURLForTest(entry catalog.RegistryEntry) (string, error) {
-	url, err := resolveProbeURL(entry)
+	spec, err := BuildProbeSpec(entry)
 	if err != nil {
 		return "", err
 	}
-	if strings.TrimSpace(url) == "" {
+	if strings.TrimSpace(spec.URL) == "" {
 		return "", fmt.Errorf("empty probe url")
 	}
-	return url, nil
+	return spec.URL, nil
 }
 
 // ProbeAll probes every catalog dataset with ingest-compatible URLs and headers.

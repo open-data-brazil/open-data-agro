@@ -25,6 +25,12 @@ func ResolveURL(entry catalog.RegistryEntry) (string, error) {
 			end = start
 		}
 		return fmt.Sprintf(defaultGlobalTempURL, start, end), nil
+	case "noaa.gpcc-precipitation":
+		raw := strings.TrimSpace(entry.SourceURL)
+		if raw == "" {
+			return "https://opendata.dwd.de/climate_environment/GPCC/Monitoring/", nil
+		}
+		return raw, nil
 	default:
 		return "", fmt.Errorf("unsupported noaa dataset %s", entry.DatasetID)
 	}
