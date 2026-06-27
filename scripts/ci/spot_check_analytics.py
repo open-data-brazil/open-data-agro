@@ -41,6 +41,38 @@ WAVE4_TABLES: tuple[str, ...] = (
     "copernicus_era5_agroclimate",
 )
 
+WAVE5_TABLES: tuple[str, ...] = (
+    "mapa_sipeagro_estabelecimentos",
+    "mapa_sipeagro_produtos",
+    "mapa_sigef_producao_sementes",
+    "mapa_sigef_areas",
+    "mapa_sisser_seguro_rural",
+    "ibge_ppm_efetivo_rebanhos",
+    "ibge_ppm_vacas_ordenhadas",
+    "ibge_ppm_ovinos_tosquiados",
+    "ibge_ppm_aquicultura",
+    "ibge_pam_precos_produtor",
+    "ibge_pam_culturas_estendidas",
+    "ibge_lspa_rendimento_medio",
+    "ibge_censo_agro_area_uso_solo",
+    "ibge_censo_agro_maquinario",
+    "ibge_pnad_rural_renda_ocupacao",
+    "ibama_sisfogo_incendios",
+    "ibama_licencas_ambientais",
+    "ibama_autos_infracao",
+    "ana_pluviometria_redes",
+    "embrapa_agroapi_agrofit",
+    "transportes_mtr_bit_malha_shapefile",
+    "bcb_cim_agro_credito_rural",
+    "bndes_desembolsos_linhas_agro",
+    "anp_etanol_precos",
+    "abiove_balanco_complexo_soja",
+    "abiove_exportacoes_complexo_soja",
+    "abiove_capacidade_instalada_esmagamento",
+    "b3_futuro_cafe",
+    "b3_futuro_acucar",
+)
+
 DATE_COLUMNS: tuple[str, ...] = (
     "data",
     "refdate",
@@ -209,7 +241,12 @@ def main() -> int:
     parser.add_argument(
         "--wave4",
         action="store_true",
-        help="check only wave 4 ingest marts (20 tables)",
+        help="check only wave 4 ingest marts (17 tables)",
+    )
+    parser.add_argument(
+        "--wave5",
+        action="store_true",
+        help="check only wave 5 ingest marts (29 tables)",
     )
     args = parser.parse_args()
 
@@ -224,8 +261,9 @@ def main() -> int:
     else:
         tables = list_postgres_tables(args.database_url)
 
-    if args.wave3 and args.wave4:
-        print("use only one of --wave3 or --wave4", file=sys.stderr)
+    wave_flags = sum(1 for flag in (args.wave3, args.wave4, args.wave5) if flag)
+    if wave_flags > 1:
+        print("use only one of --wave3, --wave4, or --wave5", file=sys.stderr)
         return 2
 
     if args.wave3:
@@ -240,6 +278,13 @@ def main() -> int:
         missing = [t for t in WAVE4_TABLES if t not in tables]
         if missing:
             print("missing wave 4 tables:", ", ".join(missing), file=sys.stderr)
+            return 2
+
+    if args.wave5:
+        tables = [t for t in WAVE5_TABLES if t in tables]
+        missing = [t for t in WAVE5_TABLES if t not in tables]
+        if missing:
+            print("missing wave 5 tables:", ", ".join(missing), file=sys.stderr)
             return 2
 
     if not tables:

@@ -106,6 +106,56 @@ make verify-wave4-gold-manifest
 make spot-check-wave4-duckdb DUCKDB_PATH=duckdb/open_data_agro.duckdb
 ```
 
+### Wave 5 marts (Phases 52–56)
+
+| Gold path | PostgreSQL / DuckDB table | Source |
+|-----------|---------------------------|--------|
+| `gold/mart_mapa__sipeagro_estabelecimentos/mart.parquet` | `analytics.mapa_sipeagro_estabelecimentos` | MAPA SIPEAGRO establishments |
+| `gold/mart_mapa__sipeagro_produtos/mart.parquet` | `analytics.mapa_sipeagro_produtos` | MAPA SIPEAGRO products |
+| `gold/mart_mapa__sigef_producao_sementes/mart.parquet` | `analytics.mapa_sigef_producao_sementes` | MAPA SIGEF seed production |
+| `gold/mart_mapa__sigef_areas/mart.parquet` | `analytics.mapa_sigef_areas` | MAPA SIGEF areas |
+| `gold/mart_mapa__sisser_seguro_rural/mart.parquet` | `analytics.mapa_sisser_seguro_rural` | MAPA SISSER rural insurance |
+| `gold/mart_ibge__ppm_efetivo_rebanhos/mart.parquet` | `analytics.ibge_ppm_efetivo_rebanhos` | IBGE PPM herd |
+| `gold/mart_ibge__ppm_vacas_ordenhadas/mart.parquet` | `analytics.ibge_ppm_vacas_ordenhadas` | IBGE PPM dairy cows |
+| `gold/mart_ibge__ppm_ovinos_tosquiados/mart.parquet` | `analytics.ibge_ppm_ovinos_tosquiados` | IBGE PPM shorn sheep |
+| `gold/mart_ibge__ppm_aquicultura/mart.parquet` | `analytics.ibge_ppm_aquicultura` | IBGE PPM aquaculture |
+| `gold/mart_ibge__pam_precos_produtor/mart.parquet` | `analytics.ibge_pam_precos_produtor` | IBGE PAM producer prices |
+| `gold/mart_ibge__pam_culturas_estendidas/mart.parquet` | `analytics.ibge_pam_culturas_estendidas` | IBGE PAM extended crops |
+| `gold/mart_ibge__lspa_rendimento_medio/mart.parquet` | `analytics.ibge_lspa_rendimento_medio` | IBGE LSPA yield |
+| `gold/mart_ibge__censo_agro_area_uso_solo/mart.parquet` | `analytics.ibge_censo_agro_area_uso_solo` | IBGE Censo Agro land use |
+| `gold/mart_ibge__censo_agro_maquinario/mart.parquet` | `analytics.ibge_censo_agro_maquinario` | IBGE Censo Agro machinery |
+| `gold/mart_ibge__pnad_rural_renda_ocupacao/mart.parquet` | `analytics.ibge_pnad_rural_renda_ocupacao` | IBGE PNAD rural income |
+| `gold/mart_ibama__sisfogo_incendios/mart.parquet` | `analytics.ibama_sisfogo_incendios` | IBAMA SISFOGO fires |
+| `gold/mart_ibama__licencas_ambientais/mart.parquet` | `analytics.ibama_licencas_ambientais` | IBAMA environmental licenses |
+| `gold/mart_ibama__autos_infracao/mart.parquet` | `analytics.ibama_autos_infracao` | IBAMA enforcement notices |
+| `gold/mart_ana__pluviometria_redes/mart.parquet` | `analytics.ana_pluviometria_redes` | ANA pluviometry networks |
+| `gold/mart_embrapa__agroapi_agrofit/mart.parquet` | `analytics.embrapa_agroapi_agrofit` | Embrapa AgroAPI Agrofit |
+| `gold/mart_transportes__mtr_bit_malha_shapefile/mart.parquet` | `analytics.transportes_mtr_bit_malha_shapefile` | MTR BIT rail shapefile |
+| `gold/mart_bcb__cim_agro_credito_rural/mart.parquet` | `analytics.bcb_cim_agro_credito_rural` | BCB rural credit rate |
+| `gold/mart_bndes__desembolsos_linhas_agro/mart.parquet` | `analytics.bndes_desembolsos_linhas_agro` | BNDES agro disbursements |
+| `gold/mart_anp__etanol_precos/mart.parquet` | `analytics.anp_etanol_precos` | ANP ethanol prices |
+| `gold/mart_abiove__balanco_complexo_soja/mart.parquet` | `analytics.abiove_balanco_complexo_soja` | Abiove soy complex balance |
+| `gold/mart_abiove__exportacoes_complexo_soja/mart.parquet` | `analytics.abiove_exportacoes_complexo_soja` | Abiove soy complex exports |
+| `gold/mart_abiove__capacidade_instalada_esmagamento/mart.parquet` | `analytics.abiove_capacidade_instalada_esmagamento` | Abiove crush capacity |
+| `gold/mart_b3__futuro_cafe/mart.parquet` | `analytics.b3_futuro_cafe` | B3 coffee futures (ICF) |
+| `gold/mart_b3__futuro_acucar/mart.parquet` | `analytics.b3_futuro_acucar` | B3 sugar futures (CNL) |
+
+Subset sync for wave 5 only:
+
+```bash
+UNIFIED_DB_SYNC_MARTS=$(WAVE5_SYNC_MARTS) make unified-db-sync
+```
+
+(`WAVE5_SYNC_MARTS` is defined in the root `Makefile`.)
+
+Manifest verification without PostgreSQL:
+
+```bash
+make verify-wave5-gold-manifest
+make spot-check-wave5-duckdb DUCKDB_PATH=duckdb/open_data_agro.duckdb
+make ingestor-signoff-wave-5-mvp
+```
+
 ---
 
 ## Manifest

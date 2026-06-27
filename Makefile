@@ -1066,6 +1066,29 @@ re-enable-deferred-mvp:
 ci-re-enable-deferred-mvp:
 	$(MAKE) re-enable-deferred-mvp
 
+CI_INGESTOR_SIGNOFF_WAVE_5_LAKE ?= /tmp/ingestor-signoff-wave-5-ci-lake
+CI_INGESTOR_SIGNOFF_WAVE_5_DUCKDB ?= /tmp/ingestor-signoff-wave-5-ci.duckdb
+
+WAVE5_SYNC_MARTS := mapa_sipeagro_estabelecimentos,mapa_sipeagro_produtos,mapa_sigef_producao_sementes,mapa_sigef_areas,mapa_sisser_seguro_rural,ibge_ppm_efetivo_rebanhos,ibge_ppm_vacas_ordenhadas,ibge_ppm_ovinos_tosquiados,ibge_ppm_aquicultura,ibge_pam_precos_produtor,ibge_pam_culturas_estendidas,ibge_lspa_rendimento_medio,ibge_censo_agro_area_uso_solo,ibge_censo_agro_maquinario,ibge_pnad_rural_renda_ocupacao,ibama_sisfogo_incendios,ibama_licencas_ambientais,ibama_autos_infracao,ana_pluviometria_redes,embrapa_agroapi_agrofit,transportes_mtr_bit_malha_shapefile,bcb_cim_agro_credito_rural,bndes_desembolsos_linhas_agro,anp_etanol_precos,abiove_balanco_complexo_soja,abiove_exportacoes_complexo_soja,abiove_capacidade_instalada_esmagamento,b3_futuro_cafe,b3_futuro_acucar
+
+br-sources-wave-5-mvp: br-sources-wave-5-ibge-mvp br-sources-wave-5-mapa-mvp br-sources-wave-5-env-logistics-mvp br-sources-wave-5-finance-mvp
+
+verify-wave5-gold-manifest:
+	LAKE_LOCAL_ROOT=$(LAKE_ABS) python3 scripts/ci/verify_wave5_gold_manifest.py
+
+spot-check-wave5-duckdb:
+	DUCKDB_BIN="$(DUCKDB_BIN)" python3 scripts/ci/spot_check_analytics.py --duckdb "$(DUCKDB_PATH)" --wave5
+
+ingestor-signoff-wave-5-mvp: br-sources-wave-5-mvp industry-sources-wave-5-mvp
+	$(MAKE) verify-wave5-gold-manifest LAKE_LOCAL_ROOT=$(LAKE_ABS)
+	$(MAKE) spot-check-wave5-duckdb DUCKDB_PATH=$(DUCKDB_PATH)
+	@echo "ingestor wave 5 signoff: MVPs + gold manifest + duckdb spot-check passed (29 marts)"
+
+ci-ingestor-signoff-wave-5-mvp:
+	$(MAKE) ingestor-signoff-wave-5-mvp \
+		LAKE_LOCAL_ROOT=$(CI_INGESTOR_SIGNOFF_WAVE_5_LAKE) \
+		DUCKDB_PATH=$(CI_INGESTOR_SIGNOFF_WAVE_5_DUCKDB)
+
 dbt-build-noaa-climate: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_noaa__enso_indices+ stg_noaa__global_temp_anomaly+'
 

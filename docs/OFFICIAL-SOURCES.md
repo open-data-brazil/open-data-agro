@@ -514,6 +514,8 @@ EU ag price reference and Argentina FX parity for competitor market models. `fon
 
 **Deferred (Phase 51):** SIGORG/Agrostat/SISBI panels, SICAR shapefiles, INCRA, CONAB safra bulletins, ANTAQ dwell time, CPTEC/Embrapa solos — see `.local/SOURCE-GAP-MATRIX-WAVE5.md`.
 
+**Unified DB signoff (Phase 58):** `make ingestor-signoff-wave-5-mvp` — 29 gold marts, DuckDB spot-check, manifest gate. See [POSTGRES-UNIFIED-SYNC.md](POSTGRES-UNIFIED-SYNC.md#wave-5-marts-phases-5256).
+
 ---
 
 ## Rules
