@@ -3,9 +3,12 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://terrabrasilis.dpi.inpe.br/geoserver/deter-amz/wfs",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: unexpected status 400 for https://terrabrasilis.dpi.inpe.br/geoserver/deter-amz/wfs"
+      "url": "https://terrabrasilis.dpi.inpe.br/geoserver/deter-amz/wfs?service=WFS\u0026request=GetCapabilities",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "3afcccfed7588112e4b19e1451858496a82ffdd670685517da454e8ab646ee4e",
+      "contentType": "application/xml"
     },
     {
       "role": "portal",
@@ -17,7 +20,7 @@
       "contentType": "text/html; charset=UTF-8"
     }
   ],
-  "probedAt": "2026-06-27T10:55:31.11918666Z",
-  "overallOk": false,
+  "probedAt": "2026-06-27T11:16:01.441790381Z",
+  "overallOk": true,
   "hasUpdate": false
 }

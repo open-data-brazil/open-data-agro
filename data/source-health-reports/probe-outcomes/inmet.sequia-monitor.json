@@ -4,17 +4,20 @@
     {
       "role": "source",
       "url": "https://apimsbr.ana.gov.br/rpc/v1/dados-tabulares-monitor",
-      "status": "resolve_error",
-      "error": "source_url for inmet.sequia-monitor must be on portal.inmet.gov.br, bdmep.inmet.gov.br, or apitempo.inmet.gov.br"
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "ddacf1eaf296ea18bd88e411e143160991d0528074c7e247500232e32322aca4",
+      "contentType": "application/json"
     },
     {
       "role": "portal",
       "url": "https://www.gov.br/ana/pt-br/servicos/monitor-de-seca",
       "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://www.gov.br/ana/pt-br/servicos/monitor-de-seca\": dial tcp 161.148.164.31:443: i/o timeout"
+      "error": "probe failed after 3 attempts: Get \"https://www.gov.br/ana/pt-br/servicos/monitor-de-seca\": dial tcp 161.148.164.31:443: connect: connection refused"
     }
   ],
-  "probedAt": "2026-06-27T10:54:27.175281608Z",
-  "overallOk": false,
+  "probedAt": "2026-06-27T11:16:01.281638952Z",
+  "overallOk": true,
   "hasUpdate": false
 }

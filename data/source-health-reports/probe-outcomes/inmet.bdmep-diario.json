@@ -3,18 +3,26 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://portal.inmet.gov.br/uploads/dadoshistoricos/%7Byear%7D.zip\": dial tcp 201.57.198.188:443: i/o timeout"
+      "url": "https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "8df0f3ba8e6f2b331c33c424a2fedc653a8d9d3b1de445b8ca28b5d1edb6914d",
+      "lastModified": "Fri, 20 Mar 2026 12:30:31 GMT",
+      "contentType": "application/zip"
     },
     {
       "role": "portal",
       "url": "https://bdmep.inmet.gov.br/",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://bdmep.inmet.gov.br/\": dial tcp 201.57.198.188:443: i/o timeout"
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 2300,
+      "sampleSha256": "67b2231545de10e9be1b09a69330666a1af7653db844231bc2557a49cb4c205c",
+      "lastModified": "Tue, 03 Feb 2026 20:49:45 GMT",
+      "contentType": "text/html"
     }
   ],
-  "probedAt": "2026-06-27T10:53:28.692556791Z",
-  "overallOk": false,
+  "probedAt": "2026-06-27T11:15:58.565381696Z",
+  "overallOk": true,
   "hasUpdate": false
 }

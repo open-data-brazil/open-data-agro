@@ -1,13 +1,14 @@
 {
   "datasetId": "aneel.tarifas-energia",
   "endpoints": [
-    "https://dadosabertos.aneel.gov.br/dataset/7f43a020-6dc5-44b8-80b4-d97eaa94436c/resource/0591b8f6-fe54-437b-b72b-1aa2efd46e42/download/bandeira-tarifaria-acionamento.csv",
     "https://dadosabertos.aneel.gov.br/dataset/bandeiras-tarifarias"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-06-27",
+  "lastFailureDate": "2026-06-27",
   "lastSuccessDate": "2026-06-27",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (ckan package_show: Get \"https://dadosabertos.aneel.gov.br/api/3/action/package_show?id=bandeiras-tarifarias\": dial tcp 200.198.220.169:443: i/o timeout)",
   "lastSampleSha256": "0c2b5969d25f7333f38fc0802c88a47fdf62d489ce21e1acf7178b8bc96059fb",
   "lastModified": "Thu, 11 Jun 2026 21:43:22 GMT"
 }

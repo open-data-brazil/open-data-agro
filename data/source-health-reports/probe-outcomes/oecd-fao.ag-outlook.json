@@ -3,9 +3,13 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://sdmx.oecd.org/public/rest/data/OECD.TAD.ATM,DSD_AGR@DF_OUTLOOK_2024_2033,1.1/BRA.A....T.AO_2024_2033?format=csvfilewithlabels",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: unexpected status 404 for https://sdmx.oecd.org/public/rest/data/OECD.TAD.ATM,DSD_AGR@DF_OUTLOOK_2024_2033,1.1/BRA.A....T.AO_2024_2033?format=csvfilewithlabels"
+      "url": "https://sdmx.oecd.org/public/rest/dataflow/OECD.TAD.ATM/DSD_AGR@DF_OUTLOOK_2024_2033/1.1",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 3343,
+      "sampleSha256": "e6c2900f391df7f6d0439b7d2a8e847be5047b25aa8b1f60b28303ef093a0958",
+      "lastModified": "Sat, 27 Jun 2026 11:12:39 GMT",
+      "contentType": "application/json; charset=utf-8"
     },
     {
       "role": "portal",
@@ -14,7 +18,7 @@
       "error": "probe failed after 3 attempts: unexpected status 403 for https://www.oecd.org/en/data/datasets/oecd-fao-agricultural-outlook.html"
     }
   ],
-  "probedAt": "2026-06-27T10:47:00.098603523Z",
-  "overallOk": false,
+  "probedAt": "2026-06-27T11:12:38.74195731Z",
+  "overallOk": true,
   "hasUpdate": false
 }

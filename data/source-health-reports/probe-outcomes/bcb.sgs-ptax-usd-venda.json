@@ -3,9 +3,12 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: unexpected status 406 for https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados"
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?dataFinal=27%2F06%2F2026\u0026dataInicial=27%2F03%2F2026\u0026formato=json",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 2419,
+      "sampleSha256": "0e8497ff29d9bfad5da502b50089deeb3d30eea5968a5da594aaf9772938ded9",
+      "contentType": "application/json; charset=utf-8"
     },
     {
       "role": "portal",
@@ -13,11 +16,11 @@
       "status": "ok",
       "httpStatus": 200,
       "sampleBytes": 4096,
-      "sampleSha256": "8c337e8972fc314d7279c91b3dfb877f1c36eb0b4c8ab641087e3f1ac6f2f355",
+      "sampleSha256": "83ab26d05e00fd3916fa13b97733bdc25ddb67b5f844f2aec8bd69b986bee69b",
       "contentType": "text/html; charset=utf-8"
     }
   ],
-  "probedAt": "2026-06-27T10:42:38.325381009Z",
-  "overallOk": false,
+  "probedAt": "2026-06-27T11:12:35.521263579Z",
+  "overallOk": true,
   "hasUpdate": false
 }

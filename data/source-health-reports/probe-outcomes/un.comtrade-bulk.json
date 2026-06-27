@@ -3,9 +3,12 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://comtradeapi.un.org/data/v1/get/C/A/HS",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: unexpected status 401 for https://comtradeapi.un.org/data/v1/get/C/A/HS"
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?cmdCode=1201\u0026flowCode=X\u0026maxRecords=100000\u0026partnerCode=0\u0026period=2025\u0026reporterCode=76",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "470373a61e53b93b4d0fe776a555804c39ee94f081036f49ee245926472cc786",
+      "contentType": "application/json; charset=utf-8"
     },
     {
       "role": "portal",
@@ -18,7 +21,7 @@
       "contentType": "text/html"
     }
   ],
-  "probedAt": "2026-06-27T10:50:06.544525724Z",
-  "overallOk": false,
+  "probedAt": "2026-06-27T11:12:40.467373972Z",
+  "overallOk": true,
   "hasUpdate": false
 }

@@ -3,18 +3,25 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://portal.inmet.gov.br/uploads/dadoshistoricos/{year}.zip",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://portal.inmet.gov.br/uploads/dadoshistoricos/%7Byear%7D.zip\": dial tcp 201.57.198.188:443: i/o timeout"
+      "url": "https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "8df0f3ba8e6f2b331c33c424a2fedc653a8d9d3b1de445b8ca28b5d1edb6914d",
+      "lastModified": "Fri, 20 Mar 2026 12:30:31 GMT",
+      "contentType": "application/zip"
     },
     {
       "role": "portal",
       "url": "https://portal.inmet.gov.br/dadoshistoricos",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://portal.inmet.gov.br/dadoshistoricos\": dial tcp 201.57.198.188:443: i/o timeout"
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "a88cb301e9d793462fec69c552661cf41cd7a48f662a184683ab9a5aa16e1e34",
+      "contentType": "text/html; charset=UTF-8"
     }
   ],
-  "probedAt": "2026-06-27T10:54:25.227504896Z",
-  "overallOk": false,
+  "probedAt": "2026-06-27T11:16:00.659120636Z",
+  "overallOk": true,
   "hasUpdate": false
 }

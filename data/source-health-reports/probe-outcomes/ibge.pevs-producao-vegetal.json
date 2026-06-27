@@ -3,18 +3,24 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://apisidra.ibge.gov.br/values/t/289",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://apisidra.ibge.gov.br/values/t/289\": dial tcp 170.84.40.190:443: i/o timeout"
+      "url": "https://apisidra.ibge.gov.br/values/t/289/n3/all/p/2023/v/144",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "a685e425c8bd0692f6b981aacf65421dac12413292f324eb9334fb408ab55e69",
+      "contentType": "application/json; charset=utf-8"
     },
     {
       "role": "portal",
       "url": "https://sidra.ibge.gov.br/pesquisa/pevs",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://sidra.ibge.gov.br/pesquisa/pevs\": dial tcp 170.84.40.188:443: i/o timeout"
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "a3c6718ce20557624b20fff0382593c2a145d6657227f2f1d2ba8ffe138bc2b6",
+      "contentType": "text/html; charset=utf-8"
     }
   ],
-  "probedAt": "2026-06-27T10:51:19.217900091Z",
-  "overallOk": false,
+  "probedAt": "2026-06-27T11:16:05.172834004Z",
+  "overallOk": true,
   "hasUpdate": false
 }

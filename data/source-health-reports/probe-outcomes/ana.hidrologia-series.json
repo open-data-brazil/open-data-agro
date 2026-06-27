@@ -3,18 +3,24 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica\": dial tcp 177.15.65.132:443: connect: connection refused"
+      "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx?WSDL",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "6f46667f58227f2a9c46544f086a59566ebcf839f7ca78a8e1f7947ec8616958",
+      "contentType": "text/xml; charset=utf-8"
     },
     {
       "role": "portal",
       "url": "https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos\": dial tcp 161.148.164.31:443: i/o timeout"
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "7f360db29a39efc0460b182884e77205091fb2beae841a2bac10d197bd233497",
+      "contentType": "text/html;charset=utf-8"
     }
   ],
-  "probedAt": "2026-06-27T10:42:20.729278141Z",
-  "overallOk": false,
+  "probedAt": "2026-06-27T11:12:24.627935386Z",
+  "overallOk": true,
   "hasUpdate": false
 }
