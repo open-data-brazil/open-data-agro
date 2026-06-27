@@ -18,3 +18,9 @@ sources:
         meta:
           dataset_id: anp.combustiveis-precos-postos
           silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/anp/combustiveis_precos_postos"
+
+      - name: etanol_precos
+        description: LPC weekly ethanol average prices by municipality (ETANOL* filter)
+        meta:
+          dataset_id: anp.etanol-precos
+          silver_path: "{{ env_var('LAKE_LOCAL_ROOT', '../lake') }}/silver/anp/etanol_precos"

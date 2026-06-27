@@ -54,3 +54,49 @@ func TestResolveURLCKANCNAE(t *testing.T) {
 		t.Fatalf("url: got %q", url)
 	}
 }
+
+func TestResolveURLCKANProductLines(t *testing.T) {
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		_ = json.NewEncoder(w).Encode(ckanPackageResponse{
+			Success: true,
+			Result: struct {
+				Resources []ckanResource `json:"resources"`
+			}{
+				Resources: []ckanResource{
+					{
+						Name:         "Por setor CNAE - Desembolsos CSV",
+						Format:       "CSV",
+						URL:          "https://dadosabertos.bndes.gov.br/resource/cnae.csv",
+						LastModified: "2026-06-01T00:00:00",
+					},
+					{
+						Name:         "Por forma de apoio (diretas) e produto - Desembolsos CSV",
+						Format:       "CSV",
+						URL:          "https://dadosabertos.bndes.gov.br/resource/produto.csv",
+						LastModified: "2026-06-01T00:00:00",
+					},
+				},
+			},
+		})
+	}))
+	t.Cleanup(srv.Close)
+
+	prev := ckanPackageShowURL
+	ckanPackageShowURL = srv.URL
+	t.Cleanup(func() { ckanPackageShowURL = prev })
+
+	entry := catalog.RegistryEntry{
+		DatasetID:                catalog.MustParseDatasetID("bndes.desembolsos-linhas-agro"),
+		CKANPackageID:            "desembolsos",
+		CKANResourceFormat:       "CSV",
+		CKANResourceNameContains: "Por forma de apoio (diretas) e produto",
+	}
+
+	url, err := ResolveURL(entry)
+	if err != nil {
+		t.Fatalf("ResolveURL: %v", err)
+	}
+	if url != "https://dadosabertos.bndes.gov.br/resource/produto.csv" {
+		t.Fatalf("url: got %q", url)
+	}
+}

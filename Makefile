@@ -1003,6 +1003,31 @@ ci-br-sources-wave-5-env-logistics-mvp:
 		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_5_ENV_LOGISTICS_LAKE) \
 		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_5_ENV_LOGISTICS_DUCKDB)
 
+CI_BR_SOURCES_WAVE_5_FINANCE_LAKE ?= /tmp/br-sources-wave-5-finance-ci-lake
+CI_BR_SOURCES_WAVE_5_FINANCE_DUCKDB ?= /tmp/br-sources-wave-5-finance-ci.duckdb
+
+dbt-build-br-sources-wave-5-finance: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_bcb__cim_agro_credito_rural+ stg_bndes__desembolsos_linhas_agro+ stg_anp__etanol_precos+'
+
+br-sources-wave-5-finance-mvp:
+	go test ./internal/bcb/... ./internal/bndes/... ./internal/anp/... ./internal/ingest/ -run 'BCB|BNDES|ANP|Etanol|CIM|Desembolsos|Financiamento|FilterEthanol|SGS'
+	chmod +x scripts/ci/seed_br_sources_wave_5_finance_silver.py
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_br_sources_wave_5_finance_silver.py
+	$(MAKE) dbt-build-br-sources-wave-5-finance LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.bcb_cim_agro_credito_rural"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT data, valor FROM analytics.bcb_cim_agro_credito_rural LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.bndes_desembolsos_linhas_agro"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT ano, mes, bndes_finem FROM analytics.bndes_desembolsos_linhas_agro LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.anp_etanol_precos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT estado, municipio, produto, preco_medio_revenda FROM analytics.anp_etanol_precos LIMIT 3"
+	curl -sfS "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21087/dados?formato=json&dataInicial=01/01/2024&dataFinal=01/02/2024" | head -c 80 >/dev/null
+
+ci-br-sources-wave-5-finance-mvp:
+	$(MAKE) br-sources-wave-5-finance-mvp \
+		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_5_FINANCE_LAKE) \
+		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_5_FINANCE_DUCKDB)
+
 dbt-build-noaa-climate: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_noaa__enso_indices+ stg_noaa__global_temp_anomaly+'
 

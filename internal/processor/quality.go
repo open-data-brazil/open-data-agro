@@ -159,6 +159,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_anp_combustiveis_precos_medios_municipios", true
 	case "anp.combustiveis-precos-postos":
 		return "bronze_anp_combustiveis_precos_postos", true
+	case "anp.etanol-precos":
+		return "bronze_anp_etanol_precos", true
 	case "conab.armazenagem":
 		return "bronze_conab_armazenagem", true
 	case "conab.frete":
@@ -209,6 +211,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_bcb_sgs_ptax_usd_compra", true
 	case "bcb.sgs-selic":
 		return "bronze_bcb_sgs_selic", true
+	case "bcb.cim-agro-credito-rural":
+		return "bronze_bcb_cim_agro_credito_rural", true
 	case "cepea.soja-paranagua":
 		return "bronze_cepea_soja_paranagua", true
 	case "cepea.soja-parana":
@@ -301,6 +305,8 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_aneel_tarifas_energia", true
 	case "bndes.financiamento-agro":
 		return "bronze_bndes_financiamento_agro", true
+	case "bndes.desembolsos-linhas-agro":
+		return "bronze_bndes_desembolsos_linhas_agro", true
 	case "inmet.sequia-monitor":
 		return "bronze_inmet_sequia_monitor", true
 	case "oecd-fao.ag-outlook":

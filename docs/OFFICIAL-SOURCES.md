@@ -327,6 +327,35 @@ PPM herd tables use UF territory (`n3`); PAM/LSPA reuse municipal/monthly SIDRA 
 
 **Gate:** `make br-sources-wave-5-ibge-mvp` · `make ci-br-sources-wave-5-ibge-mvp`
 
+### BR sources wave 5 — Environment & logistics (Phase 54)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `ibama.sisfogo-incendios` | SISFOGO — registro de ocorrências de incêndios (ROI CSV) | **P0 — implemented** |
+| `ibama.licencas-ambientais` | SisLic — licenças ambientais federais | **P0 — implemented** |
+| `ibama.autos-infracao` | Fiscalização — autos de infração (CSV bulk) | **P1 — implemented** |
+| `ana.pluviometria-redes` | ANA HidroWeb — pluviometria (tipoDados=2) | **P1 — implemented** |
+| `embrapa.agroapi-agrofit` | Embrapa AgroAPI — AGROFIT (env key) | **P1 — implemented** |
+| `transportes.mtr-bit-malha-shapefile` | MTR BIT — malha ferroviária (ZIP/DBF attributes) | **P2 — implemented** |
+
+**Fonte oficial:** [IBAMA dados abertos](https://dadosabertos.ibama.gov.br/) · [ANA dados abertos](https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos) · [Embrapa AgroAPI](https://www.agroapi.cnptia.embrapa.br/store/) · [MTR BIT Base-GEO](https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas)
+
+**Gate:** `make br-sources-wave-5-env-logistics-mvp` · `make ci-br-sources-wave-5-env-logistics-mvp`
+
+### BR sources wave 5 — Finance & other gov (Phase 55)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `bcb.cim-agro-credito-rural` | CIM-Agro — taxa média de juros do crédito rural (SGS 21087) | **P1 — implemented** |
+| `bndes.desembolsos-linhas-agro` | BNDES desembolsos — linha de produto × mês (apoio direto) | **P1 — implemented** |
+| `anp.etanol-precos` | ANP LPC — preços médios de etanol por município (filtro ETANOL*) | **P2 — implemented** |
+
+**Fonte oficial:** [BCB CIM-Agro](https://www.bcb.gov.br/publicacoes/cim) · SGS [21087](https://api.bcb.gov.br/dados/serie/bcdata.sgs.21087/dados) · [BNDES desembolsos CKAN](https://dadosabertos.bndes.gov.br/dataset/desembolsos) resource `Por forma de apoio (diretas) e produto` · [ANP LPC](https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas)
+
+Complements existing `bndes.financiamento-agro` (CNAE agropecuária column) and `anp.combustiveis-precos-medios-municipios` (all fuels). INCRA assentamentos/modulos fiscais and CONAB safra bulletins remain **deferred** (Phase 51 blockers).
+
+**Gate:** `make br-sources-wave-5-finance-mvp` · `make ci-br-sources-wave-5-finance-mvp`
+
 ### BR sources wave 4 (Phase 48)
 
 | Dataset ID | Source | Status |
@@ -462,7 +491,7 @@ EU ag price reference and Argentina FX parity for competitor market models. `fon
 | 52 MAPA | `mapa.sipeagro-estabelecimentos`, … `mapa.sisser-seguro-rural` (5 datasets) | [dados.agricultura.gov.br](https://dados.agricultura.gov.br/) CKAN — **Phase 52 ✅ implemented** |
 | 53 IBGE | `ibge.ppm-efetivo-rebanhos`, … `ibge.pnad-rural-renda-ocupacao` (10 datasets) | [apisidra.ibge.gov.br](https://apisidra.ibge.gov.br/) — **Phase 53 ✅ implemented** |
 | 54 Env/logistics | `ibama.sisfogo-incendios`, `ibama.licencas-ambientais`, `ibama.autos-infracao`, `ana.pluviometria-redes`, `embrapa.agroapi-agrofit`, `transportes.mtr-bit-malha-shapefile` | [dadosabertos.ibama.gov.br](https://dadosabertos.ibama.gov.br/) · [gov.br/ana](https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos) · [AgroAPI store](https://www.agroapi.cnptia.embrapa.br/store/) · [MTR BIT](https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas) — **Phase 54 ✅ implemented** |
-| 55 Finance | `bcb.cim-agro-credito-rural`, `bndes.desembolsos-linhas-agro`, `anp.etanol-precos` | [bcb.gov.br](https://www.bcb.gov.br/publicacoes/cim) · BNDES CKAN · [gov.br/anp](https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis) |
+| 55 Finance | `bcb.cim-agro-credito-rural`, `bndes.desembolsos-linhas-agro`, `anp.etanol-precos` | [bcb.gov.br](https://www.bcb.gov.br/publicacoes/cim) · BNDES CKAN · [gov.br/anp](https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis) — **Phase 55 ✅ implemented** |
 | 56 Industry | `abiove.balanco-complexo-soja`, `abiove.exportacoes-complexo-soja`, `abiove.capacidade-instalada-esmagamento`, `b3.futuro-cafe`, `b3.futuro-acucar` | [abiove.org.br/estatisticas](https://abiove.org.br/estatisticas/) · B3 SPRD prefixes **ICF** (café), **CNL** (açúcar) |
 
 **Rejected (Phase 51):** `mapa.fertilizantes-registro` (duplicate SIPEAGRO), `b3.futuro-algodao` (no B3 cotton contract), `cna.pesquisas-setoriais` (membership only).

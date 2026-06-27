@@ -1,0 +1,37 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "Ethanol LPC rows must exist after ETANOL filter." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "PRODUTO" },
+      "meta": { "notes": "Product name required." }
+    },
+    {
+      "type": "expect_column_values_to_match_regex",
+      "kwargs": { "column": "PRODUTO", "regex": "(?i)ETANOL" },
+      "meta": { "notes": "Bronze must contain ethanol products only." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "ESTADO" },
+      "meta": { "notes": "UF required for municipal grain." }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "MUNICÍPIO" },
+      "meta": { "notes": "Municipality required." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "anp.etanol-precos",
+    "fonte_oficial": "https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis",
+    "agencia": "ANP"
+  },
+  "name": "bronze.anp.etanol_precos",
+  "id": "bronze-anp-etanol-precos-suite"
+}

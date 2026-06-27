@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/open-data-brazil/open-data-agro/internal/anp"
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 	"github.com/xuri/excelize/v2"
 )
@@ -60,6 +61,13 @@ func convertWorkbookSheet(entry catalog.RegistryEntry, book *excelize.File) ([]b
 			continue
 		}
 		rows = append(rows, padRecord(record, len(headers)))
+	}
+
+	if entry.DatasetID.String() == "anp.etanol-precos" {
+		headers, rows = anp.FilterEthanolPrecos(headers, rows)
+		if len(rows) == 0 {
+			return nil, 0, fmt.Errorf("no ethanol rows in LPC sheet %q", sheet)
+		}
 	}
 
 	return writeStringTable(headers, rows)
