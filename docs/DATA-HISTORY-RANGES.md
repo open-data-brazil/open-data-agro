@@ -65,6 +65,21 @@ Portal audit: all listed sections mapped — see `.local/phases/33-collection-ha
 | `ibge.pam-estabelecimentos` | **2007** | 2010 | `--from 2007` |
 | `ibge.lspa-area-producao` | **2006** (6588) | 2010 | SIDRA monthly UF; `--from 2010 --to 2025` |
 
+### IBGE wave 5 (Phase 53)
+
+| `dataset_id` | Source min | Catalog default | Backfill |
+|--------------|------------|-----------------|----------|
+| `ibge.ppm-efetivo-rebanhos` | **1974** (3939) | 2023 | UF grain (`n3`); `--from 1974 --to 2023` |
+| `ibge.ppm-vacas-ordenhadas` | **1974** (94) | 2023 | `--from 1974 --to 2023` |
+| `ibge.ppm-ovinos-tosquiados` | **1974** (95) | 2023 | `--from 1974 --to 2023` |
+| `ibge.ppm-aquicultura` | **2007** (3940) | 2023 | `--from 2007 --to 2023` |
+| `ibge.pam-precos-produtor` | **1974** (1612) | 2010 | municipal; `--crop soja --uf 35 --from 2010 --to 2024` |
+| `ibge.pam-culturas-estendidas` | **1974** (1612) | 2010 | 18 crops in catalog; chunk by `--crop` + `--uf` |
+| `ibge.lspa-rendimento-medio` | **2006** (6588) | 2010 | monthly yield var **35**; `--from 2010 --to 2025` |
+| `ibge.censo-agro-area-uso-solo` | **2017** (6879) | 2017 | static decennial snapshot — no year range |
+| `ibge.censo-agro-maquinario` | **2017** (6880) | 2017 | static decennial snapshot |
+| `ibge.pnad-rural-renda-ocupacao` | **2012** (6385) | last 12 quarters | PNAD `v/all`; chunked by UF batches |
+
 Use `--uf` and `--crop` to chunk large SIDRA pulls.
 
 ---

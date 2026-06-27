@@ -290,6 +290,27 @@ Monthly BNDES disbursements to agropecuaria sector (CNAE grouping).
 
 Drought severity area statistics by map/month — catalog under INMET agency for climate feature grouping.
 
+### BR sources wave 5 — IBGE (Phase 53)
+
+| Dataset ID | Source | Status |
+|------------|--------|--------|
+| `ibge.ppm-efetivo-rebanhos` | PPM — efetivo dos rebanhos por UF (SIDRA 3939) | **P0 — implemented** |
+| `ibge.ppm-vacas-ordenhadas` | PPM — vacas ordenhadas por UF (SIDRA 94) | **P0 — implemented** |
+| `ibge.ppm-ovinos-tosquiados` | PPM — ovinos tosquiados por UF (SIDRA 95) | **P0 — implemented** |
+| `ibge.ppm-aquicultura` | PPM — aquicultura por UF (SIDRA 3940) | **P0 — implemented** |
+| `ibge.pam-precos-produtor` | PAM — valor e quantidade municipal (proxy preço produtor, SIDRA 1612) | **P1 — implemented** |
+| `ibge.pam-culturas-estendidas` | PAM — 18 culturas prioritárias além de soja/milho/trigo | **P1 — implemented** |
+| `ibge.lspa-rendimento-medio` | LSPA — rendimento médio mensal por UF (SIDRA 6588, var 35) | **P1 — implemented** |
+| `ibge.censo-agro-area-uso-solo` | Censo Agro 2017 — área e uso do solo por UF (SIDRA 6879) | **P1 — implemented** |
+| `ibge.censo-agro-maquinario` | Censo Agro 2017 — maquinário e tecnologia por UF (SIDRA 6880) | **P1 — implemented** |
+| `ibge.pnad-rural-renda-ocupacao` | PNAD Contínua — renda e ocupação rural por UF (SIDRA 6385) | **P2 — implemented** |
+
+**Fonte oficial:** [IBGE SIDRA — PPM](https://sidra.ibge.gov.br/pesquisa/ppm) · [PAM](https://sidra.ibge.gov.br/pesquisa/pam) · [LSPA](https://sidra.ibge.gov.br/pesquisa/lspa) · [Censo Agro 2017](https://censoagro2017.ibge.gov.br/) · [PNAD](https://sidra.ibge.gov.br/pesquisa/pnad) · API: [apisidra.ibge.gov.br](https://apisidra.ibge.gov.br/)
+
+PPM herd tables use UF territory (`n3`); PAM/LSPA reuse municipal/monthly SIDRA batching from Phases 16/37. Censo 2017 tables are static decennial snapshots. PNAD rural uses `v/all` (specific variable codes return HTTP 400 on table 6385).
+
+**Gate:** `make br-sources-wave-5-ibge-mvp` · `make ci-br-sources-wave-5-ibge-mvp`
+
 ### BR sources wave 4 (Phase 48)
 
 | Dataset ID | Source | Status |
@@ -415,6 +436,23 @@ EU ag price reference and Argentina FX parity for competitor market models. `fon
 **Deferred (2026-06-27):** `wto.its-trade-statistics`, `mexico.siap-produccion-agricola`, `noaa.gpcc-precipitation` — see [DEFERRED-SOURCES.md](DEFERRED-SOURCES.md).
 
 **Other deferred (verified):** `imf.commodity-prices`, `usda.ams-grain-prices`, `iea.world-energy-statistics`, Mercosur BCP/INE bulk, `china.nbs-soy-imports`, `baltic.bdi-index` (subscription). Fixture-backed ingest for sources blocked from CI networks (MAFF, GIEWS, AMIS, SAGIS) — live fetch via env bulk paths documented in phase OFFICIAL-REFERENCE.
+
+### Wave 5 — approved candidates (Phase 51 discovery, ingest Phases 52–56)
+
+> Live probe gate: `python3 scripts/ci/verify_wave5_discovery_probe.py`. Full fichas: `.local/SOURCE-DISCOVERY-CATALOG.md` § Wave 5 (gitignored).
+
+| Phase | Approved `dataset_id` | Primary URL (verified 2026-06-27) |
+|-------|----------------------|-----------------------------------|
+| 52 MAPA | `mapa.sipeagro-estabelecimentos`, `mapa.sipeagro-produtos`, `mapa.sigef-producao-sementes`, `mapa.sigef-areas`, `mapa.sisser-seguro-rural` | [dados.agricultura.gov.br](https://dados.agricultura.gov.br/) CKAN |
+| 53 IBGE | `ibge.ppm-efetivo-rebanhos`, … `ibge.pnad-rural-renda-ocupacao` (10 datasets) | [apisidra.ibge.gov.br](https://apisidra.ibge.gov.br/) — **Phase 53 ✅ implemented** |
+| 54 Env/logistics | `ibama.sisfogo-incendios`, `ibama.licencas-ambientais`, `ibama.autos-infracao`, `ana.pluviometria-redes`, `embrapa.agroapi-agrofit`, `transportes.mtr-bit-malha-shapefile` | [dadosabertos.ibama.gov.br](https://dadosabertos.ibama.gov.br/) · [gov.br/ana](https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos) · [embrapa.br/agroapi](https://www.embrapa.br/agroapi) · [MTR BIT](https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas) |
+| 55 Finance | `bcb.cim-agro-credito-rural`, `bndes.desembolsos-linhas-agro`, `anp.etanol-precos` | [bcb.gov.br](https://www.bcb.gov.br/publicacoes/cim) · BNDES CKAN · [gov.br/anp](https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis) |
+| 56 Industry | `abiove.balanco-complexo-soja`, `abiove.exportacoes-complexo-soja`, `abiove.capacidade-instalada-esmagamento`, `b3.futuro-cafe`, `b3.futuro-acucar` | [abiove.org.br/estatisticas](https://abiove.org.br/estatisticas/) · B3 SPRD prefixes **ICF** (café), **CNL** (açúcar) |
+
+**Rejected (Phase 51):** `mapa.fertilizantes-registro` (duplicate SIPEAGRO), `b3.futuro-algodao` (no B3 cotton contract), `cna.pesquisas-setoriais` (membership only).
+
+**Deferred (Phase 51):** SIGORG/Agrostat/SISBI panels, SICAR shapefiles, INCRA, CONAB safra bulletins, ANTAQ dwell time, CPTEC/Embrapa solos — see `.local/SOURCE-GAP-MATRIX-WAVE5.md`.
+
 ---
 
 ## Rules

@@ -1,0 +1,32 @@
+{
+  "expectations": [
+    {
+      "type": "expect_table_row_count_to_be_between",
+      "kwargs": { "min_value": 1 },
+      "meta": { "notes": "ibge.pam-culturas-estendidas bronze rows" }
+    },
+    {
+      "type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "codigo_ibge" },
+      "meta": { "notes": "Territorial key required." }
+    },
+    {
+      "type": "expect_column_values_to_be_in_set",
+      "kwargs": { "column": "sidra_tabela", "value_set": ["1612"] },
+      "meta": { "notes": "SIDRA table id." }
+    },
+    {
+      "type": "expect_compound_columns_to_be_unique",
+      "kwargs": { "column_list": ["codigo_ibge", "ano", "variavel_codigo", "produto_codigo"] },
+      "meta": { "notes": "Bronze grain uniqueness." }
+    }
+  ],
+  "meta": {
+    "great_expectations_version": "1.18.1",
+    "dataset_id": "ibge.pam-culturas-estendidas",
+    "fonte_oficial": "https://apisidra.ibge.gov.br/",
+    "agencia": "IBGE"
+  },
+  "name": "bronze.ibge.pam_culturas_estendidas",
+  "id": "bronze-ibge-pam_culturas_estendidas-suite"
+}

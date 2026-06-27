@@ -37,3 +37,37 @@ func TestBuildPPMURL(t *testing.T) {
 		t.Fatalf("got %q want %q", got, want)
 	}
 }
+
+func TestBuildPPMUFURL(t *testing.T) {
+	t.Parallel()
+
+	got := buildPPMUFURL("3939", []string{"11"}, 2023, "all")
+	want := "https://apisidra.ibge.gov.br/values/t/3939/n3/11/p/2023/v/all"
+	if got != want {
+		t.Fatalf("got %q want %q", got, want)
+	}
+}
+
+func TestFlattenPPMHerbGolden(t *testing.T) {
+	t.Parallel()
+
+	raw := readIBGETestdata(t, "ppm_herd.sample.json")
+	headers, rows, err := FlattenPPMUF("ibge.ppm-efetivo-rebanhos", raw)
+	if err != nil {
+		t.Fatalf("FlattenPPMUF: %v", err)
+	}
+	if len(rows) != 2 {
+		t.Fatalf("rows: got %d want 2", len(rows))
+	}
+
+	idx := map[string]int{}
+	for i, h := range headers {
+		idx[h] = i
+	}
+	if got := rows[0][idx["sidra_tabela"]]; got != "3939" {
+		t.Fatalf("sidra_tabela: got %q want 3939", got)
+	}
+	if got := rows[0][idx["codigo_uf"]]; got != "11" {
+		t.Fatalf("codigo_uf: got %q want 11", got)
+	}
+}

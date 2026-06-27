@@ -277,6 +277,26 @@ func bronzeCheckpointForDataset(datasetID string) (string, bool) {
 		return "bronze_ibge_pevs_producao_vegetal", true
 	case "ibge.ppm-producao-municipal":
 		return "bronze_ibge_ppm_producao_municipal", true
+	case "ibge.ppm-efetivo-rebanhos":
+		return "bronze_ibge_ppm_efetivo_rebanhos", true
+	case "ibge.ppm-vacas-ordenhadas":
+		return "bronze_ibge_ppm_vacas_ordenhadas", true
+	case "ibge.ppm-ovinos-tosquiados":
+		return "bronze_ibge_ppm_ovinos_tosquiados", true
+	case "ibge.ppm-aquicultura":
+		return "bronze_ibge_ppm_aquicultura", true
+	case "ibge.pam-precos-produtor":
+		return "bronze_ibge_pam_precos_produtor", true
+	case "ibge.pam-culturas-estendidas":
+		return "bronze_ibge_pam_culturas_estendidas", true
+	case "ibge.lspa-rendimento-medio":
+		return "bronze_ibge_lspa_rendimento_medio", true
+	case "ibge.censo-agro-area-uso-solo":
+		return "bronze_ibge_censo_agro_area_uso_solo", true
+	case "ibge.censo-agro-maquinario":
+		return "bronze_ibge_censo_agro_maquinario", true
+	case "ibge.pnad-rural-renda-ocupacao":
+		return "bronze_ibge_pnad_rural_renda_ocupacao", true
 	case "aneel.tarifas-energia":
 		return "bronze_aneel_tarifas_energia", true
 	case "bndes.financiamento-agro":

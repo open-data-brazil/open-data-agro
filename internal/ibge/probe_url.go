@@ -42,16 +42,15 @@ func BuildProbeURL(entry catalog.RegistryEntry) (string, error) {
 	}
 
 	if strings.HasPrefix(id, "ibge.ppm-") {
-		variables := entry.SidraVariables
-		if len(variables) == 0 {
-			return "", fmt.Errorf("dataset %s missing sidra_variables", entry.DatasetID)
-		}
 		year := probeYear(entry)
-		varsProbe := formatVariables(variables[:1])
-		if varsProbe == "" {
-			return "", fmt.Errorf("dataset %s missing sidra_variables", entry.DatasetID)
+		varsProbe := "all"
+		if len(entry.SidraVariables) > 0 {
+			varsProbe = formatVariables(entry.SidraVariables[:1])
 		}
 		ufBatch := []string{defaultUFChunks[0][0]}
+		if ppmUsesUFTerritory(table) {
+			return buildPPMUFURL(table, ufBatch, year, varsProbe), nil
+		}
 		return buildPPMURL(table, ufBatch, year, varsProbe), nil
 	}
 
@@ -63,7 +62,7 @@ func BuildProbeURL(entry catalog.RegistryEntry) (string, error) {
 		return sidraValuesBase + fmt.Sprintf("/t/%s/n3/all/p/%d/v/all", table, year), nil
 	}
 
-	if strings.HasPrefix(id, "ibge.pnad-continua-") {
+	if strings.HasPrefix(id, "ibge.pnad-continua-") || strings.HasPrefix(id, "ibge.pnad-rural-") {
 		variables := formatVariables(entry.SidraVariables)
 		if variables == "" {
 			variables = "all"

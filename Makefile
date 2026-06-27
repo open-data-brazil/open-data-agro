@@ -920,6 +920,38 @@ ci-ingestor-signoff-wave-4-mvp:
 		LAKE_LOCAL_ROOT=$(CI_INGESTOR_SIGNOFF_WAVE_4_LAKE) \
 		DUCKDB_PATH=$(CI_INGESTOR_SIGNOFF_WAVE_4_DUCKDB)
 
+verify-wave5-discovery-probe:
+	python3 scripts/ci/verify_wave5_discovery_probe.py
+
+ci-wave5-discovery-probe:
+	python3 scripts/ci/verify_wave5_discovery_probe.py
+
+CI_BR_SOURCES_WAVE_5_IBGE_LAKE ?= /tmp/br-sources-wave-5-ibge-ci-lake
+CI_BR_SOURCES_WAVE_5_IBGE_DUCKDB ?= /tmp/br-sources-wave-5-ibge-ci.duckdb
+
+dbt-build-br-sources-wave-5-ibge: dbt-deps
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_ibge__ppm_efetivo_rebanhos+ stg_ibge__ppm_vacas_ordenhadas+ stg_ibge__ppm_ovinos_tosquiados+ stg_ibge__ppm_aquicultura+ stg_ibge__pam_precos_produtor+ stg_ibge__pam_culturas_estendidas+ stg_ibge__lspa_rendimento_medio+ stg_ibge__censo_agro_area_uso_solo+ stg_ibge__censo_agro_maquinario+ stg_ibge__pnad_rural_renda_ocupacao+'
+
+br-sources-wave-5-ibge-mvp:
+	go test ./internal/ibge/... ./internal/ingest/ -run 'PPM|PAM|LSPA|Censo|PNAD|Flatten|GoldenVector|BuildPPM'
+	chmod +x scripts/ci/seed_br_sources_wave_5_ibge_silver.py
+	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_br_sources_wave_5_ibge_silver.py
+	$(MAKE) dbt-build-br-sources-wave-5-ibge LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT)
+	$(MAKE) analytics-init LAKE_LOCAL_ROOT=$(LAKE_ABS) DUCKDB_PATH=$(DUCKDB_PATH)
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_ppm_efetivo_rebanhos"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_uf, ano, variavel FROM analytics.ibge_ppm_efetivo_rebanhos LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_ppm_vacas_ordenhadas"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pam_precos_produtor"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT codigo_ibge, ano, variavel FROM analytics.ibge_pam_precos_produtor LIMIT 3"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_lspa_rendimento_medio"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_censo_agro_area_uso_solo"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) FROM analytics.ibge_pnad_rural_renda_ocupacao"
+
+ci-br-sources-wave-5-ibge-mvp:
+	$(MAKE) br-sources-wave-5-ibge-mvp \
+		LAKE_LOCAL_ROOT=$(CI_BR_SOURCES_WAVE_5_IBGE_LAKE) \
+		DUCKDB_PATH=$(CI_BR_SOURCES_WAVE_5_IBGE_DUCKDB)
+
 dbt-build-noaa-climate: dbt-deps
 	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'stg_noaa__enso_indices+ stg_noaa__global_temp_anomaly+'
 

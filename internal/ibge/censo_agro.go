@@ -117,6 +117,10 @@ func sidraTableForCensoAgroDataset(datasetID string) string {
 	switch datasetID {
 	case "ibge.censo-agro-estabelecimentos":
 		return "6878"
+	case "ibge.censo-agro-area-uso-solo":
+		return "6879"
+	case "ibge.censo-agro-maquinario":
+		return "6880"
 	default:
 		return ""
 	}

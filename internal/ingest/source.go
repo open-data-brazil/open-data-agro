@@ -112,7 +112,8 @@ func ResolveSourceURL(entry catalog.RegistryEntry) (string, error) {
 		if strings.HasPrefix(entry.DatasetID.String(), "ibge.censo-agro-") {
 			return ibge.ResolveCensoAgroURL(entry)
 		}
-		if strings.HasPrefix(entry.DatasetID.String(), "ibge.pnad-continua-") {
+		if strings.HasPrefix(entry.DatasetID.String(), "ibge.pnad-continua-") ||
+			strings.HasPrefix(entry.DatasetID.String(), "ibge.pnad-rural-") {
 			return ibge.ResolvePNADRuralURL(entry)
 		}
 		return ibge.ResolveURL(entry)
@@ -264,7 +265,8 @@ func DownloadSource(ctx context.Context, entry catalog.RegistryEntry, conabClien
 		}, nil
 	}
 
-	if agency == "ibge" && strings.HasPrefix(entry.DatasetID.String(), "ibge.pnad-continua-") {
+	if agency == "ibge" && (strings.HasPrefix(entry.DatasetID.String(), "ibge.pnad-continua-") ||
+		strings.HasPrefix(entry.DatasetID.String(), "ibge.pnad-rural-")) {
 		body, sourceURL, err := ibgeClient.FetchPNADRuralSnapshot(ctx, entry, ibge.PNADFetchOptions{
 			UFs: opts.UFs,
 		})

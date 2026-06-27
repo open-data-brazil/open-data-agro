@@ -115,6 +115,8 @@ func sidraTableForPNADDataset(datasetID string) string {
 	switch datasetID {
 	case "ibge.pnad-continua-rural":
 		return "6385"
+	case "ibge.pnad-rural-renda-ocupacao":
+		return "6385"
 	default:
 		return ""
 	}
@@ -126,5 +128,6 @@ func ResolvePNADRuralURL(entry catalog.RegistryEntry) (string, error) {
 }
 
 func isPNADRuralDataset(datasetID string) bool {
-	return strings.HasPrefix(datasetID, "ibge.pnad-continua-")
+	return strings.HasPrefix(datasetID, "ibge.pnad-continua-") ||
+		strings.HasPrefix(datasetID, "ibge.pnad-rural-")
 }

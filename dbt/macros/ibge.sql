@@ -113,3 +113,51 @@
 {% macro ibge_ppm_producao_municipal_columns() %}
     {{ ibge_pam_core_columns() }}
 {% endmacro %}
+
+{% macro ibge_ppm_uf_columns() %}
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    ano,
+    variavel_codigo,
+    variavel,
+    categoria_codigo,
+    categoria,
+    valor,
+    unidade_codigo,
+    unidade
+{% endmacro %}
+
+{% macro ibge_censo_agro_columns() %}
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    ano,
+    variavel_codigo,
+    variavel,
+    condicao_produtor_codigo,
+    condicao_produtor,
+    tipologia_codigo,
+    tipologia,
+    atividade_codigo,
+    atividade,
+    sexo_produtor_codigo,
+    sexo_produtor,
+    idade_produtor_codigo,
+    idade_produtor,
+    valor,
+    unidade_codigo,
+    unidade
+{% endmacro %}
+
+{% macro ibge_pnad_rural_columns() %}
+    sidra_tabela,
+    codigo_uf,
+    uf,
+    trimestre,
+    variavel_codigo,
+    variavel,
+    valor,
+    unidade_codigo,
+    unidade
+{% endmacro %}

@@ -167,6 +167,8 @@ func sidraTableForLSPADataset(datasetID string) string {
 	switch datasetID {
 	case "ibge.lspa-area-producao":
 		return "6588"
+	case "ibge.lspa-rendimento-medio":
+		return "6588"
 	default:
 		return ""
 	}

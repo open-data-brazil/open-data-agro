@@ -1,0 +1,111 @@
+# IBGE — PAM / LSPA / PNAD wave 5 extensions (Phase 53)
+
+entries:
+  - dataset_id: ibge.pam-precos-produtor
+    source_url: https://apisidra.ibge.gov.br/values/t/1612
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/pam
+    format: json
+    schedule: yearly
+    portal_label: PAM — valor da produção municipal (proxy preço produtor)
+    sidra_table: "1612"
+    sidra_classification: "81"
+    sidra_variables: [109, 214]
+    sidra_crops:
+      soja: 2713
+      milho: 2711
+      trigo: 2716
+    period_start: 2010
+    period_end: 2024
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-27T00:00:00Z
+
+  - dataset_id: ibge.pam-culturas-estendidas
+    source_url: https://apisidra.ibge.gov.br/values/t/1612
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/pam
+    format: json
+    schedule: yearly
+    portal_label: PAM — culturas prioritárias além de soja/milho/trigo
+    sidra_table: "1612"
+    sidra_classification: "81"
+    sidra_variables: [109, 216, 214]
+    sidra_crops:
+      soja: 2713
+      milho: 2711
+      trigo: 2716
+      cafe: 2710
+      cana: 2712
+      algodao: 2714
+      arroz: 2715
+      feijao: 2717
+      mandioca: 2720
+      laranja: 2725
+      uva: 2730
+      batata: 2735
+      tomate: 2740
+      cebola: 2745
+      sorgo: 2750
+      amendoim: 2755
+      girassol: 2760
+      triticale: 2765
+    period_start: 2010
+    period_end: 2024
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-27T00:00:00Z
+
+  - dataset_id: ibge.lspa-rendimento-medio
+    source_url: https://apisidra.ibge.gov.br/values/t/6588
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/lspa
+    format: json
+    schedule: monthly
+    portal_label: LSPA — rendimento médio mensal por UF
+    sidra_table: "6588"
+    sidra_classification: "48"
+    sidra_variables: [35]
+    sidra_crops:
+      soja: 39443
+      milho: 39441
+      trigo: 39445
+    period_start: 2010
+    period_end: 2025
+    frequency: monthly
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-27T00:00:00Z
+
+  - dataset_id: ibge.censo-agro-area-uso-solo
+    source_url: https://apisidra.ibge.gov.br/values/t/6879
+    source_portal_url: https://censoagro2017.ibge.gov.br/
+    format: json
+    schedule: decennial
+    portal_label: Censo Agro 2017 — área e uso do solo por UF
+    sidra_table: "6879"
+    period_start: 2017
+    period_end: 2017
+    frequency: decennial
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-27T00:00:00Z
+
+  - dataset_id: ibge.censo-agro-maquinario
+    source_url: https://apisidra.ibge.gov.br/values/t/6880
+    source_portal_url: https://censoagro2017.ibge.gov.br/
+    format: json
+    schedule: decennial
+    portal_label: Censo Agro 2017 — maquinário e tecnologia por UF
+    sidra_table: "6880"
+    period_start: 2017
+    period_end: 2017
+    frequency: decennial
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-27T00:00:00Z
+
+  - dataset_id: ibge.pnad-rural-renda-ocupacao
+    source_url: https://apisidra.ibge.gov.br/values/t/6385
+    source_portal_url: https://sidra.ibge.gov.br/pesquisa/pnad
+    format: json
+    schedule: quarterly
+    portal_label: PNAD Contínua — renda e ocupação rural por UF
+    sidra_table: "6385"
+    period_start: 2012
+    period_end: 2026
+    frequency: quarterly
+    fonte_tipo: nacional_oficial
+    discovered_at: 2026-06-27T00:00:00Z
