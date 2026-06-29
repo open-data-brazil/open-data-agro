@@ -1,0 +1,23 @@
+{
+  "datasetId": "anp.etanol-precos",
+  "endpoints": [
+    {
+      "role": "source",
+      "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/resumo_semanal_lpc_2026-06-21_2026-06-27.xlsx",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "e77d9586bc90d9073d2f69eca39291fa2d8e27f4bb6af36e6fb1b5d219da510f",
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "role": "portal",
+      "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis",
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis"
+    }
+  ],
+  "probedAt": "2026-06-29T08:12:15.295454726Z",
+  "overallOk": true,
+  "hasUpdate": false
+}
