@@ -1,12 +1,14 @@
 {
   "datasetId": "ibge.pam-culturas-estendidas",
   "endpoints": [
-    "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2765",
+    "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2760",
     "https://sidra.ibge.gov.br/pesquisa/pam"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-07-01",
+  "lastFailureDate": "2026-07-01",
   "lastSuccessDate": "2026-06-29",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get \"https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2760\": dial tcp 170.84.40.190:443: i/o timeout)",
   "lastSampleSha256": "bbc7f6a9c3e7102705463602da5cce710da93e1b8b9030f7aee33e4797ff373b"
 }

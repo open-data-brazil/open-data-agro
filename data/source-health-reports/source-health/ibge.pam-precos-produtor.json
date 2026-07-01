@@ -1,12 +1,14 @@
 {
   "datasetId": "ibge.pam-precos-produtor",
   "endpoints": [
-    "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713",
+    "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2711",
     "https://sidra.ibge.gov.br/pesquisa/pam"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-07-01",
+  "lastFailureDate": "2026-07-01",
   "lastSuccessDate": "2026-06-29",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get \"https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2711\": dial tcp 170.84.40.190:443: i/o timeout)",
   "lastSampleSha256": "a8b95cb6bdc910913a28a252ba917f9b8bb7cb0df65b9fbb1aa3cb49c3ca0736"
 }

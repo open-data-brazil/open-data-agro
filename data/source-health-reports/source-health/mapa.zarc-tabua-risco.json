@@ -1,13 +1,14 @@
 {
   "datasetId": "mapa.zarc-tabua-risco",
   "endpoints": [
-    "https://dados.agricultura.gov.br/dataset/6d3d141c-885e-41a4-ab7f-dc8ff323b96f/resource/139e5a60-1f43-4cc8-aeab-a35dbbf816c0/download/dados-abertos-tabua-de-risco-safra-2026-2027.csv",
     "https://dados.agricultura.gov.br/dataset/tabua-de-risco-zoneamento-agricola-de-risco-climatico"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-07-01",
+  "lastFailureDate": "2026-07-01",
   "lastSuccessDate": "2026-06-29",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (ckan package_show: Get \"https://dados.agricultura.gov.br/api/3/action/package_show?id=tabua-de-risco-zoneamento-agricola-de-risco-climatico\": dial tcp 201.57.198.178:443: i/o timeout)",
   "lastSampleSha256": "8156f8834283eb2d9341e1bcb06b5c174e5bef260b1e3fb096a26ff6de797c5d",
   "lastModified": "Mon, 29 Jun 2026 07:11:10 GMT"
 }

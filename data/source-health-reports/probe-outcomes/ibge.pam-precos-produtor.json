@@ -3,24 +3,18 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "a8b95cb6bdc910913a28a252ba917f9b8bb7cb0df65b9fbb1aa3cb49c3ca0736",
-      "contentType": "application/json; charset=utf-8"
+      "url": "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2711",
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2711\": dial tcp 170.84.40.190:443: i/o timeout"
     },
     {
       "role": "portal",
       "url": "https://sidra.ibge.gov.br/pesquisa/pam",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "a3c6718ce20557624b20fff0382593c2a145d6657227f2f1d2ba8ffe138bc2b6",
-      "contentType": "text/html; charset=utf-8"
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://sidra.ibge.gov.br/pesquisa/pam\": dial tcp 170.84.40.188:443: i/o timeout"
     }
   ],
-  "probedAt": "2026-06-29T08:12:21.717402957Z",
-  "overallOk": true,
+  "probedAt": "2026-07-01T07:20:47.358560341Z",
+  "overallOk": false,
   "hasUpdate": false
 }

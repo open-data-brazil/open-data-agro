@@ -4,23 +4,17 @@
     {
       "role": "source",
       "url": "https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 194,
-      "sampleSha256": "93295aaecff337007a79f708f6db619a86eebcaff11b51ccdc470d1697897021",
-      "contentType": "application/json; charset=utf-8"
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome\": dial tcp 170.84.40.205:443: i/o timeout"
     },
     {
       "role": "portal",
       "url": "https://servicodados.ibge.gov.br/api/docs/localidades",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "be8dc3afda9388be7f91bd638c6969c0df239ea72ab885ada6973966ce972dfb",
-      "contentType": "text/html; charset=utf-8"
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/docs/localidades\": dial tcp 170.84.40.205:443: i/o timeout"
     }
   ],
-  "probedAt": "2026-06-29T08:12:28.748383362Z",
-  "overallOk": true,
+  "probedAt": "2026-07-01T07:14:35.173947042Z",
+  "overallOk": false,
   "hasUpdate": false
 }

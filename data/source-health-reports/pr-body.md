@@ -2,11 +2,11 @@
 
 ### Source health probe
 
-- Executed at: 2026-06-29T08:16:52Z
-- Run date: 2026-06-29
+- Executed at: 2026-07-01T07:33:15Z
+- Run date: 2026-07-01
 - Datasets probed: 131
-- OK: 125 · Warning: 6 · Critical: 0
-- Updated samples: 14
+- OK: 87 · Warning: 44 · Critical: 0
+- Updated samples: 25
 - Deprecated (2+ days): 0
 
 ### Source health alerts
@@ -20,13 +20,125 @@
 - **eia.petroleum-prices** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 403 for https://api.eia.gov/v2/petroleum/pri/spt/data)
   - https://api.eia.gov/v2/petroleum/pri/spt/data
   - https://www.eia.gov/opendata/
+- **ibge.censo-agro-estabelecimentos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6878/n3/all/p/2017/v/all": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/6878/n3/all/p/2017/v/all
+  - https://censoagro2017.ibge.gov.br/
+- **ibge.pnad-continua-rural** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all
+  - https://sidra.ibge.gov.br/pesquisa/pnad
+- **ibge.localidades-municipios** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **ibge.localidades-ufs** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **ibge.localidades-regioes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **ibge.localidades-mesorregioes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **ibge.localidades-microrregioes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **ibge.lspa-area-producao** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/109/c48/39443": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/109/c48/39443
+  - https://sidra.ibge.gov.br/pesquisa/lspa
+- **ibge.pam-area-quantidade** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713
+  - https://sidra.ibge.gov.br/pesquisa/pam
+- **ibge.pam-rendimento-valor** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2713": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2713
+  - https://sidra.ibge.gov.br/pesquisa/pam
+- **ibge.pam-estabelecimentos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/5457/n6/in%20n3%2011/p/2024/v/8331/c782/2716": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/5457/n6/in%20n3%2011/p/2024/v/8331/c782/2716
+  - https://sidra.ibge.gov.br/pesquisa/pam
+- **ibge.pevs-producao-vegetal** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/289/n3/all/p/2023/v/144": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/289/n3/all/p/2023/v/144
+  - https://sidra.ibge.gov.br/pesquisa/pevs
+- **ibge.ppm-producao-municipal** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/74/n6/in%20n3%2011/p/2023/v/106": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/74/n6/in%20n3%2011/p/2023/v/106
+  - https://sidra.ibge.gov.br/pesquisa/pam
+- **ibge.ppm-efetivo-rebanhos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/3939/n3/11/p/2023/v/all": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/3939/n3/11/p/2023/v/all
+  - https://sidra.ibge.gov.br/pesquisa/ppm
+- **ibge.ppm-vacas-ordenhadas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/94/n3/11/p/2023/v/all": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/94/n3/11/p/2023/v/all
+  - https://sidra.ibge.gov.br/pesquisa/ppm
+- **ibge.ppm-ovinos-tosquiados** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/95/n3/11/p/2023/v/all": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/95/n3/11/p/2023/v/all
+  - https://sidra.ibge.gov.br/pesquisa/ppm
+- **ibge.ppm-aquicultura** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/3940/n3/11/p/2023/v/all": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/3940/n3/11/p/2023/v/all
+  - https://sidra.ibge.gov.br/pesquisa/ppm
+- **ibge.pam-precos-produtor** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2711": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2711
+  - https://sidra.ibge.gov.br/pesquisa/pam
+- **ibge.pam-culturas-estendidas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2760": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2760
+  - https://sidra.ibge.gov.br/pesquisa/pam
+- **ibge.lspa-rendimento-medio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/35/c48/39445": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/35/c48/39445
+  - https://sidra.ibge.gov.br/pesquisa/lspa
+- **ibge.censo-agro-area-uso-solo** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6879/n3/all/p/2017/v/all": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/6879/n3/all/p/2017/v/all
+  - https://censoagro2017.ibge.gov.br/
+- **ibge.censo-agro-maquinario** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6880/n3/all/p/2017/v/all": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/6880/n3/all/p/2017/v/all
+  - https://censoagro2017.ibge.gov.br/
+- **ibge.pnad-rural-renda-ocupacao** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all
+  - https://sidra.ibge.gov.br/pesquisa/pnad
+- **inmet.estacoes-automaticas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apitempo.inmet.gov.br/estacoes/T": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://apitempo.inmet.gov.br/estacoes/T
+  - https://portal.inmet.gov.br/paginas/catalogoaut
+- **inmet.estacoes-convencionais** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apitempo.inmet.gov.br/estacoes/M": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://apitempo.inmet.gov.br/estacoes/M
+  - https://portal.inmet.gov.br/paginas/catalogoman
+- **inmet.bdmep-diario** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip
+  - https://bdmep.inmet.gov.br/
+- **inmet.bdmep-mensal** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip
+  - https://bdmep.inmet.gov.br/
+- **inmet.pacote-anual-automaticas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip
+  - https://portal.inmet.gov.br/dadoshistoricos
+- **mapa.agrofit-produtos-formulados** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/d30b30d7-e256-484e-9ab8-cd40974e1238/download/agrofitprodutosformulados.csv": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/d30b30d7-e256-484e-9ab8-cd40974e1238/download/agrofitprodutosformulados.csv
+  - https://dados.agricultura.gov.br/dataset/agrofit-produtos-formulados
+- **mapa.agrofit-produtos-tecnicos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/a200c70b-e025-4a9a-be1b-ec7275d7921f/download/agrofitprodutostecnicos.csv": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/a200c70b-e025-4a9a-be1b-ec7275d7921f/download/agrofitprodutostecnicos.csv
+  - https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit
+- **mapa.sif-abate-estatisticas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/dataset/062166e3-b515-4274-8e7d-68aadd64b820/resource/341dc717-4716-42ab-b189-c8d7a9d2a1ba/download/sigsifrelatorioabates.csv": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/062166e3-b515-4274-8e7d-68aadd64b820/resource/341dc717-4716-42ab-b189-c8d7a9d2a1ba/download/sigsifrelatorioabates.csv
+  - https://dados.agricultura.gov.br/dataset/servico-de-inspecao-federal-sif
+- **mapa.sigef-producao-sementes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=dados-referentes-ao-controle-da-producao-de-sementes-sigef": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/api/3/action/package_show?id=dados-referentes-ao-controle-da-producao-de-sementes-sigef
+  - https://dados.agricultura.gov.br/dataset/dados-referentes-ao-controle-da-producao-de-sementes-sigef
+- **mapa.sigef-areas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=dados-referentes-ao-controle-da-producao-de-sementes-sigef": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/api/3/action/package_show?id=dados-referentes-ao-controle-da-producao-de-sementes-sigef
+  - https://dados.agricultura.gov.br/dataset/dados-referentes-ao-controle-da-producao-de-sementes-sigef
+- **mapa.sipeagro-estabelecimentos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro
+  - https://dados.agricultura.gov.br/dataset/sipeagro
+- **mapa.sipeagro-produtos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro
+  - https://dados.agricultura.gov.br/dataset/sipeagro
+- **mapa.sisser-seguro-rural** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=sisser3": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/api/3/action/package_show?id=sisser3
+  - https://dados.agricultura.gov.br/dataset/sisser3
+- **mapa.zarc-tabua-risco** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=tabua-de-risco-zoneamento-agricola-de-risco-climatico": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/tabua-de-risco-zoneamento-agricola-de-risco-climatico
 - **mdic.comex-importacao-diesel-ncm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
   - https://api-comexstat.mdic.gov.br/general
   - https://comexstat.mdic.gov.br/
+- **sagis.grain-supply-statistics** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://www.sagis.org.za/": dial tcp 197.221.2.41:443: i/o timeout)
+  - https://www.sagis.org.za/
 - **transportes.mtr-bit-malha-rodoviaria** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
-- **transportes.mtr-bit-malha-shapefile** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip": dial tcp 161.148.164.31:443: i/o timeout)
+- **transportes.mtr-bit-malha-shapefile** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip)
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
 
