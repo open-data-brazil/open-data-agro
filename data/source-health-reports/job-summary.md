@@ -1,10 +1,10 @@
 ### Source health probe
 
-- Executed at: 2026-07-05T07:05:34Z
-- Run date: 2026-07-05
+- Executed at: 2026-07-07T07:10:20Z
+- Run date: 2026-07-07
 - Datasets probed: 131
-- OK: 79 · Warning: 52 · Critical: 0
-- Updated samples: 23
+- OK: 75 · Warning: 56 · Critical: 0
+- Updated samples: 24
 - Deprecated (2+ days): 0
 
 ### Source health alerts
@@ -22,11 +22,11 @@
 - **anp.etanol-precos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (fetch LPC listing: Get "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas": dial tcp 161.148.164.31:443: i/o timeout)
   - https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
   - https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis
-- **antt.volume-trafego-pedagio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=volume-trafego-praca-pedagio": read tcp 10.1.0.12:36970->200.198.195.143:443: read: connection reset by peer)
+- **antt.volume-trafego-pedagio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=volume-trafego-praca-pedagio": read tcp 10.1.0.139:46734->200.198.195.143:443: read: connection reset by peer)
   - https://dados.antt.gov.br/dataset/volume-trafego-praca-pedagio
-- **antt.receita-por-praca** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=receita-por-praca": read tcp 10.1.0.12:38296->200.198.195.143:443: read: connection reset by peer)
+- **antt.receita-por-praca** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=receita-por-praca": read tcp 10.1.0.139:45988->200.198.195.143:443: read: connection reset by peer)
   - https://dados.antt.gov.br/dataset/receita-por-praca
-- **antt.pracas-pedagio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=praca-de-pedagio": read tcp 10.1.0.12:50546->200.198.195.143:443: read: connection reset by peer)
+- **antt.pracas-pedagio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=praca-de-pedagio": read tcp 10.1.0.139:42772->200.198.195.143:443: read: connection reset by peer)
   - https://dados.antt.gov.br/dataset/praca-de-pedagio
 - **dnit.condicoes-conservacao-rodovias** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento
@@ -67,8 +67,8 @@
 - **ibge.pam-rendimento-valor** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2713": dial tcp 170.84.40.190:443: i/o timeout)
   - https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2713
   - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.pam-estabelecimentos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/5457/n6/in%20n3%2011/p/2024/v/8331/c782/2713": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/5457/n6/in%20n3%2011/p/2024/v/8331/c782/2713
+- **ibge.pam-estabelecimentos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/5457/n6/in%20n3%2011/p/2024/v/8331/c782/2716": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/5457/n6/in%20n3%2011/p/2024/v/8331/c782/2716
   - https://sidra.ibge.gov.br/pesquisa/pam
 - **ibge.pevs-producao-vegetal** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/289/n3/all/p/2023/v/144": dial tcp 170.84.40.190:443: i/o timeout)
   - https://apisidra.ibge.gov.br/values/t/289/n3/all/p/2023/v/144
@@ -91,11 +91,11 @@
 - **ibge.pam-precos-produtor** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713": dial tcp 170.84.40.190:443: i/o timeout)
   - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713
   - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.pam-culturas-estendidas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2730": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2730
+- **ibge.pam-culturas-estendidas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2750": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2750
   - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.lspa-rendimento-medio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/35/c48/39443": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/35/c48/39443
+- **ibge.lspa-rendimento-medio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/35/c48/39445": dial tcp 170.84.40.190:443: i/o timeout)
+  - https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/35/c48/39445
   - https://sidra.ibge.gov.br/pesquisa/lspa
 - **ibge.censo-agro-area-uso-solo** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6879/n3/all/p/2017/v/all": dial tcp 170.84.40.190:443: i/o timeout)
   - https://apisidra.ibge.gov.br/values/t/6879/n3/all/p/2017/v/all
@@ -150,6 +150,18 @@
   - https://dados.agricultura.gov.br/dataset/sisser3
 - **mapa.zarc-tabua-risco** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=tabua-de-risco-zoneamento-agricola-de-risco-climatico": dial tcp 201.57.198.178:443: i/o timeout)
   - https://dados.agricultura.gov.br/dataset/tabua-de-risco-zoneamento-agricola-de-risco-climatico
+- **mdic.comex-exportacao-ncm-mes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mdic.comex-importacao-ncm-mes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mdic.comex-exportacao-uf-ncm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mdic.comex-importacao-diesel-ncm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
 - **suframa.comercio-mercadorias-zfm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx": dial tcp 161.148.164.31:443: i/o timeout)
   - https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx
   - https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados
