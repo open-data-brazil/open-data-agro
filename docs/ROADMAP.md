@@ -7,11 +7,13 @@
 
 ## Objective
 
-**Public agro data ingestor** — CONAB portal first, extensible to IBGE, INMET, BCB, CEPEA, ANP.
+**Public agro data ingestor** — CONAB portal first, extensible to IBGE, INMET, BCB, CEPEA, ANP, plus cross-source analytics for ML early-warning (Phase 20+).
 
 **Initial source:** [CONAB — Downloads de Arquivos](https://portaldeinformacoes.conab.gov.br/download-arquivos.html)
 
-**Current focus:** Phase 46 wave 3 ingestor signoff complete — `make ingestor-signoff-wave-3-mvp`; next: scheduled ingest (Stage F) or production R2.
+## Current focus
+
+Wave 5 ingestor signoff complete. **Phase 20 analytics crossing Done** (`make ci-analytics-crossing-mvp`). Next: Phase 30 ML training dataset export, or optional Stage F (R2).
 
 ---
 
@@ -168,7 +170,7 @@
 - **Phase 53 — BR wave 5 IBGE ingest ✅** — PPM herd (4), PAM prices/crops (2), LSPA yield, Censo 2017 depth (2), PNAD rural renda; `make br-sources-wave-5-ibge-mvp`
 - **Source health bot ✅** — daily link probe for ~102 catalog datasets; `make source-health-bot`; GitHub Action commits reports to `main`
 
-**Phase 20 scaffold:** [.local/phases/20-analytics-crossing/README.md](../.local/phases/20-analytics-crossing/README.md) — analytics crossing (feature joins); implementation **not started** (IA deferred).
+**Phase 20 — Analytics crossing (Epic A):** **Done** — UC-ML-001 + ADR 005 + `mart_ml__soy_daily_features` (typed cross layer, leakage tests). Gate: `make analytics-crossing-mvp` / `make ci-analytics-crossing-mvp`. Derived `mart_ml__*` / `int_cross__*` are **analytics** artifacts, not new official sources. Unblocks Phase 30.
 
 Remaining tracks (see `.local/PENDING-TASKS.md`):
 

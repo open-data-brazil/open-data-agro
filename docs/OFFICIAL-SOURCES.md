@@ -156,9 +156,11 @@ Historical backfill paginates `dataInicial`/`dataFinal` in ≤10-year chunks per
 
 **Fonte oficial:** [CEPEA/ESALQ-USP](https://www.cepea.org.br/) · **License:** [CC BY-NC 4.0](https://www.cepea.org.br/br/licenca-de-uso-de-dados.aspx) — market reference (`fonte_tipo=referencia_mercado`), not `.gov.br`.
 
+**Commercial ML / SaaS:** CC BY-NC forbids commercial reuse of CEPEA series (including derived early-warning products) without a separate CEPEA license. Research and non-commercial experiments in this repo are OK with attribution — see [UC-ML-001](use-cases/UC-ML-001-price-early-warning.md).
+
 Programmatic ingest tries the CEPEA portal first; when Cloudflare blocks access, it falls back to the Notícias Agrícolas mirror (same CEPEA indicators). Full historical backfill from 2010 uses CEPEA “Consulta ao Banco de Dados” export; live ingest captures the latest published window.
 
-Crossing with CONAB local prices (Phase 11) and BCB PTAX (Phase 18) is planned in analytics — see `.local/phases/DATA-CROSSING-VISION.md`.
+Cross-source analytics (Phase 20) joins CEPEA with CONAB, BCB PTAX, B3, Comex, and climate proxies into `mart_ml__soy_daily_features` — an **analytics** mart, not a new official source. Spec: [UC-ML-001](use-cases/UC-ML-001-price-early-warning.md) · [ADR 005](adr/005-cross-source-dbt-analytics.md).
 
 ### MDIC — Comex Stat (Phase 21 + 35)
 

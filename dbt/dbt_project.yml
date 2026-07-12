@@ -40,6 +40,8 @@ models:
     intermediate:
       conab:
         +materialized: view
+      cross:
+        +materialized: view
     marts:
       conab:
         +materialized: external
@@ -50,4 +52,6 @@ models:
       cepea:
         +materialized: external
       inmet:
+        +materialized: external
+      ml:
         +materialized: external

@@ -175,3 +175,42 @@
 | `27101922` | `oleo_combustivel` | Outros óleos combustíveis |
 
 Source of truth for slug mapping: `internal/mdic/comex.go` → `ProdutoSlug`.
+
+---
+
+## Analytics resampling (daily vs monthly)
+
+**Definition:** Policy for aligning mixed-frequency official series onto an ML feature spine without look-ahead.
+**Spine (MVP):** CEPEA daily trading days for `produto_slug = soja` (Paranaguá).
+**Monthly / weekly → daily:** forward-fill the last observation whose publication `as_of` is `<= label_date`. Do **not** linearly interpolate prices or volumes.
+**Daily → monthly (optional marts):** take month-end or month-mean explicitly labeled; never mix silently.
+**Code name:** `refmonth`, `as_of`, `label_date`, `feature_as_of_max`
+
+See [UC-ML-001](use-cases/UC-ML-001-price-early-warning.md).
+
+---
+
+## `dim_municipio`
+
+**Definition:** Analytics dimension of Brazilian municipalities for cross-source joins.
+**Grain:** one row per `codigo_ibge` (7 digits).
+**Source:** `mart_ibge__localidades_municipios` (IBGE Localidades API).
+**SCD policy:** **Type 1** (full refresh overwrite). IBGE code renames/splits are rare; when they occur, rebuild the dim from the latest IBGE gold mart and document the ingest date. No historized Type 2 attributes in Phase 20.
+**Code name:** `dim_municipio`
+
+---
+
+## Feature `as_of` / leakage
+
+**Definition:** The calendar date on which a feature value is considered knowable for ML.
+**Invariant:** For every training row, `feature_as_of_max <= label_date`. Violations fail dbt leakage tests.
+**Not the same as:** Observation period start (`data`, `refmonth`) when publication lags apply.
+**Code name:** `as_of`, `feature_as_of_max`, `label_date`
+
+---
+
+## `mart_ml__*` (analytics mart)
+
+**Definition:** Cross-source feature table produced for ML / early-warning research.
+**Not the same as:** An official agency dataset in [OFFICIAL-SOURCES.md](OFFICIAL-SOURCES.md).
+**Code name:** `mart_ml__soy_daily_features` (MVP)

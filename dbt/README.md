@@ -32,7 +32,17 @@ See [profiles.yml.example](profiles.yml.example).
 ## Layout
 
 ```text
-models/staging/conab/     → views over silver Parquet
-models/intermediate/conab/ → unions / shared logic
-models/marts/conab/       → external Parquet under lake/gold/
+models/staging/<agency>/     → views over silver Parquet
+models/intermediate/conab/   → unions / shared logic (single-source)
+models/intermediate/cross/   → typed casts + cross joins (Phase 20)
+models/marts/<agency>/       → external Parquet under lake/gold/
+models/marts/ml/             → mart_ml__* analytics feature panels
+```
+
+Cross-source build (gold fixtures or existing lake):
+
+```bash
+make analytics-crossing-mvp
+# or against local lake:
+make dbt-build-analytics-crossing LAKE_LOCAL_ROOT=./lake
 ```

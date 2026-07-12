@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: mart_ml__soy_daily_features
+    description: |
+      Daily soja Paranaguá ML feature panel (UC-ML-001).
+      Grain: (produto_slug, data). Analytics mart — not an official source.
+      CEPEA columns are CC BY-NC 4.0 — non-commercial without separate license.
+    config:
+      meta:
+        grain: produto_slug, data
+        use_case: UC-ML-001
+        licenca_cepea: CC BY-NC 4.0
+    columns:
+      - name: produto_slug
+        tests:
+          - not_null
+      - name: data
+        tests:
+          - not_null
+      - name: label_date
+        tests:
+          - not_null
+      - name: feature_as_of_max
+        tests:
+          - not_null
+      - name: preco_rs_sc
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto_slug
+              - data

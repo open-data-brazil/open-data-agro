@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: dim_municipio
+    description: |
+      IBGE municipality dimension for cross-source joins (SCD Type 1).
+      Grain: codigo_ibge. Analytics-only — not an official source.
+    columns:
+      - name: codigo_ibge
+        tests:
+          - not_null
+          - unique
+
+  - name: int_cross__cepea_soja_paranagua_typed
+    description: Typed CEPEA soja Paranaguá (dates + doubles) with as_of = data.
+
+  - name: int_cross__bcb_ptax_usd_venda_typed
+    description: Typed BCB PTAX USD venda daily.
+
+  - name: int_cross__b3_futuro_soja_typed
+    description: Typed B3 SOY futures daily.
+
+  - name: int_cross__mdic_comex_exportacao_uf_ncm_typed
+    description: Typed MDIC Comex UF×NCM with publication as_of lag (+45d).
+
+  - name: int_cross__conab_frete_typed
+    description: Typed CONAB frete rows with publication as_of lag (+14d).
+
+  - name: int_cross__conab_precos_mensal_municipio_typed
+    description: Typed CONAB municipal monthly prices with as_of lag (+30d).
+
+  - name: int_cross__inmet_bdmep_diario_typed
+    description: Typed INMET BDMEP daily (empty when gold missing).
+
+  - name: int_cross__precos_locais_municipio
+    description: CONAB municipal prices joined to dim_municipio.
+
+  - name: int_cross__frete_uf_par
+    description: UF-pair monthly frete aggregates for corridor proxies.
