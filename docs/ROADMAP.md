@@ -170,7 +170,7 @@ Wave 5 ingestor signoff complete. **Phase 20 analytics crossing Done** (`make ci
 - **Phase 53 — BR wave 5 IBGE ingest ✅** — PPM herd (4), PAM prices/crops (2), LSPA yield, Censo 2017 depth (2), PNAD rural renda; `make br-sources-wave-5-ibge-mvp`
 - **Source health bot ✅** — daily link probe for ~102 catalog datasets; `make source-health-bot`; GitHub Action commits reports to `main`
 
-**Phase 20 — Analytics crossing (Epic A):** **Done** — UC-ML-001 + ADR 005 + `mart_ml__soy_daily_features` (typed cross layer, leakage tests). Gate: `make analytics-crossing-mvp` / `make ci-analytics-crossing-mvp`. Derived `mart_ml__*` / `int_cross__*` are **analytics** artifacts, not new official sources. Unblocks Phase 30.
+**Phase 20 — Analytics crossing (Epic A):** **Done** — UC-ML-001 + ADR 005 + `mart_ml__soy_daily_features` + `mart_cross__soja_features_monthly` (typed cross layer, leakage tests). Gate: `make analytics-crossing-mvp` / `make ci-analytics-crossing-mvp`. Derived `mart_ml__*` / `mart_cross__*` / `int_cross__*` are **analytics** artifacts, not new official sources. Unblocks Phase 30.
 
 Remaining tracks (see `.local/PENDING-TASKS.md`):
 

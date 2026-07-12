@@ -37,6 +37,7 @@ models/intermediate/conab/   → unions / shared logic (single-source)
 models/intermediate/cross/   → typed casts + cross joins (Phase 20)
 models/marts/<agency>/       → external Parquet under lake/gold/
 models/marts/ml/             → mart_ml__* analytics feature panels
+models/marts/cross/          → mart_cross__* municipal / non-ML crossing marts
 ```
 
 Cross-source build (gold fixtures or existing lake):

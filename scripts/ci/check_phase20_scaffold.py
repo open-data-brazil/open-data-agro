@@ -21,6 +21,7 @@ def main() -> int:
     errors: list[str] = []
     lake = Path(os.environ.get("LAKE_LOCAL_ROOT", ROOT / "lake"))
     mart = lake / "gold" / "mart_ml__soy_daily_features" / "mart.parquet"
+    mart_monthly = lake / "gold" / "mart_cross__soja_features_monthly" / "mart.parquet"
     dim = lake / "gold" / "dim_municipio" / "mart.parquet"
 
     for path in (README, TASKS, UC, ADR, ROADMAP, GLOSSARY):
@@ -35,13 +36,14 @@ def main() -> int:
             "CC BY-NC",
             "as_of",
             "Publication lags",
+            "mart_cross__soja_features_monthly",
         ):
             if phrase not in text:
                 errors.append(f"UC-ML-001 missing: {phrase!r}")
 
     if ADR.is_file():
         adr = ADR.read_text(encoding="utf-8")
-        for phrase in ("int_cross__", "mart_ml__", "No bronze changes"):
+        for phrase in ("int_cross__", "mart_ml__", "mart_cross__", "No bronze changes"):
             if phrase not in adr:
                 errors.append(f"ADR 005 missing: {phrase!r}")
 
@@ -61,6 +63,8 @@ def main() -> int:
 
     if not mart.is_file():
         errors.append(f"missing gold mart {mart}")
+    if not mart_monthly.is_file():
+        errors.append(f"missing gold mart {mart_monthly}")
     if not dim.is_file():
         errors.append(f"missing gold dim {dim}")
 

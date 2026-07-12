@@ -1111,8 +1111,8 @@ ci-noaa-climate-mvp:
 
 dbt-build-analytics-crossing: dbt-deps
 	LAKE_LOCAL_ROOT=$(LAKE_ABS) python3 scripts/ci/ensure_analytics_crossing_stubs.py
-	mkdir -p $(LAKE_ABS)/gold/dim_municipio $(LAKE_ABS)/gold/mart_ml__soy_daily_features
-	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'path:models/intermediate/cross path:models/marts/ml assert_mart_ml_soy_daily_no_leakage'
+	mkdir -p $(LAKE_ABS)/gold/dim_municipio $(LAKE_ABS)/gold/mart_ml__soy_daily_features $(LAKE_ABS)/gold/mart_cross__soja_features_monthly
+	cd dbt && LAKE_LOCAL_ROOT=$(LAKE_ABS) dbt build --profiles-dir . --select 'path:models/intermediate/cross path:models/marts/ml path:models/marts/cross assert_mart_ml_soy_daily_no_leakage assert_mart_cross_soja_monthly_no_leakage'
 
 analytics-crossing-mvp:
 	LAKE_LOCAL_ROOT=$(LAKE_LOCAL_ROOT) python3 scripts/ci/seed_analytics_crossing_gold.py
@@ -1121,8 +1121,10 @@ analytics-crossing-mvp:
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS n FROM analytics.ml_soy_daily_features"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT produto_slug, data, preco_rs_sc, feature_as_of_max FROM analytics.ml_soy_daily_features ORDER BY data LIMIT 5"
 	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS municipios FROM analytics.dim_municipio"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT COUNT(*) AS n_monthly FROM analytics.cross_soja_features_monthly"
+	$(DUCKDB_BIN) $(DUCKDB_PATH) -c "SELECT produto_slug, cod_ibge, refmonth, preco_local_kg, feature_as_of_max FROM analytics.cross_soja_features_monthly ORDER BY refmonth, cod_ibge LIMIT 5"
 	LAKE_LOCAL_ROOT=$(LAKE_ABS) python3 scripts/ci/check_phase20_scaffold.py
-	@echo "analytics-crossing MVP: mart_ml__soy_daily_features + leakage test + docs gate passed"
+	@echo "analytics-crossing MVP: mart_ml__soy_daily_features + mart_cross__soja_features_monthly + leakage tests + docs gate passed"
 
 ci-analytics-crossing-mvp:
 	$(MAKE) analytics-crossing-mvp \

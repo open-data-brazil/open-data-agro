@@ -109,6 +109,15 @@ Derived marts under `mart_ml__*` are **analytics artifacts**, not new official s
 | `int_cross__precos_locais_municipio` | Typed CONAB municipal prices + dim |
 | `int_cross__frete_uf_par` | UF-pair frete monthly aggregates |
 | `mart_ml__soy_daily_features` | Daily soja MVP feature panel |
+| `mart_cross__soja_features_monthly` | Monthly municipal CONAB grain panel |
+
+### Monthly municipal panel
+
+- **Grain:** `(produto_slug, cod_ibge, refmonth)`
+- **Spine:** CONAB municipal soja prices (`preco_local_kg`)
+- **`label_date`:** CONAB publication `as_of` (`month_end + 30d`)
+- **Features:** month-aggregated CEPEA / PTAX, UF Comex, frete UF→PR — ASOF join with `as_of <= label_date`
+- **DuckDB view:** `analytics.cross_soja_features_monthly`
 
 ## Related
 

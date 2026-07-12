@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: mart_cross__soja_features_monthly
+    description: |
+      Monthly municipal soja feature panel at CONAB grain (UC-ML-001 optional).
+      Grain: (produto_slug, cod_ibge, refmonth). Analytics mart — not an official source.
+      Local CONAB price is the municipal observation; CEPEA columns remain CC BY-NC 4.0.
+    config:
+      meta:
+        grain: produto_slug, cod_ibge, refmonth
+        use_case: UC-ML-001
+        licenca_cepea: CC BY-NC 4.0
+    columns:
+      - name: produto_slug
+        tests:
+          - not_null
+      - name: cod_ibge
+        tests:
+          - not_null
+      - name: refmonth
+        tests:
+          - not_null
+      - name: label_date
+        tests:
+          - not_null
+      - name: feature_as_of_max
+        tests:
+          - not_null
+      - name: preco_local_kg
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - produto_slug
+              - cod_ibge
+              - refmonth

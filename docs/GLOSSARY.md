@@ -209,8 +209,8 @@ See [UC-ML-001](use-cases/UC-ML-001-price-early-warning.md).
 
 ---
 
-## `mart_ml__*` (analytics mart)
+## `mart_ml__*` / `mart_cross__*` (analytics marts)
 
-**Definition:** Cross-source feature table produced for ML / early-warning research.
+**Definition:** Cross-source feature tables produced for ML / early-warning research.
 **Not the same as:** An official agency dataset in [OFFICIAL-SOURCES.md](OFFICIAL-SOURCES.md).
-**Code name:** `mart_ml__soy_daily_features` (MVP)
+**Code names:** `mart_ml__soy_daily_features` (daily port spine), `mart_cross__soja_features_monthly` (municipal CONAB monthly grain)

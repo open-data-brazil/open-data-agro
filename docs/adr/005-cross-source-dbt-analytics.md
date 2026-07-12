@@ -27,11 +27,12 @@ Add a **cross-agency analytics layer** in dbt that reads **existing gold single-
 
 ```text
 lake/gold/mart_ml__soy_daily_features/mart.parquet
+lake/gold/mart_cross__soja_features_monthly/mart.parquet
 lake/gold/dim_municipio/mart.parquet          # dimension (external)
 lake/gold/int_cross__*                        # optional materialization; views OK
 ```
 
-Intermediate `int_cross__*` default to **view**; `dim_municipio` and `mart_ml__*` materialize as **external Parquet** under `gold_root`.
+Intermediate `int_cross__*` default to **view**; `dim_municipio`, `mart_ml__*`, and `mart_cross__*` materialize as **external Parquet** under `gold_root`.
 
 ## Alternatives considered
 

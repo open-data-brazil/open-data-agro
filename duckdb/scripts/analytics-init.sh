@@ -63,6 +63,7 @@ mkdir -p "$LAKE_ABS/gold/mart_ibge__pam_area_quantidade"
 mkdir -p "$LAKE_ABS/gold/mart_ibge__pam_rendimento_valor"
 mkdir -p "$LAKE_ABS/gold/mart_ibge__pam_estabelecimentos"
 mkdir -p "$LAKE_ABS/gold/mart_ml__soy_daily_features"
+mkdir -p "$LAKE_ABS/gold/mart_cross__soja_features_monthly"
 mkdir -p "$LAKE_ABS/gold/dim_municipio"
 
 "$DUCKDB_BIN" "$DUCKDB_PATH" -c "CREATE SCHEMA IF NOT EXISTS analytics;"
