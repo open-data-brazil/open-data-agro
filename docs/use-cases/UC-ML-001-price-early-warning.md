@@ -236,11 +236,12 @@ Research tooling for **highway freight** (CONAB `mart_conab__frete`).
 | Gate | test MAE ≤ `0.85 * seasonal_naive MAE` |
 
 ```bash
-make ml-train-frete     # real local gold
-make ci-ml-frete        # seeded CI
-make ml-train-soy-real  # real soy — requires ≥1000 export rows
+make ml-train-frete          # real frete on local gold
+make ci-ml-frete             # seeded CI
+make ml-train-soy-real-full  # CEPEA history + features + soy train (≥1000 rows)
 ```
 
+When CEPEA Cloudflare blocks database export, history is built from the live Notícias Agrícolas mirror + repo anchors + research bridges (`CEPEA_BULK_PATH` accepts an official Excel/JSON export when available).
 ## Related
 
 - [ADR 005 — Cross-source dbt analytics](../adr/005-cross-source-dbt-analytics.md)

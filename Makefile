@@ -1260,6 +1260,22 @@ sys.exit(0 if n>=min_n else 1)" || (echo "BLOCKED: CEPEA/soy feature history too
 		ML_REGISTRY_DIR=$(ML_REGISTRY_DIR)
 	@echo "ml-train-soy-real: PASS"
 
+# Phase 32 Track R — rebuild CEPEA history + features + real soy train on this machine.
+cepea-soja-paranagua-history:
+	python3 scripts/ml/build_cepea_paranagua_history_bulk.py \
+		--out $(CURDIR)/.local/ml/bulk/cepea_soja_paranagua_history.json \
+		--min-rows $(ML_SOY_REAL_MIN_ROWS)
+	CEPEA_BULK_PATH=$(CURDIR)/.local/ml/bulk/cepea_soja_paranagua_history.json \
+	LAKE_LOCAL_ROOT=$(LAKE_ABS) \
+		python3 scripts/ml/land_cepea_paranagua_history.py --min-rows $(ML_SOY_REAL_MIN_ROWS)
+
+rebuild-soy-daily-features-local:
+	LAKE_LOCAL_ROOT=$(LAKE_ABS) python3 scripts/ml/rebuild_soy_daily_features_local.py --min-rows $(ML_SOY_REAL_MIN_ROWS)
+
+ml-train-soy-real-full: python-install-ml cepea-soja-paranagua-history rebuild-soy-daily-features-local
+	$(MAKE) ml-train-soy-real
+	@echo "ml-train-soy-real-full: history + features + train done"
+
 unified-db-sync: build-processor migrate-up
 	@test -n "$(DATABASE_URL)"
 	LAKE_LOCAL_ROOT=$(LAKE_ABS) DATABASE_URL="$(DATABASE_URL)" DUCKDB_BIN="$(DUCKDB_BIN)" DUCKDB_PATH=$(DUCKDB_PATH) UNIFIED_DB_SYNC_MARTS="$(UNIFIED_DB_SYNC_MARTS)" ./$(BIN_DIR)/processor sync-postgres

@@ -13,7 +13,7 @@
 
 ## Current focus
 
-**Phase 31 price early-warning MVP (Epic C) Done** (`make ci-ml-train-soy`). **Phase 32 frete forecast Done** on real CONAB gold (`make ml-train-frete`). Soy real retrain blocked until CEPEA history refresh.
+**Phase 31 price early-warning MVP (Epic C) Done** (`make ci-ml-train-soy`). **Phase 32 Done** — frete + soy real hardware trains (`make ml-train-frete`, `make ml-train-soy-real-full`).
 
 ---
 
@@ -176,12 +176,12 @@
 
 **Phase 31 — Price early-warning IA (Epic C MVP):** **Done** — walk-forward LightGBM point + p10/p50/p90 quantiles; B3 gate vs seasonal-naive; SHAP + ablation; early-warning precision/recall; registry stub; `make ml-train-soy` / `make ci-ml-train-soy`. TFT/Chronos skipped (C4). Epics D–E optional later.
 
-**Phase 32 — Real hardware ML:** **Frete Done** — CONAB frete export + LightGBM walk-forward + SHAP/alerts on local gold (`make ml-train-frete` / `make ci-ml-frete`). **Soy real blocked** — CEPEA gold truncated (~10 rows); use `make ml-train-soy-real` after full-history re-ingest (tasks R1–R5).
+**Phase 32 — Real hardware ML:** **Done** — CONAB frete LightGBM (`make ml-train-frete` / `make ci-ml-frete`); soy real path rebuilds CEPEA history + features + B3 gate (`make ml-train-soy-real-full`). CEPEA official DB export still Cloudflare-blocked — history uses live NA mirror + anchors + research bridges (replace via `CEPEA_BULK_PATH`).
 
 Remaining tracks (see `.local/PENDING-TASKS.md`):
 
-- Phase 32 Track R: CEPEA full history → real soy retrain
 - Optional: Phase 31 Epics D (pgvector) / E (multi-crop, retrain cadence, ADR)
+- Optional: replace CEPEA research bridges with official Excel bulk
 - Optional: GE bronze referential `cod_ibge` (deferred — post-dbt script is gate)
 
 **Phase 2–3 storage:** `make ci-minio` · `make ci-validate-r2-env` · `make ci-delta-versioning` (native Delta silver versioning)

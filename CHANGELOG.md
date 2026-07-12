@@ -13,7 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **Real frete forecast (Phase 32):** CONAB frete walk-forward LightGBM (`scripts/ml/*frete*`), hardware run on local gold, `make ml-train-frete` / `make ci-ml-frete`; soy real path `make ml-train-soy-real` (blocked until CEPEA history refresh)
+- **Real hardware ML (Phase 32 Track R):** CEPEA soja Paranaguá history rebuild + local soy feature mart + `make ml-train-soy-real-full` (B3 gate PASS on hardware; CEPEA DB export still Cloudflare-blocked — live mirror + anchors + research bridges)
+- **Real frete forecast (Phase 32 Track F):** CONAB frete walk-forward LightGBM (`scripts/ml/*frete*`), hardware run on local gold, `make ml-train-frete` / `make ci-ml-frete`
 - **Price early-warning models (Phase 31 / Epic C):** LightGBM point + quantile walk-forward (`scripts/ml/train_soy.py`), B3 gate vs seasonal-naive, SHAP/ablation + early-warning eval reports, registry under `.local/ml/`; `make ml-train-soy` / `make ci-ml-train-soy` (`toolchain/python-requirements-ml.txt`)
 - **ML training dataset (Phase 30 / Epic B):** walk-forward soy daily export (`scripts/ml/`), frozen targets/features/success gate in UC-ML-001, baselines + lagged correlations, `make ml-dataset-export` / `make ci-ml-dataset-export`; REFRESH-POLICY notes data refresh ≠ ML retrain
 - **Analytics crossing (Phase 20 / Epic A):** cross-source dbt layer (`int_cross__*`, `dim_municipio`, `mart_ml__soy_daily_features`, `mart_cross__soja_features_monthly`); UC-ML-001 + ADR 005; CEPEA CC BY-NC commercial note; leakage + grain tests; `make analytics-crossing-mvp` / `make ci-analytics-crossing-mvp` — analytics marts only (not new official sources)
