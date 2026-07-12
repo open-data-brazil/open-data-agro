@@ -54,9 +54,15 @@ CI_ML_DATASET_LAKE ?= /tmp/ml-dataset-ci-lake
 CI_ML_EXPORT_DIR ?= /tmp/ml-dataset-ci-export
 CI_ML_BASELINES_DIR ?= /tmp/ml-dataset-ci-baselines
 CI_ML_CORR_DIR ?= /tmp/ml-dataset-ci-corr
+CI_ML_TRAIN_DIR ?= /tmp/ml-train-ci
+CI_ML_REPORTS_DIR ?= /tmp/ml-reports-ci
+CI_ML_REGISTRY_DIR ?= /tmp/ml-registry-ci
 ML_EXPORT_DIR ?= $(CURDIR)/.local/ml/export
 ML_BASELINES_DIR ?= $(CURDIR)/.local/ml/baselines
 ML_CORR_DIR ?= $(CURDIR)/.local/ml/corr
+ML_TRAIN_DIR ?= $(CURDIR)/.local/ml/train
+ML_REPORTS_DIR ?= $(CURDIR)/.local/ml/reports
+ML_REGISTRY_DIR ?= $(CURDIR)/.local/ml/registry
 CI_INTERNATIONAL_EXTENDED_LAKE ?= /tmp/international-extended-ci-lake
 CI_INTERNATIONAL_EXTENDED_DUCKDB ?= /tmp/international-extended-ci.duckdb
 CI_BR_NEW_SOURCES_LAKE ?= /tmp/br-new-sources-ci-lake
@@ -260,6 +266,9 @@ build-processor:
 
 python-install:
 	python3 -m pip install -r toolchain/python-requirements.txt
+
+python-install-ml: python-install
+	python3 -m pip install -r toolchain/python-requirements-ml.txt
 
 duckdb-install:
 	curl -fsSL https://install.duckdb.org | DUCKDB_VERSION=$(DUCKDB_VERSION) sh
@@ -1166,6 +1175,30 @@ ci-ml-dataset-export:
 	ML_EXPORT_DIR=$(CI_ML_EXPORT_DIR) ML_BASELINES_DIR=$(CI_ML_BASELINES_DIR) ML_CORR_DIR=$(CI_ML_CORR_DIR) \
 		python3 scripts/ci/check_phase30_ml_dataset.py
 	@echo "ml-dataset-export CI: unit + export + baselines + corr + docs gate passed"
+
+ml-train-soy: python-install-ml
+	ML_EXPORT_DIR=$(ML_EXPORT_DIR) ML_TRAIN_DIR=$(ML_TRAIN_DIR) ML_REGISTRY_DIR=$(ML_REGISTRY_DIR) \
+		python3 scripts/ml/train_soy.py --export-dir $(ML_EXPORT_DIR) --out-dir $(ML_TRAIN_DIR) \
+		--registry-dir $(ML_REGISTRY_DIR) --require-gate
+	ML_EXPORT_DIR=$(ML_EXPORT_DIR) ML_REPORTS_DIR=$(ML_REPORTS_DIR) \
+		python3 scripts/ml/shap_ablation_soy.py --export-dir $(ML_EXPORT_DIR) --out-dir $(ML_REPORTS_DIR)
+	ML_EXPORT_DIR=$(ML_EXPORT_DIR) ML_REPORTS_DIR=$(ML_REPORTS_DIR) \
+		python3 scripts/ml/early_warning_soy.py --export-dir $(ML_EXPORT_DIR) --out-dir $(ML_REPORTS_DIR)
+
+ci-ml-train-soy: python-install-ml
+	python3 scripts/ci/test_ml_train_unit.py
+	LAKE_LOCAL_ROOT=$(CI_ML_DATASET_LAKE) python3 scripts/ci/seed_ml_soy_daily_features.py
+	$(MAKE) ml-dataset-export \
+		LAKE_LOCAL_ROOT=$(CI_ML_DATASET_LAKE) \
+		ML_EXPORT_DIR=$(CI_ML_EXPORT_DIR)
+	$(MAKE) ml-train-soy \
+		ML_EXPORT_DIR=$(CI_ML_EXPORT_DIR) \
+		ML_TRAIN_DIR=$(CI_ML_TRAIN_DIR) \
+		ML_REPORTS_DIR=$(CI_ML_REPORTS_DIR) \
+		ML_REGISTRY_DIR=$(CI_ML_REGISTRY_DIR)
+	ML_TRAIN_DIR=$(CI_ML_TRAIN_DIR) ML_REPORTS_DIR=$(CI_ML_REPORTS_DIR) ML_REGISTRY_DIR=$(CI_ML_REGISTRY_DIR) \
+		python3 scripts/ci/check_phase31_ml_train.py
+	@echo "ml-train-soy CI: unit + seed export + LightGBM + SHAP + early-warning + docs gate passed"
 
 unified-db-sync: build-processor migrate-up
 	@test -n "$(DATABASE_URL)"

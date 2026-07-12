@@ -186,9 +186,48 @@ Artifacts (local, gitignored under `.local/ml/`):
 | `.local/ml/baselines/` | JSON + Markdown baseline metrics |
 | `.local/ml/corr/` | Lagged Pearson report |
 
+---
+
+## Phase 31 — Price early-warning models (Epic C, MVP)
+
+Research tooling only (no production trading API). Code: `scripts/ml/`.
+
+### Models (C1)
+
+| Item | Spec |
+|------|------|
+| Point | LightGBM regression on `y_ret_{h}d`, `h ∈ {7,30,90}` |
+| Quantiles | LightGBM quantile `p10` / `p50` / `p90` per horizon |
+| Split | Same walk-forward calendar as Phase 30 (never shuffle) |
+| Gate | Test MAE on `y_ret_30d` ≤ `0.85 * seasonal_naive MAE` (B3) |
+
+```bash
+make ml-train-soy          # train + SHAP/ablation + early-warning eval + registry
+make ci-ml-train-soy       # seeded CI (requires toolchain/python-requirements-ml.txt)
+```
+
+Artifacts (local, gitignored under `.local/ml/`):
+
+| Path | Content |
+|------|---------|
+| `.local/ml/train/soy_lgbm_metrics.json` | Point + quantile MAE / B3 pass-fail |
+| `.local/ml/reports/soy_shap_ablation.md` | Mean \|SHAP\| + feature-group ablation |
+| `.local/ml/reports/soy_early_warning_eval.md` | Spike rules precision/recall |
+| `.local/ml/registry/soy_lgbm_v1.json` | Params, metrics, dataset manifest hash |
+
+### Early-warning rules (C3)
+
+Labels from train empirical percentiles of `y_ret_30d`; alerts from quantile forecasts on the test window (see report).
+
+### Deferred
+
+- **C4** TFT / Chronos — skipped while LightGBM clears B3 (optional follow-up)
+- Epics **D** (pgvector) / **E** (multi-crop productization) — later
+
 ## Related
 
 - [ADR 005 — Cross-source dbt analytics](../adr/005-cross-source-dbt-analytics.md)
-- [ROADMAP.md](../ROADMAP.md) — Phase 20 / 30
+- [ROADMAP.md](../ROADMAP.md) — Phase 20 / 30 / 31
 - [REFRESH-POLICY.md](../REFRESH-POLICY.md) — data refresh ≠ ML retrain
 - `.local/phases/30-ml-training-dataset/TASKS.md`
+- `.local/phases/31-price-prediction-ia/TASKS.md`

@@ -13,7 +13,7 @@
 
 ## Current focus
 
-**Phase 30 ML training dataset Done** (`make ci-ml-dataset-export`). Next: Phase 31 price early-warning models, or optional Stage F (R2).
+**Phase 31 price early-warning MVP (Epic C) Done** (`make ci-ml-train-soy`). Optional next: Epic D/E, or Stage F (R2).
 
 ---
 
@@ -174,8 +174,11 @@
 
 **Phase 30 — ML training dataset (Epic B):** **Done** — frozen targets/features/walk-forward split + success gate in UC-ML-001; `make ml-dataset-export` / `make ci-ml-dataset-export` (Parquet + manifest verify); baselines + lagged correlations under `.local/ml/`. Unblocks Phase 31.
 
+**Phase 31 — Price early-warning IA (Epic C MVP):** **Done** — walk-forward LightGBM point + p10/p50/p90 quantiles; B3 gate vs seasonal-naive; SHAP + ablation; early-warning precision/recall; registry stub; `make ml-train-soy` / `make ci-ml-train-soy`. TFT/Chronos skipped (C4). Epics D–E optional later.
+
 Remaining tracks (see `.local/PENDING-TASKS.md`):
 
+- Optional: Phase 31 Epics D (pgvector) / E (multi-crop, retrain cadence, ADR)
 - Optional: GE bronze referential `cod_ibge` (deferred — post-dbt script is gate)
 
 **Phase 2–3 storage:** `make ci-minio` · `make ci-validate-r2-env` · `make ci-delta-versioning` (native Delta silver versioning)
