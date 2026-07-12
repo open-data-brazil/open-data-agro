@@ -13,7 +13,7 @@
 
 ## Current focus
 
-Wave 5 ingestor signoff complete. **Phase 20 analytics crossing Done** (`make ci-analytics-crossing-mvp`). Next: Phase 30 ML training dataset export, or optional Stage F (R2).
+**Phase 30 ML training dataset Done** (`make ci-ml-dataset-export`). Next: Phase 31 price early-warning models, or optional Stage F (R2).
 
 ---
 
@@ -171,6 +171,8 @@ Wave 5 ingestor signoff complete. **Phase 20 analytics crossing Done** (`make ci
 - **Source health bot ✅** — daily link probe for ~102 catalog datasets; `make source-health-bot`; GitHub Action commits reports to `main`
 
 **Phase 20 — Analytics crossing (Epic A):** **Done** — UC-ML-001 + ADR 005 + `mart_ml__soy_daily_features` + `mart_cross__soja_features_monthly` (typed cross layer, leakage tests). Gate: `make analytics-crossing-mvp` / `make ci-analytics-crossing-mvp`. Derived `mart_ml__*` / `mart_cross__*` / `int_cross__*` are **analytics** artifacts, not new official sources. Unblocks Phase 30.
+
+**Phase 30 — ML training dataset (Epic B):** **Done** — frozen targets/features/walk-forward split + success gate in UC-ML-001; `make ml-dataset-export` / `make ci-ml-dataset-export` (Parquet + manifest verify); baselines + lagged correlations under `.local/ml/`. Unblocks Phase 31.
 
 Remaining tracks (see `.local/PENDING-TASKS.md`):
 

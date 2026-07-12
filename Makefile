@@ -50,6 +50,13 @@ CI_NOAA_CLIMATE_LAKE ?= /tmp/noaa-climate-ci-lake
 CI_NOAA_CLIMATE_DUCKDB ?= /tmp/noaa-climate-ci.duckdb
 CI_ANALYTICS_CROSSING_LAKE ?= /tmp/analytics-crossing-ci-lake
 CI_ANALYTICS_CROSSING_DUCKDB ?= /tmp/analytics-crossing-ci.duckdb
+CI_ML_DATASET_LAKE ?= /tmp/ml-dataset-ci-lake
+CI_ML_EXPORT_DIR ?= /tmp/ml-dataset-ci-export
+CI_ML_BASELINES_DIR ?= /tmp/ml-dataset-ci-baselines
+CI_ML_CORR_DIR ?= /tmp/ml-dataset-ci-corr
+ML_EXPORT_DIR ?= $(CURDIR)/.local/ml/export
+ML_BASELINES_DIR ?= $(CURDIR)/.local/ml/baselines
+ML_CORR_DIR ?= $(CURDIR)/.local/ml/corr
 CI_INTERNATIONAL_EXTENDED_LAKE ?= /tmp/international-extended-ci-lake
 CI_INTERNATIONAL_EXTENDED_DUCKDB ?= /tmp/international-extended-ci.duckdb
 CI_BR_NEW_SOURCES_LAKE ?= /tmp/br-new-sources-ci-lake
@@ -1130,6 +1137,35 @@ ci-analytics-crossing-mvp:
 	$(MAKE) analytics-crossing-mvp \
 		LAKE_LOCAL_ROOT=$(CI_ANALYTICS_CROSSING_LAKE) \
 		DUCKDB_PATH=$(CI_ANALYTICS_CROSSING_DUCKDB)
+
+ml-dataset-export:
+	LAKE_LOCAL_ROOT=$(LAKE_ABS) ML_EXPORT_DIR=$(ML_EXPORT_DIR) \
+		python3 scripts/ml/export_soy_daily_dataset.py --lake-root $(LAKE_ABS) --out-dir $(ML_EXPORT_DIR)
+	ML_EXPORT_DIR=$(ML_EXPORT_DIR) python3 scripts/ml/verify_manifest.py --export-dir $(ML_EXPORT_DIR)
+
+ml-baselines:
+	ML_EXPORT_DIR=$(ML_EXPORT_DIR) ML_BASELINES_DIR=$(ML_BASELINES_DIR) \
+		python3 scripts/ml/baselines_soy.py --export-dir $(ML_EXPORT_DIR) --out-dir $(ML_BASELINES_DIR)
+
+ml-corr:
+	ML_EXPORT_DIR=$(ML_EXPORT_DIR) ML_CORR_DIR=$(ML_CORR_DIR) \
+		python3 scripts/ml/corr_soy.py --export-dir $(ML_EXPORT_DIR) --out-dir $(ML_CORR_DIR)
+
+ci-ml-dataset-export:
+	python3 scripts/ci/test_ml_export_unit.py
+	LAKE_LOCAL_ROOT=$(CI_ML_DATASET_LAKE) python3 scripts/ci/seed_ml_soy_daily_features.py
+	$(MAKE) ml-dataset-export \
+		LAKE_LOCAL_ROOT=$(CI_ML_DATASET_LAKE) \
+		ML_EXPORT_DIR=$(CI_ML_EXPORT_DIR)
+	$(MAKE) ml-baselines \
+		ML_EXPORT_DIR=$(CI_ML_EXPORT_DIR) \
+		ML_BASELINES_DIR=$(CI_ML_BASELINES_DIR)
+	$(MAKE) ml-corr \
+		ML_EXPORT_DIR=$(CI_ML_EXPORT_DIR) \
+		ML_CORR_DIR=$(CI_ML_CORR_DIR)
+	ML_EXPORT_DIR=$(CI_ML_EXPORT_DIR) ML_BASELINES_DIR=$(CI_ML_BASELINES_DIR) ML_CORR_DIR=$(CI_ML_CORR_DIR) \
+		python3 scripts/ci/check_phase30_ml_dataset.py
+	@echo "ml-dataset-export CI: unit + export + baselines + corr + docs gate passed"
 
 unified-db-sync: build-processor migrate-up
 	@test -n "$(DATABASE_URL)"

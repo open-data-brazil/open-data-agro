@@ -68,3 +68,11 @@ When `STORAGE_MODE=r2`:
 - [DATA-HISTORY-RANGES.md](DATA-HISTORY-RANGES.md) — per-dataset backfill `--from` and source limits (Phase 33)
 - [POSTGRES-UNIFIED-SYNC.md](POSTGRES-UNIFIED-SYNC.md)
 - `.local/phases/33-collection-hardening/`
+
+---
+
+## Data refresh ≠ ML retrain
+
+Ingestor refresh (`make *-mvp`, scheduled bronze→gold) **updates** lake marts and optional training exports.
+
+It does **not** automatically retrain or redeploy Phase 31 models. Retrain is an explicit ML job (`make ml-train-soy` in Phase 31) after reviewing drift vs this policy and the frozen split in [UC-ML-001](use-cases/UC-ML-001-price-early-warning.md).

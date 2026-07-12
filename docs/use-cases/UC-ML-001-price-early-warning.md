@@ -2,9 +2,9 @@
 
 ## Summary
 
-Build a **daily soja feature panel** anchored on CEPEA Paranaguá (`preco_rs_sc` / `preco_usd_sc`) so Phase 30 can export walk-forward training sets and Phase 31 can train quantile early-warning models (horizons **7 / 30 / 90** days).
+Build a **daily soja feature panel** anchored on CEPEA Paranaguá (`preco_rs_sc` / `preco_usd_sc`) and a **versioned walk-forward training export** so Phase 31 can train quantile early-warning models (horizons **7 / 30 / 90** trading days).
 
-This use case covers **feature foundation only** (Phase 20). No model training.
+Phase 20 delivers features; Phase 30 freezes targets, splits, baselines, and export. No production trading API.
 
 ## Actors
 
@@ -26,7 +26,7 @@ This use case covers **feature foundation only** (Phase 20). No model training.
 | `preco_rs_sc` | CEPEA Paranaguá | R$ / sc 60 kg |
 | `preco_usd_sc` | CEPEA or PTAX-derived | Prefer CEPEA when present; else `preco_rs_sc / ptax` |
 
-**Forward targets (Phase 30):** return or level at `label_date + {7,30,90}` calendar days (trading-day alignment documented at export time).
+**Forward targets (Phase 30, frozen):** trading-day leads `y_ret_{h}d` / `y_level_{h}d` for `h ∈ {7,30,90}` — see [Phase 30 section](#phase-30--training-dataset-epic-b-frozen).
 
 ## Join keys
 
@@ -119,8 +119,76 @@ Derived marts under `mart_ml__*` are **analytics artifacts**, not new official s
 - **Features:** month-aggregated CEPEA / PTAX, UF Comex, frete UF→PR — ASOF join with `as_of <= label_date`
 - **DuckDB view:** `analytics.cross_soja_features_monthly`
 
+---
+
+## Phase 30 — Training dataset (Epic B, frozen)
+
+> Folded former UC-002 into this use case. Spec source: `scripts/ml/config.py`.
+
+### Target definition (B4)
+
+Horizons `h ∈ {7, 30, 90}` are **trading-day leads** on the CEPEA spine (next `h` available observations — not calendar days).
+
+| Column | Definition |
+|--------|------------|
+| `y_ret_{h}d` | `preco_rs_sc[t+h] / preco_rs_sc[t] - 1` |
+| `y_level_{h}d` | `preco_rs_sc[t+h]` |
+
+Primary early-warning target for Phase 31 gate: **`y_ret_30d`**.
+
+### Feature list (B4, frozen)
+
+| Feature | Theme |
+|---------|-------|
+| `preco_rs_sc`, `preco_usd_sc`, `variacao_dia_pct` | CEPEA level |
+| `cepea_ret_1d`, `cepea_ret_7d`, `cepea_vol_7d` | CEPEA momentum / vol |
+| `ptax_usd_venda` | FX |
+| `b3_front_price`, `basis_cepea_usd_minus_b3` | Futures / basis |
+| `comex_soja_fob_usd`, `comex_soja_kg` | Trade |
+| `frete_mt_pr_ton_avg`, `frete_mt_pr_tkm_avg` | Logistics |
+| `inmet_national_avg` | Climate proxy (nullable) |
+
+Meta / audit only (not model inputs): `produto_slug`, `data`, `label_date`, `b3_front_symbol`, `as_of_*`, `feature_as_of_max`, `split`.
+
+### Walk-forward split (B5)
+
+**Never** random shuffle. Split on calendar `data`:
+
+| Split | Rule |
+|-------|------|
+| `train` | `data <= 2018-12-31` |
+| `val` | `2019-01-01` … `2021-12-31` |
+| `test` | `data >= 2022-01-01` |
+
+### Success gate (B3)
+
+On the **test** split, for target `y_ret_30d`:
+
+> Phase 31 model **MAE** MUST beat **seasonal_naive** MAE by **≥ 15%**  
+> i.e. `model_MAE <= 0.85 * seasonal_naive_MAE`.
+
+Baselines (last-value + seasonal naive) are produced by `make ml-baselines` → `.local/ml/baselines/`.
+
+### Export (B6–B7)
+
+```bash
+make ml-dataset-export          # Parquet + manifest.json
+make ml-baselines ml-corr       # baselines + lagged correlations
+python3 scripts/ml/verify_manifest.py
+```
+
+Artifacts (local, gitignored under `.local/ml/`):
+
+| Path | Content |
+|------|---------|
+| `.local/ml/export/soy_daily_training.parquet` | Features + targets + `split` |
+| `.local/ml/export/manifest.json` | schema hash, row count, date range, git SHA |
+| `.local/ml/baselines/` | JSON + Markdown baseline metrics |
+| `.local/ml/corr/` | Lagged Pearson report |
+
 ## Related
 
 - [ADR 005 — Cross-source dbt analytics](../adr/005-cross-source-dbt-analytics.md)
-- [ROADMAP.md](../ROADMAP.md) — Phase 20
-- `.local/phases/20-analytics-crossing/TASKS.md`
+- [ROADMAP.md](../ROADMAP.md) — Phase 20 / 30
+- [REFRESH-POLICY.md](../REFRESH-POLICY.md) — data refresh ≠ ML retrain
+- `.local/phases/30-ml-training-dataset/TASKS.md`

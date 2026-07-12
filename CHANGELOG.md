@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **ML training dataset (Phase 30 / Epic B):** walk-forward soy daily export (`scripts/ml/`), frozen targets/features/success gate in UC-ML-001, baselines + lagged correlations, `make ml-dataset-export` / `make ci-ml-dataset-export`; REFRESH-POLICY notes data refresh ≠ ML retrain
 - **Analytics crossing (Phase 20 / Epic A):** cross-source dbt layer (`int_cross__*`, `dim_municipio`, `mart_ml__soy_daily_features`, `mart_cross__soja_features_monthly`); UC-ML-001 + ADR 005; CEPEA CC BY-NC commercial note; leakage + grain tests; `make analytics-crossing-mvp` / `make ci-analytics-crossing-mvp` — analytics marts only (not new official sources)
 - **Unified DB wave 5 signoff (Phase 58):** `scripts/ci/verify_wave5_gold_manifest.py`, `WAVE5_TABLES` + `--wave5` spot-check, `make br-sources-wave-5-mvp`, `make ingestor-signoff-wave-5-mvp` + `make ci-ingestor-signoff-wave-5-mvp` (29 gold marts); wave 5 tables in [docs/POSTGRES-UNIFIED-SYNC.md](docs/POSTGRES-UNIFIED-SYNC.md)
 - **BR sources wave 5 env/logistics (Phase 54):** `ibama.sisfogo-incendios`, `ibama.licencas-ambientais`, `ibama.autos-infracao`, `ana.pluviometria-redes`, `embrapa.agroapi-agrofit`, `transportes.mtr-bit-malha-shapefile` — IBAMA/Embrapa/ANA/transportes clients, GE suites, dbt marts, DuckDB views, `make br-sources-wave-5-env-logistics-mvp` + `make ci-br-sources-wave-5-env-logistics-mvp`; Embrapa AgroAPI via `EMBRAPA_AGROAPI_KEY`; autos ZIP year chunk via `--from-year` / `IBAMA_AUTOS_BULK_PATH`
