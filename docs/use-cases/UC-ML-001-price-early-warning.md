@@ -224,10 +224,28 @@ Labels from train empirical percentiles of `y_ret_30d`; alerts from quantile for
 - **C4** TFT / Chronos — skipped while LightGBM clears B3 (optional follow-up)
 - Epics **D** (pgvector) / **E** (multi-crop productization) — later
 
+## Phase 32 — Frete forecast (real hardware)
+
+Research tooling for **highway freight** (CONAB `mart_conab__frete`).
+
+| Item | Spec |
+|------|------|
+| Target | `valor_frete_tonelada` (R$/t) |
+| Features | distance, calendar, UF pair, corridor lags, fonte |
+| Split | train ≤2022 · val 2023 · test ≥2024 |
+| Gate | test MAE ≤ `0.85 * seasonal_naive MAE` |
+
+```bash
+make ml-train-frete     # real local gold
+make ci-ml-frete        # seeded CI
+make ml-train-soy-real  # real soy — requires ≥1000 export rows
+```
+
 ## Related
 
 - [ADR 005 — Cross-source dbt analytics](../adr/005-cross-source-dbt-analytics.md)
-- [ROADMAP.md](../ROADMAP.md) — Phase 20 / 30 / 31
+- [ROADMAP.md](../ROADMAP.md) — Phase 20 / 30 / 31 / 32
 - [REFRESH-POLICY.md](../REFRESH-POLICY.md) — data refresh ≠ ML retrain
 - `.local/phases/30-ml-training-dataset/TASKS.md`
 - `.local/phases/31-price-prediction-ia/TASKS.md`
+- `.local/phases/32-real-ml-hardware-tests/TASKS.md`
