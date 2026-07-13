@@ -1,13 +1,14 @@
 {
   "datasetId": "antt.pracas-pedagio",
   "endpoints": [
-    "https://dados.antt.gov.br/dataset/a7e1e12d-f8e8-40cd-bc1f-57973a4a4a6d/resource/c3b30e68-8497-4985-af51-931047d1c69a/download/dados-dos-pracas-de-pedagio5_2026.csv",
     "https://dados.antt.gov.br/dataset/praca-de-pedagio"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-07-13",
+  "lastFailureDate": "2026-07-13",
   "lastSuccessDate": "2026-07-11",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (ckan package_show: Get \"https://dados.antt.gov.br/api/3/action/package_show?id=praca-de-pedagio\": read tcp 10.1.0.28:46138-\u003e200.198.195.143:443: read: connection reset by peer)",
   "lastSampleSha256": "30c3cf3fe8e9f6dea0a185dc1136a3b917b3ec71c11a0840a26545b17c09ac9c",
   "lastModified": "Sun, 28 Jun 2026 11:00:19 GMT"
 }
