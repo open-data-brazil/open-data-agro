@@ -30,13 +30,20 @@ func ApplyOutcome(previous *HealthState, outcome DatasetProbeOutcome, runDate st
 	endpoints := endpointURLs(outcome)
 	sourceProbe := sourceEndpoint(outcome)
 
-	if sourceProbe != nil && sourceProbe.Status == ProbeOK {
+	if sourceProbe != nil && (sourceProbe.Status == ProbeOK || sourceProbe.Status == ProbeSkipped) {
+		message := "Official source responded successfully (sample probe)."
+		if sourceProbe.Status == ProbeSkipped {
+			message = "Probe skipped (required API credential not configured)."
+			if sourceProbe.Error != "" {
+				message = sourceProbe.Error
+			}
+		}
 		state := HealthState{
 			DatasetID:        outcome.DatasetID,
 			Endpoints:        endpoints,
 			LastSuccessDate:  runDate,
 			Severity:         SeverityOK,
-			Message:          "Official source responded successfully (sample probe).",
+			Message:          message,
 			LastSampleSHA256: sourceProbe.SampleSHA256,
 			LastModified:     sourceProbe.LastModified,
 		}

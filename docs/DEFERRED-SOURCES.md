@@ -52,11 +52,12 @@ These remain **out of catalog** from prior waves; Phase 51 re-audit:
 
 ## Related — still active but need official API keys
 
-These remain in the catalog; warnings are expected until secrets are configured:
+These remain in the catalog. The source-health bot **skips** the probe (does not escalate to critical) when the secret is unset:
 
 | Dataset ID | Secret | Registration |
 |------------|--------|--------------|
 | `eia.petroleum-prices` | `EIA_API_KEY` | [EIA Open Data](https://www.eia.gov/opendata/register.php) |
+| `wto.its-trade-statistics` | `WTO_API_KEY` | [WTO API Portal](https://apiportal.wto.org/) |
 
 ## Catalog loader behavior
 

@@ -56,11 +56,16 @@ jobs:
             cat data/source-health-reports/job-summary.md >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      # Probe exits 2 when critical sources exist, but reports are already on disk.
+      # Always test + publish, then fail the job below so main stays the source of truth.
       - name: Unit tests (sourceprobe)
-        run: go test ./internal/sourceprobe/... -count=1
+        if: success() || failure()
+        run: |
+          go test ./internal/sourceprobe/... -count=1
+          go test ./internal/ingest/ -count=1 -run 'TestBuildProbeSpec|TestProbe'
 
       - name: Publish reports to main
-        if: inputs.dry_run != true
+        if: (success() || failure()) && inputs.dry_run != true
         run: bash scripts/source-health-publish.sh
 
       - name: Probe had critical failures

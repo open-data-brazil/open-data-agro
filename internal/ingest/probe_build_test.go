@@ -1,6 +1,7 @@
 package ingest
 
 import (
+	"errors"
 	"strings"
 	"testing"
 
@@ -101,5 +102,44 @@ func TestBuildProbeSpecINMETYear(t *testing.T) {
 	}
 	if !strings.HasSuffix(spec.URL, ".zip") {
 		t.Fatalf("expected zip url: %q", spec.URL)
+	}
+}
+
+func TestBuildProbeSpecEIARequiresAPIKey(t *testing.T) {
+	t.Setenv("EIA_API_KEY", "")
+
+	_, err := BuildProbeSpec(catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("eia.petroleum-prices"),
+		SourceURL: "https://api.eia.gov/v2/petroleum/pri/spt/data",
+	})
+	if !errors.Is(err, ErrProbeSkipped) {
+		t.Fatalf("expected ErrProbeSkipped, got %v", err)
+	}
+}
+
+func TestBuildProbeSpecEIAAppendsAPIKey(t *testing.T) {
+	t.Setenv("EIA_API_KEY", "test-key")
+
+	spec, err := BuildProbeSpec(catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("eia.petroleum-prices"),
+		SourceURL: "https://api.eia.gov/v2/petroleum/pri/spt/data",
+	})
+	if err != nil {
+		t.Fatalf("BuildProbeSpec: %v", err)
+	}
+	if !strings.Contains(spec.URL, "api_key=test-key") {
+		t.Fatalf("expected api_key in url, got %q", spec.URL)
+	}
+}
+
+func TestBuildProbeSpecWTORequiresAPIKey(t *testing.T) {
+	t.Setenv("WTO_API_KEY", "")
+
+	_, err := BuildProbeSpec(catalog.RegistryEntry{
+		DatasetID: catalog.MustParseDatasetID("wto.its-trade-statistics"),
+		SourceURL: "https://api.wto.org/timeseries/v1/data",
+	})
+	if !errors.Is(err, ErrProbeSkipped) {
+		t.Fatalf("expected ErrProbeSkipped, got %v", err)
 	}
 }

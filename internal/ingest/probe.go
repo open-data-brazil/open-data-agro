@@ -2,6 +2,7 @@ package ingest
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"strings"
 	"sync"
@@ -15,10 +16,14 @@ import (
 func ProbeCatalogEntry(ctx context.Context, client *sourceprobe.Client, entry catalog.RegistryEntry) sourceprobe.EndpointProbe {
 	spec, err := BuildProbeSpec(entry)
 	if err != nil {
+		status := sourceprobe.ProbeResolveError
+		if errors.Is(err, ErrProbeSkipped) {
+			status = sourceprobe.ProbeSkipped
+		}
 		return sourceprobe.EndpointProbe{
 			Role:   "source",
 			URL:    strings.TrimSpace(entry.SourceURL),
-			Status: sourceprobe.ProbeResolveError,
+			Status: status,
 			Error:  err.Error(),
 		}
 	}
@@ -155,7 +160,7 @@ func probeDataset(ctx context.Context, client *sourceprobe.Client, entry catalog
 	}
 
 	source := sourceEndpointOutcome(&outcome)
-	outcome.OverallOK = source != nil && source.Status == sourceprobe.ProbeOK
+	outcome.OverallOK = source != nil && (source.Status == sourceprobe.ProbeOK || source.Status == sourceprobe.ProbeSkipped)
 	return outcome
 }
 

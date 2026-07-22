@@ -64,6 +64,33 @@ func TestApplyOutcomeEscalatesOnConsecutiveDays(t *testing.T) {
 	}
 }
 
+func TestApplyOutcomeSkippedClearsFailureStreak(t *testing.T) {
+	previous := &HealthState{
+		DatasetID:              "eia.petroleum-prices",
+		ConsecutiveFailureDays: 2,
+		FirstFailureDate:       "2026-07-10",
+		LastFailureDate:        "2026-07-11",
+		Severity:               SeverityCritical,
+	}
+	outcome := DatasetProbeOutcome{
+		DatasetID: "eia.petroleum-prices",
+		Endpoints: []EndpointProbe{{
+			Role:   "source",
+			URL:    "https://api.eia.gov/v2/petroleum/pri/spt/data",
+			Status: ProbeSkipped,
+			Error:  "probe skipped: EIA_API_KEY not set",
+		}},
+	}
+
+	state := ApplyOutcome(previous, outcome, "2026-07-12")
+	if state.Severity != SeverityOK {
+		t.Fatalf("expected ok for skipped probe, got %s", state.Severity)
+	}
+	if state.ConsecutiveFailureDays != 0 {
+		t.Fatalf("expected failure streak cleared, got %d", state.ConsecutiveFailureDays)
+	}
+}
+
 func TestBuildCommitMessageAllOK(t *testing.T) {
 	msg := buildCommitMessage(
 		mustParseTime("2026-06-26T10:00:00Z"),

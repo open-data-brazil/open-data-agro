@@ -142,9 +142,14 @@ func BuildProbeSpec(entry catalog.RegistryEntry) (ProbeSpec, error) {
 		}
 		return ProbeSpec{URL: url, Headers: map[string]string{"Accept": "application/json"}}, nil
 	case "wto":
-		if url, headers, err := wto.BuildProbeRequest(entry); err == nil {
-			return ProbeSpec{URL: url, Headers: headers}, nil
+		if strings.TrimSpace(os.Getenv("WTO_API_KEY")) == "" {
+			return ProbeSpec{}, SkipProbe("WTO_API_KEY not set")
 		}
+		url, headers, err := wto.BuildProbeRequest(entry)
+		if err != nil {
+			return ProbeSpec{}, err
+		}
+		return ProbeSpec{URL: url, Headers: headers}, nil
 	}
 
 	url, err := resolveLegacyProbeURL(entry, agency)
@@ -177,7 +182,10 @@ func resolveLegacyProbeURL(entry catalog.RegistryEntry, agency string) (string, 
 
 	if agency == "eia" {
 		key := strings.TrimSpace(os.Getenv("EIA_API_KEY"))
-		if key != "" && !strings.Contains(url, "api_key=") {
+		if key == "" {
+			return "", SkipProbe("EIA_API_KEY not set")
+		}
+		if !strings.Contains(url, "api_key=") {
 			sep := "?"
 			if strings.Contains(url, "?") {
 				sep = "&"
