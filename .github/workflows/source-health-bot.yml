@@ -69,7 +69,8 @@ jobs:
         run: bash scripts/source-health-publish.sh
 
       - name: Probe had critical failures
-        if: steps.probe.outcome == 'failure'
+        if: failure() && steps.probe.outcome == 'failure'
         run: |
           echo "One or more sources are critically degraded (2+ consecutive failure days)."
+          echo "Reports were published; see data/source-health-reports/CRITICAL-ALERTS.md"
           exit 1

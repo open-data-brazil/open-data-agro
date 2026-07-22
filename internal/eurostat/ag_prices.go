@@ -11,7 +11,7 @@ import (
 	"github.com/open-data-brazil/open-data-agro/internal/catalog"
 )
 
-const defaultAgPricesDataset = "apri_pi15_outa"
+const defaultAgPricesDataset = "apri_pi_outa"
 
 type agPriceRow struct {
 	DatasetCode string `json:"dataset_code"`
@@ -50,7 +50,7 @@ func (c *Client) FetchAgPricesSnapshot(ctx context.Context, entry catalog.Regist
 	}
 	products := entry.EurostatProducts
 	if len(products) == 0 {
-		products = []string{"010000", "015000", "011000"}
+		products = []string{"AM010000", "AM015000", "AM011000"}
 	}
 	sinceYear := entry.PeriodStart
 	if sinceYear == 0 {
@@ -123,7 +123,10 @@ func parseAgPricesJSON(raw []byte, datasetCode, geo string) ([]agPriceRow, error
 			dims[name] = code
 		}
 
-		productCode := dims["product"]
+		productCode := dims["am_item"]
+		if productCode == "" {
+			productCode = dims["product"]
+		}
 		year := dims["time"]
 		rowGeo := dims["geo"]
 		if rowGeo == "" {
@@ -133,17 +136,43 @@ func parseAgPricesJSON(raw []byte, datasetCode, geo string) ([]agPriceRow, error
 			continue
 		}
 
+		productDim := "am_item"
+		if dims["am_item"] == "" {
+			productDim = "product"
+		}
+		basePeriod := "2015=100"
+		if unit := dims["unit"]; unit != "" {
+			basePeriod = unitBasePeriod(unit)
+		}
+
 		rows = append(rows, agPriceRow{
 			DatasetCode: datasetCode,
 			Geo:         rowGeo,
 			ProductCode: productCode,
-			ProductName: labelAt(labels, dimOrder, "product", productCode),
+			ProductName: labelAt(labels, dimOrder, productDim, productCode),
 			Year:        year,
 			IndexValue:  strconv.FormatFloat(value, 'f', -1, 64),
-			BasePeriod:  "2015=100",
+			BasePeriod:  basePeriod,
 		})
 	}
 	return rows, nil
+}
+
+func unitBasePeriod(unit string) string {
+	switch strings.ToUpper(strings.TrimSpace(unit)) {
+	case "I20":
+		return "2020=100"
+	case "I15":
+		return "2015=100"
+	case "I10":
+		return "2010=100"
+	case "I05":
+		return "2005=100"
+	case "I00":
+		return "2000=100"
+	default:
+		return unit
+	}
 }
 
 func dimensionOrder(id any) []string {
@@ -157,7 +186,7 @@ func dimensionOrder(id any) []string {
 	case string:
 		return strings.Split(v, ",")
 	default:
-		return []string{"freq", "p_adj", "unit", "product", "geo", "time"}
+		return []string{"freq", "am_item", "p_adj", "unit", "geo", "time"}
 	}
 }
 

@@ -122,5 +122,6 @@ func isRetryable(err error) bool {
 	msg := strings.ToLower(err.Error())
 	return strings.Contains(msg, "timeout") ||
 		strings.Contains(msg, "connection reset") ||
-		strings.Contains(msg, "status 5")
+		strings.Contains(msg, "status 5") ||
+		strings.Contains(msg, "status 429")
 }

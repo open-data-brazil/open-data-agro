@@ -96,12 +96,30 @@ func buildDatasetURL(datasetCode, geo string, products []string, sinceYear int) 
 	if sinceYear > 0 {
 		values.Set("sinceTimePeriod", strconvItoa(sinceYear))
 	}
+	// apri_pi_outa (2024+) uses am_item + unit/p_adj; legacy apri_pi15_outa used product.
+	itemParam := "product"
+	if strings.HasPrefix(strings.ToLower(strings.TrimSpace(datasetCode)), "apri_pi_out") {
+		itemParam = "am_item"
+		values.Set("unit", "I15")
+		values.Set("p_adj", "NI")
+	}
 	for _, product := range products {
-		if strings.TrimSpace(product) != "" {
-			values.Add("product", strings.TrimSpace(product))
+		code := normalizeEurostatItemCode(strings.TrimSpace(product), itemParam)
+		if code != "" {
+			values.Add(itemParam, code)
 		}
 	}
 	return base + "?" + values.Encode()
+}
+
+func normalizeEurostatItemCode(code, itemParam string) string {
+	if code == "" {
+		return ""
+	}
+	if itemParam == "am_item" && !strings.HasPrefix(strings.ToUpper(code), "AM") {
+		return "AM" + code
+	}
+	return code
 }
 
 func strconvItoa(v int) string {

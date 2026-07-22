@@ -463,7 +463,7 @@ Global oil shock reference complementing World Bank Pink Sheet crude oil. WASDE 
 | `eurostat.ag-prices` | EU agricultural output price indices (2015=100) | **P2 — implemented** |
 | `argentina.bcra-cambio` | BCRA official USD exchange-rate daily series | **P2 — implemented** |
 
-**Fonte oficial:** [EUROSTAT agriculture database](https://ec.europa.eu/eurostat/web/agriculture/database) · dataset `apri_pi15_outa` JSON API (no key) · [BCRA estadísticas cambiarias](https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones/USD) (no key)
+**Fonte oficial:** [EUROSTAT agriculture database](https://ec.europa.eu/eurostat/web/agriculture/database) · dataset `apri_pi_outa` JSON API (`unit=I15`, no key) · [BCRA estadísticas cambiarias](https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones/USD) (no key)
 
 EU ag price reference and Argentina FX parity for competitor market models. `fonte_tipo: internacional_oficial`.
 
