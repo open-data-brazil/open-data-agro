@@ -3,9 +3,13 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apri_pi15_outa?format=JSON\u0026geo=EU27_2020\u0026lang=en\u0026product=010000\u0026product=011000\u0026product=015000\u0026sinceTimePeriod=2020",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: unexpected status 404 for https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apri_pi15_outa?format=JSON\u0026geo=EU27_2020\u0026lang=en\u0026product=010000\u0026product=011000\u0026product=015000\u0026sinceTimePeriod=2020"
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apri_pi_outa?am_item=AM010000\u0026am_item=AM011000\u0026am_item=AM015000\u0026format=JSON\u0026geo=EU27_2020\u0026lang=en\u0026p_adj=NI\u0026sinceTimePeriod=2020\u0026unit=I15",
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 3966,
+      "sampleSha256": "48b685e6f629284884b804992f91fe7949c8297bf509b025e68fb3efb9a3bbfd",
+      "contentType": "application/json",
+      "updated": true
     },
     {
       "role": "portal",
@@ -13,11 +17,11 @@
       "status": "ok",
       "httpStatus": 200,
       "sampleBytes": 4096,
-      "sampleSha256": "c05645d7a75f0c40e9b1fe2c142a05ad044ee3276406dd85d3f7b8073a532640",
+      "sampleSha256": "886ec043f8678c16f327b5c89d7daf980d5a52dcb9d04ac888fa5972d837b564",
       "contentType": "text/html;charset=UTF-8"
     }
   ],
-  "probedAt": "2026-07-22T11:12:56.794450763Z",
-  "overallOk": false,
-  "hasUpdate": false
+  "probedAt": "2026-07-22T11:22:27.17173282Z",
+  "overallOk": true,
+  "hasUpdate": true
 }
