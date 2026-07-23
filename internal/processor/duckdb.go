@@ -25,6 +25,8 @@ func NewDuckDB(dbPath string) (*DuckDB, error) {
 		if err != nil {
 			return nil, fmt.Errorf("duckdb CLI not found (set DUCKDB_BIN or run make duckdb-install): %w", err)
 		}
+	} else if _, err := os.Stat(binary); err != nil {
+		return nil, fmt.Errorf("duckdb CLI not found at DUCKDB_BIN=%s (run make duckdb-install): %w", binary, err)
 	}
 	if strings.TrimSpace(dbPath) == "" {
 		dbPath = ":memory:"

@@ -284,7 +284,18 @@ python-install-ml: python-install
 duckdb-install:
 	curl -fsSL https://install.duckdb.org | DUCKDB_VERSION=$(DUCKDB_VERSION) sh
 	@mkdir -p .local/bin
-	@ln -sf "$(HOME)/.duckdb/cli/latest/duckdb" .local/bin/duckdb
+	@# Prefer the pinned version path — install.duckdb.org does not always refresh
+	@# ~/.duckdb/cli/latest, which left .local/bin/duckdb as a broken symlink in CI.
+	@if [ -x "$(HOME)/.duckdb/cli/$(DUCKDB_VERSION)/duckdb" ]; then \
+		ln -sfn "$(HOME)/.duckdb/cli/$(DUCKDB_VERSION)/duckdb" .local/bin/duckdb; \
+	elif [ -x "$(HOME)/.duckdb/cli/latest/duckdb" ]; then \
+		ln -sfn "$(HOME)/.duckdb/cli/latest/duckdb" .local/bin/duckdb; \
+	else \
+		echo "duckdb binary missing after install (expected $(HOME)/.duckdb/cli/$(DUCKDB_VERSION)/duckdb)" >&2; \
+		exit 1; \
+	fi
+	@test -x .local/bin/duckdb
+	@.local/bin/duckdb --version
 
 dbt-deps:
 	cp -f dbt/profiles.yml.example dbt/profiles.yml

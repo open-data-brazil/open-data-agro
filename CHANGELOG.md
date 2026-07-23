@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **CI DuckDB CLI path** — `make duckdb-install` now symlinks `.local/bin/duckdb` to the pinned `~/.duckdb/cli/$(DUCKDB_VERSION)/duckdb` (with `latest` fallback) and verifies the binary; fixes broken `latest` symlink that failed go DuckDB integration and `analytics-init` on main.
+
 ### Added
 
 - **Real hardware ML (Phase 32 Track R):** CEPEA soja Paranaguá history rebuild + local soy feature mart + `make ml-train-soy-real-full` (B3 gate PASS on hardware; CEPEA DB export still Cloudflare-blocked — live mirror + anchors + research bridges)

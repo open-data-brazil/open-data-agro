@@ -13,7 +13,12 @@ TIMESTAMP_UTC="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 OUT_PARQUET="$EXPORT_DIR/${VIEW_NAME}-${DATE_UTC}.parquet"
 OUT_META="$EXPORT_DIR/${VIEW_NAME}-${DATE_UTC}_metadata.json"
 
-if ! command -v "$DUCKDB_BIN" >/dev/null 2>&1; then
+if [[ "$DUCKDB_BIN" == */* ]]; then
+  if [[ ! -x "$DUCKDB_BIN" ]]; then
+    echo "duckdb CLI not executable at $DUCKDB_BIN — run: make duckdb-install" >&2
+    exit 1
+  fi
+elif ! command -v "$DUCKDB_BIN" >/dev/null 2>&1; then
   echo "duckdb CLI not found — run: make duckdb-install" >&2
   exit 1
 fi

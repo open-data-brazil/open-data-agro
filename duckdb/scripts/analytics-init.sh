@@ -9,7 +9,12 @@ DUCKDB_PATH="${DUCKDB_PATH:-$ROOT/duckdb/open_data_agro.duckdb}"
 DUCKDB_BIN="${DUCKDB_BIN:-duckdb}"
 VIEWS_DIR="$ROOT/duckdb/views"
 
-if ! command -v "$DUCKDB_BIN" >/dev/null 2>&1; then
+if [[ "$DUCKDB_BIN" == */* ]]; then
+  if [[ ! -x "$DUCKDB_BIN" ]]; then
+    echo "duckdb CLI not executable at $DUCKDB_BIN — run: make duckdb-install" >&2
+    exit 1
+  fi
+elif ! command -v "$DUCKDB_BIN" >/dev/null 2>&1; then
   echo "duckdb CLI not found — run: make duckdb-install" >&2
   exit 1
 fi
