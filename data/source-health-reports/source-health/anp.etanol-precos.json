@@ -1,12 +1,14 @@
 {
   "datasetId": "anp.etanol-precos",
   "endpoints": [
-    "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/resumo_semanal_lpc_2026-07-19_2026-07-25.xlsx",
+    "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas",
     "https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-07-29",
+  "lastFailureDate": "2026-07-29",
   "lastSuccessDate": "2026-07-28",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (fetch LPC listing: Get \"https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas\": read tcp 10.1.0.126:49262-\u003e161.148.164.31:443: read: connection reset by peer)",
   "lastSampleSha256": "8233bcb4d7514d95b70c07b37cc92771cde1958cf06d770bd9ea5cf7113c7b56"
 }
