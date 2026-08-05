@@ -1,12 +1,14 @@
 {
   "datasetId": "ibge.pam-area-quantidade",
   "endpoints": [
-    "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2716",
+    "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713",
     "https://sidra.ibge.gov.br/pesquisa/pam"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-08-05",
+  "lastFailureDate": "2026-08-05",
   "lastSuccessDate": "2026-08-04",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get \"https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713\": dial tcp 170.84.40.190:443: i/o timeout)",
   "lastSampleSha256": "2e4ff77266b2cc9cf21a4bf25f794bf1f766c24324845c498e5921ac5d35e3d2"
 }
