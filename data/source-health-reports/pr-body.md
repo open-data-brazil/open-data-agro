@@ -2,55 +2,28 @@
 
 ### Source health probe
 
-- Executed at: 2026-08-05T05:50:12Z
-- Run date: 2026-08-05
+- Executed at: 2026-08-06T05:51:26Z
+- Run date: 2026-08-06
 - Datasets probed: 131
-- OK: 117 · Warning: 9 · Critical: 5
-- Updated samples: 26
-- Deprecated (2+ days): 5
+- OK: 126 · Warning: 1 · Critical: 4
+- Updated samples: 28
+- Deprecated (2+ days): 4
 
 ### Source health alerts
 
-- **dnit.condicoes-conservacao-rodovias** (critical, day 16): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.condicoes-conservacao-rodovias** (critical, day 17): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento
   - https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento
-- **dnit.snv-rodovias-federais** (critical, day 16): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.snv-rodovias-federais** (critical, day 17): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
-- **ibge.pnad-continua-rural** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all
-  - https://sidra.ibge.gov.br/pesquisa/pnad
-- **ibge.lspa-area-producao** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/109/c48/39443": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/109/c48/39443
-  - https://sidra.ibge.gov.br/pesquisa/lspa
-- **ibge.pam-area-quantidade** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713
-  - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.pam-rendimento-valor** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2713": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2713
-  - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.ppm-efetivo-rebanhos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/3939/n3/11/p/2023/v/all": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/3939/n3/11/p/2023/v/all
-  - https://sidra.ibge.gov.br/pesquisa/ppm
-- **ibge.ppm-vacas-ordenhadas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/94/n3/11/p/2023/v/all": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/94/n3/11/p/2023/v/all
-  - https://sidra.ibge.gov.br/pesquisa/ppm
-- **ibge.ppm-ovinos-tosquiados** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/95/n3/11/p/2023/v/all": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/95/n3/11/p/2023/v/all
-  - https://sidra.ibge.gov.br/pesquisa/ppm
-- **ibge.pam-culturas-estendidas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2716": dial tcp 170.84.40.190:443: i/o timeout)
-  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2716
-  - https://sidra.ibge.gov.br/pesquisa/pam
-- **mdic.comex-exportacao-uf-ncm** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
-  - https://api-comexstat.mdic.gov.br/general
-  - https://comexstat.mdic.gov.br/
-- **mdic.comex-importacao-diesel-ncm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
-  - https://api-comexstat.mdic.gov.br/general
-  - https://comexstat.mdic.gov.br/
-- **transportes.mtr-bit-malha-rodoviaria** (critical, day 16): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **suframa.comercio-mercadorias-zfm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx": dial tcp 161.148.164.31:443: connect: connection refused)
+  - https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx
+  - https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados
+- **transportes.mtr-bit-malha-rodoviaria** (critical, day 17): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
-- **transportes.mtr-bit-malha-shapefile** (critical, day 16): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip)
+- **transportes.mtr-bit-malha-shapefile** (critical, day 17): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip": dial tcp 161.148.164.31:443: connect: connection refused)
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
 
