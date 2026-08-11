@@ -1,12 +1,14 @@
 {
   "datasetId": "bcb.sgs-ipca",
   "endpoints": [
-    "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?dataFinal=10%2F08%2F2026\u0026dataInicial=10%2F05%2F2026\u0026formato=json",
+    "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?dataFinal=11%2F08%2F2026\u0026dataInicial=11%2F05%2F2026\u0026formato=json",
     "https://dadosabertos.bcb.gov.br/"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-08-11",
+  "lastFailureDate": "2026-08-11",
   "lastSuccessDate": "2026-08-10",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 502 for https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?dataFinal=11%2F08%2F2026\u0026dataInicial=11%2F05%2F2026\u0026formato=json)",
   "lastSampleSha256": "e9c6cbec0257f2e007e644c14c161f9eecee39fb90e0aaff223b4e970aa71b8d"
 }

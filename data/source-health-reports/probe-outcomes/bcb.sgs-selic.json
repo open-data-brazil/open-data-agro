@@ -3,24 +3,18 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?dataFinal=10%2F08%2F2026\u0026dataInicial=10%2F05%2F2026\u0026formato=json",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 2625,
-      "sampleSha256": "4105294cab0e5f47a01fe1f84507e535c46a84a745057af85fe14be91ab71d8a",
-      "contentType": "application/json; charset=utf-8"
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?dataFinal=11%2F08%2F2026\u0026dataInicial=11%2F05%2F2026\u0026formato=json",
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: unexpected status 502 for https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?dataFinal=11%2F08%2F2026\u0026dataInicial=11%2F05%2F2026\u0026formato=json"
     },
     {
       "role": "portal",
       "url": "https://dadosabertos.bcb.gov.br/",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "cec06008f810a7cedefadb6ca7c03b6bb0533dde2afb476012c43d62b0399757",
-      "contentType": "text/html; charset=utf-8"
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: unexpected status 502 for https://dadosabertos.bcb.gov.br/"
     }
   ],
-  "probedAt": "2026-08-10T04:28:24.229902144Z",
-  "overallOk": true,
+  "probedAt": "2026-08-11T04:19:04.840214859Z",
+  "overallOk": false,
   "hasUpdate": false
 }
