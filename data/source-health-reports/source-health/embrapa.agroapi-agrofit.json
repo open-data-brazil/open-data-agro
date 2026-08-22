@@ -3,9 +3,11 @@
   "endpoints": [
     "https://www.agroapi.cnptia.embrapa.br/store/apis/info?name=AGROFIT\u0026provider=agroapi\u0026version=v1"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-08-22",
+  "lastFailureDate": "2026-08-22",
   "lastSuccessDate": "2026-08-21",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get \"https://www.agroapi.cnptia.embrapa.br/store/apis/info?name=AGROFIT\u0026provider=agroapi\u0026version=v1\": dial tcp 200.0.70.2:443: i/o timeout)",
   "lastSampleSha256": "376d982b3e59a4c6eaddf3e03e0a9e1600b0f6019761227ba290b31a4a11fd61"
 }
