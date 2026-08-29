@@ -1,12 +1,13 @@
 {
   "datasetId": "anp.combustiveis-precos-postos",
   "endpoints": [
-    "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/revendas_lpc_2026-08-16_2026-08-22.xlsx",
     "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-08-29",
+  "lastFailureDate": "2026-08-29",
   "lastSuccessDate": "2026-08-28",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (fetch LPC listing: Get \"https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas\": dial tcp 161.148.164.31:443: i/o timeout)",
   "lastSampleSha256": "fedb38abaee85eab70b077c198b533a6774793b44199986e794460d5882e204d"
 }
