@@ -3,12 +3,12 @@
   "endpoints": [
     "https://dados.antt.gov.br/dataset/volume-trafego-praca-pedagio"
   ],
-  "consecutiveFailureDays": 1,
+  "consecutiveFailureDays": 2,
   "firstFailureDate": "2026-09-05",
-  "lastFailureDate": "2026-09-05",
+  "lastFailureDate": "2026-09-06",
   "lastSuccessDate": "2026-09-04",
-  "severity": "warning",
-  "message": "Possible link deprecation — official source unreachable after retries. (ckan package_show: Get \"https://dados.antt.gov.br/api/3/action/package_show?id=volume-trafego-praca-pedagio\": read tcp 10.1.0.205:43104-\u003e200.198.195.143:443: read: connection reset by peer)",
+  "severity": "critical",
+  "message": "Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get \"https://dados.antt.gov.br/api/3/action/package_show?id=volume-trafego-praca-pedagio\": context deadline exceeded)",
   "lastSampleSha256": "e0ad99f898a834b8865bd14cab130cd9ce42f8b1a92b7f7f1dbb3e95d470af2d",
   "lastModified": "Fri, 28 Aug 2026 11:35:17 GMT"
 }
