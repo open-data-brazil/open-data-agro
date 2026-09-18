@@ -2,82 +2,88 @@
 
 ### Source health probe
 
-- Executed at: 2026-09-17T08:27:47Z
-- Run date: 2026-09-17
+- Executed at: 2026-09-18T08:02:23Z
+- Run date: 2026-09-18
 - Datasets probed: 131
-- OK: 108 · Warning: 0 · Critical: 23
-- Updated samples: 26
+- OK: 105 · Warning: 3 · Critical: 23
+- Updated samples: 22
 - Deprecated (2+ days): 23
 
 ### Source health alerts
 
-- **dnit.condicoes-conservacao-rodovias** (critical, day 59): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
+- **antt.volume-trafego-pedagio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (parse ckan response: invalid character '<' looking for beginning of value)
+  - https://dados.antt.gov.br/dataset/volume-trafego-praca-pedagio
+- **antt.receita-por-praca** (warning, day 1): Possible link deprecation — official source unreachable after retries. (parse ckan response: invalid character '<' looking for beginning of value)
+  - https://dados.antt.gov.br/dataset/receita-por-praca
+- **antt.pracas-pedagio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (parse ckan response: invalid character '<' looking for beginning of value)
+  - https://dados.antt.gov.br/dataset/praca-de-pedagio
+- **dnit.condicoes-conservacao-rodovias** (critical, day 60): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento
   - https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento
-- **dnit.snv-rodovias-federais** (critical, day 59): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.snv-rodovias-federais** (critical, day 60): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
-- **ibge.censo-agro-estabelecimentos** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6878/n3/all/p/2017/v/all)
+- **ibge.censo-agro-estabelecimentos** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6878/n3/all/p/2017/v/all)
   - https://apisidra.ibge.gov.br/values/t/6878/n3/all/p/2017/v/all
   - https://censoagro2017.ibge.gov.br/
-- **ibge.pnad-continua-rural** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all)
+- **ibge.pnad-continua-rural** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all)
   - https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all
   - https://sidra.ibge.gov.br/pesquisa/pnad
-- **ibge.lspa-area-producao** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/109/c48/39443)
-  - https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/109/c48/39443
+- **ibge.lspa-area-producao** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/109/c48/39445)
+  - https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/109/c48/39445
   - https://sidra.ibge.gov.br/pesquisa/lspa
-- **ibge.pam-area-quantidade** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713)
+- **ibge.pam-area-quantidade** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713)
   - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713
   - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.pam-rendimento-valor** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2713)
+- **ibge.pam-rendimento-valor** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2713)
   - https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2713
   - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.pam-estabelecimentos** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/5457/n6/in%20n3%2011/p/2024/v/8331/c782/2713)
+- **ibge.pam-estabelecimentos** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/5457/n6/in%20n3%2011/p/2024/v/8331/c782/2713)
   - https://apisidra.ibge.gov.br/values/t/5457/n6/in%20n3%2011/p/2024/v/8331/c782/2713
   - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.pevs-producao-vegetal** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/289/n3/all/p/2023/v/144)
+- **ibge.pevs-producao-vegetal** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/289/n3/all/p/2023/v/144)
   - https://apisidra.ibge.gov.br/values/t/289/n3/all/p/2023/v/144
   - https://sidra.ibge.gov.br/pesquisa/pevs
-- **ibge.ppm-producao-municipal** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/74/n6/in%20n3%2011/p/2023/v/106)
+- **ibge.ppm-producao-municipal** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/74/n6/in%20n3%2011/p/2023/v/106)
   - https://apisidra.ibge.gov.br/values/t/74/n6/in%20n3%2011/p/2023/v/106
   - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.ppm-efetivo-rebanhos** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/3939/n3/11/p/2023/v/all)
+- **ibge.ppm-efetivo-rebanhos** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/3939/n3/11/p/2023/v/all)
   - https://apisidra.ibge.gov.br/values/t/3939/n3/11/p/2023/v/all
   - https://sidra.ibge.gov.br/pesquisa/ppm
-- **ibge.ppm-vacas-ordenhadas** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/94/n3/11/p/2023/v/all)
+- **ibge.ppm-vacas-ordenhadas** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/94/n3/11/p/2023/v/all)
   - https://apisidra.ibge.gov.br/values/t/94/n3/11/p/2023/v/all
   - https://sidra.ibge.gov.br/pesquisa/ppm
-- **ibge.ppm-ovinos-tosquiados** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/95/n3/11/p/2023/v/all)
+- **ibge.ppm-ovinos-tosquiados** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/95/n3/11/p/2023/v/all)
   - https://apisidra.ibge.gov.br/values/t/95/n3/11/p/2023/v/all
   - https://sidra.ibge.gov.br/pesquisa/ppm
-- **ibge.ppm-aquicultura** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/3940/n3/11/p/2023/v/all)
+- **ibge.ppm-aquicultura** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/3940/n3/11/p/2023/v/all)
   - https://apisidra.ibge.gov.br/values/t/3940/n3/11/p/2023/v/all
   - https://sidra.ibge.gov.br/pesquisa/ppm
-- **ibge.pam-precos-produtor** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2711)
-  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2711
+- **ibge.pam-precos-produtor** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2716)
+  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2716
   - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.pam-culturas-estendidas** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2750)
-  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2750
+- **ibge.pam-culturas-estendidas** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2740)
+  - https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2740
   - https://sidra.ibge.gov.br/pesquisa/pam
-- **ibge.lspa-rendimento-medio** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/35/c48/39443)
-  - https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/35/c48/39443
+- **ibge.lspa-rendimento-medio** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/35/c48/39445)
+  - https://apisidra.ibge.gov.br/values/t/6588/n3/in%20n3%2011/p/202512/v/35/c48/39445
   - https://sidra.ibge.gov.br/pesquisa/lspa
-- **ibge.censo-agro-area-uso-solo** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6879/n3/all/p/2017/v/all)
+- **ibge.censo-agro-area-uso-solo** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6879/n3/all/p/2017/v/all)
   - https://apisidra.ibge.gov.br/values/t/6879/n3/all/p/2017/v/all
   - https://censoagro2017.ibge.gov.br/
-- **ibge.censo-agro-maquinario** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6880/n3/all/p/2017/v/all)
+- **ibge.censo-agro-maquinario** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6880/n3/all/p/2017/v/all)
   - https://apisidra.ibge.gov.br/values/t/6880/n3/all/p/2017/v/all
   - https://censoagro2017.ibge.gov.br/
-- **ibge.pnad-rural-renda-ocupacao** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all)
+- **ibge.pnad-rural-renda-ocupacao** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all)
   - https://apisidra.ibge.gov.br/values/t/6385/n3/11,12,13,14,15,16,17/p/last%201/v/all
   - https://sidra.ibge.gov.br/pesquisa/pnad
-- **jrc.mars-crop-yield** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv)
+- **jrc.mars-crop-yield** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv)
   - https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv
   - https://mars.jrc.ec.europa.eu/dataset
-- **transportes.mtr-bit-malha-rodoviaria** (critical, day 59): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **transportes.mtr-bit-malha-rodoviaria** (critical, day 60): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
-- **transportes.mtr-bit-malha-shapefile** (critical, day 59): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip)
+- **transportes.mtr-bit-malha-shapefile** (critical, day 60): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip)
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
 
