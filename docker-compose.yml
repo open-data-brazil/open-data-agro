@@ -34,8 +34,9 @@ services:
       start_period: 5s
 
   minio:
-    # Official minio/minio release tags were removed from Docker Hub (2026); `latest` still resolves.
-    image: minio/minio:latest
+    # Docker Hub minio/minio was archived and removed (Oct 2025+); quay.io/minio is gated (401 anonymous).
+    # Use Bitnami legacy backup for CI integration (public, frozen). Pin and mirror locally for prod.
+    image: bitnamilegacy/minio:latest
     ports:
       - '${MINIO_HOST_PORT:-9000}:9000'
       - '${MINIO_CONSOLE_PORT:-9001}:9001'
@@ -47,7 +48,7 @@ services:
       - minio_data:/data
 
   minio-init:
-    image: minio/mc:latest
+    image: bitnamilegacy/minio-client:latest
     depends_on:
       minio:
         condition: service_started
