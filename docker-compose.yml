@@ -35,7 +35,8 @@ services:
 
   minio:
     # Docker Hub minio/minio was archived and removed (Oct 2025+); quay.io/minio is gated (401 anonymous).
-    # Use Bitnami legacy backup for CI integration (public, frozen). Pin and mirror locally for prod.
+    # Use Bitnami legacy backup for CI integration (public, frozen). Bitnami runs as non-root (1001)
+    # and stores data in /bitnami/minio/data — do not override command (default starts server on :9000/:9001).
     image: bitnamilegacy/minio:latest
     ports:
       - '${MINIO_HOST_PORT:-9000}:9000'
@@ -43,9 +44,9 @@ services:
     environment:
       MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:-minioadmin}
       MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:-minioadmin}
-    command: ['server', '/data', '--console-address', ':9001']
+      MINIO_DEFAULT_BUCKETS: ${MINIO_BUCKET:-open-data-agro}
     volumes:
-      - minio_data:/data
+      - minio_data:/bitnami/minio/data
 
   minio-init:
     image: bitnamilegacy/minio-client:latest
