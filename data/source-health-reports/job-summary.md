@@ -1,26 +1,47 @@
 ### Source health probe
 
-- Executed at: 2026-09-29T09:32:10Z
-- Run date: 2026-09-29
+- Executed at: 2026-09-30T09:27:03Z
+- Run date: 2026-09-30
 - Datasets probed: 131
-- OK: 126 · Warning: 0 · Critical: 5
-- Updated samples: 31
+- OK: 119 · Warning: 7 · Critical: 5
+- Updated samples: 24
 - Deprecated (2+ days): 5
 
 ### Source health alerts
 
-- **dnit.condicoes-conservacao-rodovias** (critical, day 71): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
+- **ana.hidrologia-series** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://telemetriaws1.ana.gov.br/ServiceANA.asmx?WSDL": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+  - https://telemetriaws1.ana.gov.br/ServiceANA.asmx?WSDL
+  - https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos
+- **ana.pluviometria-redes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://telemetriaws1.ana.gov.br/ServiceANA.asmx?WSDL": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+  - https://telemetriaws1.ana.gov.br/ServiceANA.asmx?WSDL
+  - https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos
+- **dnit.condicoes-conservacao-rodovias** (critical, day 72): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento
   - https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento
-- **dnit.snv-rodovias-federais** (critical, day 71): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.snv-rodovias-federais** (critical, day 72): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
-- **jrc.mars-crop-yield** (critical, day 14): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv)
+- **ibge.localidades-mesorregioes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **ibge.localidades-microrregioes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome": dial tcp 170.84.40.205:443: i/o timeout)
+  - https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome
+  - https://servicodados.ibge.gov.br/api/docs/localidades
+- **jrc.mars-crop-yield** (critical, day 15): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv)
   - https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv
   - https://mars.jrc.ec.europa.eu/dataset
-- **transportes.mtr-bit-malha-rodoviaria** (critical, day 71): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **mdic.comex-importacao-ncm-mes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mdic.comex-importacao-diesel-ncm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **suframa.comercio-mercadorias-zfm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx": dial tcp 161.148.164.31:443: i/o timeout)
+  - https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx
+  - https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados
+- **transportes.mtr-bit-malha-rodoviaria** (critical, day 72): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
-- **transportes.mtr-bit-malha-shapefile** (critical, day 71): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip)
+- **transportes.mtr-bit-malha-shapefile** (critical, day 72): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip)
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
