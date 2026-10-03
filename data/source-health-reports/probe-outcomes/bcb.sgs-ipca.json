@@ -3,12 +3,9 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?dataFinal=02%2F10%2F2026\u0026dataInicial=02%2F07%2F2026\u0026formato=json",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 76,
-      "sampleSha256": "32a016318201e4b4876ad30b687eda99b153d72001468a8b3de2a8e34bd662e3",
-      "contentType": "application/json; charset=utf-8"
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?dataFinal=03%2F10%2F2026\u0026dataInicial=03%2F07%2F2026\u0026formato=json",
+      "status": "unavailable",
+      "error": "probe failed after 3 attempts: Get \"https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?dataFinal=03%2F10%2F2026\u0026dataInicial=03%2F07%2F2026\u0026formato=json\": dial tcp: lookup api.bcb.gov.br on 127.0.0.53:53: no such host"
     },
     {
       "role": "portal",
@@ -16,11 +13,11 @@
       "status": "ok",
       "httpStatus": 200,
       "sampleBytes": 4096,
-      "sampleSha256": "d22a5604ba7cfdf0f37eee0c8e748317330b337a365d70ae401a54cdf375230b",
+      "sampleSha256": "5ffcd858ea91d7de67d2ab874e9787fd9b981ce2328c9fddc470f84df2d63581",
       "contentType": "text/html; charset=utf-8"
     }
   ],
-  "probedAt": "2026-10-02T09:23:31.281486048Z",
-  "overallOk": true,
+  "probedAt": "2026-10-03T08:53:03.716005058Z",
+  "overallOk": false,
   "hasUpdate": false
 }
