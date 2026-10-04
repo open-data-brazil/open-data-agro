@@ -1,14 +1,14 @@
 {
   "datasetId": "bcb.sgs-ipca-12m",
   "endpoints": [
-    "https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados?dataFinal=03%2F10%2F2026\u0026dataInicial=03%2F07%2F2026\u0026formato=json",
+    "https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados?dataFinal=04%2F10%2F2026\u0026dataInicial=04%2F07%2F2026\u0026formato=json",
     "https://dadosabertos.bcb.gov.br/"
   ],
-  "consecutiveFailureDays": 1,
+  "consecutiveFailureDays": 2,
   "firstFailureDate": "2026-10-03",
-  "lastFailureDate": "2026-10-03",
+  "lastFailureDate": "2026-10-04",
   "lastSuccessDate": "2026-10-02",
-  "severity": "warning",
-  "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get \"https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados?dataFinal=03%2F10%2F2026\u0026dataInicial=03%2F07%2F2026\u0026formato=json\": dial tcp: lookup api.bcb.gov.br on 127.0.0.53:53: no such host)",
+  "severity": "critical",
+  "message": "Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get \"https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados?dataFinal=04%2F10%2F2026\u0026dataInicial=04%2F07%2F2026\u0026formato=json\": dial tcp: lookup api.bcb.gov.br on 127.0.0.53:53: no such host)",
   "lastSampleSha256": "2258e8201a3bf0d3ed4833f34b0f20796c8aebbb276ce3f9306b2cbd07cbc37a"
 }
