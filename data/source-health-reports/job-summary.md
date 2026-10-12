@@ -1,108 +1,101 @@
 ### Source health probe
 
-- Executed at: 2026-10-11T09:44:59Z
-- Run date: 2026-10-11
+- Executed at: 2026-10-12T10:19:17Z
+- Run date: 2026-10-12
 - Datasets probed: 131
-- OK: 97 · Warning: 29 · Critical: 5
-- Updated samples: 19
-- Deprecated (2+ days): 5
+- OK: 101 · Warning: 1 · Critical: 29
+- Updated samples: 15
+- Deprecated (2+ days): 29
 
 ### Source health alerts
 
-- **b3.futuro-soja** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 403 for https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/)
-  - https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/
-- **b3.futuro-milho** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 403 for https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/)
-  - https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/
-- **b3.futuro-boi** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 403 for https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/)
-  - https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/
-- **b3.futuro-cafe** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 403 for https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/)
-  - https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/
-- **b3.futuro-acucar** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 403 for https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/)
-  - https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/boletins-diarios/pesquisa-por-pregao/
-- **conab.estoques-publicos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Estoques.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.estoques-publicos** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Estoques.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Estoques.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.operacoes-comercializacao** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Leilao.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.operacoes-comercializacao** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Leilao.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Leilao.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.vendas-balcao** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/VendaBalcao.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.vendas-balcao** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/VendaBalcao.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/VendaBalcao.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.alimenta-brasil-entregas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_Entregas.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.alimenta-brasil-entregas** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_Entregas.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_Entregas.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.alimenta-brasil-propostas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_PropostaFormalizadasExecutada.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.alimenta-brasil-propostas** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_PropostaFormalizadasExecutada.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_PropostaFormalizadasExecutada.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.armazenagem** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ArmazensCadastrados.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.armazenagem** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ArmazensCadastrados.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ArmazensCadastrados.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.frete** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Frete.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.frete** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Frete.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Frete.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.serie-historica-capacidade-estatica** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/exportacao_capacidade_estatica.xls": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.serie-historica-capacidade-estatica** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/exportacao_capacidade_estatica.xls": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/exportacao_capacidade_estatica.xls
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.oferta-demanda** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/OfertaDemanda.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.oferta-demanda** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/OfertaDemanda.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/OfertaDemanda.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.precos-minimos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecoMinimo.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.precos-minimos** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecoMinimo.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecoMinimo.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.precos-agropecuarios-mensal-uf** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalUF.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.precos-agropecuarios-mensal-uf** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalUF.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalUF.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.precos-agropecuarios-mensal-municipio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalMunicipio.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.precos-agropecuarios-mensal-municipio** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalMunicipio.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalMunicipio.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.precos-agropecuarios-semanal-uf** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalUF.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.precos-agropecuarios-semanal-uf** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalUF.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalUF.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.precos-agropecuarios-semanal-municipio** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalMunicipio.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.precos-agropecuarios-semanal-municipio** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalMunicipio.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalMunicipio.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.prohort-diario** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortDiario.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.prohort-diario** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortDiario.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortDiario.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.prohort-mensal** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortMensal.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.prohort-mensal** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortMensal.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortMensal.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.custo-producao** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/CustoProducao.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.custo-producao** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/CustoProducao.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/CustoProducao.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.estimativa-cana** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCana.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.estimativa-cana** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCana.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCana.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.estimativa-graos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoGraos.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.estimativa-graos** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoGraos.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoGraos.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.serie-historica-cana** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.serie-historica-cana** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.serie-historica-graos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaGraos.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.serie-historica-graos** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaGraos.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaGraos.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.estimativa-cafe** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCafe.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.estimativa-cafe** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCafe.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCafe.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.serie-historica-cafe** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCafe.txt": dial tcp 160.238.29.73:443: connect: connection refused)
+- **conab.serie-historica-cafe** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCafe.txt": dial tcp 160.238.29.73:443: connect: connection refused)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCafe.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **dnit.condicoes-conservacao-rodovias** (critical, day 83): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.condicoes-conservacao-rodovias** (critical, day 84): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento
   - https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento
-- **dnit.snv-rodovias-federais** (critical, day 83): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.snv-rodovias-federais** (critical, day 84): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
-- **jrc.mars-crop-yield** (critical, day 26): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv)
+- **jrc.mars-crop-yield** (critical, day 27): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv)
   - https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv
   - https://mars.jrc.ec.europa.eu/dataset
-- **mdic.comex-exportacao-ncm-mes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
+- **mdic.comex-exportacao-ncm-mes** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
   - https://api-comexstat.mdic.gov.br/general
   - https://comexstat.mdic.gov.br/
-- **transportes.mtr-bit-malha-rodoviaria** (critical, day 83): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **mdic.comex-importacao-ncm-mes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 429 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **transportes.mtr-bit-malha-rodoviaria** (critical, day 84): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
-- **transportes.mtr-bit-malha-shapefile** (critical, day 83): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip": dial tcp 161.148.164.31:443: i/o timeout)
+- **transportes.mtr-bit-malha-shapefile** (critical, day 84): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip)
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
