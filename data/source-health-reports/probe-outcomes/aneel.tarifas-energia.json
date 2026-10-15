@@ -3,25 +3,12 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://dadosabertos.aneel.gov.br/dataset/7f43a020-6dc5-44b8-80b4-d97eaa94436c/resource/0591b8f6-fe54-437b-b72b-1aa2efd46e42/download/bandeira-tarifaria-acionamento.csv",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "27347efd3030a52e9bf22083fcd5379024a72ee3058ec22186564770b305365e",
-      "lastModified": "Sat, 10 Oct 2026 04:00:43 GMT",
-      "contentType": "text/csv"
-    },
-    {
-      "role": "portal",
       "url": "https://dadosabertos.aneel.gov.br/dataset/bandeiras-tarifarias",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "7f91b757a43508b53de249f850effd9144b403f754d7228f4d4b308a2ba61ee3",
-      "contentType": "text/html; charset=utf-8"
+      "status": "resolve_error",
+      "error": "ckan package_show: Get \"https://dadosabertos.aneel.gov.br/api/3/action/package_show?id=bandeiras-tarifarias\": dial tcp 200.198.220.169:443: i/o timeout"
     }
   ],
-  "probedAt": "2026-10-14T08:24:44.522678633Z",
-  "overallOk": true,
+  "probedAt": "2026-10-15T08:00:14.31090855Z",
+  "overallOk": false,
   "hasUpdate": false
 }

@@ -4,9 +4,11 @@
     "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome",
     "https://servicodados.ibge.gov.br/api/docs/localidades"
   ],
-  "consecutiveFailureDays": 0,
+  "consecutiveFailureDays": 1,
+  "firstFailureDate": "2026-10-15",
+  "lastFailureDate": "2026-10-15",
   "lastSuccessDate": "2026-10-14",
-  "severity": "ok",
-  "message": "Official source responded successfully (sample probe).",
+  "severity": "warning",
+  "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome\": tls: failed to verify certificate: x509: certificate signed by unknown authority)",
   "lastSampleSha256": "d1d0774c6f75fcebb22a41f92d7618bfdc5cd1594b7b33cb2992c1e3aab0254c"
 }

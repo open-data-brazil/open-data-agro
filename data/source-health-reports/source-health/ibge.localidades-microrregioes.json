@@ -4,11 +4,11 @@
     "https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome",
     "https://servicodados.ibge.gov.br/api/docs/localidades"
   ],
-  "consecutiveFailureDays": 1,
+  "consecutiveFailureDays": 2,
   "firstFailureDate": "2026-10-14",
-  "lastFailureDate": "2026-10-14",
+  "lastFailureDate": "2026-10-15",
   "lastSuccessDate": "2026-10-13",
-  "severity": "warning",
-  "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome\": dial tcp 170.84.40.205:443: i/o timeout)",
+  "severity": "critical",
+  "message": "Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome\": tls: failed to verify certificate: x509: certificate signed by unknown authority)",
   "lastSampleSha256": "795c89b7c2b506940977800d7ecf916cfd9ca11574b1ca5f0d4d8e11270b211d"
 }
