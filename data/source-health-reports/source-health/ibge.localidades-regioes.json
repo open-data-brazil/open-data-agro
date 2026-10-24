@@ -4,11 +4,11 @@
     "https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome",
     "https://servicodados.ibge.gov.br/api/docs/localidades"
   ],
-  "consecutiveFailureDays": 1,
+  "consecutiveFailureDays": 2,
   "firstFailureDate": "2026-10-23",
-  "lastFailureDate": "2026-10-23",
+  "lastFailureDate": "2026-10-24",
   "lastSuccessDate": "2026-10-22",
-  "severity": "warning",
-  "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome\": dial tcp 170.84.40.178:443: i/o timeout)",
+  "severity": "critical",
+  "message": "Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome\": dial tcp 170.84.40.178:443: i/o timeout)",
   "lastSampleSha256": "93295aaecff337007a79f708f6db619a86eebcaff11b51ccdc470d1697897021"
 }
