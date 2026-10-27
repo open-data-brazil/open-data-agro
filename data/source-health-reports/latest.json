@@ -1,12 +1,12 @@
 {
   "summary": {
-    "executedAt": "2026-10-26T08:39:17.14647078Z",
-    "runDate": "2026-10-26",
+    "executedAt": "2026-10-27T08:45:54.463450719Z",
+    "runDate": "2026-10-27",
     "totalDatasets": 131,
-    "okCount": 99,
-    "warningCount": 0,
+    "okCount": 94,
+    "warningCount": 5,
     "criticalCount": 32,
-    "updatedCount": 14,
+    "updatedCount": 19,
     "deprecatedCount": 32
   },
   "outcomes": [
@@ -33,7 +33,7 @@
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:21.024839315Z",
+      "probedAt": "2026-10-27T08:39:43.386803926Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -60,7 +60,7 @@
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:21.258973566Z",
+      "probedAt": "2026-10-27T08:39:46.286127893Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -87,7 +87,7 @@
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:21.024486782Z",
+      "probedAt": "2026-10-27T08:39:48.13477264Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -106,14 +106,11 @@
         {
           "role": "portal",
           "url": "https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos",
-          "status": "ok",
-          "httpStatus": 200,
-          "sampleBytes": 4096,
-          "sampleSha256": "f2e90cc0d22ebb18fbb6018ccc09c080acb6ec40171e7cd4daeb2fa18d00e6ff",
-          "contentType": "text/html;charset=utf-8"
+          "status": "unavailable",
+          "error": "probe failed after 3 attempts: Get \"https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos\": dial tcp 161.148.164.31:443: connect: connection refused"
         }
       ],
-      "probedAt": "2026-10-26T08:32:22.066776481Z",
+      "probedAt": "2026-10-27T08:39:49.147318444Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -139,7 +136,7 @@
           "contentType": "text/html;charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:21.024889721Z",
+      "probedAt": "2026-10-27T08:39:30.256253609Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -154,8 +151,7 @@
           "sampleBytes": 4096,
           "sampleSha256": "7236d5fcc9b73cd7796ef4cfed16786aacbadeeeaa2bac253b5760de2c094baf",
           "lastModified": "Mon, 26 Oct 2026 08:05:04 GMT",
-          "contentType": "text/csv",
-          "updated": true
+          "contentType": "text/csv"
         },
         {
           "role": "portal",
@@ -163,25 +159,26 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "6b371116da31d2eb53cf8b4f7869a33f9c824d89236ce734a41de3bebecf2c0e",
+          "sampleSha256": "1e5c36bf14d09d96491fce9d0a86e8b2924d0765077e973c6c43c01d40ceb8c9",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:22.494289237Z",
+      "probedAt": "2026-10-27T08:39:30.256263168Z",
       "overallOk": true,
-      "hasUpdate": true
+      "hasUpdate": false
     },
     {
       "datasetId": "anp.combustiveis-precos-medios-municipios",
       "endpoints": [
         {
           "role": "source",
-          "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/resumo_semanal_lpc_2026_10_11-2026_10_17.xlsx",
+          "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/resumo_semanal_lpc_2026_10_18-2026_10_24.xlsx",
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "2cc9297837ad2b20d9f7e72d716abdbf122c6cd12368ead0c29c90e1043f3f77",
-          "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          "sampleSha256": "1d94894e4f73fcd4ba968fdd30daf5cc01d8d3487e0bb8722b24b662a8c0e420",
+          "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "updated": true
         },
         {
           "role": "portal",
@@ -193,21 +190,22 @@
           "contentType": "text/html;charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:21.024439872Z",
+      "probedAt": "2026-10-27T08:42:52.803482027Z",
       "overallOk": true,
-      "hasUpdate": false
+      "hasUpdate": true
     },
     {
       "datasetId": "anp.combustiveis-precos-postos",
       "endpoints": [
         {
           "role": "source",
-          "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/revendas_lpc_2026_10_11-2026_10_17.xlsx",
+          "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/revendas_lpc_2026_10_18-2026_10_24.xlsx",
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "f2f1117d37c60a023da5777e78200e5d8af33edd25ea300022317e8350625021",
-          "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          "sampleSha256": "a3dcecda0a17363e6333d6c54021c59e6351cc7feff62a0e7f1fe95ea718138b",
+          "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "updated": true
         },
         {
           "role": "portal",
@@ -219,21 +217,22 @@
           "contentType": "text/html;charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:21.024755455Z",
+      "probedAt": "2026-10-27T08:42:52.441280625Z",
       "overallOk": true,
-      "hasUpdate": false
+      "hasUpdate": true
     },
     {
       "datasetId": "anp.etanol-precos",
       "endpoints": [
         {
           "role": "source",
-          "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/resumo_semanal_lpc_2026_10_11-2026_10_17.xlsx",
+          "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/resumo_semanal_lpc_2026_10_18-2026_10_24.xlsx",
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "2cc9297837ad2b20d9f7e72d716abdbf122c6cd12368ead0c29c90e1043f3f77",
-          "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          "sampleSha256": "1d94894e4f73fcd4ba968fdd30daf5cc01d8d3487e0bb8722b24b662a8c0e420",
+          "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "updated": true
         },
         {
           "role": "portal",
@@ -242,9 +241,9 @@
           "error": "probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis"
         }
       ],
-      "probedAt": "2026-10-26T08:32:22.991419305Z",
+      "probedAt": "2026-10-27T08:42:53.687358446Z",
       "overallOk": true,
-      "hasUpdate": false
+      "hasUpdate": true
     },
     {
       "datasetId": "antt.volume-trafego-pedagio",
@@ -269,7 +268,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:23.829514317Z",
+      "probedAt": "2026-10-27T08:39:30.256118471Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -296,7 +295,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:24.671705014Z",
+      "probedAt": "2026-10-27T08:39:30.256480795Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -323,7 +322,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:25.574687418Z",
+      "probedAt": "2026-10-27T08:39:30.568802424Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -332,12 +331,13 @@
       "endpoints": [
         {
           "role": "source",
-          "url": "https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones/USD?fechaDesde=2024-01-01\u0026fechaHasta=2026-10-26",
+          "url": "https://api.bcra.gob.ar/estadisticascambiarias/v1.0/Cotizaciones/USD?fechaDesde=2024-01-01\u0026fechaHasta=2026-10-27",
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "5632300c3187adaa15a3af5f51267acdf511bed3b221d8ec4d14262e792dccb4",
-          "contentType": "application/json; charset=utf-8"
+          "sampleSha256": "ca554eb24eb8ea089f04cfe5ca66810770db603b3cc7353d0d4d533fe5b0591a",
+          "contentType": "application/json; charset=utf-8",
+          "updated": true
         },
         {
           "role": "portal",
@@ -349,9 +349,9 @@
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:29.784571988Z",
+      "probedAt": "2026-10-27T08:39:31.246026771Z",
       "overallOk": true,
-      "hasUpdate": false
+      "hasUpdate": true
     },
     {
       "datasetId": "argentina.magyp-producion-granos",
@@ -375,7 +375,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:30.988465247Z",
+      "probedAt": "2026-10-27T08:39:32.854218911Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -389,11 +389,11 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "ca4595a952d6f027f43631a82585c906ceb283e88bb34fdaa6038a7a531d0d51",
-          "lastModified": "Sat, 24 Oct 2026 10:05:37 GMT",
+          "lastModified": "Tue, 27 Oct 2026 06:17:17 GMT",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:34.100210407Z",
+      "probedAt": "2026-10-27T08:39:34.255884887Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -407,11 +407,11 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "ca4595a952d6f027f43631a82585c906ceb283e88bb34fdaa6038a7a531d0d51",
-          "lastModified": "Sat, 24 Oct 2026 10:05:37 GMT",
+          "lastModified": "Tue, 27 Oct 2026 06:17:17 GMT",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:34.362840833Z",
+      "probedAt": "2026-10-27T08:39:39.858753092Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -425,11 +425,11 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "ca4595a952d6f027f43631a82585c906ceb283e88bb34fdaa6038a7a531d0d51",
-          "lastModified": "Sat, 24 Oct 2026 10:05:37 GMT",
+          "lastModified": "Tue, 27 Oct 2026 06:17:17 GMT",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:34.51064731Z",
+      "probedAt": "2026-10-27T08:39:40.441182638Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -443,11 +443,11 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "ca4595a952d6f027f43631a82585c906ceb283e88bb34fdaa6038a7a531d0d51",
-          "lastModified": "Sat, 24 Oct 2026 10:05:37 GMT",
+          "lastModified": "Tue, 27 Oct 2026 06:17:17 GMT",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:34.660727446Z",
+      "probedAt": "2026-10-27T08:39:42.637212369Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -461,11 +461,11 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "ca4595a952d6f027f43631a82585c906ceb283e88bb34fdaa6038a7a531d0d51",
-          "lastModified": "Sat, 24 Oct 2026 10:05:37 GMT",
+          "lastModified": "Tue, 27 Oct 2026 06:17:17 GMT",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:34.797775964Z",
+      "probedAt": "2026-10-27T08:39:43.239794156Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -474,7 +474,7 @@
       "endpoints": [
         {
           "role": "source",
-          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21087/dados?dataFinal=26%2F10%2F2026\u0026dataInicial=26%2F07%2F2026\u0026formato=json",
+          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.21087/dados?dataFinal=27%2F10%2F2026\u0026dataInicial=27%2F07%2F2026\u0026formato=json",
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 75,
@@ -492,7 +492,7 @@
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:32:34.951883348Z",
+      "probedAt": "2026-10-27T08:39:45.184518632Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -501,7 +501,7 @@
       "endpoints": [
         {
           "role": "source",
-          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?dataFinal=26%2F10%2F2026\u0026dataInicial=26%2F07%2F2026\u0026formato=json",
+          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?dataFinal=27%2F10%2F2026\u0026dataInicial=27%2F07%2F2026\u0026formato=json",
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 113,
@@ -514,11 +514,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "0978d2ec835c22e819230dbb00c8ac056d9c8d96301048116e19158d17d56c5a",
+          "sampleSha256": "72d07d0f3caf2e47ab103401be999faaddde8f728487f875aa5746ddcd260794",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:36.378764319Z",
+      "probedAt": "2026-10-27T08:39:47.400492851Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -527,7 +527,7 @@
       "endpoints": [
         {
           "role": "source",
-          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados?dataFinal=26%2F10%2F2026\u0026dataInicial=26%2F07%2F2026\u0026formato=json",
+          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados?dataFinal=27%2F10%2F2026\u0026dataInicial=27%2F07%2F2026\u0026formato=json",
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 112,
@@ -540,11 +540,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "e7998e5309adf26bb57c387a8085bae1e44942f91f2f70158b94ecc5e5a3a956",
+          "sampleSha256": "48ed7aeeaa761d01ebf12985f2ef0a110cef3e3c7cd934cee4d81f7000e88001",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:37.520351254Z",
+      "probedAt": "2026-10-27T08:40:06.131753654Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -553,12 +553,13 @@
       "endpoints": [
         {
           "role": "source",
-          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?dataFinal=26%2F10%2F2026\u0026dataInicial=26%2F07%2F2026\u0026formato=json",
+          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?dataFinal=27%2F10%2F2026\u0026dataInicial=27%2F07%2F2026\u0026formato=json",
           "status": "ok",
           "httpStatus": 200,
-          "sampleBytes": 2458,
-          "sampleSha256": "bd37b783b91d19d8868d15753b43a569841467ce533fc204cfebe483657c938b",
-          "contentType": "application/json; charset=utf-8"
+          "sampleBytes": 2497,
+          "sampleSha256": "db1cc7ac7408a4a2a1610b86d51844bd526df24f38bf3cd321a65fb94fb49691",
+          "contentType": "application/json; charset=utf-8",
+          "updated": true
         },
         {
           "role": "portal",
@@ -566,25 +567,26 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "3f3f1d1d8445c8ad5b81a394bafb4265f5452c57c34e69e8e8b92cb1e4aec2d8",
+          "sampleSha256": "5cf8bcde26e7379a083e52ce61f2e962908922f215726d282bd783b385a0692a",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:38.244248991Z",
+      "probedAt": "2026-10-27T08:40:08.315116138Z",
       "overallOk": true,
-      "hasUpdate": false
+      "hasUpdate": true
     },
     {
       "datasetId": "bcb.sgs-ptax-usd-compra",
       "endpoints": [
         {
           "role": "source",
-          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados?dataFinal=26%2F10%2F2026\u0026dataInicial=26%2F07%2F2026\u0026formato=json",
+          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados?dataFinal=27%2F10%2F2026\u0026dataInicial=27%2F07%2F2026\u0026formato=json",
           "status": "ok",
           "httpStatus": 200,
-          "sampleBytes": 2458,
-          "sampleSha256": "8306c8c65d33f6282d2f6ed0a7337eb0ce722cb81ba199b1bc1fe82eb8a94949",
-          "contentType": "application/json; charset=utf-8"
+          "sampleBytes": 2497,
+          "sampleSha256": "4addf45fe6a46813a1824222076109e91caeb36abe5a02be37fdf437d58e4b52",
+          "contentType": "application/json; charset=utf-8",
+          "updated": true
         },
         {
           "role": "portal",
@@ -592,20 +594,20 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "f20e81b8d0157cb3bc2f816568c3516fd44419cc395379b8701ad8d56505c393",
+          "sampleSha256": "642b2b71656e4f81e322149d6f710f743855bd4c77867061ed39c61fd7cb24fe",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:39.497464557Z",
+      "probedAt": "2026-10-27T08:40:09.783303294Z",
       "overallOk": true,
-      "hasUpdate": false
+      "hasUpdate": true
     },
     {
       "datasetId": "bcb.sgs-igpm",
       "endpoints": [
         {
           "role": "source",
-          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.189/dados?dataFinal=26%2F10%2F2026\u0026dataInicial=26%2F07%2F2026\u0026formato=json",
+          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.189/dados?dataFinal=27%2F10%2F2026\u0026dataInicial=27%2F07%2F2026\u0026formato=json",
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 114,
@@ -618,11 +620,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "5224a65932e7c8e4a04a8fefb4d04b273ab83486191e84a08e11c367c76ec23c",
+          "sampleSha256": "24959a1a4405c45fa6608bfb1a762441c813ff6618d9552504443bfc95ea7838",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:40.09101548Z",
+      "probedAt": "2026-10-27T08:40:11.081290254Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -631,12 +633,13 @@
       "endpoints": [
         {
           "role": "source",
-          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?dataFinal=26%2F10%2F2026\u0026dataInicial=26%2F07%2F2026\u0026formato=json",
+          "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?dataFinal=27%2F10%2F2026\u0026dataInicial=27%2F07%2F2026\u0026formato=json",
           "status": "ok",
           "httpStatus": 200,
-          "sampleBytes": 2584,
-          "sampleSha256": "a2e25229a8de8f695a73b1a4ed24c64343581c2fe0bb7955eb7638bcad1c556d",
-          "contentType": "application/json; charset=utf-8"
+          "sampleBytes": 2625,
+          "sampleSha256": "8f1a50f6c9195a34ae26dd81685a61efe71644dc77d9e5af315cef4333b18c2c",
+          "contentType": "application/json; charset=utf-8",
+          "updated": true
         },
         {
           "role": "portal",
@@ -644,13 +647,13 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "ba090f2880604903ff2f28cb4bb6300a068346810c074e21cafdbc144fb2cd74",
+          "sampleSha256": "a91abe6d6c41f473a0d8b3f67d0e2c363a0d7e0d8f38ac64b808676a972c4cf5",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:40.680181522Z",
+      "probedAt": "2026-10-27T08:40:12.582028269Z",
       "overallOk": true,
-      "hasUpdate": false
+      "hasUpdate": true
     },
     {
       "datasetId": "bndes.desembolsos-linhas-agro",
@@ -671,11 +674,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "5096cdb16eaf8b46be10ff5d3a5a42d628a122d2917b9d19da5898f253f81d2d",
+          "sampleSha256": "340f67e4ce648b6a2ba7bb5baa2975283f78c0b8c8f94996e28a6952caea31f1",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:41.084631692Z",
+      "probedAt": "2026-10-27T08:40:14.443650821Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -698,11 +701,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "ab25363ad5abff9bc4cd658c1d95e0caa2abe77b1c2f1d1c7d8b055774bd00f6",
+          "sampleSha256": "712722c4dedee4e5dfd27996f0f7ceb0a8ba5030a8529875adc60b6eb4522cd0",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:41.406298615Z",
+      "probedAt": "2026-10-27T08:40:22.967455478Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -715,8 +718,8 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "99f97bcf931e0d435d209372a9a1f8e76a2e0d941610ff90bbf3bee8afe06fd2",
-          "lastModified": "Mon, 26 Oct 2026 08:30:02 GMT",
+          "sampleSha256": "8eacb372451ff349f7626570b352ff228e5c5b49af8b5158b046055cd0a60363",
+          "lastModified": "Tue, 27 Oct 2026 08:36:25 GMT",
           "contentType": "text/html; charset=UTF-8",
           "updated": true
         },
@@ -726,12 +729,12 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "769c701c6837dd17ac1bed65be79e95b6e92182a7d9b89e28786a80a41fc70fd",
-          "lastModified": "Mon, 26 Oct 2026 08:32:42 GMT",
+          "sampleSha256": "bca6199bde370455d2dd00f15a7a137bc2c934fc7d11df05f63079e89a7cac9f",
+          "lastModified": "Tue, 27 Oct 2026 08:40:28 GMT",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:41.914878821Z",
+      "probedAt": "2026-10-27T08:40:27.618327959Z",
       "overallOk": true,
       "hasUpdate": true
     },
@@ -744,7 +747,7 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "e410c49c38f42956b36de96738447006b53ccbcbed9c1976c418d79707d3a6a5",
+          "sampleSha256": "886eabf1297ac1e6e740e2180cf6cd993ac84cb2e059f7aa7b3eae76f8942fd7",
           "contentType": "text/html; charset=UTF-8",
           "updated": true
         },
@@ -754,12 +757,12 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "0d73a1b15fe529db6bd8091060beaad55131dc43e41bbcbedc6aa238839a85d3",
-          "lastModified": "Mon, 26 Oct 2026 08:32:42 GMT",
+          "sampleSha256": "dd221c9f3151a23bf597a1993ff737a736e828ce43574895074b9ae9dbdd323d",
+          "lastModified": "Tue, 27 Oct 2026 08:40:28 GMT",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:42.341147279Z",
+      "probedAt": "2026-10-27T08:40:29.440613876Z",
       "overallOk": true,
       "hasUpdate": true
     },
@@ -772,8 +775,8 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "aebe58ed05f91473825c4a086cc486acdb84a0b79464d14ddc72b554ba37b2e0",
-          "lastModified": "Mon, 26 Oct 2026 08:30:02 GMT",
+          "sampleSha256": "c763451699cd5feaff747a20f10ec9de71e1cceb46a8b6bc58db5d16593aad99",
+          "lastModified": "Tue, 27 Oct 2026 08:36:25 GMT",
           "contentType": "text/html; charset=UTF-8",
           "updated": true
         },
@@ -783,12 +786,12 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "14c5ae42b7546bf6dc82b6b09f0f91024a209049c0234b7a1629beef9a270de0",
-          "lastModified": "Mon, 26 Oct 2026 08:32:42 GMT",
+          "sampleSha256": "1625bbac94094b19b1da25661da24a895051220215db27104c9ec12a7597a7f6",
+          "lastModified": "Tue, 27 Oct 2026 08:40:30 GMT",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:42.49064698Z",
+      "probedAt": "2026-10-27T08:40:30.42218316Z",
       "overallOk": true,
       "hasUpdate": true
     },
@@ -801,8 +804,8 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "ee3f47a7d02b4f58c66a49df8e986a00f0b8c99d2db6eb4f03ec6295a9dd7c25",
-          "lastModified": "Mon, 26 Oct 2026 08:30:02 GMT",
+          "sampleSha256": "61c5ce12b77f7ea852e4a5f63c28ee4de38900f8531ab99c511c43d4a6556fa0",
+          "lastModified": "Tue, 27 Oct 2026 08:36:23 GMT",
           "contentType": "text/html; charset=UTF-8",
           "updated": true
         },
@@ -812,12 +815,12 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "ac7baefee00c471ba417cd4c4e347ef71ce6e731af39794c9dfefa4389974d05",
-          "lastModified": "Mon, 26 Oct 2026 08:32:42 GMT",
+          "sampleSha256": "7e87d2429a8f746a6b23e7659d23511df8518b6ce4731f21f5526cce476d1437",
+          "lastModified": "Tue, 27 Oct 2026 08:40:44 GMT",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:42.66567067Z",
+      "probedAt": "2026-10-27T08:40:43.854176548Z",
       "overallOk": true,
       "hasUpdate": true
     },
@@ -830,7 +833,7 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "d550557b8bfc20dbac92934b15c9927cf765da8cc10c48174f559bc8f44f7141",
+          "sampleSha256": "f8e52b341d2113ffa015a9a07c21d3ee04a8681533ec04fae2b8b853282366ab",
           "lastModified": "Fri, 23 Oct 2026 19:30:09 GMT",
           "contentType": "application/json;charset=utf-8",
           "updated": true
@@ -842,11 +845,11 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "83108cf6f5c858b5310d04a70f3dff94a5627757fdd65790f44aeba4ea4cae99",
-          "lastModified": "Mon, 26 Oct 2026 03:32:32 GMT",
+          "lastModified": "Mon, 26 Oct 2026 19:30:53 GMT",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:42.670351022Z",
+      "probedAt": "2026-10-27T08:40:49.702490848Z",
       "overallOk": true,
       "hasUpdate": true
     },
@@ -866,7 +869,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:42.873961547Z",
+      "probedAt": "2026-10-27T08:40:50.89244488Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -886,7 +889,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:43.619635443Z",
+      "probedAt": "2026-10-27T08:40:53.489389751Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -906,7 +909,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:44.116727389Z",
+      "probedAt": "2026-10-27T08:40:54.482362983Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -926,7 +929,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:44.603819281Z",
+      "probedAt": "2026-10-27T08:40:55.515625219Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -946,7 +949,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:44.777554276Z",
+      "probedAt": "2026-10-27T08:40:56.311300538Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -966,7 +969,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:45.101898004Z",
+      "probedAt": "2026-10-27T08:40:57.482956365Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -986,7 +989,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:45.366180157Z",
+      "probedAt": "2026-10-27T08:42:40.532000491Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1006,7 +1009,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:45.369881523Z",
+      "probedAt": "2026-10-27T08:42:41.039959021Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1026,7 +1029,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:45.897070762Z",
+      "probedAt": "2026-10-27T08:42:41.546090488Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1046,7 +1049,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:46.389942045Z",
+      "probedAt": "2026-10-27T08:42:41.677087479Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1066,7 +1069,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:46.392316451Z",
+      "probedAt": "2026-10-27T08:42:42.028237741Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1086,7 +1089,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:46.655736426Z",
+      "probedAt": "2026-10-27T08:42:42.559797531Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1106,7 +1109,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:47.167309487Z",
+      "probedAt": "2026-10-27T08:42:42.825144103Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1126,7 +1129,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:47.16835608Z",
+      "probedAt": "2026-10-27T08:42:43.357025815Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1146,7 +1149,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:47.938772375Z",
+      "probedAt": "2026-10-27T08:42:43.867126876Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1166,7 +1169,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:47.939525317Z",
+      "probedAt": "2026-10-27T08:42:43.867643104Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1186,7 +1189,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:48.660531702Z",
+      "probedAt": "2026-10-27T08:42:44.365404369Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1206,7 +1209,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:48.954589502Z",
+      "probedAt": "2026-10-27T08:42:44.858368985Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1226,7 +1229,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:50.058425064Z",
+      "probedAt": "2026-10-27T08:42:45.40449347Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1246,7 +1249,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:50.405102402Z",
+      "probedAt": "2026-10-27T08:42:46.482664743Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1266,7 +1269,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:53.610185831Z",
+      "probedAt": "2026-10-27T08:42:47.062014139Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1286,7 +1289,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:54.558627539Z",
+      "probedAt": "2026-10-27T08:42:47.272256744Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1306,7 +1309,7 @@
           "error": "probe failed after 3 attempts: Get \"https://portaldeinformacoes.conab.gov.br/download-arquivos.html\": tls: failed to verify certificate: x509: certificate is valid for barramento.conab.gov.br, not portaldeinformacoes.conab.gov.br"
         }
       ],
-      "probedAt": "2026-10-26T08:32:56.098483605Z",
+      "probedAt": "2026-10-27T08:42:47.852804305Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1323,7 +1326,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:56.403556805Z",
+      "probedAt": "2026-10-27T08:42:47.870530625Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1343,7 +1346,7 @@
           "error": "probe failed after 3 attempts: Get \"https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento\": dial tcp 189.9.19.9:443: i/o timeout"
         }
       ],
-      "probedAt": "2026-10-26T08:32:57.018406493Z",
+      "probedAt": "2026-10-27T08:42:48.084243284Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1363,7 +1366,7 @@
           "error": "probe failed after 3 attempts: Get \"https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias\": dial tcp 189.9.19.9:443: i/o timeout"
         }
       ],
-      "probedAt": "2026-10-26T08:32:59.485631944Z",
+      "probedAt": "2026-10-27T08:42:48.37722558Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1386,7 +1389,7 @@
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:33:07.776954496Z",
+      "probedAt": "2026-10-27T08:42:48.419064105Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1403,7 +1406,7 @@
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:33:08.059891564Z",
+      "probedAt": "2026-10-27T08:42:48.493909843Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1425,11 +1428,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "c95ae6cc152307f97956c2594c914599e9eae20fa93e30cb08d112e6ac0a5bfd",
+          "sampleSha256": "00c8580154765feb61ec4d8e65e373a2aa4569176398ec391fa909fe158faf55",
           "contentType": "text/html;charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:33:08.548483991Z",
+      "probedAt": "2026-10-27T08:42:49.503121522Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1457,7 +1460,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:33:09.872834531Z",
+      "probedAt": "2026-10-27T08:42:50.655948886Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1481,11 +1484,11 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "8ff763777336a55d2b7d3facdff331faca5ea0c2280e47a4a58cf55df689b18d",
-          "lastModified": "Fri, 23 Oct 2026 16:23:08 GMT",
+          "lastModified": "Mon, 26 Oct 2026 12:40:21 GMT",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:33:10.494186054Z",
+      "probedAt": "2026-10-27T08:42:51.915161913Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1511,7 +1514,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:33:10.798918337Z",
+      "probedAt": "2026-10-27T08:42:51.546461024Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1539,7 +1542,7 @@
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:33:11.212773654Z",
+      "probedAt": "2026-10-27T08:42:50.99590804Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1567,7 +1570,7 @@
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:34:05.317662111Z",
+      "probedAt": "2026-10-27T08:42:51.29888551Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1594,7 +1597,7 @@
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:35:55.74692029Z",
+      "probedAt": "2026-10-27T08:42:52.084057984Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1618,7 +1621,7 @@
           "error": "probe failed after 3 attempts: unexpected status 404 for https://dadosabertos.ibama.gov.br/dataset/sisfogo-incendios-florestais"
         }
       ],
-      "probedAt": "2026-10-26T08:32:22.513101688Z",
+      "probedAt": "2026-10-27T08:39:30.256459312Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1640,11 +1643,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "479020eea587fdda97283f0ffb1f293c73672ee6a52a69419e4dfd5392a34b71",
+          "sampleSha256": "2b0c8cb40fe0216cd2ca7ee097ffeacc711fc2667bcac3baddd39a0cb755abca",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:23.969461309Z",
+      "probedAt": "2026-10-27T08:39:30.78383108Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1666,11 +1669,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "351d2a8012fcb57542c53ca1d6557c98e8c309338bdaafba61a0e3db31e05dec",
+          "sampleSha256": "37fba264c46e0c8b142ed68f3012d295a4a3b938abefe0c5d423dbcdd1fb371c",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:25.180484992Z",
+      "probedAt": "2026-10-27T08:39:32.785898205Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1693,7 +1696,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://censoagro2017.ibge.gov.br/"
         }
       ],
-      "probedAt": "2026-10-26T08:32:48.956413375Z",
+      "probedAt": "2026-10-27T08:39:33.5453525Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1716,7 +1719,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/pnad"
         }
       ],
-      "probedAt": "2026-10-26T08:32:49.222852688Z",
+      "probedAt": "2026-10-27T08:39:34.058284631Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1736,7 +1739,7 @@
           "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/docs/localidades\": dial tcp 170.84.40.178:443: i/o timeout"
         }
       ],
-      "probedAt": "2026-10-26T08:32:49.730768842Z",
+      "probedAt": "2026-10-27T08:39:34.424591407Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1756,7 +1759,7 @@
           "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/docs/localidades\": dial tcp 170.84.40.178:443: i/o timeout"
         }
       ],
-      "probedAt": "2026-10-26T08:36:11.051237102Z",
+      "probedAt": "2026-10-27T08:39:34.525469503Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1776,7 +1779,7 @@
           "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/docs/localidades\": dial tcp 170.84.40.178:443: i/o timeout"
         }
       ],
-      "probedAt": "2026-10-26T08:33:11.086034492Z",
+      "probedAt": "2026-10-27T08:39:34.532875751Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1796,7 +1799,7 @@
           "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/docs/localidades\": dial tcp 170.84.40.178:443: i/o timeout"
         }
       ],
-      "probedAt": "2026-10-26T08:33:11.489501813Z",
+      "probedAt": "2026-10-27T08:39:35.03536157Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1816,7 +1819,7 @@
           "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/docs/localidades\": dial tcp 170.84.40.178:443: i/o timeout"
         }
       ],
-      "probedAt": "2026-10-26T08:34:05.468543632Z",
+      "probedAt": "2026-10-27T08:39:35.857225878Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -1839,7 +1842,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/lspa"
         }
       ],
-      "probedAt": "2026-10-26T08:35:56.229452771Z",
+      "probedAt": "2026-10-27T08:39:39.623179766Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1862,7 +1865,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/pam"
         }
       ],
-      "probedAt": "2026-10-26T08:35:57.925626365Z",
+      "probedAt": "2026-10-27T08:39:40.007053426Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1871,12 +1874,13 @@
       "endpoints": [
         {
           "role": "source",
-          "url": "https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2713",
+          "url": "https://apisidra.ibge.gov.br/values/t/1613/n6/in%20n3%2011/p/2024/v/112/c82/2716",
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "eaf452b02dd432eaafdba2d39ab381fd806a05610c32842b11e4aa06823e833a",
-          "contentType": "application/json; charset=utf-8"
+          "sampleSha256": "07dbebf68df21fc551d5d899fd7ba90f83842ece2209ad535b55414f5b5a2619",
+          "contentType": "application/json; charset=utf-8",
+          "updated": true
         },
         {
           "role": "portal",
@@ -1885,9 +1889,9 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/pam"
         }
       ],
-      "probedAt": "2026-10-26T08:35:58.284468535Z",
+      "probedAt": "2026-10-27T08:39:40.585362146Z",
       "overallOk": true,
-      "hasUpdate": false
+      "hasUpdate": true
     },
     {
       "datasetId": "ibge.pam-estabelecimentos",
@@ -1908,7 +1912,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/pam"
         }
       ],
-      "probedAt": "2026-10-26T08:35:58.563143285Z",
+      "probedAt": "2026-10-27T08:39:40.939141632Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1931,7 +1935,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/pevs"
         }
       ],
-      "probedAt": "2026-10-26T08:35:58.89400739Z",
+      "probedAt": "2026-10-27T08:39:41.230936287Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1954,7 +1958,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/pam"
         }
       ],
-      "probedAt": "2026-10-26T08:35:59.095480177Z",
+      "probedAt": "2026-10-27T08:39:41.82640928Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -1977,7 +1981,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/ppm"
         }
       ],
-      "probedAt": "2026-10-26T08:35:59.426935474Z",
+      "probedAt": "2026-10-27T08:39:42.169056542Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2000,7 +2004,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/ppm"
         }
       ],
-      "probedAt": "2026-10-26T08:35:59.655852031Z",
+      "probedAt": "2026-10-27T08:39:42.393355457Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2023,7 +2027,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/ppm"
         }
       ],
-      "probedAt": "2026-10-26T08:33:10.091069459Z",
+      "probedAt": "2026-10-27T08:39:42.785933486Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2046,7 +2050,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/ppm"
         }
       ],
-      "probedAt": "2026-10-26T08:36:00.625319348Z",
+      "probedAt": "2026-10-27T08:39:43.028061346Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2069,7 +2073,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/pam"
         }
       ],
-      "probedAt": "2026-10-26T08:36:01.662411789Z",
+      "probedAt": "2026-10-27T08:39:44.919467816Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2078,11 +2082,11 @@
       "endpoints": [
         {
           "role": "source",
-          "url": "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2765",
+          "url": "https://apisidra.ibge.gov.br/values/t/1612/n6/in%20n3%2011/p/2024/v/109/c81/2713",
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "bbc7f6a9c3e7102705463602da5cce710da93e1b8b9030f7aee33e4797ff373b",
+          "sampleSha256": "a8b95cb6bdc910913a28a252ba917f9b8bb7cb0df65b9fbb1aa3cb49c3ca0736",
           "contentType": "application/json; charset=utf-8",
           "updated": true
         },
@@ -2093,7 +2097,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/pam"
         }
       ],
-      "probedAt": "2026-10-26T08:36:01.377199669Z",
+      "probedAt": "2026-10-27T08:39:47.120939533Z",
       "overallOk": true,
       "hasUpdate": true
     },
@@ -2116,7 +2120,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/lspa"
         }
       ],
-      "probedAt": "2026-10-26T08:36:03.254313447Z",
+      "probedAt": "2026-10-27T08:40:27.37547944Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2139,7 +2143,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://censoagro2017.ibge.gov.br/"
         }
       ],
-      "probedAt": "2026-10-26T08:36:03.430917536Z",
+      "probedAt": "2026-10-27T08:40:12.130637502Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2162,7 +2166,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://censoagro2017.ibge.gov.br/"
         }
       ],
-      "probedAt": "2026-10-26T08:35:56.483851937Z",
+      "probedAt": "2026-10-27T08:40:13.806334304Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2185,7 +2189,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://sidra.ibge.gov.br/pesquisa/pnad"
         }
       ],
-      "probedAt": "2026-10-26T08:36:03.035917984Z",
+      "probedAt": "2026-10-27T08:40:16.224077096Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2198,9 +2202,10 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "12468bd94ea2428c7a83150d6c7f400b7b809006d76f90d159cb20d5d40e50d9",
-          "lastModified": "Fri, 23 Oct 2026 08:33:59 GMT",
-          "contentType": "application/vnd.ms-excel.sheet.binary.macroEnabled.12"
+          "sampleSha256": "bc4db6d363926471424b1b705b21e5440b75bd4c9d120cd9afdeb75800c5a60d",
+          "lastModified": "Mon, 26 Oct 2026 09:18:35 GMT",
+          "contentType": "application/vnd.ms-excel.sheet.binary.macroEnabled.12",
+          "updated": true
         },
         {
           "role": "portal",
@@ -2212,9 +2217,9 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:06.743704006Z",
+      "probedAt": "2026-10-27T08:40:16.452407329Z",
       "overallOk": true,
-      "hasUpdate": false
+      "hasUpdate": true
     },
     {
       "datasetId": "inmet.estacoes-automaticas",
@@ -2234,11 +2239,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "eb5e6154bf2f3fba520c77bda00202fb02f0991750f7c3f3ca9aa06b62e681ef",
+          "sampleSha256": "7b1699d5bbb40a5d5930f223aef66466e6bf9dba3d26bbb75b3ac19e9e272f7c",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:01.944010666Z",
+      "probedAt": "2026-10-27T08:40:25.181166099Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2260,11 +2265,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "eb5e6154bf2f3fba520c77bda00202fb02f0991750f7c3f3ca9aa06b62e681ef",
+          "sampleSha256": "7b1699d5bbb40a5d5930f223aef66466e6bf9dba3d26bbb75b3ac19e9e272f7c",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:09.074542257Z",
+      "probedAt": "2026-10-27T08:40:44.042652436Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2287,12 +2292,12 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 2300,
-          "sampleSha256": "a0384674a86d97a1ebf64b78d1ad034f12f24bc97bc2cb48d7dbfcf85fb7f516",
+          "sampleSha256": "ff815a76f1e0b5054966c78bea890b718a0f62f5546c4fcc2e7dd8fc12395ed5",
           "lastModified": "Tue, 03 Feb 2026 20:49:45 GMT",
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:36:06.922893317Z",
+      "probedAt": "2026-10-27T08:40:52.046708312Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2315,12 +2320,12 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 2300,
-          "sampleSha256": "a0384674a86d97a1ebf64b78d1ad034f12f24bc97bc2cb48d7dbfcf85fb7f516",
+          "sampleSha256": "ff815a76f1e0b5054966c78bea890b718a0f62f5546c4fcc2e7dd8fc12395ed5",
           "lastModified": "Tue, 03 Feb 2026 20:49:45 GMT",
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:36:08.260796397Z",
+      "probedAt": "2026-10-27T08:42:44.500594395Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2343,11 +2348,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "eb5e6154bf2f3fba520c77bda00202fb02f0991750f7c3f3ca9aa06b62e681ef",
+          "sampleSha256": "7b1699d5bbb40a5d5930f223aef66466e6bf9dba3d26bbb75b3ac19e9e272f7c",
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:23.329914993Z",
+      "probedAt": "2026-10-27T08:42:42.306278175Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2370,7 +2375,7 @@
           "error": "probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/ana/pt-br/servicos/monitor-de-seca"
         }
       ],
-      "probedAt": "2026-10-26T08:32:47.672294827Z",
+      "probedAt": "2026-10-27T08:42:45.964844579Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2384,8 +2389,7 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "d09baebea245daf8d9753619ff7e0091276982e91e81a63b832adb0b899c6e7c",
-          "contentType": "application/xml",
-          "updated": true
+          "contentType": "application/xml"
         },
         {
           "role": "portal",
@@ -2397,9 +2401,9 @@
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:50.100628001Z",
+      "probedAt": "2026-10-27T08:42:46.211820214Z",
       "overallOk": true,
-      "hasUpdate": true
+      "hasUpdate": false
     },
     {
       "datasetId": "ipea.series-macro-regionais",
@@ -2420,11 +2424,11 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "70ad62ab0da723a9c4a6a1aa67eed186795861a3d584312caf06322fb1ddfd5a",
-          "lastModified": "Mon, 26 Oct 2026 08:31:25 GMT",
+          "lastModified": "Tue, 27 Oct 2026 08:30:32 GMT",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:50.598422532Z",
+      "probedAt": "2026-10-27T08:42:50.960211553Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2438,11 +2442,11 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "1ac082ba32b5bcb1b52dccc8fefabefc4765366f8a7a7204c7a9c829e82d428c",
-          "lastModified": "Fri, 23 Oct 2026 02:07:25 GMT",
+          "lastModified": "Tue, 27 Oct 2026 08:12:44 GMT",
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:32:51.175575838Z",
+      "probedAt": "2026-10-27T08:42:50.891482835Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2465,7 +2469,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:51.266438329Z",
+      "probedAt": "2026-10-27T08:42:41.862524982Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -2479,7 +2483,7 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "2a97859f25ff96c94601632479f312697ab9d872890d46477ee372e62ec180a4",
-          "lastModified": "Mon, 26 Oct 2026 07:04:55 GMT",
+          "lastModified": "Tue, 27 Oct 2026 07:05:09 GMT",
           "contentType": "text/csv"
         },
         {
@@ -2489,7 +2493,7 @@
           "error": "probe failed after 3 attempts: unexpected status 404 for https://dados.agricultura.gov.br/dataset/agrofit-produtos-formulados"
         }
       ],
-      "probedAt": "2026-10-26T08:32:51.983386021Z",
+      "probedAt": "2026-10-27T08:42:44.868937658Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2503,7 +2507,7 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "3c55d625096e35d68af26d21623143331608086007db56795067515ca8996cab",
-          "lastModified": "Sun, 25 Oct 2026 12:30:13 GMT",
+          "lastModified": "Mon, 26 Oct 2026 12:30:13 GMT",
           "contentType": "text/csv"
         },
         {
@@ -2516,7 +2520,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:53.309870742Z",
+      "probedAt": "2026-10-27T08:42:45.148278436Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2543,7 +2547,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:54.149737714Z",
+      "probedAt": "2026-10-27T08:42:45.990755183Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2569,7 +2573,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:55.176665661Z",
+      "probedAt": "2026-10-27T08:42:49.742272725Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2595,7 +2599,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:55.316613956Z",
+      "probedAt": "2026-10-27T08:42:50.028790162Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2609,8 +2613,7 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "513278ded54e1d76fbb743dd75b05632b3c04571d182403cf4e6c3789ca597df",
-          "contentType": "application/json;charset=utf-8",
-          "updated": true
+          "contentType": "application/json;charset=utf-8"
         },
         {
           "role": "portal",
@@ -2622,9 +2625,9 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:58.933381541Z",
+      "probedAt": "2026-10-27T08:40:06.863301917Z",
       "overallOk": true,
-      "hasUpdate": true
+      "hasUpdate": false
     },
     {
       "datasetId": "mapa.sipeagro-produtos",
@@ -2636,8 +2639,7 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "513278ded54e1d76fbb743dd75b05632b3c04571d182403cf4e6c3789ca597df",
-          "contentType": "application/json;charset=utf-8",
-          "updated": true
+          "contentType": "application/json;charset=utf-8"
         },
         {
           "role": "portal",
@@ -2649,9 +2651,9 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:33:07.071863292Z",
+      "probedAt": "2026-10-27T08:40:28.48713424Z",
       "overallOk": true,
-      "hasUpdate": true
+      "hasUpdate": false
     },
     {
       "datasetId": "mapa.sisser-seguro-rural",
@@ -2675,7 +2677,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:33:07.838042314Z",
+      "probedAt": "2026-10-27T08:40:29.557743922Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2689,7 +2691,7 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "3dcc33fed10087efed8a0dffd8d9acb3189aaf9335e49242fd58b58d121886cb",
-          "lastModified": "Mon, 26 Oct 2026 07:11:43 GMT",
+          "lastModified": "Tue, 27 Oct 2026 07:11:38 GMT",
           "contentType": "text/csv"
         },
         {
@@ -2702,7 +2704,7 @@
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:33:08.883374786Z",
+      "probedAt": "2026-10-27T08:40:30.606799734Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2712,11 +2714,8 @@
         {
           "role": "source",
           "url": "https://api-comexstat.mdic.gov.br/general",
-          "status": "ok",
-          "httpStatus": 200,
-          "sampleBytes": 241,
-          "sampleSha256": "f9062b5acf861bc9b0a739cdc4679c78a4b71782ac2d17bcf3af11b0b8459d2f",
-          "contentType": "application/json"
+          "status": "unavailable",
+          "error": "probe failed after 3 attempts: unexpected status 503 for https://api-comexstat.mdic.gov.br/general"
         },
         {
           "role": "portal",
@@ -2724,13 +2723,13 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "a832ba8f2d83ce80134b08f36203ed20041fbb85d1a8724c4c65aa4dfa87a276",
-          "lastModified": "Mon, 24 Jun 2024 14:29:09 GMT",
+          "sampleSha256": "0f0fcf52b99ffe961100af1cb5efdea2247602f09f4110544596ac6837a8aa38",
+          "lastModified": "Fri, 23 Oct 2026 19:37:07 GMT",
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:32:47.030280226Z",
-      "overallOk": true,
+      "probedAt": "2026-10-27T08:40:31.882652141Z",
+      "overallOk": false,
       "hasUpdate": false
     },
     {
@@ -2739,11 +2738,8 @@
         {
           "role": "source",
           "url": "https://api-comexstat.mdic.gov.br/general",
-          "status": "ok",
-          "httpStatus": 200,
-          "sampleBytes": 401,
-          "sampleSha256": "1deb810a842841eb2e0a4abe635fe4e7c642ecd47af50843ef8cdf8d99d3510d",
-          "contentType": "application/json"
+          "status": "unavailable",
+          "error": "probe failed after 3 attempts: unexpected status 503 for https://api-comexstat.mdic.gov.br/general"
         },
         {
           "role": "portal",
@@ -2751,13 +2747,13 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "a832ba8f2d83ce80134b08f36203ed20041fbb85d1a8724c4c65aa4dfa87a276",
-          "lastModified": "Mon, 24 Jun 2024 14:29:09 GMT",
+          "sampleSha256": "0f0fcf52b99ffe961100af1cb5efdea2247602f09f4110544596ac6837a8aa38",
+          "lastModified": "Fri, 23 Oct 2026 19:37:07 GMT",
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:36:04.509705496Z",
-      "overallOk": true,
+      "probedAt": "2026-10-27T08:40:36.505305162Z",
+      "overallOk": false,
       "hasUpdate": false
     },
     {
@@ -2766,11 +2762,8 @@
         {
           "role": "source",
           "url": "https://api-comexstat.mdic.gov.br/general",
-          "status": "ok",
-          "httpStatus": 200,
-          "sampleBytes": 3054,
-          "sampleSha256": "22e8c5af6d6952a52f04c26295e7c3617c5e330a630a4b4e0d52c09223292f31",
-          "contentType": "application/json"
+          "status": "unavailable",
+          "error": "probe failed after 3 attempts: unexpected status 503 for https://api-comexstat.mdic.gov.br/general"
         },
         {
           "role": "portal",
@@ -2778,13 +2771,13 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "a832ba8f2d83ce80134b08f36203ed20041fbb85d1a8724c4c65aa4dfa87a276",
-          "lastModified": "Mon, 24 Jun 2024 14:29:09 GMT",
+          "sampleSha256": "0f0fcf52b99ffe961100af1cb5efdea2247602f09f4110544596ac6837a8aa38",
+          "lastModified": "Fri, 23 Oct 2026 19:37:07 GMT",
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:36:05.492811199Z",
-      "overallOk": true,
+      "probedAt": "2026-10-27T08:40:40.183692162Z",
+      "overallOk": false,
       "hasUpdate": false
     },
     {
@@ -2793,11 +2786,8 @@
         {
           "role": "source",
           "url": "https://api-comexstat.mdic.gov.br/general",
-          "status": "ok",
-          "httpStatus": 200,
-          "sampleBytes": 283,
-          "sampleSha256": "660b8bb5aa2d50fa439ed9d61bc98f610c1ab121ec9c39be269ab904fd8e8f4b",
-          "contentType": "application/json"
+          "status": "unavailable",
+          "error": "probe failed after 3 attempts: unexpected status 503 for https://api-comexstat.mdic.gov.br/general"
         },
         {
           "role": "portal",
@@ -2805,13 +2795,13 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "a832ba8f2d83ce80134b08f36203ed20041fbb85d1a8724c4c65aa4dfa87a276",
-          "lastModified": "Mon, 24 Jun 2024 14:29:09 GMT",
+          "sampleSha256": "0f0fcf52b99ffe961100af1cb5efdea2247602f09f4110544596ac6837a8aa38",
+          "lastModified": "Fri, 23 Oct 2026 19:37:07 GMT",
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:36:05.78792788Z",
-      "overallOk": true,
+      "probedAt": "2026-10-27T08:40:45.983618427Z",
+      "overallOk": false,
       "hasUpdate": false
     },
     {
@@ -2823,7 +2813,7 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 776,
-          "sampleSha256": "935683236688135bda040123063d9153062e7de99f1b8d20c7c67aa5c81903af",
+          "sampleSha256": "9db963adb1acff87e11e647db937b03d9b9798130f8a08636c7244d891f46d71",
           "contentType": "application/json",
           "updated": true
         },
@@ -2838,7 +2828,7 @@
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:36:05.951798421Z",
+      "probedAt": "2026-10-27T08:40:50.546437366Z",
       "overallOk": true,
       "hasUpdate": true
     },
@@ -2865,7 +2855,7 @@
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:06.274075396Z",
+      "probedAt": "2026-10-27T08:40:57.337336969Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2891,7 +2881,7 @@
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:06.525703172Z",
+      "probedAt": "2026-10-27T08:40:58.525142266Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2904,7 +2894,7 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "4a9791c9a441232a6824a85d94999bfdfe9785e0fad86e0680a2cf498e345e23",
+          "sampleSha256": "676870e17f6fd5e48d48d2615e29f4da909d85dd37b7da563f20eb67ccf951a2",
           "lastModified": "2024-06-28",
           "contentType": "application/json; charset=utf-8",
           "updated": true
@@ -2916,7 +2906,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://www.oecd.org/en/data/datasets/oecd-fao-agricultural-outlook.html"
         }
       ],
-      "probedAt": "2026-10-26T08:36:06.573132707Z",
+      "probedAt": "2026-10-27T08:40:58.736746758Z",
       "overallOk": true,
       "hasUpdate": true
     },
@@ -2929,7 +2919,7 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "4f5c6163d1fb9c3551e8f83ac4cf2f3220fb378b25b2b9bc786167b070995c57",
+          "sampleSha256": "92cd3076ec3c192efb2cbe815227bddc2d69b52498c917ba97fa21c8ff64617b",
           "contentType": "application/json;charset=utf-8",
           "updated": true
         },
@@ -2939,11 +2929,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "e528a9bac3c8962fc720cd44fa9b58ece16416711e35213b1413f2c02eee82b7",
+          "sampleSha256": "dc2c92d51e910da5a2f2b2ef37457ffbb85970f4bce1124dbefec77d5ac9c6f2",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:06.600835328Z",
+      "probedAt": "2026-10-27T08:40:59.311568742Z",
       "overallOk": true,
       "hasUpdate": true
     },
@@ -2960,7 +2950,7 @@
           "contentType": "text/html; charset=UTF-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:06.726764815Z",
+      "probedAt": "2026-10-27T08:40:59.52600785Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -2970,11 +2960,8 @@
         {
           "role": "source",
           "url": "https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx",
-          "status": "ok",
-          "httpStatus": 200,
-          "sampleBytes": 4096,
-          "sampleSha256": "57f76229e2ae53cf192b36b3ee1999a19c55efc6b32ab2244644271340595259",
-          "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          "status": "unavailable",
+          "error": "probe failed after 3 attempts: Get \"https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx\": dial tcp 161.148.164.31:443: connect: connection refused"
         },
         {
           "role": "portal",
@@ -2986,8 +2973,8 @@
           "contentType": "text/html;charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:04.093630743Z",
-      "overallOk": true,
+      "probedAt": "2026-10-27T08:41:02.859063641Z",
+      "overallOk": false,
       "hasUpdate": false
     },
     {
@@ -3005,11 +2992,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "f898bcedd6154bea9280bee93ba26adaa18757b3a4ce2677ef77d11b204562ba",
+          "sampleSha256": "0331c77a5748d563c59155fcd8edd438d6d36f99fcd38aa512c6350c0e4d8cce",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:10.036426157Z",
+      "probedAt": "2026-10-27T08:41:19.94705231Z",
       "overallOk": false,
       "hasUpdate": false
     },
@@ -3031,11 +3018,11 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 4096,
-          "sampleSha256": "59413e1b67d1a4c1d6a16f692f017ab63dc7e9efd60e92a8c7615dffd5ffc7a1",
+          "sampleSha256": "bf45821e7c2ecb7fbffc3d640e2f8ae38725401532eca90b0a97fda01f66a694",
           "contentType": "text/html; charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:13.369494223Z",
+      "probedAt": "2026-10-27T08:42:40.462120383Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -3048,7 +3035,7 @@
           "status": "ok",
           "httpStatus": 200,
           "sampleBytes": 973,
-          "sampleSha256": "ff5514ae08503bba16714e524a669492fddde551c03e4eabfccc41711d47cac7",
+          "sampleSha256": "e3801def783957a994c0fad06469ac513e02559f83548d95afe36f681e288654",
           "contentType": "application/json; charset=utf-8",
           "updated": true
         },
@@ -3063,7 +3050,7 @@
           "contentType": "text/html"
         }
       ],
-      "probedAt": "2026-10-26T08:36:15.001160712Z",
+      "probedAt": "2026-10-27T08:42:40.538714331Z",
       "overallOk": true,
       "hasUpdate": true
     },
@@ -3077,7 +3064,7 @@
           "httpStatus": 200,
           "sampleBytes": 4096,
           "sampleSha256": "c8043b78fdea01e15ab5d8ed3bcdcafaffa04caff654d645de3b34bd41d75092",
-          "lastModified": "Sat, 24 Oct 2026 11:31:25 GMT",
+          "lastModified": "Mon, 26 Oct 2026 20:00:22 GMT",
           "contentType": "text/html; charset=utf-8"
         },
         {
@@ -3087,7 +3074,7 @@
           "error": "probe failed after 3 attempts: unexpected status 403 for https://www.usda.gov/oce/commodity-markets/wasde"
         }
       ],
-      "probedAt": "2026-10-26T08:36:16.255646859Z",
+      "probedAt": "2026-10-27T08:42:41.407095847Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -3115,7 +3102,7 @@
           "contentType": "text/html;charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:36:09.960586359Z",
+      "probedAt": "2026-10-27T08:42:41.612038973Z",
       "overallOk": true,
       "hasUpdate": false
     },
@@ -3143,7 +3130,7 @@
           "contentType": "text/html;charset=utf-8"
         }
       ],
-      "probedAt": "2026-10-26T08:32:21.024493988Z",
+      "probedAt": "2026-10-27T08:39:30.256440469Z",
       "overallOk": true,
       "hasUpdate": false
     }
@@ -3157,7 +3144,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Estoques.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.operacoes-comercializacao",
@@ -3167,7 +3154,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Leilao.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.vendas-balcao",
@@ -3177,7 +3164,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/VendaBalcao.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.alimenta-brasil-entregas",
@@ -3187,7 +3174,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_Entregas.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.alimenta-brasil-propostas",
@@ -3197,7 +3184,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_PropostaFormalizadasExecutada.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.armazenagem",
@@ -3207,7 +3194,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ArmazensCadastrados.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.frete",
@@ -3217,7 +3204,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Frete.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.serie-historica-capacidade-estatica",
@@ -3227,7 +3214,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/exportacao_capacidade_estatica.xls",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.oferta-demanda",
@@ -3237,7 +3224,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/OfertaDemanda.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.precos-minimos",
@@ -3247,7 +3234,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecoMinimo.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.precos-agropecuarios-mensal-uf",
@@ -3257,7 +3244,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalUF.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.precos-agropecuarios-mensal-municipio",
@@ -3267,7 +3254,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalMunicipio.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.precos-agropecuarios-semanal-uf",
@@ -3277,7 +3264,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalUF.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.precos-agropecuarios-semanal-municipio",
@@ -3287,7 +3274,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalMunicipio.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.prohort-diario",
@@ -3297,7 +3284,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortDiario.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.prohort-mensal",
@@ -3307,7 +3294,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortMensal.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.custo-producao",
@@ -3317,7 +3304,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/CustoProducao.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.estimativa-cana",
@@ -3327,7 +3314,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCana.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.estimativa-graos",
@@ -3337,7 +3324,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoGraos.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.serie-historica-cana",
@@ -3347,7 +3334,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.serie-historica-graos",
@@ -3357,7 +3344,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaGraos.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.estimativa-cafe",
@@ -3367,7 +3354,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCafe.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "conab.serie-historica-cafe",
@@ -3377,7 +3364,7 @@
         "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCafe.txt",
         "https://portaldeinformacoes.conab.gov.br/download-arquivos.html"
       ],
-      "consecutiveFailureDays": 12
+      "consecutiveFailureDays": 13
     },
     {
       "datasetId": "dnit.condicoes-conservacao-rodovias",
@@ -3387,7 +3374,7 @@
         "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento",
         "https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento"
       ],
-      "consecutiveFailureDays": 98
+      "consecutiveFailureDays": 99
     },
     {
       "datasetId": "dnit.snv-rodovias-federais",
@@ -3397,7 +3384,7 @@
         "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias",
         "https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias"
       ],
-      "consecutiveFailureDays": 98
+      "consecutiveFailureDays": 99
     },
     {
       "datasetId": "ibge.localidades-municipios",
@@ -3407,7 +3394,7 @@
         "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome",
         "https://servicodados.ibge.gov.br/api/docs/localidades"
       ],
-      "consecutiveFailureDays": 4
+      "consecutiveFailureDays": 5
     },
     {
       "datasetId": "ibge.localidades-ufs",
@@ -3417,7 +3404,7 @@
         "https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome",
         "https://servicodados.ibge.gov.br/api/docs/localidades"
       ],
-      "consecutiveFailureDays": 4
+      "consecutiveFailureDays": 5
     },
     {
       "datasetId": "ibge.localidades-regioes",
@@ -3427,7 +3414,7 @@
         "https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome",
         "https://servicodados.ibge.gov.br/api/docs/localidades"
       ],
-      "consecutiveFailureDays": 4
+      "consecutiveFailureDays": 5
     },
     {
       "datasetId": "ibge.localidades-mesorregioes",
@@ -3437,7 +3424,7 @@
         "https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome",
         "https://servicodados.ibge.gov.br/api/docs/localidades"
       ],
-      "consecutiveFailureDays": 4
+      "consecutiveFailureDays": 5
     },
     {
       "datasetId": "ibge.localidades-microrregioes",
@@ -3447,7 +3434,7 @@
         "https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome",
         "https://servicodados.ibge.gov.br/api/docs/localidades"
       ],
-      "consecutiveFailureDays": 4
+      "consecutiveFailureDays": 5
     },
     {
       "datasetId": "jrc.mars-crop-yield",
@@ -3457,7 +3444,57 @@
         "https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv",
         "https://mars.jrc.ec.europa.eu/dataset"
       ],
-      "consecutiveFailureDays": 41
+      "consecutiveFailureDays": 42
+    },
+    {
+      "datasetId": "mdic.comex-exportacao-ncm-mes",
+      "severity": "warning",
+      "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 503 for https://api-comexstat.mdic.gov.br/general)",
+      "endpoints": [
+        "https://api-comexstat.mdic.gov.br/general",
+        "https://comexstat.mdic.gov.br/"
+      ],
+      "consecutiveFailureDays": 1
+    },
+    {
+      "datasetId": "mdic.comex-importacao-ncm-mes",
+      "severity": "warning",
+      "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 503 for https://api-comexstat.mdic.gov.br/general)",
+      "endpoints": [
+        "https://api-comexstat.mdic.gov.br/general",
+        "https://comexstat.mdic.gov.br/"
+      ],
+      "consecutiveFailureDays": 1
+    },
+    {
+      "datasetId": "mdic.comex-exportacao-uf-ncm",
+      "severity": "warning",
+      "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 503 for https://api-comexstat.mdic.gov.br/general)",
+      "endpoints": [
+        "https://api-comexstat.mdic.gov.br/general",
+        "https://comexstat.mdic.gov.br/"
+      ],
+      "consecutiveFailureDays": 1
+    },
+    {
+      "datasetId": "mdic.comex-importacao-diesel-ncm",
+      "severity": "warning",
+      "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 503 for https://api-comexstat.mdic.gov.br/general)",
+      "endpoints": [
+        "https://api-comexstat.mdic.gov.br/general",
+        "https://comexstat.mdic.gov.br/"
+      ],
+      "consecutiveFailureDays": 1
+    },
+    {
+      "datasetId": "suframa.comercio-mercadorias-zfm",
+      "severity": "warning",
+      "message": "Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get \"https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx\": dial tcp 161.148.164.31:443: connect: connection refused)",
+      "endpoints": [
+        "https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx",
+        "https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados"
+      ],
+      "consecutiveFailureDays": 1
     },
     {
       "datasetId": "transportes.mtr-bit-malha-rodoviaria",
@@ -3467,20 +3504,25 @@
         "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias",
         "https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas"
       ],
-      "consecutiveFailureDays": 98
+      "consecutiveFailureDays": 99
     }
   ],
   "updated": [
-    "aneel.tarifas-energia",
+    "anp.combustiveis-precos-medios-municipios",
+    "anp.combustiveis-precos-postos",
+    "anp.etanol-precos",
+    "argentina.bcra-cambio",
+    "bcb.sgs-ptax-usd-venda",
+    "bcb.sgs-ptax-usd-compra",
+    "bcb.sgs-selic",
     "cepea.soja-paranagua",
     "cepea.soja-parana",
     "cepea.milho",
     "cepea.boi-gordo",
     "cftc.cot-agricultural-futures",
+    "ibge.pam-rendimento-valor",
     "ibge.pam-culturas-estendidas",
-    "inpe.deter-alertas-desmatamento",
-    "mapa.sipeagro-estabelecimentos",
-    "mapa.sipeagro-produtos",
+    "igc.goi-index",
     "nasa.power-agroclimatology",
     "oecd-fao.ag-outlook",
     "ons.carga-energetica",
@@ -3520,5 +3562,5 @@
     "jrc.mars-crop-yield",
     "transportes.mtr-bit-malha-rodoviaria"
   ],
-  "commitMessage": "chore(source-health): daily probe 2026-10-26T08:39:17Z — 32 deprecated (2+ days unreachable) — 14 updated samples"
+  "commitMessage": "chore(source-health): daily probe 2026-10-27T08:45:54Z — 32 deprecated (2+ days unreachable) — 19 updated samples"
 }
