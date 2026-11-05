@@ -3,21 +3,25 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados?dataFinal=03%2F11%2F2026\u0026dataInicial=03%2F08%2F2026\u0026formato=json",
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.10813/dados?dataFinal=05%2F11%2F2026\u0026dataInicial=05%2F08%2F2026\u0026formato=json",
       "status": "ok",
       "httpStatus": 200,
       "sampleBytes": 2458,
-      "sampleSha256": "f31e042c857017253ba6f368bf6ded8969b7b1992102b308b5ce6d8a7e75cb87",
-      "contentType": "application/json; charset=utf-8"
+      "sampleSha256": "d10185025615f973a526a68964972718beaf54d140be892482ec7f7193199614",
+      "contentType": "application/json; charset=utf-8",
+      "updated": true
     },
     {
       "role": "portal",
       "url": "https://dadosabertos.bcb.gov.br/",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: unexpected status 502 for https://dadosabertos.bcb.gov.br/"
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "3b34c48438a2326fdb283ee864cc48662f248aafac9f5f27c71e896c29c87c81",
+      "contentType": "text/html; charset=utf-8"
     }
   ],
-  "probedAt": "2026-11-03T10:29:14.689922381Z",
+  "probedAt": "2026-11-05T10:22:24.356725889Z",
   "overallOk": true,
-  "hasUpdate": false
+  "hasUpdate": true
 }

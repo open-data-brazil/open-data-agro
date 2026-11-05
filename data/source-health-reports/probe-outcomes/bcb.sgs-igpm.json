@@ -3,7 +3,7 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.189/dados?dataFinal=03%2F11%2F2026\u0026dataInicial=03%2F08%2F2026\u0026formato=json",
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.189/dados?dataFinal=05%2F11%2F2026\u0026dataInicial=05%2F08%2F2026\u0026formato=json",
       "status": "ok",
       "httpStatus": 200,
       "sampleBytes": 113,
@@ -13,11 +13,14 @@
     {
       "role": "portal",
       "url": "https://dadosabertos.bcb.gov.br/",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: unexpected status 502 for https://dadosabertos.bcb.gov.br/"
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "1ed9f3d9a83ab4cb66f5ef5c30c886c9c0d684bad51a19b35a192171a1e3bfb2",
+      "contentType": "text/html; charset=utf-8"
     }
   ],
-  "probedAt": "2026-11-03T10:29:20.381009985Z",
+  "probedAt": "2026-11-05T10:22:24.62861925Z",
   "overallOk": true,
   "hasUpdate": false
 }
