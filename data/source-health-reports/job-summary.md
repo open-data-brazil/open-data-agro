@@ -1,113 +1,133 @@
 ### Source health probe
 
-- Executed at: 2026-11-12T10:46:12Z
-- Run date: 2026-11-12
+- Executed at: 2026-11-13T10:39:17Z
+- Run date: 2026-11-13
 - Datasets probed: 131
-- OK: 96 · Warning: 0 · Critical: 35
-- Updated samples: 18
+- OK: 89 · Warning: 7 · Critical: 35
+- Updated samples: 15
 - Deprecated (2+ days): 35
 
 ### Source health alerts
 
-- **antt.volume-trafego-pedagio** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=volume-trafego-praca-pedagio": context deadline exceeded)
+- **ana.hidrologia-series** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://telemetriaws1.ana.gov.br/ServiceANA.asmx?WSDL": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+  - https://telemetriaws1.ana.gov.br/ServiceANA.asmx?WSDL
+  - https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos
+- **ana.pluviometria-redes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://telemetriaws1.ana.gov.br/ServiceANA.asmx?WSDL": context deadline exceeded (Client.Timeout exceeded while awaiting headers))
+  - https://telemetriaws1.ana.gov.br/ServiceANA.asmx?WSDL
+  - https://www.gov.br/ana/pt-br/acesso-a-informacao/dados-abertos
+- **aneel.tarifas-energia** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dadosabertos.aneel.gov.br/api/3/action/package_show?id=bandeiras-tarifarias": dial tcp 200.198.220.169:443: i/o timeout)
+  - https://dadosabertos.aneel.gov.br/dataset/bandeiras-tarifarias
+- **antt.volume-trafego-pedagio** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=volume-trafego-praca-pedagio": context deadline exceeded)
   - https://dados.antt.gov.br/dataset/volume-trafego-praca-pedagio
-- **antt.receita-por-praca** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=receita-por-praca": context deadline exceeded)
+- **antt.receita-por-praca** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=receita-por-praca": context deadline exceeded)
   - https://dados.antt.gov.br/dataset/receita-por-praca
-- **antt.pracas-pedagio** (critical, day 2): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=praca-de-pedagio": context deadline exceeded)
+- **antt.pracas-pedagio** (critical, day 3): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get "https://dados.antt.gov.br/api/3/action/package_show?id=praca-de-pedagio": context deadline exceeded)
   - https://dados.antt.gov.br/dataset/praca-de-pedagio
-- **conab.estoques-publicos** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Estoques.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **cepea.soja-paranagua** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/soja/soja-indicador-cepea-esalq-porto-paranagua)
+  - https://www.noticiasagricolas.com.br/cotacoes/soja/soja-indicador-cepea-esalq-porto-paranagua
+  - https://www.cepea.org.br/br/indicador/soja.aspx
+- **cepea.soja-parana** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/soja/indicador-cepea-esalq-soja-parana)
+  - https://www.noticiasagricolas.com.br/cotacoes/soja/indicador-cepea-esalq-soja-parana
+  - https://www.cepea.org.br/br/indicador/soja.aspx
+- **cepea.milho** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/milho/indicador-cepea-esalq-milho)
+  - https://www.noticiasagricolas.com.br/cotacoes/milho/indicador-cepea-esalq-milho
+  - https://www.cepea.org.br/br/indicador/milho.aspx
+- **cepea.boi-gordo** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/boi-gordo/boi-gordo-indicador-esalq-bmf)
+  - https://www.noticiasagricolas.com.br/cotacoes/boi-gordo/boi-gordo-indicador-esalq-bmf
+  - https://www.cepea.org.br/br/indicador/boi-gordo.aspx
+- **conab.estoques-publicos** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Estoques.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Estoques.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.operacoes-comercializacao** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Leilao.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.operacoes-comercializacao** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Leilao.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Leilao.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.vendas-balcao** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/VendaBalcao.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.vendas-balcao** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/VendaBalcao.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/VendaBalcao.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.alimenta-brasil-entregas** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_Entregas.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.alimenta-brasil-entregas** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_Entregas.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_Entregas.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.alimenta-brasil-propostas** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_PropostaFormalizadasExecutada.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.alimenta-brasil-propostas** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_PropostaFormalizadasExecutada.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PAA_PropostaFormalizadasExecutada.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.armazenagem** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ArmazensCadastrados.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.armazenagem** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ArmazensCadastrados.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ArmazensCadastrados.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.frete** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Frete.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.frete** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Frete.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/Frete.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.serie-historica-capacidade-estatica** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/exportacao_capacidade_estatica.xls": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.serie-historica-capacidade-estatica** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/exportacao_capacidade_estatica.xls": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/exportacao_capacidade_estatica.xls
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.oferta-demanda** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/OfertaDemanda.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.oferta-demanda** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/OfertaDemanda.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/OfertaDemanda.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.precos-minimos** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecoMinimo.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.precos-minimos** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecoMinimo.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecoMinimo.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.precos-agropecuarios-mensal-uf** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalUF.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.precos-agropecuarios-mensal-uf** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalUF.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalUF.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.precos-agropecuarios-mensal-municipio** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalMunicipio.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.precos-agropecuarios-mensal-municipio** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalMunicipio.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosMensalMunicipio.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.precos-agropecuarios-semanal-uf** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalUF.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.precos-agropecuarios-semanal-uf** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalUF.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalUF.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.precos-agropecuarios-semanal-municipio** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalMunicipio.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.precos-agropecuarios-semanal-municipio** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalMunicipio.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/PrecosSemanalMunicipio.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.prohort-diario** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortDiario.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.prohort-diario** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortDiario.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortDiario.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.prohort-mensal** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortMensal.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.prohort-mensal** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortMensal.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/ProhortMensal.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.custo-producao** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/CustoProducao.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.custo-producao** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/CustoProducao.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/CustoProducao.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.estimativa-cana** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCana.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.estimativa-cana** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCana.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCana.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.estimativa-graos** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoGraos.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.estimativa-graos** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoGraos.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoGraos.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.serie-historica-cana** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.serie-historica-cana** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCana.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.serie-historica-graos** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaGraos.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.serie-historica-graos** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaGraos.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaGraos.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.estimativa-cafe** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCafe.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.estimativa-cafe** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCafe.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/LevantamentoCafe.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **conab.serie-historica-cafe** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCafe.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
+- **conab.serie-historica-cafe** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCafe.txt": tls: failed to verify certificate: x509: certificate is valid for www.conab.gov.br, not portaldeinformacoes.conab.gov.br)
   - https://portaldeinformacoes.conab.gov.br/downloads/arquivos/SerieHistoricaCafe.txt
   - https://portaldeinformacoes.conab.gov.br/download-arquivos.html
-- **dnit.condicoes-conservacao-rodovias** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.condicoes-conservacao-rodovias** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento
   - https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento
-- **dnit.snv-rodovias-federais** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.snv-rodovias-federais** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
-- **ibge.localidades-municipios** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome": dial tcp 170.84.40.178:443: i/o timeout)
+- **ibge.localidades-municipios** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome": dial tcp 170.84.40.178:443: i/o timeout)
   - https://servicodados.ibge.gov.br/api/v1/localidades/municipios?orderBy=nome
   - https://servicodados.ibge.gov.br/api/docs/localidades
-- **ibge.localidades-ufs** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome": dial tcp 170.84.40.178:443: i/o timeout)
+- **ibge.localidades-ufs** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome": dial tcp 170.84.40.178:443: i/o timeout)
   - https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome
   - https://servicodados.ibge.gov.br/api/docs/localidades
-- **ibge.localidades-regioes** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome": dial tcp 170.84.40.178:443: i/o timeout)
+- **ibge.localidades-regioes** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome": dial tcp 170.84.40.178:443: i/o timeout)
   - https://servicodados.ibge.gov.br/api/v1/localidades/regioes?orderBy=nome
   - https://servicodados.ibge.gov.br/api/docs/localidades
-- **ibge.localidades-mesorregioes** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome": dial tcp 170.84.40.178:443: i/o timeout)
+- **ibge.localidades-mesorregioes** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome": dial tcp 170.84.40.178:443: i/o timeout)
   - https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes?orderBy=nome
   - https://servicodados.ibge.gov.br/api/docs/localidades
-- **ibge.localidades-microrregioes** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome": dial tcp 170.84.40.178:443: i/o timeout)
+- **ibge.localidades-microrregioes** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome": dial tcp 170.84.40.178:443: i/o timeout)
   - https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome
   - https://servicodados.ibge.gov.br/api/docs/localidades
-- **jrc.mars-crop-yield** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv)
+- **jrc.mars-crop-yield** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv)
   - https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv
   - https://mars.jrc.ec.europa.eu/dataset
-- **transportes.mtr-bit-malha-rodoviaria** (critical, day 8): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **transportes.mtr-bit-malha-rodoviaria** (critical, day 9): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
