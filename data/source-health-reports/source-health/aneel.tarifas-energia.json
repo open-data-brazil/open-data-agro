@@ -3,12 +3,12 @@
   "endpoints": [
     "https://dadosabertos.aneel.gov.br/dataset/bandeiras-tarifarias"
   ],
-  "consecutiveFailureDays": 1,
+  "consecutiveFailureDays": 2,
   "firstFailureDate": "2026-11-13",
-  "lastFailureDate": "2026-11-13",
+  "lastFailureDate": "2026-11-14",
   "lastSuccessDate": "2026-11-12",
-  "severity": "warning",
-  "message": "Possible link deprecation — official source unreachable after retries. (ckan package_show: Get \"https://dadosabertos.aneel.gov.br/api/3/action/package_show?id=bandeiras-tarifarias\": dial tcp 200.198.220.169:443: i/o timeout)",
+  "severity": "critical",
+  "message": "Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get \"https://dadosabertos.aneel.gov.br/api/3/action/package_show?id=bandeiras-tarifarias\": dial tcp 200.198.220.169:443: i/o timeout)",
   "lastSampleSha256": "5ba5363d99dbb17da07a26d72ec5536a0de0729b81e903dd70c6357b186dbbd4",
   "lastModified": "Tue, 10 Nov 2026 04:11:45 GMT"
 }
