@@ -4,17 +4,20 @@
     {
       "role": "source",
       "url": "https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome\": dial tcp 170.84.40.178:443: i/o timeout"
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 2446,
+      "sampleSha256": "6b001067b04e037095410ce8d33e11a2d77bf63750354a09608b12f086324f04",
+      "contentType": "application/json; charset=utf-8"
     },
     {
       "role": "portal",
       "url": "https://servicodados.ibge.gov.br/api/docs/localidades",
       "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/docs/localidades\": dial tcp 170.84.40.178:443: i/o timeout"
+      "error": "probe failed after 3 attempts: unexpected status 403 for https://servicodados.ibge.gov.br/api/docs/localidades"
     }
   ],
-  "probedAt": "2026-11-16T10:40:34.466063906Z",
-  "overallOk": false,
+  "probedAt": "2026-11-17T11:29:32.123568812Z",
+  "overallOk": true,
   "hasUpdate": false
 }

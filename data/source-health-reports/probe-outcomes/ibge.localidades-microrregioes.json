@@ -4,17 +4,20 @@
     {
       "role": "source",
       "url": "https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome",
-      "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes?orderBy=nome\": dial tcp 170.84.40.178:443: i/o timeout"
+      "status": "ok",
+      "httpStatus": 200,
+      "sampleBytes": 4096,
+      "sampleSha256": "795c89b7c2b506940977800d7ecf916cfd9ca11574b1ca5f0d4d8e11270b211d",
+      "contentType": "application/json; charset=utf-8"
     },
     {
       "role": "portal",
       "url": "https://servicodados.ibge.gov.br/api/docs/localidades",
       "status": "unavailable",
-      "error": "probe failed after 3 attempts: Get \"https://servicodados.ibge.gov.br/api/docs/localidades\": dial tcp 170.84.40.178:443: i/o timeout"
+      "error": "probe failed after 3 attempts: unexpected status 403 for https://servicodados.ibge.gov.br/api/docs/localidades"
     }
   ],
-  "probedAt": "2026-11-16T10:42:25.837015783Z",
-  "overallOk": false,
+  "probedAt": "2026-11-17T11:29:40.864871812Z",
+  "overallOk": true,
   "hasUpdate": false
 }
