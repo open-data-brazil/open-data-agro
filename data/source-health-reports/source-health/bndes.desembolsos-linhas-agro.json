@@ -3,12 +3,12 @@
   "endpoints": [
     "https://dadosabertos.bndes.gov.br/dataset/desembolsos"
   ],
-  "consecutiveFailureDays": 1,
+  "consecutiveFailureDays": 2,
   "firstFailureDate": "2026-11-20",
-  "lastFailureDate": "2026-11-20",
+  "lastFailureDate": "2026-11-21",
   "lastSuccessDate": "2026-11-19",
-  "severity": "warning",
-  "message": "Possible link deprecation — official source unreachable after retries. (ckan package_show: Get \"https://dadosabertos.bndes.gov.br/api/3/action/package_show?id=desembolsos\": dial tcp 200.225.101.94:443: connect: connection refused)",
+  "severity": "critical",
+  "message": "Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get \"https://dadosabertos.bndes.gov.br/api/3/action/package_show?id=desembolsos\": dial tcp 200.225.101.94:443: connect: connection refused)",
   "lastSampleSha256": "e278a6518f269631821fb4437c1ade2ee272921f210d24f5a8817ed3a424f811",
   "lastModified": "Wed, 13 May 2026 03:08:10 GMT"
 }
