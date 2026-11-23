@@ -3,21 +3,18 @@
   "endpoints": [
     {
       "role": "source",
-      "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/arquivos-lpc/2026/resumo_semanal_lpc_2026_11_08-2026_11_14.xlsx",
-      "status": "ok",
-      "httpStatus": 200,
-      "sampleBytes": 4096,
-      "sampleSha256": "9afbbd1a61997c41631aa74f06808b5d4115948160f6463493cb5f28b75d8fae",
-      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas",
+      "status": "resolve_error",
+      "error": "fetch LPC listing: Get \"https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas\": net/http: TLS handshake timeout"
     },
     {
       "role": "portal",
       "url": "https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis",
       "status": "unavailable",
-      "error": "probe failed after 3 attempts: unexpected status 404 for https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis"
+      "error": "probe failed after 3 attempts: Get \"https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis\": net/http: TLS handshake timeout"
     }
   ],
-  "probedAt": "2026-11-22T10:44:11.921616906Z",
-  "overallOk": true,
+  "probedAt": "2026-11-23T11:50:07.722221697Z",
+  "overallOk": false,
   "hasUpdate": false
 }
