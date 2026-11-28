@@ -1,50 +1,107 @@
 ### Source health probe
 
-- Executed at: 2026-11-27T11:50:57Z
-- Run date: 2026-11-27
+- Executed at: 2026-11-28T11:33:20Z
+- Run date: 2026-11-28
 - Datasets probed: 131
-- OK: 117 · Warning: 0 · Critical: 14
-- Updated samples: 18
+- OK: 97 · Warning: 20 · Critical: 14
+- Updated samples: 25
 - Deprecated (2+ days): 14
 
 ### Source health alerts
 
-- **aneel.tarifas-energia** (critical, day 15): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get "https://dadosabertos.aneel.gov.br/api/3/action/package_show?id=bandeiras-tarifarias": dial tcp 200.198.220.169:443: i/o timeout)
+- **aneel.tarifas-energia** (critical, day 16): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (ckan package_show: Get "https://dadosabertos.aneel.gov.br/api/3/action/package_show?id=bandeiras-tarifarias": dial tcp 200.198.220.169:443: i/o timeout)
   - https://dadosabertos.aneel.gov.br/dataset/bandeiras-tarifarias
-- **anp.combustiveis-precos-medios-municipios** (critical, day 5): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (fetch LPC listing: Get "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas": net/http: TLS handshake timeout)
+- **anp.combustiveis-precos-medios-municipios** (critical, day 6): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (fetch LPC listing: Get "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas": net/http: TLS handshake timeout)
   - https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
-- **anp.combustiveis-precos-postos** (critical, day 5): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (fetch LPC listing: Get "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas": net/http: TLS handshake timeout)
+- **anp.combustiveis-precos-postos** (critical, day 6): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (fetch LPC listing: Get "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas": net/http: TLS handshake timeout)
   - https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
-- **anp.etanol-precos** (critical, day 5): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (fetch LPC listing: Get "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas": net/http: TLS handshake timeout)
+- **anp.etanol-precos** (critical, day 6): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (fetch LPC listing: Get "https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas": net/http: TLS handshake timeout)
   - https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas
   - https://www.gov.br/anp/pt-br/assuntos/precos-e-indices/precos-de-combustiveis
-- **cepea.soja-paranagua** (critical, day 15): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/soja/soja-indicador-cepea-esalq-porto-paranagua)
+- **bndes.desembolsos-linhas-agro** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dadosabertos.bndes.gov.br/api/3/action/package_show?id=desembolsos": dial tcp 200.225.103.94:443: connect: connection refused)
+  - https://dadosabertos.bndes.gov.br/dataset/desembolsos
+- **bndes.financiamento-agro** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dadosabertos.bndes.gov.br/api/3/action/package_show?id=desembolsos": dial tcp 200.225.103.94:443: connect: connection refused)
+  - https://dadosabertos.bndes.gov.br/dataset/desembolsos
+- **cepea.soja-paranagua** (critical, day 16): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/soja/soja-indicador-cepea-esalq-porto-paranagua)
   - https://www.noticiasagricolas.com.br/cotacoes/soja/soja-indicador-cepea-esalq-porto-paranagua
   - https://www.cepea.org.br/br/indicador/soja.aspx
-- **cepea.soja-parana** (critical, day 15): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/soja/indicador-cepea-esalq-soja-parana)
+- **cepea.soja-parana** (critical, day 16): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/soja/indicador-cepea-esalq-soja-parana)
   - https://www.noticiasagricolas.com.br/cotacoes/soja/indicador-cepea-esalq-soja-parana
   - https://www.cepea.org.br/br/indicador/soja.aspx
-- **cepea.milho** (critical, day 15): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/milho/indicador-cepea-esalq-milho)
+- **cepea.milho** (critical, day 16): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/milho/indicador-cepea-esalq-milho)
   - https://www.noticiasagricolas.com.br/cotacoes/milho/indicador-cepea-esalq-milho
   - https://www.cepea.org.br/br/indicador/milho.aspx
-- **cepea.boi-gordo** (critical, day 15): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/boi-gordo/boi-gordo-indicador-esalq-bmf)
+- **cepea.boi-gordo** (critical, day 16): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 403 for https://www.noticiasagricolas.com.br/cotacoes/boi-gordo/boi-gordo-indicador-esalq-bmf)
   - https://www.noticiasagricolas.com.br/cotacoes/boi-gordo/boi-gordo-indicador-esalq-bmf
   - https://www.cepea.org.br/br/indicador/boi-gordo.aspx
-- **dnit.condicoes-conservacao-rodovias** (critical, day 23): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.condicoes-conservacao-rodovias** (critical, day 24): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=condicoes-do-pavimento
   - https://servicos.dnit.gov.br/dadosabertos/dataset/condicoes-do-pavimento
-- **dnit.snv-rodovias-federais** (critical, day 23): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **dnit.snv-rodovias-federais** (critical, day 24): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://servicos.dnit.gov.br/dadosabertos/dataset/jurisdicao-de-vias
-- **jrc.mars-crop-yield** (critical, day 23): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv)
+- **inmet.estacoes-automaticas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apitempo.inmet.gov.br/estacoes/T": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://apitempo.inmet.gov.br/estacoes/T
+  - https://portal.inmet.gov.br/paginas/catalogoaut
+- **inmet.estacoes-convencionais** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://apitempo.inmet.gov.br/estacoes/M": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://apitempo.inmet.gov.br/estacoes/M
+  - https://portal.inmet.gov.br/paginas/catalogoman
+- **inmet.bdmep-diario** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip
+  - https://bdmep.inmet.gov.br/
+- **inmet.bdmep-mensal** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip
+  - https://bdmep.inmet.gov.br/
+- **inmet.pacote-anual-automaticas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip": dial tcp 201.57.198.188:443: i/o timeout)
+  - https://portal.inmet.gov.br/uploads/dadoshistoricos/2025.zip
+  - https://portal.inmet.gov.br/dadoshistoricos
+- **jrc.mars-crop-yield** (critical, day 24): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: unexpected status 404 for https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv)
   - https://agricultural-production-hotspots.ec.europa.eu/data/yield-forecast/recent/Central%20America_2024_75p.csv
   - https://mars.jrc.ec.europa.eu/dataset
-- **suframa.comercio-mercadorias-zfm** (critical, day 5): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx": net/http: TLS handshake timeout)
+- **mapa.agrofit-produtos-formulados** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/d30b30d7-e256-484e-9ab8-cd40974e1238/download/agrofitprodutosformulados.csv": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/d30b30d7-e256-484e-9ab8-cd40974e1238/download/agrofitprodutosformulados.csv
+  - https://dados.agricultura.gov.br/dataset/agrofit-produtos-formulados
+- **mapa.agrofit-produtos-tecnicos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/a200c70b-e025-4a9a-be1b-ec7275d7921f/download/agrofitprodutostecnicos.csv": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/6c913699-e82e-4da3-a0a1-fb6c431e367f/resource/a200c70b-e025-4a9a-be1b-ec7275d7921f/download/agrofitprodutostecnicos.csv
+  - https://dados.agricultura.gov.br/dataset/sistema-de-agrotoxicos-fitossanitarios-agrofit
+- **mapa.sif-abate-estatisticas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/dataset/062166e3-b515-4274-8e7d-68aadd64b820/resource/341dc717-4716-42ab-b189-c8d7a9d2a1ba/download/sigsifrelatorioabates.csv": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/062166e3-b515-4274-8e7d-68aadd64b820/resource/341dc717-4716-42ab-b189-c8d7a9d2a1ba/download/sigsifrelatorioabates.csv
+  - https://dados.agricultura.gov.br/dataset/servico-de-inspecao-federal-sif
+- **mapa.sigef-producao-sementes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=dados-referentes-ao-controle-da-producao-de-sementes-sigef": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/api/3/action/package_show?id=dados-referentes-ao-controle-da-producao-de-sementes-sigef
+  - https://dados.agricultura.gov.br/dataset/dados-referentes-ao-controle-da-producao-de-sementes-sigef
+- **mapa.sigef-areas** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=dados-referentes-ao-controle-da-producao-de-sementes-sigef": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/api/3/action/package_show?id=dados-referentes-ao-controle-da-producao-de-sementes-sigef
+  - https://dados.agricultura.gov.br/dataset/dados-referentes-ao-controle-da-producao-de-sementes-sigef
+- **mapa.sipeagro-estabelecimentos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro
+  - https://dados.agricultura.gov.br/dataset/sipeagro
+- **mapa.sipeagro-produtos** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/api/3/action/package_show?id=sipeagro
+  - https://dados.agricultura.gov.br/dataset/sipeagro
+- **mapa.sisser-seguro-rural** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=sisser3": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/api/3/action/package_show?id=sisser3
+  - https://dados.agricultura.gov.br/dataset/sisser3
+- **mapa.zarc-tabua-risco** (warning, day 1): Possible link deprecation — official source unreachable after retries. (ckan package_show: Get "https://dados.agricultura.gov.br/api/3/action/package_show?id=tabua-de-risco-zoneamento-agricola-de-risco-climatico": dial tcp 201.57.198.178:443: i/o timeout)
+  - https://dados.agricultura.gov.br/dataset/tabua-de-risco-zoneamento-agricola-de-risco-climatico
+- **mdic.comex-exportacao-ncm-mes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 500 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mdic.comex-importacao-ncm-mes** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 500 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mdic.comex-exportacao-uf-ncm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 500 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **mdic.comex-importacao-diesel-ncm** (warning, day 1): Possible link deprecation — official source unreachable after retries. (probe failed after 3 attempts: unexpected status 500 for https://api-comexstat.mdic.gov.br/general)
+  - https://api-comexstat.mdic.gov.br/general
+  - https://comexstat.mdic.gov.br/
+- **suframa.comercio-mercadorias-zfm** (critical, day 6): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx": net/http: TLS handshake timeout)
   - https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados/sao/copy2_of_RelatriodeNotasFiscaisVistoriadasporregiodecontroledaSuframa2021.xlsx
   - https://www.gov.br/suframa/pt-br/acesso-a-informacao/dados-abertos/base-de-dados
-- **transportes.mtr-bit-malha-rodoviaria** (critical, day 23): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
+- **transportes.mtr-bit-malha-rodoviaria** (critical, day 24): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias": dial tcp 189.9.19.9:443: i/o timeout)
   - https://servicos.dnit.gov.br/dadosabertos/api/3/action/package_show?id=jurisdicao-de-vias
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
-- **transportes.mtr-bit-malha-shapefile** (critical, day 5): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip": net/http: TLS handshake timeout)
+- **transportes.mtr-bit-malha-shapefile** (critical, day 6): Consultation link deprecated — official source unreachable for 2 or more consecutive days. (probe failed after 3 attempts: Get "https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip": net/http: TLS handshake timeout)
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas/Base-GEO/BaseFerro.zip
   - https://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit/bit-mapas
